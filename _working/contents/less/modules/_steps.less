@@ -1,0 +1,39 @@
+.steps{
+	margin: 0 0 30px 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+.step{
+	padding-left: 40px;
+	position: relative;
+	margin-bottom: 20px;
+
+	&:last-child{
+		margin-bottom: 0;
+	}
+}
+
+.step-title{
+	.fz(18);
+	line-height: 1.4;
+}
+
+.step-content{
+	.fz(16);
+	color: @color_grey-dark;
+	font-weight: @font_light;
+}
+
+.step-number{
+	position: absolute;
+	left: 0;
+	top: 0px;
+	width: 26px;
+	height: 26px;
+	border-radius: 50%;
+	border: 1px solid @color_grey-dark;
+	display: block;
+	text-align: center;
+	line-height: 24px;
+}
