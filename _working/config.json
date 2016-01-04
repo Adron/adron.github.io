@@ -1,9 +1,9 @@
 {
   "locals": {
     "url": "http://adron.github.io",
-    "name": "That Stuff",
+    "name": "Composite Code",
     "owner": "Adron Hall",
-    "description": "Ramblings of an immor(t)al demigod"
+    "description": "Coder, Messenger, Recon, Documentarian"
   },
   "plugins": [
     "./plugins/paginator.coffee"
