@@ -45,15 +45,98 @@ html(lang='en')
       // <link rel="stylesheet" href="css/custom.css">
       script(src='js/modernizr.js')
 
-
   body(class=bodyclass)
-    header.header
-      div.content-wrap
-        block header
-          div.logo
-            h1
-              a(href=locals.url)= locals.name
+    // Header
+    .header.header-over.large
+      .container
+        .row
+          .col-md-3.col-sm-6.col-xs-6
+            // Logo Image
+            a.logo-image.logo-animated(href=locals.url)
+              img(src='img/logos/logo.png', alt='logo')
             p.description= locals.description
+            // End of Logo Image
+          .col-md-9.col-sm-6.col-xs-6
+            // Menu
+            nav.right.helper
+              ul.menu.sf-menu.js-menu
+                li
+                  a(href=locals.url)= locals.name
+                li
+                  a(href='#') Pages
+                  ul
+                    li
+                      a(href='panels.html') Panels
+                    li
+                      a(href='#') Blog
+                      ul
+                        li
+                          a(href='blog-grid.html') Blog Grid
+                        li
+                          a(href='article.html') Article
+                    li
+                      a(href='faq.html') Faq
+                    li
+                      a(href='notification.html') Notification
+                    li
+                      a(href='tutorial.html') Tutorial
+                    li
+                      a(href='login.html') Login
+                    li
+                      a(href='register.html') Register
+                li
+                  a(href='#') Elements
+                  ul
+                    li
+                      a(href='buttons.html') Buttons
+                    li
+                      a(href='boxes.html') Boxes
+                    li
+                      a(href='code.html') Code
+                    li
+                      a(href='notes.html') Notes
+                    li
+                      a(href='files.html') File tree
+                    li
+                      a(href='media.html') Media
+                    li
+                      a(href='book.html') Book
+                    li
+                      a(href='steps.html') Steps & Tabs
+                    li
+                      a(href='misc.html') Misc
+                li
+                  a(href='#')
+                    | Layouts
+                    span.menu-label v1.2
+                  ul
+                    li
+                      a(href='views.html') Views without sidebar
+                    li
+                      a(href='views-left.html') Views left sidebar
+                    li
+                      a(href='views-right.html') Views right sidebar
+                    li
+                      a(href='#') Full left sidebar
+                      ul
+                        li
+                          a(href='views-left-full.html') Regular
+                        li
+                          a(href='views-left-full-compact.html') Compact
+                    li
+                      a(href='#') Full right sidebar
+                      ul
+                        li
+                          a(href='views-right-full.html') Regular
+                        li
+                          a(href='views-right-full-compact.html') Compact
+                li
+                  a(href='changelog.html') Changelog
+                li
+                  a(href='contacts.html') Contacts
+            // End of Menu
+    // End of Header
+
     div#content
       div.content-wrap
         block content
