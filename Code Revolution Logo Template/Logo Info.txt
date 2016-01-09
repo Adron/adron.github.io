@@ -1,0 +1,4 @@
+ - Three color version: color, greyscale and single color.
+ - The logo is 100% resizable. 
+ - You can change text and colors very easy using the named and organized layers that includes the file. 
+ - The typography used is Century Gothic a system default font.
