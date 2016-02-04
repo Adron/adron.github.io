@@ -80,31 +80,35 @@ Did you know that 9 out of 10 bloggers prefer to write in&nbsp;markdown?</p>
 <hr>
 <h1 id="markdown-syntax">Markdown:&nbsp;Syntax</h1>
 <ul>
-<li><a href="#overview">Overview</a><ul>
-<li><a href="#philosophy">Philosophy</a></li>
-<li><a href="#html">Inline&nbsp;<span class="caps">HTML</span></a></li>
-<li><a href="#autoescape">Automatic Escaping for Special&nbsp;Characters</a></li>
+    <li><a href="/articles/markdown-syntax/#overview">Overview</a>
+        <ul>
+            <li><a href="/articles/markdown-syntax/#philosophy">Philosophy</a></li>
+            <li><a href="/articles/markdown-syntax/#html">Inline&nbsp;<span class="caps">HTML</span></a></li>
+            <li><a href="/articles/markdown-syntax/#autoescape">Automatic Escaping for Special&nbsp;Characters</a></li>
 </ul>
 </li>
-<li><a href="#block">Block Elements</a><ul>
-<li><a href="#p">Paragraphs and Line&nbsp;Breaks</a></li>
-<li><a href="#header">Headers</a></li>
-<li><a href="#blockquote">Blockquotes</a></li>
-<li><a href="#list">Lists</a></li>
-<li><a href="#precode">Code&nbsp;Blocks</a></li>
-<li><a href="#hr">Horizontal&nbsp;Rules</a></li>
+    <li><a href="/articles/markdown-syntax/#block">Block Elements</a>
+        <ul>
+            <li><a href="/articles/markdown-syntax/#p">Paragraphs and Line&nbsp;Breaks</a></li>
+            <li><a href="/articles/markdown-syntax/#header">Headers</a></li>
+            <li><a href="/articles/markdown-syntax/#blockquote">Blockquotes</a></li>
+            <li><a href="/articles/markdown-syntax/#list">Lists</a></li>
+            <li><a href="/articles/markdown-syntax/#precode">Code&nbsp;Blocks</a></li>
+            <li><a href="/articles/markdown-syntax/#hr">Horizontal&nbsp;Rules</a></li>
 </ul>
 </li>
-<li><a href="#span">Span Elements</a><ul>
-<li><a href="#link">Links</a></li>
-<li><a href="#em">Emphasis</a></li>
-<li><a href="#code">Code</a></li>
-<li><a href="#img">Images</a></li>
+    <li><a href="/articles/markdown-syntax/#span">Span Elements</a>
+        <ul>
+            <li><a href="/articles/markdown-syntax/#link">Links</a></li>
+            <li><a href="/articles/markdown-syntax/#em">Emphasis</a></li>
+            <li><a href="/articles/markdown-syntax/#code">Code</a></li>
+            <li><a href="/articles/markdown-syntax/#img">Images</a></li>
 </ul>
 </li>
-<li><a href="#misc">Miscellaneous</a><ul>
-<li><a href="#backslash">Backslash&nbsp;Escapes</a></li>
-<li><a href="#autolink">Automatic&nbsp;Links</a></li>
+    <li><a href="/articles/markdown-syntax/#misc">Miscellaneous</a>
+        <ul>
+            <li><a href="/articles/markdown-syntax/#backslash">Backslash&nbsp;Escapes</a></li>
+            <li><a href="/articles/markdown-syntax/#autolink">Automatic&nbsp;Links</a></li>
 </ul>
 </li>
 </ul>
@@ -120,8 +124,11 @@ can <a href="/projects/markdown/syntax.text">see the source for it by adding ‘
 document should be publishable as-is, as plain text, without looking
 like it’s been marked up with tags or formatting instructions. While
 Markdown’s syntax has been influenced by several existing text-to-<span class="caps">HTML</span>
-filters – including <a href="http://docutils.sourceforge.net/mirror/setext.html">Setext</a>, <a href="http://www.aaronsw.com/2002/atx/">atx</a>, <a href="http://textism.com/tools/textile/">Textile</a>, <a href="http://docutils.sourceforge.net/rst.html">reStructuredText</a>,
-<a href="http://www.triptico.com/software/grutatxt.html">Grutatext</a>, and <a href="http://ettext.taint.org/doc/">EtText</a> – the single biggest source of
+    filters — including <a href="http://docutils.sourceforge.net/mirror/setext.html">Setext</a>, <a
+            href="http://www.aaronsw.com/2002/atx/">atx</a>, <a href="http://textism.com/tools/textile/">Textile</a>, <a
+            href="http://docutils.sourceforge.net/rst.html">reStructuredText</a>,
+    <a href="http://www.triptico.com/software/grutatxt.html">Grutatext</a>, and <a href="http://ettext.taint.org/doc/">EtText</a>
+    — the single biggest source of
 inspiration for Markdown’s syntax is the format of plain text&nbsp;email.</p>
 <p>To this end, Markdown’s syntax is comprised entirely of punctuation
 characters, which punctuation characters have been carefully chosen so
@@ -145,8 +152,9 @@ can be conveyed in plain&nbsp;text.</p>
 use <span class="caps">HTML</span> itself. There’s no need to preface it or delimit it to
 indicate that you’re switching from Markdown to HTML; you just use
 the&nbsp;tags.</p>
-<p>The only restrictions are that block-level <span class="caps">HTML</span> elements – e.g. <code>&lt;div&gt;</code>,
-<code>&lt;table&gt;</code>, <code>&lt;pre&gt;</code>, <code>&lt;p&gt;</code>, etc. – must be separated from surrounding
+              <p>The only restrictions are that block-level <span class="caps">HTML</span> elements — e.g. <code>&lt;div&gt;</code>,
+                  <code>&lt;table&gt;</code>, <code>&lt;pre&gt;</code>, <code>&lt;p&gt;</code>, etc. — must be separated
+                  from surrounding
 content by blank lines, and the start and end tags of the block should
 not be indented with tabs or spaces. Markdown is smart enough not
 to add extra (unwanted) <code>&lt;p&gt;</code> tags around <span class="caps">HTML</span> block-level&nbsp;tags.</p>
@@ -163,7 +171,8 @@ This is another regular paragraph.
 </code></pre><p>Note that Markdown formatting syntax is not processed within block-level
 <span class="caps">HTML</span> tags. E.g., you can’t use Markdown-style <code>*emphasis*</code> inside an
 <span class="caps">HTML</span>&nbsp;block.</p>
-<p>Span-level <span class="caps">HTML</span> tags – e.g. <code>&lt;span&gt;</code>, <code>&lt;cite&gt;</code>, or <code>&lt;del&gt;</code> – can be
+              <p>Span-level <span class="caps">HTML</span> tags — e.g. <code>&lt;span&gt;</code>, <code>
+                  &lt;cite&gt;</code>, or <code>&lt;del&gt;</code> — can be
 used anywhere in a Markdown paragraph, list item, or header. If you
 want, you can even use <span class="caps">HTML</span> tags instead of Markdown formatting; e.g. if
 you’d prefer to use HTML <code>&lt;a&gt;</code> or <code>&lt;img&gt;</code> tags instead of Markdown’s
@@ -196,7 +205,9 @@ into <code>&amp;amp;</code>.</p>
 <pre><code>AT&amp;T
 </code></pre><p>Markdown will translate it&nbsp;to:</p>
 <pre><code>AT&amp;amp;T
-</code></pre><p>Similarly, because Markdown supports <a href="#html">inline <span class="caps">HTML</span></a>, if you use
+</code></pre>
+              <p>Similarly, because Markdown supports <a href="/articles/markdown-syntax/#html">inline <span
+                      class="caps">HTML</span></a>, if you use
 angle brackets as delimiters for <span class="caps">HTML</span> tags, Markdown will treat them as
 such. But if you&nbsp;write:</p>
 <pre><code>4 &lt; 5
@@ -215,7 +226,7 @@ and <code>&amp;</code> in your example code needs to be&nbsp;escaped.)</p>
 
 <p>A paragraph is simply one or more consecutive lines of text, separated
 by one or more blank lines. (A blank line is any line that looks like a
-blank line – a line containing nothing but spaces or tabs is considered
+    blank line — a line containing nothing but spaces or tabs is considered
 blank.) Normal paragraphs should not be indented with spaces or&nbsp;tabs.</p>
 <p>The implication of the “one or more consecutive lines of text” rule is
 that Markdown supports “hard-wrapped” text paragraphs. This differs
@@ -226,8 +237,9 @@ character in a paragraph into a <code>&lt;br /&gt;</code> tag.</p>
 end a line with two or more spaces, then type&nbsp;return.</p>
 <p>Yes, this takes a tad more effort to create a <code>&lt;br /&gt;</code>, but a simplistic
 “every line break is a <code>&lt;br /&gt;</code>“ rule wouldn’t work for Markdown.
-Markdown’s email-style <a href="#blockquote">blockquoting</a> and multi-paragraph <a href="#list">list items</a>
-work best – and look better – when you format them with hard&nbsp;breaks.</p>
+    Markdown’s email-style <a href="/articles/markdown-syntax/#blockquote">blockquoting</a> and multi-paragraph <a
+            href="/articles/markdown-syntax/#list">list items</a>
+    work best — and look better — when you format them with hard&nbsp;breaks.</p>
 <h3 id="header">Headers</h3>
 
 <p>Markdown supports two styles of headers, <a href="http://docutils.sourceforge.net/mirror/setext.html">Setext</a> and <a href="http://www.aaronsw.com/2002/atx/">atx</a>.</p>
@@ -247,7 +259,7 @@ corresponding to header levels 1-6. For&nbsp;example:</p>
 
 ###### This is an H6
 </code></pre><p>Optionally, you may “close” atx-style headers. This is purely
-cosmetic – you can use this if you think it looks better. The
+                  cosmetic — you can use this if you think it looks better. The
 closing hashes don’t even need to match the number of hashes
 used to open the header. (The number of opening hashes
 determines the header level.)&nbsp;:</p>
@@ -300,8 +312,8 @@ Quote Level from the Text&nbsp;menu.</p>
 <h3 id="list">Lists</h3>
 
 <p>Markdown supports ordered (numbered) and unordered (bulleted)&nbsp;lists.</p>
-<p>Unordered lists use asterisks, pluses, and hyphens – interchangably
-– as list&nbsp;markers:</p>
+              <p>Unordered lists use asterisks, pluses, and hyphens — interchangably
+                  — as list&nbsp;markers:</p>
 <pre><code>*   Red
 *   Green
 *   Blue
@@ -401,7 +413,7 @@ delimiters need to be&nbsp;indented:</p>
     &gt; This is a blockquote
     &gt; inside a list item.
 </code></pre><p>To put a code block within a list item, the code block needs
-to be indented <em>twice</em> – 8 spaces or two&nbsp;tabs:</p>
+                  to be indented <em>twice</em> — 8 spaces or two&nbsp;tabs:</p>
 <pre><code>*   A list item with a code block:
 
         &lt;code goes here&gt;
@@ -427,7 +439,8 @@ block by at least 4 spaces or 1 tab. For example, given this&nbsp;input:</p>
 
 &lt;pre&gt;&lt;code&gt;This is a code block.
 &lt;/code&gt;&lt;/pre&gt;
-</code></pre><p>One level of indentation – 4 spaces or 1 tab – is removed from each
+</code></pre>
+              <p>One level of indentation — 4 spaces or 1 tab — is removed from each
 line of the code block. For example,&nbsp;this:</p>
 <pre><code>Here is an example of AppleScript:
 
@@ -445,7 +458,7 @@ end tell
 (or the end of the&nbsp;article).</p>
 <p>Within a code block, ampersands (<code>&amp;</code>) and angle brackets (<code>&lt;</code> and <code>&gt;</code>)
 are automatically converted into <span class="caps">HTML</span> entities. This makes it very
-easy to include example HTML source code using Markdown – just paste
+    easy to include example HTML source code using Markdown — just paste
 it and indent it, and Markdown will handle the hassle of encoding the
 ampersands and angle brackets. For example,&nbsp;this:</p>
 <pre><code>    &lt;div class=&quot;footer&quot;&gt;
@@ -528,13 +541,13 @@ or tabs for padding, which tends to look better with longer&nbsp;URLs:</p>
 </code></pre><p>Link definitions are only used for creating links during Markdown
 processing, and are stripped from your document in the <span class="caps">HTML</span>&nbsp;output.</p>
 <p>Link definition names may consist of letters, numbers, spaces, and
-punctuation – but they are <em>not</em> case sensitive. E.g. these two&nbsp;links:</p>
+    punctuation — but they are <em>not</em> case sensitive. E.g. these two&nbsp;links:</p>
 <p>  [link text][a]
   [link&nbsp;text][A]</p>
 <p>are&nbsp;equivalent.</p>
 <p>The <em>implicit link name</em> shortcut allows you to omit the name of the
 link, in which case the link text itself is used as the name.
-Just use an empty set of square brackets – e.g., to link the word
+    Just use an empty set of square brackets — e.g., to link the word
 “Google” to the google.com web site, you could simply&nbsp;write:</p>
 <p>  <a href="http://google.com/">Google</a></p>
 <p>And then define the&nbsp;link:</p>
@@ -625,7 +638,8 @@ multiple backticks as the opening and closing&nbsp;delimiters:</p>
 <pre><code>``There is a literal backtick (`) here.``
 </code></pre><p>which will produce&nbsp;this:</p>
 <pre><code>&lt;p&gt;&lt;code&gt;There is a literal backtick (`) here.&lt;/code&gt;&lt;/p&gt;
-</code></pre><p>The backtick delimiters surrounding a code span may include spaces –
+</code></pre>
+              <p>The backtick delimiters surrounding a code span may include spaces —
 one after the opening, one before the closing. This allows you to place
 literal backtick characters at the beginning or end of a code&nbsp;span:</p>
 <p>  A single backtick in a code span: <code>` </code></p>
@@ -729,16 +743,10 @@ _   underscore
     <footer>
       <div class="content-wrap">
         <div class="nav"><a href="/">« Full blog</a></div>
-        <section class="about"><p>Wintersmith is made by <a href="http://johan-nordberg.com">Johan Nordberg</a> and licensed under the <a href="http://opensource.org/licenses/MIT">MIT-license</a>.
-This footer text can be edited in about.md</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat.</p>
-<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-dolore eu fugiat nulla pariatur.</p>
-<p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-deserunt mollit anim id est laborum.</p>
+          <section class="about"><p>I’m using Wintersmith, which is made by <a href="http://johan-nordberg.com">Johan
+              Nordberg</a> and licensed under the <a href="http://opensource.org/licenses/MIT">MIT-license</a>.</p>
+              <p>Some other working subdomains on Thrashing Code include my <a href="http://ci.thrashingcode.com/">build
+                  server</a> and of course the root, <a href="http://thrashingcode.com/">Thrashing Code</a> itself.</p>
 
         </section>
         <section class="copy">

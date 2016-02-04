@@ -79,7 +79,7 @@
 The theme used is tomorrow, you can find more themes <a href="http://jmblog.github.io/color-themes-for-highlightjs/">here</a>.</p>
 <p><span class="more"></span></p>
 <h3 id="javascript">JavaScript</h3>
-<pre><code class="lang-javascript"><span class="function"><span class="keyword">function</span> <span class="title">getRandomNumber</span>(<span class="params"></span>) </span>{
+<pre><code class="lang-javascript"><span class="function"><span class="keyword">function</span> <span class="title">getRandomNumber</span><span class="params">()</span> {</span>
     <span class="keyword">return</span> <span class="number">4</span>; <span class="comment">// chosen by fair dice roll.</span>
               <span class="comment">// guaranteed to be random.</span>
 }
@@ -87,42 +87,42 @@ The theme used is tomorrow, you can find more themes <a href="http://jmblog.gith
 <h3 id="coffeescript">CoffeeScript</h3>
 <pre><code class="lang-coffeescript"><span class="class"><span class="keyword">class</span> <span class="title">Animal</span></span>
   <span class="comment">### Intellegent design ###</span>
-  <span class="attribute">getDNA</span>: <span class="function">-&gt;</span>
+  <span class="attribute">getDNA</span>:<span class="function"> -&gt;</span>
     <span class="built_in">print</span> <span class="string">'sequencing...'</span>
     <span class="keyword">while</span> <span class="literal">true</span>
       sleep <span class="number">1</span>
 
 <span class="class"><span class="keyword">class</span> <span class="title">Monkey</span> <span class="keyword">extends</span> <span class="title">Animal</span></span>
-  <span class="attribute">speak</span>: <span class="function">-&gt;</span>
+  <span class="attribute">speak</span>:<span class="function"> -&gt;</span>
     <span class="built_in">print</span> <span class="string">'ah ah ah'</span>
 
 <span class="class"><span class="keyword">class</span> <span class="title">Human</span> <span class="keyword">extends</span> <span class="title">Monkey</span></span>
-  <span class="attribute">speak</span>: <span class="function">-&gt;</span>
+  <span class="attribute">speak</span>:<span class="function"> -&gt;</span>
     <span class="built_in">print</span> [<span class="string">'yolo'</span> <span class="keyword">unless</span> i % <span class="number">3</span>] + [<span class="string">'swag'</span> <span class="keyword">unless</span> i % <span class="number">5</span>] <span class="keyword">or</span> i <span class="keyword">for</span> i <span class="keyword">in</span> [<span class="number">1.</span><span class="number">.100</span>]
 </code></pre>
 <h3 id="c">C</h3>
-<pre><code class="lang-c"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span>
+<pre><code class="lang-c"><span class="preprocessor">#include &lt;stdio.h&gt;</span>
 
-<span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span>
-</span>{
+<span class="keyword">int</span> main(<span class="keyword">void</span>)
+{
   <span class="built_in">printf</span>(<span class="string">"Hello world\n"</span>);
   <span class="keyword">return</span> <span class="number">0</span>;
 }
 </code></pre>
 <h3 id="c-">C++</h3>
-<pre><code class="lang-cpp"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span>
+<pre><code class="lang-cpp"><span class="preprocessor">#include &lt;iostream&gt;</span>
 
-<span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span>
-</span>{
+<span class="keyword">int</span> main()
+{
   <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"Hello World!"</span> &lt;&lt; <span class="built_in">std</span>::endl;
   <span class="keyword">return</span> <span class="number">0</span>;
 }
 </code></pre>
 <h3 id="c-sharp">C-sharp</h3>
-<pre><code class="lang-cs"><span class="keyword">class</span> <span class="title">ExampleClass</span>
+<pre><code class="lang-cs">class ExampleClass
 {
-    <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>(<span class="params"></span>)
-    </span>{
+    <span class="keyword">static</span> <span class="keyword">void</span> Main()
+    {
         System.Console.WriteLine(<span class="string">"Hello, world!"</span>);
     }
 }
@@ -140,8 +140,8 @@ The theme used is tomorrow, you can find more themes <a href="http://jmblog.gith
 }
 </code></pre>
 <h3 id="java">Java</h3>
-<pre><code class="lang-java"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloWorld</span> </span>{
-   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>{
+<pre><code class="lang-java"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloWorld</span> {</span>
+   <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(String[] args) {
        System.out.println(<span class="string">"Hello world!"</span>);
    }
 }
@@ -171,16 +171,8 @@ The theme used is tomorrow, you can find more themes <a href="http://jmblog.gith
     <footer>
       <div class="content-wrap">
         <div class="nav"><a href="/">« Full blog</a></div>
-        <section class="about"><p>Wintersmith is made by <a href="http://johan-nordberg.com">Johan Nordberg</a> and licensed under the <a href="http://opensource.org/licenses/MIT">MIT-license</a>.
-This footer text can be edited in about.md</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat.</p>
-<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-dolore eu fugiat nulla pariatur.</p>
-<p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-deserunt mollit anim id est laborum.</p>
+        <section class="about"><p>I’m using Wintersmith, which is made by <a href="http://johan-nordberg.com">Johan Nordberg</a> and licensed under the <a href="http://opensource.org/licenses/MIT">MIT-license</a>.</p>
+<p>Some other working subdomains on Thrashing Code include my <a href="http://ci.thrashingcode.com/">build server</a> and of course the root, <a href="http://thrashingcode.com/">Thrashing Code</a> itself.</p>
 
         </section>
         <section class="copy">
