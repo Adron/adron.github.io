@@ -48,6 +48,11 @@ block content
                 if article.hasMore
                   p.more
                     a(href=article.url) more
+          .blog-grid-meta
+            span.blog-grid-date= moment.utc(article.date).format('DD. MMMM YYYY')
+            span.blog-grid-author
+              | by
+              div= article.author
 
   // Blog Page
   .blog
