@@ -9,33 +9,32 @@ html(lang='en')
       meta(charset='UTF-8')
       meta(http-equiv='X-UA-Compatible', content='IE=edge')
       meta(name='viewport', content='width=device-width, initial-scale=1')
-      link(rel='icon', type='image/png', href='../img/favicons/favicon-16x16.png', sizes='16x16')
-      link(rel='icon', type='image/png', href='img/favicons/favicon-32x32.png', sizes='32x32')
-      link(rel='icon', type='image/png', href='img/favicons/favicon-96x96.png', sizes='96x96')
-      link(rel='apple-touch-icon', sizes='57x57', href='img/favicons/apple-touch-icon-57x57.png')
-      link(rel='apple-touch-icon', sizes='60x60', href='img/favicons/apple-touch-icon-60x60.png')
-      link(rel='apple-touch-icon', sizes='72x72', href='img/favicons/apple-touch-icon-72x72.png')
-      link(rel='apple-touch-icon', sizes='76x76', href='img/favicons/apple-touch-icon-76x76.png')
-      link(rel='apple-touch-icon', sizes='114x114', href='img/favicons/apple-touch-icon-114x114.png')
-      link(rel='apple-touch-icon', sizes='120x120', href='img/favicons/apple-touch-icon-120x120.png')
-      link(rel='apple-touch-icon', sizes='144x144', href='img/favicons/apple-touch-icon-144x144.png')
-      link(rel='apple-touch-icon', sizes='152x152', href='img/favicons/apple-touch-icon-152x152.png')
-      link(rel='apple-touch-icon', sizes='180x180', href='img/favicons/apple-touch-icon-180x180.png')
-      link(rel='stylesheet', href='css/style.min.css')
-      script(src='js/modernizr.js')
+      link(rel='alternate', href= locals.url + '/feed.xml', type='application/rss+xml', title=locals.description)
+      link(rel='icon', type='image/png', href=locals.url + '/img/favicons/favicon-16x16.png', sizes='16x16')
+      link(rel='icon', type='image/png', href=locals.url + '/img/favicons/favicon-32x32.png', sizes='32x32')
+      link(rel='icon', type='image/png', href=locals.url + '/img/favicons/favicon-96x96.png', sizes='96x96')
+      link(rel='apple-touch-icon', sizes='57x57', href=locals.url + '/img/favicons/apple-touch-icon-57x57.png')
+      link(rel='apple-touch-icon', sizes='60x60', href=locals.url + '/img/favicons/apple-touch-icon-60x60.png')
+      link(rel='apple-touch-icon', sizes='72x72', href=locals.url + '/img/favicons/apple-touch-icon-72x72.png')
+      link(rel='apple-touch-icon', sizes='76x76', href=locals.url + '/img/favicons/apple-touch-icon-76x76.png')
+      link(rel='apple-touch-icon', sizes='114x114', href=locals.url + '/img/favicons/apple-touch-icon-114x114.png')
+      link(rel='apple-touch-icon', sizes='120x120', href=locals.url + '/img/favicons/apple-touch-icon-120x120.png')
+      link(rel='apple-touch-icon', sizes='144x144', href=locals.url + '/img/favicons/apple-touch-icon-144x144.png')
+      link(rel='apple-touch-icon', sizes='152x152', href=locals.url + '/img/favicons/apple-touch-icon-152x152.png')
+      link(rel='apple-touch-icon', sizes='180x180', href=locals.url + '/img/favicons/apple-touch-icon-180x180.png')
+      link(rel='stylesheet', href=locals.url + '/css/style.min.css')
+      script(src=locals.url + '/js/modernizr.js')
   body(class=bodyclass)
-
     | <!--[if lt IE 8]>
     | <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     | <![endif]-->
-
     .header.header-over.large
       .container
         .row
           .col-md-3.col-sm-6.col-xs-6
             // Logo Image
-            a.logo-image.logo-animated(href='index.html')
-              img(src='img/logos/logo.png', alt='logo')
+            a.logo-image.logo-animated(href=locals.url + '/index.html')
+              img(src=locals.url + '/img/logos/logo.png', alt='logo')
             // End of Logo Image
           .col-md-9.col-sm-6.col-xs-6
             // Menu
@@ -47,21 +46,21 @@ html(lang='en')
                   a(href='#') Documentation Work
                   ul
                     li
-                      a(href='404.html') More...
+                      a(href=locals.url + '/404.html') More...
                     li
-                      a(href='404.html') coming...
+                      a(href=locals.url + '/404.html') coming...
                     li
-                      a(href='404.html') real soon...
+                      a(href=locals.url + '/404.html') real soon...
                 li
-                  a(href='404.html') Speaking, Presentations, & Workshops
+                  a(href=locals.url + '/404.html') Speaking, Presentations, & Workshops
                 li
-                  a(href='404.html') Articles & Series
+                  a(href=locals.url + '/404.html') Articles & Series
                 li
-                  a(href='404.html') Cascadia Hacks
+                  a(href=locals.url + '/404.html') Cascadia Hacks
                 li
-                  a(href='404.html') Contact
+                  a(href=locals.url + '/404.html') Contact
                 li
-                  a(href='404.html') About
+                  a(href=locals.url + '/404.html') About
             // End of Menu
     .header-back.header-back-simple.header-back-small
       .header-back-container
@@ -75,10 +74,6 @@ html(lang='en')
                   | The story of the trials, tribulations, and work of my (<a href="https://twitter.com/adron">@Adron</a>)
                   | <a href="https://github.com/adron">systemic programmatic systems building</a>.
               // End Page Info
-
-
-
-
     #content
       .container
         .layout.with-right-sidebar.js-layout
@@ -86,14 +81,8 @@ html(lang='en')
             .col-md-9
               .main-content
                 // Blog Page
-                .blog
-                  block content
+                block content
                 // End of Blog Page
-
-
-
-
-
             .col-md-3.hidden-sm.hidden-xs
               .sidebar.js-sidebar-fixed
                 // Vertical Menu
@@ -104,75 +93,48 @@ html(lang='en')
                       
                       ul
                         li
-                          a(href='#') Instalation
+                          a(href='#') Installation
                           
                           ul
                             li
-                              a(href='views.html') Manually
-                            
+                              a(href=locals.url + '404.html') Manually
                             li
-                              a(href='views.html') Wizard
-
+                              a(href=locals.url + '404.html') Wizard
                             li
-                              a(href='views.html') Softaculous
+                              a(href=locals.url + '404.html') Softaculous
                             li
-                              a(href='views.html') Fantastico
+                              a(href=locals.url + '404.html') Fantastico
                             li
-                              a(href='views.html') Transfer
+                              a(href=locals.url + '/404.html') Transfer
                         li
                           a(href='#') Create
                           ul
                             li
-                              a(href='views.html') Multimedia
+                              a(href=locals.url + '/404.html') Multimedia
                             li
-                              a(href='views.html') Post
+                              a(href=locals.url + '/404.html') Post
                             li
-                              a(href='views.html') Categories
+                              a(href=locals.url + '/404.html') Categories
                             li
-                              a(href='views.html') Comments
+                              a(href=locals.url + '/404.html') Comments
                             li
-                              a(href='views.html') Themes
+                              a(href=locals.url + '/404.html') Themes
                     li
                       a(href='#') About
-                      | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
                       ul
                         li
                           a(href='#') Instalation
-                          | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
                           ul
                             li
-                              a(href='views.html') Manually
-                            | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                              a(href=locals.url + '/404.html') Manually
                             li
-                              a(href='views.html') Wizard
-                            | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                              a(href=locals.url + '/404.html') Wizard
                             li
-                              a(href='views.html') Softaculous
-                            | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                              a(href=locals.url + '/404.html') Softaculous
                             li
-                              a(href='views.html') Fantastico
-                            | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                              a(href=locals.url + '/404.html') Fantastico
                             li
-                              a(href='views.html') Transfer
-                        | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
-                        li
-                          a(href='#') Create
-                          | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
-                          ul
-                            li
-                              a(href='views.html') Multimedia
-                            | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
-                            li
-                              a(href='views.html') Post
-                            | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
-                            li
-                              a(href='views.html') Categories
-                            | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
-                            li
-                              a(href='views.html') Comments
-                            | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
-                            li
-                              a(href='views.html') Themes
+                              a(href=locals.url + '/404.html') Transfer
                     li
                       a(href='#') Faq
                       ul
@@ -180,48 +142,15 @@ html(lang='en')
                           a(href='#') Instalation
                           ul
                             li
-                              a(href='views.html') Manually
+                              a(href=locals.url + '/404.html') Manually
                             li
-                              a(href='views.html') Wizard
+                              a(href=locals.url + '/404.html') Wizard
                             li
-                              a(href='views.html') Softaculous
+                              a(href=locals.url + '/404.html') Softaculous
                             li
-                              a(href='views.html') Fantastico
+                              a(href=locals.url + '/404.html') Fantastico
                             li
-                              a(href='views.html') Transfer
-                        li
-                          a(href='#') Create
-                          ul
-                            li
-                              a(href='views.html') Multimedia
-                            li
-                              a(href='views.html') Post
-                            li
-                              a(href='views.html') Categories
-                            li
-                              a(href='views.html') Comments
-                            li
-                              a(href='views.html') Themes
-                //.widget
-                //  // Search
-                //  .search
-                //    form(action='#')
-                //      input.search-input.form-control(type='text', placeholder='search')
-                //
-                //      i.fa.fa-search.search-icon
-                //  // End of Search
-
-
-    //footer
-    //  div.content-wrap
-    //    block footer
-    //      section.about
-    //        !=contents['about.md'].html
-    //      section.copy
-    //        p &copy; #{ new Date().getFullYear() } #{ locals.owner } &mdash; powered by&nbsp;
-    //          a(href='https://github.com/jnordberg/wintersmith') Wintersmith
-    //          //- please leave the "powered by" if you use the design
-
-    script(src='js/all.js')
-    script(src='js/custom.js')
-
+                              a(href=locals.url + '/404.html') Transfer
+        block prepend footer
+    script(src=locals.url + '/js/all.js')
+    script(src=locals.url + '/js/custom.js')
