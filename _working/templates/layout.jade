@@ -2,83 +2,67 @@ doctype html
 block vars
   - var bodyclass = null;
 html(lang='en')
-
-
-
   head
     block head
-
-      meta(charset='utf-8')
-      meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
-      meta(name='viewport', content='width=device-width')
-      link(rel='alternate', href=locals.url+'/feed.xml', type='application/rss+xml', title=locals.description)
-
-      link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic|Anonymous+Pro:400,700,400italic,700italic|Merriweather:400,700,300')
-      link(rel='stylesheet', href=contents.css['main.css'].url)
-
-      title
-        block title
-          = locals.name
-
+      title= locals.name
       meta(name='description', content='')
-      // Meta
       meta(charset='UTF-8')
-      | &#x9;
       meta(http-equiv='X-UA-Compatible', content='IE=edge')
-      | &#x9;
       meta(name='viewport', content='width=device-width, initial-scale=1')
-      // Favicon
-      link(rel='icon', type='image/png', href='img/favicons/favicon-16x16.png', sizes='16x16')
-      | &#x9;
+      link(rel='icon', type='image/png', href='../img/favicons/favicon-16x16.png', sizes='16x16')
       link(rel='icon', type='image/png', href='img/favicons/favicon-32x32.png', sizes='32x32')
-      | &#x9;
       link(rel='icon', type='image/png', href='img/favicons/favicon-96x96.png', sizes='96x96')
-      | &#x9;
       link(rel='apple-touch-icon', sizes='57x57', href='img/favicons/apple-touch-icon-57x57.png')
-      | &#x9;
       link(rel='apple-touch-icon', sizes='60x60', href='img/favicons/apple-touch-icon-60x60.png')
-      | &#x9;
       link(rel='apple-touch-icon', sizes='72x72', href='img/favicons/apple-touch-icon-72x72.png')
-      | &#x9;
       link(rel='apple-touch-icon', sizes='76x76', href='img/favicons/apple-touch-icon-76x76.png')
-      | &#x9;
       link(rel='apple-touch-icon', sizes='114x114', href='img/favicons/apple-touch-icon-114x114.png')
-      | &#x9;
       link(rel='apple-touch-icon', sizes='120x120', href='img/favicons/apple-touch-icon-120x120.png')
-      | &#x9;
       link(rel='apple-touch-icon', sizes='144x144', href='img/favicons/apple-touch-icon-144x144.png')
-      | &#x9;
       link(rel='apple-touch-icon', sizes='152x152', href='img/favicons/apple-touch-icon-152x152.png')
-      | &#x9;
       link(rel='apple-touch-icon', sizes='180x180', href='img/favicons/apple-touch-icon-180x180.png')
-      // Include StyleSheets
-      link(rel='stylesheet', href=contents.css['style.min.css'].url)
       link(rel='stylesheet', href='css/style.min.css')
       script(src='js/modernizr.js')
-
   body(class=bodyclass)
-    // Header
+
+    | <!--[if lt IE 8]>
+    | <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    | <![endif]-->
+
     .header.header-over.large
       .container
         .row
           .col-md-3.col-sm-6.col-xs-6
-
             // Logo Image
-            a.logo-image.logo-animated(href=locals.url)
-              img(src='http://adron.github.io/img/logos/logo.png', alt='logo')
+            a.logo-image.logo-animated(href='index.html')
+              img(src='img/logos/logo.png', alt='logo')
             // End of Logo Image
-          
           .col-md-9.col-sm-6.col-xs-6
             // Menu
             nav.right.helper
               ul.menu.sf-menu.js-menu
                 li
-                  a(href=locals.url) Home
+                  a(href='http://compositecode.us11.list-manage1.com/subscribe?u=7f73ff0427183b9b64e1f336a&id=a6fc3efde0') Thrashing Code News
                 li
-                  a(href='contacts.html') Contacts
+                  a(href='#') Documentation Work
+                  ul
+                    li
+                      a(href='404.html') More...
+                    li
+                      a(href='404.html') coming...
+                    li
+                      a(href='404.html') real soon...
+                li
+                  a(href='404.html') Speaking, Presentations, & Workshops
+                li
+                  a(href='404.html') Articles & Series
+                li
+                  a(href='404.html') Cascadia Hacks
+                li
+                  a(href='404.html') Contact
+                li
+                  a(href='404.html') About
             // End of Menu
-    // End of Header
-    // Header Back
     .header-back.header-back-simple.header-back-small
       .header-back-container
         .container
@@ -86,29 +70,158 @@ html(lang='en')
             .col-md-12
               // Page Info
               .page-info.page-info-simple
-                h1.page-title Composite Code
-                h2.page-description= locals.description
+                h1.page-title= locals.name
+                h2.page-description
+                  | The story of the trials, tribulations, and work of my (<a href="https://twitter.com/adron">@Adron</a>)
+                  | <a href="https://github.com/adron">systemic programmatic systems building</a>.
               // End Page Info
-    // End of Header Back
 
-    div#content
-      div.content-wrap
-        block content
-          h2 Welcome to zombocom!
-    footer
-      div.content-wrap
-        block footer
-          section.about
-            !=contents['about.md'].html
-          section.copy
-            p &copy; #{ new Date().getFullYear() } #{ locals.owner } &mdash; powered by&nbsp;
-              a(href='https://github.com/jnordberg/wintersmith') Wintersmith
-              //- please leave the "powered by" if you use the design
 
-    script.
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-      ga('create', 'UA-39158070-6', 'auto');
-      ga('send', 'pageview');
+
+
+    #content
+      .container
+        .layout.with-right-sidebar.js-layout
+          .row
+            .col-md-9
+              .main-content
+                // Blog Page
+                .blog
+                  block content
+                // End of Blog Page
+
+
+
+
+
+            .col-md-3.hidden-sm.hidden-xs
+              .sidebar.js-sidebar-fixed
+                // Vertical Menu
+                nav.menu-vertical-wrapper
+                  ul.menu-vertical.js-menu-vertical(data-prepend-to='.js-layout', data-select='Menu')
+                    li
+                      a(href='#') Tutorials
+                      
+                      ul
+                        li
+                          a(href='#') Instalation
+                          
+                          ul
+                            li
+                              a(href='views.html') Manually
+                            
+                            li
+                              a(href='views.html') Wizard
+
+                            li
+                              a(href='views.html') Softaculous
+                            li
+                              a(href='views.html') Fantastico
+                            li
+                              a(href='views.html') Transfer
+                        li
+                          a(href='#') Create
+                          ul
+                            li
+                              a(href='views.html') Multimedia
+                            li
+                              a(href='views.html') Post
+                            li
+                              a(href='views.html') Categories
+                            li
+                              a(href='views.html') Comments
+                            li
+                              a(href='views.html') Themes
+                    li
+                      a(href='#') About
+                      | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                      ul
+                        li
+                          a(href='#') Instalation
+                          | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                          ul
+                            li
+                              a(href='views.html') Manually
+                            | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                            li
+                              a(href='views.html') Wizard
+                            | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                            li
+                              a(href='views.html') Softaculous
+                            | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                            li
+                              a(href='views.html') Fantastico
+                            | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                            li
+                              a(href='views.html') Transfer
+                        | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                        li
+                          a(href='#') Create
+                          | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                          ul
+                            li
+                              a(href='views.html') Multimedia
+                            | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                            li
+                              a(href='views.html') Post
+                            | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                            li
+                              a(href='views.html') Categories
+                            | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                            li
+                              a(href='views.html') Comments
+                            | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                            li
+                              a(href='views.html') Themes
+                    li
+                      a(href='#') Faq
+                      ul
+                        li
+                          a(href='#') Instalation
+                          ul
+                            li
+                              a(href='views.html') Manually
+                            li
+                              a(href='views.html') Wizard
+                            li
+                              a(href='views.html') Softaculous
+                            li
+                              a(href='views.html') Fantastico
+                            li
+                              a(href='views.html') Transfer
+                        li
+                          a(href='#') Create
+                          ul
+                            li
+                              a(href='views.html') Multimedia
+                            li
+                              a(href='views.html') Post
+                            li
+                              a(href='views.html') Categories
+                            li
+                              a(href='views.html') Comments
+                            li
+                              a(href='views.html') Themes
+                //.widget
+                //  // Search
+                //  .search
+                //    form(action='#')
+                //      input.search-input.form-control(type='text', placeholder='search')
+                //
+                //      i.fa.fa-search.search-icon
+                //  // End of Search
+
+
+    //footer
+    //  div.content-wrap
+    //    block footer
+    //      section.about
+    //        !=contents['about.md'].html
+    //      section.copy
+    //        p &copy; #{ new Date().getFullYear() } #{ locals.owner } &mdash; powered by&nbsp;
+    //          a(href='https://github.com/jnordberg/wintersmith') Wintersmith
+    //          //- please leave the "powered by" if you use the design
+
+    script(src='js/all.js')
+    script(src='js/custom.js')
+
