@@ -48,7 +48,7 @@
 
 		&:before{
 			content: '\e665';
-			font-family: 'Pe-icon-7-stroke';
+			font-family: @icons-stroke;
 			font-size: 16px;
 			vertical-align: middle;
 			margin-right: 4px;
@@ -91,6 +91,35 @@
 	.content{
 		padding: 0;
 		border: none;
+	}
+
+	&.code-highlight-tabs-center{
+		.content{
+			padding: 35px 0;
+		}
+
+		pre{
+			margin: 0;
+		}
+
+		.steps {
+			width: 100%;
+			text-align: center;
+
+			li{
+				border: 1px solid transparent;
+
+				a{
+					display: block;
+					padding: 5px 15px;
+				}
+			}
+
+			li.current{
+				border: 1px solid @color_grey-light;
+				background-color: @color_grey-lighter;
+			}
+		}
 	}
 
 	.steps ul>li{

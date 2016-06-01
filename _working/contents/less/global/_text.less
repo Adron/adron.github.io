@@ -24,7 +24,7 @@ p {
 	font-size: 1em; 
 	margin: 0 0 1em 0; 
 	font-weight: 300;
-	line-height: 1.5;
+	line-height: 1.8;
 }
 
 /* ==========================================================================
@@ -74,18 +74,29 @@ a{
 	&.help { border-bottom: 1px dotted @color_grey-dark; cursor: help; }
 	&.code { font-family: monospace; }
 	&.fill{
-		padding: 2px 5px;
+	    padding: .3em .6em;
 		border-radius: 4px;
-		vertical-align: middle;
-		font-size: 0.9rem;
+		vertical-align: baseline;
+		display: inline;
+		font-size: 80%;
+		line-height: 1;
+		color: white;
+		text-align: center;
+		white-space: nowrap;
 
-		&.blue{       background-color: @color_blue;        color: white; }
-		&.blue-light{ background-color: @color_blue-light;  color: white; }
-		&.purple{     background-color: @color_purple;      color: white; }
-		&.green{      background-color: @color_green;       color: white; }
-		&.orange{     background-color: @color_orange;      color: white; }
-		&.red{        background-color: @color_red;         color: white; }
-		&.grey{       background-color: @color_grey-light;  color: @color_black; }
+		i{
+			font-size: 70%;
+			vertical-align: middle;
+			padding: 0 4px;
+		}
+
+		&.blue{       background-color: @color_blue;        }
+		&.blue-light{ background-color: @color_blue-light;  }
+		&.purple{     background-color: @color_purple;      }
+		&.green{      background-color: @color_green;       }
+		&.orange{     background-color: @color_orange;      }
+		&.red{        background-color: @color_red;         }
+		&.grey{       background-color: lighten(@color_grey-light, 5%);  color: @color_black; }
 	}
 
 }
@@ -106,3 +117,7 @@ a, p, h1, h2, h3, h4, h5, h6, span{
 		&.grey{       color: @color_grey;       }
 	}
 }
+
+/*==============================
+=            Labels            =
+==============================*/

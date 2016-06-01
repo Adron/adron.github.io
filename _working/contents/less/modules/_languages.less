@@ -1,10 +1,3 @@
-.languages-light{
-	color: white;
-
-	.fa{
-		color: @color_grey-dark;
-	}
-}
 
 .languages{
 	font-weight: @font_light;
@@ -17,7 +10,7 @@
 }
 
 .language-active{
-	line-height: 42px;
+	line-height: 40px;
 	display: block;
 	cursor: pointer;
 	font-size: 15px;
@@ -31,6 +24,14 @@
 	}
 }
 
+.languages-light{
+	color: white;
+
+	.fa{
+		color: @color_grey-light;
+	}
+}
+
 .languages-list{
 	display: none;
 	margin: 0;
@@ -40,25 +41,26 @@
 	font-size: 14px;
 	top: 47px;
 	left: 50%;
-	box-shadow: 1px 1px 6px 0 rgba(0,0,0,.1);
+	box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.1);
 	.transform(translateX(-50%));
 
+	.header.header-fixed &{
+		top: 60px;
+	}
+
 	&:after{
-		content: '';
+		content: '\f0d8';
 		display: block;
 		position: absolute;
-		width: 6px;
-		height: 6px;
-		-webkit-transform: rotate(45deg);
-		-moz-transform: rotate(45deg);
-		-ms-transform: rotate(45deg);
-		-o-transform: rotate(45deg);
-		transform: rotate(45deg);
-		background-color: #fff;
-		top: -3px;
+		width: 8px;
+		height: 8px;
+		font-family: @icons;
+		top: -14px;
 		left: 50%;
 		margin-left: -4px;
-		border-radius: 1px;
+		color: white;
+		text-shadow: 0px 0px 1px #bbb;
+		z-index: -1;
 	}
 	
 	li {
@@ -75,7 +77,7 @@
 		a{
 			color: @color_black;
 			display: block;
-			border-bottom: 1px solid @color_grey-light;
+			border-bottom: 1px solid lighten(@color_grey-light, 8%);
 			padding: 15px 25px;
 			line-height: 1;
 			text-decoration: none;

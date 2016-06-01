@@ -178,14 +178,10 @@
 	padding: 40px 0;
 }
 
-.footer-extended-menu{
-	margin-bottom: 30px;
-}
-
 .footer-extended-menu-title{
 	color: @color_blue;
-	font-size: 14px;
-
+	font-size: 15px;
+	margin-bottom: 10px;
 }
 
 .footer-extended-menu-list{
@@ -198,6 +194,10 @@
 		color: lighten(@color_black, 20%);
 		line-height: 2;
 	}
+}
+
+.text-footer{
+	font-size: 12px;
 }
 
 .media-mixin(@break) when (@break = @break-small) {
@@ -224,5 +224,11 @@
 		right: auto;
 		left: 50%;
 		margin-left: 10px;
+	}
+	.footer-extended-menu{
+		margin-bottom: 30px;
+	}
+	.footer-extended-container{
+		padding: 40px 0 0;
 	}
 }

@@ -4,16 +4,20 @@
 	margin: 0 auto;
 }
 
+.changelog-state-new { color:  #98C74E; }
+.changelog-state-updated { color: #ff4f26; }
+.changelog-state-removed { color: red; }
+
 .changelog-filters{
 
-	margin: 0 0 30px;
-	padding: 20px 0 18px 0;
-	text-align: center;
+	background-color: lighten(@color_grey-lighter, 2%);
+	padding: 20px 0 17px 20px;
+	text-align: left;
 	font-weight: @font_light;
 	border: 1px solid @color_grey-light;
 	position: relative;
 	top: 1px;
-	border-radius: 3px;
+	border-radius: 3px 3px 0 0;
 
 	.changelog-link{
 		height: 30px;
@@ -21,32 +25,15 @@
 		background-color: #F2F2F2;
 	}
 
-	&:after{
-		display: block;
-		content: '';
-		position: absolute;
-		width: 9px;
-		bottom: -5px;
-		height: 9px;
-		border-left: 1px solid @color_grey-light;
-		border-bottom: 1px solid @color_grey-light;
-		left: 50%;
-		background-color: white;
-		margin-left: -4px;
-		z-index: 2;
-
-		.transform(rotate(-45deg));
-	}
-
 	label{
 		display: inline-block;
 		vertical-align: top;
 		zoom: 1; /* Fix for IE7 */
 		*display: inline; /* Fix for IE7 */
-		padding: 5px 25px;
+		padding: 5px 10px;
 		cursor: pointer;
 		border-radius: 3px;
-		font-size: 18px;
+		font-size: 16px;
 	}
 
 	input{
@@ -68,6 +55,7 @@
 
 .changelog-checkbox-label {
     position: relative;
+    color: darken(@color_grey-dark, 10%);
 }
 
 .changelog-checkbox + .changelog-checkbox-label:before {
@@ -76,17 +64,17 @@
     border: 1px solid @color_grey-light;
     display: inline-block;
     vertical-align: middle;
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
     padding: 2px;
-    margin-right: 10px;
+    margin-right: 13px;
     text-align: center;
     margin-top: -4px;
 }
 
 .changelog-checkbox:checked + .changelog-checkbox-label:before {
     content: "\f00c";
-    font-family: 'FontAwesome';
+    font-family: @icons;
     background: #98C74E;
     color: #fff;
     font-size: 12px;
@@ -133,6 +121,10 @@
 		z-index: 2;
 	}
 
+	&:first-child{
+		border-radius: 0 0 3px 3px;
+	}
+
 	&:first-child:before, &:last-child:after, &:last-child .changelog-link{
 		display: none;
 	}
@@ -161,6 +153,26 @@
 
 .changelog-version{
 	margin: 0;
+
+	a{
+		color: inherit;
+		text-decoration: none;
+
+		&:hover:after{
+			opacity: 0.8;
+		}
+
+		&:after{
+			content: '\f0c1';
+			.transition(opacity);
+			font-family: @icons;
+			font-size: 18px;
+			vertical-align: 1px;
+			color: @color_grey-dark;
+			margin-left: 10px;
+			opacity: 0.4;
+		}
+	}
 }
 
 .changelog-date{
@@ -235,6 +247,62 @@
 	top: 19px;
 }
 
+.changelog-files-changed-toolbar{
+	background-color: @color_grey-lighter;
+	margin: 30px 0 35px 0;
+	z-index: 2;
+	border: 1px solid @color_grey-light;
+	border-radius: 3px;
+	font-size: 14px;
+}
+
+.changelog-files-changed-filters{
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	text-align: center;
+	color: darken(@color_grey-dark, 5%);
+	position: relative;
+
+	li{
+		float: left;
+		width: 33.33%;
+		text-align: center;
+	}
+
+	&:after{
+		display: block;
+		clear: both;
+		content: '';
+	}
+}
+
+.changelog-files-changed-filter{
+	display: block;
+	padding: 10px 15px;
+	cursor: pointer;
+	text-indent: -10px;
+	.transition-custom(opacity 0.3s ease, background-color 0.3s ease);
+
+	&.inactive{
+		opacity: 0.4;
+
+		i{
+			color: @color_grey-dark;
+		}
+	}
+
+	&:hover{ 
+		background-color: darken(@color_grey-lighter, 5%);	
+	}
+
+	i{
+		vertical-align: middle;
+		margin-right: 8px;
+		.transition(color);
+	}
+}
+
 .changelog-file-changed{
 	padding-bottom: 20px;
 	border-top: 1px solid #cbd3dd;
@@ -243,13 +311,9 @@
 	font-weight: @font_light;
 	position: relative;
 
-	&:first-child{
-		margin-top: 20px;
-	}
-
 	&:before{
 		content: '\f016';
-		font-family: 'FontAwesome';
+		font-family: @icons;
 		color: #98C74E;
 		margin-right: 6px;
 		font-size: 15px;
@@ -278,13 +342,13 @@
 	&.changelog-file-updated{
 		&:before{
 			content: '\f021';
-			color: #FF3826;
+			color: #ff4f26;
 		}
 
 		&:hover:after{
 			opacity: 1;
-			color: #FF3826;
-			border: 1px solid #FF3826;
+			color: #ff4f26;
+			border: 1px solid #ff4f26;
 			content: 'updated';
 		}
 	}
@@ -321,14 +385,95 @@ input.changelog-input{
 	display: none;
 }
 
+.changelog-scroll-to{
+	position: absolute;
+	display: block;
+	top: 0;
+	line-height: 73px;
+	height: 100%;
+	padding: 0px 10px 0px 25px;
+	right: 0;
+	cursor: pointer;
+	border-left: 1px solid lighten(@color_grey-light, 5%);
+	.transition(background-color);
+	color: darken(@color_grey-dark, 10%);
+
+	&:hover {
+
+		background-color: lighten(@color_grey-lighter, 2%);
+	
+		.changelog-scroll-to-list{
+			display: block;
+		}
+	}
+
+	i{
+		font-size: 20px;
+		vertical-align: middle;
+		color: @color_black;
+	}
+}
+
+.changelog-scroll-to-list{
+	display: none;
+	position: absolute;
+	top: 100%;
+	background-color: white;
+	z-index: 5;
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	max-height: 225px;
+	left: -1px;
+	right: -1px;
+	border: 1px solid @color_grey-light;
+	text-align: center;
+	overflow-y: scroll;
+}
+
+.changelog-scroll-to-list-item{
+	border-bottom: 1px solid lighten(@color_grey-light, 10%);
+
+	&:last-child{
+		border-bottom: 0;
+	}
+
+	a{
+		text-decoration: none;
+		padding: 8px 15px;
+		color: inherit;
+		display: block;
+		.transition(color);
+
+		&:hover{
+			color: @color_blue;
+		}
+	}
+}
+
 .media-mixin(@break) when (@break = @break-small) {
 	.changelog-filters{
     	text-align: left;
+		padding: 20px 0 17px 15px;    	
     }
 
     .changelog-filters .changelog-checkbox-label{
     	display: block;
     	margin-bottom: 10px;
+    }
+
+    .changelog-scroll-to{
+    	position: relative;
+
+    	border: 1px solid @color_grey-light;
+	    margin: 15px 30px 15px 15px;
+	    line-height: 50px;
+	    padding: 0 15px;
+	    border-radius: 3px;
+    }
+
+    .changelog-scroll-to-list{
+    	text-align: left;
     }
 }
 
@@ -349,5 +494,25 @@ input.changelog-input{
 
 	.changelog-files-changed, .changelog-item.changelog-view-files .changelog-update-descriptions{
 		display: block;
+	}
+
+	.changelog-files-changed-toolbar:before{
+		content: 'File filter';
+		display: block;
+		background-color: white;
+		padding: 10px 15px;
+	}
+
+	.changelog-files-changed-filters li{
+		float: none;
+		width: 100%;
+		text-align: left;
+		border-top: 1px solid @color_grey-light;
+	}
+
+	.changelog-files-changed-filter{
+		text-indent: 0;
+		padding: 5px 15px;
+		font-size: 14px;
 	}
 }

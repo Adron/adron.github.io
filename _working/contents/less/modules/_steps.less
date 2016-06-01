@@ -5,12 +5,16 @@
 }
 
 .step{
-	padding-left: 40px;
+	padding-left: 55px;
 	position: relative;
-	margin-bottom: 20px;
+	margin-bottom: 30px;
+	padding-bottom: 30px;
+	border-bottom: 1px solid lighten(@color_grey-light, 5%);
 
 	&:last-child{
 		margin-bottom: 0;
+		border: none;
+		padding-bottom: 0;
 	}
 }
 
@@ -28,12 +32,13 @@
 .step-number{
 	position: absolute;
 	left: 0;
-	top: 0px;
-	width: 26px;
-	height: 26px;
+	top: -9px;
+	width: 41px;
+	height: 41px;
 	border-radius: 50%;
-	border: 1px solid @color_grey-dark;
+	border: 1px solid @color_grey-light;
 	display: block;
 	text-align: center;
-	line-height: 24px;
+	text-indent: 1px;
+	line-height: 41px;
 }
