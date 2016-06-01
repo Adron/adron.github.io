@@ -2,6 +2,9 @@ doctype html
 block vars
   - var bodyclass = null;
 html(lang='en')
+
+
+
   head
     block head
 
@@ -50,8 +53,8 @@ html(lang='en')
       link(rel='apple-touch-icon', sizes='180x180', href='img/favicons/apple-touch-icon-180x180.png')
       // Include StyleSheets
       link(rel='stylesheet', href=contents.css['style.min.css'].url)
-      
-      script(src='https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js')
+      link(rel='stylesheet', href='css/style.min.css')
+      script(src='js/modernizr.js')
 
   body(class=bodyclass)
     // Header
