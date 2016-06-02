@@ -5,6 +5,8 @@ date: 2016-05-18
 template: article.jade
 ---
 
+![Node PDX 2016](nodepdx-2016-logo.png)
+
 I'm stoked to introduce Tomomi (<a href="http://twitter.com/girlie_mac">@girlie_mac</a>). Tomomi is an avid open web &amp; open technology advocate and creative technologist, who had been active in the mobile space for past 8+ years. Now she is working at PubNub in San Francisco. When she is not at work, she still geeks around and hacks some stuff like Amazon Dash to Rickroll people.
 
 Tomomi will be presenting "<strong>From Software to Hardware: How Do I Track My Cat with JavaScript</strong>".
