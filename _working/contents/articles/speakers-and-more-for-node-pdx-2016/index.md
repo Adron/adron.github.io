@@ -5,7 +5,7 @@ date: 2016-05-25
 template: article.jade
 ---
 
-Spock and I are excited to announce our first set of speakers for <a href="http://nodepdx.org/" target="_blank">Node PDX 2016</a>, which you've seen slowly coming out each day! I hope you're ready and have your <a href="http://nodepdx.org/#tickets" target="_blank">tickets</a> bought already. So far I've introduced [Tomomi](http://blog.adron.me/articles/node-pdx-2016-speaker-tomomi-imura/), [Jon](http://blog.adron.me/articles/node-pdx-2016-speaker-jonny-oropeza/), and [Liz](). Today I'll introduce Adam Ulvi a bit later.
+Spock and I are excited to announce our first set of speakers for <a href="http://nodepdx.org/" target="_blank">Node PDX 2016</a>, which you've seen slowly coming out each day! I hope you're ready and have your <a href="http://nodepdx.org/#tickets" target="_blank">tickets</a> bought already. So far I've introduced [Tomomi](http://blog.adron.me/articles/node-pdx-2016-speaker-tomomi-imura/), [Jon](http://blog.adron.me/articles/node-pdx-2016-speaker-jonny-oropeza/), and [Liz](http://blog.adron.me/articles/node-pdx-2016-speaker-liz-abinante/). Today I'll introduce Adam Ulvi a bit later.
 
 We've also announced the <a href="http://nodepdx.org/lagniappe.html#geektrain" target="_blank">Geek Train for Node PDX</a> and the <a href="http://nodepdx.org/lagniappe.html#bikes" target="_blank">Node PDX Bike Ride</a>. A little <a href="http://www.merriam-webster.com/dictionary/lagniappe" target="_blank">lagniappe</a> if you will.  ;)
 
