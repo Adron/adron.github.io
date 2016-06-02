@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:wfw="http://wellformedweb.org/CommentAPI/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Composite Code</title>
+    <title>Adron's Composite Code</title>
     <atom:link href="http://adron.github.io/feed.xml" rel="self" type="application/rss+xml"></atom:link>
     <link>http://adron.github.io</link>
     <description>Coder, Messenger, Recon, Infrastructure</description>
@@ -24,8 +24,8 @@
 &lt;p&gt;What is the journey of the modern developer? How does documentation fit into their flow? Are there ways to create documentation that enables developers to work smarter, as opposed to interrupting their day? We’ll discuss these questions and more as I share how we got to the realization that we needed a documentation revolution; this is the story of how we raised up code to be the supreme leader of documentation.”&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;ul&gt;
-&lt;li&gt;Twitter: @jreyesdesign&lt;/li&gt;
-&lt;li&gt;Github: github.com/jarodreyes&lt;/li&gt;
+&lt;li&gt;Twitter: &lt;a href=&quot;https://twitter.com/jreyesdesign&quot;&gt;@jreyesdesign&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Github: &lt;a href=&quot;https://github.com/jarodreyes&quot;&gt;github.com/jarodreyes&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>
@@ -44,7 +44,7 @@
 &lt;p&gt;By following the request lifecyle, we will touch on basic tcp/ip networking, DNS configuration and history, node application development, nginx proxy configuration, and basic linux system configuration.&lt;/p&gt;
 &lt;p&gt;At the end of the presentation developers should have a better understanding of the simple application’s infrastructure requirements, external dependencies, and targets of opportunity for future improvement.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Github: &lt;a href=&quot;http://github.com/aulvi&quot;&gt;http://github.com/aulvi&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Github: &lt;a href=&quot;http://github.com/aulvi&quot;&gt;github.com/aulvi&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;IRC: s5fs&lt;/li&gt;
 &lt;/ul&gt;
 </description>

@@ -4,6 +4,7 @@ author: Adron Hall
 date: 2016-06-02
 template: article.jade
 ---
+
 ![Node PDX 2016](nodepdx-2016-logo.png)
 
 Jarod is alarmingly disinterested in "how things are done". He spent much of his grade school years disrupting class, running social experiments and singing love ballads to his teachers. Nowadays he can be found working with an exceptional team of developers at Twilio who are laser-focused on improving the landscape of developer documentation.
@@ -18,5 +19,5 @@ Jarod describes Code First Docs as
 
 > What is the journey of the modern developer? How does documentation fit into their flow? Are there ways to create documentation that enables developers to work smarter, as opposed to interrupting their day? We'll discuss these questions and more as I share how we got to the realization that we needed a documentation revolution; this is the story of how we raised up code to be the supreme leader of documentation."
 
-* Twitter: @jreyesdesign
-* Github: github.com/jarodreyes
+* Twitter: [@jreyesdesign](https://twitter.com/jreyesdesign)
+* Github: [github.com/jarodreyes](https://github.com/jarodreyes)

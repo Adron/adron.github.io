@@ -20,5 +20,5 @@ By following the request lifecyle, we will touch on basic tcp/ip networking, DNS
 
 At the end of the presentation developers should have a better understanding of the simple application's infrastructure requirements, external dependencies, and targets of opportunity for future improvement.
 
-* Github: http://github.com/aulvi
+* Github: [github.com/aulvi](http://github.com/aulvi)
 * IRC: s5fs
