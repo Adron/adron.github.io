@@ -90,9 +90,9 @@
       <pubDate>Wed, 18 May 2016 17:00:00 -0700</pubDate>
       <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-jonny-oropeza/</guid>
       <author></author>
-      <description>&lt;p&gt;Jon Oropeza is a full-stack engineer at HD Quote Center, a post-aquisition startup solving tricky ecommerce problems for their parent company, The Home Depot. Prior to that, he designed and developed software for the insurance industry with his partners at LifePro Financial Services, and also co-founded a deep learning / computer vision oriented startup called Tilt Video.&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;
-&lt;img src=&quot;/articles/node-pdx-2016-speaker-jonny-oropeza/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/p&gt;
+      <description>&lt;p&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-jonny-oropeza/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;
+Jon Oropeza is a full-stack engineer at HD Quote Center, a post-aquisition startup solving tricky ecommerce problems for their parent company, The Home Depot. Prior to that, he designed and developed software for the insurance industry with his partners at LifePro Financial Services, and also co-founded a deep learning / computer vision oriented startup called Tilt Video.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;jon.jpg&quot; class=&quot;image float-right&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;Jon will be presenting “&lt;strong&gt;Isomorphic Business Logic (Or How to convince even the most die-hard C#/Java/Rails-on-the-Backend boss that you need to run a node server)&lt;/strong&gt;“ which might just be the talk with the longest title of the conference!&lt;/p&gt;
 &lt;p&gt;Business logic is all the tricky calculations, rules and transformations that never seem to be in the hot new framework’s example ToDo app. Lately I’ve been finding it’s also the key to convincing clients and bosses that they NEED to run a node layer, no matter what other backend techs they happen to be rocking. In this talk I’ll dive into why and how, including:&lt;/p&gt;
