@@ -1,5 +1,5 @@
 ---
-title: node pdx 2016 speaker jonny oropeza
+title: Node PDX 2016 Speaker Jonny Oropeza
 author: Adron Hall
 date: 2016-05-19
 template: article.jade
