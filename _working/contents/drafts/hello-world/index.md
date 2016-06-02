@@ -1,6 +1,6 @@
 ---
 title: README
-author: adron
+author: Adron Hall
 date: 2013-04-30
 template: article.jade
 ---
