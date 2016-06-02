@@ -69,5 +69,20 @@
 &lt;p&gt;We’ll also be setting up a Geek Train &amp;amp; .NET Fringe bike ride too, we’ve just got to get everything posted. So keep an eye on the .NET Fringe site or &lt;a href=&quot;http://dotnetfringe.org/#signup&quot; target=&quot;_blank&quot;&gt;subscribe to updates&lt;/a&gt; and it’ll have updates popping up real soon.&lt;/p&gt;
 </description>
     </item>
+    <item>
+      <title>Node PDX 2016 Speaker Tomomi Imura</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-tomomi-imura/</link>
+      <pubDate>Tue, 17 May 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-tomomi-imura/</guid>
+      <author></author>
+      <description>&lt;p&gt;I’m stoked to introduce Tomomi (&lt;a href=&quot;http://twitter.com/girlie_mac&quot;&gt;@girlie_mac&lt;/a&gt;). Tomomi is an avid open web &amp;amp; open technology advocate and creative technologist, who had been active in the mobile space for past 8+ years. Now she is working at PubNub in San Francisco. When she is not at work, she still geeks around and hacks some stuff like Amazon Dash to Rickroll people.&lt;/p&gt;
+&lt;p&gt;Tomomi will be presenting “&lt;strong&gt;From Software to Hardware: How Do I Track My Cat with JavaScript&lt;/strong&gt;“.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;jamie-detected.png&quot; class=&quot;image float-right&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;In the era of Internet of Things, connecting things to the mobile devices and web is becoming ubiquitous. You can control room light using your mobile phone. You can monitor your heart rate and weight on browser. JavaScript engineers like you already have skills to prototype ideas to build software, so why not hardware too?&lt;/p&gt;
+&lt;p&gt;Tomomi, a front-end engineer with no background in electrical engineering, tells how she got started with hardware hacking with JavaScript, also talks about her recent fun project, &lt;a href=&quot;https://github.com/girliemac/RPi-KittyCam&quot;&gt;KittyCam&lt;/a&gt;, a Raspberry Pi camera with cat facial detection to see when her cat Jamie is eating while being away from home.&lt;/p&gt;
+&lt;p&gt;If you’re interested in seeing Tomomi speak, get registered for &lt;a href=&quot;http://nodepdx.org/&quot; target=&quot;_blank&quot;&gt;Node PDX before the tickets are gone&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
   </channel>
 </rss>

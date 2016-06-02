@@ -11,9 +11,9 @@ Tomomi will be presenting "<strong>From Software to Hardware: How Do I Track My 
 
 <span class="more"></span>
 
-<img class="image" src="jamie-detected.png" style="float: right;margin-left: 15px;margin-top: 15px;" />
+<img src="jamie-detected.png" class="image float-right" />
 
-<img class=" alignright" title="Jamie detected by KittyDar" src="https://raw.githubusercontent.com/girliemac/RPi-KittyCam/master/photo/jamie-detected.png" alt="Jamie detected" />In the era of Internet of Things, connecting things to the mobile devices and web is becoming ubiquitous. You can control room light using your mobile phone. You can monitor your heart rate and weight on browser. JavaScript engineers like you already have skills to prototype ideas to build software, so why not hardware too?
+In the era of Internet of Things, connecting things to the mobile devices and web is becoming ubiquitous. You can control room light using your mobile phone. You can monitor your heart rate and weight on browser. JavaScript engineers like you already have skills to prototype ideas to build software, so why not hardware too?
 
 Tomomi, a front-end engineer with no background in electrical engineering, tells how she got started with hardware hacking with JavaScript, also talks about her recent fun project, <a href="https://github.com/girliemac/RPi-KittyCam">KittyCam</a>, a Raspberry Pi camera with cat facial detection to see when her cat Jamie is eating while being away from home.
 
