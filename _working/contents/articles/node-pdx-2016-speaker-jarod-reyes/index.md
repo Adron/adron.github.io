@@ -1,5 +1,5 @@
 ---
-title: Code First Docs How we Threw Out The Book & Put Code First With Twilio Documentation by Jarod Reyes
+title: Code First Docs How we Threw Out The Book & Put Code First With Twilio Documentation by Jarod Reyes @
 author: Adron Hall
 date: 2016-06-02
 template: article.jade

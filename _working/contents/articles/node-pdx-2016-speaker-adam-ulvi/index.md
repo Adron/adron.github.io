@@ -1,5 +1,5 @@
 ---
-title: Ops for Devs by Adam Ulvi
+title: Ops for Devs by Adam Ulvi @
 author: Adron Hall
 date: 2016-06-01
 template: article.jade

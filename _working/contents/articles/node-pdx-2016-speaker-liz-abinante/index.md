@@ -1,9 +1,10 @@
 ---
-title: Node PDX 2016 Speaker Liz Abinante
+title: A Foolish Quest: Creating Knitting Patterns Using JavaScript by Liz Abinante @
 author: Adron Hall
 date: 2016-05-24
 template: article.jade
 ---
+![Node PDX 2016](nodepdx-2016-logo.png)
 
 <img src="http://blog.adron.me/articles/node-pdx-2016-speaker-liz-abinante/knitting.png" class="image float-left" />Liz Abinante lives in Portland, Oregon and works as a Senior Software Engineer at <a href="https://newrelic.com/">New Relic</a>. She is infectiously enthusiastic about web development, teaching, learning, and feminism. She used to write JavaScript, then walked up to the wrong desk one day and now she writes some Java too. She enjoys speaking at conferences, knitting, sewing, and a hacking away on interesting problems. She swears she's a lot more interesting than this bio makes her sound. She's often been compared to cartoon characters due to her enormous personality and penchant for singing and/or dancing her way through life.
 

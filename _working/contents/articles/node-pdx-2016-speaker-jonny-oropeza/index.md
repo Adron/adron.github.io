@@ -1,5 +1,5 @@
 ---
-title: Node PDX 2016 Speaker Jonny Oropeza
+title: Isomorphic Business Logic (Or How to convince even the most die-hard C#/Java/Rails-on-the-Backend boss that you need to run a node server) Jonny Oropeza @
 author: Adron Hall
 date: 2016-05-19
 template: article.jade
