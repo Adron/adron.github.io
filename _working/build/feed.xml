@@ -55,8 +55,9 @@
       <pubDate>Tue, 24 May 2016 17:00:00 -0700</pubDate>
       <guid isPermaLink="true">http://adron.github.io/articles/speakers-and-more-for-node-pdx-2016/</guid>
       <author></author>
-      <description>&lt;p&gt;Spock and I are excited to announce our first set of speakers for &lt;a href=&quot;http://nodepdx.org/&quot; target=&quot;_blank&quot;&gt;Node PDX 2016&lt;/a&gt;, which you’ve seen slowly coming out each day! I hope you’re ready and have your &lt;a href=&quot;http://nodepdx.org/#tickets&quot; target=&quot;_blank&quot;&gt;tickets&lt;/a&gt; bought already. So far I’ve introduced &lt;a href=&quot;https://compositecode.com/2016/05/18/node-pdx-2016-speaker-tomomi-imura-aka-girlie_mac/&quot;&gt;Tomomi&lt;/a&gt;, &lt;a href=&quot;https://compositecode.com/2016/05/19/node-pdx-2016-speaker-jonny-oropeza/&quot; target=&quot;_blank&quot;&gt;Jon&lt;/a&gt;, and &lt;a href=&quot;https://compositecode.com/2016/05/24/node-pdx-2016-speaker-liz-abinante/&quot; target=&quot;_blank&quot;&gt;Liz&lt;/a&gt;. Today I’ll introduce Adam Ulvi a bit later.&lt;/p&gt;
+      <description>&lt;p&gt;Spock and I are excited to announce our first set of speakers for &lt;a href=&quot;http://nodepdx.org/&quot; target=&quot;_blank&quot;&gt;Node PDX 2016&lt;/a&gt;, which you’ve seen slowly coming out each day! I hope you’re ready and have your &lt;a href=&quot;http://nodepdx.org/#tickets&quot; target=&quot;_blank&quot;&gt;tickets&lt;/a&gt; bought already. So far I’ve introduced &lt;a href=&quot;http://blog.adron.me/articles/node-pdx-2016-speaker-tomomi-imura/&quot;&gt;Tomomi&lt;/a&gt;, &lt;a href=&quot;http://blog.adron.me/articles/node-pdx-2016-speaker-jonny-oropeza/&quot;&gt;Jon&lt;/a&gt;, and &lt;a href=&quot;http://adron.github.io/articles/speakers-and-more-for-node-pdx-2016/&quot;&gt;Liz&lt;/a&gt;. Today I’ll introduce Adam Ulvi a bit later.&lt;/p&gt;
 &lt;p&gt;We’ve also announced the &lt;a href=&quot;http://nodepdx.org/lagniappe.html#geektrain&quot; target=&quot;_blank&quot;&gt;Geek Train for Node PDX&lt;/a&gt; and the &lt;a href=&quot;http://nodepdx.org/lagniappe.html#bikes&quot; target=&quot;_blank&quot;&gt;Node PDX Bike Ride&lt;/a&gt;. A little &lt;a href=&quot;http://www.merriam-webster.com/dictionary/lagniappe&quot; target=&quot;_blank&quot;&gt;lagniappe&lt;/a&gt; if you will.  ;)&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://blog.adron.me/articles/node-pdx-2016-speaker-tomomi-imura/&quot;&gt;Tomomi&lt;/a&gt;, &lt;a href=&quot;http://blog.adron.me/articles/node-pdx-2016-speaker-jonny-oropeza/&quot;&gt;Jon&lt;/a&gt;, and &lt;a href=&quot;http://adron.github.io/articles/speakers-and-more-for-node-pdx-2016/&quot;&gt;Liz&lt;/a&gt; &lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;/articles/speakers-and-more-for-node-pdx-2016/spock-horns.jpg&quot; alt=&quot;Spock&quot;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;h2&gt;&lt;a href=&quot;http://nodepdx.org/&quot; target=&quot;_blank&quot;&gt;Node PDX 2016&lt;/a&gt;&lt;/h2&gt;
@@ -67,6 +68,19 @@
 
 &lt;p&gt;For .NET Fringe we’ll have the announcements for speakers coming very soon. We’ve taken a slightly different approach with a voting mechanism among organizers which we’ll be wrapping up and then will hurry up with the announcement, I know everybody needs to know ASAP!&lt;/p&gt;
 &lt;p&gt;We’ll also be setting up a Geek Train &amp;amp; .NET Fringe bike ride too, we’ve just got to get everything posted. So keep an eye on the .NET Fringe site or &lt;a href=&quot;http://dotnetfringe.org/#signup&quot; target=&quot;_blank&quot;&gt;subscribe to updates&lt;/a&gt; and it’ll have updates popping up real soon.&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>node pdx 2016 speaker liz abinante</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-liz-abinante/</link>
+      <pubDate>Mon, 23 May 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-liz-abinante/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;img src=&quot;http://blog.adron.me/articles/node-pdx-2016-speaker-liz-abinante/knitting.png&quot; class=&quot;image float-left&quot; /&gt;Liz Abinante lives in Portland, Oregon and works as a Senior Software Engineer at &lt;a href=&quot;https://newrelic.com/&quot;&gt;New Relic&lt;/a&gt;. She is infectiously enthusiastic about web development, teaching, learning, and feminism. She used to write JavaScript, then walked up to the wrong desk one day and now she writes some Java too. She enjoys speaking at conferences, knitting, sewing, and a hacking away on interesting problems. She swears she’s a lot more interesting than this bio makes her sound. She’s often been compared to cartoon characters due to her enormous personality and penchant for singing and/or dancing her way through life.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;liz.jpg&quot; class=&quot;image float-right&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Liz’s presentation is &lt;strong&gt;&lt;em&gt;A Foolish Quest: Creating Knitting Patterns Using JavaScript&lt;/em&gt;&lt;/strong&gt;. The talk will show taking something real-world and math-based, like knitting, and turning into a program is actually super easy (no one is surprised here). But! What happens when you combine that with best practices and expected conventions, along with industry-wide standards for design and presentation? Things get a lot more complicated than just crunching numbers, especially when your output will result in lots of manual hours for people creating a real object. This is the story of how Liz built a customizable knitting pattern generator in JavaScript (after she’d built it in Ruby first, of course), and the lessons learned when you try and do math for more than just math’s sake.&lt;/p&gt;
+&lt;p&gt;Join the Node PDX Conference by &lt;a href=&quot;http://nodepdx.org/#tickets&quot; target=&quot;_blank&quot;&gt;buying a ticket&lt;/a&gt; and come check out Liz’s presentation!&lt;/p&gt;
 </description>
     </item>
     <item>
