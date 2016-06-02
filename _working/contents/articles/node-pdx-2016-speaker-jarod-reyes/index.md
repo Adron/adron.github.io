@@ -19,5 +19,5 @@ Jarod describes Code First Docs as
 
 > What is the journey of the modern developer? How does documentation fit into their flow? Are there ways to create documentation that enables developers to work smarter, as opposed to interrupting their day? We'll discuss these questions and more as I share how we got to the realization that we needed a documentation revolution; this is the story of how we raised up code to be the supreme leader of documentation."
 
-* Twitter: [@jreyesdesign](https://twitter.com/jreyesdesign)
+* Twitter: [@jreyesdesign](https://twitter.com/jreyesdev)
 * Github: [github.com/jarodreyes](https://github.com/jarodreyes)

@@ -5,14 +5,22 @@ blogtitle=$1
 # Format 2013-04-30
 blogdate=$2
 
-echo "$blogtitle"
+if [ ! $# == 2 ]
+    then
+    echo "There should be two arguments."
+    exit 1
+fi
 
+echo "Creating $blogtitle."
 mkdir "$blogtitle"
 cd "$blogtitle"
 
+# Takes out the dashes. Still needs title cased.
+cleanedTitle=${blogtitle//[-]/' '}
+
 cat <<EOT >> index.md
 ---
-title: $blogtitle
+title: $cleanedTitle
 author: Adron Hall
 date: $blogdate
 template: article.jade
