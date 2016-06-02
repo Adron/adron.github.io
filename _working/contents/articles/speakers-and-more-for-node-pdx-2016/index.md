@@ -3,7 +3,6 @@ title: Speakers and More For Node PDX 2016
 author: Adron Hall
 date: 2016-05-25
 template: article.jade
-image: spock-horns.jpg
 ---
 
 Spock and I are excited to announce our first set of speakers for <a href="http://nodepdx.org/" target="_blank">Node PDX 2016</a>, which you've seen slowly coming out each day! I hope you're ready and have your <a href="http://nodepdx.org/#tickets" target="_blank">tickets</a> bought already. So far I've introduced <a href="https://compositecode.com/2016/05/18/node-pdx-2016-speaker-tomomi-imura-aka-girlie_mac/">Tomomi</a>, <a href="https://compositecode.com/2016/05/19/node-pdx-2016-speaker-jonny-oropeza/" target="_blank">Jon</a>, and <a href="https://compositecode.com/2016/05/24/node-pdx-2016-speaker-liz-abinante/" target="_blank">Liz</a>. Today I'll introduce Adam Ulvi a bit later.
