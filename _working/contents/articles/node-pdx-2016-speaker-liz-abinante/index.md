@@ -1,5 +1,5 @@
 ---
-title: A Foolish Quest: Creating Knitting Patterns Using JavaScript by Liz Abinante @
+title: A Foolish Quest Creating Knitting Patterns Using JavaScript by Liz Abinante @
 author: Adron Hall
 date: 2016-05-24
 template: article.jade

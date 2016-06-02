@@ -9,7 +9,7 @@
     <generator>Wintersmith - https://github.com/jnordberg/wintersmith</generator>
     <language>en</language>
     <item>
-      <title>Code First Docs How we Threw Out The Book &amp; Put Code First With Twilio Documentation by Jarod Reyes</title>
+      <title>Code First Docs How we Threw Out The Book &amp; Put Code First With Twilio Documentation by Jarod Reyes @</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-jarod-reyes/</link>
       <pubDate>Wed, 01 Jun 2016 17:00:00 -0700</pubDate>
       <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-jarod-reyes/</guid>
@@ -30,7 +30,7 @@
 </description>
     </item>
     <item>
-      <title>Ops for Devs by Adam Ulvi</title>
+      <title>Ops for Devs by Adam Ulvi @</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-adam-ulvi/</link>
       <pubDate>Tue, 31 May 2016 17:00:00 -0700</pubDate>
       <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-adam-ulvi/</guid>
@@ -71,12 +71,13 @@
 </description>
     </item>
     <item>
-      <title>Node PDX 2016 Speaker Liz Abinante</title>
+      <title>A Foolish Quest Creating Knitting Patterns Using JavaScript by Liz Abinante @</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-liz-abinante/</link>
       <pubDate>Mon, 23 May 2016 17:00:00 -0700</pubDate>
       <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-liz-abinante/</guid>
       <author></author>
-      <description>&lt;p&gt;&lt;img src=&quot;http://blog.adron.me/articles/node-pdx-2016-speaker-liz-abinante/knitting.png&quot; class=&quot;image float-left&quot; /&gt;Liz Abinante lives in Portland, Oregon and works as a Senior Software Engineer at &lt;a href=&quot;https://newrelic.com/&quot;&gt;New Relic&lt;/a&gt;. She is infectiously enthusiastic about web development, teaching, learning, and feminism. She used to write JavaScript, then walked up to the wrong desk one day and now she writes some Java too. She enjoys speaking at conferences, knitting, sewing, and a hacking away on interesting problems. She swears she’s a lot more interesting than this bio makes her sound. She’s often been compared to cartoon characters due to her enormous personality and penchant for singing and/or dancing her way through life.&lt;/p&gt;
+      <description>&lt;p&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-liz-abinante/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://blog.adron.me/articles/node-pdx-2016-speaker-liz-abinante/knitting.png&quot; class=&quot;image float-left&quot; /&gt;Liz Abinante lives in Portland, Oregon and works as a Senior Software Engineer at &lt;a href=&quot;https://newrelic.com/&quot;&gt;New Relic&lt;/a&gt;. She is infectiously enthusiastic about web development, teaching, learning, and feminism. She used to write JavaScript, then walked up to the wrong desk one day and now she writes some Java too. She enjoys speaking at conferences, knitting, sewing, and a hacking away on interesting problems. She swears she’s a lot more interesting than this bio makes her sound. She’s often been compared to cartoon characters due to her enormous personality and penchant for singing and/or dancing her way through life.&lt;/p&gt;
 &lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;liz.jpg&quot; class=&quot;image float-right&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;Liz’s presentation is &lt;strong&gt;&lt;em&gt;A Foolish Quest: Creating Knitting Patterns Using JavaScript&lt;/em&gt;&lt;/strong&gt;. The talk will show taking something real-world and math-based, like knitting, and turning into a program is actually super easy (no one is surprised here). But! What happens when you combine that with best practices and expected conventions, along with industry-wide standards for design and presentation? Things get a lot more complicated than just crunching numbers, especially when your output will result in lots of manual hours for people creating a real object. This is the story of how Liz built a customizable knitting pattern generator in JavaScript (after she’d built it in Ruby first, of course), and the lessons learned when you try and do math for more than just math’s sake.&lt;/p&gt;
@@ -84,7 +85,7 @@
 </description>
     </item>
     <item>
-      <title>Node PDX 2016 Speaker Jonny Oropeza</title>
+      <title>Isomorphic Business Logic (Or How to convince even the most die-hard C#/Java/Rails-on-the-Backend boss that you need to run a node server) Jonny Oropeza @</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-jonny-oropeza/</link>
       <pubDate>Wed, 18 May 2016 17:00:00 -0700</pubDate>
       <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-jonny-oropeza/</guid>
@@ -108,7 +109,7 @@
 </description>
     </item>
     <item>
-      <title>Node PDX 2016 Speaker Tomomi Imura</title>
+      <title>From Software to Hardware How Do I Track My Cat with JavaScript Tomomi Imura @</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-tomomi-imura/</link>
       <pubDate>Tue, 17 May 2016 17:00:00 -0700</pubDate>
       <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-tomomi-imura/</guid>
