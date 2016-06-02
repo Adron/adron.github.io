@@ -15,6 +15,22 @@
 	        transition: @values;
 }
 
+.placeholder(@rules) {
+
+    &::-webkit-input-placeholder {
+        @rules();
+    }
+    &:-moz-placeholder {
+        @rules();
+    }
+    &::-moz-placeholder {
+        @rules();
+    }
+    &:-ms-input-placeholder {
+        @rules();
+    }
+}
+
 
 .fz( @value: @font-size_base, @context: @font-size_base ) {
 	font-size: (@value / @context) + 0em;

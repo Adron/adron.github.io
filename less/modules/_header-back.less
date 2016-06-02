@@ -1,5 +1,3 @@
-@import (less) '../libs/bigvideo.css';
-
 .header-back{
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -55,6 +53,26 @@
 	background-image: url(../img/backgrounds/5.jpg);
 }
 
+.header-back-bg-web{
+    background-image: url(../img/backgrounds/8.jpg);
+}
+
+.header-back-bg-app{
+    background-image: url(../img/backgrounds/9.jpg);
+}
+
+.header-back-bg-soft{
+    background-image: url(../img/backgrounds/10.png);
+    background-position: center bottom;
+}
+.header-back-video-trigger-bg {
+    background-image: url(../img/backgrounds/11.jpg);
+    background-position: center bottom;
+}
+.header-back-bg-subscribe {
+    background-image: url(../img/backgrounds/12.jpg);
+}
+
 .header-back-buttons{
 	.button{
 		margin-right: 20px;
@@ -87,7 +105,6 @@
 }
 
 .header-back-video{
-	background-color: #000;
 
 	.header-back-container{
 		position: relative;
@@ -100,8 +117,20 @@
 	}
 }
 
-#big-video-wrap{
-	position: absolute !important;
+
+.header-back-web{
+	padding: 170px 0 0;
+	margin-bottom: 200px;
+}
+
+.header-back-app{
+	padding: 190px 0 100px;
+	margin-bottom: 50px;
+}
+
+.header-back-soft{
+	padding: 200px 0 100px;
+	margin-bottom: 200px;
 }
 
 .keyframes(next-section; {
@@ -118,6 +147,23 @@
 	}
 });
 
+.media-mixin(@break) when (@break = @break-large-x){
+	.header-back-soft {
+	    margin-bottom: 150px;
+	}
+}
+.media-mixin(@break) when (@break = @break-medium){
+	.header-back-soft {
+	    margin-bottom: 130px;
+	}
+}
+
+.media-mixin(@break) when (@break = @break-small){
+	.header-back-soft {
+	    margin-bottom: 80px;
+	}
+}
+
 .media-mixin(@break) when (@break = @break-small-x) {
 	.header-back-large{
 		padding: 150px 0;
@@ -128,5 +174,8 @@
 			width: 80%;
 			margin: 0 auto 20px auto;
 		}
+	}
+	.header-back-soft {
+	    margin-bottom: 0px;
 	}
 }

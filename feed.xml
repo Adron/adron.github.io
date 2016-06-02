@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:wfw="http://wellformedweb.org/CommentAPI/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Composite Code</title>
     <atom:link href="http://adron.github.io/feed.xml" rel="self" type="application/rss+xml"></atom:link>
@@ -14,9 +14,7 @@
       <pubDate>Mon, 29 Apr 2013 17:00:00 -0700</pubDate>
       <guid isPermaLink="true">http://adron.github.io/articles/hello-world/</guid>
       <author></author>
-        <description>&lt;p&gt;Welcome to your new blog! This is the default blog template with RSS, pagination and an
-            archive. There are other templates available — run &lt;code&gt;wintersmith new --help&lt;/code&gt; to list
-            them.&lt;/p&gt;
+      <description>&lt;p&gt;Welcome to your new blog! This is the default blog template with RSS, pagination and an archive. There are other templates available – run &lt;code&gt;wintersmith new --help&lt;/code&gt; to list them.&lt;/p&gt;
 &lt;h2 id=&quot;_repeat-after-me-_-this-is-my-blog-there-are-many-like-it-but-this-one-is-mine-my-blog-is-my-best-friend-it-is-my-life-i-must-master-it-as-i-must-master-my-life-my-blog-without-me-is-useless-without-my-blog-i-am-useless-&quot;&gt;&lt;em&gt;Repeat after me:&lt;/em&gt; This is my blog. There are many like it, but this one is mine. My blog is my best friend. It is my life. I must master it as I must master my life. My blog, without me, is useless. Without my blog, I am useless.&lt;/h2&gt;
 &lt;p&gt;Good, now, the directory structure of your blog is as follows:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;├── config.json               &amp;lt;- site configuration
@@ -55,15 +53,15 @@
     └── articles.coffee       &amp;lt;- view that lists articles
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Articles are sorted by date and 3 are shown per page, you can configure this and more in config.json. Check paginator.coffee for all options related to pagination, most plugins also have their own options.&lt;/p&gt;
 &lt;h3 id=&quot;a-typical-article&quot;&gt;A typical article&lt;/h3&gt;
-&lt;pre&gt;&lt;code class=&quot;lang-markdown&quot;&gt;&lt;span class=&quot;horizontal_rule&quot;&gt;---&lt;/span&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-markdown&quot;&gt;---
 title: Hear me blog
 author: johndoe
-&lt;span class=&quot;header&quot;&gt;date: 2012-12-12 12:12
+&lt;span class=&quot;section&quot;&gt;date: 2012-12-12 12:12
 ---&lt;/span&gt;
 
 This will be shown as the article excerpt.
 
-&lt;span class=&quot;header&quot;&gt;## A h2, hr or &amp;lt;span class=&quot;more&quot;&amp;gt; marks where the intro cuts off&lt;/span&gt;
+&lt;span class=&quot;section&quot;&gt;## A h2, hr or &amp;lt;span class=&quot;more&quot;&amp;gt; marks where the intro cuts off&lt;/span&gt;
 
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -84,8 +82,8 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
       <pubDate>Sun, 31 Mar 2013 17:00:00 -0700</pubDate>
       <guid isPermaLink="true">http://adron.github.io/articles/red-herring/</guid>
       <author></author>
-        <description>&lt;p&gt;A long time ago, when the world was young — someone put some food on their tongue.
-            They tasted the food, and thought it was nice. Most fruit liked it — but banana’s thought twice.&lt;/p&gt;
+      <description>&lt;p&gt;A long time ago, when the world was young – someone put some food on their tongue.
+They tasted the food, and thought it was nice. Most fruit liked it – but banana’s thought twice.&lt;/p&gt;
 &lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;They held a meeting at quarter past eight.
 Whilst the human’s were getting home late.
@@ -116,9 +114,7 @@ Because, believe it or not, a banana is not a friend.&lt;/p&gt;
 The theme used is tomorrow, you can find more themes &lt;a href=&quot;http://jmblog.github.io/color-themes-for-highlightjs/&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;h3 id=&quot;javascript&quot;&gt;JavaScript&lt;/h3&gt;
-          &lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span
-          class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;getRandomNumber&lt;/span&gt;&lt;span
-          class=&quot;params&quot;&gt;()&lt;/span&gt; {&lt;/span&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;getRandomNumber&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;{
     &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;4&lt;/span&gt;; &lt;span class=&quot;comment&quot;&gt;// chosen by fair dice roll.&lt;/span&gt;
               &lt;span class=&quot;comment&quot;&gt;// guaranteed to be random.&lt;/span&gt;
 }
@@ -126,43 +122,42 @@ The theme used is tomorrow, you can find more themes &lt;a href=&quot;http://jmb
 &lt;h3 id=&quot;coffeescript&quot;&gt;CoffeeScript&lt;/h3&gt;
 &lt;pre&gt;&lt;code class=&quot;lang-coffeescript&quot;&gt;&lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Animal&lt;/span&gt;&lt;/span&gt;
   &lt;span class=&quot;comment&quot;&gt;### Intellegent design ###&lt;/span&gt;
-          &lt;span class=&quot;attribute&quot;&gt;getDNA&lt;/span&gt;:&lt;span class=&quot;function&quot;&gt; -&amp;gt;&lt;/span&gt;
+  getDNA: &lt;span class=&quot;function&quot;&gt;-&amp;gt;&lt;/span&gt;
     &lt;span class=&quot;built_in&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;'sequencing...'&lt;/span&gt;
     &lt;span class=&quot;keyword&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt;
       sleep &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;
 
 &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Monkey&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Animal&lt;/span&gt;&lt;/span&gt;
-          &lt;span class=&quot;attribute&quot;&gt;speak&lt;/span&gt;:&lt;span class=&quot;function&quot;&gt; -&amp;gt;&lt;/span&gt;
+  speak: &lt;span class=&quot;function&quot;&gt;-&amp;gt;&lt;/span&gt;
     &lt;span class=&quot;built_in&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;'ah ah ah'&lt;/span&gt;
 
 &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Human&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Monkey&lt;/span&gt;&lt;/span&gt;
-          &lt;span class=&quot;attribute&quot;&gt;speak&lt;/span&gt;:&lt;span class=&quot;function&quot;&gt; -&amp;gt;&lt;/span&gt;
+  speak: &lt;span class=&quot;function&quot;&gt;-&amp;gt;&lt;/span&gt;
     &lt;span class=&quot;built_in&quot;&gt;print&lt;/span&gt; [&lt;span class=&quot;string&quot;&gt;'yolo'&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;unless&lt;/span&gt; i % &lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;] + [&lt;span class=&quot;string&quot;&gt;'swag'&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;unless&lt;/span&gt; i % &lt;span class=&quot;number&quot;&gt;5&lt;/span&gt;] &lt;span class=&quot;keyword&quot;&gt;or&lt;/span&gt; i &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; i &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; [&lt;span class=&quot;number&quot;&gt;1.&lt;/span&gt;&lt;span class=&quot;number&quot;&gt;.100&lt;/span&gt;]
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&quot;c&quot;&gt;C&lt;/h3&gt;
-          &lt;pre&gt;&lt;code class=&quot;lang-c&quot;&gt;&lt;span class=&quot;preprocessor&quot;&gt;#include &amp;lt;stdio.h&amp;gt;&lt;/span&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-c&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#&lt;span class=&quot;meta-keyword&quot;&gt;include&lt;/span&gt; &lt;span class=&quot;meta-string&quot;&gt;&amp;lt;stdio.h&amp;gt;&lt;/span&gt;&lt;/span&gt;
 
-          &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; main(&lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt;)
-          {
+&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(&lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt;)&lt;/span&gt;
+&lt;/span&gt;{
   &lt;span class=&quot;built_in&quot;&gt;printf&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&quot;Hello world\n&quot;&lt;/span&gt;);
   &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;
 }
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&quot;c-&quot;&gt;C++&lt;/h3&gt;
-          &lt;pre&gt;&lt;code class=&quot;lang-cpp&quot;&gt;&lt;span class=&quot;preprocessor&quot;&gt;#include &amp;lt;iostream&amp;gt;&lt;/span&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-cpp&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#&lt;span class=&quot;meta-keyword&quot;&gt;include&lt;/span&gt; &lt;span class=&quot;meta-string&quot;&gt;&amp;lt;iostream&amp;gt;&lt;/span&gt;&lt;/span&gt;
 
-          &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; main()
-          {
-  &lt;span class=&quot;built_in&quot;&gt;std&lt;/span&gt;::&lt;span class=&quot;built_in&quot;&gt;cout&lt;/span&gt; &amp;lt;&amp;lt; &lt;span class=&quot;string&quot;&gt;&quot;Hello World!&quot;&lt;/span&gt; &amp;lt;&amp;lt; &lt;span class=&quot;built_in&quot;&gt;std&lt;/span&gt;::endl;
+&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt;
+&lt;/span&gt;{
+  &lt;span class=&quot;built_in&quot;&gt;std&lt;/span&gt;::&lt;span class=&quot;built_in&quot;&gt;cout&lt;/span&gt; &amp;lt;&amp;lt; &lt;span class=&quot;string&quot;&gt;&quot;Hello World!&quot;&lt;/span&gt; &amp;lt;&amp;lt; &lt;span class=&quot;built_in&quot;&gt;std&lt;/span&gt;::&lt;span class=&quot;built_in&quot;&gt;endl&lt;/span&gt;;
   &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;
 }
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&quot;c-sharp&quot;&gt;C-sharp&lt;/h3&gt;
-          &lt;pre&gt;&lt;code class=&quot;lang-cs&quot;&gt;class ExampleClass
+&lt;pre&gt;&lt;code class=&quot;lang-cs&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;ExampleClass&lt;/span&gt;
 {
-          &lt;span class=&quot;keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt;
-          Main()
-          {
+    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Main&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;)
+    &lt;/span&gt;{
         System.Console.WriteLine(&lt;span class=&quot;string&quot;&gt;&quot;Hello, world!&quot;&lt;/span&gt;);
     }
 }
@@ -180,18 +175,14 @@ The theme used is tomorrow, you can find more themes &lt;a href=&quot;http://jmb
 }
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&quot;java&quot;&gt;Java&lt;/h3&gt;
-          &lt;pre&gt;&lt;code class=&quot;lang-java&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt;
-          &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;HelloWorld&lt;/span&gt;
-          {&lt;/span&gt;
-          &lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;static&lt;/span&gt;
-          &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;main&lt;/span&gt;(String[]
-          args) {
+&lt;pre&gt;&lt;code class=&quot;lang-java&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;HelloWorld&lt;/span&gt; &lt;/span&gt;{
+   &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(String[] args)&lt;/span&gt; &lt;/span&gt;{
        System.out.println(&lt;span class=&quot;string&quot;&gt;&quot;Hello world!&quot;&lt;/span&gt;);
    }
 }
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&quot;objectivec&quot;&gt;ObjectiveC&lt;/h3&gt;
-&lt;pre&gt;&lt;code class=&quot;lang-objectivec&quot;&gt;&lt;span class=&quot;preprocessor&quot;&gt;#import &lt;span class=&quot;title&quot;&gt;&amp;lt;stdio.h&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-objectivec&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#import &lt;span class=&quot;meta-string&quot;&gt;&amp;lt;stdio.h&amp;gt;&lt;/span&gt;&lt;/span&gt;
 
 &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; main(&lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt;)
 {
@@ -200,7 +191,7 @@ The theme used is tomorrow, you can find more themes &lt;a href=&quot;http://jmb
 }
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&quot;php&quot;&gt;PHP&lt;/h3&gt;
-&lt;pre&gt;&lt;code class=&quot;lang-php&quot;&gt;&lt;span class=&quot;preprocessor&quot;&gt;&amp;lt;?php&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;'Hello, world'&lt;/span&gt;; &lt;span class=&quot;preprocessor&quot;&gt;?&amp;gt;&lt;/span&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-php&quot;&gt;&lt;span class=&quot;meta&quot;&gt;&amp;lt;?php&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;'Hello, world'&lt;/span&gt;; &lt;span class=&quot;meta&quot;&gt;?&amp;gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&quot;python&quot;&gt;Python&lt;/h3&gt;
 &lt;pre&gt;&lt;code class=&quot;lang-python&quot;&gt;print(&lt;span class=&quot;string&quot;&gt;&quot;Hello World&quot;&lt;/span&gt;)
@@ -221,34 +212,31 @@ Did you know that 9 out of 10 bloggers prefer to write in markdown?&lt;/p&gt;
 &lt;hr&gt;
 &lt;h1 id=&quot;markdown-syntax&quot;&gt;Markdown: Syntax&lt;/h1&gt;
 &lt;ul&gt;
-          &lt;li&gt;&lt;a href=&quot;http://adron.github.io/articles/markdown-syntax/#overview&quot;&gt;Overview&lt;/a&gt;&lt;ul&gt;
-          &lt;li&gt;&lt;a href=&quot;http://adron.github.io/articles/markdown-syntax/#philosophy&quot;&gt;Philosophy&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;http://adron.github.io/articles/markdown-syntax/#html&quot;&gt;Inline HTML&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;http://adron.github.io/articles/markdown-syntax/#autoescape&quot;&gt;Automatic
-          Escaping for Special Characters&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#overview&quot;&gt;Overview&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#philosophy&quot;&gt;Philosophy&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#html&quot;&gt;Inline HTML&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#autoescape&quot;&gt;Automatic Escaping for Special Characters&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;http://adron.github.io/articles/markdown-syntax/#block&quot;&gt;Block Elements&lt;/a&gt;&lt;ul&gt;
-          &lt;li&gt;&lt;a href=&quot;http://adron.github.io/articles/markdown-syntax/#p&quot;&gt;Paragraphs and Line
-          Breaks&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;http://adron.github.io/articles/markdown-syntax/#header&quot;&gt;Headers&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;http://adron.github.io/articles/markdown-syntax/#blockquote&quot;&gt;Blockquotes&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;http://adron.github.io/articles/markdown-syntax/#list&quot;&gt;Lists&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;http://adron.github.io/articles/markdown-syntax/#precode&quot;&gt;Code Blocks&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;http://adron.github.io/articles/markdown-syntax/#hr&quot;&gt;Horizontal Rules&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#block&quot;&gt;Block Elements&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#p&quot;&gt;Paragraphs and Line Breaks&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#header&quot;&gt;Headers&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#blockquote&quot;&gt;Blockquotes&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#list&quot;&gt;Lists&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#precode&quot;&gt;Code Blocks&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#hr&quot;&gt;Horizontal Rules&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;http://adron.github.io/articles/markdown-syntax/#span&quot;&gt;Span Elements&lt;/a&gt;&lt;ul&gt;
-          &lt;li&gt;&lt;a href=&quot;http://adron.github.io/articles/markdown-syntax/#link&quot;&gt;Links&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;http://adron.github.io/articles/markdown-syntax/#em&quot;&gt;Emphasis&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;http://adron.github.io/articles/markdown-syntax/#code&quot;&gt;Code&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;http://adron.github.io/articles/markdown-syntax/#img&quot;&gt;Images&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#span&quot;&gt;Span Elements&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#link&quot;&gt;Links&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#em&quot;&gt;Emphasis&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#code&quot;&gt;Code&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#img&quot;&gt;Images&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;http://adron.github.io/articles/markdown-syntax/#misc&quot;&gt;Miscellaneous&lt;/a&gt;&lt;ul&gt;
-          &lt;li&gt;&lt;a href=&quot;http://adron.github.io/articles/markdown-syntax/#backslash&quot;&gt;Backslash
-          Escapes&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;http://adron.github.io/articles/markdown-syntax/#autolink&quot;&gt;Automatic Links&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#misc&quot;&gt;Miscellaneous&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#backslash&quot;&gt;Backslash Escapes&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#autolink&quot;&gt;Automatic Links&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -264,11 +252,8 @@ can &lt;a href=&quot;http://adron.github.io/projects/markdown/syntax.text&quot;&
 document should be publishable as-is, as plain text, without looking
 like it’s been marked up with tags or formatting instructions. While
 Markdown’s syntax has been influenced by several existing text-to-HTML
-          filters — including &lt;a href=&quot;http://docutils.sourceforge.net/mirror/setext.html&quot;&gt;Setext&lt;/a&gt;,
-          &lt;a href=&quot;http://www.aaronsw.com/2002/atx/&quot;&gt;atx&lt;/a&gt;, &lt;a href=&quot;http://textism.com/tools/textile/&quot;&gt;Textile&lt;/a&gt;,
-          &lt;a href=&quot;http://docutils.sourceforge.net/rst.html&quot;&gt;reStructuredText&lt;/a&gt;,
-          &lt;a href=&quot;http://www.triptico.com/software/grutatxt.html&quot;&gt;Grutatext&lt;/a&gt;, and &lt;a href=&quot;http://ettext.taint.org/doc/&quot;&gt;EtText&lt;/a&gt;
-          — the single biggest source of
+filters – including &lt;a href=&quot;http://docutils.sourceforge.net/mirror/setext.html&quot;&gt;Setext&lt;/a&gt;, &lt;a href=&quot;http://www.aaronsw.com/2002/atx/&quot;&gt;atx&lt;/a&gt;, &lt;a href=&quot;http://textism.com/tools/textile/&quot;&gt;Textile&lt;/a&gt;, &lt;a href=&quot;http://docutils.sourceforge.net/rst.html&quot;&gt;reStructuredText&lt;/a&gt;,
+&lt;a href=&quot;http://www.triptico.com/software/grutatxt.html&quot;&gt;Grutatext&lt;/a&gt;, and &lt;a href=&quot;http://ettext.taint.org/doc/&quot;&gt;EtText&lt;/a&gt; – the single biggest source of
 inspiration for Markdown’s syntax is the format of plain text email.&lt;/p&gt;
 &lt;p&gt;To this end, Markdown’s syntax is comprised entirely of punctuation
 characters, which punctuation characters have been carefully chosen so
@@ -292,9 +277,8 @@ can be conveyed in plain text.&lt;/p&gt;
 use HTML itself. There’s no need to preface it or delimit it to
 indicate that you’re switching from Markdown to HTML; you just use
 the tags.&lt;/p&gt;
-          &lt;p&gt;The only restrictions are that block-level HTML elements — e.g. &lt;code&gt;&amp;lt;div&amp;gt;&lt;/code&gt;,
-          &lt;code&gt;&amp;lt;table&amp;gt;&lt;/code&gt;, &lt;code&gt;&amp;lt;pre&amp;gt;&lt;/code&gt;, &lt;code&gt;&amp;lt;p&amp;gt;&lt;/code&gt;,
-          etc. — must be separated from surrounding
+&lt;p&gt;The only restrictions are that block-level HTML elements – e.g. &lt;code&gt;&amp;lt;div&amp;gt;&lt;/code&gt;,
+&lt;code&gt;&amp;lt;table&amp;gt;&lt;/code&gt;, &lt;code&gt;&amp;lt;pre&amp;gt;&lt;/code&gt;, &lt;code&gt;&amp;lt;p&amp;gt;&lt;/code&gt;, etc. – must be separated from surrounding
 content by blank lines, and the start and end tags of the block should
 not be indented with tabs or spaces. Markdown is smart enough not
 to add extra (unwanted) &lt;code&gt;&amp;lt;p&amp;gt;&lt;/code&gt; tags around HTML block-level tags.&lt;/p&gt;
@@ -311,8 +295,7 @@ This is another regular paragraph.
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Note that Markdown formatting syntax is not processed within block-level
 HTML tags. E.g., you can’t use Markdown-style &lt;code&gt;*emphasis*&lt;/code&gt; inside an
 HTML block.&lt;/p&gt;
-          &lt;p&gt;Span-level HTML tags — e.g. &lt;code&gt;&amp;lt;span&amp;gt;&lt;/code&gt;, &lt;code&gt;&amp;lt;cite&amp;gt;&lt;/code&gt;,
-          or &lt;code&gt;&amp;lt;del&amp;gt;&lt;/code&gt; — can be
+&lt;p&gt;Span-level HTML tags – e.g. &lt;code&gt;&amp;lt;span&amp;gt;&lt;/code&gt;, &lt;code&gt;&amp;lt;cite&amp;gt;&lt;/code&gt;, or &lt;code&gt;&amp;lt;del&amp;gt;&lt;/code&gt; – can be
 used anywhere in a Markdown paragraph, list item, or header. If you
 want, you can even use HTML tags instead of Markdown formatting; e.g. if
 you’d prefer to use HTML &lt;code&gt;&amp;lt;a&amp;gt;&lt;/code&gt; or &lt;code&gt;&amp;lt;img&amp;gt;&lt;/code&gt; tags instead of Markdown’s
@@ -345,8 +328,7 @@ into &lt;code&gt;&amp;amp;amp;&lt;/code&gt;.&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;AT&amp;amp;T
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Markdown will translate it to:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;AT&amp;amp;amp;T
-          &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Similarly, because Markdown supports &lt;a href=&quot;http://adron.github.io/articles/markdown-syntax/#html&quot;&gt;inline
-          HTML&lt;/a&gt;, if you use
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Similarly, because Markdown supports &lt;a href=&quot;#html&quot;&gt;inline HTML&lt;/a&gt;, if you use
 angle brackets as delimiters for HTML tags, Markdown will treat them as
 such. But if you write:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;4 &amp;lt; 5
@@ -365,7 +347,7 @@ and &lt;code&gt;&amp;amp;&lt;/code&gt; in your example code needs to be escaped.
 
 &lt;p&gt;A paragraph is simply one or more consecutive lines of text, separated
 by one or more blank lines. (A blank line is any line that looks like a
-          blank line — a line containing nothing but spaces or tabs is considered
+blank line – a line containing nothing but spaces or tabs is considered
 blank.) Normal paragraphs should not be indented with spaces or tabs.&lt;/p&gt;
 &lt;p&gt;The implication of the “one or more consecutive lines of text” rule is
 that Markdown supports “hard-wrapped” text paragraphs. This differs
@@ -376,9 +358,8 @@ character in a paragraph into a &lt;code&gt;&amp;lt;br /&amp;gt;&lt;/code&gt; ta
 end a line with two or more spaces, then type return.&lt;/p&gt;
 &lt;p&gt;Yes, this takes a tad more effort to create a &lt;code&gt;&amp;lt;br /&amp;gt;&lt;/code&gt;, but a simplistic
 “every line break is a &lt;code&gt;&amp;lt;br /&amp;gt;&lt;/code&gt;“ rule wouldn’t work for Markdown.
-          Markdown’s email-style &lt;a href=&quot;http://adron.github.io/articles/markdown-syntax/#blockquote&quot;&gt;blockquoting&lt;/a&gt;
-          and multi-paragraph &lt;a href=&quot;http://adron.github.io/articles/markdown-syntax/#list&quot;&gt;list items&lt;/a&gt;
-          work best — and look better — when you format them with hard breaks.&lt;/p&gt;
+Markdown’s email-style &lt;a href=&quot;#blockquote&quot;&gt;blockquoting&lt;/a&gt; and multi-paragraph &lt;a href=&quot;#list&quot;&gt;list items&lt;/a&gt;
+work best – and look better – when you format them with hard breaks.&lt;/p&gt;
 &lt;h3 id=&quot;header&quot;&gt;Headers&lt;/h3&gt;
 
 &lt;p&gt;Markdown supports two styles of headers, &lt;a href=&quot;http://docutils.sourceforge.net/mirror/setext.html&quot;&gt;Setext&lt;/a&gt; and &lt;a href=&quot;http://www.aaronsw.com/2002/atx/&quot;&gt;atx&lt;/a&gt;.&lt;/p&gt;
@@ -398,7 +379,7 @@ corresponding to header levels 1-6. For example:&lt;/p&gt;
 
 ###### This is an H6
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Optionally, you may “close” atx-style headers. This is purely
-          cosmetic — you can use this if you think it looks better. The
+cosmetic – you can use this if you think it looks better. The
 closing hashes don’t even need to match the number of hashes
 used to open the header. (The number of opening hashes
 determines the header level.) :&lt;/p&gt;
@@ -451,8 +432,8 @@ Quote Level from the Text menu.&lt;/p&gt;
 &lt;h3 id=&quot;list&quot;&gt;Lists&lt;/h3&gt;
 
 &lt;p&gt;Markdown supports ordered (numbered) and unordered (bulleted) lists.&lt;/p&gt;
-          &lt;p&gt;Unordered lists use asterisks, pluses, and hyphens — interchangably
-          — as list markers:&lt;/p&gt;
+&lt;p&gt;Unordered lists use asterisks, pluses, and hyphens – interchangably
+– as list markers:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;*   Red
 *   Green
 *   Blue
@@ -553,7 +534,7 @@ delimiters need to be indented:&lt;/p&gt;
     &amp;gt; This is a blockquote
     &amp;gt; inside a list item.
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;To put a code block within a list item, the code block needs
-          to be indented &lt;em&gt;twice&lt;/em&gt; — 8 spaces or two tabs:&lt;/p&gt;
+to be indented &lt;em&gt;twice&lt;/em&gt; – 8 spaces or two tabs:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;*   A list item with a code block:
 
         &amp;lt;code goes here&amp;gt;
@@ -579,7 +560,7 @@ block by at least 4 spaces or 1 tab. For example, given this input:&lt;/p&gt;
 
 &amp;lt;pre&amp;gt;&amp;lt;code&amp;gt;This is a code block.
 &amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt;
-          &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;One level of indentation — 4 spaces or 1 tab — is removed from each
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;One level of indentation – 4 spaces or 1 tab – is removed from each
 line of the code block. For example, this:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;Here is an example of AppleScript:
 
@@ -597,7 +578,7 @@ end tell
 (or the end of the article).&lt;/p&gt;
 &lt;p&gt;Within a code block, ampersands (&lt;code&gt;&amp;amp;&lt;/code&gt;) and angle brackets (&lt;code&gt;&amp;lt;&lt;/code&gt; and &lt;code&gt;&amp;gt;&lt;/code&gt;)
 are automatically converted into HTML entities. This makes it very
-          easy to include example HTML source code using Markdown — just paste
+easy to include example HTML source code using Markdown – just paste
 it and indent it, and Markdown will handle the hassle of encoding the
 ampersands and angle brackets. For example, this:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;    &amp;lt;div class=&amp;quot;footer&amp;quot;&amp;gt;
@@ -680,14 +661,14 @@ or tabs for padding, which tends to look better with longer URLs:&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Link definitions are only used for creating links during Markdown
 processing, and are stripped from your document in the HTML output.&lt;/p&gt;
 &lt;p&gt;Link definition names may consist of letters, numbers, spaces, and
-          punctuation — but they are &lt;em&gt;not&lt;/em&gt; case sensitive. E.g. these two
+punctuation – but they are &lt;em&gt;not&lt;/em&gt; case sensitive. E.g. these two
 links:&lt;/p&gt;
 &lt;p&gt;  [link text][a]
   [link text][A]&lt;/p&gt;
 &lt;p&gt;are equivalent.&lt;/p&gt;
 &lt;p&gt;The &lt;em&gt;implicit link name&lt;/em&gt; shortcut allows you to omit the name of the
 link, in which case the link text itself is used as the name.
-          Just use an empty set of square brackets — e.g., to link the word
+Just use an empty set of square brackets – e.g., to link the word
 “Google” to the google.com web site, you could simply write:&lt;/p&gt;
 &lt;p&gt;  &lt;a href=&quot;http://google.com/&quot;&gt;Google&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;And then define the link:&lt;/p&gt;
@@ -779,7 +760,7 @@ multiple backticks as the opening and closing delimiters:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;``There is a literal backtick (`) here.``
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;which will produce this:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;&amp;lt;p&amp;gt;&amp;lt;code&amp;gt;There is a literal backtick (`) here.&amp;lt;/code&amp;gt;&amp;lt;/p&amp;gt;
-          &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The backtick delimiters surrounding a code span may include spaces —
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The backtick delimiters surrounding a code span may include spaces –
 one after the opening, one before the closing. This allows you to place
 literal backtick characters at the beginning or end of a code span:&lt;/p&gt;
 &lt;p&gt;  A single backtick in a code span: &lt;code&gt;` &lt;/code&gt;&lt;/p&gt;
@@ -941,7 +922,7 @@ _   underscore
 &lt;p&gt;When they had been but a few days out they encountered a great storm which lasted so long that, by the time its fury abated, the Knight had determined to give up the hunt of the dragon. They were at last blown on shore, for navigation was primitive in those days. Worn out with his travels and anxiety, the fourth suitor gave himself up to rest. He had caught a very heavy cold, and had to go to bed with a swollen face.&lt;/p&gt;
 &lt;p&gt;The governor of the place, hearing of his plight, sent messengers with a letter inviting him to his house. While he was there thinking over all his troubles, his love for the Princess turned to anger, and he blamed her for all the hardships he had undergone. He thought that it was quite probable she had wished to kill him so that she might be rid of him, and in order to carry out her wish had sent him upon his impossible quest.&lt;/p&gt;
 &lt;p&gt;At this point all the servants he had sent out to find the jewel came to see him, and were surprised to find praise instead of displeasure awaiting them. Their master told them that he was heartily sick of adventure, and said that he never intended to go near the Princess’s house again in the future.&lt;/p&gt;
-          &lt;p&gt;Like all the rest, the Fifth Knight failed in his quest—he could not find the swallow’s shell.&lt;/p&gt;
+&lt;p&gt;Like all the rest, the Fifth Knight failed in his quest–he could not find the swallow’s shell.&lt;/p&gt;
 &lt;p&gt;By this time the fame of Princess Moonlight’s beauty had reached the ears of the Emperor, and he sent one of the Court ladies to see if she were really as lovely as report said; if so he would summon her to the Palace and make her one of the ladies-in-waiting.&lt;/p&gt;
 &lt;p&gt;When the Court lady arrived, in spite of her father’s entreaties, Princess Moonlight refused to see her. The Imperial messenger insisted, saying it was the Emperor’s order. Then Princess Moonlight told the old man that if she was forced to go to the Palace in obedience to the Emperor’s order, she would vanish from the earth.&lt;/p&gt;
 &lt;p&gt;When the Emperor was told of her persistence in refusing to obey his summons, and that if pressed to obey she would disappear altogether from sight, he determined to go and see her. So he planned to go on a hunting excursion in the neighborhood of the bamboo-cutter’s house, and see the Princess himself. He sent word to the old man of his intention, and he received consent to the scheme. The next day the Emperor set out with his retinue, which he soon managed to outride. He found the bamboo-cutter’s house and dismounted. He then entered the house and went straight to where the Princess was sitting with her attendant maidens.&lt;/p&gt;
@@ -951,22 +932,14 @@ _   underscore
 &lt;p&gt;The Emperor then promised to leave her free if only she would resume her former shape, which she did.&lt;/p&gt;
 &lt;p&gt;It was now time for him to return, for his retinue would be wondering what had happened to their Royal master when they missed him for so long. So be bade her good-by, and left the house with a sad heart. Princess Moonlight was for him the most beautiful woman in the world; all others were dark beside her, and he thought of her night and day. His Majesty now spent much of his time in writing poems, telling her of his love and devotion, and sent them to her, and though she refused to see him again she answered with many verses of her own composing, which told him gently and kindly that she could never marry any one on this earth. These little songs always gave him pleasure.&lt;/p&gt;
 &lt;p&gt;At this time her foster-parents noticed that night after night the Princess would sit on her balcony and gaze for hours at the moon, in a spirit of the deepest dejection, ending always in a burst of tears. One night the old man found her thus weeping as if her heart were broken, and he besought her to tell him the reason of her sorrow.&lt;/p&gt;
-          &lt;p&gt;With many tears she told him that he had guessed rightly when he supposed her not to belong to this
-          world—that she had in truth come from the moon, and that her time on earth would soon be over. On the
-          fifteenth day of that very month of August her friends from the moon would come to fetch her, and she would
-          have to return. Her parents were both there, but having spent a lifetime on the earth she had forgotten them,
-          and also the moon-world to which she belonged. It made her weep, she said, to think of leaving her kind
-          foster- parents, and the home where she had been happy for so long.&lt;/p&gt;
+&lt;p&gt;With many tears she told him that he had guessed rightly when he supposed her not to belong to this world–that she had in truth come from the moon, and that her time on earth would soon be over. On the fifteenth day of that very month of August her friends from the moon would come to fetch her, and she would have to return. Her parents were both there, but having spent a lifetime on the earth she had forgotten them, and also the moon-world to which she belonged. It made her weep, she said, to think of leaving her kind foster- parents, and the home where she had been happy for so long.&lt;/p&gt;
 &lt;p&gt;When her attendants heard this they were very sad, and could not eat or drink for sadness at the thought that the Princess was so soon to leave them.&lt;/p&gt;
 &lt;p&gt;The Emperor, as soon as the news was carried to him, sent messengers to the house to find out if the report were true or not.&lt;/p&gt;
 &lt;p&gt;The old bamboo-cutter went out to meet the Imperial messengers. The last few days of sorrow had told upon the old man; he had aged greatly, and looked much more than his seventy years. Weeping bitterly, he told them that the report was only too true, but he intended, however, to make prisoners of the envoys from the moon, and to do all he could to prevent the Princess from being carried back.&lt;/p&gt;
 &lt;p&gt;The men returned and told His Majesty all that had passed. On the fifteenth day of that month the Emperor sent a guard of two thousand warriors to watch the house. One thousand stationed themselves on the roof, another thousand kept watch round all the entrances of the house. All were well trained archers, with bows and arrows. The bamboo-cutter and his wife hid Princess Moonlight in an inner room.&lt;/p&gt;
 &lt;p&gt;The old man gave orders that no one was to sleep that night, all in the house were to keep a strict watch, and be ready to protect the Princess. With these precautions, and the help of the Emperor’s men- at-arms, he hoped to withstand the moon-messengers, but the Princess told him that all these measures to keep her would be useless, and that when her people came for her nothing whatever could prevent them from carrying out their purpose. Even the Emperors men would be powerless. Then she added with tears that she was very, very sorry to leave him and his wife, whom she had learned to love as her parents, that if she could do as she liked she would stay with them in their old age, and try to make some return for all the love and kindness they had showered upon her during all her earthly life.&lt;/p&gt;
 &lt;p&gt;The night wore on! The yellow harvest moon rose high in the heavens, flooding the world asleep with her golden light. Silence reigned over the pine and the bamboo forests, and on the roof where the thousand men-at-arms waited.&lt;/p&gt;
-          &lt;p&gt;Then the night grew gray towards the dawn and all hoped that the danger was over—that Princess
-          Moonlight would not have to leave them after all. Then suddenly the watchers saw a cloud form round the
-          moon—and while they looked this cloud began to roll earthwards. Nearer and nearer it came, and every one saw
-          with dismay that its course lay towards the house.&lt;/p&gt;
+&lt;p&gt;Then the night grew gray towards the dawn and all hoped that the danger was over–that Princess Moonlight would not have to leave them after all. Then suddenly the watchers saw a cloud form round the moon–and while they looked this cloud began to roll earthwards. Nearer and nearer it came, and every one saw with dismay that its course lay towards the house.&lt;/p&gt;
 &lt;p&gt;In a short time the sky was entirely obscured, till at last the cloud lay over the dwelling only ten feet off the ground. In the midst of the cloud there stood a flying chariot, and in the chariot a band of luminous beings. One amongst them who looked like a king and appeared to be the chief stepped out of the chariot, and, poised in air, called to the old man to come out.&lt;/p&gt;
 &lt;p&gt;“The time has come,” he said, “for Princess Moonlight to return to the moon from whence she came. She committed a grave fault, and as a punishment was sent to live down here for a time. We know what good care you have taken of the Princess, and we have rewarded you for this and have sent you wealth and prosperity. We put the gold in the bamboos for you to find.”&lt;/p&gt;
 &lt;p&gt;“I have brought up this Princess for twenty years and never once has she done a wrong thing, therefore the lady you are seeking cannot be this one,” said the old man. “I pray you to look elsewhere.”&lt;/p&gt;

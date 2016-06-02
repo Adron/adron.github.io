@@ -118,24 +118,26 @@
 		pointer-events: none;
 	}
 
-	// Fix the horizontal scroll bar
-	.container-fluid &:after{
+}
+
+// Fix the horizontal scroll bar
+@media (min-width: 1200px) {
+	.container-fluid .fragment-identifier:after{
 		top: 5px;
 		left: auto;
 		right: 55px;
 		margin: 0;
 	}
 
-	.container-fluid &:before{
+	.container-fluid .fragment-identifier:before{
 		margin: 0;
 		left: auto;
 		right: 53px;
 		top: 20px;
 		.transform(rotate(-45deg));
 	}
-	// End of fix the horizontal scrollbar
-
 }
+// End of fix the horizontal scrollbar
 
 @media (max-width: 1300px) {
 	.fragment-identifier{

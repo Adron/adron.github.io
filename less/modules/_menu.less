@@ -11,8 +11,13 @@
 	color: @color_black;
 	font-weight: 300;
 
-	.header.header-one-page & > li > ul{
+	.header.header-one-page & > li > ul,
+	.header.header-one-page.header-fixed & > li > ul{
 		top: 67px;
+	}
+
+	.header.header-fixed & > li > ul{
+		top: 58px;
 	}
 
 	.sf-with-ul {
@@ -33,7 +38,7 @@
 	// All menus
 	ul{
 		font-size: 14px;
-		box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.1) !important;
+		box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.1) !important;
 		position: absolute;
 		text-align: left;
 		display: none;
@@ -72,7 +77,7 @@
 				color: @color_blue;
 				border-color: lighten(@color_grey-light, 10%);
 				content: '\f105';
-				font-family: 'FontAwesome';
+				font-family: @icons;
 			}
 		}
 
@@ -133,17 +138,17 @@
 		}
 
 		&:before{
-			content: '';
+			content: '\f0d8';
 			display: block;
 			position: absolute;
-			width: 6px;
-			height: 6px;
-			.transform(rotate(45deg));
-			background-color: white;
-			top: -2px;
+			width: 8px;
+			height: 8px;
+			font-family: @icons;
+			top: -14px;
 			left: 50%;
 			margin-left: -4px;
-			border-radius: 1px;
+			color: white;
+			text-shadow: 0px 0px 1px #bbb;
 		}
 
 		li{
@@ -211,7 +216,7 @@
 	border-radius: 4px;
 	color: white;
 	background-color: @color_blue;
-	line-height: 19px;
+	line-height: 18px;
 	letter-spacing: 1px;
 
 	&:after{
@@ -232,6 +237,10 @@
 .menu-light{
 	&>li>a{
 		color: white;
+	}
+
+	&>li>.sf-with-ul:after{
+		color: @color_grey-light;
 	}
 }
 
@@ -367,7 +376,7 @@
 	}
 
 	.slicknav_arrow{
-		font-family: 'FontAwesome';
+		font-family: @icons;
 		font-size: 10px;
 		vertical-align: middle;
 		color: @color_grey-dark;

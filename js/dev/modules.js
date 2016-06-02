@@ -1,7 +1,57 @@
-/* global jQuery, ZeroClipboard  */
 
+/* jshint undef: true, unused: true, browser: true, strict: true */
+/* global jQuery, Clipboard,  videojs */
 (function($){
 	"use strict";
+
+	// Module name: Header Fixed
+	// Dependencies: no dependencies
+	var HeaderFixed = (function(){
+		var header = $('.js-header-fixed');
+		var headerWrapper = $('<div class="header-fixed-wrapper">');
+		var pub = {};
+
+		// Public functions
+		pub.isPresent 	= function () { return header.length; };
+		pub.isOver 		= function () { return header.hasClass('header-over'); };
+		pub.getHeight 	= function () { return header.outerHeight(); };
+		pub.getOffset 	= function () { return pub.isPresent() ? pub.getHeight() : 0; };
+
+		// Private functions
+		var updateHeader = function (helper) {
+			if($(window).scrollTop() === 0){
+	            header.removeClass('header-fixed').addClass(helper);
+	        }else{
+	            header.addClass('header-fixed').removeClass(helper);
+	        }
+		};
+
+		var init = function () {
+			if (!pub.isOver()){
+				header.wrap(headerWrapper.height(header.outerHeight()));
+				header.addClass('header-fixed');
+			} else {
+				var helper = '';
+
+				if (header.hasClass('large')){ helper = 'large'; }
+				else if (header.hasClass('small')){ helper = 'small'; }
+
+				updateHeader(helper);
+
+				$(window).scroll(function () {
+					updateHeader(helper);
+				});
+			}
+
+		};
+		
+		if(pub.isPresent()){
+			init();
+		}
+
+		return pub;
+
+	})();
 
 	// Get the correct copy message depending on client's OS.
 	var getCopyMessage = function (action) {
@@ -9,7 +59,7 @@
 		var actionKey = (action === 'cut' ? 'X' : 'C');
 
 		if(/iPhone|iPad/i.test(navigator.userAgent)) {
-	        actionMsg = 'no support :(';
+			actionMsg = 'no support :(';
 	    } else if (/Mac/i.test(navigator.userAgent)) {
 	        actionMsg = 'press ⌘-' + actionKey + ' to ' + action;
 	    } else {
@@ -28,7 +78,9 @@
 			target: function (trigger) {
 				return $(trigger).parent().find('.js-code')[0];
 			}
-		}).on('success', function (e) {
+		});
+
+		clipboard.on('success', function (e) {
 			e.clearSelection();
 
 			$(e.trigger).text('copied');
@@ -36,7 +88,9 @@
 				$(e.trigger).text('copy');
 			}, 700);
 
-		}).on('error', function (e) {
+		});
+
+		clipboard.on('error', function (e) {
 			$(e.trigger).text(getCopyMessage(e.action)).addClass('copy-code-error');
 			setTimeout(function () {
 				$(e.trigger).text('copy').removeClass('copy-code-error');
@@ -68,6 +122,36 @@
 		});
 	})();
 
+	// Module name: Filetree Text
+	// Dependencies: no dependencies
+	(function(){
+		// Select all file trees on the page
+		$('.js-file-tree-text').each(function () {
+			var folderClass = '.file-tree-text-folder'; // Folder class, used to count the number of parents
+			var nameClass = '.file-tree-text-name'; // Folder/File name class, used to prepend the tree prefix
+			var fileTreeText = $(this);
+			var space = '\u2502&nbsp;&nbsp;&nbsp;';
+			var folder = '\u251C\u2500\u2500&nbsp;';
+
+			var getPrefix = function (level) {
+				var prefix = '';
+ 				
+ 				for (var i = 0; i < level; i++) {
+ 					prefix += (i === level-1) ? folder : space;
+ 				}
+
+ 				return prefix;
+			};
+
+			fileTreeText.find('li').each(function () {
+				var level = $(this).parents(folderClass).length;
+
+				$(this).children(nameClass).first().prepend(getPrefix(level));
+			});
+		});
+	})();
+
+
 	// Module name: Modal
 	// Dependencies: jquery.bPopup.js
 	// Docs: https://github.com/dinbror/bpopup
@@ -94,6 +178,33 @@
 	(function(){
 		$(window).load(function () {
 			$('.js-ba').twentytwenty();
+		});
+	})();
+
+	// Module name: Accordion
+	// Dependencies: no dependencies
+	(function(){
+		var accordions = $('.js-accordion');
+
+		accordions.each(function () {
+			var accordion = $(this);
+			var title = accordion.find('.accordion-title');
+
+			title.click(function (event) {
+				event.preventDefault();
+
+				var title = $(this);
+				var scope = title.closest('.accordion-item');
+				var description = $('.accordion-description', scope);
+
+				if(description.hasClass('active')){
+					scope.removeClass('active');
+					description.stop().slideUp().removeClass('active');
+				}else{
+					scope.addClass('active');
+					description.stop().slideDown().addClass('active');
+				}
+			});
 		});
 	})();
 
@@ -302,71 +413,72 @@
 	// Module menu: Fixed sidebar
 	// Dependencies: no dependencies
 	var FixedSidebar = (function(){
-		var sidebars = $('.js-sidebar-fixed');
-		var additionalOffset = 30;
-		var pub = {};
+		if (!HeaderFixed.isPresent()) {
+			var sidebars = $('.js-sidebar-fixed');
+			var additionalOffset = 30;
+			var pub = {};
 
-		pub.updateSidebarWidth = function (sidebar) {
-			if(sidebar){
-				sidebar.outerWidth(sidebar.parent().outerWidth());
-			}
-		}
-		pub.updateFixedSidebar = function (sidebar) {
-			var topDistance = $(window).scrollTop();
-			var layout = sidebar.closest('.js-layout');
-			var layoutHeight = layout.outerHeight();
-			var layoutOffset = layout.offset().top - additionalOffset;
-			var sidebarHeight = sidebar.outerHeight();
-			var heightLeft = topDistance + sidebarHeight - layoutHeight - layoutOffset;
+			pub.updateSidebarWidth = function (sidebar) {
+				if(sidebar){
+					sidebar.outerWidth(sidebar.parent().outerWidth());
+				}
+			};
+			pub.updateFixedSidebar = function (sidebar) {
+				var topDistance = $(window).scrollTop();
+				var layout = sidebar.closest('.js-layout');
+				var layoutHeight = layout.outerHeight();
+				var layoutOffset = layout.offset().top - additionalOffset;
+				var sidebarHeight = sidebar.outerHeight();
+				var heightLeft = topDistance + sidebarHeight - layoutHeight - layoutOffset;
 
-			// Update wrapper height - act as a placeholder
-			sidebar.closest('.js-sidebar-wrapper').height(sidebar.outerHeight());
+				// Update wrapper height - act as a placeholder
+				sidebar.closest('.js-sidebar-wrapper').height(sidebar.outerHeight());
 
-			// If sidebar should be fixed
-			if(topDistance > layoutOffset && heightLeft <= 0){
-				sidebar.addClass('sidebar-is-fixed').removeClass('sidebar-is-bottom');
+				// If sidebar should be fixed
+				if(topDistance > layoutOffset && heightLeft <= 0){
+					sidebar.addClass('sidebar-is-fixed').removeClass('sidebar-is-bottom');
+					pub.updateSidebarWidth(sidebar);
+
+				// If sidebar should be sticked to the bottom
+				}else if(topDistance > layoutOffset && heightLeft > 0){
+					sidebar.removeClass('sidebar-is-fixed').addClass('sidebar-is-bottom');
+					pub.updateSidebarWidth(sidebar);
+
+				// If sidebar should be static
+				}else{
+					sidebar.removeClass('sidebar-is-fixed sidebar-is-bottom');
+				}
+			};
+
+			sidebars.each(function() {
+				var sidebar = $(this);
+				var resizeTimer;
+
+				// Wrap all the sidebars
+				sidebar.wrap('<div class="js-sidebar-wrapper">');
+
+				pub.updateFixedSidebar(sidebar);
 				pub.updateSidebarWidth(sidebar);
 
-			// If sidebar should be sticked to the bottom
-			}else if(topDistance > layoutOffset && heightLeft > 0){
-				sidebar.removeClass('sidebar-is-fixed').addClass('sidebar-is-bottom');
-				pub.updateSidebarWidth(sidebar);
+				$(window).on('resize', function() {
+					clearTimeout(resizeTimer);
+					resizeTimer = setTimeout(function() {
+						if (sidebar.is(':visible')) {
+							pub.updateSidebarWidth(sidebar);
+							pub.updateFixedSidebar(sidebar);
+						}
+					}, 250);
+				});
 
-			// If sidebar should be static
-			}else{
-				sidebar.removeClass('sidebar-is-fixed sidebar-is-bottom');
-
-			}
-		}
-
-		sidebars.each(function() {
-			var sidebar = $(this);
-			var resizeTimer;
-
-			// Wrap all the sidebars
-			sidebar.wrap('<div class="js-sidebar-wrapper">');
-
-			pub.updateFixedSidebar(sidebar);
-			pub.updateSidebarWidth(sidebar);
-
-			$(window).on('resize', function(e) {
-				clearTimeout(resizeTimer);
-				resizeTimer = setTimeout(function() {
+				$(window).scroll(function () {
 					if (sidebar.is(':visible')) {
-						pub.updateSidebarWidth(sidebar);
 						pub.updateFixedSidebar(sidebar);
 					}
-				}, 250);
+				});
 			});
 
-			$(window).scroll(function () {
-				if (sidebar.is(':visible')) {
-					pub.updateFixedSidebar(sidebar);
-				}
-			});
-		});
-
-		return pub;
+			return pub;
+		}
 
 	})();
 
@@ -386,14 +498,17 @@
 			menu.find('li').each(function() {
 				if ($(this).has('ul').length) {
 					$(this).addClass('has-children');
-				};
+				}
 			});
 
 			menu.tendina({
 				animate: false,
 				activeMenu: '.selected',
 				openCallback: function() {
-					FixedSidebar.updateFixedSidebar(menu.closest('.js-sidebar-fixed'));
+					if(FixedSidebar){
+						FixedSidebar.updateFixedSidebar(menu.closest('.js-sidebar-fixed'));
+					}
+
 				}
 			});
 
@@ -466,6 +581,8 @@
 	(function(){
 		var buttons = $('.js-scroll-to');
 
+
+
 		buttons.each(function () {
 			var button = $(this);
 			var target = button.data('target');
@@ -476,7 +593,7 @@
 					event.preventDefault();
 
 					$('html, body').animate({
-				        scrollTop: $(target).first().offset().top
+				        scrollTop: $(target).first().offset().top - HeaderFixed.getOffset()
 				    }, speed);
 				});
 			}
@@ -706,6 +823,24 @@
 			changelogItems.each(function() {
 				var changelogItem = $(this);
 				var switchBtn = changelogItem.find('.js-changelog-switch');
+				var fileFilters = changelogItem.find('.js-changelog-file-filter');
+				var filesScope = changelogItem.find('.js-changelog-files-scope').instaFilta({
+					targets: '.js-changelog-file',
+					scope: '.js-changelog-files-scope'
+				});
+
+				fileFilters.click(function () {
+					var filters = [];
+					$(this).toggleClass('inactive');
+
+					fileFilters.each(function () {
+						if(!$(this).hasClass('inactive')){
+							filters.push($(this).data('type'));
+						}
+					});
+
+					filesScope.filterCategory(filters);
+				});
 
 				switchBtn.click(function(e) {
 					e.preventDefault();
@@ -724,6 +859,10 @@
 
 			    changelogFilter.filterCategory(checkedCategories);
 			});
+
+			
+
+			
 		});
 	})();
 
@@ -745,7 +884,7 @@
 					// It's a workaround, since there's no way to add custom buttons at specific index
 					fullscreenToggle: false
 				}
-			}).ready(function(event){
+			}).ready(function(){
 			    var myPlayer = this;
 			    var myPlaylist = null;
 
@@ -779,6 +918,42 @@
 
 	})();
 
+	// Module name: Video Trigger
+	// Dependencies: jquery.bpopup.js
+	// Docs: https://github.com/dinbror/bpopup/
+	(function() {
+		$('.js-video-trigger').click(function (e) {
+			e.preventDefault();
+			var trigger = $(this);
+			var url = trigger.data('video');
+			var content = $('.js-video-trigger-modal-content');
+
+			$('.js-video-trigger-modal').bPopup({
+	            onOpen: function() {
+                    content.html(url || '');
+                },
+                onClose: function() {
+                    content.empty();
+                }
+	        });
+
+		});
+
+		var self = $(this); //button
+        var content = $('.content');
+        
+        $('element_to_pop_up').bPopup({
+            onOpen: function() {
+                content.html(self.data('bpopup') || '');
+            },
+            onClose: function() {
+                content.empty();
+            }
+        });
+		                
+
+	})();
+
 	// Module name: Fragment Identifier
 	// Dependencies: clipboard.js.min.js
 	// Docs: https://github.com/zenorocha/clipboard.js/
@@ -786,9 +961,11 @@
 
 		var clipboard = new Clipboard('.js-fragment-identifier', {
 			text: function (trigger) {
-				return window.location.host + window.location.pathname + $(trigger).attr('href')
+				return window.location.host + window.location.pathname + $(trigger).attr('href');
 			}
-		}).on('success', function (e) {
+		});
+
+		clipboard.on('success', function (e) {
 			e.clearSelection();
 
 			$(e.trigger).addClass('fragment-identifier-copied');
@@ -796,7 +973,9 @@
 				$(e.trigger).removeClass('fragment-identifier-copied');
 			}, 1000);
 
-		}).on('error', function (e) {
+		});
+
+		clipboard.on('error', function (e) {
 			$(e.trigger).addClass('fragment-identifier-error');
 			setTimeout(function () {
 				$(e.trigger).removeClass('fragment-identifier-error');
@@ -811,10 +990,8 @@
 
 			if (btn.hasClass('fragment-identifier-scroll')) {
 			    $('html, body').animate({
-			        scrollTop: $(href).offset().top
-			    }, 500, function () {
-			        window.location.hash = href;
-			    });
+			        scrollTop: $(href).offset().top - HeaderFixed.getOffset()
+			    }, 500);
 			}
 
 		});
@@ -837,7 +1014,7 @@
 				    url : formURL,
 				    type: "POST",
 				    data : postData,
-				    success:function(data, textStatus, jqXHR) {
+				    success:function() {
 				    	// On success clear the data from the inputs
 				    	$form.find('input:text, textarea').val(''); 
 				    	// Show the success modal for 2 seconds
@@ -847,7 +1024,7 @@
 
 				// Prevent form default behavior
 				return false;
-			}
+			};
 
 			// Validate the contact form, if succeeded, call the submitForm function
 			$.validate({
@@ -868,7 +1045,7 @@
 		var updateHeight = function () {
 			var footerHeight = footerFixed.outerHeight();
 			page.css('padding-bottom', footerHeight + 'px');
-		}
+		};
 
 		// Check if fixed footer is enabled of disabled
 		if (footerFixed.length) {
@@ -876,41 +1053,29 @@
 			updateHeight();
 
 			// Update the height on window resize
-			$(window).on('resize', function(e) {
+			$(window).on('resize', function() {
 				clearTimeout(resizeTimer);
 				resizeTimer = setTimeout(function() {
 					updateHeight();
 				}, 250);
 			});
-		};
+		}
 	})();
 
 	// Module name: Video Background
-	// Dependencies: videojs-bigvideo.js
-	// Docs: https://github.com/dfcb/BigVideo.js
+	// Dependencies: jquery.vide.min.js
+	// Docs: https://github.com/VodkaBears/Vide
 	(function(){
 		if ($('.js-video-background').length) {
-			// Create a BigVideo instance
-			var BV = new $.BigVideo({
-		        container:$('.js-video-background')
-		    });
+			var video = $('.js-video-background');
+			var videoSrc = video.data('video');
 
-			// Initiate the BigVideo plugin
-		    BV.init();
 
-		    // Check if it's a touch device
-		    if (Modernizr.touch) {
-		    	// If so, show the video poster as these devices do not support auto-play
-		        BV.show("http://themes.vsart.me/presentation/vsdocs/video/header-poster.jpg");
-		    } else {
-		    	// Play the video by the given sources
-	    	    BV.show([
-	    		    { type: "video/mp4",  src: "http://themes.vsart.me/presentation/vsdocs/video/header.mp4" },
-	                { type: "video/webm", src: "http://themes.vsart.me/presentation/vsdocs/video/header.webm" },
-	                { type: "video/ogg",  src: "http://themes.vsart.me/presentation/vsdocs/video/header.ogv" }
-	        	],{ambient:true})
-		    }
-		};
+			video.vide(videoSrc, {
+				posterType: 'jpg',
+				bgColor: '#000'
+			});
+		}
 	})();
 
 	// Module name: Custom Scrollbar
@@ -934,7 +1099,7 @@
 			// Accessing the plugin's API
 			api = customScrollbar.data('jsp');
 
-			$(window).on('resize', function(e) {
+			$(window).on('resize', function() {
 				clearTimeout(resizeTimer);
 				resizeTimer = setTimeout(function() {
 					// On Window resize done, update the plugin
@@ -959,9 +1124,57 @@
 			// Initialize the plugin
 			nav.onePageNav({
 				currentClass: "is-active",
-				filter: ':not(.is-external)'
+				filter: ':not(.is-external)',
+				scrollOffset: HeaderFixed.getOffset()
 			});
 		});
+	})();
+
+	// Module name: Rating
+	// Dependencies: jquery.rating.js
+	// Docs: https://github.com/dreyescat/bootstrap-rating
+	(function(){
+		var rateWrappers = $('.js-rate-wrapper');
+
+		rateWrappers.each(function() {
+			var rateWrapper = $(this);
+			var rate = rateWrapper.find('.js-rate');
+			var rateCurrent = rateWrapper.find('.js-rate-current');
+
+			rate.rating({
+				extendSymbol: function () {
+					// On hovering a rating, update the current number.
+					$(this).on('rating.rateenter', function (e, rateNumber) {
+						rateCurrent.text(rateNumber);
+						
+					// On mouse leave, set the current number to the selected one.
+				    }).on('rating.rateleave', function () {
+				    	if (rate.val()) {
+							rateCurrent.text(rate.val());
+				    	}else{
+							rateCurrent.text('-');
+				    	}
+				    });
+				}
+			});
+		});
+
+	})();
+
+	// Module name: Preloader
+	// Dependencies: no dependencies
+	(function(){
+		var preloader = $('.js-preloader');
+		var preload = $('.js-preload-me').length;
+
+		// Check if the preloader is active
+		if(preload){
+			$(window).load(function () {
+				preloader.fadeOut('slow',function () {
+					$(this).remove();
+				});
+			});
+		}
 	})();
 
 })(jQuery);
