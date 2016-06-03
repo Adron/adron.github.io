@@ -9,7 +9,21 @@
     <generator>Wintersmith - https://github.com/jnordberg/wintersmith</generator>
     <language>en</language>
     <item>
-      <title>Code First Docs How we Threw Out The Book &amp; Put Code First With Twilio Documentation by Jarod Reyes @</title>
+      <title>The House Is Not On Fire - Building a home automation robot with Arduino, Raspberry Pi and Node.js by Artur Paikin</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</link>
+      <pubDate>Wed, 01 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Artur describes himself as, “I’m a web developer and traveler. I write stories about my adventures in Russian and English on my site: &lt;a href=&quot;http://arturpaikin.com&quot;&gt;http://arturpaikin.com&lt;/a&gt; and run a small technology cooperative called &lt;a href=&quot;http://unebaguette.com&quot;&gt;Baguette&lt;/a&gt;, where I work on cool projects, currently building an ambitious next generation file uploader with &lt;a href=&quot;https://transloadit.com/&quot;&gt;Transloadit&lt;/a&gt;. I ride a &lt;a href=&quot;https://www.instagram.com/p/xC0qC2SSYb&quot;&gt;foldable bicycle&lt;/a&gt;, &lt;a href=&quot;http://unebaguette.com/web-course/&quot;&gt;teach&lt;/a&gt; web development and sometimes &lt;a href=&quot;https://www.instagram.com/p/4_6LO8ySVL/&quot;&gt;garden&lt;/a&gt; on the balcony.”&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img class=&quot;image&quot; src=&quot;art-stida.jpg&quot; style=&quot;float: right;margin-left: 15px;margin-top: 15px;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Artur has built an open source home automation system called &lt;a href=&quot;https://github.com/arturi/kotihome&quot;&gt;Koti Home&lt;/a&gt; (Koti means home in Finnish language). It’s powered by an Arduino connected to Raspberry Pi, MQTT protocol for messaging, Node.js on the client and server, web sockets. You can interact with Koti robot via a React (like the cool kids do) control panel, Telegram Chat Bot and even your own voice.&lt;/p&gt;
+&lt;p&gt;Arthur will talk about how he’s turned this project into reality — the tech he used and the challenges he faced. From a blinking LED to a voice controlled home automation robot.&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>Code First Docs How we Threw Out The Book &amp; Put Code First With Twilio Documentation by Jarod Reyes</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-jarod-reyes/</link>
       <pubDate>Wed, 01 Jun 2016 17:00:00 -0700</pubDate>
       <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-jarod-reyes/</guid>
@@ -30,7 +44,7 @@
 </description>
     </item>
     <item>
-      <title>Ops for Devs by Adam Ulvi @</title>
+      <title>Ops for Devs by Adam Ulvi</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-adam-ulvi/</link>
       <pubDate>Tue, 31 May 2016 17:00:00 -0700</pubDate>
       <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-adam-ulvi/</guid>
@@ -71,7 +85,7 @@
 </description>
     </item>
     <item>
-      <title>A Foolish Quest Creating Knitting Patterns Using JavaScript by Liz Abinante @</title>
+      <title>A Foolish Quest Creating Knitting Patterns Using JavaScript by Liz Abinante</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-liz-abinante/</link>
       <pubDate>Mon, 23 May 2016 17:00:00 -0700</pubDate>
       <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-liz-abinante/</guid>
@@ -85,7 +99,7 @@
 </description>
     </item>
     <item>
-      <title>Isomorphic Business Logic (Or How to convince even the most die-hard C#/Java/Rails-on-the-Backend boss that you need to run a node server) Jonny Oropeza @</title>
+      <title>Isomorphic Business Logic (Or How to convince even the most die-hard C#/Java/Rails-on-the-Backend boss that you need to run a node server) Jonny Oropeza</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-jonny-oropeza/</link>
       <pubDate>Wed, 18 May 2016 17:00:00 -0700</pubDate>
       <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-jonny-oropeza/</guid>
@@ -109,7 +123,7 @@ Jon Oropeza is a full-stack engineer at HD Quote Center, a post-aquisition start
 </description>
     </item>
     <item>
-      <title>From Software to Hardware How Do I Track My Cat with JavaScript Tomomi Imura @</title>
+      <title>From Software to Hardware How Do I Track My Cat with JavaScript Tomomi Imura</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-tomomi-imura/</link>
       <pubDate>Tue, 17 May 2016 17:00:00 -0700</pubDate>
       <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-tomomi-imura/</guid>

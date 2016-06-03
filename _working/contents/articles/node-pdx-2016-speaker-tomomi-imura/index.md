@@ -1,5 +1,5 @@
 ---
-title: From Software to Hardware How Do I Track My Cat with JavaScript Tomomi Imura @
+title: From Software to Hardware How Do I Track My Cat with JavaScript Tomomi Imura
 author: Adron Hall
 date: 2016-05-18
 template: article.jade

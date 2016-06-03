@@ -25,4 +25,9 @@ author: Adron Hall
 date: $blogdate
 template: article.jade
 ---
+
+![Node PDX 2016](nodepdx-2016-logo.png)
+
+<span class="more"></span>
+
 EOT
