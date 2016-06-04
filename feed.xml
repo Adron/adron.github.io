@@ -15,10 +15,13 @@
       <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-ben-michel/</guid>
       <author></author>
       <description>&lt;p&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-ben-michel/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-right&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-ben-michel/benmichel.jpg&quot; alt=&quot;Ben Michel&quot;&gt;
+&lt;/div&gt;
+
 &lt;p&gt;Ben Michel has a pretty epic talk scheduled for Node PDX… if you don’t know Ben he’s a Musician–Developer. He composes &amp;amp; performs live soundtracks and cares a lot about community music.&lt;/p&gt;
 &lt;p&gt;The talk he has planned for you all is described as, “Music as an idea, expression, commercial endeavor, and communal art is in its most volatile state since the European Renaissance. We’ve moved from the public adoption of recording technology, through the massive rise and fall of the recording industry, to a new age that was first seeded at Bell Labs during the Computer Science era.&lt;/p&gt;
 &lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;benmichel.jpg&quot; class=&quot;image float-right&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;Max Mathews encouraged a generation of computer musicians by declaring the Nyquist-Shannon “sampling theorem shows that there are really no limits to the sounds you can make…the computer is a universal musical instrument.”&lt;/p&gt;
 &lt;p&gt;Now with a fuller understanding of what Mathews was implying, we can take it a step further and say that the Browser is the universal musical instrument. It’s the most accessible, cross-compatible runtime yet–and with the growth of Web Audio and Web MIDI standardization, we’re on the verge of a new renaissance in musical collaboration and interaction.&lt;/p&gt;
 &lt;p&gt;Unfortunately, the promotion of individualism in our popular culture, and the divide between developers and working artists has kept us from realizing the potential of building useful tools for distributed music collaboration, even in the web platform.&lt;/p&gt;
@@ -39,10 +42,13 @@
       <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</guid>
       <author></author>
       <description>&lt;p&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-right&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/mattmckegg.jpg&quot; alt=&quot;Matt McKegg&quot;&gt;
+&lt;/div&gt;
+
 &lt;p&gt;A JavaScript hacker and backyard musician and from Wellington, New Zealand. Lover of all things open and modular. I spend most of my time pressing buttons of various shapes, sizes and colours. Sometimes these buttons make sounds.&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;mattmckegg.jpg&quot; class=&quot;image float-right&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;Matt has been making music with computers for about 10 years, but once he tried to move from bedroom composing to live performance, he got incredibly frustrated at how hard it was to play computer music live. He decided to start working on his own live electronic performance software written in JavaScript that would let me play the way he wanted to play. 3 years later, it’s finally starting to become a reality.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;Here is one of the Matt’s recent performances, for your viewing pleasure. &lt;/p&gt;
 &lt;iframe width=&quot;1280&quot; height=&quot;720&quot; src=&quot;https://www.youtube.com/embed/L2BVDJWHdy0?rel=0&amp;amp;showinfo=0&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;</description>
     </item>

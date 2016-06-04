@@ -7,13 +7,15 @@ template: article.jade
 
 ![Node PDX 2016](nodepdx-2016-logo.png)
 
+<div class="image float-right">
+    ![Ben Michel](benmichel.jpg)
+</div>
+
 Ben Michel has a pretty epic talk scheduled for Node PDX… if you don’t know Ben he’s a Musician–Developer. He composes & performs live soundtracks and cares a lot about community music.
 
 The talk he has planned for you all is described as, "Music as an idea, expression, commercial endeavor, and communal art is in its most volatile state since the European Renaissance. We’ve moved from the public adoption of recording technology, through the massive rise and fall of the recording industry, to a new age that was first seeded at Bell Labs during the Computer Science era.
 
 <span class="more"></span>
-
-<img src="benmichel.jpg" class="image float-right" />
 
 Max Mathews encouraged a generation of computer musicians by declaring the Nyquist-Shannon “sampling theorem shows that there are really no limits to the sounds you can make…the computer is a universal musical instrument.”
 
