@@ -11,6 +11,8 @@ A JavaScript hacker and backyard musician and from Wellington, New Zealand. Love
 
 <span class="more"></span>
 
+<img src="mattmckegg.jpg" class="image float-right" />
+
 Matt has been making music with computers for about 10 years, but once he tried to move from bedroom composing to live performance, he got incredibly frustrated at how hard it was to play computer music live. He decided to start working on his own live electronic performance software written in JavaScript that would let me play the way he wanted to play. 3 years later, it's finally starting to become a reality.
 
 Here is one of the Matt’s recent performances, for your viewing pleasure. 

@@ -13,7 +13,7 @@ The talk he has planned for you all is described as, "Music as an idea, expressi
 
 <span class="more"></span>
 
-<img src="liz.jpg" class="image float-right" />
+<img src="benmichel.jpg" class="image float-right" />
 
 Max Mathews encouraged a generation of computer musicians by declaring the Nyquist-Shannon “sampling theorem shows that there are really no limits to the sounds you can make…the computer is a universal musical instrument.”
 
