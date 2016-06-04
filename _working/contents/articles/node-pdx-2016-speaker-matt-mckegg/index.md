@@ -7,7 +7,7 @@ template: article.jade
 
 ![Node PDX 2016](nodepdx-2016-logo.png)
 
-<div class="image float-right">
+<div class="image float-left">
     ![Matt McKegg](mattmckegg.jpg)
 </div>
 
