@@ -8,7 +8,7 @@ template: article.jade
 [![Node PDX 2016](nodepdx-2016-logo.png)](http://nodepdx.org)
 
 <div class="image float-left">
-    ![Joel Lord](joel-lord.jpg)
+    ![Josh Marinacci](josh-marinacci.jpg)
 </div>
 
 Josh is an O’Reilly author, developer advocate, and recovering engineer. He is
