@@ -4,12 +4,15 @@ author: Adron Hall
 date: 2016-05-19
 template: article.jade
 ---
-![Node PDX 2016](nodepdx-2016-logo.png)
+[![Node PDX 2016](nodepdx-2016-logo.png)](http://nodepdx.org)
+
+<div class="image float-right">
+    ![Jon Oropeza](jon.jpg)
+</div>
+
 Jon Oropeza is a full-stack engineer at HD Quote Center, a post-aquisition startup solving tricky ecommerce problems for their parent company, The Home Depot. Prior to that, he designed and developed software for the insurance industry with his partners at LifePro Financial Services, and also co-founded a deep learning / computer vision oriented startup called Tilt Video.
 
 <span class="more"></span>
-
-<img src="jon.jpg" class="image float-right" />
 
 Jon will be presenting "<strong>Isomorphic Business Logic (Or How to convince even the most die-hard C#/Java/Rails-on-the-Backend boss that you need to run a node server)</strong>" which might just be the talk with the longest title of the conference!
 

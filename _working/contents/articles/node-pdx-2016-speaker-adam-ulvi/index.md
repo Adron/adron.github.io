@@ -4,7 +4,7 @@ author: Adron Hall
 date: 2016-06-01
 template: article.jade
 ---
-![Node PDX 2016](nodepdx-2016-logo.png)
+[![Node PDX 2016](nodepdx-2016-logo.png)](http://nodepdx.org)
 
 Node applications exist at the end of a long, somewhat magical series of tubes. What spells are being cast to make this all work? Let's find out!
 
@@ -22,3 +22,5 @@ At the end of the presentation developers should have a better understanding of 
 
 * Github: [github.com/aulvi](http://github.com/aulvi)
 * IRC: s5fs
+
+I'm looking forward to Adam's talk, since I've been doing a lot of ops along with my dev work lately. Come check out Adam's talk at <a href="http://nodepdx.org/#tickets" target="_blank">Node PDX</a>.

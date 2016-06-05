@@ -5,7 +5,7 @@ date: 2016-06-03
 template: article.jade
 ---
 
-![Node PDX 2016](nodepdx-2016-logo.png)
+[![Node PDX 2016](nodepdx-2016-logo.png)](http://nodepdx.org)
 
 <div class="image float-left">
     ![Matt McKegg](mattmckegg.jpg)

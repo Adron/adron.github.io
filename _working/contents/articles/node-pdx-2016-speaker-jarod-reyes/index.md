@@ -5,13 +5,15 @@ date: 2016-06-02
 template: article.jade
 ---
 
-![Node PDX 2016](nodepdx-2016-logo.png)
+[![Node PDX 2016](nodepdx-2016-logo.png)](http://nodepdx.org)
+
+<div class="image float-left">
+    ![Jarod Reyes](jarodreyes.jpg)
+</div>
 
 Jarod is alarmingly disinterested in "how things are done". He spent much of his grade school years disrupting class, running social experiments and singing love ballads to his teachers. Nowadays he can be found working with an exceptional team of developers at Twilio who are laser-focused on improving the landscape of developer documentation.
 
 <span class="more"></span>
-
-<img class="image" src="jarodreyes.jpg" style="float: right;margin-left: 15px;margin-top: 15px;" />
 
 Jarod describes Code First Docs as
 
