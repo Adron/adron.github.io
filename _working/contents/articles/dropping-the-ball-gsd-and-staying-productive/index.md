@@ -1,5 +1,5 @@
 ---
-title: dropping the ball gsd and staying productive
+title: Dropping the Ball, GSD, and Staying Productive
 author: Adron Hall
 date: 2016-05-13
 template: article.jade
