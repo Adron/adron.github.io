@@ -9,6 +9,8 @@ template: article.jade
 
 I sat here today, and several normal things happened that made me think of some seriously important things. The thoughts are presented very well by Scott Hanselman in a talk on <em>scaling oneself</em>. He's got a lot of gems in this presentation (links and video below), which he's given a few times. In those presentations he makes a few very quotable statements that I had pop into my mind.
 
+<span class="more"></span>
+
 > "It's not what you read, it's what you ignore." - Scott Hanselman
 
 The other really great gem is,
