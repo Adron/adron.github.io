@@ -476,6 +476,7 @@ eval $(docker-machine env XyZvirtualMachine)&lt;/code&gt;
 &lt;/pre&gt; 
 &lt;/div&gt;
 
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;One does this about a zillion times if there are multiple virtual machines or for other various reasons. I wanted to simplify this repetitive task so I wrote a bash function, thanks to a &lt;a href=&quot;http://stackoverflow.com/questions/35761480/scripting-docker-not-connected-after-running-script&quot; target=&quot;_blank&quot;&gt;fumble I posted on Stackoverflow&lt;/a&gt; and then an assist by my good friend Troy Howard (&lt;a href=&quot;https://twitter.com/thoward37&quot; target=&quot;_blank&quot;&gt;@thoward37&lt;/a&gt;).&lt;/p&gt;
 &lt;p&gt;This quick hack consisted of this &lt;a href=&quot;https://gist.github.com/Adron/8dc06eb398f403225daa&quot; target=&quot;_blank&quot;&gt;Github gist&lt;/a&gt;.&lt;/p&gt;
 &lt;div class=&quot;code-highlight &quot; &gt;
