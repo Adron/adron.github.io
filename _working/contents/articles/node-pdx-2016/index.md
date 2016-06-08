@@ -1,5 +1,5 @@
 ---
-title: Creating Grassroots, Community Focused, Inclusive, Entertaining, and Educational Tech Conferences
+title: The Short Story of Node PDX, and Node PDX 2016
 author: Adron Hall
 date: 2016-06-08 14:30
 template: article.jade

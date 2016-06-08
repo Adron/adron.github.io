@@ -9,10 +9,10 @@
     <generator>Wintersmith - https://github.com/jnordberg/wintersmith</generator>
     <language>en</language>
     <item>
-      <title>Creating Grassroots, Community Focused, Inclusive, Entertaining, and Educational Tech Conferences</title>
-      <link>http://adron.github.io/articles/creating-grassroots-community-focused-conferences/</link>
+      <title>The Short Story of Node PDX, and Node PDX 2016</title>
+      <link>http://adron.github.io/articles/node-pdx-2016/</link>
       <pubDate>Wed, 08 Jun 2016 14:30:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/creating-grassroots-community-focused-conferences/</guid>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016/</guid>
       <author></author>
       <description>&lt;p&gt;Some of you may know the story, but I’ll tell it again for those that don’t. In 2012 Troy Howard (&lt;a href=&quot;https://twitter.com/thoward37&quot;&gt;@thoward37&lt;/a&gt;) and I were sitting at the Side Door hacking on some project code. We started talking about where and what was up with the Node.js project, community, and asking ourselves what the future of that was. You see, we’d toyed about with the technology here and there but we hadn’t really done anything with it.&lt;/p&gt;
 &lt;p&gt;We continued our coding, enjoying a tasty locally brewed beer, frothy and good. After a reasonable amount of said tasty beer, we started discussing a way to get up to speed faster on Node.js. In our infinitely wise and slightly intoxicated minds we both thought, “Hey, let’s throw a conference!”. We immediately started discussing this idea and a number of decisions were made…&lt;/p&gt;
@@ -41,7 +41,7 @@
 &lt;p&gt;&lt;em&gt;(Ok, it might have been slightly different, but this is the gist of it.)&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;In that moment of infinite wisdom we began the journey to create and organize our first conference. It thoroughly kicked our ass but was super fun.&lt;/p&gt;
 &lt;div class=&quot;image float-right&quot;&gt;
-    &lt;img src=&quot;/articles/creating-grassroots-community-focused-conferences/nodepdx-logo-2012.png&quot; alt=&quot;Node PDX 2012&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016/nodepdx-logo-2012.png&quot; alt=&quot;Node PDX 2012&quot;&gt;
 &lt;/div&gt;
 
 &lt;p&gt;We also learned some very key things.&lt;/p&gt;
@@ -56,20 +56,20 @@
 &lt;li&gt;One can actually not learn a whole lot if actually organizing the conference, yet this first year we managed to do both learning and connecting with many of the great attendees of the conference.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class=&quot;image float-left&quot;&gt;
-    &lt;img src=&quot;/articles/creating-grassroots-community-focused-conferences/NodePDX-2012-site.png&quot; alt=&quot;Node PDX 2012 Site&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016/NodePDX-2012-site.png&quot; alt=&quot;Node PDX 2012 Site&quot;&gt;
 &lt;/div&gt;
 
 &lt;p&gt;So this basically summarizes year one of Node PDX. That was &lt;a href=&quot;http://2012.nodepdx.org/&quot;&gt;Node PDX 2012&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Node PDX 2013 started off a bit differently. We gave ourselves more runway to work with. I believe initially it was at least several months. We also gave ourselves plenty of resources to work with and incorporated anyway, which still is a complete discouragement from actually doing these things.&lt;/p&gt;
 &lt;p&gt;Troy also did effectively all of the graphic design, which I might add, turned out pretty rad! Check it out for a trip down memory lane at the &lt;a href=&quot;http://2013.nodepdx.org/&quot;&gt;archive site&lt;/a&gt;.&lt;/p&gt;
 &lt;div class=&quot;image float-right&quot;&gt;
-    &lt;img src=&quot;/articles/creating-grassroots-community-focused-conferences/NodePDX-2013.png&quot; alt=&quot;Node PDX 2013&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016/NodePDX-2013.png&quot; alt=&quot;Node PDX 2013&quot;&gt;
 &lt;/div&gt;
 
 &lt;h2 id=&quot;node-pdx-2013&quot;&gt;Node PDX 2013&lt;/h2&gt;
 &lt;p&gt;We got the ball rolling and Node PDX 2013 was a huge hit. We had involvement from all sorts of sponsors from great companies like &lt;a href=&quot;https://newrelic.com/&quot;&gt;New Relic&lt;/a&gt;, &lt;a href=&quot;https://www.urbanairship.com/&quot;&gt;Urban Airship&lt;/a&gt;, &lt;a href=&quot;https://liftsecurity.io/&quot;&gt;^lift&lt;/a&gt;, &lt;a href=&quot;https://www.mozilla.org/en-US/&quot;&gt;Mozilla&lt;/a&gt;, &lt;a href=&quot;https://www.jivesoftware.com/&quot;&gt;Jive&lt;/a&gt;, &lt;a href=&quot;http://www.janrain.com/&quot;&gt;Janrain&lt;/a&gt;, &lt;a href=&quot;http://www.walmartlabs.com/&quot;&gt;Walmart Labs&lt;/a&gt;, &lt;a href=&quot;http://www.piepdx.com/&quot;&gt;PIE PDX&lt;/a&gt;, &lt;a href=&quot;http://basho.com/&quot;&gt;Basho&lt;/a&gt;, &lt;a href=&quot;https://www.stickermule.com/&quot;&gt;Sticker Mule&lt;/a&gt;, &lt;a href=&quot;http://siliconflorist.com/&quot;&gt;Silicon Florist&lt;/a&gt;, and &lt;a href=&quot;http://devion.com/&quot;&gt;Devion&lt;/a&gt;. We also had a great speaker line up, had excellent local food, great freshly brewed &amp;amp; roasted coffee, and lots more. I even got hit in the head with a quad-copter! It was absolutely a superb time. &lt;/p&gt;
 &lt;div class=&quot;image float-right&quot;&gt;
-    &lt;img src=&quot;/articles/creating-grassroots-community-focused-conferences/burnout.jpg&quot; alt=&quot;Conference Burnout&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016/burnout.jpg&quot; alt=&quot;Conference Burnout&quot;&gt;
 &lt;/div&gt;
 
 &lt;h2 id=&quot;conference-burnout&quot;&gt;Conference Burnout&lt;/h2&gt;
