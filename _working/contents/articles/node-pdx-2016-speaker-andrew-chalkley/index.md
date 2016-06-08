@@ -1,5 +1,5 @@
 ---
-title:  Get JavaScript Running on a $2 WiFi-Enabled Device by Andrew Chalkley
+title: Get JavaScript Running on a $2 WiFi-Enabled Device by Andrew Chalkley
 author: Adron Hall
 date: 2016-06-07
 template: article.jade

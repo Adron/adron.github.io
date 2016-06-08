@@ -1,5 +1,5 @@
 ---
-title: How to Build a Bike Shed by David Manning & Adam Ulvi
+title:  How to Build a Bike Shed by David Manning & Adam Ulvi
 author: Adron Hall
 date: 2016-06-07
 template: article.jade
