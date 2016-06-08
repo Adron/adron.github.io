@@ -12,7 +12,9 @@ In this talk Adam will explore the steps required to host a Node application on 
 
 <span class="more"></span>
 
-<img class="image" src="adamulvi.jpg" style="float: right;margin-left: 15px;margin-top: 15px;" />
+<div class="image float-right">
+    ![Adam Ulvi](adamulvi.jpg)
+</div>
 
 The reference implementation is taken from the current production gruntjs.com server.
 

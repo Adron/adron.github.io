@@ -25,9 +25,6 @@ author: Adron Hall
 date: $blogdate
 template: article.jade
 ---
-
-[![Node PDX 2016](nodepdx-2016-logo.png)](http://nodepdx.org)
-
 <div class="image float-left">
     ![Somebody](anImage.jpg)
 </div>

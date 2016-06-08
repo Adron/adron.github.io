@@ -5,9 +5,93 @@
     <atom:link href="http://adron.github.io/feed.xml" rel="self" type="application/rss+xml"></atom:link>
     <link>http://adron.github.io</link>
     <description>Coder, Messenger, Recon, Infrastructure</description>
-    <pubDate>Tue, 07 Jun 2016 19:20:00 -0700</pubDate>
+    <pubDate>Wed, 08 Jun 2016 14:30:00 -0700</pubDate>
     <generator>Wintersmith - https://github.com/jnordberg/wintersmith</generator>
     <language>en</language>
+    <item>
+      <title>Creating Grassroots, Community Focused, Inclusive, Entertaining, and Educational Tech Conferences</title>
+      <link>http://adron.github.io/articles/creating-grassroots-community-focused-conferences/</link>
+      <pubDate>Wed, 08 Jun 2016 14:30:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/creating-grassroots-community-focused-conferences/</guid>
+      <author></author>
+      <description>&lt;p&gt;Some of you may know the story, but I’ll tell it again for those that don’t. In 2012 Troy Howard (&lt;a href=&quot;https://twitter.com/thoward37&quot;&gt;@thoward37&lt;/a&gt;) and I were sitting at the Side Door hacking on some project code. We started talking about where and what was up with the Node.js project, community, and asking ourselves what the future of that was. You see, we’d toyed about with the technology here and there but we hadn’t really done anything with it.&lt;/p&gt;
+&lt;p&gt;We continued our coding, enjoying a tasty locally brewed beer, frothy and good. After a reasonable amount of said tasty beer, we started discussing a way to get up to speed faster on Node.js. In our infinitely wise and slightly intoxicated minds we both thought, “Hey, let’s throw a conference!”. We immediately started discussing this idea and a number of decisions were made…&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;h2 id=&quot;inception-by-conversation&quot;&gt;Inception by Conversation&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Adron&lt;/em&gt;&lt;/strong&gt; “Oh man, we should do exactly that, let’s have a conference! It’ll be super easy to ramp up if we just get a bunch of smart Node.js people together.”&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Troy&lt;/em&gt;&lt;/strong&gt; “Yeah, and it’d be a total blast. There are a number of smart people working in this space.”&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Adron&lt;/em&gt;&lt;/strong&gt; “Let’s!”&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Troy&lt;/em&gt;&lt;/strong&gt; “Yes.”&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Adron&lt;/em&gt;&lt;/strong&gt; “Cheers!”&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Troy&lt;/em&gt;&lt;/strong&gt; “Cheers!”&lt;/p&gt;
+&lt;p&gt;Beer drinking. So there we sat, and we began, the dilligent decision making at what was obviously the perfect time to make decisions about a conference!&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Adron&lt;/em&gt;&lt;/strong&gt; “Have you ever organized anything like this before?”&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Troy&lt;/em&gt;&lt;/strong&gt; “Naw. You?”&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Adron&lt;/em&gt;&lt;/strong&gt; “Ummm, nope.”&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Troy&lt;/em&gt;&lt;/strong&gt; “What seems like a reasonable timespan to get this put together?”&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Adron&lt;/em&gt;&lt;/strong&gt; … sip, sip, sip, big drink. “Hmmm, I don’t know, 4 or 5 weeks, maybe 4?”&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Troy&lt;/em&gt;&lt;/strong&gt; “Meh, sounds good.”&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Adron&lt;/em&gt;&lt;/strong&gt; “Cool, so we’ll have it in about 5 weeks.”&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Troy&lt;/em&gt;&lt;/strong&gt; “Yup.”&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Adron&lt;/em&gt;&lt;/strong&gt; “How many days, speakers and such?”&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;strong&gt;Troy&lt;/strong&gt;&lt;/strong&gt; “Let’s go for two days and we’ll just do one track.”&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Adron&lt;/em&gt;&lt;/strong&gt; “Done and done.”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;em&gt;(Ok, it might have been slightly different, but this is the gist of it.)&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;In that moment of infinite wisdom we began the journey to create and organize our first conference. It thoroughly kicked our ass but was super fun.&lt;/p&gt;
+&lt;div class=&quot;image float-right&quot;&gt;
+    &lt;img src=&quot;/articles/creating-grassroots-community-focused-conferences/nodepdx-logo-2012.png&quot; alt=&quot;Node PDX 2012&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;We also learned some very key things.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Organizing an inclusive conference is both easy and ridiculously stressful and difficult.&lt;/li&gt;
+&lt;li&gt;Organizing a conference with 4-5 weeks before the date is batshit insane.&lt;/li&gt;
+&lt;li&gt;Making decisions about organizing something one has never organized is probably not the best thing to do after coding for hours on end and maybe one to many beers.&lt;/li&gt;
+&lt;li&gt;Community focused and grassroots organized conferences are really fun and arguably more educational than that corporate shit shill.&lt;/li&gt;
+&lt;li&gt;Organizing volunteers and speakers is not actually easy at all.&lt;/li&gt;
+&lt;li&gt;Non-profit incoroporation, actually any type of corporation is very poorly organized for this type of event. Either way, it adds a financial burden just for undertaking such an enterprise.&lt;/li&gt;
+&lt;li&gt;One can actually learn a lot at a conference, but the people contacts are vastly more important.&lt;/li&gt;
+&lt;li&gt;One can actually not learn a whole lot if actually organizing the conference, yet this first year we managed to do both learning and connecting with many of the great attendees of the conference.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;image float-left&quot;&gt;
+    &lt;img src=&quot;/articles/creating-grassroots-community-focused-conferences/NodePDX-2012-site.png&quot; alt=&quot;Node PDX 2012 Site&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;So this basically summarizes year one of Node PDX. That was &lt;a href=&quot;http://2012.nodepdx.org/&quot;&gt;Node PDX 2012&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Node PDX 2013 started off a bit differently. We gave ourselves more runway to work with. I believe initially it was at least several months. We also gave ourselves plenty of resources to work with and incorporated anyway, which still is a complete discouragement from actually doing these things.&lt;/p&gt;
+&lt;p&gt;Troy also did effectively all of the graphic design, which I might add, turned out pretty rad! Check it out for a trip down memory lane at the &lt;a href=&quot;http://2013.nodepdx.org/&quot;&gt;archive site&lt;/a&gt;.&lt;/p&gt;
+&lt;div class=&quot;image float-right&quot;&gt;
+    &lt;img src=&quot;/articles/creating-grassroots-community-focused-conferences/NodePDX-2013.png&quot; alt=&quot;Node PDX 2013&quot;&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;node-pdx-2013&quot;&gt;Node PDX 2013&lt;/h2&gt;
+&lt;p&gt;We got the ball rolling and Node PDX 2013 was a huge hit. We had involvement from all sorts of sponsors from great companies like &lt;a href=&quot;https://newrelic.com/&quot;&gt;New Relic&lt;/a&gt;, &lt;a href=&quot;https://www.urbanairship.com/&quot;&gt;Urban Airship&lt;/a&gt;, &lt;a href=&quot;https://liftsecurity.io/&quot;&gt;^lift&lt;/a&gt;, &lt;a href=&quot;https://www.mozilla.org/en-US/&quot;&gt;Mozilla&lt;/a&gt;, &lt;a href=&quot;https://www.jivesoftware.com/&quot;&gt;Jive&lt;/a&gt;, &lt;a href=&quot;http://www.janrain.com/&quot;&gt;Janrain&lt;/a&gt;, &lt;a href=&quot;http://www.walmartlabs.com/&quot;&gt;Walmart Labs&lt;/a&gt;, &lt;a href=&quot;http://www.piepdx.com/&quot;&gt;PIE PDX&lt;/a&gt;, &lt;a href=&quot;http://basho.com/&quot;&gt;Basho&lt;/a&gt;, &lt;a href=&quot;https://www.stickermule.com/&quot;&gt;Sticker Mule&lt;/a&gt;, &lt;a href=&quot;http://siliconflorist.com/&quot;&gt;Silicon Florist&lt;/a&gt;, and &lt;a href=&quot;http://devion.com/&quot;&gt;Devion&lt;/a&gt;. We also had a great speaker line up, had excellent local food, great freshly brewed &amp;amp; roasted coffee, and lots more. I even got hit in the head with a quad-copter! It was absolutely a superb time. &lt;/p&gt;
+&lt;div class=&quot;image float-right&quot;&gt;
+    &lt;img src=&quot;/articles/creating-grassroots-community-focused-conferences/burnout.jpg&quot; alt=&quot;Conference Burnout&quot;&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;conference-burnout&quot;&gt;Conference Burnout&lt;/h2&gt;
+&lt;p&gt;After 2013 Troy and I had a case of the burnouts kick us. He went the route of just organizing more conferences, I however went the route of not organizing any conferences, or much of anything for a while.&lt;/p&gt;
+&lt;p&gt;This however lasted over a year for me, I started working on some projects, co-founded a startup, worked to raise capital with the team, built a product, ran out of money, spent most of 2015 not working, produced some training material and a lot more. Basically I was working on anything that involved not working on conference (or meetup) organizing.&lt;/p&gt;
+&lt;h2 id=&quot;2016-hits-and-energy-returns&quot;&gt;2016 Hits and Energy Returns&lt;/h2&gt;
+&lt;p&gt;At this point I’d had a significant amount of time off. I’d also managed to spend time in Europe, recover from my doldrums, get married to a most amazing an awesome person, and felt maybe I’d dive into some conference organizing again. I’d missed Node PDX &amp;amp; the comraderie and learning it brought. With that deduction I struck up another conversation to see if Troy was interested in organizing another Node PDX. I think it went something like this.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Adron&lt;/em&gt;&lt;/strong&gt; “Hey Troy, wanna run another Node PDX?”&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Troy&lt;/em&gt;&lt;/strong&gt; “Maybe.”&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Adron&lt;/em&gt;&lt;/strong&gt; “Let’s grab some coffee and discuss.”&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Troy&lt;/em&gt;&lt;/strong&gt; “Alright. Should we meet at…” at this point we spend 45 minutes discussing where we should meet for coffee.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;We then departed our respective locations to meet at a coffee shop somewhere in Portland. We then met and started talking about, as we often do, everything except what we were going to talk about. Then, as if spuriously interupted,&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Adron&lt;/em&gt;&lt;/strong&gt; “Hey Troy, wanna run another Node PDX?”&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Troy&lt;/em&gt;&lt;/strong&gt; “Ok.”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;So here we are now, with just 11 days to go before another Node PDX. We’re rounding up and finalizing the last steps of the effort right now. The speakers have been notified, we’ve gotten confirmations, and we’re getting the wheels on the bikes ready, the beer cooled off, the food prepared (ok, actually that’ll be prepared later), and psyched for the upcoming event. With that said, we’re definitely back in the groove and looking forward to this year’s event! We hope to see you there.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://nodepdx.org/#tickets&quot;&gt;Join us at Node PDX&lt;/a&gt;, enjoy a &lt;a href=&quot;http://nodepdx.org/lagniappe.html#bikes&quot;&gt;bike ride&lt;/a&gt; to see parts of Portland, and if you’re coming down from Seattle be sure to enjoy the &lt;a href=&quot;http://nodepdx.org/lagniappe.html#geektrain&quot;&gt;$15 buck ride&lt;/a&gt; via the &lt;a href=&quot;http://www.amtrakcascades.com/&quot;&gt;Amtrak Cascades&lt;/a&gt; to Portland for the conference.&lt;/p&gt;
+</description>
+    </item>
     <item>
       <title>How to Build a Bike Shed by David Manning &amp; Adam Ulvi</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-david-manning-adam-ulvi/</link>
@@ -214,23 +298,6 @@ it can be.&lt;/p&gt;
 </description>
     </item>
     <item>
-      <title>I Play the JavaScript by Matt McKegg</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</link>
-      <pubDate>Thu, 02 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</guid>
-      <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-left&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/mattmckegg.jpg&quot; alt=&quot;Matt McKegg&quot;&gt;
-&lt;/div&gt;
-
-&lt;p&gt;A JavaScript hacker and backyard musician and from Wellington, New Zealand. Lover of all things open and modular. I spend most of my time pressing buttons of various shapes, sizes and colours. Sometimes these buttons make sounds.&lt;/p&gt;
-&lt;p&gt;Matt has been making music with computers for about 10 years, but once he tried to move from bedroom composing to live performance, he got incredibly frustrated at how hard it was to play computer music live. He decided to start working on his own live electronic performance software written in JavaScript that would let me play the way he wanted to play. 3 years later, it’s finally starting to become a reality.&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Here is one of the Matt’s recent performances, for your viewing pleasure. &lt;/p&gt;
-&lt;iframe width=&quot;1280&quot; height=&quot;720&quot; src=&quot;https://www.youtube.com/embed/L2BVDJWHdy0?rel=0&amp;amp;showinfo=0&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;</description>
-    </item>
-    <item>
       <title>The Web Platform is the Universal Instrument by Ben Michel</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-ben-michel/</link>
       <pubDate>Thu, 02 Jun 2016 17:00:00 -0700</pubDate>
@@ -256,6 +323,23 @@ it can be.&lt;/p&gt;
 &lt;li&gt;Audience interaction with the exposed parameters of a live band’s instrumentation–via broadcast methods and microcontroller installations.”&lt;/li&gt;
 &lt;/ul&gt;
 </description>
+    </item>
+    <item>
+      <title>I Play the JavaScript by Matt McKegg</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</link>
+      <pubDate>Thu, 02 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-left&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/mattmckegg.jpg&quot; alt=&quot;Matt McKegg&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;A JavaScript hacker and backyard musician and from Wellington, New Zealand. Lover of all things open and modular. I spend most of my time pressing buttons of various shapes, sizes and colours. Sometimes these buttons make sounds.&lt;/p&gt;
+&lt;p&gt;Matt has been making music with computers for about 10 years, but once he tried to move from bedroom composing to live performance, he got incredibly frustrated at how hard it was to play computer music live. He decided to start working on his own live electronic performance software written in JavaScript that would let me play the way he wanted to play. 3 years later, it’s finally starting to become a reality.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Here is one of the Matt’s recent performances, for your viewing pleasure. &lt;/p&gt;
+&lt;iframe width=&quot;1280&quot; height=&quot;720&quot; src=&quot;https://www.youtube.com/embed/L2BVDJWHdy0?rel=0&amp;amp;showinfo=0&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;</description>
     </item>
     <item>
       <title>The House Is Not On Fire - Building a home automation robot with Arduino, Raspberry Pi and Node.js by Artur Paikin</title>
@@ -308,7 +392,10 @@ it can be.&lt;/p&gt;
 &lt;p&gt;Node applications exist at the end of a long, somewhat magical series of tubes. What spells are being cast to make this all work? Let’s find out!&lt;/p&gt;
 &lt;p&gt;In this talk Adam will explore the steps required to host a Node application on a small, affordable linux virtual private server (like a DigitalOcean droplet). This is not a tutorial, but rather, a walk-through of the configuration steps, background information the role each step plays, and the “why” behind the choices we are making.&lt;/p&gt;
 &lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img class=&quot;image&quot; src=&quot;adamulvi.jpg&quot; style=&quot;float: right;margin-left: 15px;margin-top: 15px;&quot; /&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-right&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-adam-ulvi/adamulvi.jpg&quot; alt=&quot;Adam Ulvi&quot;&gt;
+&lt;/div&gt;
+
 &lt;p&gt;The reference implementation is taken from the current production gruntjs.com server.&lt;/p&gt;
 &lt;p&gt;By following the request lifecyle, we will touch on basic tcp/ip networking, DNS configuration and history, node application development, nginx proxy configuration, and basic linux system configuration.&lt;/p&gt;
 &lt;p&gt;At the end of the presentation developers should have a better understanding of the simple application’s infrastructure requirements, external dependencies, and targets of opportunity for future improvement.&lt;/p&gt;
