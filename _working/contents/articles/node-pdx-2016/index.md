@@ -73,6 +73,8 @@ We also learned some very key things.
 
 So this basically summarizes year one of Node PDX. That was [Node PDX 2012](http://2012.nodepdx.org/).
 
+## Node PDX 2013
+
 Node PDX 2013 started off a bit differently. We gave ourselves more runway to work with. I believe initially it was at least several months. We also gave ourselves plenty of resources to work with and incorporated anyway, which still is a complete discouragement from actually doing these things.
 
 Troy also did effectively all of the graphic design, which I might add, turned out pretty rad! Check it out for a trip down memory lane at the [archive site](http://2013.nodepdx.org/).
@@ -80,8 +82,6 @@ Troy also did effectively all of the graphic design, which I might add, turned o
 <div class="image float-right">
     ![Node PDX 2013](NodePDX-2013.png)
 </div>
-
-## Node PDX 2013
 
 We got the ball rolling and Node PDX 2013 was a huge hit. We had involvement from all sorts of sponsors from great companies like [New Relic](https://newrelic.com/), [Urban Airship](https://www.urbanairship.com/), [^lift](https://liftsecurity.io/), [Mozilla](https://www.mozilla.org/en-US/), [Jive](https://www.jivesoftware.com/), [Janrain](http://www.janrain.com/), [Walmart Labs](http://www.walmartlabs.com/), [PIE PDX](http://www.piepdx.com/), [Basho](http://basho.com/), [Sticker Mule](https://www.stickermule.com/), [Silicon Florist](http://siliconflorist.com/), and [Devion](http://devion.com/). We also had a great speaker line up, had excellent local food, great freshly brewed & roasted coffee, and lots more. I even got hit in the head with a quad-copter! It was absolutely a superb time. 
 
