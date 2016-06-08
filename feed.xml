@@ -5,35 +5,13 @@
     <atom:link href="http://adron.github.io/feed.xml" rel="self" type="application/rss+xml"></atom:link>
     <link>http://adron.github.io</link>
     <description>Coder, Messenger, Recon, Infrastructure</description>
-    <pubDate>Mon, 06 Jun 2016 17:00:00 -0700</pubDate>
+    <pubDate>Tue, 07 Jun 2016 19:20:00 -0700</pubDate>
     <generator>Wintersmith - https://github.com/jnordberg/wintersmith</generator>
     <language>en</language>
     <item>
-      <title>Get JavaScript Running on a $2 WiFi-Enabled Device by Andrew Chalkley</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-andrew-chalkley/</link>
-      <pubDate>Mon, 06 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-andrew-chalkley/</guid>
-      <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-andrew-chalkley/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-right&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-andrew-chalkley/andrew.jpg&quot; alt=&quot;Andrew Chalkley&quot;&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Andrew Chalkley is a full-time teacher at online education provider Treehouse. He’s a polyglot programmer with a passion for hardware. Andrew’s posts on the hardware platform Arduino have been featured in Hacker Monthly and used in higher educational institutions around the world. He’s also lectured at University on JavaScript and the Internet of Things.&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;The ESP8266 is a very popular Internet of Things device, because of it’s price and availability. You can program it with Arduino, Python and even JavaScript. Using JavaScript on a small device doesn’t have to be difficult. Andrew will show you the easiest way to install JavaScript on am Internet of Things device and how to run your JavaScript applications on it.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Blog: &lt;a href=&quot;http://forefront.io&quot;&gt;http://forefront.io&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Company: &lt;a href=&quot;http://teamtreehouse.com&quot;&gt;http://teamtreehouse.com&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Github: &lt;a href=&quot;http://github.com/chalkers&quot;&gt;http://github.com/chalkers&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Flasher.js: &lt;a href=&quot;http://github.com/thingssdk/flasher.js&quot;&gt;http://github.com/thingssdk/flasher.js&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-    </item>
-    <item>
       <title>How to Build a Bike Shed by David Manning &amp; Adam Ulvi</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-david-manning-adam-ulvi/</link>
-      <pubDate>Mon, 06 Jun 2016 17:00:00 -0700</pubDate>
+      <pubDate>Tue, 07 Jun 2016 19:20:00 -0700</pubDate>
       <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-david-manning-adam-ulvi/</guid>
       <author></author>
       <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-david-manning-adam-ulvi/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
@@ -52,6 +30,28 @@
 &lt;li&gt;Bikes: &lt;a href=&quot;https://en.wikipedia.org/wiki/Bicycle&quot;&gt;https://en.wikipedia.org/wiki/Bicycle&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Sheds: &lt;a href=&quot;https://en.wikipedia.org/wiki/Shed&quot;&gt;https://en.wikipedia.org/wiki/Shed&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Bike Sheds: &lt;a href=&quot;https://en.wikipedia.org/wiki/Law_of_triviality&quot;&gt;https://en.wikipedia.org/wiki/Shed#Specific-use_sheds&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    <item>
+      <title>Get JavaScript Running on a $2 WiFi-Enabled Device by Andrew Chalkley</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-andrew-chalkley/</link>
+      <pubDate>Tue, 07 Jun 2016 11:20:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-andrew-chalkley/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-andrew-chalkley/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-right&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-andrew-chalkley/andrew.jpg&quot; alt=&quot;Andrew Chalkley&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Andrew Chalkley is a full-time teacher at online education provider Treehouse. He’s a polyglot programmer with a passion for hardware. Andrew’s posts on the hardware platform Arduino have been featured in Hacker Monthly and used in higher educational institutions around the world. He’s also lectured at University on JavaScript and the Internet of Things.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;The ESP8266 is a very popular Internet of Things device, because of it’s price and availability. You can program it with Arduino, Python and even JavaScript. Using JavaScript on a small device doesn’t have to be difficult. Andrew will show you the easiest way to install JavaScript on am Internet of Things device and how to run your JavaScript applications on it.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Blog: &lt;a href=&quot;http://forefront.io&quot;&gt;http://forefront.io&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Company: &lt;a href=&quot;http://teamtreehouse.com&quot;&gt;http://teamtreehouse.com&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Github: &lt;a href=&quot;http://github.com/chalkers&quot;&gt;http://github.com/chalkers&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Flasher.js: &lt;a href=&quot;http://github.com/thingssdk/flasher.js&quot;&gt;http://github.com/thingssdk/flasher.js&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>
@@ -100,36 +100,6 @@
 </description>
     </item>
     <item>
-      <title>The SAM Pattern - a distributed system view of Front-End architectures by Jean-Jacques Dubray</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-jean-jacques-dubray/</link>
-      <pubDate>Sat, 04 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-jean-jacques-dubray/</guid>
-      <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-jean-jacques-dubray/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-left&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-jean-jacques-dubray/jj-sized.png&quot; alt=&quot;Jean-Jacques Dubray&quot;&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Jean-Jacques Dubray is the founder of &lt;a href=&quot;http://xgen.io&quot;&gt;xgen.io&lt;/a&gt; and &lt;a href=&quot;http://www.gliiph.com&quot;&gt;gliiph&lt;/a&gt;. He has been building Service Oriented Architectures,
-and API platforms for the last 15 years. He is a former member of the research staff at HRL and earned his Ph.D. from
-the University of Provence (Luminy campus), home of the Prolog language. He is the inventor of the &lt;a href=&quot;http://www.xgenio.com/bolt-introduction.pdf&quot;&gt;BOLT methodology&lt;/a&gt; and the SAM pattern.&lt;/p&gt;
-&lt;p&gt;In his talk Jean-Jacques Dubray presents that Web Applications are rapidly becoming sophisticated distributed systems. When you look at a Facebook page or a Netflix catalog,
-the number of components interacting with each other requires complex synchronization and state management capabilities, reaching
-the limits of the MVC pattern.&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;In the last couple of years, several reactive architectures have started to get some interest (React, Cycle.js, ELM) without
-generating significant traction (compared to established frameworks like Angular), while struggling to position effects in their
-programming model. A new reactive, functional pattern, the State-Action-Model pattern (SAM) was introduced in early 2016 on the
-foundation of TLA+ semantics.&lt;/p&gt;
-&lt;p&gt;The pattern, which is unapologetically driven by simplicity, promotes a clear delineation between the business logic and the view
-and challenges the complexity of frameworks like Google’s Angular or Facebook’s React/Redux.&lt;/p&gt;
-&lt;p&gt;SAM’s unidirectional flow is also challenging interactive patterns like BFF (Back-End for Front-End) or the Vertical Slice Pattern
-which suggest creating view-specific APIs, per platform, app, versions of an app…&lt;/p&gt;
-&lt;p&gt;We’ll start by reviewing some of the key challenges of modern UX and Front-End Architectures. We will then present the
-key concepts of SAM and walk the audience through some node.js code samples (including server-side TimeTravel).&lt;/p&gt;
-</description>
-    </item>
-    <item>
       <title>Modern Javascript Frameworks - Introduction to Ember.JS and Ember-CLI by Suchita Doshi</title>
       <link>http://adron.github.io/articles/node-pdx-2016-suchita-doshi/</link>
       <pubDate>Sat, 04 Jun 2016 17:00:00 -0700</pubDate>
@@ -157,6 +127,36 @@ In this talk I would be covering the following:&lt;/p&gt;
 &lt;li&gt;Live Demo on how it’s really intuitive in a couple of non-trivial scenarios.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;So basically my goal is to attract more developers to adapt modern javascript frameworks and make a difference in the way complex apps are built.”&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>The SAM Pattern - a distributed system view of Front-End architectures by Jean-Jacques Dubray</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-jean-jacques-dubray/</link>
+      <pubDate>Sat, 04 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-jean-jacques-dubray/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-jean-jacques-dubray/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-left&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-jean-jacques-dubray/jj-sized.png&quot; alt=&quot;Jean-Jacques Dubray&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Jean-Jacques Dubray is the founder of &lt;a href=&quot;http://xgen.io&quot;&gt;xgen.io&lt;/a&gt; and &lt;a href=&quot;http://www.gliiph.com&quot;&gt;gliiph&lt;/a&gt;. He has been building Service Oriented Architectures,
+and API platforms for the last 15 years. He is a former member of the research staff at HRL and earned his Ph.D. from
+the University of Provence (Luminy campus), home of the Prolog language. He is the inventor of the &lt;a href=&quot;http://www.xgenio.com/bolt-introduction.pdf&quot;&gt;BOLT methodology&lt;/a&gt; and the SAM pattern.&lt;/p&gt;
+&lt;p&gt;In his talk Jean-Jacques Dubray presents that Web Applications are rapidly becoming sophisticated distributed systems. When you look at a Facebook page or a Netflix catalog,
+the number of components interacting with each other requires complex synchronization and state management capabilities, reaching
+the limits of the MVC pattern.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;In the last couple of years, several reactive architectures have started to get some interest (React, Cycle.js, ELM) without
+generating significant traction (compared to established frameworks like Angular), while struggling to position effects in their
+programming model. A new reactive, functional pattern, the State-Action-Model pattern (SAM) was introduced in early 2016 on the
+foundation of TLA+ semantics.&lt;/p&gt;
+&lt;p&gt;The pattern, which is unapologetically driven by simplicity, promotes a clear delineation between the business logic and the view
+and challenges the complexity of frameworks like Google’s Angular or Facebook’s React/Redux.&lt;/p&gt;
+&lt;p&gt;SAM’s unidirectional flow is also challenging interactive patterns like BFF (Back-End for Front-End) or the Vertical Slice Pattern
+which suggest creating view-specific APIs, per platform, app, versions of an app…&lt;/p&gt;
+&lt;p&gt;We’ll start by reviewing some of the key challenges of modern UX and Front-End Architectures. We will then present the
+key concepts of SAM and walk the audience through some node.js code samples (including server-side TimeTravel).&lt;/p&gt;
 </description>
     </item>
     <item>
@@ -214,6 +214,23 @@ it can be.&lt;/p&gt;
 </description>
     </item>
     <item>
+      <title>I Play the JavaScript by Matt McKegg</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</link>
+      <pubDate>Thu, 02 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-left&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/mattmckegg.jpg&quot; alt=&quot;Matt McKegg&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;A JavaScript hacker and backyard musician and from Wellington, New Zealand. Lover of all things open and modular. I spend most of my time pressing buttons of various shapes, sizes and colours. Sometimes these buttons make sounds.&lt;/p&gt;
+&lt;p&gt;Matt has been making music with computers for about 10 years, but once he tried to move from bedroom composing to live performance, he got incredibly frustrated at how hard it was to play computer music live. He decided to start working on his own live electronic performance software written in JavaScript that would let me play the way he wanted to play. 3 years later, it’s finally starting to become a reality.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Here is one of the Matt’s recent performances, for your viewing pleasure. &lt;/p&gt;
+&lt;iframe width=&quot;1280&quot; height=&quot;720&quot; src=&quot;https://www.youtube.com/embed/L2BVDJWHdy0?rel=0&amp;amp;showinfo=0&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;</description>
+    </item>
+    <item>
       <title>The Web Platform is the Universal Instrument by Ben Michel</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-ben-michel/</link>
       <pubDate>Thu, 02 Jun 2016 17:00:00 -0700</pubDate>
@@ -239,23 +256,6 @@ it can be.&lt;/p&gt;
 &lt;li&gt;Audience interaction with the exposed parameters of a live band’s instrumentation–via broadcast methods and microcontroller installations.”&lt;/li&gt;
 &lt;/ul&gt;
 </description>
-    </item>
-    <item>
-      <title>I Play the JavaScript by Matt McKegg</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</link>
-      <pubDate>Thu, 02 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</guid>
-      <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-left&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/mattmckegg.jpg&quot; alt=&quot;Matt McKegg&quot;&gt;
-&lt;/div&gt;
-
-&lt;p&gt;A JavaScript hacker and backyard musician and from Wellington, New Zealand. Lover of all things open and modular. I spend most of my time pressing buttons of various shapes, sizes and colours. Sometimes these buttons make sounds.&lt;/p&gt;
-&lt;p&gt;Matt has been making music with computers for about 10 years, but once he tried to move from bedroom composing to live performance, he got incredibly frustrated at how hard it was to play computer music live. He decided to start working on his own live electronic performance software written in JavaScript that would let me play the way he wanted to play. 3 years later, it’s finally starting to become a reality.&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Here is one of the Matt’s recent performances, for your viewing pleasure. &lt;/p&gt;
-&lt;iframe width=&quot;1280&quot; height=&quot;720&quot; src=&quot;https://www.youtube.com/embed/L2BVDJWHdy0?rel=0&amp;amp;showinfo=0&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;</description>
     </item>
     <item>
       <title>The House Is Not On Fire - Building a home automation robot with Arduino, Raspberry Pi and Node.js by Artur Paikin</title>
