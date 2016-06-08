@@ -9,7 +9,7 @@ resource "google_dns_record_set" "compositecodecom" {
     name = "@.${google_dns_managed_zone.compositecodecom.dns_name}"
     type = "CNAME"
     ttl = 5
-    rrdatas = ["compositecode.wordpress.com."]
+    rrdatas = ["blog.adron.me/compositecode-directory."]
 }
 
 resource "google_dns_record_set" "blogcompositecodecom" {
@@ -17,5 +17,5 @@ resource "google_dns_record_set" "blogcompositecodecom" {
     name = "blog.${google_dns_managed_zone.compositecodecom.dns_name}"
     type = "CNAME"
     ttl = 5
-    rrdatas = ["blog.adron.me."]
+    rrdatas = ["blog.adron.me/compositecode-directory."]
 }
