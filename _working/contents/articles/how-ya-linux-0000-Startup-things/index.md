@@ -44,7 +44,7 @@ The second function deletes my docker containers and then deletes my images. Thi
 
 The last thing I’ll cover real quick that is commonly located in these startup scripts are some environment variables being set. For instance, I use Terraform to build out infrastructure. For that, sometimes I setup some Terraform variables, that are built to work specifically when prefaced with TF_VAR_. So my variables look something like this when set in script.
 
-export TF_VAR_username="root"
-export TF_VAR_password="someSecretPassword"
+    export TF_VAR_username="root"
+    export TF_VAR_password="someSecretPassword"
 
 So that’s some examples and the basic gist of things you might see, and what you might want to run with your ~/.bash_profile or ~/.bashrc files. Happy bash hacking!

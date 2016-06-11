@@ -110,9 +110,9 @@ cleandocker() {
 </code></pre><p>The first function executes simply by entering <code>gimme docker nameOfDockerVirtualMachineImage</code>. It then checks for the virtual machine image parameter (the $1) and then executes various docker-machine commands against that image. Then ends with the evaluation and execution of the docker machine terminal&nbsp;connection.</p>
 <p>The second function deletes my docker containers and then deletes my images. This way I can start fresh without deleting an entire docker virtual machine (sometimes the later may actually be easier). It’s a quick way to start fresh with docker images and containers when working through a lot of minor&nbsp;changes.</p>
 <p>The last thing I’ll cover real quick that is commonly located in these startup scripts are some environment variables being set. For instance, I use Terraform to build out infrastructure. For that, sometimes I setup some Terraform variables, that are built to work specifically when prefaced with <span class="caps">TF</span><em><span class="caps">VAR</span></em>. So my variables look something like this when set in&nbsp;script.</p>
-<p>export TF_VAR_username=”root”
-export&nbsp;TF_VAR_password=”someSecretPassword”</p>
-<p>So that’s some examples and the basic gist of things you might see, and what you might want to run with your ~/.bash_profile or ~/.bashrc files. Happy bash&nbsp;hacking!</p>
+<pre><code>export TF_VAR_username=&quot;root&quot;
+export TF_VAR_password=&quot;someSecretPassword&quot;
+</code></pre><p>So that’s some examples and the basic gist of things you might see, and what you might want to run with your ~/.bash_profile or ~/.bashrc files. Happy bash&nbsp;hacking!</p>
 </section>
                 </article>
                 <!-- End of Blog Page-->
