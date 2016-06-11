@@ -62,7 +62,7 @@
             <div class="col-md-12">
               <!-- Page Info-->
               <div class="page-info page-info-simple">
-                <h1>Docker Tips n' Tricks - Bash Things With Docker</h1>
+                <h1>Startup Things - How Ya Linux Series - 0000</h1>
                 <p class="author">Written by <span class="author">Adron Hall</span>
                 </p>
                 <div class="nav"><a href="/">« Home</a></div>
@@ -81,24 +81,38 @@
               <div class="main-content">
                 <!-- Blog Page-->
                 <article class="article">
-                  <section class="content"><p>If you use Docker frequently, you’ve likely memorized a few repetitive&nbsp;commands…</p>
-<pre><code>docker-machine start XyZvirtualMachine
-</code></pre><p>Then you&nbsp;run…</p>
-<pre><code>docker-machine env XyZvirtualMachine
-</code></pre><p>…and then you&nbsp;type…</p>
-<pre><code>eval $(docker-machine env XyZvirtualMachine)
-</code></pre><p><span class="more"></span></p>
-<p>One does this about a zillion times if there are multiple virtual machines or for other various reasons. I wanted to simplify this repetitive task so I wrote a bash function, thanks to a <a href="http://stackoverflow.com/questions/35761480/scripting-docker-not-connected-after-running-script" target="_blank">fumble I posted on Stackoverflow</a> and then an assist by my good friend Troy Howard (<a href="https://twitter.com/thoward37" target="_blank">@thoward37</a>).</p>
-<p>This quick hack consisted of this <a href="https://gist.github.com/Adron/8dc06eb398f403225daa" target="_blank">Github gist</a>.</p>
+                  <section class="content"><div class="image float-right">
+    <img src="/articles/how-ya-linux-0000-Startup-things/penguinbash.jpg" alt="Penguin Bash">
+</div>
+
+<p>When Linux starts up (or most Unix variants or <span class="caps">OS</span>-X for that matter, which is after all a kind of Unix variant) there are particular scrips that execute. The key two are ~/.bash_profile and ~./bashrc. When you log in the ~/.bash_profile executes and when you startup a shell then the ~/.bashrc&nbsp;executes.</p>
+<p>These two files are standard executable script files, so any bash will do. For instance, some of the bash script I end up in my ~/.bash_profile includes a git prompt, as shown&nbsp;below.</p>
+<p><span class="more"></span></p>
+<pre><code>if [ -f &quot;$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh&quot; ]; then
+    source &quot;$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh&quot;
+fi
+</code></pre><p>Another few lines of code actually load my nvm, which is my Node.js Version&nbsp;Manager.</p>
+<pre><code>export NVM_DIR=&quot;/Users/axh6454/.nvm&quot;
+[ -s &quot;$NVM_DIR/nvm.sh&quot; ] &amp;&amp; . &quot;$NVM_DIR/nvm.sh&quot;  # This loads nvm
+</code></pre><p>I also have a few functions I’ve created, that load and are ready for my use at  any location I open the terminal&nbsp;at.</p>
 <pre><code>gimmedocker() { if [ $1 ]; then
     docker-machine start $1
     docker-machine env $1
     eval $(docker-machine env $1)
     docker ps -a
-fi }
-</code></pre><p>Stick that in your ~/.bash_profile (or ~/.bashrc if you’re on *nix) and you’re good to go. Then at the bash prompt just type in&nbsp;this.</p>
-<pre><code>gimmedocker XyZvirtualMachine
-</code></pre><p><span class="caps">BOOM</span>! Less typing for the&nbsp;win!</p>
+fi };
+
+cleandocker() {
+    # Wipe out the images and containers.
+    docker rm $(docker ps -a -q)
+    docker rmi $(docker images -q)
+};
+</code></pre><p>The first function executes simply by entering <code>gimme docker nameOfDockerVirtualMachineImage</code>. It then checks for the virtual machine image parameter (the $1) and then executes various docker-machine commands against that image. Then ends with the evaluation and execution of the docker machine terminal&nbsp;connection.</p>
+<p>The second function deletes my docker containers and then deletes my images. This way I can start fresh without deleting an entire docker virtual machine (sometimes the later may actually be easier). It’s a quick way to start fresh with docker images and containers when working through a lot of minor&nbsp;changes.</p>
+<p>The last thing I’ll cover real quick that is commonly located in these startup scripts are some environment variables being set. For instance, I use Terraform to build out infrastructure. For that, sometimes I setup some Terraform variables, that are built to work specifically when prefaced with <span class="caps">TF</span><em><span class="caps">VAR</span></em>. So my variables look something like this when set in&nbsp;script.</p>
+<p>export TF_VAR_username=”root”
+export&nbsp;TF_VAR_password=”someSecretPassword”</p>
+<p>So that’s some examples and the basic gist of things you might see, and what you might want to run with your ~/.bash_profile or ~/.bashrc files. Happy bash&nbsp;hacking!</p>
 </section>
                 </article>
                 <!-- End of Blog Page-->

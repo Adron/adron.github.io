@@ -6,33 +6,15 @@ template: article.jade
 ---
 If you use Docker frequently, you've likely memorized a few repetitive commands...
 
-<div class="code-highlight " >
-<span class="js-copy-to-clipboard copy-code">copy</span> 
-<pre>
-<code class="language-markup js-code">
-docker-machine start XyZvirtualMachine</code>
-</pre> 
-</div>
+    docker-machine start XyZvirtualMachine
 
 Then you run...
 
-<div class="code-highlight " >
-<span class="js-copy-to-clipboard copy-code">copy</span> 
-<pre>
-<code class="language-markup js-code">
-docker-machine env XyZvirtualMachine</code>
-</pre> 
-</div>
+    docker-machine env XyZvirtualMachine
 
 ...and then you type...
 
-<div class="code-highlight " >
-<span class="js-copy-to-clipboard copy-code">copy</span> 
-<pre>
-<code class="language-markup js-code">
-eval $(docker-machine env XyZvirtualMachine)</code>
-</pre> 
-</div>
+    eval $(docker-machine env XyZvirtualMachine)
 
 <span class="more"></span>
 
@@ -40,27 +22,15 @@ One does this about a zillion times if there are multiple virtual machines or fo
 
 This quick hack consisted of this <a href="https://gist.github.com/Adron/8dc06eb398f403225daa" target="_blank">Github gist</a>.
 
-<div class="code-highlight " >
-<span class="js-copy-to-clipboard copy-code">copy</span> 
-<pre>
-<code class="language-markup js-code">
-gimmedocker() { if [ $1 ]; then
-	docker-machine start $1
-	docker-machine env $1
-	eval $(docker-machine env $1)
-	docker ps -a
-fi }</code>
-</pre> 
-</div>
+    gimmedocker() { if [ $1 ]; then
+        docker-machine start $1
+        docker-machine env $1
+        eval $(docker-machine env $1)
+        docker ps -a
+    fi }
 
 Stick that in your ~/.bash_profile (or ~/.bashrc if you're on *nix) and you're good to go. Then at the bash prompt just type in this.
 
-<div class="code-highlight " >
-<span class="js-copy-to-clipboard copy-code">copy</span> 
-<pre>
-<code class="language-markup js-code">
-gimmedocker XyZvirtualMachine</code>
-</pre> 
-</div>
+    gimmedocker XyZvirtualMachine
 
 BOOM! Less typing for the win!

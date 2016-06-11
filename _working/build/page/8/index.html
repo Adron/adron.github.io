@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="http://adron.github.io/css/style.min.css">
     <script src="http://adron.github.io/js/modernizr.js"></script>
   </head>
-  <body class="article-detail">
+  <body>
     <!--[if lt IE 8]>
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -62,10 +62,8 @@
             <div class="col-md-12">
               <!-- Page Info-->
               <div class="page-info page-info-simple">
-                <h1>Docker Tips n' Tricks - Bash Things With Docker</h1>
-                <p class="author">Written by <span class="author">Adron Hall</span>
-                </p>
-                <div class="nav"><a href="/">« Home</a></div>
+                <h1>Adron's Composite Code</h1>
+                <h2 class="description">Coder, Messenger, Recon, Infrastructure</h2>
               </div>
               <!-- End Page Info-->
             </div>
@@ -80,27 +78,28 @@
             <div class="col-md-9">
               <div class="main-content">
                 <!-- Blog Page-->
-                <article class="article">
-                  <section class="content"><p>If you use Docker frequently, you’ve likely memorized a few repetitive&nbsp;commands…</p>
-<pre><code>docker-machine start XyZvirtualMachine
-</code></pre><p>Then you&nbsp;run…</p>
-<pre><code>docker-machine env XyZvirtualMachine
-</code></pre><p>…and then you&nbsp;type…</p>
-<pre><code>eval $(docker-machine env XyZvirtualMachine)
-</code></pre><p><span class="more"></span></p>
-<p>One does this about a zillion times if there are multiple virtual machines or for other various reasons. I wanted to simplify this repetitive task so I wrote a bash function, thanks to a <a href="http://stackoverflow.com/questions/35761480/scripting-docker-not-connected-after-running-script" target="_blank">fumble I posted on Stackoverflow</a> and then an assist by my good friend Troy Howard (<a href="https://twitter.com/thoward37" target="_blank">@thoward37</a>).</p>
-<p>This quick hack consisted of this <a href="https://gist.github.com/Adron/8dc06eb398f403225daa" target="_blank">Github gist</a>.</p>
-<pre><code>gimmedocker() { if [ $1 ]; then
-    docker-machine start $1
-    docker-machine env $1
-    eval $(docker-machine env $1)
-    docker ps -a
-fi }
-</code></pre><p>Stick that in your ~/.bash_profile (or ~/.bashrc if you’re on *nix) and you’re good to go. Then at the bash prompt just type in&nbsp;this.</p>
-<pre><code>gimmedocker XyZvirtualMachine
-</code></pre><p><span class="caps">BOOM</span>! Less typing for the&nbsp;win!</p>
-</section>
-                </article>
+                <div class="blog">
+                  <div class="row"></div>
+                </div>
+                <div class="col-md-12 col-sm-12">
+                  <!-- Blog List-->
+                  <div class="blog-grid">
+                    <div class="row">
+                      <div class="col-md-12 col-sm-12">
+                        <h3 class="blog-grid-title"><a href="/articles/docker-tips-n-tricks-delete-all-the-images-containers/">Docker Tips n' Tricks - Delete All The Images &amp; Containers</a></h3>
+                        <p class="blog-grid-excerpt"><p>Two simple commands that’ll wipe your installation clean of images and&nbsp;containers.</p>
+<p>Deletes all&nbsp;containers</p>
+<pre><code>docker rm $(docker ps -a -q)
+</code></pre><p>Deletes all&nbsp;images</p>
+<pre><code>docker rmi $(docker images -q)
+</code></pre>
+                        </p>
+                        <div class="blog-grid-meta"><span class="blog-grid-date">02. November 2015</span></div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- End of Blog List-->
+                </div>
                 <!-- End of Blog Page-->
               </div>
             </div>
@@ -120,7 +119,8 @@ fi }
             </div>
           </div>
         </div>
-        <div class="nav"><a href="/">« Home</a></div>
+        <div class="nav"><a href="/page/7/">« Newer</a>
+        </div>
       </div>
     </div>
     <script src="http://adron.github.io/js/all.js"></script>

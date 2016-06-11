@@ -5,9 +5,49 @@
     <atom:link href="http://adron.github.io/feed.xml" rel="self" type="application/rss+xml"></atom:link>
     <link>http://adron.github.io</link>
     <description>Coder, Messenger, Recon, Infrastructure</description>
-    <pubDate>Wed, 08 Jun 2016 14:30:00 -0700</pubDate>
+    <pubDate>Sat, 11 Jun 2016 15:35:00 -0700</pubDate>
     <generator>Wintersmith - https://github.com/jnordberg/wintersmith</generator>
     <language>en</language>
+    <item>
+      <title>Startup Things - How Ya Linux Series - 0000</title>
+      <link>http://adron.github.io/articles/how-ya-linux-0000-Startup-things/</link>
+      <pubDate>Sat, 11 Jun 2016 15:35:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/how-ya-linux-0000-Startup-things/</guid>
+      <author></author>
+      <description>&lt;div class=&quot;image float-right&quot;&gt;
+    &lt;img src=&quot;/articles/how-ya-linux-0000-Startup-things/penguinbash.jpg&quot; alt=&quot;Penguin Bash&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;When Linux starts up (or most Unix variants or OS-X for that matter, which is after all a kind of Unix variant) there are particular scrips that execute. The key two are ~/.bash_profile and ~./bashrc. When you log in the ~/.bash_profile executes and when you startup a shell then the ~/.bashrc executes.&lt;/p&gt;
+&lt;p&gt;These two files are standard executable script files, so any bash will do. For instance, some of the bash script I end up in my ~/.bash_profile includes a git prompt, as shown below.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;if [ -f &amp;quot;$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh&amp;quot; ]; then
+    source &amp;quot;$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh&amp;quot;
+fi
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Another few lines of code actually load my nvm, which is my Node.js Version Manager.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;export NVM_DIR=&amp;quot;/Users/axh6454/.nvm&amp;quot;
+[ -s &amp;quot;$NVM_DIR/nvm.sh&amp;quot; ] &amp;amp;&amp;amp; . &amp;quot;$NVM_DIR/nvm.sh&amp;quot;  # This loads nvm
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;I also have a few functions I’ve created, that load and are ready for my use at  any location I open the terminal at.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;gimmedocker() { if [ $1 ]; then
+    docker-machine start $1
+    docker-machine env $1
+    eval $(docker-machine env $1)
+    docker ps -a
+fi };
+
+cleandocker() {
+    # Wipe out the images and containers.
+    docker rm $(docker ps -a -q)
+    docker rmi $(docker images -q)
+};
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The first function executes simply by entering &lt;code&gt;gimme docker nameOfDockerVirtualMachineImage&lt;/code&gt;. It then checks for the virtual machine image parameter (the $1) and then executes various docker-machine commands against that image. Then ends with the evaluation and execution of the docker machine terminal connection.&lt;/p&gt;
+&lt;p&gt;The second function deletes my docker containers and then deletes my images. This way I can start fresh without deleting an entire docker virtual machine (sometimes the later may actually be easier). It’s a quick way to start fresh with docker images and containers when working through a lot of minor changes.&lt;/p&gt;
+&lt;p&gt;The last thing I’ll cover real quick that is commonly located in these startup scripts are some environment variables being set. For instance, I use Terraform to build out infrastructure. For that, sometimes I setup some Terraform variables, that are built to work specifically when prefaced with TF&lt;em&gt;VAR&lt;/em&gt;. So my variables look something like this when set in script.&lt;/p&gt;
+&lt;p&gt;export TF_VAR_username=”root”
+export TF_VAR_password=”someSecretPassword”&lt;/p&gt;
+&lt;p&gt;So that’s some examples and the basic gist of things you might see, and what you might want to run with your ~/.bash_profile or ~/.bashrc files. Happy bash hacking!&lt;/p&gt;
+</description>
+    </item>
     <item>
       <title>The Short Story of Node PDX, and Node PDX 2016</title>
       <link>http://adron.github.io/articles/node-pdx-2016/</link>
@@ -140,27 +180,6 @@
 </description>
     </item>
     <item>
-      <title>How to Electron by Blaine Schmeisser</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-blaine-schmeisser/</link>
-      <pubDate>Sun, 05 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-blaine-schmeisser/</guid>
-      <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-blaine-schmeisser/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-left&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-blaine-schmeisser/blainesch.jpg&quot; alt=&quot;Blaine Schmeisser&quot;&gt;
-&lt;/div&gt;
-
-&lt;p&gt;I’m happy to introduce Blaine Schmeisser. He’s a recent Portland transplant currently working as a Senior Software Engineer at New Relic. He has a passion for building and shipping software and an advocate for pair programming. Outside of tech, Blaine spends his free time with his dog and maintains a simplistic, eco-friendly lifestyle.&lt;/p&gt;
-&lt;p&gt;Blaine’s “How to Electron” answers questions you have about building user interface applications with JavaScript. Have you ever wanted to build desktop apps with web technology you already know? If you’ve never heard of Electron or just want to learn more about it, this talk will cover what Electron is and how to utilize it to create powerful tools like Atom and Slack. You will learn the history of Electron, how to get started, the trade-offs of picking various boiler plates, and the unique Electron specific APIs that are vital to being a Electron developer.&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;GitHub: &lt;a href=&quot;https://github.com/blainesch&quot;&gt;https://github.com/blainesch&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Twitter: &lt;a href=&quot;https://twitter.com/blainesch&quot;&gt;https://twitter.com/blainesch&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Website: &lt;a href=&quot;http://blainesch.com&quot;&gt;http://blainesch.com&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-    </item>
-    <item>
       <title>Demystifying TypeScript Decorators by James Churchill</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-james-churchill/</link>
       <pubDate>Sun, 05 Jun 2016 17:00:00 -0700</pubDate>
@@ -184,33 +203,24 @@
 </description>
     </item>
     <item>
-      <title>Modern Javascript Frameworks - Introduction to Ember.JS and Ember-CLI by Suchita Doshi</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-suchita-doshi/</link>
-      <pubDate>Sat, 04 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-suchita-doshi/</guid>
+      <title>How to Electron by Blaine Schmeisser</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-blaine-schmeisser/</link>
+      <pubDate>Sun, 05 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-blaine-schmeisser/</guid>
       <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-suchita-doshi/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-right&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-suchita-doshi/suchita-doshi.jpg&quot; alt=&quot;Suchita Doshi&quot;&gt;
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-blaine-schmeisser/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-left&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-blaine-schmeisser/blainesch.jpg&quot; alt=&quot;Blaine Schmeisser&quot;&gt;
 &lt;/div&gt;
 
-&lt;p&gt;Suchita is UI Lead for the analytics module of Yahoo Admanager Plus team and Core member of Emberjs group @Yahoo, Speaker at Women Who code organization (Introduction To Emberjs/Ember CLI), Conducted Webinar for the TenXList members on EmberJS. She’s passionate about improving developers ergonomics and a hardcore “cricket” fan.&lt;/p&gt;
-&lt;p&gt;In other Suchita news, she’s opening bats-woman for the Bay Area Cricket Association team! 😀&lt;/p&gt;
-&lt;p&gt;Suchita describes her talk as “There will never be a “one size fits all” approach to web development. If you want your application to be minimally interactive, then server side rendered HTML would be the way to go, else, if it were a more interactive application, then client side framework would benefit you.
-Why not use just JQuery instead of adopting these Modern Javascript Frameworks? Think about it! If your application has interactivity on the lighter side, then JQuery would work well, but as soon as you introduce more states in your application, it would then become messier and heavier on the DOM. You would need to use the ‘data-‘ attributes to store the data in your DOM and also remember how to map them with the triggered events.&lt;/p&gt;
+&lt;p&gt;I’m happy to introduce Blaine Schmeisser. He’s a recent Portland transplant currently working as a Senior Software Engineer at New Relic. He has a passion for building and shipping software and an advocate for pair programming. Outside of tech, Blaine spends his free time with his dog and maintains a simplistic, eco-friendly lifestyle.&lt;/p&gt;
+&lt;p&gt;Blaine’s “How to Electron” answers questions you have about building user interface applications with JavaScript. Have you ever wanted to build desktop apps with web technology you already know? If you’ve never heard of Electron or just want to learn more about it, this talk will cover what Electron is and how to utilize it to create powerful tools like Atom and Slack. You will learn the history of Electron, how to get started, the trade-offs of picking various boiler plates, and the unique Electron specific APIs that are vital to being a Electron developer.&lt;/p&gt;
 &lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Here is where client side frameworks come to the rescue. I have worked on several client side frameworks like Backbone.js, Ember.js. Few of the many features I love about Ember.js are the two-way data binding, Computed Properties, the run loop, convention over configuration nature, ease of handling routing and many more.
-In this talk I would be covering the following:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Introduction to Emberjs and why Ember&lt;/li&gt;
-&lt;li&gt;How Ember js makes a difference&lt;/li&gt;
-&lt;li&gt;Ember convention over configuration nature&lt;/li&gt;
-&lt;li&gt;Introduction to Ember routes, components and templates&lt;/li&gt;
-&lt;li&gt;Introduction to Ember CLI&lt;/li&gt;
-&lt;li&gt;Computed Properties&lt;/li&gt;
-&lt;li&gt;Live Demo on how it’s really intuitive in a couple of non-trivial scenarios.&lt;/li&gt;
+&lt;li&gt;GitHub: &lt;a href=&quot;https://github.com/blainesch&quot;&gt;https://github.com/blainesch&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Twitter: &lt;a href=&quot;https://twitter.com/blainesch&quot;&gt;https://twitter.com/blainesch&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Website: &lt;a href=&quot;http://blainesch.com&quot;&gt;http://blainesch.com&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;So basically my goal is to attract more developers to adapt modern javascript frameworks and make a difference in the way complex apps are built.”&lt;/p&gt;
 </description>
     </item>
     <item>
@@ -241,6 +251,36 @@ and challenges the complexity of frameworks like Google’s Angular or Facebook�
 which suggest creating view-specific APIs, per platform, app, versions of an app…&lt;/p&gt;
 &lt;p&gt;We’ll start by reviewing some of the key challenges of modern UX and Front-End Architectures. We will then present the
 key concepts of SAM and walk the audience through some node.js code samples (including server-side TimeTravel).&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>Modern Javascript Frameworks - Introduction to Ember.JS and Ember-CLI by Suchita Doshi</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-suchita-doshi/</link>
+      <pubDate>Sat, 04 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-suchita-doshi/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-suchita-doshi/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-right&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-suchita-doshi/suchita-doshi.jpg&quot; alt=&quot;Suchita Doshi&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Suchita is UI Lead for the analytics module of Yahoo Admanager Plus team and Core member of Emberjs group @Yahoo, Speaker at Women Who code organization (Introduction To Emberjs/Ember CLI), Conducted Webinar for the TenXList members on EmberJS. She’s passionate about improving developers ergonomics and a hardcore “cricket” fan.&lt;/p&gt;
+&lt;p&gt;In other Suchita news, she’s opening bats-woman for the Bay Area Cricket Association team! 😀&lt;/p&gt;
+&lt;p&gt;Suchita describes her talk as “There will never be a “one size fits all” approach to web development. If you want your application to be minimally interactive, then server side rendered HTML would be the way to go, else, if it were a more interactive application, then client side framework would benefit you.
+Why not use just JQuery instead of adopting these Modern Javascript Frameworks? Think about it! If your application has interactivity on the lighter side, then JQuery would work well, but as soon as you introduce more states in your application, it would then become messier and heavier on the DOM. You would need to use the ‘data-‘ attributes to store the data in your DOM and also remember how to map them with the triggered events.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Here is where client side frameworks come to the rescue. I have worked on several client side frameworks like Backbone.js, Ember.js. Few of the many features I love about Ember.js are the two-way data binding, Computed Properties, the run loop, convention over configuration nature, ease of handling routing and many more.
+In this talk I would be covering the following:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Introduction to Emberjs and why Ember&lt;/li&gt;
+&lt;li&gt;How Ember js makes a difference&lt;/li&gt;
+&lt;li&gt;Ember convention over configuration nature&lt;/li&gt;
+&lt;li&gt;Introduction to Ember routes, components and templates&lt;/li&gt;
+&lt;li&gt;Introduction to Ember CLI&lt;/li&gt;
+&lt;li&gt;Computed Properties&lt;/li&gt;
+&lt;li&gt;Live Demo on how it’s really intuitive in a couple of non-trivial scenarios.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;So basically my goal is to attract more developers to adapt modern javascript frameworks and make a difference in the way complex apps are built.”&lt;/p&gt;
 </description>
     </item>
     <item>
@@ -298,6 +338,23 @@ it can be.&lt;/p&gt;
 </description>
     </item>
     <item>
+      <title>I Play the JavaScript by Matt McKegg</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</link>
+      <pubDate>Thu, 02 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-left&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/mattmckegg.jpg&quot; alt=&quot;Matt McKegg&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;A JavaScript hacker and backyard musician and from Wellington, New Zealand. Lover of all things open and modular. I spend most of my time pressing buttons of various shapes, sizes and colours. Sometimes these buttons make sounds.&lt;/p&gt;
+&lt;p&gt;Matt has been making music with computers for about 10 years, but once he tried to move from bedroom composing to live performance, he got incredibly frustrated at how hard it was to play computer music live. He decided to start working on his own live electronic performance software written in JavaScript that would let me play the way he wanted to play. 3 years later, it’s finally starting to become a reality.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Here is one of the Matt’s recent performances, for your viewing pleasure. &lt;/p&gt;
+&lt;iframe width=&quot;1280&quot; height=&quot;720&quot; src=&quot;https://www.youtube.com/embed/L2BVDJWHdy0?rel=0&amp;amp;showinfo=0&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;</description>
+    </item>
+    <item>
       <title>The Web Platform is the Universal Instrument by Ben Michel</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-ben-michel/</link>
       <pubDate>Thu, 02 Jun 2016 17:00:00 -0700</pubDate>
@@ -325,40 +382,6 @@ it can be.&lt;/p&gt;
 </description>
     </item>
     <item>
-      <title>I Play the JavaScript by Matt McKegg</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</link>
-      <pubDate>Thu, 02 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</guid>
-      <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-left&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/mattmckegg.jpg&quot; alt=&quot;Matt McKegg&quot;&gt;
-&lt;/div&gt;
-
-&lt;p&gt;A JavaScript hacker and backyard musician and from Wellington, New Zealand. Lover of all things open and modular. I spend most of my time pressing buttons of various shapes, sizes and colours. Sometimes these buttons make sounds.&lt;/p&gt;
-&lt;p&gt;Matt has been making music with computers for about 10 years, but once he tried to move from bedroom composing to live performance, he got incredibly frustrated at how hard it was to play computer music live. He decided to start working on his own live electronic performance software written in JavaScript that would let me play the way he wanted to play. 3 years later, it’s finally starting to become a reality.&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Here is one of the Matt’s recent performances, for your viewing pleasure. &lt;/p&gt;
-&lt;iframe width=&quot;1280&quot; height=&quot;720&quot; src=&quot;https://www.youtube.com/embed/L2BVDJWHdy0?rel=0&amp;amp;showinfo=0&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;</description>
-    </item>
-    <item>
-      <title>The House Is Not On Fire - Building a home automation robot with Arduino, Raspberry Pi and Node.js by Artur Paikin</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</link>
-      <pubDate>Wed, 01 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</guid>
-      <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-right&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/art-stida.jpg&quot; alt=&quot;Artur Paikin&quot;&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Artur describes himself as, “I’m a web developer and traveler. I write stories about my adventures in Russian and English on my site: &lt;a href=&quot;http://arturpaikin.com&quot;&gt;http://arturpaikin.com&lt;/a&gt; and run a small technology cooperative called &lt;a href=&quot;http://unebaguette.com&quot;&gt;Baguette&lt;/a&gt;, where I work on cool projects, currently building an ambitious next generation file uploader with &lt;a href=&quot;https://transloadit.com/&quot;&gt;Transloadit&lt;/a&gt;. I ride a &lt;a href=&quot;https://www.instagram.com/p/xC0qC2SSYb&quot;&gt;foldable bicycle&lt;/a&gt;, &lt;a href=&quot;http://unebaguette.com/web-course/&quot;&gt;teach&lt;/a&gt; web development and sometimes &lt;a href=&quot;https://www.instagram.com/p/4_6LO8ySVL/&quot;&gt;garden&lt;/a&gt; on the balcony.”&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Artur has built an open source home automation system called &lt;a href=&quot;https://github.com/arturi/kotihome&quot;&gt;Koti Home&lt;/a&gt; (Koti means home in Finnish language). It’s powered by an Arduino connected to Raspberry Pi, MQTT protocol for messaging, Node.js on the client and server, web sockets. You can interact with Koti robot via a React (like the cool kids do) control panel, Telegram Chat Bot and even your own voice.&lt;/p&gt;
-&lt;p&gt;Arthur will talk about how he’s turned this project into reality — the tech he used and the challenges he faced. From a blinking LED to a voice controlled home automation robot.&lt;/p&gt;
-</description>
-    </item>
-    <item>
       <title>Code First Docs How we Threw Out The Book &amp; Put Code First With Twilio Documentation by Jarod Reyes</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-jarod-reyes/</link>
       <pubDate>Wed, 01 Jun 2016 17:00:00 -0700</pubDate>
@@ -380,6 +403,23 @@ it can be.&lt;/p&gt;
 &lt;li&gt;Twitter: &lt;a href=&quot;https://twitter.com/jreyesdev&quot;&gt;@jreyesdev&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Github: &lt;a href=&quot;https://github.com/jarodreyes&quot;&gt;github.com/jarodreyes&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+</description>
+    </item>
+    <item>
+      <title>The House Is Not On Fire - Building a home automation robot with Arduino, Raspberry Pi and Node.js by Artur Paikin</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</link>
+      <pubDate>Wed, 01 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-right&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/art-stida.jpg&quot; alt=&quot;Artur Paikin&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Artur describes himself as, “I’m a web developer and traveler. I write stories about my adventures in Russian and English on my site: &lt;a href=&quot;http://arturpaikin.com&quot;&gt;http://arturpaikin.com&lt;/a&gt; and run a small technology cooperative called &lt;a href=&quot;http://unebaguette.com&quot;&gt;Baguette&lt;/a&gt;, where I work on cool projects, currently building an ambitious next generation file uploader with &lt;a href=&quot;https://transloadit.com/&quot;&gt;Transloadit&lt;/a&gt;. I ride a &lt;a href=&quot;https://www.instagram.com/p/xC0qC2SSYb&quot;&gt;foldable bicycle&lt;/a&gt;, &lt;a href=&quot;http://unebaguette.com/web-course/&quot;&gt;teach&lt;/a&gt; web development and sometimes &lt;a href=&quot;https://www.instagram.com/p/4_6LO8ySVL/&quot;&gt;garden&lt;/a&gt; on the balcony.”&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Artur has built an open source home automation system called &lt;a href=&quot;https://github.com/arturi/kotihome&quot;&gt;Koti Home&lt;/a&gt; (Koti means home in Finnish language). It’s powered by an Arduino connected to Raspberry Pi, MQTT protocol for messaging, Node.js on the client and server, web sockets. You can interact with Koti robot via a React (like the cool kids do) control panel, Telegram Chat Bot and even your own voice.&lt;/p&gt;
+&lt;p&gt;Arthur will talk about how he’s turned this project into reality — the tech he used and the challenges he faced. From a blinking LED to a voice controlled home automation robot.&lt;/p&gt;
 </description>
     </item>
     <item>
@@ -584,58 +624,23 @@ Remember one thing. Work is not your core focus and reason to exist in life. &lt
       <guid isPermaLink="true">http://adron.github.io/articles/docker-tips-n-tricks-bash-things-with-docker/</guid>
       <author></author>
       <description>&lt;p&gt;If you use Docker frequently, you’ve likely memorized a few repetitive commands…&lt;/p&gt;
-&lt;div class=&quot;code-highlight &quot; &gt;
-&lt;span class=&quot;js-copy-to-clipboard copy-code&quot;&gt;copy&lt;/span&gt; 
-&lt;pre&gt;
-&lt;code class=&quot;language-markup js-code&quot;&gt;
-docker-machine start XyZvirtualMachine&lt;/code&gt;
-&lt;/pre&gt; 
-&lt;/div&gt;
-
-&lt;p&gt;Then you run…&lt;/p&gt;
-&lt;div class=&quot;code-highlight &quot; &gt;
-&lt;span class=&quot;js-copy-to-clipboard copy-code&quot;&gt;copy&lt;/span&gt; 
-&lt;pre&gt;
-&lt;code class=&quot;language-markup js-code&quot;&gt;
-docker-machine env XyZvirtualMachine&lt;/code&gt;
-&lt;/pre&gt; 
-&lt;/div&gt;
-
-&lt;p&gt;…and then you type…&lt;/p&gt;
-&lt;div class=&quot;code-highlight &quot; &gt;
-&lt;span class=&quot;js-copy-to-clipboard copy-code&quot;&gt;copy&lt;/span&gt; 
-&lt;pre&gt;
-&lt;code class=&quot;language-markup js-code&quot;&gt;
-eval $(docker-machine env XyZvirtualMachine)&lt;/code&gt;
-&lt;/pre&gt; 
-&lt;/div&gt;
-
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;docker-machine start XyZvirtualMachine
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Then you run…&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;docker-machine env XyZvirtualMachine
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;…and then you type…&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;eval $(docker-machine env XyZvirtualMachine)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;One does this about a zillion times if there are multiple virtual machines or for other various reasons. I wanted to simplify this repetitive task so I wrote a bash function, thanks to a &lt;a href=&quot;http://stackoverflow.com/questions/35761480/scripting-docker-not-connected-after-running-script&quot; target=&quot;_blank&quot;&gt;fumble I posted on Stackoverflow&lt;/a&gt; and then an assist by my good friend Troy Howard (&lt;a href=&quot;https://twitter.com/thoward37&quot; target=&quot;_blank&quot;&gt;@thoward37&lt;/a&gt;).&lt;/p&gt;
 &lt;p&gt;This quick hack consisted of this &lt;a href=&quot;https://gist.github.com/Adron/8dc06eb398f403225daa&quot; target=&quot;_blank&quot;&gt;Github gist&lt;/a&gt;.&lt;/p&gt;
-&lt;div class=&quot;code-highlight &quot; &gt;
-&lt;span class=&quot;js-copy-to-clipboard copy-code&quot;&gt;copy&lt;/span&gt; 
-&lt;pre&gt;
-&lt;code class=&quot;language-markup js-code&quot;&gt;
-gimmedocker() { if [ $1 ]; then
+&lt;pre&gt;&lt;code&gt;gimmedocker() { if [ $1 ]; then
     docker-machine start $1
     docker-machine env $1
     eval $(docker-machine env $1)
     docker ps -a
-fi }&lt;/code&gt;
-&lt;/pre&gt; 
-&lt;/div&gt;
-
-&lt;p&gt;Stick that in your ~/.bash_profile (or ~/.bashrc if you’re on *nix) and you’re good to go. Then at the bash prompt just type in this.&lt;/p&gt;
-&lt;div class=&quot;code-highlight &quot; &gt;
-&lt;span class=&quot;js-copy-to-clipboard copy-code&quot;&gt;copy&lt;/span&gt; 
-&lt;pre&gt;
-&lt;code class=&quot;language-markup js-code&quot;&gt;
-gimmedocker XyZvirtualMachine&lt;/code&gt;
-&lt;/pre&gt; 
-&lt;/div&gt;
-
-&lt;p&gt;BOOM! Less typing for the win!&lt;/p&gt;
+fi }
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Stick that in your ~/.bash_profile (or ~/.bashrc if you’re on *nix) and you’re good to go. Then at the bash prompt just type in this.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;gimmedocker XyZvirtualMachine
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;BOOM! Less typing for the win!&lt;/p&gt;
 </description>
     </item>
     <item>
@@ -646,22 +651,10 @@ gimmedocker XyZvirtualMachine&lt;/code&gt;
       <author></author>
       <description>&lt;p&gt;Two simple commands that’ll wipe your installation clean of images and containers.&lt;/p&gt;
 &lt;p&gt;Deletes all containers&lt;/p&gt;
-&lt;div class=&quot;code-highlight&quot;&gt;
-&lt;span class=&quot;js-copy-to-clipboard copy-code&quot;&gt;copy&lt;/span&gt; 
-&lt;pre&gt;
-&lt;code class=&quot;language-markup js-code&quot;&gt;
-docker rm $(docker ps -a -q)&lt;/code&gt;
-&lt;/pre&gt; 
-&lt;/div&gt;
-
-&lt;p&gt;Deletes all images&lt;/p&gt;
-&lt;div class=&quot;code-highlight&quot;&gt;
-&lt;span class=&quot;js-copy-to-clipboard copy-code&quot;&gt;copy&lt;/span&gt; 
-&lt;pre&gt;
-&lt;code class=&quot;language-markup js-code&quot;&gt;
-docker rmi $(docker images -q)&lt;/code&gt;
-&lt;/pre&gt; 
-&lt;/div&gt;</description>
+&lt;pre&gt;&lt;code&gt;docker rm $(docker ps -a -q)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Deletes all images&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;docker rmi $(docker images -q)
+&lt;/code&gt;&lt;/pre&gt;</description>
     </item>
   </channel>
 </rss>
