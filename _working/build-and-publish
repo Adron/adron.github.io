@@ -11,9 +11,11 @@ cd ~/Codez/adron.github.io/_working/
 wintersmith build
 
 cp -r build/ ../../adron.github.io/
+rm -rf build
 
 cd ~/Codez/adron.github.io/
 
 git add -A
 git commit -m "$commitMessage"
 git push origin master
+
