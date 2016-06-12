@@ -1,0 +1,34 @@
+extends layout
+
+block content
+    include author
+
+    .blog
+        .row
+    each article in articles
+        .col-md-12.col-sm-12
+            // Blog List
+            .blog-grid
+                .row
+                    .col-md-12.col-sm-12
+                        h3.blog-grid-title
+                            a(href=article.url)= article.title
+                        p.blog-grid-excerpt
+                            if article.intro.length > 0
+                                != typogr(article.intro).typogrify()
+                            if article.hasMore
+                                p.more
+                                    a(href=article.url) more
+                        .blog-grid-meta
+                            span.blog-grid-date= moment.utc(article.date).format('DD. MMMM YYYY')
+            // End of Blog List
+
+block prepend footer
+    div.nav
+        if prevPage
+            a(href=prevPage.url) « Newer
+        else
+            a(href='/archive.html') « Archives
+        if nextPage
+            | &nbsp;
+            a(href=nextPage.url) Previous »
