@@ -5,6 +5,10 @@ blogtitle=$1
 # Format 2013-04-30
 blogdate=$2
 
+cd contents/docs
+
+echo "Changed into docs directory."
+
 if [ ! $# == 2 ]
     then
     echo "There should be two arguments."

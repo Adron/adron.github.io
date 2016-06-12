@@ -5,9 +5,253 @@
     <atom:link href="http://adron.github.io/feed.xml" rel="self" type="application/rss+xml"></atom:link>
     <link>http://adron.github.io</link>
     <description>Coder, Messenger, Recon, Infrastructure</description>
-    <pubDate>Sat, 11 Jun 2016 15:35:00 -0700</pubDate>
+    <pubDate>Sun, 12 Jun 2016 15:54:00 -0700</pubDate>
     <generator>Wintersmith - https://github.com/jnordberg/wintersmith</generator>
     <language>en</language>
+    <item>
+      <title>Working With Google Compute Engine (GCE) using Terraform (With a load of Bash Scripts too)</title>
+      <link>http://adron.github.io/articles/working-with-google-compute-engine/</link>
+      <pubDate>Sun, 12 Jun 2016 15:54:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/working-with-google-compute-engine/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;strong&gt;Mission:&lt;/strong&gt; I wanted to setup an instance, that I could install various things on and prepare it to act as a Terraformer or central server within GCE to spawn instances, setup networks, and generally manage the network autonomously of any local scripts or junk I have on my local computer. To set this up, I would of course have to launch it from my local computer, so there’s a whole range of things I’d need to have execute. To accomplish this, here’s what I did.&lt;/p&gt;
+&lt;h2 id=&quot;first-steps-google-compute-engine&quot;&gt;First Steps: Google Compute Engine&lt;/h2&gt;
+&lt;p&gt;First I logged in and setup a GCE Account (&lt;a href=&quot;https://cloud.google.com/compute/docs/quickstart&quot;&gt;read specifically about creating and getting started with a GCE account&lt;/a&gt;) and got &lt;em&gt;gcloud&lt;/em&gt; configured. The &lt;em&gt;gcloud&lt;/em&gt; is a cli to manage GCE. It’s actually a super powerful tool that comes in handy for all sorts of things. Besides managing GCE, it has a thin wrapper around &lt;a href=&quot;https://en.wikipedia.org/wiki/Secure_Shell&quot; target=&quot;_blank&quot;&gt;ssh&lt;/a&gt;, &lt;a href=&quot;https://en.wikipedia.org/wiki/Secure_copy&quot; target=&quot;_blank&quot;&gt;scp&lt;/a&gt;, and working with servers with those respective tools. I’ll use it a bit later to actually run some scripts against the instance I’ll be creating.&lt;/p&gt;
+&lt;p&gt;Once you’ve signed up for GCE there’s a few things worth noting. One is the idea of the &lt;em&gt;project&lt;/em&gt; that Google uses within GCE. This is something you’re create, or rename the default, or in some way bring into existence to use. A &lt;em&gt;project&lt;/em&gt; is something that a host of instances, instance groups, load balancers, networks, networking, and more can be allocated against. It’s also something that can be setup for or inside a specific billing group. It might also be helpful to really get an understanding of what a &lt;em&gt;project&lt;/em&gt; is by reading the &lt;a href=&quot;https://cloud.google.com/compute/docs/projects&quot; target=&quot;_blank&quot;&gt;Google documentation on &lt;em&gt;projects&lt;/em&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Once the project is ready, we can move forward with installing &lt;em&gt;gcloud&lt;/em&gt;. The way this is done is by installing the Google Cloud SDK. The curl below pulls down and executes the installation. Then the following command restarts the shell. Finally the gcloud init command kicks off the initialization of the gcloud cli.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;curl https://sdk.cloud.google.com | bash
+exec -l $SHELL
+gcloud init
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Running gcloud init does several things.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Authenticates the user (or allows re-use of saved credentials).&lt;/li&gt;
+&lt;li&gt;Requests the user’s project &amp;amp; saves it in the gcloud configuration.&lt;/li&gt;
+&lt;li&gt;Requests and sets a default zone based on the project in the gcloud configuration.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;At this point gcloud is setup for use, however upon connecting for the first time to an instance, gcloud will prompt to create a new ssh key set. This key set will be created and autonomous of the key set I have setup for git or other cli ssh tooling I’ll use. I’ll talk more about that later. NOTE: It is very important for subsequent steps to insure the gcloud ssh key is generated. I’ll get around to that in a moment under the “&lt;a href=&quot;#gcloudterraform&quot;&gt;&lt;em&gt;User gcloud w/ Terraform&lt;/em&gt;&lt;/a&gt;“ section.&lt;/p&gt;
+&lt;p&gt;The specific instructions for setting up &lt;em&gt;gcloud&lt;/em&gt; are also available here in &lt;a href=&quot;https://cloud.google.com/sdk/&quot;&gt;getting started with the Google Cloud SDK&lt;/a&gt;. This includes a little more description of what is included and related information about the Google Cloud SDK.&lt;/p&gt;
+&lt;h3 id=&quot;gcloudterraform&quot;&gt;Using gcloud w/ Terraform&lt;/h3&gt;
+
+&lt;p&gt;When building Terraform configurations for Google Cloud there are a number of settings that &lt;em&gt;gcloud&lt;/em&gt; can pull up very easily. Here are some of the commands I’ve used most frequently when setting up google compute instances.&lt;/p&gt;
+&lt;p&gt;List machine types in a project in table.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;gcloud compute machine-types list
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;List the URIs of all machine types in a project.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;gcloud compute machine-types list --uri
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;List all machine types in the us-central1-b and europe-west1-d zones.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;gcloud compute machine-types list --zones us-central1-b europe-west1-d
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;List all images in a project in table.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;gcloud compute images list
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;List all the URI images in a project.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;gcloud compute images list --uri
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The last thing is connecting to instances, with &lt;em&gt;gcloud&lt;/em&gt; looks like the following.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;gcloud compute --project &amp;quot;project-name&amp;quot; ssh --zone &amp;quot;us-central1-b&amp;quot; &amp;quot;instance-name&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;There’s some super useful ways to execute commands with the &lt;em&gt;gcloud&lt;/em&gt; cli, which provides a great way for bash scripting against instances.&lt;/p&gt;
+&lt;p&gt;These all provide quick ways to get the specific GCE specific settings for the Terraform file. Which brings up a perfect point to get into a basic Terraform instance creation.&lt;/p&gt;
+&lt;h2 id=&quot;next-terraforming-with-terraform&quot;&gt;Next: Terraforming with Terraform&lt;/h2&gt;
+&lt;p&gt;If you don’t have &lt;a href=&quot;https://www.terraform.io/&quot; target=&quot;_blank&quot;&gt;Terraform&lt;/a&gt; installed, the following bash commands will get you all setup on your machine. With this script below I can wrap this up as an installation script for the instance further along in this how-to. We’ll just have to tweak it specifically for Linux, as this script is focused around downloading and installing the Darwin (OS-X) version.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;cd /home/adron
+
+# Create a move into directory.
+mkdir terraform_0_6_14
+cd terraform_0_6_14
+
+# Download.
+curl -O https://releases.hashicorp.com/terraform/0.6.14/terraform_0.6.14_darwin_amd64.zip
+# Unzip and install
+unzip terraform_0.6.14_darwin_amd64.zip
+
+export PATH=/home/terraform_0_6_14:$PATH
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;To confirm that Terraform is installed correctly, just type terraform. The following should be displayed, which will let you know that the path variable is set to the correct path.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ terraform
+usage: terraform [--version] [--help] &amp;lt;command&amp;gt; [&amp;lt;args&amp;gt;]
+
+Available commands are:
+    apply       Builds or changes infrastructure
+    destroy     Destroy Terraform-managed infrastructure
+    get         Download and install modules for the configuration
+    graph       Create a visual graph of Terraform resources
+    init        Initializes Terraform configuration from a module
+    output      Read an output from a state file
+    plan        Generate and show an execution plan
+    push        Upload this Terraform module to Atlas to run
+    refresh     Update local state file against real resources
+    remote      Configure remote state storage
+    show        Inspect Terraform state or plan
+    taint       Manually mark a resource for recreation
+    untaint     Manually unmark a resource as tainted
+    validate    Validates the Terraform files
+    version     Prints the Terraform version
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;You may also want to add the PATH to the ~/.bash_profile on your own OS-X machine, like I did. Instead of that last bit of script that just exports the PATH variable, I swapped it out with the following code.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;echo &amp;quot;
+export PATH=/home/terraform_0_6_14:$PATH
+&amp;quot; &amp;gt;&amp;gt; ~/.bash_profile
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Yes, the odd spacing and new lines are important, because that will append the export to PATH in a way that provides space before and below the line. It just leaves the ~/.bash_profile file looking a little cleaner.&lt;/p&gt;
+&lt;p&gt;Once you’ve added it to your ~/.bash_profile, remember to either restart the terminal or source the file to get the PATH variable updated.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;source ~/.bash_profile
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The next thing we’ll need for Terraform use with GCE is the &lt;em&gt;account.json&lt;/em&gt; file. This is the file that a service account sets up to secure our connection between GCE and Terraform.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/working-with-google-compute-engine/user_accountjson_001.png&quot; alt=&quot;Account JSON Permissions&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Navigate to the Permissions section of the GCE interface and add a service account. When you click to create a service account you’ll be prompted with the following.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/working-with-google-compute-engine/user_accountjson_002.png&quot; alt=&quot;Furnish Account JSON&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Here check the “Furnish a new private key” and click on the JSON for the key type. Then create create. This will create the service account and the key will download locally. The key is not named account.json, but the file downloaded is what to use as the account.json file, it just needs renamed.&lt;/p&gt;
+&lt;p&gt;Now we’re ready to get into actually putting together an infrastructure project. Let’s start with a basic setup. First I need the following files.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;account.json&lt;/li&gt;
+&lt;li&gt;theterraformfile.tf&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;These are needed files and will get a terraform workflow started, but I break them out a bit more. Terraform files after all are all collected and then processed, so the configuration doesn’t have to all be in a single file.&lt;/p&gt;
+&lt;p&gt;What I have been doing lately, is take the terraform file and break it out accordingly. For the connection I create a connection.tf file, for configuration around instances I create an instances.tf file, for network addresses (static IPs) that goes in an addresses.tf file. If any of those files get to big within a project I break those out further like instance-instancename1.tf and instance-instancename2.tf.&lt;/p&gt;
+&lt;p&gt;With that practice applied, I end up with a project with the following files.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;account.json&lt;/li&gt;
+&lt;li&gt;instances.tf&lt;/li&gt;
+&lt;li&gt;addresses.tf&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I then run git init and add two more files.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;.gitignore&lt;/li&gt;
+&lt;li&gt;README.md&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;These have no relevance to the actual Terraform files, but they’re standard practice and come in very helpful once the project starts to grow. You’ll want a README.md for notes and documentation and you’ll definitely want to keep trash out of the project with the .gitignore, so even though they’re not required right now, if you’re following along add the files.&lt;/p&gt;
+&lt;p&gt;In the &lt;a href=&quot;https://github.com/Adron/starting-with-gce/blob/master/README.md&quot; target=&quot;_blank&quot;&gt;README.md&lt;/a&gt;, of course, we write our documentation! So anyway, it’ll be there in the &lt;a href=&quot;https://github.com/Adron/starting-with-gce&quot; target=&quot;_blank&quot;&gt;repo&lt;/a&gt; I’ve created for this blog entry here.&lt;/p&gt;
+&lt;p&gt;In the .gitignore file add the following.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;.DS_Store
+account.json
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;In the connection.tf file I added the following connection information. The ${file(“../secrets/account.json”)} configuration interpolates the path of the file based on where the project is located and pulls in the appropriate values for GCE.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# Configure the Google Cloud provider
+provider &amp;quot;google&amp;quot; {
+  credentials = &amp;quot;${file(&amp;quot;account.json&amp;quot;)}&amp;quot;
+  project     = &amp;quot;that-big-universe&amp;quot;
+  region      = &amp;quot;us-central1&amp;quot;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;With that in place, I added this to the instances.tf file.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# Create a new instance
+resource &amp;quot;google_compute_instance&amp;quot; &amp;quot;flirpderp&amp;quot; {
+    name = &amp;quot;flirpderp&amp;quot;
+    machine_type = &amp;quot;f1-micro&amp;quot;
+
+    zone = &amp;quot;us-central1-b&amp;quot;
+
+    disk {
+        image = &amp;quot;ubuntu-1404-trusty-v20160406&amp;quot;
+    }
+
+    network_interface {
+        network = &amp;quot;default&amp;quot;
+        access_config {}
+    }
+
+    service_account {
+        scopes = [&amp;quot;userinfo-email&amp;quot;, &amp;quot;compute-ro&amp;quot;, &amp;quot;storage-ro&amp;quot;]
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;To get the machine_type and disk image above I just used the following gcloud commands.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;gcloud compute machine-types list
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;and&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;gcloud compute images list
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;For this first build, I just wanted to get a basic template with a small (and by association super cheap) instance. For this I went with &lt;em&gt;f1-micro&lt;/em&gt;. For the disk, I used the base disk image load of the &lt;em&gt;ubuntu-1404-trusty-v20160406&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;All configuration set, I opened up a bash terminal and typed in the following.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;terraform plan
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;This command then displayed the following result.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Refreshing Terraform state prior to plan...
+
+The Terraform execution plan has been generated and is shown below.
+Resources are shown in alphabetical order for quick scanning. Green resources
+will be created (or destroyed and then created if an existing resource
+exists), yellow resources are being changed in-place, and red resources
+will be destroyed.
+
+Note: You didn&amp;#39;t specify an &amp;quot;-out&amp;quot; parameter to save this plan, so when
+&amp;quot;apply&amp;quot; is called, Terraform can&amp;#39;t guarantee this is what will execute.
+
++ google_compute_instance.flirpderp
+    can_ip_forward:                                      &amp;quot;&amp;quot; =&amp;gt; &amp;quot;0&amp;quot;
+    disk.#:                                              &amp;quot;&amp;quot; =&amp;gt; &amp;quot;1&amp;quot;
+    disk.0.auto_delete:                                  &amp;quot;&amp;quot; =&amp;gt; &amp;quot;1&amp;quot;
+    disk.0.image:                                        &amp;quot;&amp;quot; =&amp;gt; &amp;quot;ubuntu-1404-trusty-v20160406&amp;quot;
+    machine_type:                                        &amp;quot;&amp;quot; =&amp;gt; &amp;quot;f1-micro&amp;quot;
+    metadata_fingerprint:                                &amp;quot;&amp;quot; =&amp;gt; &amp;quot;&amp;lt;computed&amp;gt;&amp;quot;
+    name:                                                &amp;quot;&amp;quot; =&amp;gt; &amp;quot;flirpderp&amp;quot;
+    network_interface.#:                                 &amp;quot;&amp;quot; =&amp;gt; &amp;quot;1&amp;quot;
+    network_interface.0.access_config.#:                 &amp;quot;&amp;quot; =&amp;gt; &amp;quot;1&amp;quot;
+    network_interface.0.access_config.0.assigned_nat_ip: &amp;quot;&amp;quot; =&amp;gt; &amp;quot;&amp;lt;computed&amp;gt;&amp;quot;
+    network_interface.0.address:                         &amp;quot;&amp;quot; =&amp;gt; &amp;quot;&amp;lt;computed&amp;gt;&amp;quot;
+    network_interface.0.name:                            &amp;quot;&amp;quot; =&amp;gt; &amp;quot;&amp;lt;computed&amp;gt;&amp;quot;
+    network_interface.0.network:                         &amp;quot;&amp;quot; =&amp;gt; &amp;quot;default&amp;quot;
+    self_link:                                           &amp;quot;&amp;quot; =&amp;gt; &amp;quot;&amp;lt;computed&amp;gt;&amp;quot;
+    service_account.#:                                   &amp;quot;&amp;quot; =&amp;gt; &amp;quot;1&amp;quot;
+    service_account.0.email:                             &amp;quot;&amp;quot; =&amp;gt; &amp;quot;&amp;lt;computed&amp;gt;&amp;quot;
+    service_account.0.scopes.#:                          &amp;quot;&amp;quot; =&amp;gt; &amp;quot;3&amp;quot;
+    service_account.0.scopes.1632638332:                 &amp;quot;&amp;quot; =&amp;gt; &amp;quot;https://www.googleapis.com/auth/devstorage.read_only&amp;quot;
+    service_account.0.scopes.2428168921:                 &amp;quot;&amp;quot; =&amp;gt; &amp;quot;https://www.googleapis.com/auth/userinfo.email&amp;quot;
+    service_account.0.scopes.2862113455:                 &amp;quot;&amp;quot; =&amp;gt; &amp;quot;https://www.googleapis.com/auth/compute.readonly&amp;quot;
+    tags_fingerprint:                                    &amp;quot;&amp;quot; =&amp;gt; &amp;quot;&amp;lt;computed&amp;gt;&amp;quot;
+    zone:                                                &amp;quot;&amp;quot; =&amp;gt; &amp;quot;us-central1-b&amp;quot;
+
+Plan: 1 to add, 0 to change, 0 to destroy.
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Let’s walk through this result to get an idea of what just happened. Terraform has taken all of the Terraform files, which currently is only one file with actual configuration in it, and processed them to create a plan of changes. At the very bottom of the results the line “Plan: 1 to add, 0 to change, 0 to destroy.” simple shows what will occur if I were to apply these changes. Many of the values are also set as which simply means that when processed they’ll be calculated and set. Otherwise most of the other values are simply the settings I’ve put in via the actual Terraform configuration files.&lt;/p&gt;
+&lt;p&gt;Now I applied the configuration.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;terraform apply
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The output of this command will display as shown.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;google_compute_instance.flirpderp: Creating...
+  can_ip_forward:                                      &amp;quot;&amp;quot; =&amp;gt; &amp;quot;0&amp;quot;
+  disk.#:                                              &amp;quot;&amp;quot; =&amp;gt; &amp;quot;1&amp;quot;
+  disk.0.auto_delete:                                  &amp;quot;&amp;quot; =&amp;gt; &amp;quot;1&amp;quot;
+  disk.0.image:                                        &amp;quot;&amp;quot; =&amp;gt; &amp;quot;ubuntu-1404-trusty-v20160406&amp;quot;
+  machine_type:                                        &amp;quot;&amp;quot; =&amp;gt; &amp;quot;f1-micro&amp;quot;
+  metadata_fingerprint:                                &amp;quot;&amp;quot; =&amp;gt; &amp;quot;&amp;lt;computed&amp;gt;&amp;quot;
+  name:                                                &amp;quot;&amp;quot; =&amp;gt; &amp;quot;flirpderp&amp;quot;
+  network_interface.#:                                 &amp;quot;&amp;quot; =&amp;gt; &amp;quot;1&amp;quot;
+  network_interface.0.access_config.#:                 &amp;quot;&amp;quot; =&amp;gt; &amp;quot;1&amp;quot;
+  network_interface.0.access_config.0.assigned_nat_ip: &amp;quot;&amp;quot; =&amp;gt; &amp;quot;&amp;lt;computed&amp;gt;&amp;quot;
+  network_interface.0.address:                         &amp;quot;&amp;quot; =&amp;gt; &amp;quot;&amp;lt;computed&amp;gt;&amp;quot;
+  network_interface.0.name:                            &amp;quot;&amp;quot; =&amp;gt; &amp;quot;&amp;lt;computed&amp;gt;&amp;quot;
+  network_interface.0.network:                         &amp;quot;&amp;quot; =&amp;gt; &amp;quot;default&amp;quot;
+  self_link:                                           &amp;quot;&amp;quot; =&amp;gt; &amp;quot;&amp;lt;computed&amp;gt;&amp;quot;
+  service_account.#:                                   &amp;quot;&amp;quot; =&amp;gt; &amp;quot;1&amp;quot;
+  service_account.0.email:                             &amp;quot;&amp;quot; =&amp;gt; &amp;quot;&amp;lt;computed&amp;gt;&amp;quot;
+  service_account.0.scopes.#:                          &amp;quot;&amp;quot; =&amp;gt; &amp;quot;3&amp;quot;
+  service_account.0.scopes.1632638332:                 &amp;quot;&amp;quot; =&amp;gt; &amp;quot;https://www.googleapis.com/auth/devstorage.read_only&amp;quot;
+  service_account.0.scopes.2428168921:                 &amp;quot;&amp;quot; =&amp;gt; &amp;quot;https://www.googleapis.com/auth/userinfo.email&amp;quot;
+  service_account.0.scopes.2862113455:                 &amp;quot;&amp;quot; =&amp;gt; &amp;quot;https://www.googleapis.com/auth/compute.readonly&amp;quot;
+  tags_fingerprint:                                    &amp;quot;&amp;quot; =&amp;gt; &amp;quot;&amp;lt;computed&amp;gt;&amp;quot;
+  zone:                                                &amp;quot;&amp;quot; =&amp;gt; &amp;quot;us-central1-b&amp;quot;
+google_compute_instance.flirpderp: Creation complete
+
+Apply complete! Resources: 1 added, 0 changed, 0 destroyed.
+
+The state of your infrastructure has been saved to the path
+below. This state is required to modify and destroy your
+infrastructure, so keep it safe. To inspect the complete state
+use the `terraform show` command.
+
+State path: terraform.tfstate
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;I logged in at this point to verify the creation of the instance.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/working-with-google-compute-engine/flirpderp.png&quot; alt=&quot;Google Cloud Interface&quot;&gt;&lt;/p&gt;
+&lt;p&gt;In the interface the instance (or instances if I have multiple) shows up in a list underneath the fancy CPU utilization chart.&lt;/p&gt;
+&lt;h3 id=&quot;cleanup&quot;&gt;Cleanup&lt;/h3&gt;
+&lt;p&gt;Since I don’t actually want this instance to stay live currently, to destroy the instance I can use the terraform destroy command. If there were other instances in this set of Terraform configuraiton files, it would also destroy those too. Destroy, suffice to say is something that is very destructive and should be used carefully. For this example I’m going to destroy this instance now, but since I have the configuration I’ll add a little bit more to it and recreate it shortly.&lt;/p&gt;
+&lt;p&gt;I issue this command.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;terraform destroy
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;This displays…&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Do you really want to destroy?
+  Terraform will delete all your managed infrastructure.
+  There is no undo. Only &amp;#39;yes&amp;#39; will be accepted to confirm.
+
+  Enter a value: yes
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Then I confirm by typing ‘yes’ and then the following result of this acction is returned.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;google_compute_instance.flirpderp: Refreshing state... (ID: flirpderp)
+google_compute_instance.flirpderp: Destroying...
+google_compute_instance.flirpderp: Destruction complete
+
+Apply complete! Resources: 0 added, 0 changed, 1 destroyed.
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;At this point, it’s pretty cool that I can build a single instance, but that’s of extremely limited use if I can’t get it deployed out into GCE in a usable state. The most common ways I’d want to wrap up configuration and installation of software on an instance is to issue some bash commands to the instance. Well, Terraform has ways that exactly that can be done. I’ll cover that in the follow up to this article.&lt;/p&gt;
+&lt;h3 id=&quot;references-&quot;&gt;References:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/Adron/starting-with-gce/tree/blog-entry-01&quot;&gt;The Github Repository branch for this blog entry.&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
     <item>
       <title>Startup Things - How Ya Linux Series - 0000</title>
       <link>http://adron.github.io/articles/how-ya-linux-0000-Startup-things/</link>
@@ -180,6 +424,27 @@ export TF_VAR_password=&amp;quot;someSecretPassword&amp;quot;
 </description>
     </item>
     <item>
+      <title>How to Electron by Blaine Schmeisser</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-blaine-schmeisser/</link>
+      <pubDate>Sun, 05 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-blaine-schmeisser/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-blaine-schmeisser/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-left&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-blaine-schmeisser/blainesch.jpg&quot; alt=&quot;Blaine Schmeisser&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;I’m happy to introduce Blaine Schmeisser. He’s a recent Portland transplant currently working as a Senior Software Engineer at New Relic. He has a passion for building and shipping software and an advocate for pair programming. Outside of tech, Blaine spends his free time with his dog and maintains a simplistic, eco-friendly lifestyle.&lt;/p&gt;
+&lt;p&gt;Blaine’s “How to Electron” answers questions you have about building user interface applications with JavaScript. Have you ever wanted to build desktop apps with web technology you already know? If you’ve never heard of Electron or just want to learn more about it, this talk will cover what Electron is and how to utilize it to create powerful tools like Atom and Slack. You will learn the history of Electron, how to get started, the trade-offs of picking various boiler plates, and the unique Electron specific APIs that are vital to being a Electron developer.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;GitHub: &lt;a href=&quot;https://github.com/blainesch&quot;&gt;https://github.com/blainesch&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Twitter: &lt;a href=&quot;https://twitter.com/blainesch&quot;&gt;https://twitter.com/blainesch&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Website: &lt;a href=&quot;http://blainesch.com&quot;&gt;http://blainesch.com&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    <item>
       <title>Demystifying TypeScript Decorators by James Churchill</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-james-churchill/</link>
       <pubDate>Sun, 05 Jun 2016 17:00:00 -0700</pubDate>
@@ -199,27 +464,6 @@ export TF_VAR_password=&amp;quot;someSecretPassword&amp;quot;
 &lt;li&gt;Blog: &lt;a href=&quot;http://smashdev.com&quot;&gt;http://smashdev.com&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Github: &lt;a href=&quot;http://github.com/smashdevcode&quot;&gt;http://github.com/smashdevcode&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Twitter: &lt;a href=&quot;http://twitter.com/SmashDev&quot;&gt;http://twitter.com/SmashDev&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-    </item>
-    <item>
-      <title>How to Electron by Blaine Schmeisser</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-blaine-schmeisser/</link>
-      <pubDate>Sun, 05 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-blaine-schmeisser/</guid>
-      <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-blaine-schmeisser/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-left&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-blaine-schmeisser/blainesch.jpg&quot; alt=&quot;Blaine Schmeisser&quot;&gt;
-&lt;/div&gt;
-
-&lt;p&gt;I’m happy to introduce Blaine Schmeisser. He’s a recent Portland transplant currently working as a Senior Software Engineer at New Relic. He has a passion for building and shipping software and an advocate for pair programming. Outside of tech, Blaine spends his free time with his dog and maintains a simplistic, eco-friendly lifestyle.&lt;/p&gt;
-&lt;p&gt;Blaine’s “How to Electron” answers questions you have about building user interface applications with JavaScript. Have you ever wanted to build desktop apps with web technology you already know? If you’ve never heard of Electron or just want to learn more about it, this talk will cover what Electron is and how to utilize it to create powerful tools like Atom and Slack. You will learn the history of Electron, how to get started, the trade-offs of picking various boiler plates, and the unique Electron specific APIs that are vital to being a Electron developer.&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;GitHub: &lt;a href=&quot;https://github.com/blainesch&quot;&gt;https://github.com/blainesch&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Twitter: &lt;a href=&quot;https://twitter.com/blainesch&quot;&gt;https://twitter.com/blainesch&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Website: &lt;a href=&quot;http://blainesch.com&quot;&gt;http://blainesch.com&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>
@@ -284,23 +528,6 @@ In this talk I would be covering the following:&lt;/p&gt;
 </description>
     </item>
     <item>
-      <title>WebSockets Bring Light at the End of the Tunnel by Joel Lord</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</link>
-      <pubDate>Fri, 03 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</guid>
-      <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-left&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/joel-lord.jpg&quot; alt=&quot;Joel Lord&quot;&gt;
-&lt;/div&gt;
-
-&lt;p&gt;As a Development Manager, Joel’s motivation and proven technical prowess makes him a key member of Spiria’s software development team. With a degree in computational astrophysics, his interests eventually made their way to software and Web design. Today, his knowledge of JavaScript lets him to support a variety of projects on both the front end and back end. As we move into the age of the Internet of Things, Joel is ready with his passion for programming node bots and experimenting with gadgets.&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Joel is going to speak on Web Sockets and tunnels of light… or to describe it more specifically more and more, people seem to be obsessed with real-time data.  But what does real-time mean in the world of REST servers and one-way communication?  Most modern web applications are now either displaying a snapshot of data at a given time or use a polling mechanism to update series of data at a given interval.
-In this talk, you will learn about the power of WebSockets and how they can (and should!) be used in your modern web applications. In these 30 minutes, I will go through the process of building a Node server that can push data to multiple clients in real-time.  You will see how this can be easy using the socket.io library.&lt;/p&gt;
-</description>
-    </item>
-    <item>
       <title>MMOWAM - Build Server-less Games with a DSN by Josh Marinacci</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-josh-marinacci/</link>
       <pubDate>Fri, 03 Jun 2016 17:00:00 -0700</pubDate>
@@ -338,21 +565,21 @@ it can be.&lt;/p&gt;
 </description>
     </item>
     <item>
-      <title>I Play the JavaScript by Matt McKegg</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</link>
-      <pubDate>Thu, 02 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</guid>
+      <title>WebSockets Bring Light at the End of the Tunnel by Joel Lord</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</link>
+      <pubDate>Fri, 03 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</guid>
       <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;div class=&quot;image float-left&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/mattmckegg.jpg&quot; alt=&quot;Matt McKegg&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/joel-lord.jpg&quot; alt=&quot;Joel Lord&quot;&gt;
 &lt;/div&gt;
 
-&lt;p&gt;A JavaScript hacker and backyard musician and from Wellington, New Zealand. Lover of all things open and modular. I spend most of my time pressing buttons of various shapes, sizes and colours. Sometimes these buttons make sounds.&lt;/p&gt;
-&lt;p&gt;Matt has been making music with computers for about 10 years, but once he tried to move from bedroom composing to live performance, he got incredibly frustrated at how hard it was to play computer music live. He decided to start working on his own live electronic performance software written in JavaScript that would let me play the way he wanted to play. 3 years later, it’s finally starting to become a reality.&lt;/p&gt;
+&lt;p&gt;As a Development Manager, Joel’s motivation and proven technical prowess makes him a key member of Spiria’s software development team. With a degree in computational astrophysics, his interests eventually made their way to software and Web design. Today, his knowledge of JavaScript lets him to support a variety of projects on both the front end and back end. As we move into the age of the Internet of Things, Joel is ready with his passion for programming node bots and experimenting with gadgets.&lt;/p&gt;
 &lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Here is one of the Matt’s recent performances, for your viewing pleasure. &lt;/p&gt;
-&lt;iframe width=&quot;1280&quot; height=&quot;720&quot; src=&quot;https://www.youtube.com/embed/L2BVDJWHdy0?rel=0&amp;amp;showinfo=0&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;</description>
+&lt;p&gt;Joel is going to speak on Web Sockets and tunnels of light… or to describe it more specifically more and more, people seem to be obsessed with real-time data.  But what does real-time mean in the world of REST servers and one-way communication?  Most modern web applications are now either displaying a snapshot of data at a given time or use a polling mechanism to update series of data at a given interval.
+In this talk, you will learn about the power of WebSockets and how they can (and should!) be used in your modern web applications. In these 30 minutes, I will go through the process of building a Node server that can push data to multiple clients in real-time.  You will see how this can be easy using the socket.io library.&lt;/p&gt;
+</description>
     </item>
     <item>
       <title>The Web Platform is the Universal Instrument by Ben Michel</title>
@@ -380,6 +607,23 @@ it can be.&lt;/p&gt;
 &lt;li&gt;Audience interaction with the exposed parameters of a live band’s instrumentation–via broadcast methods and microcontroller installations.”&lt;/li&gt;
 &lt;/ul&gt;
 </description>
+    </item>
+    <item>
+      <title>I Play the JavaScript by Matt McKegg</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</link>
+      <pubDate>Thu, 02 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-left&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/mattmckegg.jpg&quot; alt=&quot;Matt McKegg&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;A JavaScript hacker and backyard musician and from Wellington, New Zealand. Lover of all things open and modular. I spend most of my time pressing buttons of various shapes, sizes and colours. Sometimes these buttons make sounds.&lt;/p&gt;
+&lt;p&gt;Matt has been making music with computers for about 10 years, but once he tried to move from bedroom composing to live performance, he got incredibly frustrated at how hard it was to play computer music live. He decided to start working on his own live electronic performance software written in JavaScript that would let me play the way he wanted to play. 3 years later, it’s finally starting to become a reality.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Here is one of the Matt’s recent performances, for your viewing pleasure. &lt;/p&gt;
+&lt;iframe width=&quot;1280&quot; height=&quot;720&quot; src=&quot;https://www.youtube.com/embed/L2BVDJWHdy0?rel=0&amp;amp;showinfo=0&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;</description>
     </item>
     <item>
       <title>Code First Docs How we Threw Out The Book &amp; Put Code First With Twilio Documentation by Jarod Reyes</title>
