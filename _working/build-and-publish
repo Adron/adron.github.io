@@ -17,5 +17,3 @@ cd ~/Codez/adron.github.io/
 git add -A
 git commit -m "$commitMessage"
 git push origin master
-
-rm -rf build
