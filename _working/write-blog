@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+cd contents/articles
+
 # Just a title
 blogtitle=$1
 # Format 2013-04-30
