@@ -11,4 +11,3 @@ resource "google_dns_record_set" "compositecodecom" {
     ttl = 30
     rrdatas = ["192.30.252.154", "192.30.252.153"]
 }
-
