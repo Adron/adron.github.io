@@ -2,6 +2,8 @@
 
 cd contents/articles
 
+echo "Moved into articles path."
+
 # Just a title
 blogtitle=$1
 # Format 2013-04-30
@@ -34,3 +36,5 @@ template: article.jade
 <span class="more"></span>
 
 EOT
+
+echo "All done!"

@@ -10,7 +10,7 @@ fi
 cd ~/Codez/adron.github.io/_working/
 wintersmith build
 
-cp -r build/ ../../../../adron.github.io/
+cp -r build/ ../../adron.github.io/
 
 cd ~/Codez/adron.github.io/
 

@@ -23,7 +23,7 @@ cat <<EOT >> index.md
 title: $cleanedTitle
 author: Adron Hall
 date: $blogdate
-template: article.jade
+template: docs.jade
 ---
 <div class="image float-left">
     ![Somebody](anImage.jpg)
