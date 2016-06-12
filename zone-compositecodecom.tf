@@ -6,8 +6,9 @@ resource "google_dns_managed_zone" "compositecodecom" {
 
 resource "google_dns_record_set" "compositecodecom" {
     managed_zone = "${google_dns_managed_zone.compositecodecom.name}"
-    name = "@.${google_dns_managed_zone.compositecodecom.dns_name}"
+    name = "${google_dns_managed_zone.compositecodecom.dns_name}"
     type = "A"
-    ttl = 5
+    ttl = 30
     rrdatas = ["192.30.252.154", "192.30.252.153"]
 }
+
