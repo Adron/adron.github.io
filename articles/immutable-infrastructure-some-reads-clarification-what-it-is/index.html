@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="http://adron.github.io/css/style.min.css">
     <script src="http://adron.github.io/js/modernizr.js"></script>
   </head>
-  <body>
+  <body class="article-detail">
     <!--[if lt IE 8]>
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -62,8 +62,10 @@
             <div class="col-md-12">
               <!-- Page Info-->
               <div class="page-info page-info-simple">
-                <h1>Adron's Composite Code</h1>
-                <h2 class="description">Coder, Messenger, Recon, Infrastructure</h2>
+                <h1>Immutable Infrastructure - Some Reads and Clarification of What It Is</h1>
+                <p class="author">Written by <span class="author">Adron Hall</span>
+                </p>
+                <div class="nav"><a href="/">« Home</a></div>
               </div>
               <!-- End Page Info-->
             </div>
@@ -78,65 +80,36 @@
             <div class="col-md-9">
               <div class="main-content">
                 <!-- Blog Page-->
-                <div class="blog">
-                  <div class="row"></div>
-                </div>
-                <div class="col-md-12 col-sm-12">
-                  <!-- Blog List-->
-                  <div class="blog-grid">
-                    <div class="row">
-                      <div class="col-md-12 col-sm-12">
-                        <h3 class="blog-grid-title"><a href="/articles/immutable-infrastructure-some-reads-clarification-what-it-is/">Immutable Infrastructure - Some Reads and Clarification of What It Is</a></h3>
-                        <p class="blog-grid-excerpt"><p>First let’s get these terms a little more defined with the help of some well written articles on the&nbsp;matter.</p>
-
-                          <p class="more"><a href="/articles/immutable-infrastructure-some-reads-clarification-what-it-is/">more</a></p>
-                        </p>
-                        <div class="blog-grid-meta"><span class="blog-grid-date">12. April 2016</span></div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End of Blog List-->
-                </div>
-                <div class="col-md-12 col-sm-12">
-                  <!-- Blog List-->
-                  <div class="blog-grid">
-                    <div class="row">
-                      <div class="col-md-12 col-sm-12">
-                        <h3 class="blog-grid-title"><a href="/articles/docker-tips-n-tricks-bash-things-with-docker/">Docker Tips n' Tricks - Bash Things With Docker</a></h3>
-                        <p class="blog-grid-excerpt"><p>If you use Docker frequently, you’ve likely memorized a few repetitive&nbsp;commands…</p>
-<pre><code>docker-machine start XyZvirtualMachine
-</code></pre><p>Then you&nbsp;run…</p>
-<pre><code>docker-machine env XyZvirtualMachine
-</code></pre><p>…and then you&nbsp;type…</p>
-<pre><code>eval $(docker-machine env XyZvirtualMachine)
-</code></pre><p>
-                          <p class="more"><a href="/articles/docker-tips-n-tricks-bash-things-with-docker/">more</a></p>
-                        </p>
-                        <div class="blog-grid-meta"><span class="blog-grid-date">10. March 2016</span></div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End of Blog List-->
-                </div>
-                <div class="col-md-12 col-sm-12">
-                  <!-- Blog List-->
-                  <div class="blog-grid">
-                    <div class="row">
-                      <div class="col-md-12 col-sm-12">
-                        <h3 class="blog-grid-title"><a href="/articles/docker-tips-n-tricks-delete-all-the-images-containers/">Docker Tips n' Tricks - Delete All The Images &amp; Containers</a></h3>
-                        <p class="blog-grid-excerpt"><p>Two simple commands that’ll wipe your installation clean of images and&nbsp;containers.</p>
-<p>Deletes all&nbsp;containers</p>
-<pre><code>docker rm $(docker ps -a -q)
-</code></pre><p>Deletes all&nbsp;images</p>
-<pre><code>docker rmi $(docker images -q)
-</code></pre>
-                        </p>
-                        <div class="blog-grid-meta"><span class="blog-grid-date">02. November 2015</span></div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End of Blog List-->
-                </div>
+                <article class="article">
+                  <section class="content"><p>First let’s get these terms a little more defined with the help of some well written articles on the&nbsp;matter.</p>
+<h2 id="an-introduction-to-immutable-infrastructure">An Introduction to Immutable&nbsp;Infrastructure</h2>
+<p>A well written piece by <a href="https://twitter.com/joshstella" target="_blank">@joshstella</a> on O’Reilly Radar titled “<a href="http://radar.oreilly.com/2015/06/an-introduction-to-immutable-infrastructure.html" target="_blank">An Introduction to Immutable Infrastructure</a>“. Here are some key elements in Josh’s description of immutable&nbsp;infrastructure.</p>
+<p><span class="more"></span></p>
+<blockquote>
+<p>Immutable infrastructure (<span class="caps">II</span>) provides stability, efficiency, and fidelity to your applications through automation and the use of successful patterns from&nbsp;programming.</p>
+</blockquote>
+<p>This provides a basic description, at a very high level, of what immutable infrastructure is. The keys to note are the idea of programming the infrastructure instead of tediously setting it up manually as has traditionally been&nbsp;done.</p>
+<blockquote>
+<p>Immutable infrastructure requires full automation of your runtime environment. This is only possible in compute environments that have an <span class="caps">API</span> over all aspects of configuration and monitoring. Therefore, II can be fully realized only in true cloud environments. It is possible to realize some benefits of II with partial implementations, but the true benefits of efficiency and resiliency are realized with thorough&nbsp;implementation.</p>
+</blockquote>
+<p>In this part another key point, from a functional perspective of what immutable infrastructure is, is brought up. The availability of APIs to control all aspects of the infrastructure and beyond are needed to truly implement this pattern of infrastructure use. Without APIs to programmatically enable this there is no way to truly create immutable&nbsp;infrastructure.</p>
+<blockquote>
+<p>Historically, we’ve thought of machine uptime and maintenance as desirable because we associate the health of the overall service or application with them. In the data center, hardware is expensive and we need to carefully craft and maintain each individual server to preserve our investments over time. In the cloud, this is an anachronistic perspective and one we should give up on in order to create more resilient, simpler, and ultimately more secure services and&nbsp;applications.</p>
+</blockquote>
+<p>Paraphrased - kill your tediously and manually managed servers! <em>Woohoo!</em></p>
+<h2 id="why-you-should-build-an-immutable-infrastructure">Why You Should Build an Immutable&nbsp;Infrastructure</h2>
+<p>“<a href="https://blog.codeship.com/immutable-infrastructure/" target="_blank">Why You Should Build an Immutable Infrastructure</a>“ by <a href="http://Even though the  https://twitter.com/flomotlik" target="_blank">@flomotlik</a> is an excellent write up with a bit more detail about how, where, and why to build out immutable infrastructure. The blog <a href="https://twitter.com/codeship" target="_blank">@Codeship</a> overall is an excellent place to find more implementation details about designing, uses, and ways to put together your own immutable infrastructure. In the article I’ve linked Florian draws some solid points about their experience with immutable infrastructure. Some of the key features Florian details&nbsp;include:</p>
+<ul>
+<li>State&nbsp;Isolation</li>
+<li>Atomic Deployments and&nbsp;Validation</li>
+<li>Fast Recovery by Preserving&nbsp;History</li>
+<li>Simple&nbsp;Experimentation</li>
+</ul>
+<p>All of these are valid reasons to go with an immutable infrastructure design practice. Florian also puts together some great links <span class="amp">&amp;</span> reference material at the end of the article&nbsp;too.</p>
+<h2 id="summary-">Summary…</h2>
+<p>So these are reasonable good reads on immutable infrastructure, something, that if you’re in charge of any type of application deployment will benefit from in some significant ways. So learn up, and feel free to ping me for further discussion on twitter <a href="https://twitter.com/adron" target="_blank">@Adron</a>.&nbsp;Cheers!</p>
+</section>
+                </article>
                 <!-- End of Blog Page-->
               </div>
             </div>
@@ -156,8 +129,7 @@
             </div>
           </div>
         </div>
-        <div class="nav"><a href="/page/7/">« Newer</a>
-        </div>
+        <div class="nav"><a href="/">« Home</a></div>
       </div>
     </div>
     <script src="http://adron.github.io/js/all.js"></script>
