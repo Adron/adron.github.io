@@ -528,23 +528,6 @@ key concepts of SAM and walk the audience through some node.js code samples (inc
 </description>
     </item>
     <item>
-      <title>WebSockets Bring Light at the End of the Tunnel by Joel Lord</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</link>
-      <pubDate>Fri, 03 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</guid>
-      <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-left&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/joel-lord.jpg&quot; alt=&quot;Joel Lord&quot;&gt;
-&lt;/div&gt;
-
-&lt;p&gt;As a Development Manager, Joel’s motivation and proven technical prowess makes him a key member of Spiria’s software development team. With a degree in computational astrophysics, his interests eventually made their way to software and Web design. Today, his knowledge of JavaScript lets him to support a variety of projects on both the front end and back end. As we move into the age of the Internet of Things, Joel is ready with his passion for programming node bots and experimenting with gadgets.&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Joel is going to speak on Web Sockets and tunnels of light… or to describe it more specifically more and more, people seem to be obsessed with real-time data.  But what does real-time mean in the world of REST servers and one-way communication?  Most modern web applications are now either displaying a snapshot of data at a given time or use a polling mechanism to update series of data at a given interval.
-In this talk, you will learn about the power of WebSockets and how they can (and should!) be used in your modern web applications. In these 30 minutes, I will go through the process of building a Node server that can push data to multiple clients in real-time.  You will see how this can be easy using the socket.io library.&lt;/p&gt;
-</description>
-    </item>
-    <item>
       <title>MMOWAM - Build Server-less Games with a DSN by Josh Marinacci</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-josh-marinacci/</link>
       <pubDate>Fri, 03 Jun 2016 17:00:00 -0700</pubDate>
@@ -582,6 +565,40 @@ it can be.&lt;/p&gt;
 </description>
     </item>
     <item>
+      <title>WebSockets Bring Light at the End of the Tunnel by Joel Lord</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</link>
+      <pubDate>Fri, 03 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-left&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/joel-lord.jpg&quot; alt=&quot;Joel Lord&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;As a Development Manager, Joel’s motivation and proven technical prowess makes him a key member of Spiria’s software development team. With a degree in computational astrophysics, his interests eventually made their way to software and Web design. Today, his knowledge of JavaScript lets him to support a variety of projects on both the front end and back end. As we move into the age of the Internet of Things, Joel is ready with his passion for programming node bots and experimenting with gadgets.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Joel is going to speak on Web Sockets and tunnels of light… or to describe it more specifically more and more, people seem to be obsessed with real-time data.  But what does real-time mean in the world of REST servers and one-way communication?  Most modern web applications are now either displaying a snapshot of data at a given time or use a polling mechanism to update series of data at a given interval.
+In this talk, you will learn about the power of WebSockets and how they can (and should!) be used in your modern web applications. In these 30 minutes, I will go through the process of building a Node server that can push data to multiple clients in real-time.  You will see how this can be easy using the socket.io library.&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>I Play the JavaScript by Matt McKegg</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</link>
+      <pubDate>Thu, 02 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-left&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/mattmckegg.jpg&quot; alt=&quot;Matt McKegg&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;A JavaScript hacker and backyard musician and from Wellington, New Zealand. Lover of all things open and modular. I spend most of my time pressing buttons of various shapes, sizes and colours. Sometimes these buttons make sounds.&lt;/p&gt;
+&lt;p&gt;Matt has been making music with computers for about 10 years, but once he tried to move from bedroom composing to live performance, he got incredibly frustrated at how hard it was to play computer music live. He decided to start working on his own live electronic performance software written in JavaScript that would let me play the way he wanted to play. 3 years later, it’s finally starting to become a reality.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Here is one of the Matt’s recent performances, for your viewing pleasure. &lt;/p&gt;
+&lt;iframe width=&quot;1280&quot; height=&quot;720&quot; src=&quot;https://www.youtube.com/embed/L2BVDJWHdy0?rel=0&amp;amp;showinfo=0&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;</description>
+    </item>
+    <item>
       <title>The Web Platform is the Universal Instrument by Ben Michel</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-ben-michel/</link>
       <pubDate>Thu, 02 Jun 2016 17:00:00 -0700</pubDate>
@@ -607,23 +624,6 @@ it can be.&lt;/p&gt;
 &lt;li&gt;Audience interaction with the exposed parameters of a live band’s instrumentation–via broadcast methods and microcontroller installations.”&lt;/li&gt;
 &lt;/ul&gt;
 </description>
-    </item>
-    <item>
-      <title>I Play the JavaScript by Matt McKegg</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</link>
-      <pubDate>Thu, 02 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</guid>
-      <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-left&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/mattmckegg.jpg&quot; alt=&quot;Matt McKegg&quot;&gt;
-&lt;/div&gt;
-
-&lt;p&gt;A JavaScript hacker and backyard musician and from Wellington, New Zealand. Lover of all things open and modular. I spend most of my time pressing buttons of various shapes, sizes and colours. Sometimes these buttons make sounds.&lt;/p&gt;
-&lt;p&gt;Matt has been making music with computers for about 10 years, but once he tried to move from bedroom composing to live performance, he got incredibly frustrated at how hard it was to play computer music live. He decided to start working on his own live electronic performance software written in JavaScript that would let me play the way he wanted to play. 3 years later, it’s finally starting to become a reality.&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Here is one of the Matt’s recent performances, for your viewing pleasure. &lt;/p&gt;
-&lt;iframe width=&quot;1280&quot; height=&quot;720&quot; src=&quot;https://www.youtube.com/embed/L2BVDJWHdy0?rel=0&amp;amp;showinfo=0&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;</description>
     </item>
     <item>
       <title>Code First Docs How we Threw Out The Book &amp; Put Code First With Twilio Documentation by Jarod Reyes</title>
@@ -894,6 +894,62 @@ Remember one thing. Work is not your core focus and reason to exist in life. &lt
 &lt;p&gt;All of these are valid reasons to go with an immutable infrastructure design practice. Florian also puts together some great links &amp;amp; reference material at the end of the article too.&lt;/p&gt;
 &lt;h2 id=&quot;summary-&quot;&gt;Summary…&lt;/h2&gt;
 &lt;p&gt;So these are reasonable good reads on immutable infrastructure, something, that if you’re in charge of any type of application deployment will benefit from in some significant ways. So learn up, and feel free to ping me for further discussion on twitter &lt;a href=&quot;https://twitter.com/adron&quot; target=&quot;_blank&quot;&gt;@Adron&lt;/a&gt;. Cheers!&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>The Difficult Open Source Path</title>
+      <link>http://adron.github.io/articles/the-difficult-open-source-path/</link>
+      <pubDate>Thu, 24 Mar 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/the-difficult-open-source-path/</guid>
+      <author></author>
+      <description>&lt;p&gt;Bringing a closed source, or just simply an internally managed code base, into the wild of open source software can be an arduous and surreal process. In this article I’m going to ramble on about exactly that, with a few learned lessons and key successes I’ve had.&lt;/p&gt;
+&lt;p&gt;I’m currently helping the Home Depot Quote Center determine what is useful software to open source, and then helping them move toward open sourcing that software. In the past I’ve managed the open source development of .NET Extensions of Cloud Foundry, called Iron Foundry, which provided .NET support to the Cloud Foundry Platform. I’ve also helped organize and run open source efforts for plugins at New Relic, Basho, and a host of other smaller companies. Sometimes I’ve been a code contributor, sometimes I’m just interacting with contributors and managing pull requests. Either way it has been a lot of fun and every time it has been a seriously intense learning opportunity.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;h2 id=&quot;lesson-1-open-source-amp-individual-freedom&quot;&gt;Lesson 1: Open Source &amp;amp; Individual Freedom&lt;/h2&gt;
+&lt;p&gt;One thing to keep in mind, which I realize, but find myself being reminded of, is that people are truly free to either contribute, use, or completely disregard or ignore your open source project. The analogy of herding cats is often used to describe software development, and open source software development is like herding cats hopped up on a bunch of catnip that whimsically decide to do whatever they want.&lt;/p&gt;
+&lt;p&gt;Of course, an open source project might have paid contributors. If a project has paid contributors we at least get back to a contained room of cat herding. But either way, never forget that someone may or may not build that feature, or close the issue, or submit a pull request the way you’ve set out to have the project run. Which brings me to the next lesson.&lt;/p&gt;
+&lt;h2 id=&quot;lesson-2-write-up-roles-rules-process-guidelines&quot;&gt;Lesson 2: Write Up Roles, Rules, Process, &amp;amp; Guidelines&lt;/h2&gt;
+&lt;p&gt;As soon as the team goes from one person to two, effort should immediately be put into creating roles, rules, and process for how contributions will be accepted, pull requests will be committed, how to submit or work on issues, and the whole host of work flow associated with getting things done for the project.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Roles&lt;/strong&gt;, in this particular instance, can be broken down in different ways. Sometimes a project might have somebody managing the pull requests coming in, someone else or even several people are managing the product development issues for new features, another person might be handing bug issues that come up, and the possibilities continue. Some simple examples often look like this:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Project Leader - (Manager, Boss, Head Honcho, or whatever the title) would be in charge of and might even be the person who started the project.&lt;/li&gt;
+&lt;li&gt;Contributor - Individual submitting features via pull request to the project.&lt;/li&gt;
+&lt;li&gt;Feature Creator - Individual submitting feature requests and ideas via issues listings.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Slightly more complex examples might be something like this:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Project Creator - Again, the person who created, started, and owns the project.&lt;/li&gt;
+&lt;li&gt;Feature Architect - Some who specifically designs features from a technical stand point.&lt;/li&gt;
+&lt;li&gt;Feature User Experience - Someone who works with users of the OSS project to determine how and in which ways the community is using the project and determine ways to make the experience better.&lt;/li&gt;
+&lt;li&gt;Feature Contributor - Someone who contributes code for features, implementing based on contributor specs, etc.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Beyond that, one just merely needs to detail the roles as much as necessary to help people determine what and how they’ll be contributing to the project.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Rules&lt;/strong&gt; for a project can cover a wide range of things. One increasingly popular and sometimes useful thing to add, especially with a diverse group of people working on a project, is a basic code of conduct. This helps outline what is or is not appropriate behavior on the issue threads and general public conversation within the group. We have to remember that open source often has people involved that aren’t exactly employees or directly related to the person that started a project. Because of this individuals often come to a project without any particular guidelines about what is or isn’t appropriate behavior.&lt;/p&gt;
+&lt;p&gt;Other rules that are dramatically simpler and easier to deal with, are breaking down and defining what is considered an acceptable pull request, how things should be documented, code standards, and other related technical rules.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Process&lt;/strong&gt; for a project is often key to keeping people involved over time. Without a good process in which contributors really feel like they’re part of the team and getting their pull requests accepted, things can fall apart pretty quickly. Nothing like a bored programmer to go find something else to do that has nothing to do with your open source project!&lt;/p&gt;
+&lt;p&gt;A good process helps to define the steps that a contributor would need to go through to contribute a piece of code to a feature, who they would need to communicate with, how to submit a pull request, and finally how to wrap up getting the pull request pulled from the latest code. This is as important to people and it is to defining the technical steps for the system itself to be sustaining from an ongoing continuous integration and deployment point of view.&lt;/p&gt;
+&lt;p&gt;Once these core things are formalized it dramatically decreases tedious communication about working through the most basic of tasks while working on a project.&lt;/p&gt;
+&lt;h2 id=&quot;lesson-3-branding-amp-marketing&quot;&gt;Lesson 3: Branding &amp;amp; Marketing&lt;/h2&gt;
+&lt;p&gt;“Oh my god what are you talking about Adron, what’s that crap got to do with an open source project?” I can hear the naysayers immediately on this topic. But rest assured, branding and marketing will either make or break a project. If you’re repo is kind of clunky and cluttered it sends a bad message that you aren’t really paying attention to your project. If someone comes to your repo and immediately sees a reasonable logo, or some type of consistent README.md with useful information and messaging (that’s marketing by the way) about what, where, how, and why this project exists, you’re exponentially more likely to get people involved in contributing and even more dramatically more likely to get people using the project.&lt;/p&gt;
+&lt;p&gt;In the OSS Manifesto a baseline of files are suggested for an OSS project:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Have a readme file&lt;/li&gt;
+&lt;li&gt;Have a contributing file&lt;/li&gt;
+&lt;li&gt;List all core team members in the readme file&lt;/li&gt;
+&lt;li&gt;Have a license file&lt;/li&gt;
+&lt;li&gt;Have a changelog&lt;/li&gt;
+&lt;li&gt;Follow semantic versioning&lt;/li&gt;
+&lt;li&gt;Tag all major releases&lt;/li&gt;
+&lt;li&gt;Provide documentation&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I’ll add to this, throw in an &lt;em&gt;.svg or reasonably usable &lt;/em&gt;.png of a logo or some easily identifiable symbol for the project. Every major project has some sort of logo, it really doesn’t even matter if its a pretty lousy looking logo, it just needs to be there to make the project easily identifiable.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/the-difficult-open-source-path/open-source-logos.png&quot; alt=&quot;Open Source logos&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;lesson-4-the-software-needs-to-work&quot;&gt;Lesson 4: The Software Needs to Work&lt;/h2&gt;
+&lt;p&gt;Having the respective readme, contributing file, general doc, listing of all core members; these things I’ve listed so far are all nice but there’s one more thing I’ve not mentioned yet. That is having a working publicly accessible &lt;strong&gt;&lt;em&gt;continuous integration&lt;/em&gt;&lt;/strong&gt; build that is working. Any and every open source project should have a repository setup with a running build. Any new pull requests gets accepted or even the smallest commit should get a build started.&lt;/p&gt;
+&lt;p&gt;There are many ways, more so for open source projects than probably any other kind, to get a continuous integration build going. Check out products and services like &lt;a href=&quot;https://codeship.com/&quot; target=&quot;_blank&quot;&gt;Codeship&lt;/a&gt;, &lt;a href=&quot;https://www.jetbrains.com/teamcity/&quot; target=&quot;_blank&quot;&gt;TeamCity&lt;/a&gt;, &lt;a href=&quot;https://www.appveyor.com/&quot; target=&quot;_blank&quot;&gt;Appveyor&lt;/a&gt;, or &lt;a href=&quot;https://travis-ci.org/&quot; target=&quot;_blank&quot;&gt;Travis CI&lt;/a&gt;. These are just a few of the many options to get a continuous integration setup running for your open source project.&lt;/p&gt;
+&lt;h2 id=&quot;lesson-5-there-will-be-other-lessons-to-learn&quot;&gt;Lesson 5: There will be other lessons to learn&lt;/h2&gt;
+&lt;p&gt;An open source project is a pretty wild ride of code chops, organizational skills, and keep systemic development sustainable for a project. It can be tough, but a lot of fun, and very rewarding.&lt;/p&gt;
+&lt;p&gt;With that, happy hacking and stay tuned, there’s more to come!&lt;/p&gt;
 </description>
     </item>
     <item>

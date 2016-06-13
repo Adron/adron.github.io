@@ -6,3 +6,6 @@ template: doc.jade
 ---
 
 Some sample stuff goes here.
+
+
+<span class="more"></span>

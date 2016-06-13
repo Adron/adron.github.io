@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="http://adron.github.io/css/style.min.css">
     <script src="http://adron.github.io/js/modernizr.js"></script>
   </head>
-  <body class="article-detail">
+  <body>
     <!--[if lt IE 8]>
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -62,10 +62,8 @@
             <div class="col-md-12">
               <!-- Page Info-->
               <div class="page-info page-info-simple">
-                <h1>Documentation Document 1</h1>
-                <p class="author">Written by <span class="author">Adron Hall</span>
-                </p>
-                <div class="nav"><a href="/">« Home</a></div>
+                <h1>Adron's Composite Code</h1>
+                <h2 class="description">Coder, Messenger, Recon, Infrastructure</h2>
               </div>
               <!-- End Page Info-->
             </div>
@@ -80,11 +78,28 @@
             <div class="col-md-9">
               <div class="main-content">
                 <!-- Blog Page-->
-                <docs class="article">
-                  <section class="content"><p>Some sample stuff goes&nbsp;here.</p>
-<p><span class="more"></span></p>
-</section>
-                </docs>
+                <div class="blog">
+                  <div class="row"></div>
+                </div>
+                <div class="col-md-12 col-sm-12">
+                  <!-- Blog List-->
+                  <div class="blog-grid">
+                    <div class="row">
+                      <div class="col-md-12 col-sm-12">
+                        <h3 class="blog-grid-title"><a href="/articles/docker-tips-n-tricks-delete-all-the-images-containers/">Docker Tips n' Tricks - Delete All The Images &amp; Containers</a></h3>
+                        <p class="blog-grid-excerpt"><p>Two simple commands that’ll wipe your installation clean of images and&nbsp;containers.</p>
+<p>Deletes all&nbsp;containers</p>
+<pre><code>docker rm $(docker ps -a -q)
+</code></pre><p>Deletes all&nbsp;images</p>
+<pre><code>docker rmi $(docker images -q)
+</code></pre>
+                        </p>
+                        <div class="blog-grid-meta"><span class="blog-grid-date">02. November 2015</span></div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- End of Blog List-->
+                </div>
                 <!-- End of Blog Page-->
               </div>
             </div>
@@ -104,7 +119,8 @@
             </div>
           </div>
         </div>
-        <div class="nav"><a href="/">« Home</a></div>
+        <div class="nav"><a href="/page/8/">« Newer</a>
+        </div>
       </div>
     </div>
     <script src="http://adron.github.io/js/all.js"></script>
