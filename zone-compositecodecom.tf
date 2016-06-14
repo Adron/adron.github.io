@@ -20,3 +20,12 @@ resource "google_dns_record_set" "hub-serivce-compositecodecom" {
     rrdatas = [
         "${google_compute_address.addy-hub-service.address}"]
 }
+
+resource "google_dns_record_set" "lonestar-compositecodecom" {
+    managed_zone = "${google_dns_managed_zone.compositecodecom.name}"
+    name = "lonestar.${google_dns_managed_zone.compositecodecom.dns_name}"
+    type = "A"
+    ttl = 30
+    rrdatas = [
+        "${google_compute_address.addy-lonestar-service.address}"]
+}
