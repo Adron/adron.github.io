@@ -280,36 +280,53 @@
 								<i class="pe-7s-check"></i>Your message was sent successfully.
 								<br>Thank you!</div>
 							<!-- End of Success Modal -->
-							<form action="php/contact.php" id="js-contact-form">
-								<ul class="contacts-inputs">
-									<li class="contacts-item">
-										<label for="full-name" class="contacts-label">Full Name</label>
-										<!-- This input is required -->
-										<input type="text" name="full-name" id="full-name" class="contacts-input form-control" data-validation="required"> </li>
-									<li class="contacts-item">
-										<label for="email" class="contacts-label">Email</label>
-										<!-- This input should be filled with a valid email and it's required -->
-										<input type="text" name="email" id="email" class="contacts-input form-control" data-validation="required email"> </li>
-									<li class="contacts-item">
-										<label for="company" class="contacts-label">Company</label>
-										<!-- This input if optional -->
-										<input type="text" name="company" id="company" class="contacts-input form-control"> </li>
-									<li class="contacts-item">
-										<label for="website" class="contacts-label">Website</label>
-										<!-- This input should be filled with a valid URL and it's optional -->
-										<input type="text" name="website" id="website" class="contacts-input form-control" data-validation="url" data-validation-optional="true"> </li>
-									<li class="contacts-item">
-										<label for="country" class="contacts-label">Country</label>
-										<!-- This input is optional -->
-										<input type="text" name="country" id="country" class="contacts-input form-control"> </li>
-									<li class="contacts-item">
-										<label for="message" class="contacts-label">Message</label>
-										<!-- This input is required -->
-										<textarea id="message" name="message" class="contacts-input form-control" data-validation="required"></textarea>
-									</li>
-								</ul>
-								<button class="button blue full">Send Message</button>
-							</form>
+
+
+							<!-- Begin MailChimp Signup Form -->
+							<link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css">
+							<style type="text/css">
+								#mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
+								/* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
+                                   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+							</style>
+							<div id="mc_embed_signup">
+								<form action="//compositecode.us11.list-manage.com/subscribe/post?u=7f73ff0427183b9b64e1f336a&amp;id=a6fc3efde0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+									<div id="mc_embed_signup_scroll">
+										<h2>Subscribe to our mailing list</h2>
+										<div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
+										<div class="mc-field-group">
+											<label for="mce-EMAIL">Email Address  <span class="asterisk">*</span>
+											</label>
+											<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+										</div>
+										<div class="mc-field-group">
+											<label for="mce-FNAME">First Name  <span class="asterisk">*</span>
+											</label>
+											<input type="text" value="" name="FNAME" class="required" id="mce-FNAME">
+										</div>
+										<div class="mc-field-group">
+											<label for="mce-LNAME">Last Name  <span class="asterisk">*</span>
+											</label>
+											<input type="text" value="" name="LNAME" class="required" id="mce-LNAME">
+										</div>
+										<div class="mc-field-group input-group">
+											<strong>Email Format </strong>
+											<ul><li><input type="radio" value="html" name="EMAILTYPE" id="mce-EMAILTYPE-0"><label for="mce-EMAILTYPE-0">html</label></li>
+												<li><input type="radio" value="text" name="EMAILTYPE" id="mce-EMAILTYPE-1"><label for="mce-EMAILTYPE-1">text</label></li>
+											</ul>
+										</div>
+										<div id="mce-responses" class="clear">
+											<div class="response" id="mce-error-response" style="display:none"></div>
+											<div class="response" id="mce-success-response" style="display:none"></div>
+										</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+										<div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_7f73ff0427183b9b64e1f336a_a6fc3efde0" tabindex="-1" value=""></div>
+										<div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+									</div>
+								</form>
+							</div>
+
+							<!--End mc_embed_signup-->
+
 						</div>
 						<!-- End of Contacts -->
 					</div>
