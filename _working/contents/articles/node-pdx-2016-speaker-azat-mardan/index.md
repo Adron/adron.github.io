@@ -1,5 +1,5 @@
 ---
-title: Node.js Patterns: From Callbacks to Observer by Azat Mardam
+title: Node.js Patterns - From Callbacks to Observer by Azat Mardam
 author: Adron Hall
 date: 2016-06-14 19:35
 template: article.jade
