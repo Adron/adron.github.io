@@ -8,20 +8,8 @@ Two simple commands that'll wipe your installation clean of images and container
 
 Deletes all containers
 
-<div class="code-highlight">
-<span class="js-copy-to-clipboard copy-code">copy</span> 
-<pre>
-<code class="language-markup js-code">
-docker rm $(docker ps -a -q)</code>
-</pre> 
-</div>
+    docker rm $(docker ps -a -q)
 
 Deletes all images
 
-<div class="code-highlight">
-<span class="js-copy-to-clipboard copy-code">copy</span> 
-<pre>
-<code class="language-markup js-code">
-docker rmi $(docker images -q)</code>
-</pre> 
-</div>
+    docker rmi $(docker images -q)

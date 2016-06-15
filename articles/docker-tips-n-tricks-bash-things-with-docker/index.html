@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="alternate" href="http://adron.github.io/feed.xml" type="application/rss+xml" title="Coder, Messenger, Recon, Infrastructure">
+    <link rel="alternate" href="http://adron.github.io/feed.xml" type="application/rss+xml" title="Coder, Messenger, Recon, Infrastructure, Ops">
     <link rel="icon" type="image/png" href="http://adron.github.io/img/favicons/favicon-16x16.png" sizes="16x16">
     <link rel="icon" type="image/png" href="http://adron.github.io/img/favicons/favicon-32x32.png" sizes="32x32">
     <link rel="icon" type="image/png" href="http://adron.github.io/img/favicons/favicon-96x96.png" sizes="96x96">
@@ -38,7 +38,7 @@
             <!-- Menu-->
             <nav class="right helper">
               <ul class="menu sf-menu js-menu">
-                <li><a href="http://compositecode.us11.list-manage1.com/subscribe?u=7f73ff0427183b9b64e1f336a&amp;id=a6fc3efde0">Thrashing Code News</a></li>
+                <li><a href="thrashingcodenews.html">Thrashing Code News</a></li>
                 <li><a href="#">Documentation Work</a>
                   <ul>
                     <li><a href="http://adron.github.io/404.html">More...</a></li>
@@ -82,58 +82,23 @@
                 <!-- Blog Page-->
                 <article class="article">
                   <section class="content"><p>If you use Docker frequently, you’ve likely memorized a few repetitive&nbsp;commands…</p>
-<div class="code-highlight " >
-<span class="js-copy-to-clipboard copy-code">copy</span> 
-<pre>
-<code class="language-markup js-code">
-docker-machine start XyZvirtualMachine</code>
-</pre> 
-</div>
-
-<p>Then you&nbsp;run…</p>
-<div class="code-highlight " >
-<span class="js-copy-to-clipboard copy-code">copy</span> 
-<pre>
-<code class="language-markup js-code">
-docker-machine env XyZvirtualMachine</code>
-</pre> 
-</div>
-
-<p>…and then you&nbsp;type…</p>
-<div class="code-highlight " >
-<span class="js-copy-to-clipboard copy-code">copy</span> 
-<pre>
-<code class="language-markup js-code">
-eval $(docker-machine env XyZvirtualMachine)</code>
-</pre> 
-</div>
-
-<p><span class="more"></span></p>
+<pre><code>docker-machine start XyZvirtualMachine
+</code></pre><p>Then you&nbsp;run…</p>
+<pre><code>docker-machine env XyZvirtualMachine
+</code></pre><p>…and then you&nbsp;type…</p>
+<pre><code>eval $(docker-machine env XyZvirtualMachine)
+</code></pre><p><span class="more"></span></p>
 <p>One does this about a zillion times if there are multiple virtual machines or for other various reasons. I wanted to simplify this repetitive task so I wrote a bash function, thanks to a <a href="http://stackoverflow.com/questions/35761480/scripting-docker-not-connected-after-running-script" target="_blank">fumble I posted on Stackoverflow</a> and then an assist by my good friend Troy Howard (<a href="https://twitter.com/thoward37" target="_blank">@thoward37</a>).</p>
 <p>This quick hack consisted of this <a href="https://gist.github.com/Adron/8dc06eb398f403225daa" target="_blank">Github gist</a>.</p>
-<div class="code-highlight " >
-<span class="js-copy-to-clipboard copy-code">copy</span> 
-<pre>
-<code class="language-markup js-code">
-gimmedocker() { if [ $1 ]; then
+<pre><code>gimmedocker() { if [ $1 ]; then
     docker-machine start $1
     docker-machine env $1
     eval $(docker-machine env $1)
     docker ps -a
-fi }</code>
-</pre> 
-</div>
-
-<p>Stick that in your ~/.bash_profile (or ~/.bashrc if you’re on *nix) and you’re good to go. Then at the bash prompt just type in&nbsp;this.</p>
-<div class="code-highlight " >
-<span class="js-copy-to-clipboard copy-code">copy</span> 
-<pre>
-<code class="language-markup js-code">
-gimmedocker XyZvirtualMachine</code>
-</pre> 
-</div>
-
-<p><span class="caps">BOOM</span>! Less typing for the&nbsp;win!</p>
+fi }
+</code></pre><p>Stick that in your ~/.bash_profile (or ~/.bashrc if you’re on *nix) and you’re good to go. Then at the bash prompt just type in&nbsp;this.</p>
+<pre><code>gimmedocker XyZvirtualMachine
+</code></pre><p><span class="caps">BOOM</span>! Less typing for the&nbsp;win!</p>
 </section>
                 </article>
                 <!-- End of Blog Page-->

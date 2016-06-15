@@ -4,10 +4,328 @@
     <title>Adron's Composite Code</title>
     <atom:link href="http://adron.github.io/feed.xml" rel="self" type="application/rss+xml"></atom:link>
     <link>http://adron.github.io</link>
-    <description>Coder, Messenger, Recon, Infrastructure</description>
-    <pubDate>Wed, 08 Jun 2016 14:30:00 -0700</pubDate>
+    <description>Coder, Messenger, Recon, Infrastructure, Ops</description>
+    <pubDate>Tue, 14 Jun 2016 19:35:00 -0700</pubDate>
     <generator>Wintersmith - https://github.com/jnordberg/wintersmith</generator>
     <language>en</language>
+    <item>
+      <title>Node.js Patterns - From Callbacks to Observer by Azat Mardan</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-azat-mardan/</link>
+      <pubDate>Tue, 14 Jun 2016 19:35:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-azat-mardan/</guid>
+      <author></author>
+      <description>&lt;div class=&quot;image float-right&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-azat-mardan/azat.jpg&quot; alt=&quot;Azat Mardan&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Introducing Azat Mardan!&lt;/p&gt;
+&lt;p&gt;Azat is author of many JavaScript and Node.js best sellers including &lt;em&gt;Practical Node.js&lt;/em&gt;, &lt;em&gt;Pro Express.js&lt;/em&gt; and &lt;em&gt;Rapid Prototyping with JS&lt;/em&gt;. He works as a Technology Fellow at Capital One Financial Corporation where he provides expertise in software engineering.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;This presentation is for you, if you’re a JavaScript engineer who is interested in deepening your understanding of Node.js patterns so you can create and design Node.js applications intelligently. With the right pattern, applications will be more scalable and easier to maintain. If you aspire one day to become a Node.js architect (or maybe you’re already one and want to extend your knowledge), this presentation is for you.&lt;/p&gt;
+&lt;p&gt;You will learn from this talk:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Starting with basic: what is event loop and callback: setTimeout(), setImmediate() and process.nextTick()&lt;/li&gt;
+&lt;li&gt;The observer pattern with EventEmitter&lt;/li&gt;
+&lt;li&gt;Middleware pattern&lt;/li&gt;
+&lt;li&gt;Module patterns: module.exports et al&lt;/li&gt;
+&lt;li&gt;Hacking object prototype and global refs&lt;/li&gt;
+&lt;li&gt;Factory pattern and pseudo-classical inheritance&lt;/li&gt;
+&lt;li&gt;Async patterns: Async, NeoAsync, async await, generators and Promises&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;For more work and links form Azat, check out these:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Blog: &lt;a href=&quot;http://webapplog.com&quot;&gt;http://webapplog.com&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Company: &lt;a href=&quot;http://capitalone.io&quot;&gt;http://capitalone.io&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Github: &lt;a href=&quot;http://github.com/azat-co&quot;&gt;http://github.com/azat-co&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Books: &lt;a href=&quot;http://webapplog.com/books&quot;&gt;http://webapplog.com/books&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Other links: &lt;a href=&quot;http://azat.co&quot;&gt;http://azat.co&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    <item>
+      <title>Working With Google Compute Engine (GCE) using Terraform (With a load of Bash Scripts too)</title>
+      <link>http://adron.github.io/articles/working-with-google-compute-engine/</link>
+      <pubDate>Sun, 12 Jun 2016 15:54:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/working-with-google-compute-engine/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;strong&gt;Mission:&lt;/strong&gt; I wanted to setup an instance, that I could install various things on and prepare it to act as a Terraformer or central server within GCE to spawn instances, setup networks, and generally manage the network autonomously of any local scripts or junk I have on my local computer. To set this up, I would of course have to launch it from my local computer, so there’s a whole range of things I’d need to have execute. To accomplish this, here’s what I did.&lt;/p&gt;
+&lt;h2 id=&quot;first-steps-google-compute-engine&quot;&gt;First Steps: Google Compute Engine&lt;/h2&gt;
+&lt;p&gt;First I logged in and setup a GCE Account (&lt;a href=&quot;https://cloud.google.com/compute/docs/quickstart&quot;&gt;read specifically about creating and getting started with a GCE account&lt;/a&gt;) and got &lt;em&gt;gcloud&lt;/em&gt; configured. The &lt;em&gt;gcloud&lt;/em&gt; is a cli to manage GCE. It’s actually a super powerful tool that comes in handy for all sorts of things. Besides managing GCE, it has a thin wrapper around &lt;a href=&quot;https://en.wikipedia.org/wiki/Secure_Shell&quot; target=&quot;_blank&quot;&gt;ssh&lt;/a&gt;, &lt;a href=&quot;https://en.wikipedia.org/wiki/Secure_copy&quot; target=&quot;_blank&quot;&gt;scp&lt;/a&gt;, and working with servers with those respective tools. I’ll use it a bit later to actually run some scripts against the instance I’ll be creating.&lt;/p&gt;
+&lt;p&gt;Once you’ve signed up for GCE there’s a few things worth noting. One is the idea of the &lt;em&gt;project&lt;/em&gt; that Google uses within GCE. This is something you’re create, or rename the default, or in some way bring into existence to use. A &lt;em&gt;project&lt;/em&gt; is something that a host of instances, instance groups, load balancers, networks, networking, and more can be allocated against. It’s also something that can be setup for or inside a specific billing group. It might also be helpful to really get an understanding of what a &lt;em&gt;project&lt;/em&gt; is by reading the &lt;a href=&quot;https://cloud.google.com/compute/docs/projects&quot; target=&quot;_blank&quot;&gt;Google documentation on &lt;em&gt;projects&lt;/em&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Once the project is ready, we can move forward with installing &lt;em&gt;gcloud&lt;/em&gt;. The way this is done is by installing the Google Cloud SDK. The curl below pulls down and executes the installation. Then the following command restarts the shell. Finally the gcloud init command kicks off the initialization of the gcloud cli.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;curl https://sdk.cloud.google.com | bash
+exec -l $SHELL
+gcloud init
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Running gcloud init does several things.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Authenticates the user (or allows re-use of saved credentials).&lt;/li&gt;
+&lt;li&gt;Requests the user’s project &amp;amp; saves it in the gcloud configuration.&lt;/li&gt;
+&lt;li&gt;Requests and sets a default zone based on the project in the gcloud configuration.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;At this point gcloud is setup for use, however upon connecting for the first time to an instance, gcloud will prompt to create a new ssh key set. This key set will be created and autonomous of the key set I have setup for git or other cli ssh tooling I’ll use. I’ll talk more about that later. NOTE: It is very important for subsequent steps to insure the gcloud ssh key is generated. I’ll get around to that in a moment under the “&lt;a href=&quot;#gcloudterraform&quot;&gt;&lt;em&gt;User gcloud w/ Terraform&lt;/em&gt;&lt;/a&gt;“ section.&lt;/p&gt;
+&lt;p&gt;The specific instructions for setting up &lt;em&gt;gcloud&lt;/em&gt; are also available here in &lt;a href=&quot;https://cloud.google.com/sdk/&quot;&gt;getting started with the Google Cloud SDK&lt;/a&gt;. This includes a little more description of what is included and related information about the Google Cloud SDK.&lt;/p&gt;
+&lt;h3 id=&quot;gcloudterraform&quot;&gt;Using gcloud w/ Terraform&lt;/h3&gt;
+
+&lt;p&gt;When building Terraform configurations for Google Cloud there are a number of settings that &lt;em&gt;gcloud&lt;/em&gt; can pull up very easily. Here are some of the commands I’ve used most frequently when setting up google compute instances.&lt;/p&gt;
+&lt;p&gt;List machine types in a project in table.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;gcloud compute machine-types list
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;List the URIs of all machine types in a project.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;gcloud compute machine-types list --uri
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;List all machine types in the us-central1-b and europe-west1-d zones.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;gcloud compute machine-types list --zones us-central1-b europe-west1-d
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;List all images in a project in table.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;gcloud compute images list
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;List all the URI images in a project.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;gcloud compute images list --uri
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The last thing is connecting to instances, with &lt;em&gt;gcloud&lt;/em&gt; looks like the following.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;gcloud compute --project &amp;quot;project-name&amp;quot; ssh --zone &amp;quot;us-central1-b&amp;quot; &amp;quot;instance-name&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;There’s some super useful ways to execute commands with the &lt;em&gt;gcloud&lt;/em&gt; cli, which provides a great way for bash scripting against instances.&lt;/p&gt;
+&lt;p&gt;These all provide quick ways to get the specific GCE specific settings for the Terraform file. Which brings up a perfect point to get into a basic Terraform instance creation.&lt;/p&gt;
+&lt;h2 id=&quot;next-terraforming-with-terraform&quot;&gt;Next: Terraforming with Terraform&lt;/h2&gt;
+&lt;p&gt;If you don’t have &lt;a href=&quot;https://www.terraform.io/&quot; target=&quot;_blank&quot;&gt;Terraform&lt;/a&gt; installed, the following bash commands will get you all setup on your machine. With this script below I can wrap this up as an installation script for the instance further along in this how-to. We’ll just have to tweak it specifically for Linux, as this script is focused around downloading and installing the Darwin (OS-X) version.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;cd /home/adron
+
+# Create a move into directory.
+mkdir terraform_0_6_14
+cd terraform_0_6_14
+
+# Download.
+curl -O https://releases.hashicorp.com/terraform/0.6.14/terraform_0.6.14_darwin_amd64.zip
+# Unzip and install
+unzip terraform_0.6.14_darwin_amd64.zip
+
+export PATH=/home/terraform_0_6_14:$PATH
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;To confirm that Terraform is installed correctly, just type terraform. The following should be displayed, which will let you know that the path variable is set to the correct path.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ terraform
+usage: terraform [--version] [--help] &amp;lt;command&amp;gt; [&amp;lt;args&amp;gt;]
+
+Available commands are:
+    apply       Builds or changes infrastructure
+    destroy     Destroy Terraform-managed infrastructure
+    get         Download and install modules for the configuration
+    graph       Create a visual graph of Terraform resources
+    init        Initializes Terraform configuration from a module
+    output      Read an output from a state file
+    plan        Generate and show an execution plan
+    push        Upload this Terraform module to Atlas to run
+    refresh     Update local state file against real resources
+    remote      Configure remote state storage
+    show        Inspect Terraform state or plan
+    taint       Manually mark a resource for recreation
+    untaint     Manually unmark a resource as tainted
+    validate    Validates the Terraform files
+    version     Prints the Terraform version
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;You may also want to add the PATH to the ~/.bash_profile on your own OS-X machine, like I did. Instead of that last bit of script that just exports the PATH variable, I swapped it out with the following code.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;echo &amp;quot;
+export PATH=/home/terraform_0_6_14:$PATH
+&amp;quot; &amp;gt;&amp;gt; ~/.bash_profile
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Yes, the odd spacing and new lines are important, because that will append the export to PATH in a way that provides space before and below the line. It just leaves the ~/.bash_profile file looking a little cleaner.&lt;/p&gt;
+&lt;p&gt;Once you’ve added it to your ~/.bash_profile, remember to either restart the terminal or source the file to get the PATH variable updated.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;source ~/.bash_profile
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The next thing we’ll need for Terraform use with GCE is the &lt;em&gt;account.json&lt;/em&gt; file. This is the file that a service account sets up to secure our connection between GCE and Terraform.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/working-with-google-compute-engine/user_accountjson_001.png&quot; alt=&quot;Account JSON Permissions&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Navigate to the Permissions section of the GCE interface and add a service account. When you click to create a service account you’ll be prompted with the following.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/working-with-google-compute-engine/user_accountjson_002.png&quot; alt=&quot;Furnish Account JSON&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Here check the “Furnish a new private key” and click on the JSON for the key type. Then create create. This will create the service account and the key will download locally. The key is not named account.json, but the file downloaded is what to use as the account.json file, it just needs renamed.&lt;/p&gt;
+&lt;p&gt;Now we’re ready to get into actually putting together an infrastructure project. Let’s start with a basic setup. First I need the following files.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;account.json&lt;/li&gt;
+&lt;li&gt;theterraformfile.tf&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;These are needed files and will get a terraform workflow started, but I break them out a bit more. Terraform files after all are all collected and then processed, so the configuration doesn’t have to all be in a single file.&lt;/p&gt;
+&lt;p&gt;What I have been doing lately, is take the terraform file and break it out accordingly. For the connection I create a connection.tf file, for configuration around instances I create an instances.tf file, for network addresses (static IPs) that goes in an addresses.tf file. If any of those files get to big within a project I break those out further like instance-instancename1.tf and instance-instancename2.tf.&lt;/p&gt;
+&lt;p&gt;With that practice applied, I end up with a project with the following files.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;account.json&lt;/li&gt;
+&lt;li&gt;instances.tf&lt;/li&gt;
+&lt;li&gt;addresses.tf&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I then run git init and add two more files.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;.gitignore&lt;/li&gt;
+&lt;li&gt;README.md&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;These have no relevance to the actual Terraform files, but they’re standard practice and come in very helpful once the project starts to grow. You’ll want a README.md for notes and documentation and you’ll definitely want to keep trash out of the project with the .gitignore, so even though they’re not required right now, if you’re following along add the files.&lt;/p&gt;
+&lt;p&gt;In the &lt;a href=&quot;https://github.com/Adron/starting-with-gce/blob/master/README.md&quot; target=&quot;_blank&quot;&gt;README.md&lt;/a&gt;, of course, we write our documentation! So anyway, it’ll be there in the &lt;a href=&quot;https://github.com/Adron/starting-with-gce&quot; target=&quot;_blank&quot;&gt;repo&lt;/a&gt; I’ve created for this blog entry here.&lt;/p&gt;
+&lt;p&gt;In the .gitignore file add the following.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;.DS_Store
+account.json
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;In the connection.tf file I added the following connection information. The ${file(“../secrets/account.json”)} configuration interpolates the path of the file based on where the project is located and pulls in the appropriate values for GCE.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# Configure the Google Cloud provider
+provider &amp;quot;google&amp;quot; {
+  credentials = &amp;quot;${file(&amp;quot;account.json&amp;quot;)}&amp;quot;
+  project     = &amp;quot;that-big-universe&amp;quot;
+  region      = &amp;quot;us-central1&amp;quot;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;With that in place, I added this to the instances.tf file.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# Create a new instance
+resource &amp;quot;google_compute_instance&amp;quot; &amp;quot;flirpderp&amp;quot; {
+    name = &amp;quot;flirpderp&amp;quot;
+    machine_type = &amp;quot;f1-micro&amp;quot;
+
+    zone = &amp;quot;us-central1-b&amp;quot;
+
+    disk {
+        image = &amp;quot;ubuntu-1404-trusty-v20160406&amp;quot;
+    }
+
+    network_interface {
+        network = &amp;quot;default&amp;quot;
+        access_config {}
+    }
+
+    service_account {
+        scopes = [&amp;quot;userinfo-email&amp;quot;, &amp;quot;compute-ro&amp;quot;, &amp;quot;storage-ro&amp;quot;]
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;To get the machine_type and disk image above I just used the following gcloud commands.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;gcloud compute machine-types list
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;and&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;gcloud compute images list
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;For this first build, I just wanted to get a basic template with a small (and by association super cheap) instance. For this I went with &lt;em&gt;f1-micro&lt;/em&gt;. For the disk, I used the base disk image load of the &lt;em&gt;ubuntu-1404-trusty-v20160406&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;All configuration set, I opened up a bash terminal and typed in the following.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;terraform plan
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;This command then displayed the following result.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Refreshing Terraform state prior to plan...
+
+The Terraform execution plan has been generated and is shown below.
+Resources are shown in alphabetical order for quick scanning. Green resources
+will be created (or destroyed and then created if an existing resource
+exists), yellow resources are being changed in-place, and red resources
+will be destroyed.
+
+Note: You didn&amp;#39;t specify an &amp;quot;-out&amp;quot; parameter to save this plan, so when
+&amp;quot;apply&amp;quot; is called, Terraform can&amp;#39;t guarantee this is what will execute.
+
++ google_compute_instance.flirpderp
+    can_ip_forward:                                      &amp;quot;&amp;quot; =&amp;gt; &amp;quot;0&amp;quot;
+    disk.#:                                              &amp;quot;&amp;quot; =&amp;gt; &amp;quot;1&amp;quot;
+    disk.0.auto_delete:                                  &amp;quot;&amp;quot; =&amp;gt; &amp;quot;1&amp;quot;
+    disk.0.image:                                        &amp;quot;&amp;quot; =&amp;gt; &amp;quot;ubuntu-1404-trusty-v20160406&amp;quot;
+    machine_type:                                        &amp;quot;&amp;quot; =&amp;gt; &amp;quot;f1-micro&amp;quot;
+    metadata_fingerprint:                                &amp;quot;&amp;quot; =&amp;gt; &amp;quot;&amp;lt;computed&amp;gt;&amp;quot;
+    name:                                                &amp;quot;&amp;quot; =&amp;gt; &amp;quot;flirpderp&amp;quot;
+    network_interface.#:                                 &amp;quot;&amp;quot; =&amp;gt; &amp;quot;1&amp;quot;
+    network_interface.0.access_config.#:                 &amp;quot;&amp;quot; =&amp;gt; &amp;quot;1&amp;quot;
+    network_interface.0.access_config.0.assigned_nat_ip: &amp;quot;&amp;quot; =&amp;gt; &amp;quot;&amp;lt;computed&amp;gt;&amp;quot;
+    network_interface.0.address:                         &amp;quot;&amp;quot; =&amp;gt; &amp;quot;&amp;lt;computed&amp;gt;&amp;quot;
+    network_interface.0.name:                            &amp;quot;&amp;quot; =&amp;gt; &amp;quot;&amp;lt;computed&amp;gt;&amp;quot;
+    network_interface.0.network:                         &amp;quot;&amp;quot; =&amp;gt; &amp;quot;default&amp;quot;
+    self_link:                                           &amp;quot;&amp;quot; =&amp;gt; &amp;quot;&amp;lt;computed&amp;gt;&amp;quot;
+    service_account.#:                                   &amp;quot;&amp;quot; =&amp;gt; &amp;quot;1&amp;quot;
+    service_account.0.email:                             &amp;quot;&amp;quot; =&amp;gt; &amp;quot;&amp;lt;computed&amp;gt;&amp;quot;
+    service_account.0.scopes.#:                          &amp;quot;&amp;quot; =&amp;gt; &amp;quot;3&amp;quot;
+    service_account.0.scopes.1632638332:                 &amp;quot;&amp;quot; =&amp;gt; &amp;quot;https://www.googleapis.com/auth/devstorage.read_only&amp;quot;
+    service_account.0.scopes.2428168921:                 &amp;quot;&amp;quot; =&amp;gt; &amp;quot;https://www.googleapis.com/auth/userinfo.email&amp;quot;
+    service_account.0.scopes.2862113455:                 &amp;quot;&amp;quot; =&amp;gt; &amp;quot;https://www.googleapis.com/auth/compute.readonly&amp;quot;
+    tags_fingerprint:                                    &amp;quot;&amp;quot; =&amp;gt; &amp;quot;&amp;lt;computed&amp;gt;&amp;quot;
+    zone:                                                &amp;quot;&amp;quot; =&amp;gt; &amp;quot;us-central1-b&amp;quot;
+
+Plan: 1 to add, 0 to change, 0 to destroy.
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Let’s walk through this result to get an idea of what just happened. Terraform has taken all of the Terraform files, which currently is only one file with actual configuration in it, and processed them to create a plan of changes. At the very bottom of the results the line “Plan: 1 to add, 0 to change, 0 to destroy.” simple shows what will occur if I were to apply these changes. Many of the values are also set as which simply means that when processed they’ll be calculated and set. Otherwise most of the other values are simply the settings I’ve put in via the actual Terraform configuration files.&lt;/p&gt;
+&lt;p&gt;Now I applied the configuration.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;terraform apply
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The output of this command will display as shown.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;google_compute_instance.flirpderp: Creating...
+  can_ip_forward:                                      &amp;quot;&amp;quot; =&amp;gt; &amp;quot;0&amp;quot;
+  disk.#:                                              &amp;quot;&amp;quot; =&amp;gt; &amp;quot;1&amp;quot;
+  disk.0.auto_delete:                                  &amp;quot;&amp;quot; =&amp;gt; &amp;quot;1&amp;quot;
+  disk.0.image:                                        &amp;quot;&amp;quot; =&amp;gt; &amp;quot;ubuntu-1404-trusty-v20160406&amp;quot;
+  machine_type:                                        &amp;quot;&amp;quot; =&amp;gt; &amp;quot;f1-micro&amp;quot;
+  metadata_fingerprint:                                &amp;quot;&amp;quot; =&amp;gt; &amp;quot;&amp;lt;computed&amp;gt;&amp;quot;
+  name:                                                &amp;quot;&amp;quot; =&amp;gt; &amp;quot;flirpderp&amp;quot;
+  network_interface.#:                                 &amp;quot;&amp;quot; =&amp;gt; &amp;quot;1&amp;quot;
+  network_interface.0.access_config.#:                 &amp;quot;&amp;quot; =&amp;gt; &amp;quot;1&amp;quot;
+  network_interface.0.access_config.0.assigned_nat_ip: &amp;quot;&amp;quot; =&amp;gt; &amp;quot;&amp;lt;computed&amp;gt;&amp;quot;
+  network_interface.0.address:                         &amp;quot;&amp;quot; =&amp;gt; &amp;quot;&amp;lt;computed&amp;gt;&amp;quot;
+  network_interface.0.name:                            &amp;quot;&amp;quot; =&amp;gt; &amp;quot;&amp;lt;computed&amp;gt;&amp;quot;
+  network_interface.0.network:                         &amp;quot;&amp;quot; =&amp;gt; &amp;quot;default&amp;quot;
+  self_link:                                           &amp;quot;&amp;quot; =&amp;gt; &amp;quot;&amp;lt;computed&amp;gt;&amp;quot;
+  service_account.#:                                   &amp;quot;&amp;quot; =&amp;gt; &amp;quot;1&amp;quot;
+  service_account.0.email:                             &amp;quot;&amp;quot; =&amp;gt; &amp;quot;&amp;lt;computed&amp;gt;&amp;quot;
+  service_account.0.scopes.#:                          &amp;quot;&amp;quot; =&amp;gt; &amp;quot;3&amp;quot;
+  service_account.0.scopes.1632638332:                 &amp;quot;&amp;quot; =&amp;gt; &amp;quot;https://www.googleapis.com/auth/devstorage.read_only&amp;quot;
+  service_account.0.scopes.2428168921:                 &amp;quot;&amp;quot; =&amp;gt; &amp;quot;https://www.googleapis.com/auth/userinfo.email&amp;quot;
+  service_account.0.scopes.2862113455:                 &amp;quot;&amp;quot; =&amp;gt; &amp;quot;https://www.googleapis.com/auth/compute.readonly&amp;quot;
+  tags_fingerprint:                                    &amp;quot;&amp;quot; =&amp;gt; &amp;quot;&amp;lt;computed&amp;gt;&amp;quot;
+  zone:                                                &amp;quot;&amp;quot; =&amp;gt; &amp;quot;us-central1-b&amp;quot;
+google_compute_instance.flirpderp: Creation complete
+
+Apply complete! Resources: 1 added, 0 changed, 0 destroyed.
+
+The state of your infrastructure has been saved to the path
+below. This state is required to modify and destroy your
+infrastructure, so keep it safe. To inspect the complete state
+use the `terraform show` command.
+
+State path: terraform.tfstate
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;I logged in at this point to verify the creation of the instance.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/working-with-google-compute-engine/flirpderp.png&quot; alt=&quot;Google Cloud Interface&quot;&gt;&lt;/p&gt;
+&lt;p&gt;In the interface the instance (or instances if I have multiple) shows up in a list underneath the fancy CPU utilization chart.&lt;/p&gt;
+&lt;h3 id=&quot;cleanup&quot;&gt;Cleanup&lt;/h3&gt;
+&lt;p&gt;Since I don’t actually want this instance to stay live currently, to destroy the instance I can use the terraform destroy command. If there were other instances in this set of Terraform configuraiton files, it would also destroy those too. Destroy, suffice to say is something that is very destructive and should be used carefully. For this example I’m going to destroy this instance now, but since I have the configuration I’ll add a little bit more to it and recreate it shortly.&lt;/p&gt;
+&lt;p&gt;I issue this command.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;terraform destroy
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;This displays…&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Do you really want to destroy?
+  Terraform will delete all your managed infrastructure.
+  There is no undo. Only &amp;#39;yes&amp;#39; will be accepted to confirm.
+
+  Enter a value: yes
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Then I confirm by typing ‘yes’ and then the following result of this acction is returned.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;google_compute_instance.flirpderp: Refreshing state... (ID: flirpderp)
+google_compute_instance.flirpderp: Destroying...
+google_compute_instance.flirpderp: Destruction complete
+
+Apply complete! Resources: 0 added, 0 changed, 1 destroyed.
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;At this point, it’s pretty cool that I can build a single instance, but that’s of extremely limited use if I can’t get it deployed out into GCE in a usable state. The most common ways I’d want to wrap up configuration and installation of software on an instance is to issue some bash commands to the instance. Well, Terraform has ways that exactly that can be done. I’ll cover that in the follow up to this article.&lt;/p&gt;
+&lt;h3 id=&quot;references-&quot;&gt;References:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/Adron/starting-with-gce/tree/blog-entry-01&quot;&gt;The Github Repository branch for this blog entry.&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    <item>
+      <title>Startup Things - How Ya Linux Series - 0000</title>
+      <link>http://adron.github.io/articles/how-ya-linux-0000-Startup-things/</link>
+      <pubDate>Sat, 11 Jun 2016 15:35:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/how-ya-linux-0000-Startup-things/</guid>
+      <author></author>
+      <description>&lt;div class=&quot;image float-right&quot;&gt;
+    &lt;img src=&quot;/articles/how-ya-linux-0000-Startup-things/penguinbash.jpg&quot; alt=&quot;Penguin Bash&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;When Linux starts up (or most Unix variants or OS-X for that matter, which is after all a kind of Unix variant) there are particular scrips that execute. The key two are ~/.bash_profile and ~./bashrc. When you log in the ~/.bash_profile executes and when you startup a shell then the ~/.bashrc executes.&lt;/p&gt;
+&lt;p&gt;These two files are standard executable script files, so any bash will do. For instance, some of the bash script I end up in my ~/.bash_profile includes a git prompt, as shown below.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;if [ -f &amp;quot;$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh&amp;quot; ]; then
+    source &amp;quot;$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh&amp;quot;
+fi
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Another few lines of code actually load my nvm, which is my Node.js Version Manager.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;export NVM_DIR=&amp;quot;/Users/axh6454/.nvm&amp;quot;
+[ -s &amp;quot;$NVM_DIR/nvm.sh&amp;quot; ] &amp;amp;&amp;amp; . &amp;quot;$NVM_DIR/nvm.sh&amp;quot;  # This loads nvm
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;I also have a few functions I’ve created, that load and are ready for my use at  any location I open the terminal at.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;gimmedocker() { if [ $1 ]; then
+    docker-machine start $1
+    docker-machine env $1
+    eval $(docker-machine env $1)
+    docker ps -a
+fi };
+
+cleandocker() {
+    # Wipe out the images and containers.
+    docker rm $(docker ps -a -q)
+    docker rmi $(docker images -q)
+};
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The first function executes simply by entering &lt;code&gt;gimme docker nameOfDockerVirtualMachineImage&lt;/code&gt;. It then checks for the virtual machine image parameter (the $1) and then executes various docker-machine commands against that image. Then ends with the evaluation and execution of the docker machine terminal connection.&lt;/p&gt;
+&lt;p&gt;The second function deletes my docker containers and then deletes my images. This way I can start fresh without deleting an entire docker virtual machine (sometimes the later may actually be easier). It’s a quick way to start fresh with docker images and containers when working through a lot of minor changes.&lt;/p&gt;
+&lt;p&gt;The last thing I’ll cover real quick that is commonly located in these startup scripts are some environment variables being set. For instance, I use Terraform to build out infrastructure. For that, sometimes I setup some Terraform variables, that are built to work specifically when prefaced with TF&lt;em&gt;VAR&lt;/em&gt;. So my variables look something like this when set in script.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;export TF_VAR_username=&amp;quot;root&amp;quot;
+export TF_VAR_password=&amp;quot;someSecretPassword&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;So that’s some examples and the basic gist of things you might see, and what you might want to run with your ~/.bash_profile or ~/.bashrc files. Happy bash hacking!&lt;/p&gt;
+</description>
+    </item>
     <item>
       <title>The Short Story of Node PDX, and Node PDX 2016</title>
       <link>http://adron.github.io/articles/node-pdx-2016/</link>
@@ -140,27 +458,6 @@
 </description>
     </item>
     <item>
-      <title>How to Electron by Blaine Schmeisser</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-blaine-schmeisser/</link>
-      <pubDate>Sun, 05 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-blaine-schmeisser/</guid>
-      <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-blaine-schmeisser/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-left&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-blaine-schmeisser/blainesch.jpg&quot; alt=&quot;Blaine Schmeisser&quot;&gt;
-&lt;/div&gt;
-
-&lt;p&gt;I’m happy to introduce Blaine Schmeisser. He’s a recent Portland transplant currently working as a Senior Software Engineer at New Relic. He has a passion for building and shipping software and an advocate for pair programming. Outside of tech, Blaine spends his free time with his dog and maintains a simplistic, eco-friendly lifestyle.&lt;/p&gt;
-&lt;p&gt;Blaine’s “How to Electron” answers questions you have about building user interface applications with JavaScript. Have you ever wanted to build desktop apps with web technology you already know? If you’ve never heard of Electron or just want to learn more about it, this talk will cover what Electron is and how to utilize it to create powerful tools like Atom and Slack. You will learn the history of Electron, how to get started, the trade-offs of picking various boiler plates, and the unique Electron specific APIs that are vital to being a Electron developer.&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;GitHub: &lt;a href=&quot;https://github.com/blainesch&quot;&gt;https://github.com/blainesch&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Twitter: &lt;a href=&quot;https://twitter.com/blainesch&quot;&gt;https://twitter.com/blainesch&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Website: &lt;a href=&quot;http://blainesch.com&quot;&gt;http://blainesch.com&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-    </item>
-    <item>
       <title>Demystifying TypeScript Decorators by James Churchill</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-james-churchill/</link>
       <pubDate>Sun, 05 Jun 2016 17:00:00 -0700</pubDate>
@@ -180,6 +477,27 @@
 &lt;li&gt;Blog: &lt;a href=&quot;http://smashdev.com&quot;&gt;http://smashdev.com&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Github: &lt;a href=&quot;http://github.com/smashdevcode&quot;&gt;http://github.com/smashdevcode&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Twitter: &lt;a href=&quot;http://twitter.com/SmashDev&quot;&gt;http://twitter.com/SmashDev&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    <item>
+      <title>How to Electron by Blaine Schmeisser</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-blaine-schmeisser/</link>
+      <pubDate>Sun, 05 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-blaine-schmeisser/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-blaine-schmeisser/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-left&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-blaine-schmeisser/blainesch.jpg&quot; alt=&quot;Blaine Schmeisser&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;I’m happy to introduce Blaine Schmeisser. He’s a recent Portland transplant currently working as a Senior Software Engineer at New Relic. He has a passion for building and shipping software and an advocate for pair programming. Outside of tech, Blaine spends his free time with his dog and maintains a simplistic, eco-friendly lifestyle.&lt;/p&gt;
+&lt;p&gt;Blaine’s “How to Electron” answers questions you have about building user interface applications with JavaScript. Have you ever wanted to build desktop apps with web technology you already know? If you’ve never heard of Electron or just want to learn more about it, this talk will cover what Electron is and how to utilize it to create powerful tools like Atom and Slack. You will learn the history of Electron, how to get started, the trade-offs of picking various boiler plates, and the unique Electron specific APIs that are vital to being a Electron developer.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;GitHub: &lt;a href=&quot;https://github.com/blainesch&quot;&gt;https://github.com/blainesch&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Twitter: &lt;a href=&quot;https://twitter.com/blainesch&quot;&gt;https://twitter.com/blainesch&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Website: &lt;a href=&quot;http://blainesch.com&quot;&gt;http://blainesch.com&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>
@@ -244,23 +562,6 @@ key concepts of SAM and walk the audience through some node.js code samples (inc
 </description>
     </item>
     <item>
-      <title>WebSockets Bring Light at the End of the Tunnel by Joel Lord</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</link>
-      <pubDate>Fri, 03 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</guid>
-      <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-left&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/joel-lord.jpg&quot; alt=&quot;Joel Lord&quot;&gt;
-&lt;/div&gt;
-
-&lt;p&gt;As a Development Manager, Joel’s motivation and proven technical prowess makes him a key member of Spiria’s software development team. With a degree in computational astrophysics, his interests eventually made their way to software and Web design. Today, his knowledge of JavaScript lets him to support a variety of projects on both the front end and back end. As we move into the age of the Internet of Things, Joel is ready with his passion for programming node bots and experimenting with gadgets.&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Joel is going to speak on Web Sockets and tunnels of light… or to describe it more specifically more and more, people seem to be obsessed with real-time data.  But what does real-time mean in the world of REST servers and one-way communication?  Most modern web applications are now either displaying a snapshot of data at a given time or use a polling mechanism to update series of data at a given interval.
-In this talk, you will learn about the power of WebSockets and how they can (and should!) be used in your modern web applications. In these 30 minutes, I will go through the process of building a Node server that can push data to multiple clients in real-time.  You will see how this can be easy using the socket.io library.&lt;/p&gt;
-</description>
-    </item>
-    <item>
       <title>MMOWAM - Build Server-less Games with a DSN by Josh Marinacci</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-josh-marinacci/</link>
       <pubDate>Fri, 03 Jun 2016 17:00:00 -0700</pubDate>
@@ -295,6 +596,23 @@ it can be.&lt;/p&gt;
 &lt;li&gt;show number of players&lt;/li&gt;
 &lt;li&gt;start when 4 players in? one player hit’s start? let all player see total count as well and status of the other players&lt;/li&gt;
 &lt;/ul&gt;
+</description>
+    </item>
+    <item>
+      <title>WebSockets Bring Light at the End of the Tunnel by Joel Lord</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</link>
+      <pubDate>Fri, 03 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-left&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/joel-lord.jpg&quot; alt=&quot;Joel Lord&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;As a Development Manager, Joel’s motivation and proven technical prowess makes him a key member of Spiria’s software development team. With a degree in computational astrophysics, his interests eventually made their way to software and Web design. Today, his knowledge of JavaScript lets him to support a variety of projects on both the front end and back end. As we move into the age of the Internet of Things, Joel is ready with his passion for programming node bots and experimenting with gadgets.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Joel is going to speak on Web Sockets and tunnels of light… or to describe it more specifically more and more, people seem to be obsessed with real-time data.  But what does real-time mean in the world of REST servers and one-way communication?  Most modern web applications are now either displaying a snapshot of data at a given time or use a polling mechanism to update series of data at a given interval.
+In this talk, you will learn about the power of WebSockets and how they can (and should!) be used in your modern web applications. In these 30 minutes, I will go through the process of building a Node server that can push data to multiple clients in real-time.  You will see how this can be easy using the socket.io library.&lt;/p&gt;
 </description>
     </item>
     <item>
@@ -342,23 +660,6 @@ it can be.&lt;/p&gt;
 &lt;iframe width=&quot;1280&quot; height=&quot;720&quot; src=&quot;https://www.youtube.com/embed/L2BVDJWHdy0?rel=0&amp;amp;showinfo=0&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;</description>
     </item>
     <item>
-      <title>The House Is Not On Fire - Building a home automation robot with Arduino, Raspberry Pi and Node.js by Artur Paikin</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</link>
-      <pubDate>Wed, 01 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</guid>
-      <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-right&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/art-stida.jpg&quot; alt=&quot;Artur Paikin&quot;&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Artur describes himself as, “I’m a web developer and traveler. I write stories about my adventures in Russian and English on my site: &lt;a href=&quot;http://arturpaikin.com&quot;&gt;http://arturpaikin.com&lt;/a&gt; and run a small technology cooperative called &lt;a href=&quot;http://unebaguette.com&quot;&gt;Baguette&lt;/a&gt;, where I work on cool projects, currently building an ambitious next generation file uploader with &lt;a href=&quot;https://transloadit.com/&quot;&gt;Transloadit&lt;/a&gt;. I ride a &lt;a href=&quot;https://www.instagram.com/p/xC0qC2SSYb&quot;&gt;foldable bicycle&lt;/a&gt;, &lt;a href=&quot;http://unebaguette.com/web-course/&quot;&gt;teach&lt;/a&gt; web development and sometimes &lt;a href=&quot;https://www.instagram.com/p/4_6LO8ySVL/&quot;&gt;garden&lt;/a&gt; on the balcony.”&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Artur has built an open source home automation system called &lt;a href=&quot;https://github.com/arturi/kotihome&quot;&gt;Koti Home&lt;/a&gt; (Koti means home in Finnish language). It’s powered by an Arduino connected to Raspberry Pi, MQTT protocol for messaging, Node.js on the client and server, web sockets. You can interact with Koti robot via a React (like the cool kids do) control panel, Telegram Chat Bot and even your own voice.&lt;/p&gt;
-&lt;p&gt;Arthur will talk about how he’s turned this project into reality — the tech he used and the challenges he faced. From a blinking LED to a voice controlled home automation robot.&lt;/p&gt;
-</description>
-    </item>
-    <item>
       <title>Code First Docs How we Threw Out The Book &amp; Put Code First With Twilio Documentation by Jarod Reyes</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-jarod-reyes/</link>
       <pubDate>Wed, 01 Jun 2016 17:00:00 -0700</pubDate>
@@ -380,6 +681,23 @@ it can be.&lt;/p&gt;
 &lt;li&gt;Twitter: &lt;a href=&quot;https://twitter.com/jreyesdev&quot;&gt;@jreyesdev&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Github: &lt;a href=&quot;https://github.com/jarodreyes&quot;&gt;github.com/jarodreyes&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+</description>
+    </item>
+    <item>
+      <title>The House Is Not On Fire - Building a home automation robot with Arduino, Raspberry Pi and Node.js by Artur Paikin</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</link>
+      <pubDate>Wed, 01 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-right&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/art-stida.jpg&quot; alt=&quot;Artur Paikin&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Artur describes himself as, “I’m a web developer and traveler. I write stories about my adventures in Russian and English on my site: &lt;a href=&quot;http://arturpaikin.com&quot;&gt;http://arturpaikin.com&lt;/a&gt; and run a small technology cooperative called &lt;a href=&quot;http://unebaguette.com&quot;&gt;Baguette&lt;/a&gt;, where I work on cool projects, currently building an ambitious next generation file uploader with &lt;a href=&quot;https://transloadit.com/&quot;&gt;Transloadit&lt;/a&gt;. I ride a &lt;a href=&quot;https://www.instagram.com/p/xC0qC2SSYb&quot;&gt;foldable bicycle&lt;/a&gt;, &lt;a href=&quot;http://unebaguette.com/web-course/&quot;&gt;teach&lt;/a&gt; web development and sometimes &lt;a href=&quot;https://www.instagram.com/p/4_6LO8ySVL/&quot;&gt;garden&lt;/a&gt; on the balcony.”&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Artur has built an open source home automation system called &lt;a href=&quot;https://github.com/arturi/kotihome&quot;&gt;Koti Home&lt;/a&gt; (Koti means home in Finnish language). It’s powered by an Arduino connected to Raspberry Pi, MQTT protocol for messaging, Node.js on the client and server, web sockets. You can interact with Koti robot via a React (like the cool kids do) control panel, Telegram Chat Bot and even your own voice.&lt;/p&gt;
+&lt;p&gt;Arthur will talk about how he’s turned this project into reality — the tech he used and the challenges he faced. From a blinking LED to a voice controlled home automation robot.&lt;/p&gt;
 </description>
     </item>
     <item>
@@ -578,64 +896,120 @@ Remember one thing. Work is not your core focus and reason to exist in life. &lt
 </description>
     </item>
     <item>
+      <title>Immutable Infrastructure - Some Reads and Clarification of What It Is</title>
+      <link>http://adron.github.io/articles/immutable-infrastructure-some-reads-clarification-what-it-is/</link>
+      <pubDate>Tue, 12 Apr 2016 13:39:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/immutable-infrastructure-some-reads-clarification-what-it-is/</guid>
+      <author></author>
+      <description>&lt;p&gt;First let’s get these terms a little more defined with the help of some well written articles on the matter.&lt;/p&gt;
+&lt;h2 id=&quot;an-introduction-to-immutable-infrastructure&quot;&gt;An Introduction to Immutable Infrastructure&lt;/h2&gt;
+&lt;p&gt;A well written piece by &lt;a href=&quot;https://twitter.com/joshstella&quot; target=&quot;_blank&quot;&gt;@joshstella&lt;/a&gt; on O’Reilly Radar titled “&lt;a href=&quot;http://radar.oreilly.com/2015/06/an-introduction-to-immutable-infrastructure.html&quot; target=&quot;_blank&quot;&gt;An Introduction to Immutable Infrastructure&lt;/a&gt;“. Here are some key elements in Josh’s description of immutable infrastructure.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Immutable infrastructure (II) provides stability, efficiency, and fidelity to your applications through automation and the use of successful patterns from programming.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;This provides a basic description, at a very high level, of what immutable infrastructure is. The keys to note are the idea of programming the infrastructure instead of tediously setting it up manually as has traditionally been done.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Immutable infrastructure requires full automation of your runtime environment. This is only possible in compute environments that have an API over all aspects of configuration and monitoring. Therefore, II can be fully realized only in true cloud environments. It is possible to realize some benefits of II with partial implementations, but the true benefits of efficiency and resiliency are realized with thorough implementation.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;In this part another key point, from a functional perspective of what immutable infrastructure is, is brought up. The availability of APIs to control all aspects of the infrastructure and beyond are needed to truly implement this pattern of infrastructure use. Without APIs to programmatically enable this there is no way to truly create immutable infrastructure.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Historically, we’ve thought of machine uptime and maintenance as desirable because we associate the health of the overall service or application with them. In the data center, hardware is expensive and we need to carefully craft and maintain each individual server to preserve our investments over time. In the cloud, this is an anachronistic perspective and one we should give up on in order to create more resilient, simpler, and ultimately more secure services and applications.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Paraphrased - kill your tediously and manually managed servers! &lt;em&gt;Woohoo!&lt;/em&gt;&lt;/p&gt;
+&lt;h2 id=&quot;why-you-should-build-an-immutable-infrastructure&quot;&gt;Why You Should Build an Immutable Infrastructure&lt;/h2&gt;
+&lt;p&gt;“&lt;a href=&quot;https://blog.codeship.com/immutable-infrastructure/&quot; target=&quot;_blank&quot;&gt;Why You Should Build an Immutable Infrastructure&lt;/a&gt;“ by &lt;a href=&quot;http://Even though the  https://twitter.com/flomotlik&quot; target=&quot;_blank&quot;&gt;@flomotlik&lt;/a&gt; is an excellent write up with a bit more detail about how, where, and why to build out immutable infrastructure. The blog &lt;a href=&quot;https://twitter.com/codeship&quot; target=&quot;_blank&quot;&gt;@Codeship&lt;/a&gt; overall is an excellent place to find more implementation details about designing, uses, and ways to put together your own immutable infrastructure. In the article I’ve linked Florian draws some solid points about their experience with immutable infrastructure. Some of the key features Florian details include:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;State Isolation&lt;/li&gt;
+&lt;li&gt;Atomic Deployments and Validation&lt;/li&gt;
+&lt;li&gt;Fast Recovery by Preserving History&lt;/li&gt;
+&lt;li&gt;Simple Experimentation&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;All of these are valid reasons to go with an immutable infrastructure design practice. Florian also puts together some great links &amp;amp; reference material at the end of the article too.&lt;/p&gt;
+&lt;h2 id=&quot;summary-&quot;&gt;Summary…&lt;/h2&gt;
+&lt;p&gt;So these are reasonable good reads on immutable infrastructure, something, that if you’re in charge of any type of application deployment will benefit from in some significant ways. So learn up, and feel free to ping me for further discussion on twitter &lt;a href=&quot;https://twitter.com/adron&quot; target=&quot;_blank&quot;&gt;@Adron&lt;/a&gt;. Cheers!&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>The Difficult Open Source Path</title>
+      <link>http://adron.github.io/articles/the-difficult-open-source-path/</link>
+      <pubDate>Thu, 24 Mar 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/the-difficult-open-source-path/</guid>
+      <author></author>
+      <description>&lt;p&gt;Bringing a closed source, or just simply an internally managed code base, into the wild of open source software can be an arduous and surreal process. In this article I’m going to ramble on about exactly that, with a few learned lessons and key successes I’ve had.&lt;/p&gt;
+&lt;p&gt;I’m currently helping the Home Depot Quote Center determine what is useful software to open source, and then helping them move toward open sourcing that software. In the past I’ve managed the open source development of .NET Extensions of Cloud Foundry, called Iron Foundry, which provided .NET support to the Cloud Foundry Platform. I’ve also helped organize and run open source efforts for plugins at New Relic, Basho, and a host of other smaller companies. Sometimes I’ve been a code contributor, sometimes I’m just interacting with contributors and managing pull requests. Either way it has been a lot of fun and every time it has been a seriously intense learning opportunity.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;h2 id=&quot;lesson-1-open-source-amp-individual-freedom&quot;&gt;Lesson 1: Open Source &amp;amp; Individual Freedom&lt;/h2&gt;
+&lt;p&gt;One thing to keep in mind, which I realize, but find myself being reminded of, is that people are truly free to either contribute, use, or completely disregard or ignore your open source project. The analogy of herding cats is often used to describe software development, and open source software development is like herding cats hopped up on a bunch of catnip that whimsically decide to do whatever they want.&lt;/p&gt;
+&lt;p&gt;Of course, an open source project might have paid contributors. If a project has paid contributors we at least get back to a contained room of cat herding. But either way, never forget that someone may or may not build that feature, or close the issue, or submit a pull request the way you’ve set out to have the project run. Which brings me to the next lesson.&lt;/p&gt;
+&lt;h2 id=&quot;lesson-2-write-up-roles-rules-process-guidelines&quot;&gt;Lesson 2: Write Up Roles, Rules, Process, &amp;amp; Guidelines&lt;/h2&gt;
+&lt;p&gt;As soon as the team goes from one person to two, effort should immediately be put into creating roles, rules, and process for how contributions will be accepted, pull requests will be committed, how to submit or work on issues, and the whole host of work flow associated with getting things done for the project.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Roles&lt;/strong&gt;, in this particular instance, can be broken down in different ways. Sometimes a project might have somebody managing the pull requests coming in, someone else or even several people are managing the product development issues for new features, another person might be handing bug issues that come up, and the possibilities continue. Some simple examples often look like this:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Project Leader - (Manager, Boss, Head Honcho, or whatever the title) would be in charge of and might even be the person who started the project.&lt;/li&gt;
+&lt;li&gt;Contributor - Individual submitting features via pull request to the project.&lt;/li&gt;
+&lt;li&gt;Feature Creator - Individual submitting feature requests and ideas via issues listings.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Slightly more complex examples might be something like this:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Project Creator - Again, the person who created, started, and owns the project.&lt;/li&gt;
+&lt;li&gt;Feature Architect - Some who specifically designs features from a technical stand point.&lt;/li&gt;
+&lt;li&gt;Feature User Experience - Someone who works with users of the OSS project to determine how and in which ways the community is using the project and determine ways to make the experience better.&lt;/li&gt;
+&lt;li&gt;Feature Contributor - Someone who contributes code for features, implementing based on contributor specs, etc.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Beyond that, one just merely needs to detail the roles as much as necessary to help people determine what and how they’ll be contributing to the project.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Rules&lt;/strong&gt; for a project can cover a wide range of things. One increasingly popular and sometimes useful thing to add, especially with a diverse group of people working on a project, is a basic code of conduct. This helps outline what is or is not appropriate behavior on the issue threads and general public conversation within the group. We have to remember that open source often has people involved that aren’t exactly employees or directly related to the person that started a project. Because of this individuals often come to a project without any particular guidelines about what is or isn’t appropriate behavior.&lt;/p&gt;
+&lt;p&gt;Other rules that are dramatically simpler and easier to deal with, are breaking down and defining what is considered an acceptable pull request, how things should be documented, code standards, and other related technical rules.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Process&lt;/strong&gt; for a project is often key to keeping people involved over time. Without a good process in which contributors really feel like they’re part of the team and getting their pull requests accepted, things can fall apart pretty quickly. Nothing like a bored programmer to go find something else to do that has nothing to do with your open source project!&lt;/p&gt;
+&lt;p&gt;A good process helps to define the steps that a contributor would need to go through to contribute a piece of code to a feature, who they would need to communicate with, how to submit a pull request, and finally how to wrap up getting the pull request pulled from the latest code. This is as important to people and it is to defining the technical steps for the system itself to be sustaining from an ongoing continuous integration and deployment point of view.&lt;/p&gt;
+&lt;p&gt;Once these core things are formalized it dramatically decreases tedious communication about working through the most basic of tasks while working on a project.&lt;/p&gt;
+&lt;h2 id=&quot;lesson-3-branding-amp-marketing&quot;&gt;Lesson 3: Branding &amp;amp; Marketing&lt;/h2&gt;
+&lt;p&gt;“Oh my god what are you talking about Adron, what’s that crap got to do with an open source project?” I can hear the naysayers immediately on this topic. But rest assured, branding and marketing will either make or break a project. If you’re repo is kind of clunky and cluttered it sends a bad message that you aren’t really paying attention to your project. If someone comes to your repo and immediately sees a reasonable logo, or some type of consistent README.md with useful information and messaging (that’s marketing by the way) about what, where, how, and why this project exists, you’re exponentially more likely to get people involved in contributing and even more dramatically more likely to get people using the project.&lt;/p&gt;
+&lt;p&gt;In the OSS Manifesto a baseline of files are suggested for an OSS project:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Have a readme file&lt;/li&gt;
+&lt;li&gt;Have a contributing file&lt;/li&gt;
+&lt;li&gt;List all core team members in the readme file&lt;/li&gt;
+&lt;li&gt;Have a license file&lt;/li&gt;
+&lt;li&gt;Have a changelog&lt;/li&gt;
+&lt;li&gt;Follow semantic versioning&lt;/li&gt;
+&lt;li&gt;Tag all major releases&lt;/li&gt;
+&lt;li&gt;Provide documentation&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I’ll add to this, throw in an &lt;em&gt;.svg or reasonably usable &lt;/em&gt;.png of a logo or some easily identifiable symbol for the project. Every major project has some sort of logo, it really doesn’t even matter if its a pretty lousy looking logo, it just needs to be there to make the project easily identifiable.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/the-difficult-open-source-path/open-source-logos.png&quot; alt=&quot;Open Source logos&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;lesson-4-the-software-needs-to-work&quot;&gt;Lesson 4: The Software Needs to Work&lt;/h2&gt;
+&lt;p&gt;Having the respective readme, contributing file, general doc, listing of all core members; these things I’ve listed so far are all nice but there’s one more thing I’ve not mentioned yet. That is having a working publicly accessible &lt;strong&gt;&lt;em&gt;continuous integration&lt;/em&gt;&lt;/strong&gt; build that is working. Any and every open source project should have a repository setup with a running build. Any new pull requests gets accepted or even the smallest commit should get a build started.&lt;/p&gt;
+&lt;p&gt;There are many ways, more so for open source projects than probably any other kind, to get a continuous integration build going. Check out products and services like &lt;a href=&quot;https://codeship.com/&quot; target=&quot;_blank&quot;&gt;Codeship&lt;/a&gt;, &lt;a href=&quot;https://www.jetbrains.com/teamcity/&quot; target=&quot;_blank&quot;&gt;TeamCity&lt;/a&gt;, &lt;a href=&quot;https://www.appveyor.com/&quot; target=&quot;_blank&quot;&gt;Appveyor&lt;/a&gt;, or &lt;a href=&quot;https://travis-ci.org/&quot; target=&quot;_blank&quot;&gt;Travis CI&lt;/a&gt;. These are just a few of the many options to get a continuous integration setup running for your open source project.&lt;/p&gt;
+&lt;h2 id=&quot;lesson-5-there-will-be-other-lessons-to-learn&quot;&gt;Lesson 5: There will be other lessons to learn&lt;/h2&gt;
+&lt;p&gt;An open source project is a pretty wild ride of code chops, organizational skills, and keep systemic development sustainable for a project. It can be tough, but a lot of fun, and very rewarding.&lt;/p&gt;
+&lt;p&gt;With that, happy hacking and stay tuned, there’s more to come!&lt;/p&gt;
+</description>
+    </item>
+    <item>
       <title>Docker Tips n' Tricks - Bash Things With Docker</title>
       <link>http://adron.github.io/articles/docker-tips-n-tricks-bash-things-with-docker/</link>
       <pubDate>Wed, 09 Mar 2016 16:00:00 -0800</pubDate>
       <guid isPermaLink="true">http://adron.github.io/articles/docker-tips-n-tricks-bash-things-with-docker/</guid>
       <author></author>
       <description>&lt;p&gt;If you use Docker frequently, you’ve likely memorized a few repetitive commands…&lt;/p&gt;
-&lt;div class=&quot;code-highlight &quot; &gt;
-&lt;span class=&quot;js-copy-to-clipboard copy-code&quot;&gt;copy&lt;/span&gt; 
-&lt;pre&gt;
-&lt;code class=&quot;language-markup js-code&quot;&gt;
-docker-machine start XyZvirtualMachine&lt;/code&gt;
-&lt;/pre&gt; 
-&lt;/div&gt;
-
-&lt;p&gt;Then you run…&lt;/p&gt;
-&lt;div class=&quot;code-highlight &quot; &gt;
-&lt;span class=&quot;js-copy-to-clipboard copy-code&quot;&gt;copy&lt;/span&gt; 
-&lt;pre&gt;
-&lt;code class=&quot;language-markup js-code&quot;&gt;
-docker-machine env XyZvirtualMachine&lt;/code&gt;
-&lt;/pre&gt; 
-&lt;/div&gt;
-
-&lt;p&gt;…and then you type…&lt;/p&gt;
-&lt;div class=&quot;code-highlight &quot; &gt;
-&lt;span class=&quot;js-copy-to-clipboard copy-code&quot;&gt;copy&lt;/span&gt; 
-&lt;pre&gt;
-&lt;code class=&quot;language-markup js-code&quot;&gt;
-eval $(docker-machine env XyZvirtualMachine)&lt;/code&gt;
-&lt;/pre&gt; 
-&lt;/div&gt;
-
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;docker-machine start XyZvirtualMachine
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Then you run…&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;docker-machine env XyZvirtualMachine
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;…and then you type…&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;eval $(docker-machine env XyZvirtualMachine)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;One does this about a zillion times if there are multiple virtual machines or for other various reasons. I wanted to simplify this repetitive task so I wrote a bash function, thanks to a &lt;a href=&quot;http://stackoverflow.com/questions/35761480/scripting-docker-not-connected-after-running-script&quot; target=&quot;_blank&quot;&gt;fumble I posted on Stackoverflow&lt;/a&gt; and then an assist by my good friend Troy Howard (&lt;a href=&quot;https://twitter.com/thoward37&quot; target=&quot;_blank&quot;&gt;@thoward37&lt;/a&gt;).&lt;/p&gt;
 &lt;p&gt;This quick hack consisted of this &lt;a href=&quot;https://gist.github.com/Adron/8dc06eb398f403225daa&quot; target=&quot;_blank&quot;&gt;Github gist&lt;/a&gt;.&lt;/p&gt;
-&lt;div class=&quot;code-highlight &quot; &gt;
-&lt;span class=&quot;js-copy-to-clipboard copy-code&quot;&gt;copy&lt;/span&gt; 
-&lt;pre&gt;
-&lt;code class=&quot;language-markup js-code&quot;&gt;
-gimmedocker() { if [ $1 ]; then
+&lt;pre&gt;&lt;code&gt;gimmedocker() { if [ $1 ]; then
     docker-machine start $1
     docker-machine env $1
     eval $(docker-machine env $1)
     docker ps -a
-fi }&lt;/code&gt;
-&lt;/pre&gt; 
-&lt;/div&gt;
-
-&lt;p&gt;Stick that in your ~/.bash_profile (or ~/.bashrc if you’re on *nix) and you’re good to go. Then at the bash prompt just type in this.&lt;/p&gt;
-&lt;div class=&quot;code-highlight &quot; &gt;
-&lt;span class=&quot;js-copy-to-clipboard copy-code&quot;&gt;copy&lt;/span&gt; 
-&lt;pre&gt;
-&lt;code class=&quot;language-markup js-code&quot;&gt;
-gimmedocker XyZvirtualMachine&lt;/code&gt;
-&lt;/pre&gt; 
-&lt;/div&gt;
-
-&lt;p&gt;BOOM! Less typing for the win!&lt;/p&gt;
+fi }
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Stick that in your ~/.bash_profile (or ~/.bashrc if you’re on *nix) and you’re good to go. Then at the bash prompt just type in this.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;gimmedocker XyZvirtualMachine
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;BOOM! Less typing for the win!&lt;/p&gt;
 </description>
     </item>
     <item>
@@ -646,22 +1020,10 @@ gimmedocker XyZvirtualMachine&lt;/code&gt;
       <author></author>
       <description>&lt;p&gt;Two simple commands that’ll wipe your installation clean of images and containers.&lt;/p&gt;
 &lt;p&gt;Deletes all containers&lt;/p&gt;
-&lt;div class=&quot;code-highlight&quot;&gt;
-&lt;span class=&quot;js-copy-to-clipboard copy-code&quot;&gt;copy&lt;/span&gt; 
-&lt;pre&gt;
-&lt;code class=&quot;language-markup js-code&quot;&gt;
-docker rm $(docker ps -a -q)&lt;/code&gt;
-&lt;/pre&gt; 
-&lt;/div&gt;
-
-&lt;p&gt;Deletes all images&lt;/p&gt;
-&lt;div class=&quot;code-highlight&quot;&gt;
-&lt;span class=&quot;js-copy-to-clipboard copy-code&quot;&gt;copy&lt;/span&gt; 
-&lt;pre&gt;
-&lt;code class=&quot;language-markup js-code&quot;&gt;
-docker rmi $(docker images -q)&lt;/code&gt;
-&lt;/pre&gt; 
-&lt;/div&gt;</description>
+&lt;pre&gt;&lt;code&gt;docker rm $(docker ps -a -q)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Deletes all images&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;docker rmi $(docker images -q)
+&lt;/code&gt;&lt;/pre&gt;</description>
     </item>
   </channel>
 </rss>
