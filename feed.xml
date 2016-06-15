@@ -4,7 +4,7 @@
     <title>Adron's Composite Code</title>
     <atom:link href="http://adron.github.io/feed.xml" rel="self" type="application/rss+xml"></atom:link>
     <link>http://adron.github.io</link>
-    <description>Coder, Messenger, Recon, Infrastructure</description>
+    <description>Coder, Messenger, Recon, Infrastructure, Ops</description>
     <pubDate>Tue, 14 Jun 2016 19:35:00 -0700</pubDate>
     <generator>Wintersmith - https://github.com/jnordberg/wintersmith</generator>
     <language>en</language>
