@@ -3,15 +3,15 @@
 # Just a title
 blogtitle=$1
 # Format 2013-04-30
-blogdate=$2
+blogdate=`date +%Y-%m-%d:%H:%M:%S`
 
 cd contents/docs
 
 echo "Changed into docs directory."
 
-if [ ! $# == 2 ]
+if [ ! $# == 1 ]
     then
-    echo "There should be two arguments."
+    echo "There should be at least the title."
     exit 1
 fi
 
@@ -34,5 +34,7 @@ template: doc.jade
 </div>
 
 <span class="more"></span>
+
+[Documentation Root](/someplace/here.html)
 
 EOT
