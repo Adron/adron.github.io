@@ -1,5 +1,5 @@
 ---
-title: videos
+title: Videos
 author: Adron Hall
 date: 2016-06-18:17:32:12
 template: doc.jade
@@ -29,4 +29,3 @@ This is a collection of some conversations, shows, and videos that I've been inv
 <iframe src="https://player.vimeo.com/video/81558395?title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
 <iframe src="https://player.vimeo.com/video/69757158?title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-
