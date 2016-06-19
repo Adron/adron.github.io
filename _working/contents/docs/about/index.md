@@ -28,28 +28,13 @@ But besides all that techno stuff, I dig some good coffee, great beer, wine, foo
 This is a list of links to public repos, open source, or other "code related" efforts I am working on or have worked on.
 
 * <a href="https://github.com/Adron" target="_blank">https://github.com/Adron</a>
-* <a href="http://coderwall.com/Adron" target="_blank">http://coderwall.com/Adron</a>
-
-##  Writing 
-
-I write a lot. Probably more than most things. It's a way I learn, it's one of the things I really enjoy and it helps me find new tech that is exciting and rewarding. Sometimes, for certain companies and certain tech, I'll even accept a retainer or commission to build content for that tech. Email me at 'adronhall' at gmail and we can discuss. For more information and details about how I like to work toward building content, writing, video, code and more check out my writing services page.
-
-* My <a href="http://compositecode.com/write-up-series/">articles and series</a> here on <a href="http://compositecode.com">Composite Code</a>.
-* My <a href="http://compositecode.com/write-up-series/my-work-elsewhere/">articles and series</a> at New Relic, Basho Blog, Silicon Angle, Cloud Ave, InfoQ and other places.
 
 ##  Social 
 
 Want to talk, chit chat, argue, discuss, debate, or otherwise communicate? These are the mediums.
 
 * <a href="https://twitter.com/adron" target="_blank">https://twitter.com/adron</a>
-* <a href="http://compositecode.com">http://compositecode.com</a> (Which is of course this blog) :)
-
-**Videos**
-
-Videos that I'm in, filming or otherwise involved with related to my technology work.
-
-* <a href="http://compositecode.com/about/my-videos/">Videos I've Made</a>
-* <a href="http://compositecode.com/about/my-videos/videos/">My Videos I'm In</a>
+* <a href="http://blog.adron.me">http://blog.adron.me</a>
 
 ##  Resume 
 
