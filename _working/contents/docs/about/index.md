@@ -5,7 +5,7 @@ date: 2016-06-18:13:36:33
 template: doc.jade
 ---
 <div class="image float-right">
-    ![Somebody](anImage.jpg)
+    ![Adron Hall](in-a-tree-amon-amarth.jpg)
 </div>
 
 Yup, that’s me in a tree, hanging out on a beautiful day in Portland sporting my Amon Amarth hoodie. Don’t know who Amon Amarth is, click the image to find out. If you’re interested in contacting me, please give the list below a quick read over, and at the bottom of this page I’ve got a few requests to save us both time when contacting me!
@@ -62,5 +62,3 @@ Currently I'm pretty busy delivering some sweet immutable infrastructure, active
 * ...and specifically why you're contacting me related to tech/software/etc.
 
 You could phrase it as "*I love a Coava Cap in the AM hours and enjoy relaxing along the Portland waterfront after a good ride over the Tillikum Bridge. I'd love to chat with you about... X, got a few?*" and I'll respond ASAP.
-
-Want to [contact me](/docs/contact)?
