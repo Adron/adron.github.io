@@ -5,7 +5,7 @@ date: 2016-06-18:13:36:33
 template: doc.jade
 ---
 <div class="image float-right">
-    ![Adron Hall](in-a-tree-amon-amarth.jpg)
+    [![Adron Hall](in-a-tree-amon-amarth.jpg)](http://www.amonamarth.com/)
 </div>
 
 Yup, that’s me in a tree, hanging out on a beautiful day in Portland sporting my Amon Amarth hoodie. Don’t know who Amon Amarth is, click the image to find out. If you’re interested in contacting me, please give the list below a quick read over, and at the bottom of this page I’ve got a few requests to save us both time when contacting me!
