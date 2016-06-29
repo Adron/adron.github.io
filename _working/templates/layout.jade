@@ -22,6 +22,7 @@ html(lang='en')
       link(rel='apple-touch-icon', sizes='144x144', href=locals.url + '/img/favicons/apple-touch-icon-144x144.png')
       link(rel='apple-touch-icon', sizes='152x152', href=locals.url + '/img/favicons/apple-touch-icon-152x152.png')
       link(rel='apple-touch-icon', sizes='180x180', href=locals.url + '/img/favicons/apple-touch-icon-180x180.png')
+      link(rel='stylesheet', href=locals.url + '/css/custom.css')
       link(rel='stylesheet', href=locals.url + '/css/style.min.css')
       script(src=locals.url + '/js/modernizr.js')
   body(class=bodyclass)
@@ -41,26 +42,16 @@ html(lang='en')
             nav.right.helper
               ul.menu.sf-menu.js-menu
                 li
-                  a(href='http://compositecode.us11.list-manage1.com/subscribe?u=7f73ff0427183b9b64e1f336a&id=a6fc3efde0') Thrashing Code News
+                  a(href='/thrashingcodenews.html') Thrashing Code News
                 li
-                  a(href='#') Documentation Work
+                  a(href='#') Conf/Meetup/UserGroup Events
                   ul
                     li
-                      a(href=locals.url + '/404.html') More...
+                      a(href=locals.url + '/docs/Speaking-Presentations-Workshops/') Speaking - Presentations, Workshops, Etc
                     li
-                      a(href=locals.url + '/404.html') coming...
-                    li
-                      a(href=locals.url + '/404.html') real soon...
+                      a(href=locals.url + '/') My Speaker Details
                 li
-                  a(href=locals.url + '/404.html') Speaking, Presentations, & Workshops
-                li
-                  a(href=locals.url + '/404.html') Articles & Series
-                li
-                  a(href=locals.url + '/404.html') Cascadia Hacks
-                li
-                  a(href=locals.url + '/404.html') Contact
-                li
-                  a(href=locals.url + '/404.html') About
+                  a(href=locals.url + '/docs/about/') About
             // End of Menu
     .header-back.header-back-simple.header-back-small
       .header-back-container
@@ -69,9 +60,10 @@ html(lang='en')
             .col-md-12
               // Page Info
               .page-info.page-info-simple
-                h1.page-title= locals.name
-                h2.page-description
-                  | Coder, Messenger, Recon, Documentarian
+                block header
+                  block prepend title
+                  h1= locals.name
+                  h2.description= locals.description
               // End Page Info
     #content
       .container
@@ -88,68 +80,31 @@ html(lang='en')
                 nav.menu-vertical-wrapper
                   ul.menu-vertical.js-menu-vertical(data-prepend-to='.js-layout', data-select='Menu')
                     li
-                      a(href='#') Tutorials
-                      
-                      ul
-                        li
-                          a(href='#') Installation
-                          
-                          ul
-                            li
-                              a(href=locals.url + '404.html') Manually
-                            li
-                              a(href=locals.url + '404.html') Wizard
-                            li
-                              a(href=locals.url + '404.html') Softaculous
-                            li
-                              a(href=locals.url + '404.html') Fantastico
-                            li
-                              a(href=locals.url + '/404.html') Transfer
-                        li
-                          a(href='#') Create
-                          ul
-                            li
-                              a(href=locals.url + '/404.html') Multimedia
-                            li
-                              a(href=locals.url + '/404.html') Post
-                            li
-                              a(href=locals.url + '/404.html') Categories
-                            li
-                              a(href=locals.url + '/404.html') Comments
-                            li
-                              a(href=locals.url + '/404.html') Themes
-                    li
                       a(href='#') About
                       ul
                         li
-                          a(href='#') Instalation
-                          ul
-                            li
-                              a(href=locals.url + '/404.html') Manually
-                            li
-                              a(href=locals.url + '/404.html') Wizard
-                            li
-                              a(href=locals.url + '/404.html') Softaculous
-                            li
-                              a(href=locals.url + '/404.html') Fantastico
-                            li
-                              a(href=locals.url + '/404.html') Transfer
-                    li
-                      a(href='#') Faq
-                      ul
+                          a(href=locals.url + '/docs/about/') Me, Adron
                         li
-                          a(href='#') Instalation
-                          ul
-                            li
-                              a(href=locals.url + '/404.html') Manually
-                            li
-                              a(href=locals.url + '/404.html') Wizard
-                            li
-                              a(href=locals.url + '/404.html') Softaculous
-                            li
-                              a(href=locals.url + '/404.html') Fantastico
-                            li
-                              a(href=locals.url + '/404.html') Transfer
+                          a(href=locals.url + '/docs/speakerinfo/') My Speaker Info
+                        li
+                          a(href=locals.url + '') Upcoming Presentations
         block prepend footer
     script(src=locals.url + '/js/all.js')
     script(src=locals.url + '/js/custom.js')
+    // Google Tag Manager
+    noscript
+      iframe(src='//www.googletagmanager.com/ns.html?id=GTM-KMMZX2', height='0', width='0', style='display:none;visibility:hidden')
+    script.
+      (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+                  (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+      })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+      ga('create', 'UA-39158070-6', 'auto');
+      ga('send', 'pageview');

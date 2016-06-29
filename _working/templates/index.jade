@@ -11,12 +11,7 @@ block content
         // Blog List
         .blog-grid
           .row
-            .col-md-4.col-sm-5
-              .blog-grid-image
-                a(href=article.url)
-                  span.blog-grid-image-over
-                  img(src='http://placehold.it/1280x853', alt='article image')
-            .col-md-8.col-sm-7
+            .col-md-12.col-sm-12
               h3.blog-grid-title
                 a(href=article.url)= article.title
               p.blog-grid-excerpt
@@ -36,4 +31,5 @@ block prepend footer
     else
       a(href='/archive.html') « Archives
     if nextPage
-      a(href=nextPage.url)  Next page »
+      | &nbsp;
+      a(href=nextPage.url) Previous »

@@ -35,7 +35,28 @@
 	}
 }
 
+.header-back-app{
+	.page-title{
+		margin-bottom: 50px;
+		font-weight: @font_thin;
+	}
+	.page-description{
+		margin-bottom: 70px;
+		font-weight: @font_thin;
+	}
+}
+.media-mixin(@break) when (@break = @break-large){
+	.header-back-app{
+		.page-title{
+			margin-bottom: 30px;
+		}
+		.page-description{
+			margin-bottom: 50px;
+		}
+	}
+}
+
 .media-mixin(@break) when (@break = @break-small) {
-	.page-title { .fz(60); }
-    .page-description { .fz(18); }
+	.page-title { .fz(50); }
+    .page-description { .fz(16); }
 }

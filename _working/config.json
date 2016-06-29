@@ -1,9 +1,9 @@
 {
   "locals": {
     "url": "http://adron.github.io",
-    "name": "Composite Code",
+    "name": "Adron's Composite Code",
     "owner": "Adron Hall",
-    "description": "Coder, Messenger, Recon, Documentarian"
+    "description": "Coder, Messenger, Recon, Infrastructure, Ops"
   },
   "plugins": [
     "./plugins/paginator.coffee"

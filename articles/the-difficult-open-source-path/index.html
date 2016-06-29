@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Adron's Composite Code</title>
+    <meta name="description" content="">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="alternate" href="http://adron.github.io/feed.xml" type="application/rss+xml" title="Coder, Messenger, Recon, Infrastructure, Ops">
+    <link rel="icon" type="image/png" href="http://adron.github.io/img/favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="http://adron.github.io/img/favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="http://adron.github.io/img/favicons/favicon-96x96.png" sizes="96x96">
+    <link rel="apple-touch-icon" sizes="57x57" href="http://adron.github.io/img/favicons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="http://adron.github.io/img/favicons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="http://adron.github.io/img/favicons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="http://adron.github.io/img/favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="http://adron.github.io/img/favicons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="http://adron.github.io/img/favicons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="http://adron.github.io/img/favicons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="http://adron.github.io/img/favicons/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="http://adron.github.io/img/favicons/apple-touch-icon-180x180.png">
+    <link rel="stylesheet" href="http://adron.github.io/css/custom.css">
+    <link rel="stylesheet" href="http://adron.github.io/css/style.min.css">
+    <script src="http://adron.github.io/js/modernizr.js"></script>
+  </head>
+  <body class="article-detail">
+    <!--[if lt IE 8]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <div class="header header-over large">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 col-sm-6 col-xs-6">
+            <!-- Logo Image--><a href="http://adron.github.io/index.html" class="logo-image logo-animated"><img src="http://adron.github.io/img/logos/logo.png" alt="logo"></a>
+            <!-- End of Logo Image-->
+          </div>
+          <div class="col-md-9 col-sm-6 col-xs-6">
+            <!-- Menu-->
+            <nav class="right helper">
+              <ul class="menu sf-menu js-menu">
+                <li><a href="/thrashingcodenews.html">Thrashing Code News</a></li>
+                <li><a href="#">Conf/Meetup/UserGroup Events</a>
+                  <ul>
+                    <li><a href="http://adron.github.io/docs/Speaking-Presentations-Workshops/">Speaking - Presentations, Workshops, Etc</a></li>
+                    <li><a href="http://adron.github.io/">My Speaker Details</a></li>
+                  </ul>
+                </li>
+                <li><a href="http://adron.github.io/docs/about/">About</a></li>
+              </ul>
+            </nav>
+            <!-- End of Menu-->
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="header-back header-back-simple header-back-small">
+      <div class="header-back-container">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <!-- Page Info-->
+              <div class="page-info page-info-simple">
+                <h1>The Difficult Open Source Path</h1>
+                <p class="author">Written by <span class="author">Adron Hall</span>
+                </p>
+                <div class="nav"><a href="/">« Home</a></div>
+              </div>
+              <!-- End Page Info-->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="content">
+      <div class="container">
+        <div class="layout with-right-sidebar js-layout">
+          <div class="row">
+            <div class="col-md-9">
+              <div class="main-content">
+                <!-- Blog Page-->
+                <article class="article">
+                  <section class="content"><p>Bringing a closed source, or just simply an internally managed code base, into the wild of open source software can be an arduous and surreal process. In this article I’m going to ramble on about exactly that, with a few learned lessons and key successes I’ve&nbsp;had.</p>
+<p>I’m currently helping the Home Depot Quote Center determine what is useful software to open source, and then helping them move toward open sourcing that software. In the past I’ve managed the open source development of .<span class="caps">NET</span> Extensions of Cloud Foundry, called Iron Foundry, which provided .NET support to the Cloud Foundry Platform. I’ve also helped organize and run open source efforts for plugins at New Relic, Basho, and a host of other smaller companies. Sometimes I’ve been a code contributor, sometimes I’m just interacting with contributors and managing pull requests. Either way it has been a lot of fun and every time it has been a seriously intense learning&nbsp;opportunity.</p>
+<p><span class="more"></span></p>
+<h2 id="lesson-1-open-source-amp-individual-freedom">Lesson 1: Open Source <span class="amp">&amp;</span> Individual&nbsp;Freedom</h2>
+<p>One thing to keep in mind, which I realize, but find myself being reminded of, is that people are truly free to either contribute, use, or completely disregard or ignore your open source project. The analogy of herding cats is often used to describe software development, and open source software development is like herding cats hopped up on a bunch of catnip that whimsically decide to do whatever they&nbsp;want.</p>
+<p>Of course, an open source project might have paid contributors. If a project has paid contributors we at least get back to a contained room of cat herding. But either way, never forget that someone may or may not build that feature, or close the issue, or submit a pull request the way you’ve set out to have the project run. Which brings me to the next&nbsp;lesson.</p>
+<h2 id="lesson-2-write-up-roles-rules-process-guidelines">Lesson 2: Write Up Roles, Rules, Process, <span class="amp">&amp;</span>&nbsp;Guidelines</h2>
+<p>As soon as the team goes from one person to two, effort should immediately be put into creating roles, rules, and process for how contributions will be accepted, pull requests will be committed, how to submit or work on issues, and the whole host of work flow associated with getting things done for the&nbsp;project.</p>
+<p><strong>Roles</strong>, in this particular instance, can be broken down in different ways. Sometimes a project might have somebody managing the pull requests coming in, someone else or even several people are managing the product development issues for new features, another person might be handing bug issues that come up, and the possibilities continue. Some simple examples often look like&nbsp;this:</p>
+<ul>
+<li>Project Leader - (Manager, Boss, Head Honcho, or whatever the title) would be in charge of and might even be the person who started the&nbsp;project.</li>
+<li>Contributor - Individual submitting features via pull request to the&nbsp;project.</li>
+<li>Feature Creator - Individual submitting feature requests and ideas via issues&nbsp;listings.</li>
+</ul>
+<p>Slightly more complex examples might be something like&nbsp;this:</p>
+<ul>
+<li>Project Creator - Again, the person who created, started, and owns the&nbsp;project.</li>
+<li>Feature Architect - Some who specifically designs features from a technical stand&nbsp;point.</li>
+<li>Feature User Experience - Someone who works with users of the <span class="caps">OSS</span> project to determine how and in which ways the community is using the project and determine ways to make the experience&nbsp;better.</li>
+<li>Feature Contributor - Someone who contributes code for features, implementing based on contributor specs,&nbsp;etc.</li>
+</ul>
+<p>Beyond that, one just merely needs to detail the roles as much as necessary to help people determine what and how they’ll be contributing to the&nbsp;project.</p>
+<p><strong>Rules</strong> for a project can cover a wide range of things. One increasingly popular and sometimes useful thing to add, especially with a diverse group of people working on a project, is a basic code of conduct. This helps outline what is or is not appropriate behavior on the issue threads and general public conversation within the group. We have to remember that open source often has people involved that aren’t exactly employees or directly related to the person that started a project. Because of this individuals often come to a project without any particular guidelines about what is or isn’t appropriate&nbsp;behavior.</p>
+<p>Other rules that are dramatically simpler and easier to deal with, are breaking down and defining what is considered an acceptable pull request, how things should be documented, code standards, and other related technical&nbsp;rules.</p>
+<p><strong>Process</strong> for a project is often key to keeping people involved over time. Without a good process in which contributors really feel like they’re part of the team and getting their pull requests accepted, things can fall apart pretty quickly. Nothing like a bored programmer to go find something else to do that has nothing to do with your open source&nbsp;project!</p>
+<p>A good process helps to define the steps that a contributor would need to go through to contribute a piece of code to a feature, who they would need to communicate with, how to submit a pull request, and finally how to wrap up getting the pull request pulled from the latest code. This is as important to people and it is to defining the technical steps for the system itself to be sustaining from an ongoing continuous integration and deployment point of&nbsp;view.</p>
+<p>Once these core things are formalized it dramatically decreases tedious communication about working through the most basic of tasks while working on a&nbsp;project.</p>
+<h2 id="lesson-3-branding-amp-marketing">Lesson 3: Branding <span class="amp">&amp;</span>&nbsp;Marketing</h2>
+<p>“Oh my god what are you talking about Adron, what’s that crap got to do with an open source project?” I can hear the naysayers immediately on this topic. But rest assured, branding and marketing will either make or break a project. If you’re repo is kind of clunky and cluttered it sends a bad message that you aren’t really paying attention to your project. If someone comes to your repo and immediately sees a reasonable logo, or some type of consistent <span class="caps">README</span>.md with useful information and messaging (that’s marketing by the way) about what, where, how, and why this project exists, you’re exponentially more likely to get people involved in contributing and even more dramatically more likely to get people using the&nbsp;project.</p>
+<p>In the <span class="caps">OSS</span> Manifesto a baseline of files are suggested for an OSS&nbsp;project:</p>
+<ul>
+<li>Have a readme&nbsp;file</li>
+<li>Have a contributing&nbsp;file</li>
+<li>List all core team members in the readme&nbsp;file</li>
+<li>Have a license&nbsp;file</li>
+<li>Have a&nbsp;changelog</li>
+<li>Follow semantic&nbsp;versioning</li>
+<li>Tag all major&nbsp;releases</li>
+<li>Provide&nbsp;documentation</li>
+</ul>
+<p>I’ll add to this, throw in an <em>.svg or reasonably usable </em>.png of a logo or some easily identifiable symbol for the project. Every major project has some sort of logo, it really doesn’t even matter if its a pretty lousy looking logo, it just needs to be there to make the project easily&nbsp;identifiable.</p>
+<p><img src="/articles/the-difficult-open-source-path/open-source-logos.png" alt="Open Source logos"></p>
+<h2 id="lesson-4-the-software-needs-to-work">Lesson 4: The Software Needs to&nbsp;Work</h2>
+<p>Having the respective readme, contributing file, general doc, listing of all core members; these things I’ve listed so far are all nice but there’s one more thing I’ve not mentioned yet. That is having a working publicly accessible <strong><em>continuous integration</em></strong> build that is working. Any and every open source project should have a repository setup with a running build. Any new pull requests gets accepted or even the smallest commit should get a build&nbsp;started.</p>
+<p>There are many ways, more so for open source projects than probably any other kind, to get a continuous integration build going. Check out products and services like <a href="https://codeship.com/" target="_blank">Codeship</a>, <a href="https://www.jetbrains.com/teamcity/" target="_blank">TeamCity</a>, <a href="https://www.appveyor.com/" target="_blank">Appveyor</a>, or <a href="https://travis-ci.org/" target="_blank">Travis <span class="caps">CI</span></a>. These are just a few of the many options to get a continuous integration setup running for your open source&nbsp;project.</p>
+<h2 id="lesson-5-there-will-be-other-lessons-to-learn">Lesson 5: There will be other lessons to&nbsp;learn</h2>
+<p>An open source project is a pretty wild ride of code chops, organizational skills, and keep systemic development sustainable for a project. It can be tough, but a lot of fun, and very&nbsp;rewarding.</p>
+<p>With that, happy hacking and stay tuned, there’s more to&nbsp;come!</p>
+</section>
+                </article>
+                <!-- End of Blog Page-->
+              </div>
+            </div>
+            <div class="col-md-3 hidden-sm hidden-xs">
+              <div class="sidebar js-sidebar-fixed">
+                <!-- Vertical Menu-->
+                <nav class="menu-vertical-wrapper">
+                  <ul data-prepend-to=".js-layout" data-select="Menu" class="menu-vertical js-menu-vertical">
+                    <li><a href="#">About</a>
+                      <ul>
+                        <li><a href="http://adron.github.io/docs/about/">Me, Adron</a></li>
+                        <li><a href="http://adron.github.io/docs/speakerinfo/">My Speaker Info</a></li>
+                        <li><a href="http://adron.github.io">Upcoming Presentations</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="nav"><a href="/">« Home</a></div>
+      </div>
+    </div>
+    <script src="http://adron.github.io/js/all.js"></script>
+    <script src="http://adron.github.io/js/custom.js"></script>
+    <!-- Google Tag Manager-->
+    <noscript>
+      <iframe src="//www.googletagmanager.com/ns.html?id=GTM-KMMZX2" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <script>
+      (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+                  (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+      })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+      ga('create', 'UA-39158070-6', 'auto');
+      ga('send', 'pageview');
+    </script>
+  </body>
+</html>
