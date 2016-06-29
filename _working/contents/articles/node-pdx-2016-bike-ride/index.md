@@ -19,8 +19,3 @@ The following day involved Sunday conference setup, workshops, and the Node PDX 
 ![Cup and Bar Bikes](cup-and-bar-bikes.jpg)
 
 ![Cup and Bar Chats](cup-and-bar-chats.jpg)
-
-![Cart Panoramic](panoramic-carts.jpg)
-
-![Carts](carts-video.jpg)
-
