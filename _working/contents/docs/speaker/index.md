@@ -10,11 +10,11 @@ I've collected my personal speaker details here, which can be used for assets in
 
 ### Description One
 
-Adron has worked in the technology industry from team leadership, product design efforts, coding in trenches, to wearing the DevOps hat and being on call. With this experience and a jovial spirit, Adron likes to teach, build organizations, create systems, and help teams get things done. He's a coder at heart, with an advocates (maybe an activist's) energy.
+Adron has worked in the technology industry from team leadership, product design efforts, coding in trenches, to wearing the DevOps hat and being on call. With this experience and a jovial spirit, Adron likes to teach, build organizations, create systems, and help teams get things done. He's a coder at heart, with an advocate's (maybe an activist's) energy.
 
 ### Description Two
 
-Adron is often referred to as the "Guy with solutions". If there's a problem, Adron is the go to guy for coming up with how to get things done, deployed, and into production. With his calm and collected demeanor, and sometimes snarky wit, Adron is the person you want to help bridge connections, build teams, and create systems. His ability to impart upon others energy, knowledge, and enthusiasm is exceptional.
+Adron is often referred to as the ***"guy with solutions"***. If there's a problem, Adron is the go to guy for coming up with how to get things done, deployed, and into production. With his calm and collected demeanor, and sometimes snarky wit, Adron is the person you want to help bridge connections, build teams, and create systems. His ability to impart upon others energy, knowledge, and enthusiasm is exceptional.
 
 ## First Person Description
 
