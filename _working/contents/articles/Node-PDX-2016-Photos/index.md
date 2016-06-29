@@ -6,7 +6,7 @@ template: article.jade
 ---
 Here's a selection of photos from Node PDX. To check out all of the photos I've uploaded them on http://photos.adron.me/Software/Meetups-N-Conferences/Node-PDX-2016.
  
-Videos are available at 
+Videos are available at https://www.youtube.com/playlist?list=PLILnvQDgzULPSdF9Eppfl5MqQe0M3hhtx
 
 [![Codes](codes.jpg)](http://photos.adron.me/Software/Meetups-N-Conferences/Node-PDX-2016)
 
