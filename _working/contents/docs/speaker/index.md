@@ -1,5 +1,5 @@
 ---
-title: speaker
+title: Speaker
 author: Adron Hall
 date: 2016-06-29:14:50:58
 template: doc.jade
