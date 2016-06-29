@@ -1,10 +1,11 @@
 ---
-title: Hashiconf 2016 - Organizing Infrastructure Config & Workflow
+title: Organizing Infrastructure Config and Workflow
 author: Adron Hall
-date: 2016-06-29:15:35:35
-template: doc.jade
+date: 2016-06-29:15:44:01
+template: talk.jade
 ---
-## Organizing Infrastructure Config & Workflow
+## Organizing Infrastructure Config and Workflow
+### *@ HashiConf 2016 by Adron Hall*
 
 **Abstract:**
 
