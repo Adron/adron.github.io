@@ -21,7 +21,7 @@ Adron is often referred to as the ***"guy with solutions"***. If there's a quest
 I’m a jovial, proactive, test &amp; code, code & test, get things done well, software architect, engineer, code monkey, coder, and distributed systems advocate. I go by the title of "Coder, Messenger, Recon" as it seems to encompass what I do.
 
 * **Coder:** I write code, sometimes lots of code, sometimes a little code. No language is a limit, only another tool to implement solutions. I ply  polygot language paths including: C#, Java, JavaScript, Erlang lately and Pascal, Basic, Visual Basic, C++, C, COBOL, RPG, CL and others in the past! 
-* **Founder:** I've founded <a href="http://deconstructed.io/" target="_blank">Deconstructed.io</a> with Aaron Gray, <a href="http://nodepdx.org/" target="_blank">Node PDX</a> with Troy Howard, and <a>.NET Fringe</a> with a whole host of <a href="http://dotnetfringe.org/index.html#team" target="_blank">excellent people</a> and more are in the works.
+* **Founder:** I've founded Deconstructed.io with Aaron Gray, [Node PDX](http://nodepdx.org) with Troy Howard, and [.NET Fringe](http://dotnetfringe.org) with a whole host of excellent people and more are in the works.
 * **Messenger:** Every chance I get I work to share knowledge I've gained over the years. From workshops to one on one mentoring, pair programming or directed training. 
 * **Recon:** I love seeing technologies built and technologies come together. 
 
