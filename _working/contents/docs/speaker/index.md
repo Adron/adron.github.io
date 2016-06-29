@@ -14,7 +14,7 @@ Adron has worked in the technology industry from team leadership, product design
 
 ### Description Two
 
-Adron is often referred to as the ***"guy with solutions"***. If there's a problem, Adron is the go to guy for coming up with how to get things done, deployed, and into production. With his calm and collected demeanor, and sometimes snarky wit, Adron is the person you want to help bridge connections, build teams, and create systems. His ability to impart upon others energy, knowledge, and enthusiasm is exceptional.
+Adron is often referred to as the ***"guy with solutions"***. If there's a problem, Adron is the go to guy for coming up with how to get things done, deployed, and into production. With his calm and collected demeanor, and sometimes snarky wit, Adron is the person you want building teams and creating systems. His ability to impart upon others energy, knowledge, and enthusiasm is exceptional.
 
 ## First Person Description
 
