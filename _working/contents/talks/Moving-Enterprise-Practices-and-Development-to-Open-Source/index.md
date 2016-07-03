@@ -5,7 +5,7 @@ date: 2016-07-02:21:36:04
 template: talk.jade
 ---
 ## Moving Enterprise Practices and Development to Open Source
-### *@ 2016-07-02 by Adron Hall*
+### *on 2016-07-02*
 
 Description
 
