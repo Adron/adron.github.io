@@ -44,5 +44,3 @@ But besides all that techno stuff, I dig some good coffee, great beer, wine, foo
 ![What](05-what.jpg)
 
 ![Chillin](06-chillin.jpg)
-
-![Boller Hat is Metal](01-boller-hat-is-metal.jpg)
