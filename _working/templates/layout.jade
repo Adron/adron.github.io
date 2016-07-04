@@ -83,6 +83,25 @@ html(lang='en')
                       input.search-input.form-control(type="text", name="q", placeholder="search")
                       i.fa.fa-search.search-icon
                   // End of Search
+                .widget
+                  h3.widget-title Keyword Search
+                  // Tags
+                  ul.tags
+                    li.tag-item
+                      a(href='https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&q=html') html
+                    //li.tag-item
+                    //  a(href='https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&q=css') css
+                    li.tag-item
+                      a(href='https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&q=javascript') javascript
+                    li.tag-item
+                      a(href='https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&q=ubuntu') ubuntu
+                    li.tag-item
+                      a(href='https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&q=node pdx') node pdx
+                    li.tag-item
+                      a(href='https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&q=.NET fringe') .net fringe
+                    li.tag-item
+                      a(href='https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&q=videos') videos
+                  // End of Tags
                 nav.menu-vertical-wrapper
                   ul.menu-vertical.js-menu-vertical(data-prepend-to='.js-layout', data-select='Menu')
                     li
@@ -157,19 +176,6 @@ html(lang='en')
                         p.widget-recommended-product-link-description Working through Mono Develop & WebStorm.
                       // End of photos row two
                   // End Photos
-                .widget
-                  h3.widget-title Tags
-                  // Tags
-                  ul.tags
-                    li.tag-item
-                      a(href='https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&q=html') html
-                    //li.tag-item
-                    //  a(href='https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&q=css') css
-                    li.tag-item
-                      a(href='https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&q=javascript') javascript
-                    li.tag-item
-                      a(href='https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&q=ubuntu') ubuntu
-                  // End of Tags
         block prepend footer
     script(src=locals.url + '/js/all.js')
     script(src=locals.url + '/js/custom.js')
