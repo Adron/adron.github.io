@@ -7,7 +7,8 @@ template: talk.jade
 ## Hacking Fsharp Systems Not Windows
 ### *on 2015-09-05*
 
-<a href="https://compositecode.wordpressfiles.wordpress.com/2015/09/logo_2015.png"><img class="alignright size-full wp-image-11588" src="https://compositecode.wordpressfiles.wordpress.com/2015/09/logo_2015.png" alt="" width="420" height="94" /></a>The basic idea behind this talk is to bring everybody through a quick history of Visual Studio Code, Atom and other editors in relation to F# development and take a look at .NET's compatibility across operating systems. I'll be giving this <a href="http://devday.pl/" target="_blank">presentation at Dev Day Poland in Krakow on September the 18th</a>.
+The basic idea behind this talk is to bring everybody through a quick history of Visual Studio Code, Atom and other editors in relation to F# development and take a look at .NET's compatibility across operating systems. I'll be giving this <a href="http://devday.pl/" target="_blank">presentation at Dev Day Poland in Krakow on September the 18th</a>.
+
 <h2>Prerequisites to Follow Along &amp; Other Details</h2>
 <ul>
 	<li><a href="https://compositecode.wordpressfiles.wordpress.com/2015/06/ah_f_256.png"><img class="alignright size-thumbnail wp-image-11288" src="https://compositecode.wordpressfiles.wordpress.com/2015/06/ah_f_256.png?w=150" alt="" width="150" height="150" /></a>Install <a href="https://git-scm.com/" target="_blank">Git</a>.</li>
