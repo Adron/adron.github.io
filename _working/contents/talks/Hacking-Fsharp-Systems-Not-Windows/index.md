@@ -31,4 +31,3 @@ template: talk.jade
 	<li><strong><strong>Demo Code:</strong> Just checkout the <a href="https://github.com/Adron/sharpdev" target="_blank">sharpdev repository</a>.</strong></li>
 	<li><strong>Slides:</strong> <a href="https://speakerdeck.com/adron/hacking-f-number-on-systems-not-windows" target="_blank">https://speakerdeck.com/adron/hacking-f-number-on-systems-not-windows</a></li>
 </ul>
-<span style="color:#ff9900;"><strong>Note:</strong> I will be updating this page as I give this presentation and as I setup examples for the presentation. All updates will be included below.</span>
