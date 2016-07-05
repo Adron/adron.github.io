@@ -5,7 +5,7 @@ date: 2016-07-02:21:36:27
 template: talk.jade
 ---
 ## Building Immutably Continuous Delivery Minimal Inputs London
-### *on 2016-07-02*
+### *on October 19-21, 2016*
 
 This workshop focuses on building a continuously delivered pipeline using Node.js (however easily transferable to Ruby/Rails/Java/Scala/.NET etc.). The workshop will trace the steps from inception to deployed application (with a domain pointed appropriately and all) that can then be developed against to continue whatever effort and intent of the developer(s)!
 

@@ -5,7 +5,7 @@ date: 2016-06-29:15:44:01
 template: talk.jade
 ---
 ## Organizing Infrastructure Config and Workflow
-### *@ [HashiConf 2016](https://www.hashiconf.com/)*
+### *@ [HashiConf 2016](https://www.hashiconf.com/) September 6-8, 2016*
 
 **Abstract:**
 
