@@ -1,5 +1,5 @@
 ---
-title: TypeScript up in my WebStorm
+title: TypeScript up in my WebStorm - TypeScript Editor Shootout @ TypeScriptPDX
 author: Adron Hall
 date: 2016-07-04:21:47:07
 template: talk.jade
