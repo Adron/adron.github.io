@@ -28,7 +28,8 @@
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;&lt;em&gt;That’s it!&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;I’ll summarize these simple steps to simply say “Just show up!” This isn’t a spandex crowd ride, this is a people chillin’ in Portland ride, so don’t worry nobody is getting left behind. We’ll enjoy some coffee, probably a beer, the city, and maybe a chat or three about the latest in tech, code patterns, and other miscellaneous hot topics like IoT not spamming your wifi and burning your muffins!&lt;/p&gt;
-&lt;p&gt;First things first, great places to get bike rentals:&lt;/p&gt;
+&lt;p&gt;Before renting a bike though, check out the options at the hotel you’re staying. Many if not most hotels in Portland have nice bikes that you can use for free. The Ace Hotel, Hotel Rose, and others all have a number that are freely available to guests of the hotel. &lt;/p&gt;
+&lt;p&gt;So, in lieu of a bike access at hotel, home, friends, or otherwise, some great places to get bike rentals:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;http://www.waterfrontbikes.com/&quot;&gt;Waterfront Bike&lt;/a&gt; - Located on &lt;a href=&quot;https://www.google.com/maps/place/Waterfront+Bicycle/@45.522373,-122.6809235,15z/data=!4m8!1m2!2m1!1sbike+rentals!3m4!1s0x0:0xbed7f9780615f52d!8m2!3d45.5213399!4d-122.6709741&quot;&gt;10 SW Ash St #100, Portland, OR 97204&lt;/a&gt;.&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://www.pedalbiketours.com/&quot;&gt;Pedal Bike Tours&lt;/a&gt; - Located on &lt;a href=&quot;https://www.google.com/maps/place/Pedal+Bike+Tours/@45.522373,-122.6809235,15z/data=!4m8!1m2!2m1!1sbike+rentals!3m4!1s0x0:0x6c1861d1ea8716e0!8m2!3d45.5216706!4d-122.672739&quot;&gt;133 SW 2nd Ave, Portland, OR 97204&lt;/a&gt;&lt;/li&gt;
@@ -570,27 +571,6 @@ export TF_VAR_password=&amp;quot;someSecretPassword&amp;quot;
 </description>
     </item>
     <item>
-      <title>How to Electron by Blaine Schmeisser</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-blaine-schmeisser/</link>
-      <pubDate>Sun, 05 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-blaine-schmeisser/</guid>
-      <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-blaine-schmeisser/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-left&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-blaine-schmeisser/blainesch.jpg&quot; alt=&quot;Blaine Schmeisser&quot;&gt;
-&lt;/div&gt;
-
-&lt;p&gt;I’m happy to introduce Blaine Schmeisser. He’s a recent Portland transplant currently working as a Senior Software Engineer at New Relic. He has a passion for building and shipping software and an advocate for pair programming. Outside of tech, Blaine spends his free time with his dog and maintains a simplistic, eco-friendly lifestyle.&lt;/p&gt;
-&lt;p&gt;Blaine’s “How to Electron” answers questions you have about building user interface applications with JavaScript. Have you ever wanted to build desktop apps with web technology you already know? If you’ve never heard of Electron or just want to learn more about it, this talk will cover what Electron is and how to utilize it to create powerful tools like Atom and Slack. You will learn the history of Electron, how to get started, the trade-offs of picking various boiler plates, and the unique Electron specific APIs that are vital to being a Electron developer.&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;GitHub: &lt;a href=&quot;https://github.com/blainesch&quot;&gt;https://github.com/blainesch&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Twitter: &lt;a href=&quot;https://twitter.com/blainesch&quot;&gt;https://twitter.com/blainesch&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Website: &lt;a href=&quot;http://blainesch.com&quot;&gt;http://blainesch.com&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-    </item>
-    <item>
       <title>Demystifying TypeScript Decorators by James Churchill</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-james-churchill/</link>
       <pubDate>Sun, 05 Jun 2016 17:00:00 -0700</pubDate>
@@ -610,6 +590,27 @@ export TF_VAR_password=&amp;quot;someSecretPassword&amp;quot;
 &lt;li&gt;Blog: &lt;a href=&quot;http://smashdev.com&quot;&gt;http://smashdev.com&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Github: &lt;a href=&quot;http://github.com/smashdevcode&quot;&gt;http://github.com/smashdevcode&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Twitter: &lt;a href=&quot;http://twitter.com/SmashDev&quot;&gt;http://twitter.com/SmashDev&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    <item>
+      <title>How to Electron by Blaine Schmeisser</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-blaine-schmeisser/</link>
+      <pubDate>Sun, 05 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-blaine-schmeisser/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-blaine-schmeisser/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-left&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-blaine-schmeisser/blainesch.jpg&quot; alt=&quot;Blaine Schmeisser&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;I’m happy to introduce Blaine Schmeisser. He’s a recent Portland transplant currently working as a Senior Software Engineer at New Relic. He has a passion for building and shipping software and an advocate for pair programming. Outside of tech, Blaine spends his free time with his dog and maintains a simplistic, eco-friendly lifestyle.&lt;/p&gt;
+&lt;p&gt;Blaine’s “How to Electron” answers questions you have about building user interface applications with JavaScript. Have you ever wanted to build desktop apps with web technology you already know? If you’ve never heard of Electron or just want to learn more about it, this talk will cover what Electron is and how to utilize it to create powerful tools like Atom and Slack. You will learn the history of Electron, how to get started, the trade-offs of picking various boiler plates, and the unique Electron specific APIs that are vital to being a Electron developer.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;GitHub: &lt;a href=&quot;https://github.com/blainesch&quot;&gt;https://github.com/blainesch&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Twitter: &lt;a href=&quot;https://twitter.com/blainesch&quot;&gt;https://twitter.com/blainesch&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Website: &lt;a href=&quot;http://blainesch.com&quot;&gt;http://blainesch.com&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>
@@ -1122,6 +1123,105 @@ fi }
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Stick that in your ~/.bash_profile (or ~/.bashrc if you’re on *nix) and you’re good to go. Then at the bash prompt just type in this.&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;gimmedocker XyZvirtualMachine
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;BOOM! Less typing for the win!&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>Researching &amp; Learning About Zookeeper - A Guide</title>
+      <link>http://adron.github.io/articles/research-learning-about-zookeeper/</link>
+      <pubDate>Mon, 01 Feb 2016 16:30:00 -0800</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/research-learning-about-zookeeper/</guid>
+      <author></author>
+      <description>&lt;p&gt;I’ve started working with Zookeeper. Since I’ve started doing that I’ve put together this blog post. It’s aim is to provide a structured approach to learning Zookeeper and researching the elements that make its features tick. Along the way I have a few call outs to people that have also provided excellent talks, material, or contributions to learning about Zookeeper along the way. With that, let’s get started.&lt;/p&gt;
+&lt;p&gt;Zookeeper is a consensus system written based on ideas presented via consensus algorithms. The idea is key value stores that keep all of their data in memory for read heavy workloads. The qualities in this context present a system that is highly consistent, with intent for access from distributed systems to data that won’t be lost.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;h3 id=&quot;start-learning&quot;&gt;Start Learning&lt;/h3&gt;
+&lt;p&gt;The starting point should be a complete read of the &lt;a href=&quot;https://zookeeper.apache.org/&quot;&gt;Apache Zookeeper Project Home Page&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;At this point I took an administrators’ angle on determining what I needed to know and do next. I knew that my situation would meet the basic assumptions of reliability around Zookeeper; First is that only a minority of servers in a deployment would fail at a particular time or become inaccessible from a crash, partition, or related issue, and second is that deployed machines would have correctly operating clocks, storage, and network components that perform consistently.&lt;/p&gt;
+&lt;p&gt;I had also made an assumption that I would need &lt;em&gt;&lt;strong&gt;2 x F + 1&lt;/strong&gt; &lt;/em&gt;machines in order to maintain data consistency. The F here is the number of failed or inaccessible machines. This meant that if I wanted to have 2 failures, I’d need at least 5 machines. For a failure of up to 3 machines, that would be 7 machines. Pretty easy, just a little simple math.&lt;/p&gt;
+&lt;p&gt;The other thing I was curious about, especially on a single machine, would be Zookeeper’s overall overhead. Would it come into contention with the services that are already running? Would it be ok to put Zookeeper on the machines that run the micro-services that Zookeeper is providing information to? Well, Zookeeper does indeed content with other application for CPU, network, memory, and storage. For this reason I have to balance the deployment of Zookeeper in relation to the other applications, as my server loads may not be super high, and thus I’d be able to have Zookeeper on some of the servers that have actual other services deployed. But YMMV depending on your services you’ve got deployed.&lt;/p&gt;
+&lt;p&gt;While I was thinking through how I’d build out the architecture for my implementation of Zookeeper I came upon a very important note in the documentation,&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;“ZooKeeper’s transaction log must be on a dedicated device. (A dedicated partition is not enough.) ZooKeeper writes the log sequentially, without seeking Sharing your log device with other processes can cause seeks and contention, which in turn can cause multi-second delays.&lt;/p&gt;
+&lt;p&gt;Do not put ZooKeeper in a situation that can cause a swap. In order for ZooKeeper to function with any sort of timeliness, it simply cannot be allowed to swap. Therefore, make certain that the maximum heap size given to ZooKeeper is not bigger than the amount of real memory available to ZooKeeper. For more on this, see Things to Avoid below.”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;After reading up on the following documentation it seemed like a good time to do a test deployment:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://zookeeper.apache.org/doc/trunk/zookeeperAdmin.html&quot; target=&quot;_blank&quot;&gt;Zookeeper Admin&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://zookeeper.apache.org/doc/trunk/zookeeperAdmin.html#sc_minimumConfiguration&quot; target=&quot;_blank&quot;&gt;Zookeeper Minimum Configuration&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;BEGIN BUG DESCRIPTION - 1ST DOCKER ATTEMPT&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;NOTE: If you just want to get to the Zookeeper installation &amp;amp; setup and skip this issue, GOTO &lt;a href=&quot;#awsInstallation&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;My first go was to pull up a clean Ubuntu docker image and prep it as a container. Then start installing the necessary parts of Zookeeper. These steps consisted of the following. I made a video for it (see toward the bottom of this entry), so you can actually see the flow and I also wrote the commands I’m tying in bash below. Then you can pick your preferred use.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;docker-machine start fusion-fire
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Docker machine starts my virtual machine on OS-X that runs the Docker daemon, which I’ve named fusion-fire, thus the command above. Then after that I pulled down an Ubuntu image, started a container from the image, connecting to the container and all set for installation.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;docker pull ubuntu
+docker run -it ubuntu
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;To install the Zookeeper server and begin execution I then issued the following.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo apt-get update
+sudo apt-get -Y install default-jdk
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;While this was executing I also ran into a situation where the Java Development Kit was hanging on getting the certificates put into place.&lt;/p&gt;
+&lt;p&gt;&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;en&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;The last dozen or so &lt;a href=&quot;https://twitter.com/hashtag/Ubuntu?src=hash&quot;&gt;#Ubuntu&lt;/a&gt; &lt;a href=&quot;https://twitter.com/hashtag/docker?src=hash&quot;&gt;#docker&lt;/a&gt; images I&amp;#39;ve tried to run &amp;quot;sudo apt-get install default-jre&amp;quot; on have all ended up spiking the CPU.&lt;/p&gt;&amp;mdash; Λdrøn (@Adron) &lt;a href=&quot;https://twitter.com/Adron/status/693219719441096704&quot;&gt;January 29, 2016&lt;/a&gt;&lt;/blockquote&gt;&lt;/p&gt;
+&lt;script async src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;I began looking into this problem, and found currently on Ubuntu 14.04, running sudo-apt-get update and then running the install will trigger the bug. Two other points of reference are &lt;a href=&quot;https://github.com/docker/docker/issues/18180&quot; target=&quot;_blank&quot;&gt;here&lt;/a&gt;, &lt;a href=&quot;https://bugs.launchpad.net/ubuntu/+source/ca-certificates-java/+bug/1396760&quot; target=&quot;_blank&quot;&gt;here&lt;/a&gt;, and there are other postings and issues related to the issue, just google. So what I did at that point to fix this issue was the following.&lt;/p&gt;
+&lt;p&gt;First I forcefully killed the docker container by just restarting the whole docker VM.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;docker-machine stop fusion-fire
+docker-machine start fusion-fire
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Once that stopped I then started the virtual machine again.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo apt-get -y install default-jre
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;When it started I ran sudo apt-get install again. At that point apt-get attempted to recover but the install kept getting stuck on registering the certificates. So I gave up on this avenue for now. Hopefully a future Docker &amp;amp; Linux Kernal fixes the problem. So instead I went out and just spooled up some AWS instances for now, I’ll update this blog entry with a “Part II: Docker is Zookeeper Fixed” when the Java + Linux Kernal + Docker issue is remedied, until then, here’s the installation process on the AWS instances.&lt;/p&gt;
+&lt;p&gt;&lt;a name=&quot;awsInstallation&quot;&gt;&lt;/a&gt;
+&lt;strong&gt;END BUG DESCRIPTION - AWS Instance Zookeeper Installation&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Once this was setup I started 5 nano instances for Zookeeper (nano, since it’s just a test example for learning) and then logged in using broadcast with iTerm 2. From there each instance had the following commands executed.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo apt-get update
+sudo apt-get install -y default-jdk
+cd /opt/
+sudo mkdir zookeeper
+cd zookeeper/
+sudo wget http://mirror.tcpdiag.net/apache/zookeeper/zookeeper-3.4.6/zookeeper-3.4.6.tar.gz
+sudo tar -zxvf zookeeper-3.4.6.tar.gz
+cd conf/
+sudo nano zoo.cfg
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;NOTE: Nano is the text editor I used above for “sudo nano zoo.cfg”. If you don’t have it available just install it with “sudo apt-get install nano”.&lt;/p&gt;
+&lt;p&gt;In that zoo.cfg I entered the following. For the IPs I actually used the AWS private IPs for the config file example below.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;tickTime=2000
+dataDir=/var/zookeeper
+clientPort=2181
+initLimit=5
+syncLimit=2
+server.1=172.31.19.66:2888:3888
+server.2=172.31.19.67:2888:3888
+server.3=172.31.19.68:2888:3888
+server.4=172.31.19.69:2888:3888
+server.5=172.31.19.70:2888:3888&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Now I started the service using the zkServer.sh script file.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo /opt/zookeeper/zookeeper-3.4.6/bin/zkServer.sh start-foreground
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;When I booted up I ran into an error about the myid file, so I added the file with a sequential number for the byid in the /var/zookeeper directory.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo nano /var/zookeeper/myid
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;In each of the files I added a number, respectively 1 through 5 for the id of each and saved those files. Upon attempting to start the zookeeper service with the following command I finally got to see the various nodes in the ensemble gain access to each other and start working. Which, I gotta admit, was a pretty damn cool feeling.&lt;/p&gt;
+&lt;p&gt;After all that fussing it seemed good to note, especially since they’re hard to find in the documentation (which is kind of a bit hard to use), here are some of the switches for zkServer.sh.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;start
+start-foreground (super useful for debugging)
+stop
+restart
+status
+upgrade
+print-cmd&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Once this is done, restart the service but this time instead of using the start-foreground command, just use the start command and that will start the service and return the bash back to you to issues commands or whatnot. An easy way to test out Zookeeper now that it is running is to use the Zookeeper CLI. This is the zkCli.sh shell script (or zkcli.bat file if you’re running it on windows - which I’d strongly suggest NOT to do).&lt;/p&gt;
+&lt;p&gt;Ok, that’s it for this entry. More to come in the near future. Cheers!&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Excellent Additional References&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a title=&quot;raft&quot; href=&quot;https://compositecode.files.wordpress.com/2016/01/raft.pdf&quot;&gt;In Search of an Understandable Consensus Algorithm (Extended Version)&lt;/a&gt; - Diego Ongaro &amp;amp; John Ousterhout @ Stanford University&lt;/li&gt;
+&lt;li&gt;&lt;a title=&quot;paxos-simple&quot; href=&quot;https://compositecode.files.wordpress.com/2016/01/paxos-simple.pdf&quot;&gt;Paxos Made Simple&lt;/a&gt; by Leslie Lamport&lt;/li&gt;
+&lt;li&gt;Camille Fournier (&lt;a href=&quot;https://twitter.com/skamille&quot; target=&quot;_blank&quot;&gt;@skamille&lt;/a&gt;) provided an excellent talk about &lt;a href=&quot;http://www.infoq.com/interviews/fournier-consensus&quot; target=&quot;_blank&quot;&gt;Zookeeper (Consensus Systems) on InfoQ&lt;/a&gt;. In this talk Camille also mentions the &lt;a title=&quot;chubby-osdi06&quot; href=&quot;https://compositecode.files.wordpress.com/2016/01/chubby-osdi06.pdf&quot;&gt;The Chubby Lock Service for Loosely Coupled Distributed Systems&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://youtu.be/j4uwKP7WJFk&quot; target=&quot;_blank&quot;&gt;Zookeeper for the Skeptical Architect by Camille Fournier&lt;/a&gt; - RICON East 2013
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/j4uwKP7WJFk?rel=0&amp;amp;showinfo=0&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;
+Talks about why Riak, Cassandra, and even the company Camille works at (Rent the Runway) doesn’t use Zookeeper. An interesting talk from the regard of why not to use it in some cases.&lt;/li&gt;
+&lt;/ul&gt;
 </description>
     </item>
     <item>
