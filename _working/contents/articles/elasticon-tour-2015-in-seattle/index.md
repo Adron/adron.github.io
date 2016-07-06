@@ -16,11 +16,11 @@ When the team and I walked in we waited a little bit for registration to get sta
 
 The first thing I noticed of the demos is something that’s catching a lot of attention. It’s a partner of <a href="https://www.elastic.co/" target="_blank">Elastic’s</a> called <a href="http://streamsets.com/" target="_blank">StreamSets</a>.
 
-<img class="img-responsive" src="./elasticon-tour-2015-in-seattle/streamset1.jpg" />
+<img class="img-responsive" src="./streamset1.jpg" />
 
-<img class="img-responsive" src="./elasticon-tour-2015-in-seattle/streamset2.jpg" />
+<img class="img-responsive" src="./streamset2.jpg" />
 
-<img class="img-responsive" src="./elasticon-tour-2015-in-seattle/streamset3.jpg" />
+<img class="img-responsive" src="./streamset3.jpg" />
 
 From what I could figure out from just watching the demo is that StreamSets is a ingest engine. That’s simple enough to determine just taking a look at their site. But being able to watch the demo also enlightened me to the way the interface IDE (the thing in the dark pictures above) worked.
 
@@ -44,37 +44,45 @@ For more information about StreamSets here are a few other solid articles:
 
 * <a href="https://github.com/streamsets" target="_blank">Github StreamSets</a></li>
 
-## Beats (<a href="http://lifehacker.com/are-beats-by-dre-headphones-any-good-1509805994" target="_blank">Not</a> <a href="http://lmkprod.com/9-reasons-to-not-buy-beats-by-dre-headphones/" target="_blank">the</a> <a href="http://forums.macrumors.com/threads/why-not-to-buy-the-beats-by-dre.1376663/" target="_blank">Dumb</a> <a href="http://www.viewpoints.com/expert-reviews/2013/11/08/why-i-will-never-buy-beats-by-dre/" target="_blank">Lousy</a> <a href="https://youtu.be/XkVZwj4pZ7A" target="_blank">Headphones</a>)
+## Beats ([Not](http://lifehacker.com/are-beats-by-dre-headphones-any-good-1509805994) [the](http://lmkprod.com/9-reasons-to-not-buy-beats-by-dre-headphones/) [Lousy](http://forums.macrumors.com/threads/why-not-to-buy-the-beats-by-dre.1376663/" target="_blank">Dumb</a> <a href="http://www.viewpoints.com/expert-reviews/2013/11/08/why-i-will-never-buy-beats-by-dre/) [Headphones](https://youtu.be/XkVZwj4pZ7A))
 
-<img class="  wp-image-11983 alignright" src="https://compositecode.files.wordpress.com/2015/12/packetbeat-fish-and-cluster.png" alt="packetbeat-fish-and-cluster" width="330" height="152" />Recently I <a href="http://compositecode.com/2015/11/25/nagios-and-ubuntu-64-bit-14-04-lts-setup-configuration/">installed Nagios</a> as I will be doing a lot of systems monitoring, management, and general devops style work in the coming weeks to build out solid site reliability. Nagios will theoretically do a lot of the things I need it to do, but then I stumbled into the recently released <a href="https://www.elastic.co/products/beats" target="_blank">Beats</a> by <a href="https://www.elastic.co/" target="_blank">Elastic Search</a> (not by Dre, see above links in the title).
+<div class="image float-right">
+    <img class="img-responsive" src="./packetbeat-fish-and-cluster.png" />
+</div>
+
+Recently I <a href="http://compositecode.com/2015/11/25/nagios-and-ubuntu-64-bit-14-04-lts-setup-configuration/">installed Nagios</a> as I will be doing a lot of systems monitoring, management, and general devops style work in the coming weeks to build out solid site reliability. Nagios will theoretically do a lot of the things I need it to do, but then I stumbled into the recently released <a href="https://www.elastic.co/products/beats" target="_blank">Beats</a> by <a href="https://www.elastic.co/" target="_blank">Elastic Search</a> (not by Dre, see above links in the title).
 
 I won't even try to explain Beats, because it is super straight forward. I do suggest checking out the site if you're even slightly interested, but if you just want the quick lowdown, here's a quote that basically summarizes the tool.
-<blockquote>"Beats is the platform for building lightweight, open source data shippers for many types of operational data you want to enrich with Logstash, search and analyze in Elasticsearch, and visualize in Kibana. Whether you’re interested in log files, infrastructure metrics, network packets, or any other type of data, Beats serves as the foundation for keeping a beat on your data."</blockquote>
+
+> "Beats is the platform for building lightweight, open source data shippers for many types of operational data you want to enrich with Logstash, search and analyze in Elasticsearch, and visualize in Kibana. Whether you’re interested in log files, infrastructure metrics, network packets, or any other type of data, Beats serves as the foundation for keeping a beat on your data."
+
 So there ya go, something that collects a ton - if not almost all of - the data that I need to manage and monitor the infrastructure, platforms, network, and more that I'm responsible for. I'm currently diving in, but here's a few key good bits about Beats that I'm excited to check out.
-<h3><img class="  wp-image-11987 alignright" src="https://compositecode.files.wordpress.com/2015/12/packetbeat-fish-nodes-bkgd.png" alt="packetbeat-fish-nodes-bkgd.png" width="282" height="141" />#1 - PacketBeat</h3>
-This is the realtime network packet analyzer that integrates with Elasticsearch and provides the respective analytics you'd expect. It gives a level of visibility with Beats between all the network servers and such that will prospectively give me insight to were our <em><a href="https://youtu.be/f99PcP0aFNE" target="_blank">series of tubes</a> or getting clogged up</em>. I'm looking forward to seeing our requests mapped up with our responses!  ;)
-<h3>#2 - FileBeat</h3>
+
+<div class="image float-right">
+    <img class="img-responsive" src="./packetbeat-fish-nodes-bkgd.png" />
+</div>
+
+### 1 - PacketBeat
+
+This is the real-time network packet analyzer that integrates with Elasticsearch and provides the respective analytics you'd expect. It gives a level of visibility with Beats between all the network servers and such that will prospectively give me insight to were our <em><a href="https://youtu.be/f99PcP0aFNE" target="_blank">series of tubes</a> or getting clogged up</em>. I'm looking forward to seeing our requests mapped up with our responses!  ;)
+
+### 2 - FileBeat
+
 This is a log data shipper based on the Logstash-Forwarder. At least it was at one point, it appears to look like it is less and less based on it. This beat monitors log directories for log files, tails the fails, and forwards them to Logstash. This completes another important part of what I need to systemically monitor within our systems.
 
 <strong>Random fascinating observations:</strong>
-<ul>
+
 * Did I mention Beats is written in Go? Furtherering Derek's tweet from 2012!  ;)</li>
-</ul>
-https://twitter.com/derekcollison/status/245522124666716160
-<ul>
+
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Prediction: Go will become the dominant language for systems work in IaaS, Orchestration, and PaaS in 24 months. <a href="https://twitter.com/hashtag/golang?src=hash">#golang</a></p>&mdash; Derek Collison (@derekcollison) <a href="https://twitter.com/derekcollison/status/245522124666716160">September 11, 2012</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
 * Beats has a cool logo, and the design of the tooling is actually solid, as if someone cared about how one would interact with the tools. I'll see how this holds up as I implement a sample implementation of things with Beats &amp; the various data collectors.</li>
-</ul>
-<strong>More References &amp; Reading Material for Beats:</strong>
-<ul>
+
+**More References &amp; Reading Material for Beats:**
+
 * <a href="https://www.elastic.co/blog/beats-1-0-0" target="_blank">Beats 1.0.0 Release</a></li>
 * <a href="https://github.com/elastic/beats" target="_blank">Beats on Github</a></li>
-</ul>
+
 That's it for the highlights so far. If anything else catches my eye this evening at the Elasticon Tour, I'll get started rambling about it too!
-
-
-<div class="image float-left">
-    ![Somebody](anImage.jpg)
-</div>
-
-
 
