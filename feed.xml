@@ -675,23 +675,6 @@ In this talk I would be covering the following:&lt;/p&gt;
 </description>
     </item>
     <item>
-      <title>WebSockets Bring Light at the End of the Tunnel by Joel Lord</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</link>
-      <pubDate>Fri, 03 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</guid>
-      <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-left&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/joel-lord.jpg&quot; alt=&quot;Joel Lord&quot;&gt;
-&lt;/div&gt;
-
-&lt;p&gt;As a Development Manager, Joel’s motivation and proven technical prowess makes him a key member of Spiria’s software development team. With a degree in computational astrophysics, his interests eventually made their way to software and Web design. Today, his knowledge of JavaScript lets him to support a variety of projects on both the front end and back end. As we move into the age of the Internet of Things, Joel is ready with his passion for programming node bots and experimenting with gadgets.&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Joel is going to speak on Web Sockets and tunnels of light… or to describe it more specifically more and more, people seem to be obsessed with real-time data.  But what does real-time mean in the world of REST servers and one-way communication?  Most modern web applications are now either displaying a snapshot of data at a given time or use a polling mechanism to update series of data at a given interval.
-In this talk, you will learn about the power of WebSockets and how they can (and should!) be used in your modern web applications. In these 30 minutes, I will go through the process of building a Node server that can push data to multiple clients in real-time.  You will see how this can be easy using the socket.io library.&lt;/p&gt;
-</description>
-    </item>
-    <item>
       <title>MMOWAM - Build Server-less Games with a DSN by Josh Marinacci</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-josh-marinacci/</link>
       <pubDate>Fri, 03 Jun 2016 17:00:00 -0700</pubDate>
@@ -726,6 +709,23 @@ it can be.&lt;/p&gt;
 &lt;li&gt;show number of players&lt;/li&gt;
 &lt;li&gt;start when 4 players in? one player hit’s start? let all player see total count as well and status of the other players&lt;/li&gt;
 &lt;/ul&gt;
+</description>
+    </item>
+    <item>
+      <title>WebSockets Bring Light at the End of the Tunnel by Joel Lord</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</link>
+      <pubDate>Fri, 03 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-left&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/joel-lord.jpg&quot; alt=&quot;Joel Lord&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;As a Development Manager, Joel’s motivation and proven technical prowess makes him a key member of Spiria’s software development team. With a degree in computational astrophysics, his interests eventually made their way to software and Web design. Today, his knowledge of JavaScript lets him to support a variety of projects on both the front end and back end. As we move into the age of the Internet of Things, Joel is ready with his passion for programming node bots and experimenting with gadgets.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Joel is going to speak on Web Sockets and tunnels of light… or to describe it more specifically more and more, people seem to be obsessed with real-time data.  But what does real-time mean in the world of REST servers and one-way communication?  Most modern web applications are now either displaying a snapshot of data at a given time or use a polling mechanism to update series of data at a given interval.
+In this talk, you will learn about the power of WebSockets and how they can (and should!) be used in your modern web applications. In these 30 minutes, I will go through the process of building a Node server that can push data to multiple clients in real-time.  You will see how this can be easy using the socket.io library.&lt;/p&gt;
 </description>
     </item>
     <item>
@@ -773,6 +773,23 @@ it can be.&lt;/p&gt;
 &lt;iframe width=&quot;1280&quot; height=&quot;720&quot; src=&quot;https://www.youtube.com/embed/L2BVDJWHdy0?rel=0&amp;amp;showinfo=0&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;</description>
     </item>
     <item>
+      <title>The House Is Not On Fire - Building a home automation robot with Arduino, Raspberry Pi and Node.js by Artur Paikin</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</link>
+      <pubDate>Wed, 01 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-right&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/art-stida.jpg&quot; alt=&quot;Artur Paikin&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Artur describes himself as, “I’m a web developer and traveler. I write stories about my adventures in Russian and English on my site: &lt;a href=&quot;http://arturpaikin.com&quot;&gt;http://arturpaikin.com&lt;/a&gt; and run a small technology cooperative called &lt;a href=&quot;http://unebaguette.com&quot;&gt;Baguette&lt;/a&gt;, where I work on cool projects, currently building an ambitious next generation file uploader with &lt;a href=&quot;https://transloadit.com/&quot;&gt;Transloadit&lt;/a&gt;. I ride a &lt;a href=&quot;https://www.instagram.com/p/xC0qC2SSYb&quot;&gt;foldable bicycle&lt;/a&gt;, &lt;a href=&quot;http://unebaguette.com/web-course/&quot;&gt;teach&lt;/a&gt; web development and sometimes &lt;a href=&quot;https://www.instagram.com/p/4_6LO8ySVL/&quot;&gt;garden&lt;/a&gt; on the balcony.”&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Artur has built an open source home automation system called &lt;a href=&quot;https://github.com/arturi/kotihome&quot;&gt;Koti Home&lt;/a&gt; (Koti means home in Finnish language). It’s powered by an Arduino connected to Raspberry Pi, MQTT protocol for messaging, Node.js on the client and server, web sockets. You can interact with Koti robot via a React (like the cool kids do) control panel, Telegram Chat Bot and even your own voice.&lt;/p&gt;
+&lt;p&gt;Arthur will talk about how he’s turned this project into reality — the tech he used and the challenges he faced. From a blinking LED to a voice controlled home automation robot.&lt;/p&gt;
+</description>
+    </item>
+    <item>
       <title>Code First Docs How we Threw Out The Book &amp; Put Code First With Twilio Documentation by Jarod Reyes</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-jarod-reyes/</link>
       <pubDate>Wed, 01 Jun 2016 17:00:00 -0700</pubDate>
@@ -794,23 +811,6 @@ it can be.&lt;/p&gt;
 &lt;li&gt;Twitter: &lt;a href=&quot;https://twitter.com/jreyesdev&quot;&gt;@jreyesdev&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Github: &lt;a href=&quot;https://github.com/jarodreyes&quot;&gt;github.com/jarodreyes&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-</description>
-    </item>
-    <item>
-      <title>The House Is Not On Fire - Building a home automation robot with Arduino, Raspberry Pi and Node.js by Artur Paikin</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</link>
-      <pubDate>Wed, 01 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</guid>
-      <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-right&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/art-stida.jpg&quot; alt=&quot;Artur Paikin&quot;&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Artur describes himself as, “I’m a web developer and traveler. I write stories about my adventures in Russian and English on my site: &lt;a href=&quot;http://arturpaikin.com&quot;&gt;http://arturpaikin.com&lt;/a&gt; and run a small technology cooperative called &lt;a href=&quot;http://unebaguette.com&quot;&gt;Baguette&lt;/a&gt;, where I work on cool projects, currently building an ambitious next generation file uploader with &lt;a href=&quot;https://transloadit.com/&quot;&gt;Transloadit&lt;/a&gt;. I ride a &lt;a href=&quot;https://www.instagram.com/p/xC0qC2SSYb&quot;&gt;foldable bicycle&lt;/a&gt;, &lt;a href=&quot;http://unebaguette.com/web-course/&quot;&gt;teach&lt;/a&gt; web development and sometimes &lt;a href=&quot;https://www.instagram.com/p/4_6LO8ySVL/&quot;&gt;garden&lt;/a&gt; on the balcony.”&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Artur has built an open source home automation system called &lt;a href=&quot;https://github.com/arturi/kotihome&quot;&gt;Koti Home&lt;/a&gt; (Koti means home in Finnish language). It’s powered by an Arduino connected to Raspberry Pi, MQTT protocol for messaging, Node.js on the client and server, web sockets. You can interact with Koti robot via a React (like the cool kids do) control panel, Telegram Chat Bot and even your own voice.&lt;/p&gt;
-&lt;p&gt;Arthur will talk about how he’s turned this project into reality — the tech he used and the challenges he faced. From a blinking LED to a voice controlled home automation robot.&lt;/p&gt;
 </description>
     </item>
     <item>
@@ -1123,6 +1123,105 @@ fi }
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Stick that in your ~/.bash_profile (or ~/.bashrc if you’re on *nix) and you’re good to go. Then at the bash prompt just type in this.&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;gimmedocker XyZvirtualMachine
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;BOOM! Less typing for the win!&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>Researching &amp; Learning About Zookeeper - A Guide</title>
+      <link>http://adron.github.io/articles/research-learning-about-zookeeper/</link>
+      <pubDate>Mon, 01 Feb 2016 16:30:00 -0800</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/research-learning-about-zookeeper/</guid>
+      <author></author>
+      <description>&lt;p&gt;I’ve started working with Zookeeper. Since I’ve started doing that I’ve put together this blog post. It’s aim is to provide a structured approach to learning Zookeeper and researching the elements that make its features tick. Along the way I have a few call outs to people that have also provided excellent talks, material, or contributions to learning about Zookeeper along the way. With that, let’s get started.&lt;/p&gt;
+&lt;p&gt;Zookeeper is a consensus system written based on ideas presented via consensus algorithms. The idea is key value stores that keep all of their data in memory for read heavy workloads. The qualities in this context present a system that is highly consistent, with intent for access from distributed systems to data that won’t be lost.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;h3 id=&quot;start-learning&quot;&gt;Start Learning&lt;/h3&gt;
+&lt;p&gt;The starting point should be a complete read of the &lt;a href=&quot;https://zookeeper.apache.org/&quot;&gt;Apache Zookeeper Project Home Page&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;At this point I took an administrators’ angle on determining what I needed to know and do next. I knew that my situation would meet the basic assumptions of reliability around Zookeeper; First is that only a minority of servers in a deployment would fail at a particular time or become inaccessible from a crash, partition, or related issue, and second is that deployed machines would have correctly operating clocks, storage, and network components that perform consistently.&lt;/p&gt;
+&lt;p&gt;I had also made an assumption that I would need &lt;em&gt;&lt;strong&gt;2 x F + 1&lt;/strong&gt; &lt;/em&gt;machines in order to maintain data consistency. The F here is the number of failed or inaccessible machines. This meant that if I wanted to have 2 failures, I’d need at least 5 machines. For a failure of up to 3 machines, that would be 7 machines. Pretty easy, just a little simple math.&lt;/p&gt;
+&lt;p&gt;The other thing I was curious about, especially on a single machine, would be Zookeeper’s overall overhead. Would it come into contention with the services that are already running? Would it be ok to put Zookeeper on the machines that run the micro-services that Zookeeper is providing information to? Well, Zookeeper does indeed content with other application for CPU, network, memory, and storage. For this reason I have to balance the deployment of Zookeeper in relation to the other applications, as my server loads may not be super high, and thus I’d be able to have Zookeeper on some of the servers that have actual other services deployed. But YMMV depending on your services you’ve got deployed.&lt;/p&gt;
+&lt;p&gt;While I was thinking through how I’d build out the architecture for my implementation of Zookeeper I came upon a very important note in the documentation,&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;“ZooKeeper’s transaction log must be on a dedicated device. (A dedicated partition is not enough.) ZooKeeper writes the log sequentially, without seeking Sharing your log device with other processes can cause seeks and contention, which in turn can cause multi-second delays.&lt;/p&gt;
+&lt;p&gt;Do not put ZooKeeper in a situation that can cause a swap. In order for ZooKeeper to function with any sort of timeliness, it simply cannot be allowed to swap. Therefore, make certain that the maximum heap size given to ZooKeeper is not bigger than the amount of real memory available to ZooKeeper. For more on this, see Things to Avoid below.”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;After reading up on the following documentation it seemed like a good time to do a test deployment:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://zookeeper.apache.org/doc/trunk/zookeeperAdmin.html&quot; target=&quot;_blank&quot;&gt;Zookeeper Admin&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://zookeeper.apache.org/doc/trunk/zookeeperAdmin.html#sc_minimumConfiguration&quot; target=&quot;_blank&quot;&gt;Zookeeper Minimum Configuration&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;begin-bug-description-1st-docker-attempt&quot;&gt;BEGIN BUG DESCRIPTION: 1ST DOCKER ATTEMPT&lt;/h4&gt;
+&lt;p&gt;NOTE: If you just want to get to the Zookeeper installation &amp;amp; setup and skip this issue, GOTO &lt;a href=&quot;#awsInstallation&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;My first go was to pull up a clean Ubuntu docker image and prep it as a container. Then start installing the necessary parts of Zookeeper. These steps consisted of the following. I made a video for it (see toward the bottom of this entry), so you can actually see the flow and I also wrote the commands I’m tying in bash below. Then you can pick your preferred use.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;docker-machine start fusion-fire
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Docker machine starts my virtual machine on OS-X that runs the Docker daemon, which I’ve named fusion-fire, thus the command above. Then after that I pulled down an Ubuntu image, started a container from the image, connecting to the container and all set for installation.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;docker pull ubuntu
+docker run -it ubuntu
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;To install the Zookeeper server and begin execution I then issued the following.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo apt-get update
+sudo apt-get -Y install default-jdk
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;While this was executing I also ran into a situation where the Java Development Kit was hanging on getting the certificates put into place.&lt;/p&gt;
+&lt;p&gt;&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;en&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;The last dozen or so &lt;a href=&quot;https://twitter.com/hashtag/Ubuntu?src=hash&quot;&gt;#Ubuntu&lt;/a&gt; &lt;a href=&quot;https://twitter.com/hashtag/docker?src=hash&quot;&gt;#docker&lt;/a&gt; images I&amp;#39;ve tried to run &amp;quot;sudo apt-get install default-jre&amp;quot; on have all ended up spiking the CPU.&lt;/p&gt;&amp;mdash; Λdrøn (@Adron) &lt;a href=&quot;https://twitter.com/Adron/status/693219719441096704&quot;&gt;January 29, 2016&lt;/a&gt;&lt;/blockquote&gt;&lt;/p&gt;
+&lt;script async src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;I began looking into this problem, and found currently on Ubuntu 14.04, running sudo-apt-get update and then running the install will trigger the bug. Two other points of reference are &lt;a href=&quot;https://github.com/docker/docker/issues/18180&quot; target=&quot;_blank&quot;&gt;here&lt;/a&gt;, &lt;a href=&quot;https://bugs.launchpad.net/ubuntu/+source/ca-certificates-java/+bug/1396760&quot; target=&quot;_blank&quot;&gt;here&lt;/a&gt;, and there are other postings and issues related to the issue, just google. So what I did at that point to fix this issue was the following.&lt;/p&gt;
+&lt;p&gt;First I forcefully killed the docker container by just restarting the whole docker VM.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;docker-machine stop fusion-fire
+docker-machine start fusion-fire
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Once that stopped I then started the virtual machine again.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo apt-get -y install default-jre
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;When it started I ran sudo apt-get install again. At that point apt-get attempted to recover but the install kept getting stuck on registering the certificates. So I gave up on this avenue for now. Hopefully a future Docker &amp;amp; Linux Kernal fixes the problem. So instead I went out and just spooled up some AWS instances for now, I’ll update this blog entry with a “Part II: Docker is Zookeeper Fixed” when the Java + Linux Kernal + Docker issue is remedied, until then, here’s the installation process on the AWS instances.&lt;/p&gt;
+&lt;p&gt;&lt;a name=&quot;awsInstallation&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;end-bug-description-aws-instance-zookeeper-installation&quot;&gt;END BUG DESCRIPTION: AWS Instance Zookeeper Installation&lt;/h3&gt;
+&lt;p&gt;Once this was setup I started 5 nano instances for Zookeeper (nano, since it’s just a test example for learning) and then logged in using broadcast with iTerm 2. From there each instance had the following commands executed.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo apt-get update
+sudo apt-get install -y default-jdk
+cd /opt/
+sudo mkdir zookeeper
+cd zookeeper/
+sudo wget http://mirror.tcpdiag.net/apache/zookeeper/zookeeper-3.4.6/zookeeper-3.4.6.tar.gz
+sudo tar -zxvf zookeeper-3.4.6.tar.gz
+cd conf/
+sudo nano zoo.cfg
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;NOTE: Nano is the text editor I used above for “sudo nano zoo.cfg”. If you don’t have it available just install it with “sudo apt-get install nano”.&lt;/p&gt;
+&lt;p&gt;In that zoo.cfg I entered the following. For the IPs I actually used the AWS private IPs for the config file example below.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;tickTime=2000
+dataDir=/var/zookeeper
+clientPort=2181
+initLimit=5
+syncLimit=2
+server.1=172.31.19.66:2888:3888
+server.2=172.31.19.67:2888:3888
+server.3=172.31.19.68:2888:3888
+server.4=172.31.19.69:2888:3888
+server.5=172.31.19.70:2888:3888&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Now I started the service using the zkServer.sh script file.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo /opt/zookeeper/zookeeper-3.4.6/bin/zkServer.sh start-foreground
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;When I booted up I ran into an error about the myid file, so I added the file with a sequential number for the byid in the /var/zookeeper directory.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo nano /var/zookeeper/myid
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;In each of the files I added a number, respectively 1 through 5 for the id of each and saved those files. Upon attempting to start the zookeeper service with the following command I finally got to see the various nodes in the ensemble gain access to each other and start working. Which, I gotta admit, was a pretty damn cool feeling.&lt;/p&gt;
+&lt;p&gt;After all that fussing it seemed good to note, especially since they’re hard to find in the documentation (which is kind of a bit hard to use), here are some of the switches for zkServer.sh.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;start
+start-foreground (super useful for debugging)
+stop
+restart
+status
+upgrade
+print-cmd&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Once this is done, restart the service but this time instead of using the start-foreground command, just use the start command and that will start the service and return the bash back to you to issues commands or whatnot. An easy way to test out Zookeeper now that it is running is to use the Zookeeper CLI. This is the zkCli.sh shell script (or zkcli.bat file if you’re running it on windows - which I’d strongly suggest NOT to do).&lt;/p&gt;
+&lt;p&gt;Ok, that’s it for this entry. More to come in the near future. Cheers!&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Excellent Additional References&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a title=&quot;raft&quot; href=&quot;https://compositecode.files.wordpress.com/2016/01/raft.pdf&quot;&gt;In Search of an Understandable Consensus Algorithm (Extended Version)&lt;/a&gt; - Diego Ongaro &amp;amp; John Ousterhout @ Stanford University&lt;/li&gt;
+&lt;li&gt;&lt;a title=&quot;paxos-simple&quot; href=&quot;https://compositecode.files.wordpress.com/2016/01/paxos-simple.pdf&quot;&gt;Paxos Made Simple&lt;/a&gt; by Leslie Lamport&lt;/li&gt;
+&lt;li&gt;Camille Fournier (&lt;a href=&quot;https://twitter.com/skamille&quot; target=&quot;_blank&quot;&gt;@skamille&lt;/a&gt;) provided an excellent talk about &lt;a href=&quot;http://www.infoq.com/interviews/fournier-consensus&quot; target=&quot;_blank&quot;&gt;Zookeeper (Consensus Systems) on InfoQ&lt;/a&gt;. In this talk Camille also mentions the &lt;a title=&quot;chubby-osdi06&quot; href=&quot;https://compositecode.files.wordpress.com/2016/01/chubby-osdi06.pdf&quot;&gt;The Chubby Lock Service for Loosely Coupled Distributed Systems&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://youtu.be/j4uwKP7WJFk&quot; target=&quot;_blank&quot;&gt;Zookeeper for the Skeptical Architect by Camille Fournier&lt;/a&gt; - RICON East 2013
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/j4uwKP7WJFk?rel=0&amp;amp;showinfo=0&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;
+Talks about why Riak, Cassandra, and even the company Camille works at (Rent the Runway) doesn’t use Zookeeper. An interesting talk from the regard of why not to use it in some cases.&lt;/li&gt;
+&lt;/ul&gt;
 </description>
     </item>
     <item>
