@@ -5,9 +5,40 @@
     <atom:link href="http://adron.github.io/feed.xml" rel="self" type="application/rss+xml"></atom:link>
     <link>http://adron.github.io</link>
     <description>Coder, Messenger, Recon, Infrastructure, Ops</description>
-    <pubDate>Wed, 29 Jun 2016 11:25:00 -0700</pubDate>
+    <pubDate>Fri, 08 Jul 2016 07:29:00 -0700</pubDate>
     <generator>Wintersmith - https://github.com/jnordberg/wintersmith</generator>
     <language>en</language>
+    <item>
+      <title>.NET Fringe Bike Ride</title>
+      <link>http://adron.github.io/articles/Bike-Rides/</link>
+      <pubDate>Fri, 08 Jul 2016 07:29:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/Bike-Rides/</guid>
+      <author></author>
+      <description>&lt;p&gt;In my &lt;strong&gt;&lt;em&gt;not so humble opinion&lt;/em&gt;&lt;/strong&gt; every conference should have a bike ride. But I realize it isn’t always possible. This is one of the ways conferences that Troy &amp;amp; I put on here in Portland are very different. We have a love for Portland; &lt;em&gt;the energy, the chill, vibrant yet relaxed, laid back, bike like, walking friendly city that it is&lt;/em&gt;. It’s a beautiful city that really can only be seen or felt by active transportation. If you walk, run, bike, skate board, dog sled, sled, cross country ski, or otherwise travel around Portland you get to actually see, feel, and hear this city. No other mode really works. Transit is fun, driving is like a cage, and with both you miss the vast majority of the life and blood of what makes Portland a great city!&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/Bike-Rides/nodepdx-bike-ride.jpg&quot; alt=&quot;Node PDX Bike Ride&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;-net-fringe-bike-ride&quot;&gt;.NET Fringe Bike Ride&lt;/h2&gt;
+&lt;p&gt;With all that said, obviously we’re having a bike ride at .NET Fringe! I’ll be the lead, and give everybody a solid tour around some key parts of the city. I’ll show you all some odd things, weird stuff, probably some strange people, architecture and other elements and features of this place called Portland! Here’s the details:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Anybody can join the ride, even people that aren’t attending .NET Fringe. If we have 3 people ride or 500, it doesn’t matter, we’ll have a good roll about town.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;BYOB - Bring Your Own Bike AKA Bring Your Own Beer. For us, it means both. This might sound complicated, but I promise it’s not. There are a zillion places to rent a bike in about 20 seconds. Links below where to pick up a ride of your choice for the ride about the city.&lt;/li&gt;
+&lt;li&gt;Show up at the designated location (also listed below) at the designated time (also listed below).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;That’s it!&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;I’ll summarize these simple steps to simply say “Just show up!” This isn’t a spandex crowd ride, this is a people chillin’ in Portland ride, so don’t worry nobody is getting left behind. We’ll enjoy some coffee, probably a beer, the city, and maybe a chat or three about the latest in tech, code patterns, and other miscellaneous hot topics like IoT not spamming your wifi and burning your muffins!&lt;/p&gt;
+&lt;p&gt;First things first, great places to get bike rentals:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.waterfrontbikes.com/&quot;&gt;Waterfront Bike&lt;/a&gt; - Located on &lt;a href=&quot;https://www.google.com/maps/place/Waterfront+Bicycle/@45.522373,-122.6809235,15z/data=!4m8!1m2!2m1!1sbike+rentals!3m4!1s0x0:0xbed7f9780615f52d!8m2!3d45.5213399!4d-122.6709741&quot;&gt;10 SW Ash St #100, Portland, OR 97204&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.pedalbiketours.com/&quot;&gt;Pedal Bike Tours&lt;/a&gt; - Located on &lt;a href=&quot;https://www.google.com/maps/place/Pedal+Bike+Tours/@45.522373,-122.6809235,15z/data=!4m8!1m2!2m1!1sbike+rentals!3m4!1s0x0:0x6c1861d1ea8716e0!8m2!3d45.5216706!4d-122.672739&quot;&gt;133 SW 2nd Ave, Portland, OR 97204&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://portlandbicycletours.com/&quot;&gt;Cycle Portland Bike Tours &amp;amp; Rentals&lt;/a&gt; - Located on &lt;a href=&quot;https://www.google.com/maps/place/Cycle+Portland+Bike+Tours+%26+Rentals/@45.522373,-122.6809235,15z/data=!4m8!1m2!2m1!1sbike+rentals!3m4!1s0x0:0xed9ef696a5172958!8m2!3d45.5241437!4d-122.672562&quot;&gt;117 NW 2nd Ave, Portland, OR 97209&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;We’ll meet at the waterfront here @ &lt;a href=&quot;https://www.google.com/maps/@45.5213697,-122.6699997,19.25z&quot;&gt;100 SW Naito Parkway&lt;/a&gt; and depart at 6:00pm on Sunday.&lt;/p&gt;
+&lt;p&gt;The ride path is a secret (mostly because we’ll be JIT via dynamic path finding along the route). However, I can say it’ll be low car volume, easy paths, and minimal hills (Portland is mostly flat by Cascadian standards).&lt;/p&gt;
+&lt;p&gt;See all of ya out there!&lt;/p&gt;
+</description>
+    </item>
     <item>
       <title>Node PDX 2016 Photos</title>
       <link>http://adron.github.io/articles/Node-PDX-2016-Photos/</link>
@@ -697,23 +728,6 @@ In this talk, you will learn about the power of WebSockets and how they can (and
 </description>
     </item>
     <item>
-      <title>I Play the JavaScript by Matt McKegg</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</link>
-      <pubDate>Thu, 02 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</guid>
-      <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-left&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/mattmckegg.jpg&quot; alt=&quot;Matt McKegg&quot;&gt;
-&lt;/div&gt;
-
-&lt;p&gt;A JavaScript hacker and backyard musician and from Wellington, New Zealand. Lover of all things open and modular. I spend most of my time pressing buttons of various shapes, sizes and colours. Sometimes these buttons make sounds.&lt;/p&gt;
-&lt;p&gt;Matt has been making music with computers for about 10 years, but once he tried to move from bedroom composing to live performance, he got incredibly frustrated at how hard it was to play computer music live. He decided to start working on his own live electronic performance software written in JavaScript that would let me play the way he wanted to play. 3 years later, it’s finally starting to become a reality.&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Here is one of the Matt’s recent performances, for your viewing pleasure. &lt;/p&gt;
-&lt;iframe width=&quot;1280&quot; height=&quot;720&quot; src=&quot;https://www.youtube.com/embed/L2BVDJWHdy0?rel=0&amp;amp;showinfo=0&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;</description>
-    </item>
-    <item>
       <title>The Web Platform is the Universal Instrument by Ben Michel</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-ben-michel/</link>
       <pubDate>Thu, 02 Jun 2016 17:00:00 -0700</pubDate>
@@ -739,6 +753,23 @@ In this talk, you will learn about the power of WebSockets and how they can (and
 &lt;li&gt;Audience interaction with the exposed parameters of a live band’s instrumentation–via broadcast methods and microcontroller installations.”&lt;/li&gt;
 &lt;/ul&gt;
 </description>
+    </item>
+    <item>
+      <title>I Play the JavaScript by Matt McKegg</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</link>
+      <pubDate>Thu, 02 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-left&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/mattmckegg.jpg&quot; alt=&quot;Matt McKegg&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;A JavaScript hacker and backyard musician and from Wellington, New Zealand. Lover of all things open and modular. I spend most of my time pressing buttons of various shapes, sizes and colours. Sometimes these buttons make sounds.&lt;/p&gt;
+&lt;p&gt;Matt has been making music with computers for about 10 years, but once he tried to move from bedroom composing to live performance, he got incredibly frustrated at how hard it was to play computer music live. He decided to start working on his own live electronic performance software written in JavaScript that would let me play the way he wanted to play. 3 years later, it’s finally starting to become a reality.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Here is one of the Matt’s recent performances, for your viewing pleasure. &lt;/p&gt;
+&lt;iframe width=&quot;1280&quot; height=&quot;720&quot; src=&quot;https://www.youtube.com/embed/L2BVDJWHdy0?rel=0&amp;amp;showinfo=0&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;</description>
     </item>
     <item>
       <title>The House Is Not On Fire - Building a home automation robot with Arduino, Raspberry Pi and Node.js by Artur Paikin</title>
