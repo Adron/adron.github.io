@@ -33,8 +33,6 @@ template: doc.jade
     ![Somebody](anImage.jpg)
 </div>
 
-<span class="more"></span>
-
 [Documentation Root](/someplace/here.html)
 
 EOT

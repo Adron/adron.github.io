@@ -3,6 +3,8 @@
 # Just a title
 talktitle=$1
 confname=$2
+talkdate=$3
+
 # Format 2013-04-30
 published=`date +%Y-%m-%d:%H:%M:%S`
 author='Adron Hall'
@@ -11,9 +13,9 @@ cd contents/talks
 
 echo "Changed into talks directory."
 
-if [ ! $# == 2 ]
+if [ ! $# == 3 ]
     then
-    echo "There should be at least the title of the talk and of the conference."
+    echo "There should be at least the title of the talk, conference name, and the date of the talk."
     exit 1
 fi
 
@@ -32,5 +34,5 @@ date: $published
 template: talk.jade
 ---
 ## $cleanedTitle
-### *@ $confname by $author*
+### *@ $confname on $talkdate
 EOT
