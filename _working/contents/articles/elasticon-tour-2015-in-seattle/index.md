@@ -16,11 +16,11 @@ When the team and I walked in we waited a little bit for registration to get sta
 
 The first thing I noticed of the demos is something that’s catching a lot of attention. It’s a partner of <a href="https://www.elastic.co/" target="_blank">Elastic’s</a> called <a href="http://streamsets.com/" target="_blank">StreamSets</a>.
 
-<img class="img-responsive" src="./elasticon-tour-2015-in-seattle/streamset1.jpg" />
+<img class="img-responsive" src="./streamset1.jpg" />
 
-<img class="img-responsive" src="./elasticon-tour-2015-in-seattle/streamset2.jpg" />
+<img class="img-responsive" src="./streamset2.jpg" />
 
-<img class="img-responsive" src="./elasticon-tour-2015-in-seattle/streamset3.jpg" />
+<img class="img-responsive" src="./streamset3.jpg" />
 
 From what I could figure out from just watching the demo is that StreamSets is a ingest engine. That’s simple enough to determine just taking a look at their site. But being able to watch the demo also enlightened me to the way the interface IDE (the thing in the dark pictures above) worked.
 
