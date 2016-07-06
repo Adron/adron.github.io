@@ -18,13 +18,9 @@ The first thing I noticed of the demos is something that’s catching a lot of a
 
 <img class="img-responsive" src="./elasticon-tour-2015-in-seattle/streamset1.jpg" />
 
-<div class="image float-right img-responsive">
-    ![Streamsets](streamset2.jpg)
-</div>
+<img class="img-responsive" src="./elasticon-tour-2015-in-seattle/streamset2.jpg" />
 
-<div class="image float-right img-responsive">
-    ![Streamsets](streamset3.jpg)
-</div>
+<img class="img-responsive" src="./elasticon-tour-2015-in-seattle/streamset3.jpg" />
 
 From what I could figure out from just watching the demo is that StreamSets is a ingest engine. That’s simple enough to determine just taking a look at their site. But being able to watch the demo also enlightened me to the way the interface IDE (the thing in the dark pictures above) worked.
 
