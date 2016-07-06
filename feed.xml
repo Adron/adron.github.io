@@ -773,23 +773,6 @@ In this talk, you will learn about the power of WebSockets and how they can (and
 </description>
     </item>
     <item>
-      <title>The House Is Not On Fire - Building a home automation robot with Arduino, Raspberry Pi and Node.js by Artur Paikin</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</link>
-      <pubDate>Wed, 01 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</guid>
-      <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-right&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/art-stida.jpg&quot; alt=&quot;Artur Paikin&quot;&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Artur describes himself as, “I’m a web developer and traveler. I write stories about my adventures in Russian and English on my site: &lt;a href=&quot;http://arturpaikin.com&quot;&gt;http://arturpaikin.com&lt;/a&gt; and run a small technology cooperative called &lt;a href=&quot;http://unebaguette.com&quot;&gt;Baguette&lt;/a&gt;, where I work on cool projects, currently building an ambitious next generation file uploader with &lt;a href=&quot;https://transloadit.com/&quot;&gt;Transloadit&lt;/a&gt;. I ride a &lt;a href=&quot;https://www.instagram.com/p/xC0qC2SSYb&quot;&gt;foldable bicycle&lt;/a&gt;, &lt;a href=&quot;http://unebaguette.com/web-course/&quot;&gt;teach&lt;/a&gt; web development and sometimes &lt;a href=&quot;https://www.instagram.com/p/4_6LO8ySVL/&quot;&gt;garden&lt;/a&gt; on the balcony.”&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Artur has built an open source home automation system called &lt;a href=&quot;https://github.com/arturi/kotihome&quot;&gt;Koti Home&lt;/a&gt; (Koti means home in Finnish language). It’s powered by an Arduino connected to Raspberry Pi, MQTT protocol for messaging, Node.js on the client and server, web sockets. You can interact with Koti robot via a React (like the cool kids do) control panel, Telegram Chat Bot and even your own voice.&lt;/p&gt;
-&lt;p&gt;Arthur will talk about how he’s turned this project into reality — the tech he used and the challenges he faced. From a blinking LED to a voice controlled home automation robot.&lt;/p&gt;
-</description>
-    </item>
-    <item>
       <title>Code First Docs How we Threw Out The Book &amp; Put Code First With Twilio Documentation by Jarod Reyes</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-jarod-reyes/</link>
       <pubDate>Wed, 01 Jun 2016 17:00:00 -0700</pubDate>
@@ -811,6 +794,23 @@ In this talk, you will learn about the power of WebSockets and how they can (and
 &lt;li&gt;Twitter: &lt;a href=&quot;https://twitter.com/jreyesdev&quot;&gt;@jreyesdev&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Github: &lt;a href=&quot;https://github.com/jarodreyes&quot;&gt;github.com/jarodreyes&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+</description>
+    </item>
+    <item>
+      <title>The House Is Not On Fire - Building a home automation robot with Arduino, Raspberry Pi and Node.js by Artur Paikin</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</link>
+      <pubDate>Wed, 01 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-right&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/art-stida.jpg&quot; alt=&quot;Artur Paikin&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Artur describes himself as, “I’m a web developer and traveler. I write stories about my adventures in Russian and English on my site: &lt;a href=&quot;http://arturpaikin.com&quot;&gt;http://arturpaikin.com&lt;/a&gt; and run a small technology cooperative called &lt;a href=&quot;http://unebaguette.com&quot;&gt;Baguette&lt;/a&gt;, where I work on cool projects, currently building an ambitious next generation file uploader with &lt;a href=&quot;https://transloadit.com/&quot;&gt;Transloadit&lt;/a&gt;. I ride a &lt;a href=&quot;https://www.instagram.com/p/xC0qC2SSYb&quot;&gt;foldable bicycle&lt;/a&gt;, &lt;a href=&quot;http://unebaguette.com/web-course/&quot;&gt;teach&lt;/a&gt; web development and sometimes &lt;a href=&quot;https://www.instagram.com/p/4_6LO8ySVL/&quot;&gt;garden&lt;/a&gt; on the balcony.”&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Artur has built an open source home automation system called &lt;a href=&quot;https://github.com/arturi/kotihome&quot;&gt;Koti Home&lt;/a&gt; (Koti means home in Finnish language). It’s powered by an Arduino connected to Raspberry Pi, MQTT protocol for messaging, Node.js on the client and server, web sockets. You can interact with Koti robot via a React (like the cool kids do) control panel, Telegram Chat Bot and even your own voice.&lt;/p&gt;
+&lt;p&gt;Arthur will talk about how he’s turned this project into reality — the tech he used and the challenges he faced. From a blinking LED to a voice controlled home automation robot.&lt;/p&gt;
 </description>
     </item>
     <item>
@@ -1222,6 +1222,78 @@ print-cmd&lt;/p&gt;
 &lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/j4uwKP7WJFk?rel=0&amp;amp;showinfo=0&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;
 Talks about why Riak, Cassandra, and even the company Camille works at (Rent the Runway) doesn’t use Zookeeper. An interesting talk from the regard of why not to use it in some cases.&lt;/li&gt;
 &lt;/ul&gt;
+</description>
+    </item>
+    <item>
+      <title>Elasticon Tour 2015 in Seattle</title>
+      <link>http://adron.github.io/articles/elasticon-tour-2015-in-seattle/</link>
+      <pubDate>Wed, 02 Dec 2015 16:00:00 -0800</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/elasticon-tour-2015-in-seattle/</guid>
+      <author></author>
+      <description>&lt;p&gt;Today is the tour stop of the &lt;a href=&quot;https://www.elastic.co/elasticon/tour/2015&quot; target=&quot;_blank&quot;&gt;Elasticon Tour&lt;/a&gt; that swung into Seattle. Myself and some of the &lt;a href=&quot;http://hdquotecenter.com/&quot; target=&quot;_blank&quot;&gt;Home Depot Quote Center&lt;/a&gt; team headed up via the &lt;a href=&quot;http://www.amtrakcascades.com/&quot; target=&quot;_blank&quot;&gt;Geek Train&lt;/a&gt; for the event. We arrived the night before so we could get up and actually be awake and ready for the event.&lt;/p&gt;
+&lt;p&gt;Just to note, a good clean place to stay, that isn’t overpriced like most of Seattle is the &lt;a href=&quot;https://www.google.com/search?q=Pioneer+Square+Hotel&amp;amp;oq=Pioneer+Square+Hotel&amp;amp;aqs=chrome..69i57j69i60l3.216j0j7&amp;amp;sourceid=chrome&amp;amp;es_sm=91&amp;amp;ie=UTF-8#safe=off&amp;amp;q=Pioneer+Square+Hotel&amp;amp;rflfq=1&amp;amp;tbm=lcl&amp;amp;rlfi=hd:;si:10477062606859836019&quot; target=&quot;_blank&quot;&gt;Pioneer Square Hotel&lt;/a&gt; - usually about $110-120 bucks. If you’re in town for a conference, sometimes it’s even worth skipping the “preferred hotels” and staying here. But I digress…&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;When the team and I walked in we waited a little bit for registration to get started. We stood around and chatted with some of our other cohort. Once the registration did open, we strolled into the main public space and started checking out some demos.&lt;/p&gt;
+&lt;h2 id=&quot;streamsets&quot;&gt;StreamSets&lt;/h2&gt;
+&lt;p&gt;The first thing I noticed of the demos is something that’s catching a lot of attention. It’s a partner of &lt;a href=&quot;https://www.elastic.co/&quot; target=&quot;_blank&quot;&gt;Elastic’s&lt;/a&gt; called &lt;a href=&quot;http://streamsets.com/&quot; target=&quot;_blank&quot;&gt;StreamSets&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img class=&quot;img-responsive&quot; src=&quot;./elasticon-tour-2015-in-seattle/streamset1.jpg&quot; /&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-right img-responsive&quot;&gt;
+    &lt;img src=&quot;/articles/elasticon-tour-2015-in-seattle/streamset2.jpg&quot; alt=&quot;Streamsets&quot;&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;image float-right img-responsive&quot;&gt;
+    &lt;img src=&quot;/articles/elasticon-tour-2015-in-seattle/streamset3.jpg&quot; alt=&quot;Streamsets&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;From what I could figure out from just watching the demo is that StreamSets is a ingest engine. That’s simple enough to determine just taking a look at their site. But being able to watch the demo also enlightened me to the way the interface IDE (the thing in the dark pictures above) worked.&lt;/p&gt;
+&lt;p&gt;The IDE provided ways to connect to ingestion data with minimal schema and actually start to flow the ingestion of this data through the engine. One of the key things that caught my attention at this point was the tie in with &lt;a href=&quot;http://kafka.apache.org/&quot; target=&quot;_blank&quot;&gt;Kafka&lt;/a&gt; and &lt;a href=&quot;https://hadoop.apache.org/&quot; target=&quot;_blank&quot;&gt;Hadoop&lt;/a&gt; with the respective ingest and egress of data to sources ranging from AWS S3 to things like Elastic’s engine or other various sources that I’ll be working with in the coming months.&lt;/p&gt;
+&lt;p&gt;For more information about StreamSets here are a few other solid articles:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://streamsets.com/blog/elasticsearch-plus-streamsets-for-reliable-data-ingestion/&quot; target=&quot;_blank&quot;&gt;Elastic Search Plus StreamSets for Reliable Data Ingestion&lt;/a&gt;&lt;/li&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://streamsets.com/blog/introducing-the-streamsets-data-collector/&quot; target=&quot;_blank&quot;&gt;Introducing the Streamsets Data Collector&lt;/a&gt;&lt;/li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;…and connect to keep up with what StreamSets is doing:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://twitter.com/streamsets&quot; target=&quot;_blank&quot;&gt;Twitter&lt;/a&gt;&lt;/li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;…and install instructions:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://streamsets.com/resources/installing-streamsets/&quot; target=&quot;_blank&quot;&gt;All The Installations&lt;/a&gt;&lt;/li&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://streamsets.com/resources/installing-streamsets/#install-docker&quot; target=&quot;_blank&quot;&gt;Run via Docker&lt;/a&gt;&lt;/li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;…and most importantly, the code:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/streamsets&quot; target=&quot;_blank&quot;&gt;Github StreamSets&lt;/a&gt;&lt;/li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;beats-a-href-http-lifehacker-com-are-beats-by-dre-headphones-any-good-1509805994-target-_blank-not-a-a-href-http-lmkprod-com-9-reasons-to-not-buy-beats-by-dre-headphones-target-_blank-the-a-a-href-http-forums-macrumors-com-threads-why-not-to-buy-the-beats-by-dre-1376663-target-_blank-dumb-a-a-href-http-www-viewpoints-com-expert-reviews-2013-11-08-why-i-will-never-buy-beats-by-dre-target-_blank-lousy-a-a-href-https-youtu-be-xkvzwj4pz7a-target-_blank-headphones-a-&quot;&gt;Beats (&lt;a href=&quot;http://lifehacker.com/are-beats-by-dre-headphones-any-good-1509805994&quot; target=&quot;_blank&quot;&gt;Not&lt;/a&gt; &lt;a href=&quot;http://lmkprod.com/9-reasons-to-not-buy-beats-by-dre-headphones/&quot; target=&quot;_blank&quot;&gt;the&lt;/a&gt; &lt;a href=&quot;http://forums.macrumors.com/threads/why-not-to-buy-the-beats-by-dre.1376663/&quot; target=&quot;_blank&quot;&gt;Dumb&lt;/a&gt; &lt;a href=&quot;http://www.viewpoints.com/expert-reviews/2013/11/08/why-i-will-never-buy-beats-by-dre/&quot; target=&quot;_blank&quot;&gt;Lousy&lt;/a&gt; &lt;a href=&quot;https://youtu.be/XkVZwj4pZ7A&quot; target=&quot;_blank&quot;&gt;Headphones&lt;/a&gt;)&lt;/h2&gt;
+&lt;p&gt;&lt;img class=&quot;  wp-image-11983 alignright&quot; src=&quot;https://compositecode.files.wordpress.com/2015/12/packetbeat-fish-and-cluster.png&quot; alt=&quot;packetbeat-fish-and-cluster&quot; width=&quot;330&quot; height=&quot;152&quot; /&gt;Recently I &lt;a href=&quot;http://compositecode.com/2015/11/25/nagios-and-ubuntu-64-bit-14-04-lts-setup-configuration/&quot;&gt;installed Nagios&lt;/a&gt; as I will be doing a lot of systems monitoring, management, and general devops style work in the coming weeks to build out solid site reliability. Nagios will theoretically do a lot of the things I need it to do, but then I stumbled into the recently released &lt;a href=&quot;https://www.elastic.co/products/beats&quot; target=&quot;_blank&quot;&gt;Beats&lt;/a&gt; by &lt;a href=&quot;https://www.elastic.co/&quot; target=&quot;_blank&quot;&gt;Elastic Search&lt;/a&gt; (not by Dre, see above links in the title).&lt;/p&gt;
+&lt;p&gt;I won’t even try to explain Beats, because it is super straight forward. I do suggest checking out the site if you’re even slightly interested, but if you just want the quick lowdown, here’s a quote that basically summarizes the tool.&lt;/p&gt;
+&lt;p&gt;&lt;blockquote&gt;“Beats is the platform for building lightweight, open source data shippers for many types of operational data you want to enrich with Logstash, search and analyze in Elasticsearch, and visualize in Kibana. Whether you’re interested in log files, infrastructure metrics, network packets, or any other type of data, Beats serves as the foundation for keeping a beat on your data.”&lt;/blockquote&gt;
+So there ya go, something that collects a ton - if not almost all of - the data that I need to manage and monitor the infrastructure, platforms, network, and more that I’m responsible for. I’m currently diving in, but here’s a few key good bits about Beats that I’m excited to check out.&lt;/p&gt;
+&lt;p&gt;&lt;h3&gt;&lt;img class=&quot;  wp-image-11987 alignright&quot; src=&quot;https://compositecode.files.wordpress.com/2015/12/packetbeat-fish-nodes-bkgd.png&quot; alt=&quot;packetbeat-fish-nodes-bkgd.png&quot; width=&quot;282&quot; height=&quot;141&quot; /&gt;#1 - PacketBeat&lt;/h3&gt;
+This is the realtime network packet analyzer that integrates with Elasticsearch and provides the respective analytics you’d expect. It gives a level of visibility with Beats between all the network servers and such that will prospectively give me insight to were our &lt;em&gt;&lt;a href=&quot;https://youtu.be/f99PcP0aFNE&quot; target=&quot;_blank&quot;&gt;series of tubes&lt;/a&gt; or getting clogged up&lt;/em&gt;. I’m looking forward to seeing our requests mapped up with our responses!  ;)&lt;/p&gt;
+&lt;p&gt;&lt;h3&gt;#2 - FileBeat&lt;/h3&gt;
+This is a log data shipper based on the Logstash-Forwarder. At least it was at one point, it appears to look like it is less and less based on it. This beat monitors log directories for log files, tails the fails, and forwards them to Logstash. This completes another important part of what I need to systemically monitor within our systems.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Random fascinating observations:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;ul&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Did I mention Beats is written in Go? Furtherering Derek’s tweet from 2012!  ;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;a href=&quot;https://twitter.com/derekcollison/status/245522124666716160&quot;&gt;https://twitter.com/derekcollison/status/245522124666716160&lt;/a&gt;&lt;ul&gt;&lt;/li&gt;
+&lt;li&gt;Beats has a cool logo, and the design of the tooling is actually solid, as if someone cared about how one would interact with the tools. I’ll see how this holds up as I implement a sample implementation of things with Beats &amp;amp; the various data collectors.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;strong&gt;More References &amp;amp; Reading Material for Beats:&lt;/strong&gt;&lt;ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.elastic.co/blog/beats-1-0-0&quot; target=&quot;_blank&quot;&gt;Beats 1.0.0 Release&lt;/a&gt;&lt;/li&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/elastic/beats&quot; target=&quot;_blank&quot;&gt;Beats on Github&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+That’s it for the highlights so far. If anything else catches my eye this evening at the Elasticon Tour, I’ll get started rambling about it too!&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;image float-left&quot;&gt;
+    &lt;img src=&quot;http://adron.github.io/articles/elasticon-tour-2015-in-seattle/anImage.jpg&quot; alt=&quot;Somebody&quot;&gt;
+&lt;/div&gt;
+
+
+
 </description>
     </item>
     <item>

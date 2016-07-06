@@ -5,3 +5,8 @@
 .float-left {
     float: left;margin-right: 15px;margin-top: 15px;margin-bottom: 15px;
 }
+
+.img-responsive {
+    width: 100%;
+    height: auto;
+}
