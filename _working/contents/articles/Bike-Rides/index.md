@@ -6,6 +6,10 @@ template: article.jade
 ---
 In my ***not so humble opinion*** every conference should have a bike ride. But I realize it isn't always possible. This is one of the ways conferences that Troy & I put on here in Portland are very different. We have a love for Portland; *the energy, the chill, vibrant yet relaxed, laid back, bike like, walking friendly city that it is*. It's a beautiful city that really can only be seen or felt by active transportation. If you walk, run, bike, skate board, dog sled, sled, cross country ski, or otherwise travel around Portland you get to actually see, feel, and hear this city. No other mode really works. Transit is fun, driving is like a cage, and with both you miss the vast majority of the life and blood of what makes Portland a great city!
 
+<span class="more"></span>
+
+![Node PDX Bike Ride](nodepdx-bike-ride.jpg)
+
 ## .NET Fringe Bike Ride
 
 With all that said, obviously we're having a bike ride at .NET Fringe! I'll be the lead, and give everybody a solid tour around some key parts of the city. I'll show you all some odd things, weird stuff, probably some strange people, architecture and other elements and features of this place called Portland! Here's the details:
