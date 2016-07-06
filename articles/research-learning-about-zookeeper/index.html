@@ -96,7 +96,7 @@
 <li><a href="https://zookeeper.apache.org/doc/trunk/zookeeperAdmin.html" target="_blank">Zookeeper&nbsp;Admin</a></li>
 <li><a href="https://zookeeper.apache.org/doc/trunk/zookeeperAdmin.html#sc_minimumConfiguration" target="_blank">Zookeeper Minimum&nbsp;Configuration</a></li>
 </ul>
-<h4 id="begin-bug-description-1<span class="ord">st</span>-docker-attempt"><span class="caps">BEGIN</span> BUG DESCRIPTION: 1ST DOCKER&nbsp;ATTEMPT</h4>
+<p><strong><span class="caps">BEGIN</span> BUG DESCRIPTION - 1ST DOCKER&nbsp;ATTEMPT</strong></p>
 <p><span class="caps">NOTE</span>: If you just want to get to the Zookeeper installation <span class="amp">&amp;</span> setup and skip this issue, <span class="caps">GOTO</span> <a href="#awsInstallation">here</a>.</p>
 <p>My first go was to pull up a clean Ubuntu docker image and prep it as a container. Then start installing the necessary parts of Zookeeper. These steps consisted of the following. I made a video for it (see toward the bottom of this entry), so you can actually see the flow and I also wrote the commands I’m tying in bash below. Then you can pick your preferred&nbsp;use.</p>
 <pre><code>docker-machine start fusion-fire
@@ -117,8 +117,8 @@ docker-machine start fusion-fire
 </code></pre><p>Once that stopped I then started the virtual machine&nbsp;again.</p>
 <pre><code>sudo apt-get -y install default-jre
 </code></pre><p>When it started I ran sudo apt-get install again. At that point apt-get attempted to recover but the install kept getting stuck on registering the certificates. So I gave up on this avenue for now. Hopefully a future Docker <span class="amp">&amp;</span> Linux Kernal fixes the problem. So instead I went out and just spooled up some <span class="caps">AWS</span> instances for now, I’ll update this blog entry with a “Part II: Docker is Zookeeper Fixed” when the Java + Linux Kernal + Docker issue is remedied, until then, here’s the installation process on the AWS&nbsp;instances.</p>
-<p><a name="awsInstallation"></a></p>
-<h3 id="end-bug-description-aws-instance-zookeeper-installation"><span class="caps">END</span> BUG DESCRIPTION: AWS Instance Zookeeper&nbsp;Installation</h3>
+<p><a name="awsInstallation"></a>
+<strong><span class="caps">END</span> BUG DESCRIPTION - AWS Instance Zookeeper&nbsp;Installation</strong></p>
 <p>Once this was setup I started 5 nano instances for Zookeeper (nano, since it’s just a test example for learning) and then logged in using broadcast with iTerm 2. From there each instance had the following commands&nbsp;executed.</p>
 <pre><code>sudo apt-get update
 sudo apt-get install -y default-jdk

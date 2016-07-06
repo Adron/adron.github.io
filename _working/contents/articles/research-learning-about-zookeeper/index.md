@@ -31,7 +31,7 @@ After reading up on the following documentation it seemed like a good time to do
 * <a href="https://zookeeper.apache.org/doc/trunk/zookeeperAdmin.html" target="_blank">Zookeeper Admin</a>
 * <a href="https://zookeeper.apache.org/doc/trunk/zookeeperAdmin.html#sc_minimumConfiguration" target="_blank">Zookeeper Minimum Configuration</a>
 
-#### BEGIN BUG DESCRIPTION: 1ST DOCKER ATTEMPT
+**BEGIN BUG DESCRIPTION - 1ST DOCKER ATTEMPT**
 
 NOTE: If you just want to get to the Zookeeper installation & setup and skip this issue, GOTO [here](#awsInstallation).
 
@@ -68,7 +68,7 @@ Once that stopped I then started the virtual machine again.
 When it started I ran sudo apt-get install again. At that point apt-get attempted to recover but the install kept getting stuck on registering the certificates. So I gave up on this avenue for now. Hopefully a future Docker &amp; Linux Kernal fixes the problem. So instead I went out and just spooled up some AWS instances for now, I'll update this blog entry with a "Part II: Docker is Zookeeper Fixed" when the Java + Linux Kernal + Docker issue is remedied, until then, here's the installation process on the AWS instances.
 
 <a name="awsInstallation"></a>
-### END BUG DESCRIPTION: AWS Instance Zookeeper Installation
+**END BUG DESCRIPTION - AWS Instance Zookeeper Installation**
 
 Once this was setup I started 5 nano instances for Zookeeper (nano, since it's just a test example for learning) and then logged in using broadcast with iTerm 2. From there each instance had the following commands executed.
 
