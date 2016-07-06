@@ -615,36 +615,6 @@ export TF_VAR_password=&amp;quot;someSecretPassword&amp;quot;
 </description>
     </item>
     <item>
-      <title>The SAM Pattern - a distributed system view of Front-End architectures by Jean-Jacques Dubray</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-jean-jacques-dubray/</link>
-      <pubDate>Sat, 04 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-jean-jacques-dubray/</guid>
-      <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-jean-jacques-dubray/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-left&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-jean-jacques-dubray/jj-sized.png&quot; alt=&quot;Jean-Jacques Dubray&quot;&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Jean-Jacques Dubray is the founder of &lt;a href=&quot;http://xgen.io&quot;&gt;xgen.io&lt;/a&gt; and &lt;a href=&quot;http://www.gliiph.com&quot;&gt;gliiph&lt;/a&gt;. He has been building Service Oriented Architectures,
-and API platforms for the last 15 years. He is a former member of the research staff at HRL and earned his Ph.D. from
-the University of Provence (Luminy campus), home of the Prolog language. He is the inventor of the &lt;a href=&quot;http://www.xgenio.com/bolt-introduction.pdf&quot;&gt;BOLT methodology&lt;/a&gt; and the SAM pattern.&lt;/p&gt;
-&lt;p&gt;In his talk Jean-Jacques Dubray presents that Web Applications are rapidly becoming sophisticated distributed systems. When you look at a Facebook page or a Netflix catalog,
-the number of components interacting with each other requires complex synchronization and state management capabilities, reaching
-the limits of the MVC pattern.&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;In the last couple of years, several reactive architectures have started to get some interest (React, Cycle.js, ELM) without
-generating significant traction (compared to established frameworks like Angular), while struggling to position effects in their
-programming model. A new reactive, functional pattern, the State-Action-Model pattern (SAM) was introduced in early 2016 on the
-foundation of TLA+ semantics.&lt;/p&gt;
-&lt;p&gt;The pattern, which is unapologetically driven by simplicity, promotes a clear delineation between the business logic and the view
-and challenges the complexity of frameworks like Google’s Angular or Facebook’s React/Redux.&lt;/p&gt;
-&lt;p&gt;SAM’s unidirectional flow is also challenging interactive patterns like BFF (Back-End for Front-End) or the Vertical Slice Pattern
-which suggest creating view-specific APIs, per platform, app, versions of an app…&lt;/p&gt;
-&lt;p&gt;We’ll start by reviewing some of the key challenges of modern UX and Front-End Architectures. We will then present the
-key concepts of SAM and walk the audience through some node.js code samples (including server-side TimeTravel).&lt;/p&gt;
-</description>
-    </item>
-    <item>
       <title>Modern Javascript Frameworks - Introduction to Ember.JS and Ember-CLI by Suchita Doshi</title>
       <link>http://adron.github.io/articles/node-pdx-2016-suchita-doshi/</link>
       <pubDate>Sat, 04 Jun 2016 17:00:00 -0700</pubDate>
@@ -675,20 +645,33 @@ In this talk I would be covering the following:&lt;/p&gt;
 </description>
     </item>
     <item>
-      <title>WebSockets Bring Light at the End of the Tunnel by Joel Lord</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</link>
-      <pubDate>Fri, 03 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</guid>
+      <title>The SAM Pattern - a distributed system view of Front-End architectures by Jean-Jacques Dubray</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-jean-jacques-dubray/</link>
+      <pubDate>Sat, 04 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-jean-jacques-dubray/</guid>
       <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-jean-jacques-dubray/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;div class=&quot;image float-left&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/joel-lord.jpg&quot; alt=&quot;Joel Lord&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-jean-jacques-dubray/jj-sized.png&quot; alt=&quot;Jean-Jacques Dubray&quot;&gt;
 &lt;/div&gt;
 
-&lt;p&gt;As a Development Manager, Joel’s motivation and proven technical prowess makes him a key member of Spiria’s software development team. With a degree in computational astrophysics, his interests eventually made their way to software and Web design. Today, his knowledge of JavaScript lets him to support a variety of projects on both the front end and back end. As we move into the age of the Internet of Things, Joel is ready with his passion for programming node bots and experimenting with gadgets.&lt;/p&gt;
+&lt;p&gt;Jean-Jacques Dubray is the founder of &lt;a href=&quot;http://xgen.io&quot;&gt;xgen.io&lt;/a&gt; and &lt;a href=&quot;http://www.gliiph.com&quot;&gt;gliiph&lt;/a&gt;. He has been building Service Oriented Architectures,
+and API platforms for the last 15 years. He is a former member of the research staff at HRL and earned his Ph.D. from
+the University of Provence (Luminy campus), home of the Prolog language. He is the inventor of the &lt;a href=&quot;http://www.xgenio.com/bolt-introduction.pdf&quot;&gt;BOLT methodology&lt;/a&gt; and the SAM pattern.&lt;/p&gt;
+&lt;p&gt;In his talk Jean-Jacques Dubray presents that Web Applications are rapidly becoming sophisticated distributed systems. When you look at a Facebook page or a Netflix catalog,
+the number of components interacting with each other requires complex synchronization and state management capabilities, reaching
+the limits of the MVC pattern.&lt;/p&gt;
 &lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Joel is going to speak on Web Sockets and tunnels of light… or to describe it more specifically more and more, people seem to be obsessed with real-time data.  But what does real-time mean in the world of REST servers and one-way communication?  Most modern web applications are now either displaying a snapshot of data at a given time or use a polling mechanism to update series of data at a given interval.
-In this talk, you will learn about the power of WebSockets and how they can (and should!) be used in your modern web applications. In these 30 minutes, I will go through the process of building a Node server that can push data to multiple clients in real-time.  You will see how this can be easy using the socket.io library.&lt;/p&gt;
+&lt;p&gt;In the last couple of years, several reactive architectures have started to get some interest (React, Cycle.js, ELM) without
+generating significant traction (compared to established frameworks like Angular), while struggling to position effects in their
+programming model. A new reactive, functional pattern, the State-Action-Model pattern (SAM) was introduced in early 2016 on the
+foundation of TLA+ semantics.&lt;/p&gt;
+&lt;p&gt;The pattern, which is unapologetically driven by simplicity, promotes a clear delineation between the business logic and the view
+and challenges the complexity of frameworks like Google’s Angular or Facebook’s React/Redux.&lt;/p&gt;
+&lt;p&gt;SAM’s unidirectional flow is also challenging interactive patterns like BFF (Back-End for Front-End) or the Vertical Slice Pattern
+which suggest creating view-specific APIs, per platform, app, versions of an app…&lt;/p&gt;
+&lt;p&gt;We’ll start by reviewing some of the key challenges of modern UX and Front-End Architectures. We will then present the
+key concepts of SAM and walk the audience through some node.js code samples (including server-side TimeTravel).&lt;/p&gt;
 </description>
     </item>
     <item>
@@ -726,6 +709,23 @@ it can be.&lt;/p&gt;
 &lt;li&gt;show number of players&lt;/li&gt;
 &lt;li&gt;start when 4 players in? one player hit’s start? let all player see total count as well and status of the other players&lt;/li&gt;
 &lt;/ul&gt;
+</description>
+    </item>
+    <item>
+      <title>WebSockets Bring Light at the End of the Tunnel by Joel Lord</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</link>
+      <pubDate>Fri, 03 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-left&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/joel-lord.jpg&quot; alt=&quot;Joel Lord&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;As a Development Manager, Joel’s motivation and proven technical prowess makes him a key member of Spiria’s software development team. With a degree in computational astrophysics, his interests eventually made their way to software and Web design. Today, his knowledge of JavaScript lets him to support a variety of projects on both the front end and back end. As we move into the age of the Internet of Things, Joel is ready with his passion for programming node bots and experimenting with gadgets.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Joel is going to speak on Web Sockets and tunnels of light… or to describe it more specifically more and more, people seem to be obsessed with real-time data.  But what does real-time mean in the world of REST servers and one-way communication?  Most modern web applications are now either displaying a snapshot of data at a given time or use a polling mechanism to update series of data at a given interval.
+In this talk, you will learn about the power of WebSockets and how they can (and should!) be used in your modern web applications. In these 30 minutes, I will go through the process of building a Node server that can push data to multiple clients in real-time.  You will see how this can be easy using the socket.io library.&lt;/p&gt;
 </description>
     </item>
     <item>
@@ -1259,35 +1259,41 @@ Talks about why Riak, Cassandra, and even the company Camille works at (Rent the
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https://github.com/streamsets&quot; target=&quot;_blank&quot;&gt;Github StreamSets&lt;/a&gt;&lt;/li&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&quot;beats-a-href-http-lifehacker-com-are-beats-by-dre-headphones-any-good-1509805994-target-_blank-not-a-a-href-http-lmkprod-com-9-reasons-to-not-buy-beats-by-dre-headphones-target-_blank-the-a-a-href-http-forums-macrumors-com-threads-why-not-to-buy-the-beats-by-dre-1376663-target-_blank-dumb-a-a-href-http-www-viewpoints-com-expert-reviews-2013-11-08-why-i-will-never-buy-beats-by-dre-target-_blank-lousy-a-a-href-https-youtu-be-xkvzwj4pz7a-target-_blank-headphones-a-&quot;&gt;Beats (&lt;a href=&quot;http://lifehacker.com/are-beats-by-dre-headphones-any-good-1509805994&quot; target=&quot;_blank&quot;&gt;Not&lt;/a&gt; &lt;a href=&quot;http://lmkprod.com/9-reasons-to-not-buy-beats-by-dre-headphones/&quot; target=&quot;_blank&quot;&gt;the&lt;/a&gt; &lt;a href=&quot;http://forums.macrumors.com/threads/why-not-to-buy-the-beats-by-dre.1376663/&quot; target=&quot;_blank&quot;&gt;Dumb&lt;/a&gt; &lt;a href=&quot;http://www.viewpoints.com/expert-reviews/2013/11/08/why-i-will-never-buy-beats-by-dre/&quot; target=&quot;_blank&quot;&gt;Lousy&lt;/a&gt; &lt;a href=&quot;https://youtu.be/XkVZwj4pZ7A&quot; target=&quot;_blank&quot;&gt;Headphones&lt;/a&gt;)&lt;/h2&gt;
-&lt;p&gt;&lt;img class=&quot;  wp-image-11983 alignright&quot; src=&quot;https://compositecode.files.wordpress.com/2015/12/packetbeat-fish-and-cluster.png&quot; alt=&quot;packetbeat-fish-and-cluster&quot; width=&quot;330&quot; height=&quot;152&quot; /&gt;Recently I &lt;a href=&quot;http://compositecode.com/2015/11/25/nagios-and-ubuntu-64-bit-14-04-lts-setup-configuration/&quot;&gt;installed Nagios&lt;/a&gt; as I will be doing a lot of systems monitoring, management, and general devops style work in the coming weeks to build out solid site reliability. Nagios will theoretically do a lot of the things I need it to do, but then I stumbled into the recently released &lt;a href=&quot;https://www.elastic.co/products/beats&quot; target=&quot;_blank&quot;&gt;Beats&lt;/a&gt; by &lt;a href=&quot;https://www.elastic.co/&quot; target=&quot;_blank&quot;&gt;Elastic Search&lt;/a&gt; (not by Dre, see above links in the title).&lt;/p&gt;
-&lt;p&gt;I won’t even try to explain Beats, because it is super straight forward. I do suggest checking out the site if you’re even slightly interested, but if you just want the quick lowdown, here’s a quote that basically summarizes the tool.&lt;/p&gt;
-&lt;p&gt;&lt;blockquote&gt;“Beats is the platform for building lightweight, open source data shippers for many types of operational data you want to enrich with Logstash, search and analyze in Elasticsearch, and visualize in Kibana. Whether you’re interested in log files, infrastructure metrics, network packets, or any other type of data, Beats serves as the foundation for keeping a beat on your data.”&lt;/blockquote&gt;
-So there ya go, something that collects a ton - if not almost all of - the data that I need to manage and monitor the infrastructure, platforms, network, and more that I’m responsible for. I’m currently diving in, but here’s a few key good bits about Beats that I’m excited to check out.&lt;/p&gt;
-&lt;p&gt;&lt;h3&gt;&lt;img class=&quot;  wp-image-11987 alignright&quot; src=&quot;https://compositecode.files.wordpress.com/2015/12/packetbeat-fish-nodes-bkgd.png&quot; alt=&quot;packetbeat-fish-nodes-bkgd.png&quot; width=&quot;282&quot; height=&quot;141&quot; /&gt;#1 - PacketBeat&lt;/h3&gt;
-This is the realtime network packet analyzer that integrates with Elasticsearch and provides the respective analytics you’d expect. It gives a level of visibility with Beats between all the network servers and such that will prospectively give me insight to were our &lt;em&gt;&lt;a href=&quot;https://youtu.be/f99PcP0aFNE&quot; target=&quot;_blank&quot;&gt;series of tubes&lt;/a&gt; or getting clogged up&lt;/em&gt;. I’m looking forward to seeing our requests mapped up with our responses!  ;)&lt;/p&gt;
-&lt;p&gt;&lt;h3&gt;#2 - FileBeat&lt;/h3&gt;
-This is a log data shipper based on the Logstash-Forwarder. At least it was at one point, it appears to look like it is less and less based on it. This beat monitors log directories for log files, tails the fails, and forwards them to Logstash. This completes another important part of what I need to systemically monitor within our systems.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Random fascinating observations:&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;ul&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Did I mention Beats is written in Go? Furtherering Derek’s tweet from 2012!  ;)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;a href=&quot;https://twitter.com/derekcollison/status/245522124666716160&quot;&gt;https://twitter.com/derekcollison/status/245522124666716160&lt;/a&gt;&lt;ul&gt;&lt;/li&gt;
-&lt;li&gt;Beats has a cool logo, and the design of the tooling is actually solid, as if someone cared about how one would interact with the tools. I’ll see how this holds up as I implement a sample implementation of things with Beats &amp;amp; the various data collectors.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;strong&gt;More References &amp;amp; Reading Material for Beats:&lt;/strong&gt;&lt;ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.elastic.co/blog/beats-1-0-0&quot; target=&quot;_blank&quot;&gt;Beats 1.0.0 Release&lt;/a&gt;&lt;/li&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/elastic/beats&quot; target=&quot;_blank&quot;&gt;Beats on Github&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-That’s it for the highlights so far. If anything else catches my eye this evening at the Elasticon Tour, I’ll get started rambling about it too!&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&quot;image float-left&quot;&gt;
-    &lt;img src=&quot;http://adron.github.io/articles/elasticon-tour-2015-in-seattle/anImage.jpg&quot; alt=&quot;Somebody&quot;&gt;
+&lt;h2 id=&quot;beats-not-http-lifehacker-com-are-beats-by-dre-headphones-any-good-1509805994-the-http-lmkprod-com-9-reasons-to-not-buy-beats-by-dre-headphones-lousy-http-forums-macrumors-com-threads-why-not-to-buy-the-beats-by-dre-1376663-target-_blank-dumb-a-a-href-http-www-viewpoints-com-expert-reviews-2013-11-08-why-i-will-never-buy-beats-by-dre-headphones-https-youtu-be-xkvzwj4pz7a-&quot;&gt;Beats (&lt;a href=&quot;http://lifehacker.com/are-beats-by-dre-headphones-any-good-1509805994&quot;&gt;Not&lt;/a&gt; &lt;a href=&quot;http://lmkprod.com/9-reasons-to-not-buy-beats-by-dre-headphones/&quot;&gt;the&lt;/a&gt; &lt;a href=&quot;http://forums.macrumors.com/threads/why-not-to-buy-the-beats-by-dre.1376663/&amp;quot; target=&amp;quot;_blank&amp;quot;&amp;gt;Dumb&amp;lt;/a&amp;gt; &amp;lt;a href=&amp;quot;http://www.viewpoints.com/expert-reviews/2013/11/08/why-i-will-never-buy-beats-by-dre/&quot;&gt;Lousy&lt;/a&gt; &lt;a href=&quot;https://youtu.be/XkVZwj4pZ7A&quot;&gt;Headphones&lt;/a&gt;)&lt;/h2&gt;
+&lt;div class=&quot;image float-right&quot;&gt;
+    &lt;img class=&quot;img-responsive&quot; src=&quot;./packetbeat-fish-and-cluster.png&quot; /&gt;
 &lt;/div&gt;
 
+&lt;p&gt;Recently I &lt;a href=&quot;http://compositecode.com/2015/11/25/nagios-and-ubuntu-64-bit-14-04-lts-setup-configuration/&quot;&gt;installed Nagios&lt;/a&gt; as I will be doing a lot of systems monitoring, management, and general devops style work in the coming weeks to build out solid site reliability. Nagios will theoretically do a lot of the things I need it to do, but then I stumbled into the recently released &lt;a href=&quot;https://www.elastic.co/products/beats&quot; target=&quot;_blank&quot;&gt;Beats&lt;/a&gt; by &lt;a href=&quot;https://www.elastic.co/&quot; target=&quot;_blank&quot;&gt;Elastic Search&lt;/a&gt; (not by Dre, see above links in the title).&lt;/p&gt;
+&lt;p&gt;I won’t even try to explain Beats, because it is super straight forward. I do suggest checking out the site if you’re even slightly interested, but if you just want the quick lowdown, here’s a quote that basically summarizes the tool.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;“Beats is the platform for building lightweight, open source data shippers for many types of operational data you want to enrich with Logstash, search and analyze in Elasticsearch, and visualize in Kibana. Whether you’re interested in log files, infrastructure metrics, network packets, or any other type of data, Beats serves as the foundation for keeping a beat on your data.”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;So there ya go, something that collects a ton - if not almost all of - the data that I need to manage and monitor the infrastructure, platforms, network, and more that I’m responsible for. I’m currently diving in, but here’s a few key good bits about Beats that I’m excited to check out.&lt;/p&gt;
+&lt;div class=&quot;image float-right&quot;&gt;
+    &lt;img class=&quot;img-responsive&quot; src=&quot;./packetbeat-fish-nodes-bkgd.png&quot; /&gt;
+&lt;/div&gt;
 
+&lt;h3 id=&quot;1-packetbeat&quot;&gt;1 - PacketBeat&lt;/h3&gt;
+&lt;p&gt;This is the real-time network packet analyzer that integrates with Elasticsearch and provides the respective analytics you’d expect. It gives a level of visibility with Beats between all the network servers and such that will prospectively give me insight to were our &lt;em&gt;&lt;a href=&quot;https://youtu.be/f99PcP0aFNE&quot; target=&quot;_blank&quot;&gt;series of tubes&lt;/a&gt; or getting clogged up&lt;/em&gt;. I’m looking forward to seeing our requests mapped up with our responses!  ;)&lt;/p&gt;
+&lt;h3 id=&quot;2-filebeat&quot;&gt;2 - FileBeat&lt;/h3&gt;
+&lt;p&gt;This is a log data shipper based on the Logstash-Forwarder. At least it was at one point, it appears to look like it is less and less based on it. This beat monitors log directories for log files, tails the fails, and forwards them to Logstash. This completes another important part of what I need to systemically monitor within our systems.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Random fascinating observations:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Did I mention Beats is written in Go? Furtherering Derek’s tweet from 2012!  ;)&lt;/li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;en&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;Prediction: Go will become the dominant language for systems work in IaaS, Orchestration, and PaaS in 24 months. &lt;a href=&quot;https://twitter.com/hashtag/golang?src=hash&quot;&gt;#golang&lt;/a&gt;&lt;/p&gt;&amp;mdash; Derek Collison (@derekcollison) &lt;a href=&quot;https://twitter.com/derekcollison/status/245522124666716160&quot;&gt;September 11, 2012&lt;/a&gt;&lt;/blockquote&gt;&lt;/p&gt;
+&lt;script async src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
 
+&lt;ul&gt;
+&lt;li&gt;Beats has a cool logo, and the design of the tooling is actually solid, as if someone cared about how one would interact with the tools. I’ll see how this holds up as I implement a sample implementation of things with Beats &amp;amp; the various data collectors.&lt;/li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;More References &amp;amp; Reading Material for Beats:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.elastic.co/blog/beats-1-0-0&quot; target=&quot;_blank&quot;&gt;Beats 1.0.0 Release&lt;/a&gt;&lt;/li&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/elastic/beats&quot; target=&quot;_blank&quot;&gt;Beats on Github&lt;/a&gt;&lt;/li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;That’s it for the highlights so far. If anything else catches my eye this evening at the Elasticon Tour, I’ll get started rambling about it too!&lt;/p&gt;
 </description>
     </item>
     <item>
