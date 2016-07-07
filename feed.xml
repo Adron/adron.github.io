@@ -1261,7 +1261,7 @@ Talks about why Riak, Cassandra, and even the company Camille works at (Rent the
 &lt;/ul&gt;
 &lt;h2 id=&quot;beats-not-http-lifehacker-com-are-beats-by-dre-headphones-any-good-1509805994-the-http-lmkprod-com-9-reasons-to-not-buy-beats-by-dre-headphones-lousy-http-forums-macrumors-com-threads-why-not-to-buy-the-beats-by-dre-1376663-target-_blank-dumb-a-a-href-http-www-viewpoints-com-expert-reviews-2013-11-08-why-i-will-never-buy-beats-by-dre-headphones-https-youtu-be-xkvzwj4pz7a-&quot;&gt;Beats (&lt;a href=&quot;http://lifehacker.com/are-beats-by-dre-headphones-any-good-1509805994&quot;&gt;Not&lt;/a&gt; &lt;a href=&quot;http://lmkprod.com/9-reasons-to-not-buy-beats-by-dre-headphones/&quot;&gt;the&lt;/a&gt; &lt;a href=&quot;http://forums.macrumors.com/threads/why-not-to-buy-the-beats-by-dre.1376663/&amp;quot; target=&amp;quot;_blank&amp;quot;&amp;gt;Dumb&amp;lt;/a&amp;gt; &amp;lt;a href=&amp;quot;http://www.viewpoints.com/expert-reviews/2013/11/08/why-i-will-never-buy-beats-by-dre/&quot;&gt;Lousy&lt;/a&gt; &lt;a href=&quot;https://youtu.be/XkVZwj4pZ7A&quot;&gt;Headphones&lt;/a&gt;)&lt;/h2&gt;
 &lt;div class=&quot;image float-right&quot;&gt;
-    &lt;img class=&quot;img-responsive&quot; src=&quot;./packetbeat-fish-and-cluster.png&quot; /&gt;
+    &lt;img max-width=&quot;250&quot; class=&quot;img-responsive&quot; src=&quot;./packetbeat-fish-and-cluster.png&quot; /&gt;
 &lt;/div&gt;
 
 &lt;p&gt;Recently I &lt;a href=&quot;http://compositecode.com/2015/11/25/nagios-and-ubuntu-64-bit-14-04-lts-setup-configuration/&quot;&gt;installed Nagios&lt;/a&gt; as I will be doing a lot of systems monitoring, management, and general devops style work in the coming weeks to build out solid site reliability. Nagios will theoretically do a lot of the things I need it to do, but then I stumbled into the recently released &lt;a href=&quot;https://www.elastic.co/products/beats&quot; target=&quot;_blank&quot;&gt;Beats&lt;/a&gt; by &lt;a href=&quot;https://www.elastic.co/&quot; target=&quot;_blank&quot;&gt;Elastic Search&lt;/a&gt; (not by Dre, see above links in the title).&lt;/p&gt;
@@ -1271,7 +1271,7 @@ Talks about why Riak, Cassandra, and even the company Camille works at (Rent the
 &lt;/blockquote&gt;
 &lt;p&gt;So there ya go, something that collects a ton - if not almost all of - the data that I need to manage and monitor the infrastructure, platforms, network, and more that I’m responsible for. I’m currently diving in, but here’s a few key good bits about Beats that I’m excited to check out.&lt;/p&gt;
 &lt;div class=&quot;image float-right&quot;&gt;
-    &lt;img class=&quot;img-responsive&quot; src=&quot;./packetbeat-fish-nodes-bkgd.png&quot; /&gt;
+    &lt;img max-width=&quot;250&quot; class=&quot;img-responsive&quot; src=&quot;./packetbeat-fish-nodes-bkgd.png&quot; /&gt;
 &lt;/div&gt;
 
 &lt;h3 id=&quot;1-packetbeat&quot;&gt;1 - PacketBeat&lt;/h3&gt;
