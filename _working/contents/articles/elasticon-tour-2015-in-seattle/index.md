@@ -47,7 +47,7 @@ For more information about StreamSets here are a few other solid articles:
 ## Beats ([Not](http://lifehacker.com/are-beats-by-dre-headphones-any-good-1509805994) [the](http://lmkprod.com/9-reasons-to-not-buy-beats-by-dre-headphones/) [Lousy](http://forums.macrumors.com/threads/why-not-to-buy-the-beats-by-dre.1376663/" target="_blank">Dumb</a> <a href="http://www.viewpoints.com/expert-reviews/2013/11/08/why-i-will-never-buy-beats-by-dre/) [Headphones](https://youtu.be/XkVZwj4pZ7A))
 
 <div class="image float-right">
-    <img max-width="250" class="img-responsive" src="./packetbeat-fish-and-cluster.png" />
+    <img class="img-responsive" src="./packetbeat-fish-and-cluster.png" />
 </div>
 
 Recently I <a href="http://compositecode.com/2015/11/25/nagios-and-ubuntu-64-bit-14-04-lts-setup-configuration/">installed Nagios</a> as I will be doing a lot of systems monitoring, management, and general devops style work in the coming weeks to build out solid site reliability. Nagios will theoretically do a lot of the things I need it to do, but then I stumbled into the recently released <a href="https://www.elastic.co/products/beats" target="_blank">Beats</a> by <a href="https://www.elastic.co/" target="_blank">Elastic Search</a> (not by Dre, see above links in the title).
@@ -59,7 +59,7 @@ I won't even try to explain Beats, because it is super straight forward. I do su
 So there ya go, something that collects a ton - if not almost all of - the data that I need to manage and monitor the infrastructure, platforms, network, and more that I'm responsible for. I'm currently diving in, but here's a few key good bits about Beats that I'm excited to check out.
 
 <div class="image float-right">
-    <img max-width="250" class="img-responsive" src="./packetbeat-fish-nodes-bkgd.png" />
+    <img class="img-responsive" src="./packetbeat-fish-nodes-bkgd.png" />
 </div>
 
 ### 1 - PacketBeat
