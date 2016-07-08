@@ -773,23 +773,6 @@ In this talk, you will learn about the power of WebSockets and how they can (and
 &lt;iframe width=&quot;1280&quot; height=&quot;720&quot; src=&quot;https://www.youtube.com/embed/L2BVDJWHdy0?rel=0&amp;amp;showinfo=0&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;</description>
     </item>
     <item>
-      <title>The House Is Not On Fire - Building a home automation robot with Arduino, Raspberry Pi and Node.js by Artur Paikin</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</link>
-      <pubDate>Wed, 01 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</guid>
-      <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-right&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/art-stida.jpg&quot; alt=&quot;Artur Paikin&quot;&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Artur describes himself as, “I’m a web developer and traveler. I write stories about my adventures in Russian and English on my site: &lt;a href=&quot;http://arturpaikin.com&quot;&gt;http://arturpaikin.com&lt;/a&gt; and run a small technology cooperative called &lt;a href=&quot;http://unebaguette.com&quot;&gt;Baguette&lt;/a&gt;, where I work on cool projects, currently building an ambitious next generation file uploader with &lt;a href=&quot;https://transloadit.com/&quot;&gt;Transloadit&lt;/a&gt;. I ride a &lt;a href=&quot;https://www.instagram.com/p/xC0qC2SSYb&quot;&gt;foldable bicycle&lt;/a&gt;, &lt;a href=&quot;http://unebaguette.com/web-course/&quot;&gt;teach&lt;/a&gt; web development and sometimes &lt;a href=&quot;https://www.instagram.com/p/4_6LO8ySVL/&quot;&gt;garden&lt;/a&gt; on the balcony.”&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Artur has built an open source home automation system called &lt;a href=&quot;https://github.com/arturi/kotihome&quot;&gt;Koti Home&lt;/a&gt; (Koti means home in Finnish language). It’s powered by an Arduino connected to Raspberry Pi, MQTT protocol for messaging, Node.js on the client and server, web sockets. You can interact with Koti robot via a React (like the cool kids do) control panel, Telegram Chat Bot and even your own voice.&lt;/p&gt;
-&lt;p&gt;Arthur will talk about how he’s turned this project into reality — the tech he used and the challenges he faced. From a blinking LED to a voice controlled home automation robot.&lt;/p&gt;
-</description>
-    </item>
-    <item>
       <title>Code First Docs How we Threw Out The Book &amp; Put Code First With Twilio Documentation by Jarod Reyes</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-jarod-reyes/</link>
       <pubDate>Wed, 01 Jun 2016 17:00:00 -0700</pubDate>
@@ -811,6 +794,23 @@ In this talk, you will learn about the power of WebSockets and how they can (and
 &lt;li&gt;Twitter: &lt;a href=&quot;https://twitter.com/jreyesdev&quot;&gt;@jreyesdev&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Github: &lt;a href=&quot;https://github.com/jarodreyes&quot;&gt;github.com/jarodreyes&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+</description>
+    </item>
+    <item>
+      <title>The House Is Not On Fire - Building a home automation robot with Arduino, Raspberry Pi and Node.js by Artur Paikin</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</link>
+      <pubDate>Wed, 01 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-right&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/art-stida.jpg&quot; alt=&quot;Artur Paikin&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Artur describes himself as, “I’m a web developer and traveler. I write stories about my adventures in Russian and English on my site: &lt;a href=&quot;http://arturpaikin.com&quot;&gt;http://arturpaikin.com&lt;/a&gt; and run a small technology cooperative called &lt;a href=&quot;http://unebaguette.com&quot;&gt;Baguette&lt;/a&gt;, where I work on cool projects, currently building an ambitious next generation file uploader with &lt;a href=&quot;https://transloadit.com/&quot;&gt;Transloadit&lt;/a&gt;. I ride a &lt;a href=&quot;https://www.instagram.com/p/xC0qC2SSYb&quot;&gt;foldable bicycle&lt;/a&gt;, &lt;a href=&quot;http://unebaguette.com/web-course/&quot;&gt;teach&lt;/a&gt; web development and sometimes &lt;a href=&quot;https://www.instagram.com/p/4_6LO8ySVL/&quot;&gt;garden&lt;/a&gt; on the balcony.”&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Artur has built an open source home automation system called &lt;a href=&quot;https://github.com/arturi/kotihome&quot;&gt;Koti Home&lt;/a&gt; (Koti means home in Finnish language). It’s powered by an Arduino connected to Raspberry Pi, MQTT protocol for messaging, Node.js on the client and server, web sockets. You can interact with Koti robot via a React (like the cool kids do) control panel, Telegram Chat Bot and even your own voice.&lt;/p&gt;
+&lt;p&gt;Arthur will talk about how he’s turned this project into reality — the tech he used and the challenges he faced. From a blinking LED to a voice controlled home automation robot.&lt;/p&gt;
 </description>
     </item>
     <item>
@@ -1310,25 +1310,23 @@ Talks about why Riak, Cassandra, and even the company Camille works at (Rent the
 &lt;/code&gt;&lt;/pre&gt;</description>
     </item>
     <item>
-      <title>latest 5th gen dell xps 13 developer edition</title>
-      <link>http://adron.github.io/articles/latest-5th-gen-dell-xps-13-developer-edition/</link>
+      <title>The Latest 5th Generation Dell XPS 13 Developer Edition</title>
+      <link>http://adron.github.io/articles/latest-fifth-gen-dell-xps-13-developer-edition/</link>
       <pubDate>Wed, 22 Jul 2015 14:54:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/latest-5th-gen-dell-xps-13-developer-edition/</guid>
+      <guid isPermaLink="true">http://adron.github.io/articles/latest-fifth-gen-dell-xps-13-developer-edition/</guid>
       <author></author>
       <description>&lt;p&gt;Just about 4 weeks ago now I purchased a Dell XPS 13 Developer Edition directly from Dell. The reason I purchased this laptop is because of two needs I have while traveling and writing code.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;I wanted something &lt;em&gt;small&lt;/em&gt;, &lt;em&gt;compact&lt;/em&gt;, that had &lt;em&gt;reasonable power&lt;/em&gt;, and…&lt;/li&gt;
+&lt;li&gt;It needed to run &lt;em&gt;Linux&lt;/em&gt; (likely &lt;em&gt;Ubuntu&lt;/em&gt;, but I’d have taken whatever) from the factory and have active support.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;ul&gt;
-&lt;li&gt;It needed to run &lt;em&gt;Linux&lt;/em&gt; (likely &lt;em&gt;Ubuntu&lt;/em&gt;, but I’d have taken whatever) from the factory and have active support.&lt;/li&gt;&lt;/li&gt;
-&lt;/ul&gt;
 &lt;p&gt;Here’s my experience with this machine so far. There are lots of good things, and some really lousy things about this laptop. This is the lowdown on all the plusses and minuses. But before I dive into the plusses and minuses, it is important to understand more of the context in which I’m doing this review.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Dell didn’t send me a free laptop. I paid $1869 for the laptop. Nobody has paid me to review this laptop. I purchased it and am reviewing it purely out of my own interest.&lt;/li&gt;&lt;/li&gt;
-&lt;li&gt;The &lt;strong&gt;&lt;a href=&quot;http://www.dell.com/us/business/p/xps-13-linux/pd&quot; target=&quot;_blank&quot;&gt;XPS 13 Developer Edition&lt;/a&gt;&lt;/strong&gt; that I have has &lt;em&gt;8GB RAM&lt;/em&gt;, &lt;em&gt;512 GB SSD&lt;/em&gt;, and the stunningly beautiful 13.3-inch &lt;em&gt;UltraSharp™ QHD+ (3200 x 1800) InfinityEdge Touch Display&lt;/em&gt;.&lt;/li&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Exterior Chassis Materials&lt;/strong&gt; -&amp;gt; CNC machined aluminum w/ Edge-to-edge Corning® Gorilla® Glass NBT™ on QHD+ w/ Carbon fiber composite palm rest with soft touch paint.&lt;/li&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Keyboard&lt;/strong&gt; -&amp;gt; Full size, backlit chiclet keyboard; 1.3mm travel&lt;/li&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Touchpad&lt;/strong&gt; -&amp;gt; Precision touchpad, seamless glass integrated button&lt;/li&gt;&lt;/li&gt;
+&lt;li&gt;Dell didn’t send me a free laptop. I paid $1869 for the laptop. Nobody has paid me to review this laptop. I purchased it and am reviewing it purely out of my own interest.&lt;/li&gt;
+&lt;li&gt;The &lt;strong&gt;&lt;a href=&quot;http://www.dell.com/us/business/p/xps-13-linux/pd&quot; target=&quot;_blank&quot;&gt;XPS 13 Developer Edition&lt;/a&gt;&lt;/strong&gt; that I have has &lt;em&gt;8GB RAM&lt;/em&gt;, &lt;em&gt;512 GB SSD&lt;/em&gt;, and the stunningly beautiful 13.3-inch &lt;em&gt;UltraSharp™ QHD+ (3200 x 1800) InfinityEdge Touch Display&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Exterior Chassis Materials&lt;/strong&gt; -&amp;gt; CNC machined aluminum w/ Edge-to-edge Corning® Gorilla® Glass NBT™ on QHD+ w/ Carbon fiber composite palm rest with soft touch paint.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Keyboard&lt;/strong&gt; -&amp;gt; Full size, backlit chiclet keyboard; 1.3mm travel&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Touchpad&lt;/strong&gt; -&amp;gt; Precision touchpad, seamless glass integrated button&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;h2 id=&quot;negatives&quot;&gt;Negatives&lt;/h2&gt;
@@ -1348,28 +1346,28 @@ Talks about why Riak, Cassandra, and even the company Camille works at (Rent the
 &lt;h2 id=&quot;positives&quot;&gt;Positives&lt;/h2&gt;
 &lt;h3 id=&quot;the-packaging&quot;&gt;The Packaging&lt;/h3&gt;
 &lt;p&gt;Well the first thing you’ll notice, that I found to be a positive, albeit an insignificant one but it did make for a nice first experience is the packaging. Dell has really upped their game in this regard, instead of being the low-end game, Dell seems to have gotten some style and design put together for the packaging.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/articles/latest-5th-gen-dell-xps-13-developer-edition/01.jpg&quot; alt=&quot;Dell XPS 13 Developer Edition Box&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/latest-fifth-gen-dell-xps-13-developer-edition/01.jpg&quot; alt=&quot;Dell XPS 13 Developer Edition Box&quot;&gt;&lt;/p&gt;
 &lt;p&gt;The box was smooth, and seamless in most ways. Giving a very elegant feel. When I opened up the box the entire laptop was in the cut plastic wrap to protect all the surfaces.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/articles/latest-5th-gen-dell-xps-13-developer-edition/02.jpg&quot; alt=&quot;Plastic Glimmer from protective plastics&quot;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/articles/latest-5th-gen-dell-xps-13-developer-edition/03.jpg&quot; alt=&quot;Umm, what is this paper booklet stuff. :-/&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/latest-fifth-gen-dell-xps-13-developer-edition/02.jpg&quot; alt=&quot;Plastic Glimmer from protective plastics&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/latest-fifth-gen-dell-xps-13-developer-edition/03.jpg&quot; alt=&quot;Umm, what is this paper booklet stuff. :-/&quot;&gt;&lt;/p&gt;
 &lt;p&gt;Removing the cut plastic is easy enough. It is held together with just some simple stickiness (some type of clean glue).&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/articles/latest-5th-gen-dell-xps-13-developer-edition/04.jpg&quot; alt=&quot;Removing the Plastic&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/latest-fifth-gen-dell-xps-13-developer-edition/04.jpg&quot; alt=&quot;Removing the Plastic&quot;&gt;&lt;/p&gt;
 &lt;p&gt;Once off the glimmer of the machine starts to really show. The aluminum surface material is really really nice.&lt;/p&gt;
-&lt;p&gt;&lt;img class=&quot;&quot; src=&quot;http://photos.adron.me/Software/Reviews/Dell-XPS-13/i-kPn8PxD/0/L/IMG_2417-L.jpg&quot; alt=&quot;A Side View of the XPS 13&quot; width=&quot;800&quot; height=&quot;600&quot; /&gt; A Side View of the XPS 13&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/latest-fifth-gen-dell-xps-13-developer-edition/05.jpg&quot; alt=&quot;A Side View of the XPS 13&quot;&gt;&lt;/p&gt;
 &lt;p&gt;The beauty of an untainted machine running Ubuntu Linux. Check out that slick carbon fiber mesh too.&lt;/p&gt;
-&lt;p&gt;&lt;img class=&quot;&quot; src=&quot;http://photos.adron.me/Software/Reviews/Dell-XPS-13/i-Fmt8TdF/0/L/IMG_2420-L.jpg&quot; alt=&quot;Carbon Fiber Mesh&quot; width=&quot;800&quot; height=&quot;600&quot; /&gt; Carbon Fiber Mesh&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/latest-fifth-gen-dell-xps-13-developer-edition/06.jpg&quot; alt=&quot;Carbon Fiber Mesh&quot;&gt;&lt;/p&gt;
 &lt;p&gt;Here it is opened and unwrapped, not turned on yet and the glimmer of that glossy screen can be seen already.&lt;/p&gt;
-&lt;p&gt;&lt;img class=&quot;&quot; src=&quot;http://photos.adron.me/Software/Reviews/Dell-XPS-13/i-bbTZxV9/0/L/IMG_2419-L.jpg&quot; alt=&quot;A Glimmer of the Screen&quot; width=&quot;800&quot; height=&quot;600&quot; /&gt; A Glimmer of the Screen&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/latest-fifth-gen-dell-xps-13-developer-edition/07.jpg&quot; alt=&quot;A Glimmer of the Screen&quot;&gt;&lt;/p&gt;
 &lt;p&gt;Here’s a side by side comparison of the screens for the glossy hi res screen against the flat standard res screen. Both are absolutely gorgeous screens, regardless of which you get.&lt;/p&gt;
-&lt;p&gt;&lt;img class=&quot;&quot; src=&quot;http://photos.adron.me/Software/Reviews/Dell-XPS-13/i-gqQSdtv/0/L/IMG_2421-L.jpg&quot; alt=&quot;XPS 13 Twins&quot; width=&quot;800&quot; height=&quot;600&quot; /&gt; XPS 13 Twins&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/latest-fifth-gen-dell-xps-13-developer-edition/08.jpg&quot; alt=&quot;XPS 13 Twins&quot;&gt;&lt;/p&gt;
 &lt;p&gt;Booting up you can see the glimmer on my XPS 13.&lt;/p&gt;
-&lt;p&gt;&lt;img class=&quot;&quot; src=&quot;http://photos.adron.me/Software/Reviews/Dell-XPS-13/i-2XvLt84/0/L/IMG_2426-L.jpg&quot; alt=&quot;Glimmer on the Bootup&quot; width=&quot;800&quot; height=&quot;600&quot; /&gt; Glimmer on the Bootup&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/latest-fifth-gen-dell-xps-13-developer-edition/09.jpg&quot; alt=&quot;Glimmer on the Bootup&quot;&gt;&lt;/p&gt;
 &lt;h3 id=&quot;the-screen&quot;&gt;The Screen&lt;/h3&gt;
 &lt;p&gt;The screen, even during simple bootup and first configuration of Ubuntu like this it is evident that the screen is stunning. The retina quality screen on such a small form factor is worth the laptop alone. The working resolution is 1920x1080, but of course the real resolution is 3200x1800. Now, if you want, you could run things at this resolution at your own risk to blindness and eye strain, but it is possible.&lt;/p&gt;
 &lt;p&gt;The crispness of this screen is easily one of the best on the market today and rivals that of the retina screens on any of the 13” or 15” Apple machines. The other aspect of the screen, which isn’t super relevant when suing Ubuntu is that it is touch enabled. So you can poke things and certain things will happen, albeit Ubuntu isn’t exactly configured for touch display. In the end, it’s basically irrelevant that it is a touch screen too, except in the impressive idea that they got a touch screen of this depth on such a small machine!&lt;/p&gt;
-&lt;p&gt;&lt;img class=&quot;&quot; src=&quot;http://photos.adron.me/Software/Reviews/Dell-XPS-13/i-29R4FqJ/0/L/IMG_2427-L.jpg&quot; alt=&quot;Booted Up&quot; width=&quot;800&quot; height=&quot;600&quot; /&gt; Booted Up&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/latest-fifth-gen-dell-xps-13-developer-edition/10.jpg&quot; alt=&quot;Booted Up&quot;&gt;&lt;/p&gt;
 &lt;p&gt;Here’s a little more of the glimmer, as I download the necessary things to do some F# builds.&lt;/p&gt;
-&lt;p&gt;&lt;img class=&quot;&quot; src=&quot;http://photos.adron.me/Software/Reviews/Dell-XPS-13/i-R996Bhm/0/L/IMG_2444-L.jpg&quot; alt=&quot;Setting up F#&quot; width=&quot;800&quot; height=&quot;600&quot; /&gt; Setting up F#&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/latest-fifth-gen-dell-xps-13-developer-edition/11.jpg&quot; alt=&quot;Setting up F#&quot;&gt;&lt;/p&gt;
 &lt;h3 id=&quot;performance-and-boot-time&quot;&gt;Performance and Boot Time&lt;/h3&gt;
 &lt;p&gt;Boot time is decent. I’m not going to go into the seconds it takes but it’s quick. Also when you get the update for sleep, that’s really quick too. So no issue there at all.&lt;/p&gt;
 &lt;p&gt;On the performance front, as I mentioned in the negatives there are some issues with performance. However, for many - if not most - everyday developer tasks like building C#, F#, C++, C, Java, and a host of other languages the machine is actually fairly performant.&lt;/p&gt;
@@ -1378,22 +1376,25 @@ Talks about why Riak, Cassandra, and even the company Camille works at (Rent the
 &lt;h3 id=&quot;weight-and-size&quot;&gt;Weight and Size&lt;/h3&gt;
 &lt;p&gt;I’ll kick this positive feature off with some addition photos of the laptop compared to a Mac Book Pro 15” Retina and a Apple Air 13”.&lt;/p&gt;
 &lt;p&gt;First the 13” Air.&lt;/p&gt;
-&lt;p&gt;&lt;img class=&quot;&quot; src=&quot;http://photos.adron.me/Software/Reviews/Dell-XPS-13/i-CTQcbsG/0/L/IMG_3365-L.jpg&quot; alt=&quot;Stacked from the side.&quot; width=&quot;800&quot; height=&quot;600&quot; /&gt; Stacked from the side.&lt;/p&gt;
-&lt;p&gt;&lt;img class=&quot;&quot; src=&quot;http://photos.adron.me/Software/Reviews/Dell-XPS-13/i-M7zvTzj/0/L/IMG_3369-L.jpg&quot; alt=&quot;USB, Power, Headphones and Related Ports up close.&quot; width=&quot;800&quot; height=&quot;600&quot; /&gt; USB, Power, Headphones and Related Ports up close.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/latest-fifth-gen-dell-xps-13-developer-edition/12.jpg&quot; alt=&quot;Stacked from the side.&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/latest-fifth-gen-dell-xps-13-developer-edition/13.jpg&quot; alt=&quot;USB, Power, Headphones and Related Ports up close.&quot;&gt;&lt;/p&gt;
 &lt;p&gt;No the Mac Book Pro 15” Retina&lt;/p&gt;
-&lt;p&gt;[caption id=”” align=”aligncenter” width=”2880”]&lt;img class=&quot;&quot; src=&quot;http://photos.adron.me/Software/Reviews/Dell-XPS-13/i-vstBR57/0/2880x2160/IMG_3359-2880x2160.jpg&quot; alt=&quot;MBP 15&quot; width=&quot;2880&quot; height=&quot;2160&quot; /&gt; MBP 15”. The XSP 13 is considerably smaller - as it obviously would be.&lt;/p&gt;
-&lt;p&gt;[caption id=”” align=”aligncenter” width=”2448”]&lt;img class=&quot;&quot; src=&quot;http://photos.adron.me/Software/Reviews/Dell-XPS-13/i-GTNsfjg/0/O/IMG_3358.jpg&quot; alt=&quot;A top down view of the XPS 13 on top of the 15&quot; width=&quot;2448&quot; height=&quot;3264&quot; /&gt; A top down view of the XPS 13 on top of the 15” Retina.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/latest-fifth-gen-dell-xps-13-developer-edition/14.jpg&quot; alt=&quot;MBP 15&amp;quot;. The XSP 13 is considerably smaller - as it obviously would be.&quot;&gt;&lt;/p&gt;
 &lt;p&gt;…and then on top of the Mac Air 13”.&lt;/p&gt;
-&lt;p&gt;[caption id=”” align=”aligncenter” width=”2880”]&lt;img src=&quot;http://photos.adron.me/Software/Reviews/Dell-XPS-13/i-w279vXc/0/2880x2160/IMG_3362-2880x2160.jpg&quot; alt=&quot;On top of the MBA 13&quot; width=&quot;2880&quot; height=&quot;2160&quot; /&gt; On top of the MBA 13”&lt;/p&gt;
-&lt;p&gt;&lt;img class=&quot;&quot; src=&quot;http://photos.adron.me/Software/Reviews/Dell-XPS-13/i-w6Z4swZ/0/L/IMG_0644-L.jpg&quot; alt=&quot;The 13&quot; width=&quot;800&quot; height=&quot;534&quot; /&gt; The 13” sitting on top of the 15” Retina&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/latest-fifth-gen-dell-xps-13-developer-edition/15.jpg&quot; alt=&quot;On top of the MBA 13&amp;quot;&quot;&gt; &lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/latest-fifth-gen-dell-xps-13-developer-edition/16.jpg&quot; alt=&quot;The 13&amp;quot; sitting on top of the 15&amp;quot; Retina&quot;&gt;&lt;/p&gt;
 &lt;p&gt;Of course there are smaller Mac Book Pros and Mac Book Air Laptops, but these are the two I had on hand (and still use regularly) to do a quick comparison with. The 13” Dell is considerably smaller in overall footprint and is as light or lighter than both of these laptops. The XPS makes for a great laptop for carrying around all the time, and really not even noticing its presence.&lt;/p&gt;
 &lt;h3 id=&quot;battery-life&quot;&gt;Battery Life&lt;/h3&gt;
 &lt;p&gt;The new XPS 13 battery life, with Ubuntu, is a solid 6-12 hours depending on activity. I mention Ubuntu, because as anybody knows the Linux options on conserving battery life are a bit awkward. Namely, they don’t always do so well. But with managing the screen lighting, back light, and resource intensive applications it would be possible to even exceed the 12 hour lifespan of the batter with Ubuntu. I expect with Windows the lifespan is probably 10-15% better than under Ubuntu. That is, without any tweaks or manual management of Ubuntu.&lt;/p&gt;
 &lt;p&gt;So if you’re looking for a long batter life, and Apple options aren’t on the table, this is definitely a great option for working long hours without needing to be plugged in.&lt;/p&gt;
 &lt;h2 id=&quot;summary&quot;&gt;Summary&lt;/h2&gt;
+&lt;div class=&quot;image float-right&quot;&gt;
+    &lt;img src=&quot;/articles/latest-fifth-gen-dell-xps-13-developer-edition/beer.png&quot; alt=&quot;Cheers!&quot;&gt;
+&lt;/div&gt;
+
 &lt;p&gt;Overall, a spectacular laptop in MOST ways. However that keyboard is a serious problem for most people. I can imagine most people will NOT want to deal with the keyboard. I’m ok with it, but I don’t mind typing with hands up and off the resting points on the laptop. If Dell can fix this I’d give it a 100% buy suggestion, but with the keyboard as buggy and flaky as it is, I give the laptop at 60% buy suggestion. If you’re looking for a machine with Ubuntu out of the box, I’d probably aim for a Lenovo until Dell fixes the keyboard situation. Then I’d even suggest this machine over the Lenovo options.&lt;/p&gt;
-&lt;p&gt;&lt;img class=&quot; size-full wp-image-10855 alignright&quot; src=&quot;https://compositecode.files.wordpress.com/2015/04/26768-200.png&quot; alt=&quot;&quot; width=&quot;200&quot; height=&quot;200&quot; /&gt;…and among all things, I’d still suggest running Linux on a MBA or MBP over any of these - the machines are just more solid in manufacturing quality, durability, and the tech (i.e. battery, screen, etc) are still tops in many ways. But if you don’t want to feed the Apple Nation’s Piggy Bank, dump them and go with this Dell or maybe a Lenovo option.&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;Happy hacking and cheers! &lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;…and among all things, I’d still suggest running Linux on a MBA or MBP over any of these - the machines are just more solid in manufacturing quality, durability, and the tech (i.e. battery, screen, etc) are still tops in many ways. But if you don’t want to feed the Apple Nation’s Piggy Bank, dump them and go with this Dell or maybe a Lenovo option.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Happy hacking and cheers!&lt;/em&gt;&lt;/p&gt;
 </description>
     </item>
   </channel>
