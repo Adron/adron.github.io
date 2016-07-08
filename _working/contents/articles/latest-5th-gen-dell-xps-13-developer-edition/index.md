@@ -50,7 +50,7 @@ However...   on to the positives. Because there is also positives about the per
 
 Well the first thing you'll notice, that I found to be a positive, albeit an insignificant one but it did make for a nice first experience is the packaging. Dell has really upped their game in this regard, instead of being the low-end game, Dell seems to have gotten some style and design put together for the packaging.
 
-<img class="img-responsive" alt="Dell XPS 13 Developer Edition Box" src="latest-5th-gen-dell-xps-13-developer-edition/01.jpg" />
+![](01.jpg)
 
 test
 
