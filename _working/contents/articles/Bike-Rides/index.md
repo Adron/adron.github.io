@@ -30,7 +30,7 @@ So, in lieu of a bike access at hotel, home, friends, or otherwise, some great p
 * [Pedal Bike Tours](http://www.pedalbiketours.com/) - Located on [133 SW 2nd Ave, Portland, OR 97204](https://www.google.com/maps/place/Pedal+Bike+Tours/@45.522373,-122.6809235,15z/data=!4m8!1m2!2m1!1sbike+rentals!3m4!1s0x0:0x6c1861d1ea8716e0!8m2!3d45.5216706!4d-122.672739)
 * [Cycle Portland Bike Tours & Rentals](http://portlandbicycletours.com/) - Located on [117 NW 2nd Ave, Portland, OR 97209](https://www.google.com/maps/place/Cycle+Portland+Bike+Tours+%26+Rentals/@45.522373,-122.6809235,15z/data=!4m8!1m2!2m1!1sbike+rentals!3m4!1s0x0:0xed9ef696a5172958!8m2!3d45.5241437!4d-122.672562)
 
-We'll meet at the waterfront here @ [100 SW Naito Parkway](https://www.google.com/maps/@45.5213697,-122.6699997,19.25z) and depart at 6:00pm on Sunday.
+We'll meet at the waterfront here @ [100 SW Naito Parkway](https://www.google.com/maps/@45.5213697,-122.6699997,19.25z) and depart at **[[UPDATED `5:15pm`]] ** on Sunday.
 
 The ride path is a secret (mostly because we'll be JIT via dynamic path finding along the route). However, I can say it'll be low car volume, easy paths, and minimal hills (Portland is mostly flat by Cascadian standards).
 
