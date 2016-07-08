@@ -773,6 +773,23 @@ In this talk, you will learn about the power of WebSockets and how they can (and
 &lt;iframe width=&quot;1280&quot; height=&quot;720&quot; src=&quot;https://www.youtube.com/embed/L2BVDJWHdy0?rel=0&amp;amp;showinfo=0&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;</description>
     </item>
     <item>
+      <title>The House Is Not On Fire - Building a home automation robot with Arduino, Raspberry Pi and Node.js by Artur Paikin</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</link>
+      <pubDate>Wed, 01 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-right&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/art-stida.jpg&quot; alt=&quot;Artur Paikin&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Artur describes himself as, “I’m a web developer and traveler. I write stories about my adventures in Russian and English on my site: &lt;a href=&quot;http://arturpaikin.com&quot;&gt;http://arturpaikin.com&lt;/a&gt; and run a small technology cooperative called &lt;a href=&quot;http://unebaguette.com&quot;&gt;Baguette&lt;/a&gt;, where I work on cool projects, currently building an ambitious next generation file uploader with &lt;a href=&quot;https://transloadit.com/&quot;&gt;Transloadit&lt;/a&gt;. I ride a &lt;a href=&quot;https://www.instagram.com/p/xC0qC2SSYb&quot;&gt;foldable bicycle&lt;/a&gt;, &lt;a href=&quot;http://unebaguette.com/web-course/&quot;&gt;teach&lt;/a&gt; web development and sometimes &lt;a href=&quot;https://www.instagram.com/p/4_6LO8ySVL/&quot;&gt;garden&lt;/a&gt; on the balcony.”&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Artur has built an open source home automation system called &lt;a href=&quot;https://github.com/arturi/kotihome&quot;&gt;Koti Home&lt;/a&gt; (Koti means home in Finnish language). It’s powered by an Arduino connected to Raspberry Pi, MQTT protocol for messaging, Node.js on the client and server, web sockets. You can interact with Koti robot via a React (like the cool kids do) control panel, Telegram Chat Bot and even your own voice.&lt;/p&gt;
+&lt;p&gt;Arthur will talk about how he’s turned this project into reality — the tech he used and the challenges he faced. From a blinking LED to a voice controlled home automation robot.&lt;/p&gt;
+</description>
+    </item>
+    <item>
       <title>Code First Docs How we Threw Out The Book &amp; Put Code First With Twilio Documentation by Jarod Reyes</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-jarod-reyes/</link>
       <pubDate>Wed, 01 Jun 2016 17:00:00 -0700</pubDate>
@@ -794,23 +811,6 @@ In this talk, you will learn about the power of WebSockets and how they can (and
 &lt;li&gt;Twitter: &lt;a href=&quot;https://twitter.com/jreyesdev&quot;&gt;@jreyesdev&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Github: &lt;a href=&quot;https://github.com/jarodreyes&quot;&gt;github.com/jarodreyes&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-</description>
-    </item>
-    <item>
-      <title>The House Is Not On Fire - Building a home automation robot with Arduino, Raspberry Pi and Node.js by Artur Paikin</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</link>
-      <pubDate>Wed, 01 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</guid>
-      <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-right&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/art-stida.jpg&quot; alt=&quot;Artur Paikin&quot;&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Artur describes himself as, “I’m a web developer and traveler. I write stories about my adventures in Russian and English on my site: &lt;a href=&quot;http://arturpaikin.com&quot;&gt;http://arturpaikin.com&lt;/a&gt; and run a small technology cooperative called &lt;a href=&quot;http://unebaguette.com&quot;&gt;Baguette&lt;/a&gt;, where I work on cool projects, currently building an ambitious next generation file uploader with &lt;a href=&quot;https://transloadit.com/&quot;&gt;Transloadit&lt;/a&gt;. I ride a &lt;a href=&quot;https://www.instagram.com/p/xC0qC2SSYb&quot;&gt;foldable bicycle&lt;/a&gt;, &lt;a href=&quot;http://unebaguette.com/web-course/&quot;&gt;teach&lt;/a&gt; web development and sometimes &lt;a href=&quot;https://www.instagram.com/p/4_6LO8ySVL/&quot;&gt;garden&lt;/a&gt; on the balcony.”&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Artur has built an open source home automation system called &lt;a href=&quot;https://github.com/arturi/kotihome&quot;&gt;Koti Home&lt;/a&gt; (Koti means home in Finnish language). It’s powered by an Arduino connected to Raspberry Pi, MQTT protocol for messaging, Node.js on the client and server, web sockets. You can interact with Koti robot via a React (like the cool kids do) control panel, Telegram Chat Bot and even your own voice.&lt;/p&gt;
-&lt;p&gt;Arthur will talk about how he’s turned this project into reality — the tech he used and the challenges he faced. From a blinking LED to a voice controlled home automation robot.&lt;/p&gt;
 </description>
     </item>
     <item>
@@ -1348,14 +1348,12 @@ Talks about why Riak, Cassandra, and even the company Camille works at (Rent the
 &lt;h2 id=&quot;positives&quot;&gt;Positives&lt;/h2&gt;
 &lt;h3 id=&quot;the-packaging&quot;&gt;The Packaging&lt;/h3&gt;
 &lt;p&gt;Well the first thing you’ll notice, that I found to be a positive, albeit an insignificant one but it did make for a nice first experience is the packaging. Dell has really upped their game in this regard, instead of being the low-end game, Dell seems to have gotten some style and design put together for the packaging.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/articles/latest-5th-gen-dell-xps-13-developer-edition/01.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;test&lt;/p&gt;
-&lt;p&gt;&lt;img class=&quot;&quot; src=&quot;http://photos.adron.me/Software/Reviews/Dell-XPS-13/i-gPSjcz7/0/L/IMG_2411-L.jpg&quot; width=&quot;800&quot; height=&quot;600&quot; /&gt; Dell XPS 13 Developer Edition Box&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/latest-5th-gen-dell-xps-13-developer-edition/01.jpg&quot; alt=&quot;Dell XPS 13 Developer Edition Box&quot;&gt;&lt;/p&gt;
 &lt;p&gt;The box was smooth, and seamless in most ways. Giving a very elegant feel. When I opened up the box the entire laptop was in the cut plastic wrap to protect all the surfaces.&lt;/p&gt;
-&lt;p&gt;&lt;img class=&quot;&quot; src=&quot;http://photos.adron.me/Software/Reviews/Dell-XPS-13/i-gwqHjfT/0/L/IMG_2413-L.jpg&quot; alt=&quot;Plastic Glimmer from protective plastics&quot; width=&quot;800&quot; height=&quot;600&quot; /&gt; Plastic Glimmer from protective plastics&lt;/p&gt;
-&lt;p&gt;&lt;img class=&quot;&quot; src=&quot;http://photos.adron.me/Software/Reviews/Dell-XPS-13/i-LQZmtQJ/0/L/IMG_2415-L.jpg&quot; alt=&quot;Umm, what is this paper booklet stuff.  :-/&quot; width=&quot;800&quot; height=&quot;600&quot; /&gt; Umm, what is this paper booklet stuff. :-/&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/latest-5th-gen-dell-xps-13-developer-edition/02.jpg&quot; alt=&quot;Plastic Glimmer from protective plastics&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/latest-5th-gen-dell-xps-13-developer-edition/03.jpg&quot; alt=&quot;Umm, what is this paper booklet stuff. :-/&quot;&gt;&lt;/p&gt;
 &lt;p&gt;Removing the cut plastic is easy enough. It is held together with just some simple stickiness (some type of clean glue).&lt;/p&gt;
-&lt;p&gt;&lt;img class=&quot;&quot; src=&quot;http://photos.adron.me/Software/Reviews/Dell-XPS-13/i-ZRQJqwG/0/L/IMG_2414-L.jpg&quot; alt=&quot;Removing the Plastic&quot; width=&quot;800&quot; height=&quot;600&quot; /&gt; Removing the Plastic&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/latest-5th-gen-dell-xps-13-developer-edition/04.jpg&quot; alt=&quot;Removing the Plastic&quot;&gt;&lt;/p&gt;
 &lt;p&gt;Once off the glimmer of the machine starts to really show. The aluminum surface material is really really nice.&lt;/p&gt;
 &lt;p&gt;&lt;img class=&quot;&quot; src=&quot;http://photos.adron.me/Software/Reviews/Dell-XPS-13/i-kPn8PxD/0/L/IMG_2417-L.jpg&quot; alt=&quot;A Side View of the XPS 13&quot; width=&quot;800&quot; height=&quot;600&quot; /&gt; A Side View of the XPS 13&lt;/p&gt;
 &lt;p&gt;The beauty of an untainted machine running Ubuntu Linux. Check out that slick carbon fiber mesh too.&lt;/p&gt;

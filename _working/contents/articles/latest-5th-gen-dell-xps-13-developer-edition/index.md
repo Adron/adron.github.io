@@ -50,21 +50,17 @@ However...   on to the positives. Because there is also positives about the per
 
 Well the first thing you'll notice, that I found to be a positive, albeit an insignificant one but it did make for a nice first experience is the packaging. Dell has really upped their game in this regard, instead of being the low-end game, Dell seems to have gotten some style and design put together for the packaging.
 
-![](01.jpg)
-
-test
-
-<img class="" src="http://photos.adron.me/Software/Reviews/Dell-XPS-13/i-gPSjcz7/0/L/IMG_2411-L.jpg" width="800" height="600" /> Dell XPS 13 Developer Edition Box
+![Dell XPS 13 Developer Edition Box](01.jpg)
 
 The box was smooth, and seamless in most ways. Giving a very elegant feel. When I opened up the box the entire laptop was in the cut plastic wrap to protect all the surfaces.
 
-<img class="" src="http://photos.adron.me/Software/Reviews/Dell-XPS-13/i-gwqHjfT/0/L/IMG_2413-L.jpg" alt="Plastic Glimmer from protective plastics" width="800" height="600" /> Plastic Glimmer from protective plastics
+![Plastic Glimmer from protective plastics](02.jpg)
 
-<img class="" src="http://photos.adron.me/Software/Reviews/Dell-XPS-13/i-LQZmtQJ/0/L/IMG_2415-L.jpg" alt="Umm, what is this paper booklet stuff.  :-/" width="800" height="600" /> Umm, what is this paper booklet stuff. :-/
+![Umm, what is this paper booklet stuff. :-/](03.jpg)
 
 Removing the cut plastic is easy enough. It is held together with just some simple stickiness (some type of clean glue).
 
-<img class="" src="http://photos.adron.me/Software/Reviews/Dell-XPS-13/i-ZRQJqwG/0/L/IMG_2414-L.jpg" alt="Removing the Plastic" width="800" height="600" /> Removing the Plastic
+![Removing the Plastic](04.jpg)
 
 Once off the glimmer of the machine starts to really show. The aluminum surface material is really really nice.
 
