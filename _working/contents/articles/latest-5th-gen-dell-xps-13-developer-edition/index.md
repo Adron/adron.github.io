@@ -50,7 +50,11 @@ However...   on to the positives. Because there is also positives about the per
 
 Well the first thing you'll notice, that I found to be a positive, albeit an insignificant one but it did make for a nice first experience is the packaging. Dell has really upped their game in this regard, instead of being the low-end game, Dell seems to have gotten some style and design put together for the packaging.
 
-<img class="" src="http://photos.adron.me/Software/Reviews/Dell-XPS-13/i-gPSjcz7/0/L/IMG_2411-L.jpg" alt="Dell XPS 13 Developer Edition Box" width="800" height="600" /> Dell XPS 13 Developer Edition Box
+<img class="img-responsive" alt="Dell XPS 13 Developer Edition Box" src="./latest-5th-gen-dell-xps-13-developer-edition/01.jpg" />
+
+test
+
+<img class="" src="http://photos.adron.me/Software/Reviews/Dell-XPS-13/i-gPSjcz7/0/L/IMG_2411-L.jpg" width="800" height="600" /> Dell XPS 13 Developer Edition Box
 
 The box was smooth, and seamless in most ways. Giving a very elegant feel. When I opened up the box the entire laptop was in the cut plastic wrap to protect all the surfaces.
 
