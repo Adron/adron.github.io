@@ -32,4 +32,4 @@ Ok, I almost started writing something about that in this blog entry, but it'll 
 
 ## The 9am Summary
 
-So it's only 9:00am right now. I think that'll be good for now. Will add more thoughts, observations, and other news bits later today.
+So it's only 9:00am right now. I think that'll be good for now. Will add more thoughts, observations, and other news bits later today. If you're wanting help kicking off a project, connected to someone I might know, or otherwise talk tech, coding, and some devops universe topic - I'll be around, just let me know!
