@@ -5,9 +5,32 @@
     <atom:link href="http://adron.github.io/feed.xml" rel="self" type="application/rss+xml"></atom:link>
     <link>http://adron.github.io</link>
     <description>Coder, Messenger, Recon, Infrastructure, Ops</description>
-    <pubDate>Fri, 08 Jul 2016 07:29:00 -0700</pubDate>
+    <pubDate>Tue, 12 Jul 2016 09:04:00 -0700</pubDate>
     <generator>Wintersmith - https://github.com/jnordberg/wintersmith</generator>
     <language>en</language>
+    <item>
+      <title>Day 2 Multi-thinking-threads Smeared Around the Brainstorming at .NET Fringe</title>
+      <link>http://adron.github.io/articles/day-2-multi-thinking-threads-smeared-around-brainstorming/</link>
+      <pubDate>Tue, 12 Jul 2016 09:04:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/day-2-multi-thinking-threads-smeared-around-brainstorming/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;img src=&quot;/articles/day-2-multi-thinking-threads-smeared-around-brainstorming/logo.png&quot; alt=&quot;.NET Fringe Logo&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Sitting at .NET Fringe, day 2. Just introduced James Newton-King. Got a million conversations running through my mind. A lot of these conversations are worth noting, so I’ll just give a quick break out right here.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;h2 id=&quot;docker-containers-windows&quot;&gt;Docker, Containers, &amp;amp; Windows&lt;/h2&gt;
+&lt;p&gt;Started a conversation with Solomon Hykes regarding Windows and Docker Container technology use. I also started a lot of conversations yesterday and intend to have a few regarding these tech elements today.&lt;/p&gt;
+&lt;h2 id=&quot;workshops-in-portland&quot;&gt;Workshops in Portland&lt;/h2&gt;
+&lt;p&gt;I’ve had a conversation about future workshops, space, and the requisite needs around that to ensure I can deliver some awesome pending workshops to the Portland audience. Also started a conversation for people that would like to come into town for workshops, and have the assumed awesome time in Portland. We do have amazing beer, coffee, wine, food, and more. Thus any workshop in Portland will have appropriate things for any attendees. This is almost locked in, if you’re curious about these workshops, which will be seriously epic, subscribe here -&amp;gt; &lt;a href=&quot;http://blog.adron.me/thrashingcodenews.html&quot;&gt;http://blog.adron.me/thrashingcodenews.html&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;hack-kubernetes-olympia&quot;&gt;Hack Kubernetes Olympia&lt;/h2&gt;
+&lt;p&gt;Talked shortly with @NotMyself, and am plotting to take an Amtrak Cascades trip up to Olympia for a 1-2 day workshop on Kubernetes and related technologies. I’m thinking Docker + Swarm + Kubernetes + DevOps + how to make one’s life dramatically easier while delivering 10x what one could deliver jsut 5 years ago. This, I assure you will be a blast too.&lt;/p&gt;
+&lt;h2 id=&quot;windows-server-vs-the-coders-universe&quot;&gt;Windows Server vs…  the coders Universe&lt;/h2&gt;
+&lt;p&gt;So it seems that my assumption is safe. A large number of people in the .NET space love C#, F#, (even VB.NET), and other elements of .NET. There seems to be a resounding frustration around Windows OS itself, namely server not Windows 10. As a development OS it’s fine, albeit there are probably as many or more OS-X as Windows machines running and, dare I say at least 2 Linux machines at .NET Fringe right now. (Right @adymitruk) I’m very cool with this, as the pressure will grow to make Windows Server more, how should I put it, “Devopsified” or something like that might work.&lt;/p&gt;
+&lt;h2 id=&quot;memetic-independence&quot;&gt;Memetic Independence&lt;/h2&gt;
+&lt;p&gt;Ok, I almost started writing something about that in this blog entry, but it’ll get it’s own in the near future. @dsyme hit on a dramatically important topic for the longevity and life of any open source software stack, and very applicative to .NET.&lt;/p&gt;
+&lt;h2 id=&quot;the-9am-summary&quot;&gt;The 9am Summary&lt;/h2&gt;
+&lt;p&gt;So it’s only 9:00am right now. I think that’ll be good for now. Will add more thoughts, observations, and other news bits later today. If you’re wanting help kicking off a project, connected to someone I might know, or otherwise talk tech, coding, and some devops universe topic - I’ll be around, just let me know!&lt;/p&gt;
+</description>
+    </item>
     <item>
       <title>.NET Fringe Bike Ride</title>
       <link>http://adron.github.io/articles/Bike-Rides/</link>
@@ -675,6 +698,23 @@ key concepts of SAM and walk the audience through some node.js code samples (inc
 </description>
     </item>
     <item>
+      <title>WebSockets Bring Light at the End of the Tunnel by Joel Lord</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</link>
+      <pubDate>Fri, 03 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-left&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/joel-lord.jpg&quot; alt=&quot;Joel Lord&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;As a Development Manager, Joel’s motivation and proven technical prowess makes him a key member of Spiria’s software development team. With a degree in computational astrophysics, his interests eventually made their way to software and Web design. Today, his knowledge of JavaScript lets him to support a variety of projects on both the front end and back end. As we move into the age of the Internet of Things, Joel is ready with his passion for programming node bots and experimenting with gadgets.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Joel is going to speak on Web Sockets and tunnels of light… or to describe it more specifically more and more, people seem to be obsessed with real-time data.  But what does real-time mean in the world of REST servers and one-way communication?  Most modern web applications are now either displaying a snapshot of data at a given time or use a polling mechanism to update series of data at a given interval.
+In this talk, you will learn about the power of WebSockets and how they can (and should!) be used in your modern web applications. In these 30 minutes, I will go through the process of building a Node server that can push data to multiple clients in real-time.  You will see how this can be easy using the socket.io library.&lt;/p&gt;
+</description>
+    </item>
+    <item>
       <title>MMOWAM - Build Server-less Games with a DSN by Josh Marinacci</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-josh-marinacci/</link>
       <pubDate>Fri, 03 Jun 2016 17:00:00 -0700</pubDate>
@@ -709,23 +749,6 @@ it can be.&lt;/p&gt;
 &lt;li&gt;show number of players&lt;/li&gt;
 &lt;li&gt;start when 4 players in? one player hit’s start? let all player see total count as well and status of the other players&lt;/li&gt;
 &lt;/ul&gt;
-</description>
-    </item>
-    <item>
-      <title>WebSockets Bring Light at the End of the Tunnel by Joel Lord</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</link>
-      <pubDate>Fri, 03 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</guid>
-      <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-left&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/joel-lord.jpg&quot; alt=&quot;Joel Lord&quot;&gt;
-&lt;/div&gt;
-
-&lt;p&gt;As a Development Manager, Joel’s motivation and proven technical prowess makes him a key member of Spiria’s software development team. With a degree in computational astrophysics, his interests eventually made their way to software and Web design. Today, his knowledge of JavaScript lets him to support a variety of projects on both the front end and back end. As we move into the age of the Internet of Things, Joel is ready with his passion for programming node bots and experimenting with gadgets.&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Joel is going to speak on Web Sockets and tunnels of light… or to describe it more specifically more and more, people seem to be obsessed with real-time data.  But what does real-time mean in the world of REST servers and one-way communication?  Most modern web applications are now either displaying a snapshot of data at a given time or use a polling mechanism to update series of data at a given interval.
-In this talk, you will learn about the power of WebSockets and how they can (and should!) be used in your modern web applications. In these 30 minutes, I will go through the process of building a Node server that can push data to multiple clients in real-time.  You will see how this can be easy using the socket.io library.&lt;/p&gt;
 </description>
     </item>
     <item>
