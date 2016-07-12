@@ -5,9 +5,32 @@
     <atom:link href="http://adron.github.io/feed.xml" rel="self" type="application/rss+xml"></atom:link>
     <link>http://adron.github.io</link>
     <description>Coder, Messenger, Recon, Infrastructure, Ops</description>
-    <pubDate>Fri, 08 Jul 2016 07:29:00 -0700</pubDate>
+    <pubDate>Tue, 12 Jul 2016 09:04:00 -0700</pubDate>
     <generator>Wintersmith - https://github.com/jnordberg/wintersmith</generator>
     <language>en</language>
+    <item>
+      <title>Day 2 Multi-thinking-threads Smeared Around the Brainstorming at .NET Fringe</title>
+      <link>http://adron.github.io/articles/day-2-multi-thinking-threads-smeared-around-brainstorming/</link>
+      <pubDate>Tue, 12 Jul 2016 09:04:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/day-2-multi-thinking-threads-smeared-around-brainstorming/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;img src=&quot;/articles/day-2-multi-thinking-threads-smeared-around-brainstorming/logo.png&quot; alt=&quot;.NET Fringe Logo&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Sitting at .NET Fringe, day 2. Just introduced James Newton-King. Got a million conversations running through my mind. A lot of these conversations are worth noting, so I’ll just give a quick break out right here.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;h2 id=&quot;docker-containers-windows&quot;&gt;Docker, Containers, &amp;amp; Windows&lt;/h2&gt;
+&lt;p&gt;Started a conversation with Solomon Hykes regarding Windows and Docker Container technology use. I also started a lot of conversations yesterday and intend to have a few regarding these tech elements today.&lt;/p&gt;
+&lt;h2 id=&quot;workshops-in-portland&quot;&gt;Workshops in Portland&lt;/h2&gt;
+&lt;p&gt;I’ve had a conversation about future workshops, space, and the requisite needs around that to ensure I can deliver some awesome pending workshops to the Portland audience. Also started a conversation for people that would like to come into town for workshops, and have the assumed awesome time in Portland. We do have amazing beer, coffee, wine, food, and more. Thus any workshop in Portland will have appropriate things for any attendees. This is almost locked in, if you’re curious about these workshops, which will be seriously epic, subscribe here -&amp;gt; &lt;a href=&quot;http://blog.adron.me/thrashingcodenews.html&quot;&gt;http://blog.adron.me/thrashingcodenews.html&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;hack-kubernetes-olympia&quot;&gt;Hack Kubernetes Olympia&lt;/h2&gt;
+&lt;p&gt;Talked shortly with @NotMyself, and am plotting to take an Amtrak Cascades trip up to Olympia for a 1-2 day workshop on Kubernetes and related technologies. I’m thinking Docker + Swarm + Kubernetes + DevOps + how to make one’s life dramatically easier while delivering 10x what one could deliver jsut 5 years ago. This, I assure you will be a blast too.&lt;/p&gt;
+&lt;h2 id=&quot;windows-server-vs-the-coders-universe&quot;&gt;Windows Server vs…  the coders Universe&lt;/h2&gt;
+&lt;p&gt;So it seems that my assumption is safe. A large number of people in the .NET space love C#, F#, (even VB.NET), and other elements of .NET. There seems to be a resounding frustration around Windows OS itself, namely server not Windows 10. As a development OS it’s fine, albeit there are probably as many or more OS-X as Windows machines running and, dare I say at least 2 Linux machines at .NET Fringe right now. (Right @adymitruk) I’m very cool with this, as the pressure will grow to make Windows Server more, how should I put it, “Devopsified” or something like that might work.&lt;/p&gt;
+&lt;h2 id=&quot;memetic-independence&quot;&gt;Memetic Independence&lt;/h2&gt;
+&lt;p&gt;Ok, I almost started writing something about that in this blog entry, but it’ll get it’s own in the near future. @dsyme hit on a dramatically important topic for the longevity and life of any open source software stack, and very applicative to .NET.&lt;/p&gt;
+&lt;h2 id=&quot;the-9am-summary&quot;&gt;The 9am Summary&lt;/h2&gt;
+&lt;p&gt;So it’s only 9:00am right now. I think that’ll be good for now. Will add more thoughts, observations, and other news bits later today.&lt;/p&gt;
+</description>
+    </item>
     <item>
       <title>.NET Fringe Bike Ride</title>
       <link>http://adron.github.io/articles/Bike-Rides/</link>
@@ -773,23 +796,6 @@ In this talk, you will learn about the power of WebSockets and how they can (and
 </description>
     </item>
     <item>
-      <title>The House Is Not On Fire - Building a home automation robot with Arduino, Raspberry Pi and Node.js by Artur Paikin</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</link>
-      <pubDate>Wed, 01 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</guid>
-      <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-right&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/art-stida.jpg&quot; alt=&quot;Artur Paikin&quot;&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Artur describes himself as, “I’m a web developer and traveler. I write stories about my adventures in Russian and English on my site: &lt;a href=&quot;http://arturpaikin.com&quot;&gt;http://arturpaikin.com&lt;/a&gt; and run a small technology cooperative called &lt;a href=&quot;http://unebaguette.com&quot;&gt;Baguette&lt;/a&gt;, where I work on cool projects, currently building an ambitious next generation file uploader with &lt;a href=&quot;https://transloadit.com/&quot;&gt;Transloadit&lt;/a&gt;. I ride a &lt;a href=&quot;https://www.instagram.com/p/xC0qC2SSYb&quot;&gt;foldable bicycle&lt;/a&gt;, &lt;a href=&quot;http://unebaguette.com/web-course/&quot;&gt;teach&lt;/a&gt; web development and sometimes &lt;a href=&quot;https://www.instagram.com/p/4_6LO8ySVL/&quot;&gt;garden&lt;/a&gt; on the balcony.”&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Artur has built an open source home automation system called &lt;a href=&quot;https://github.com/arturi/kotihome&quot;&gt;Koti Home&lt;/a&gt; (Koti means home in Finnish language). It’s powered by an Arduino connected to Raspberry Pi, MQTT protocol for messaging, Node.js on the client and server, web sockets. You can interact with Koti robot via a React (like the cool kids do) control panel, Telegram Chat Bot and even your own voice.&lt;/p&gt;
-&lt;p&gt;Arthur will talk about how he’s turned this project into reality — the tech he used and the challenges he faced. From a blinking LED to a voice controlled home automation robot.&lt;/p&gt;
-</description>
-    </item>
-    <item>
       <title>Code First Docs How we Threw Out The Book &amp; Put Code First With Twilio Documentation by Jarod Reyes</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-jarod-reyes/</link>
       <pubDate>Wed, 01 Jun 2016 17:00:00 -0700</pubDate>
@@ -811,6 +817,23 @@ In this talk, you will learn about the power of WebSockets and how they can (and
 &lt;li&gt;Twitter: &lt;a href=&quot;https://twitter.com/jreyesdev&quot;&gt;@jreyesdev&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Github: &lt;a href=&quot;https://github.com/jarodreyes&quot;&gt;github.com/jarodreyes&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+</description>
+    </item>
+    <item>
+      <title>The House Is Not On Fire - Building a home automation robot with Arduino, Raspberry Pi and Node.js by Artur Paikin</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</link>
+      <pubDate>Wed, 01 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-right&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/art-stida.jpg&quot; alt=&quot;Artur Paikin&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Artur describes himself as, “I’m a web developer and traveler. I write stories about my adventures in Russian and English on my site: &lt;a href=&quot;http://arturpaikin.com&quot;&gt;http://arturpaikin.com&lt;/a&gt; and run a small technology cooperative called &lt;a href=&quot;http://unebaguette.com&quot;&gt;Baguette&lt;/a&gt;, where I work on cool projects, currently building an ambitious next generation file uploader with &lt;a href=&quot;https://transloadit.com/&quot;&gt;Transloadit&lt;/a&gt;. I ride a &lt;a href=&quot;https://www.instagram.com/p/xC0qC2SSYb&quot;&gt;foldable bicycle&lt;/a&gt;, &lt;a href=&quot;http://unebaguette.com/web-course/&quot;&gt;teach&lt;/a&gt; web development and sometimes &lt;a href=&quot;https://www.instagram.com/p/4_6LO8ySVL/&quot;&gt;garden&lt;/a&gt; on the balcony.”&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Artur has built an open source home automation system called &lt;a href=&quot;https://github.com/arturi/kotihome&quot;&gt;Koti Home&lt;/a&gt; (Koti means home in Finnish language). It’s powered by an Arduino connected to Raspberry Pi, MQTT protocol for messaging, Node.js on the client and server, web sockets. You can interact with Koti robot via a React (like the cool kids do) control panel, Telegram Chat Bot and even your own voice.&lt;/p&gt;
+&lt;p&gt;Arthur will talk about how he’s turned this project into reality — the tech he used and the challenges he faced. From a blinking LED to a voice controlled home automation robot.&lt;/p&gt;
 </description>
     </item>
     <item>
