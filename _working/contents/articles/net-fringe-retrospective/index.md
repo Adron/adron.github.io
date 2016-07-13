@@ -18,9 +18,9 @@ At this point I've deemed it time for a solid retrospective on organizing, commu
 
 Conferences themselves are great experiences for the vast majority of people that attend the conferences. It's also a great way to build a community that knows each other beyond the virtual space. Having these connections is invaluable - from the connections that Steve Jobs & Wozniak made at conferences that led to Apples creation to Microsoft at the same, to today with open source conferences like OSCON, Strangeloop, and other great community led conferences. These are the places where conversations start that build this industry and take us into the future.
 
-In that sense, I hope Node PDX and .NET Fringe have helped to grow the community in Portland. I hope it has helped people to expand on ideas, projects, and overall grow as individuals and build more cohesive organizations. I too, have grown and been able to expand and build on ideas and various projects because of these projects. In many ways these conferences have helped me to build my future.
+In that sense, I hope Node PDX and .NET Fringe have helped to grow the community in Portland and beyond. I hope it has helped people to expand on ideas, projects, and overall grow as individuals and build more cohesive organizations. I too, have grown and been able to expand and build on ideas and various projects because of these efforts. In many ways these conferences have helped me to build my future.
 
-I myself am going to take a break this coming dozen or more months, maybe permenantly, from conference organizing. I have however already started plotting some of the next big projects that I will contribute or build. Namely, I intend to start speaking and providing workshops on several key spaces within the tech industry that I see a horrid gap that needs filled. More on that real soon.
+I myself am going to take a break this coming dozen or more months, ma ybe permanantly, from conference organizing. I have however already started plotting some of the next big projects that I will contribute or build. Namely, I intend to start speaking and providing workshops on several key spaces within the tech industry that I see a horrid gap that needs filled. More on that real soon.
 
 ## Community Organizing vs. Value Added
 
