@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="http://adron.github.io/css/style.min.css">
     <script src="http://adron.github.io/js/modernizr.js"></script>
   </head>
-  <body>
+  <body class="article-detail">
     <!--[if lt IE 8]>
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -59,8 +59,10 @@
             <div class="col-md-12">
               <!-- Page Info-->
               <div class="page-info page-info-simple">
-                <h1>Adron's Composite Code</h1>
-                <h2 class="description">Coder, Messenger, Recon, Infrastructure, Ops</h2>
+                <h1>Nginx Default Config File</h1>
+                <p class="author">Written by <span class="author">Adron Hall</span>
+                </p>
+                <div class="nav"><a href="/">« Home</a></div>
               </div>
               <!-- End Page Info-->
             </div>
@@ -75,61 +77,217 @@
             <div class="col-md-9">
               <div class="main-content">
                 <!-- Blog Page-->
-                <div class="blog">
-                  <div class="row"></div>
-                </div>
-                <div class="col-md-12 col-sm-12">
-                  <!-- Blog List-->
-                  <div class="blog-grid">
-                    <div class="row">
-                      <div class="col-md-12 col-sm-12">
-                        <h3 class="blog-grid-title"><a href="/articles/Bike-Rides/">.NET Fringe Bike Ride</a></h3>
-                        <p class="blog-grid-excerpt"><p>In my <strong><em>not so humble opinion</em></strong> every conference should have a bike ride. But I realize it isn’t always possible. This is one of the ways conferences that Troy <span class="amp">&amp;</span> I put on here in Portland are very different. We have a love for Portland; <em>the energy, the chill, vibrant yet relaxed, laid back, bike like, walking friendly city that it is</em>. It’s a beautiful city that really can only be seen or felt by active transportation. If you walk, run, bike, skate board, dog sled, sled, cross country ski, or otherwise travel around Portland you get to actually see, feel, and hear this city. No other mode really works. Transit is fun, driving is like a cage, and with both you miss the vast majority of the life and blood of what makes Portland a great&nbsp;city!</p>
-<p>
-                          <p class="more"><a href="/articles/Bike-Rides/">more</a></p>
-                        </p>
-                        <div class="blog-grid-meta"><span class="blog-grid-date">08. July 2016</span></div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End of Blog List-->
-                </div>
-                <div class="col-md-12 col-sm-12">
-                  <!-- Blog List-->
-                  <div class="blog-grid">
-                    <div class="row">
-                      <div class="col-md-12 col-sm-12">
-                        <h3 class="blog-grid-title"><a href="/articles/Node-PDX-2016-Photos/">Node PDX 2016 Photos</a></h3>
-                        <p class="blog-grid-excerpt"><p>Here’s a selection of photos from Node <span class="caps">PDX</span>. To check out all of the photos I’ve uploaded them on <a href="http://photos.adron.me/Software/Meetups-N-Conferences/Conferences/Node-PDX-2016/">http://photos.adron.me/Software/Meetups-N-Conferences/Conferences/Node-<span class="caps">PDX</span>-2016/</a>.</p>
-<p>Videos are available at <a href="https://www.youtube.com/playlist?list=PLILnvQDgzULPSdF9Eppfl5MqQe0M3hhtx">https://www.youtube.com/playlist?list=PLILnvQDgzULPSdF9Eppfl5MqQe0M3hhtx</a></p>
-<p><a href="http://photos.adron.me/Software/Meetups-N-Conferences/Conferences/Node-PDX-2016/"><img src="/articles/Node-PDX-2016-Photos/codes.jpg" alt="Codes"></a></p>
-<p>
-                          <p class="more"><a href="/articles/Node-PDX-2016-Photos/">more</a></p>
-                        </p>
-                        <div class="blog-grid-meta"><span class="blog-grid-date">29. June 2016</span></div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End of Blog List-->
-                </div>
-                <div class="col-md-12 col-sm-12">
-                  <!-- Blog List-->
-                  <div class="blog-grid">
-                    <div class="row">
-                      <div class="col-md-12 col-sm-12">
-                        <h3 class="blog-grid-title"><a href="/articles/node-pdx-2016-bike-ride/">Node PDX 2016 Bike Ride, Photos, and More</a></h3>
-                        <p class="blog-grid-excerpt"><p>Node <span class="caps">PDX</span>, at least for me, kicked off Saturday morning before the conference. This involved the Geek Train, which as always was a great ride. After returning everyone went off for the evening and I prepared more for the&nbsp;conference.</p>
-<p>The following day involved Sunday conference setup, workshops, and the Node <span class="caps">PDX</span> bike ride. Here’s a few photos of the ride and our break at Cup <span class="amp">&amp;</span> Bar. In the next blog entry I’ll have more pictures <span class="amp">&amp;</span> videos of the talks coming&nbsp;up.</p>
-<p><img src="/articles/node-pdx-2016-bike-ride/nodepdx-bike-ride.jpg" alt="Node PDX Bike Ride"></p>
-<p>
-                          <p class="more"><a href="/articles/node-pdx-2016-bike-ride/">more</a></p>
-                        </p>
-                        <div class="blog-grid-meta"><span class="blog-grid-date">29. June 2016</span></div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End of Blog List-->
-                </div>
+                <docs class="article">
+                  <section class="content"><p>The following is a default Nginx configuration file as referred to in my <a href="/articles/nginx-notes-from-the-url-redirect/">NGinx Notes from <span class="caps">URL</span> Redirect Project on Google Cloud with Terraform <span class="amp">&amp;</span> Packer</a>&nbsp;post.</p>
+<pre><code>user       www www;  ## Default: nobody
+worker_processes  5;  ## Default: 1
+error_log  logs/error.log;
+pid        logs/nginx.pid;
+worker_rlimit_nofile 8192;
+
+events {
+  worker_connections  4096;  ## Default: 1024
+}
+
+http {
+  include    conf/mime.types;
+  include    /etc/nginx/proxy.conf;
+  include    /etc/nginx/fastcgi.conf;
+  index    index.html index.htm index.php;
+
+  default_type application/octet-stream;
+  log_format   main &#39;$remote_addr - $remote_user [$time_local]  $status &#39;
+    &#39;&quot;$request&quot; $body_bytes_sent &quot;$http_referer&quot; &#39;
+    &#39;&quot;$http_user_agent&quot; &quot;$http_x_forwarded_for&quot;&#39;;
+  access_log   logs/access.log  main;
+  sendfile     on;
+  tcp_nopush   on;
+  server_names_hash_bucket_size 128; # this seems to be required for some vhosts
+
+  server { # php/fastcgi
+    listen       80;
+    server_name  domain1.com www.domain1.com;
+    access_log   logs/domain1.access.log  main;
+    root         html;
+
+    location ~ \.php$ {
+      fastcgi_pass   127.0.0.1:1025;
+    }
+  }
+
+  server { # simple reverse-proxy
+    listen       80;
+    server_name  domain2.com www.domain2.com;
+    access_log   logs/domain2.access.log  main;
+
+    # serve static files
+    location ~ ^/(images|javascript|js|css|flash|media|static)/  {
+      root    /var/www/virtual/big.server.com/htdocs;
+      expires 30d;
+    }
+
+    # pass requests for dynamic content to rails/turbogears/zope, et al
+    location / {
+      proxy_pass      http://127.0.0.1:8080;
+    }
+  }
+
+  upstream big_server_com {
+    server 127.0.0.3:8000 weight=5;
+    server 127.0.0.3:8001 weight=5;
+    server 192.168.0.1:8000;
+    server 192.168.0.1:8001;
+  }
+
+  server { # simple load balancing
+    listen          80;
+    server_name     big.server.com;
+    access_log      logs/big.server.access.log main;
+
+    location / {
+      proxy_pass      http://big_server_com;
+    }
+  }
+}
+</code></pre><p>Another sample file is shown&nbsp;below.</p>
+<pre><code>#user  nobody;
+#Defines which Linux system user will own and run the Nginx server
+
+worker_processes  1;
+#Referes to single threaded process. Generally set to be equal to the number of CPUs or cores.
+
+#error_log  logs/error.log; #error_log  logs/error.log  notice;
+#Specifies the file where server logs. 
+
+#pid        logs/nginx.pid;
+#nginx will write its master process ID(PID).
+
+events {
+    worker_connections  1024;
+    # worker_processes and worker_connections allows you to calculate maxclients value: 
+    # max_clients = worker_processes * worker_connections
+}
+
+
+http {
+    include       mime.types;
+    # anything written in /opt/nginx/conf/mime.types is interpreted as if written inside the http { } block
+
+    default_type  application/octet-stream;
+    #
+
+    #log_format  main  &#39;$remote_addr - $remote_user [$time_local] &quot;$request&quot; &#39;
+    #                  &#39;$status $body_bytes_sent &quot;$http_referer&quot; &#39;
+    #                  &#39;&quot;$http_user_agent&quot; &quot;$http_x_forwarded_for&quot;&#39;;
+
+    #access_log  logs/access.log  main;
+
+    sendfile        on;
+    # If serving locally stored static files, sendfile is essential to speed up the server,
+    # But if using as reverse proxy one can deactivate it
+
+    #tcp_nopush     on;
+    # works opposite to tcp_nodelay. Instead of optimizing delays, it optimizes the amount of data sent at once.
+
+    #keepalive_timeout  0;
+    keepalive_timeout  65;
+    # timeout during which a keep-alive client connection will stay open.
+
+    #gzip  on;
+    # tells the server to use on-the-fly gzip compression.
+
+    server {
+        # You would want to make a separate file with its own server block for each virtual domain
+        # on your server and then include them.
+        listen       80;
+        #tells Nginx the hostname and the TCP port where it should listen for HTTP connections.
+        # listen 80; is equivalent to listen *:80;
+
+        server_name  localhost;
+        # lets you doname-based virtual hosting
+
+        #charset koi8-r;
+
+        #access_log  logs/host.access.log  main;
+
+        location / {
+            #The location setting lets you configure how nginx responds to requests for resources within the server.
+            root   html;
+            index  index.html index.htm;
+        }
+
+        #error_page  404              /404.html;
+
+        # redirect server error pages to the static page /50x.html
+        #
+        error_page   500 502 503 504  /50x.html;
+        location = /50x.html {
+            root   html;
+        }
+
+        # proxy the PHP scripts to Apache listening on 127.0.0.1:80
+        #
+        #location ~ \.php$ {
+        #    proxy_pass   http://127.0.0.1;
+        #}
+
+        # pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000
+        #
+        #location ~ \.php$ {
+        #    root           html;
+        #    fastcgi_pass   127.0.0.1:9000;
+        #    fastcgi_index  index.php;
+        #    fastcgi_param  SCRIPT_FILENAME  /scripts$fastcgi_script_name;
+        #    include        fastcgi_params;
+        #}
+
+        # deny access to .htaccess files, if Apache&#39;s document root
+        # concurs with nginx&#39;s one
+        #
+        #location ~ /\.ht {
+        #    deny  all;
+        #}
+    }
+
+
+    # another virtual host using mix of IP-, name-, and port-based configuration
+    #
+    #server {
+    #    listen       8000;
+    #    listen       somename:8080;
+    #    server_name  somename  alias  another.alias;
+
+    #    location / {
+    #        root   html;
+    #        index  index.html index.htm;
+    #    }
+    #}
+
+
+    # HTTPS server
+    #
+    #server {
+    #    listen       443 ssl;
+    #    server_name  localhost;
+
+    #    ssl_certificate      cert.pem;
+    #    ssl_certificate_key  cert.key;
+
+    #    ssl_session_cache    shared:SSL:1m;
+    #    ssl_session_timeout  5m;
+
+    #    ssl_ciphers  HIGH:!aNULL:!MD5;
+    #    ssl_prefer_server_ciphers  on;
+
+    #    location / {
+    #        root   html;
+    #        index  index.html index.htm;
+    #    }
+    #}
+
+}
+</code></pre></section>
+                </docs>
                 <!-- End of Blog Page-->
               </div>
             </div>
@@ -220,8 +378,7 @@
             </div>
           </div>
         </div>
-        <div class="nav"><a href="/">« Newer</a>&nbsp;<a href="/page/3/">Previous »</a>
-        </div>
+        <div class="nav"><a href="/">« Home</a></div>
       </div>
     </div>
     <script src="http://adron.github.io/js/all.js"></script>

@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="http://adron.github.io/css/style.min.css">
     <script src="http://adron.github.io/js/modernizr.js"></script>
   </head>
-  <body>
+  <body class="article-detail">
     <!--[if lt IE 8]>
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -59,8 +59,10 @@
             <div class="col-md-12">
               <!-- Page Info-->
               <div class="page-info page-info-simple">
-                <h1>Adron's Composite Code</h1>
-                <h2 class="description">Coder, Messenger, Recon, Infrastructure, Ops</h2>
+                <h1>NGinx Notes from URL Redirect Project on Google Cloud with Terraform &amp; Packer</h1>
+                <p class="author">Written by <span class="author">Adron Hall</span>
+                </p>
+                <div class="nav"><a href="/">« Home</a></div>
               </div>
               <!-- End Page Info-->
             </div>
@@ -75,61 +77,103 @@
             <div class="col-md-9">
               <div class="main-content">
                 <!-- Blog Page-->
-                <div class="blog">
-                  <div class="row"></div>
-                </div>
-                <div class="col-md-12 col-sm-12">
-                  <!-- Blog List-->
-                  <div class="blog-grid">
-                    <div class="row">
-                      <div class="col-md-12 col-sm-12">
-                        <h3 class="blog-grid-title"><a href="/articles/Bike-Rides/">.NET Fringe Bike Ride</a></h3>
-                        <p class="blog-grid-excerpt"><p>In my <strong><em>not so humble opinion</em></strong> every conference should have a bike ride. But I realize it isn’t always possible. This is one of the ways conferences that Troy <span class="amp">&amp;</span> I put on here in Portland are very different. We have a love for Portland; <em>the energy, the chill, vibrant yet relaxed, laid back, bike like, walking friendly city that it is</em>. It’s a beautiful city that really can only be seen or felt by active transportation. If you walk, run, bike, skate board, dog sled, sled, cross country ski, or otherwise travel around Portland you get to actually see, feel, and hear this city. No other mode really works. Transit is fun, driving is like a cage, and with both you miss the vast majority of the life and blood of what makes Portland a great&nbsp;city!</p>
-<p>
-                          <p class="more"><a href="/articles/Bike-Rides/">more</a></p>
-                        </p>
-                        <div class="blog-grid-meta"><span class="blog-grid-date">08. July 2016</span></div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End of Blog List-->
-                </div>
-                <div class="col-md-12 col-sm-12">
-                  <!-- Blog List-->
-                  <div class="blog-grid">
-                    <div class="row">
-                      <div class="col-md-12 col-sm-12">
-                        <h3 class="blog-grid-title"><a href="/articles/Node-PDX-2016-Photos/">Node PDX 2016 Photos</a></h3>
-                        <p class="blog-grid-excerpt"><p>Here’s a selection of photos from Node <span class="caps">PDX</span>. To check out all of the photos I’ve uploaded them on <a href="http://photos.adron.me/Software/Meetups-N-Conferences/Conferences/Node-PDX-2016/">http://photos.adron.me/Software/Meetups-N-Conferences/Conferences/Node-<span class="caps">PDX</span>-2016/</a>.</p>
-<p>Videos are available at <a href="https://www.youtube.com/playlist?list=PLILnvQDgzULPSdF9Eppfl5MqQe0M3hhtx">https://www.youtube.com/playlist?list=PLILnvQDgzULPSdF9Eppfl5MqQe0M3hhtx</a></p>
-<p><a href="http://photos.adron.me/Software/Meetups-N-Conferences/Conferences/Node-PDX-2016/"><img src="/articles/Node-PDX-2016-Photos/codes.jpg" alt="Codes"></a></p>
-<p>
-                          <p class="more"><a href="/articles/Node-PDX-2016-Photos/">more</a></p>
-                        </p>
-                        <div class="blog-grid-meta"><span class="blog-grid-date">29. June 2016</span></div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End of Blog List-->
-                </div>
-                <div class="col-md-12 col-sm-12">
-                  <!-- Blog List-->
-                  <div class="blog-grid">
-                    <div class="row">
-                      <div class="col-md-12 col-sm-12">
-                        <h3 class="blog-grid-title"><a href="/articles/node-pdx-2016-bike-ride/">Node PDX 2016 Bike Ride, Photos, and More</a></h3>
-                        <p class="blog-grid-excerpt"><p>Node <span class="caps">PDX</span>, at least for me, kicked off Saturday morning before the conference. This involved the Geek Train, which as always was a great ride. After returning everyone went off for the evening and I prepared more for the&nbsp;conference.</p>
-<p>The following day involved Sunday conference setup, workshops, and the Node <span class="caps">PDX</span> bike ride. Here’s a few photos of the ride and our break at Cup <span class="amp">&amp;</span> Bar. In the next blog entry I’ll have more pictures <span class="amp">&amp;</span> videos of the talks coming&nbsp;up.</p>
-<p><img src="/articles/node-pdx-2016-bike-ride/nodepdx-bike-ride.jpg" alt="Node PDX Bike Ride"></p>
-<p>
-                          <p class="more"><a href="/articles/node-pdx-2016-bike-ride/">more</a></p>
-                        </p>
-                        <div class="blog-grid-meta"><span class="blog-grid-date">29. June 2016</span></div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End of Blog List-->
-                </div>
+                <article class="article">
+                  <section class="content"><p>I set out on a mission yesterday to put together a <span class="caps">URL</span> Redirect Server. Before I even get into the nitty gritty of how I got this to work via Nginx, I’ll add two&nbsp;caveats:</p>
+<ul>
+<li>I don’t really know much about Nginx at all. I’ve written up and configured one reverse proxy and handed that off to some ops team. Theoretically it worked (in their testing). But other than that, I’ve barely done anything myself with&nbsp;Nginx.</li>
+<li>I’ve no idea really if this is even a good practice. <span class="caps">URL</span> Redirects of this sort actually seem like a hack. They work, but it seems like there really ought to be a better less onion layer like way to do this type of&nbsp;redirection.</li>
+</ul>
+<p>With those two caveats I’ll add a few questions for you, dear&nbsp;reader.</p>
+<ol>
+<li>If you have any suggestions for an easier way than spinning up a whole Nginx Server to do <span class="caps">URL</span> Redirects I’d love to hear&nbsp;them!</li>
+<li>Is this a best practice way to do subdomain to <span class="caps">URL</span> Redirects? If not, I’d probably like to be doing whatever is best&nbsp;practice.</li>
+</ol>
+<p>Anyway, now that we’re past my caveats, questions, and requests for help, let’s roll on the how-to of all&nbsp;this.</p>
+<p><span class="more"></span></p>
+<p>This whole setup started when I realized while doing a migration from one <span class="caps">DNS</span> Provider to Google DNS. Google DNS doesn’t convolute their DNS Services with URL Redirect features or other non-DNS features. When I stumbled into the fact that there were some URL Redirects that had muddled themselves into Google DNS as actual CNAME DNS entries, I knew I’d need to get those migrated to something that could actually do URL&nbsp;redirects.</p>
+<p>The need was super simple in scope. Have a subdomain, like <a href="http://data.adron.me">http://data.adron.me</a> redirect (302 and eventually 301, more on that in a minute) to something like <a href="http://api.compositecode.com/dataservices/information.html">http://api.compositecode.com/dataservices/information.html</a>. I did some reading about <a href="https://www.digitalocean.com/community/tutorials/apache-vs-nginx-practical-considerations">Apache vs. Nginx</a>. I determined I’d go with Nginx as I knew it to be a solid server with minimal&nbsp;fuss.</p>
+<h2 id="setting-up-nginx">Setting up&nbsp;Nginx</h2>
+<p>Before getting into a smart way to setup Nginx, I just dove in to figure out how to setup a&nbsp;redirect.</p>
+<p>First I spun up an Ubuntu 16.04 Server on Google Cloud. Here’s the interface for creating a new instance on Google Compute Engine&nbsp;(<span class="caps">GCE</span>).</p>
+<p><img src="/articles/nginx-notes-from-the-url-redirect/nginx-url-redirector-01.png" alt="Google Cloud Instance Setup"></p>
+<p>Next setup the criteria for the instance. In my particular situation I’m assuming an almost non-existent need for resources so I’ve select the uber cheapo $4.49 instance. For that instance I named it url-redirector, stuck it in the us-central1-a zone, selected the micro (1 shared vCPU) with 0.6 <span class="caps">GB</span> Memory, using the Ubuntu 16.04 LTS image, gave it default access, selected HTTP traffic, and clicked&nbsp;create.</p>
+<p><img src="/articles/nginx-notes-from-the-url-redirect/nginx-url-redirector-02.png" alt="Google Cloud Instance Setup"></p>
+<p>Once created it displayed on the Compute Engine dashboard screen. There I have my <span class="caps">IP</span> and SSH&nbsp;options.</p>
+<p><img src="/articles/nginx-notes-from-the-url-redirect/nginx-url-redirector-03.png" alt="Google Cloud Instance Setup"></p>
+<p>Clicking on the <span class="caps">SSH</span> vertical elipsis I then selected the <code>View gcloud command</code> option. A dialog appears with the gcloud command to connect to this new&nbsp;instance.</p>
+<p><img src="/articles/nginx-notes-from-the-url-redirect/nginx-url-redirector-04.png" alt="Google Cloud Instance Setup"></p>
+<p>I copied the command to ssh into my Google Cloud server&nbsp;instance.</p>
+<pre><code>gcloud compute --project &quot;that-big-universe&quot; ssh --zone &quot;us-central1-a&quot; &quot;url-redirector&quot;
+</code></pre><p>At this point I went ahead and logged into this new instance and installed&nbsp;Nginx.</p>
+<pre><code>sudo apt-get update
+sudo apt-get install -y nginx
+</code></pre><p>On Ubuntu 16.04 a new firewall technology is used called Uncomplicated Firewall (<span class="caps">UFW</span>). To setup that firewall, open up the HTTP and SSH ports. Some instructions point to an Nginx HTTP so I added that too. Then I enabled the&nbsp;firewall.</p>
+<pre><code>sudo ufw allow http  #adds port 80
+sudo ufw allow ssh  #adds port 22
+sudo ufw allow &#39;Nginx HTTP&#39;
+sudo ufw enable
+</code></pre><p>I noticed this prompted for a “<code>y|n</code>“ as I enabled the firewall. So I’ll have to figure that out later as I work through automating and building out this server for deployment and prep with Packer and Terraform later. At this point however I have the server running, with Nginx, and am ready to test out a&nbsp;redirect.</p>
+<p><strong>Configuration File&nbsp;Structure</strong></p>
+<p>A lot of the samples I find all over the web are in little snippets like the&nbsp;following.</p>
+<pre><code>location / {
+    root /data/www;
+}
+</code></pre><p>or</p>
+<pre><code>server {
+    location / {
+        root /data/www;
+    }
+
+    location /images/ {
+        root /data;
+    }
+}
+</code></pre><p>or</p>
+<pre><code>location / {
+        fastcgi_pass  localhost:9000;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        fastcgi_param QUERY_STRING    $query_string;
+    }
+</code></pre><p>In these three examples I have location with a value for the root property in the top one, then in the next the server with two location sections and then finally a location. So many of these snippets are used and can be confusing without context for how and where things are structured within the configuration file&nbsp;itself.</p>
+<p>Let’s break this out real quick to the requisite parts of the file. Nginx has modules controlled by directives in the configuration file. A directive consistes of name and parameters separated by spaces and ending with a semicolon. A block directive or simple directive has the same overall structure. The difference being a block directive has a set of instructions surrounded by braces. A context is a block directive that has additional directives inside the braces. Directives placed in the configuration file outside of contexts is in the main&nbsp;context.</p>
+<p>Some of the key contexts to be familiar with in configuration of Nginx are the <em>events</em>, <em>http</em>, <em>main</em>, <em>server</em>, <em>http</em>, and <em>location</em> directives. Also, it’s good to know that the <em>events</em> and <em>http</em> directives reside int he <em>main</em> context, <em>server</em> in <em>http</em>, and <em>location</em> in <em>server</em>. The most common one often edited, at least in my minor experience so far is the <em>server</em> context. This <em>server</em> context of course resides in the <em>http</em> context which resides in the <em>main</em> context. This looks something like what is shown&nbsp;below.</p>
+<pre><code>http {
+    server {
+    }
+}
+</code></pre><p>Check out a <a href="/docs/nginx-default-config-file">sample nginx.conf files</a> to get an idea of what the default config file looks like after installation. For more information also check out this other <a href="https://www.digitalocean.com/community/tutorials/understanding-the-nginx-configuration-file-structure-and-configuration-contexts">Digital Ocean blog entry “Understanding the Nginx Configuration File Structure and Configuration Contexts”</a>.</p>
+<p>Another important thing to know, besides how the nginx.conf file is structured and formatted, is where the thing is actually located. Here are some of the file locations for it and related important&nbsp;files.</p>
+<ul>
+<li><code>/var/www/html</code> is where the actual content that Nginx serves is&nbsp;located.</li>
+<li><code>/etc/nginx</code> is where the configuration files are. Including the nginx.conf file I’ll need to edit for the&nbsp;redirect.</li>
+<li><code>/etc/nginx/sites-available</code> is the directory where per-site “server blocks” are stored. Typically server block config is done here and then enabled by linking to the other&nbsp;directory.</li>
+<li><code>/etc/nginx/sites-enabled</code> is the directory where enabled per-site “server blocks” are stored linked by config files in the sites-available&nbsp;directory.</li>
+<li><code>/etc/nginx/snippets</code> is where config fragments are included that are used elsewhere in Nginx&nbsp;configuration.</li>
+<li><code>/var/log/nginx/access.log</code> is where the web server records log files unless configured to do so&nbsp;elsewhere.</li>
+<li><code>/var/log/nginx/error.log</code> is where Nginx errors are&nbsp;recorded.</li>
+</ul>
+<p>What I needed to do at this point was edit the nginx.conf, or some file, and ensure that it had the appropriate redirection in the file. My first take at this looked like the following edit. I opened up the nginx.conf file and added this to the <code>http {}</code> context.</p>
+<pre><code>http {
+    server {
+        server_name data.adron.me;
+        return 302 http://api.compositecode.com/dataservices/information.html;
+    }
+}
+</code></pre><p>At this juncture however, with this hack of the config file I had a working <span class="caps">URL</span> Redirection. Upon further reading I realized that maybe this wasn’t the most ideal place to put the&nbsp;redirection.</p>
+<h2 id="summary">Summary</h2>
+<p>I’ve got a solid redirect in place for <a href="http://data.adron.me">http://data.adron.me</a> that is sending traffic to <a href="http://api.compositecode.com/dataservices/information.html">http://api.compositecode.com/dataservices/information.html</a>. However I’m not sure I’ve set this up using an ideal practice. So I went back to reading more of the documentation. RTFMing, it’s&nbsp;important.</p>
+<p>Part 2, coming up soon, with more docs read for better insight! &lt;- this line will eventually link, like a linked list, to the next part of this&nbsp;series.</p>
+<p><strong>References:</strong></p>
+<ul>
+<li><a href="https://www.nginx.com/">Nginx</a></li>
+<li><a href="https://www.nginx.com/resources/wiki/">Nginx&nbsp;Documentation</a></li>
+<li><a href="https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-14-04-lts">Installing Nginx on Ubuntu Server 14.04&nbsp;<span class="caps">LTS</span></a></li>
+<li><a href="https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-16-04">Installing Nginx on Ubuntu Server&nbsp;16.04</a></li>
+<li><a href="https://www.digitalocean.com/community/tutorials/apache-vs-nginx-practical-considerations">Aapche vs. Nginx: Practice&nbsp;Considerations</a></li>
+<li><a href="https://www.digitalocean.com/community/tutorials/understanding-the-nginx-configuration-file-structure-and-configuration-contexts">Understanding the Nginx Configuration File Structure and Configuration&nbsp;Contexts</a></li>
+</ul>
+</section>
+                </article>
                 <!-- End of Blog Page-->
               </div>
             </div>
@@ -220,8 +264,7 @@
             </div>
           </div>
         </div>
-        <div class="nav"><a href="/">« Newer</a>&nbsp;<a href="/page/3/">Previous »</a>
-        </div>
+        <div class="nav"><a href="/">« Home</a></div>
       </div>
     </div>
     <script src="http://adron.github.io/js/all.js"></script>
