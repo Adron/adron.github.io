@@ -1,5 +1,5 @@
 ---
-title: NGinx Notes from URL Redirect Project on Google Cloud with Terraform & Packer
+title: NGinx Notes from URL Redirect Project on Google Cloud with Terraform & Packer - Part 1
 author: Adron Hall
 date: 2016-07-15
 template: article.jade
