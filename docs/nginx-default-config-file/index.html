@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="http://adron.github.io/css/style.min.css">
     <script src="http://adron.github.io/js/modernizr.js"></script>
   </head>
-  <body>
+  <body class="article-detail">
     <!--[if lt IE 8]>
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -59,8 +59,10 @@
             <div class="col-md-12">
               <!-- Page Info-->
               <div class="page-info page-info-simple">
-                <h1>Adron's Composite Code</h1>
-                <h2 class="description">Coder, Messenger, Recon, Infrastructure, Ops</h2>
+                <h1>Nginx Default Config File</h1>
+                <p class="author">Written by <span class="author">Adron Hall</span>
+                </p>
+                <div class="nav"><a href="/">« Home</a></div>
               </div>
               <!-- End Page Info-->
             </div>
@@ -75,60 +77,217 @@
             <div class="col-md-9">
               <div class="main-content">
                 <!-- Blog Page-->
-                <div class="blog">
-                  <div class="row"></div>
-                </div>
-                <div class="col-md-12 col-sm-12">
-                  <!-- Blog List-->
-                  <div class="blog-grid">
-                    <div class="row">
-                      <div class="col-md-12 col-sm-12">
-                        <h3 class="blog-grid-title"><a href="/articles/node-pdx-2016-speaker-tomomi-imura/">From Software to Hardware How Do I Track My Cat with JavaScript Tomomi Imura</a></h3>
-                        <p class="blog-grid-excerpt"><p><a href="http://nodepdx.org"><img src="/articles/node-pdx-2016-speaker-tomomi-imura/nodepdx-2016-logo.png" alt="Node PDX 2016"></a></p>
-<p>I’m stoked to introduce Tomomi (<a href="http://twitter.com/girlie_mac">@girlie_mac</a>). Tomomi is an avid open web <span class="amp">&amp;</span> open technology advocate and creative technologist, who had been active in the mobile space for past 8+ years. Now she is working at PubNub in San Francisco. When she is not at work, she still geeks around and hacks some stuff like Amazon Dash to Rickroll&nbsp;people.</p>
-<p>Tomomi will be presenting “<strong>From Software to Hardware: How Do I Track My Cat with JavaScript</strong>“.</p>
-<p>
-                          <p class="more"><a href="/articles/node-pdx-2016-speaker-tomomi-imura/">more</a></p>
-                        </p>
-                        <div class="blog-grid-meta"><span class="blog-grid-date">18. May 2016</span></div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End of Blog List-->
-                </div>
-                <div class="col-md-12 col-sm-12">
-                  <!-- Blog List-->
-                  <div class="blog-grid">
-                    <div class="row">
-                      <div class="col-md-12 col-sm-12">
-                        <h3 class="blog-grid-title"><a href="/articles/dropping-the-ball-gsd-and-staying-productive/">Dropping the Ball, GSD, and Staying Productive</a></h3>
-                        <p class="blog-grid-excerpt"><p><em>[<strong><span class="caps">NOTE</span>:</strong> This was actually written Thursday the 5<span class="ord">th</span>, things make more sense with that in&nbsp;mind.]</em></p>
-<p>I sat here today, and several normal things happened that made me think of some seriously important things. The thoughts are presented very well by Scott Hanselman in a talk on <em>scaling oneself</em>. He’s got a lot of gems in this presentation (links and video below), which he’s given a few times. In those presentations he makes a few very quotable statements that I had pop into my&nbsp;mind.</p>
-<p>
-                          <p class="more"><a href="/articles/dropping-the-ball-gsd-and-staying-productive/">more</a></p>
-                        </p>
-                        <div class="blog-grid-meta"><span class="blog-grid-date">13. May 2016</span></div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End of Blog List-->
-                </div>
-                <div class="col-md-12 col-sm-12">
-                  <!-- Blog List-->
-                  <div class="blog-grid">
-                    <div class="row">
-                      <div class="col-md-12 col-sm-12">
-                        <h3 class="blog-grid-title"><a href="/articles/immutable-infrastructure-some-reads-clarification-what-it-is/">Immutable Infrastructure - Some Reads and Clarification of What It Is</a></h3>
-                        <p class="blog-grid-excerpt"><p>First let’s get these terms a little more defined with the help of some well written articles on the&nbsp;matter.</p>
+                <docs class="article">
+                  <section class="content"><p>The following is a default Nginx configuration file as referred to in my <a href="/articles/nginx-notes-from-the-url-redirect/">NGinx Notes from <span class="caps">URL</span> Redirect Project on Google Cloud with Terraform <span class="amp">&amp;</span> Packer</a>&nbsp;post.</p>
+<pre><code>user       www www;  ## Default: nobody
+worker_processes  5;  ## Default: 1
+error_log  logs/error.log;
+pid        logs/nginx.pid;
+worker_rlimit_nofile 8192;
 
-                          <p class="more"><a href="/articles/immutable-infrastructure-some-reads-clarification-what-it-is/">more</a></p>
-                        </p>
-                        <div class="blog-grid-meta"><span class="blog-grid-date">12. April 2016</span></div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End of Blog List-->
-                </div>
+events {
+  worker_connections  4096;  ## Default: 1024
+}
+
+http {
+  include    conf/mime.types;
+  include    /etc/nginx/proxy.conf;
+  include    /etc/nginx/fastcgi.conf;
+  index    index.html index.htm index.php;
+
+  default_type application/octet-stream;
+  log_format   main &#39;$remote_addr - $remote_user [$time_local]  $status &#39;
+    &#39;&quot;$request&quot; $body_bytes_sent &quot;$http_referer&quot; &#39;
+    &#39;&quot;$http_user_agent&quot; &quot;$http_x_forwarded_for&quot;&#39;;
+  access_log   logs/access.log  main;
+  sendfile     on;
+  tcp_nopush   on;
+  server_names_hash_bucket_size 128; # this seems to be required for some vhosts
+
+  server { # php/fastcgi
+    listen       80;
+    server_name  domain1.com www.domain1.com;
+    access_log   logs/domain1.access.log  main;
+    root         html;
+
+    location ~ \.php$ {
+      fastcgi_pass   127.0.0.1:1025;
+    }
+  }
+
+  server { # simple reverse-proxy
+    listen       80;
+    server_name  domain2.com www.domain2.com;
+    access_log   logs/domain2.access.log  main;
+
+    # serve static files
+    location ~ ^/(images|javascript|js|css|flash|media|static)/  {
+      root    /var/www/virtual/big.server.com/htdocs;
+      expires 30d;
+    }
+
+    # pass requests for dynamic content to rails/turbogears/zope, et al
+    location / {
+      proxy_pass      http://127.0.0.1:8080;
+    }
+  }
+
+  upstream big_server_com {
+    server 127.0.0.3:8000 weight=5;
+    server 127.0.0.3:8001 weight=5;
+    server 192.168.0.1:8000;
+    server 192.168.0.1:8001;
+  }
+
+  server { # simple load balancing
+    listen          80;
+    server_name     big.server.com;
+    access_log      logs/big.server.access.log main;
+
+    location / {
+      proxy_pass      http://big_server_com;
+    }
+  }
+}
+</code></pre><p>Another sample file is shown&nbsp;below.</p>
+<pre><code>#user  nobody;
+#Defines which Linux system user will own and run the Nginx server
+
+worker_processes  1;
+#Referes to single threaded process. Generally set to be equal to the number of CPUs or cores.
+
+#error_log  logs/error.log; #error_log  logs/error.log  notice;
+#Specifies the file where server logs. 
+
+#pid        logs/nginx.pid;
+#nginx will write its master process ID(PID).
+
+events {
+    worker_connections  1024;
+    # worker_processes and worker_connections allows you to calculate maxclients value: 
+    # max_clients = worker_processes * worker_connections
+}
+
+
+http {
+    include       mime.types;
+    # anything written in /opt/nginx/conf/mime.types is interpreted as if written inside the http { } block
+
+    default_type  application/octet-stream;
+    #
+
+    #log_format  main  &#39;$remote_addr - $remote_user [$time_local] &quot;$request&quot; &#39;
+    #                  &#39;$status $body_bytes_sent &quot;$http_referer&quot; &#39;
+    #                  &#39;&quot;$http_user_agent&quot; &quot;$http_x_forwarded_for&quot;&#39;;
+
+    #access_log  logs/access.log  main;
+
+    sendfile        on;
+    # If serving locally stored static files, sendfile is essential to speed up the server,
+    # But if using as reverse proxy one can deactivate it
+
+    #tcp_nopush     on;
+    # works opposite to tcp_nodelay. Instead of optimizing delays, it optimizes the amount of data sent at once.
+
+    #keepalive_timeout  0;
+    keepalive_timeout  65;
+    # timeout during which a keep-alive client connection will stay open.
+
+    #gzip  on;
+    # tells the server to use on-the-fly gzip compression.
+
+    server {
+        # You would want to make a separate file with its own server block for each virtual domain
+        # on your server and then include them.
+        listen       80;
+        #tells Nginx the hostname and the TCP port where it should listen for HTTP connections.
+        # listen 80; is equivalent to listen *:80;
+
+        server_name  localhost;
+        # lets you doname-based virtual hosting
+
+        #charset koi8-r;
+
+        #access_log  logs/host.access.log  main;
+
+        location / {
+            #The location setting lets you configure how nginx responds to requests for resources within the server.
+            root   html;
+            index  index.html index.htm;
+        }
+
+        #error_page  404              /404.html;
+
+        # redirect server error pages to the static page /50x.html
+        #
+        error_page   500 502 503 504  /50x.html;
+        location = /50x.html {
+            root   html;
+        }
+
+        # proxy the PHP scripts to Apache listening on 127.0.0.1:80
+        #
+        #location ~ \.php$ {
+        #    proxy_pass   http://127.0.0.1;
+        #}
+
+        # pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000
+        #
+        #location ~ \.php$ {
+        #    root           html;
+        #    fastcgi_pass   127.0.0.1:9000;
+        #    fastcgi_index  index.php;
+        #    fastcgi_param  SCRIPT_FILENAME  /scripts$fastcgi_script_name;
+        #    include        fastcgi_params;
+        #}
+
+        # deny access to .htaccess files, if Apache&#39;s document root
+        # concurs with nginx&#39;s one
+        #
+        #location ~ /\.ht {
+        #    deny  all;
+        #}
+    }
+
+
+    # another virtual host using mix of IP-, name-, and port-based configuration
+    #
+    #server {
+    #    listen       8000;
+    #    listen       somename:8080;
+    #    server_name  somename  alias  another.alias;
+
+    #    location / {
+    #        root   html;
+    #        index  index.html index.htm;
+    #    }
+    #}
+
+
+    # HTTPS server
+    #
+    #server {
+    #    listen       443 ssl;
+    #    server_name  localhost;
+
+    #    ssl_certificate      cert.pem;
+    #    ssl_certificate_key  cert.key;
+
+    #    ssl_session_cache    shared:SSL:1m;
+    #    ssl_session_timeout  5m;
+
+    #    ssl_ciphers  HIGH:!aNULL:!MD5;
+    #    ssl_prefer_server_ciphers  on;
+
+    #    location / {
+    #        root   html;
+    #        index  index.html index.htm;
+    #    }
+    #}
+
+}
+</code></pre></section>
+                </docs>
                 <!-- End of Blog Page-->
               </div>
             </div>
@@ -219,8 +378,7 @@
             </div>
           </div>
         </div>
-        <div class="nav"><a href="/page/8/">« Newer</a>&nbsp;<a href="/page/10/">Previous »</a>
-        </div>
+        <div class="nav"><a href="/">« Home</a></div>
       </div>
     </div>
     <script src="http://adron.github.io/js/all.js"></script>
