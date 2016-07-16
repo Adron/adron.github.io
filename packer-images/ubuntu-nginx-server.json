@@ -1,0 +1,32 @@
+{
+  "variables": {
+    "account_json": "../secrets/account.json"
+  },
+  "builders": [
+    {
+      "type": "googlecompute",
+      "account_file": "{{user `account_json`}}",
+      "project_id": "united-course-124523",
+      "source_image": "ubuntu-1604-xenial-v20160627",
+      "zone": "us-central1-a"
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "shell",
+      "inline": [
+        "sleep 10"
+      ]
+    },
+    {
+      "type": "file",
+      "source": "install-nginx.sh",
+      "destination": "install-nginx.sh"
+    },
+    {
+      "type": "shell",
+      "script": "install-nginx.sh",
+      "pause_before": "3s"
+    }
+  ]
+}
