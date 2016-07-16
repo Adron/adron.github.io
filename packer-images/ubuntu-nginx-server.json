@@ -6,7 +6,7 @@
     {
       "type": "googlecompute",
       "account_file": "{{user `account_json`}}",
-      "project_id": "united-course-124523",
+      "project_id": "that-big-universe",
       "source_image": "ubuntu-1604-xenial-v20160627",
       "zone": "us-central1-a"
     }
