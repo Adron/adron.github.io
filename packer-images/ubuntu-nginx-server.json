@@ -18,7 +18,7 @@
     {
       "type": "shell",
       "inline": [
-        "sleep 5"
+        "sleep 10"
       ]
     },
     {
@@ -29,7 +29,8 @@
     {
       "type": "shell",
       "script": "install-nginx.sh",
-      "pause_before": "3s"
+      "pause_before": "3s",
+      "execute_command": "echo 'packer' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
     }
   ]
 }

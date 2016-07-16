@@ -1,6 +1,6 @@
 {
   "variables": {
-    "account_json": "../secrets/account.json"
+    "account_json": "../../secrets/account.json"
   },
   "builders": [
     {
@@ -8,9 +8,10 @@
       "account_file": "{{user `account_json`}}",
       "project_id": "that-big-universe",
       "source_image": "ubuntu-1604-xenial-v20160627",
-      "zone": "us-central1-a"
+      "zone": "us-central1-a",
+      "instance_name": "sample-{{timestamp}}",
+      "image_name": "sample-{{uuid}}",
+      "image_description": "Sample packer image build."
     }
-  ],
-  "provisioners": [
   ]
 }
