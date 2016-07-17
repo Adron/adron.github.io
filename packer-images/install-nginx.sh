@@ -6,8 +6,8 @@
 sudo apt-get update
 
 sudo apt-get install -y nginx
-
-# Setup firewall
-sudo ufw allow http  #adds port 80
-sudo ufw allow ssh  #adds port 22
-sudo ufw allow 'Nginx HTTP'
+#
+## Setup firewall
+#sudo ufw allow http  #adds port 80
+#sudo ufw allow ssh  #adds port 22
+#sudo ufw allow 'Nginx HTTP'

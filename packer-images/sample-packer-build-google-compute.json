@@ -7,7 +7,7 @@
       "type": "googlecompute",
       "account_file": "{{user `account_json`}}",
       "project_id": "that-big-universe",
-      "source_image": "ubuntu-1604-xenial-v20160627",
+      "source_image": "debian-8-jessie-v20160711",
       "zone": "us-central1-a",
       "instance_name": "sample-{{timestamp}}",
       "image_name": "sample-{{uuid}}",

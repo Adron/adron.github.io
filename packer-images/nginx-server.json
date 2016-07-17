@@ -7,7 +7,7 @@
       "type": "googlecompute",
       "account_file": "{{user `account_json`}}",
       "project_id": "that-big-universe",
-      "source_image": "ubuntu-1604-xenial-v20160627",
+      "source_image": "debian-8-jessie-v20160711",
       "zone": "us-central1-a",
       "instance_name": "hub-{{timestamp}}",
       "image_name": "hub-{{uuid}}",
@@ -30,7 +30,7 @@
       "type": "shell",
       "script": "install-nginx.sh",
       "pause_before": "3s",
-      "execute_command": "echo 'packer' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
+      "execute_command": "echo '' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
     }
   ]
 }
