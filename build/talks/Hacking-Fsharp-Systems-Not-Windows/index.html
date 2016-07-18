@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Adron's Composite Code</title>
+    <meta name="description" content="">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="alternate" href="http://adron.github.io/feed.xml" type="application/rss+xml" title="Coder, Messenger, Recon, Infrastructure, Ops">
+    <link rel="icon" type="image/png" href="http://adron.github.io/img/favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="http://adron.github.io/img/favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="http://adron.github.io/img/favicons/favicon-96x96.png" sizes="96x96">
+    <link rel="apple-touch-icon" sizes="57x57" href="http://adron.github.io/img/favicons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="http://adron.github.io/img/favicons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="http://adron.github.io/img/favicons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="http://adron.github.io/img/favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="http://adron.github.io/img/favicons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="http://adron.github.io/img/favicons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="http://adron.github.io/img/favicons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="http://adron.github.io/img/favicons/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="http://adron.github.io/img/favicons/apple-touch-icon-180x180.png">
+    <link rel="stylesheet" href="http://adron.github.io/css/custom.css">
+    <link rel="stylesheet" href="http://adron.github.io/css/style.min.css">
+    <script src="http://adron.github.io/js/modernizr.js"></script>
+  </head>
+  <body class="article-detail">
+    <!--[if lt IE 8]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <div class="header header-over large">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 col-sm-6 col-xs-6">
+            <!-- Logo Image--><a href="http://adron.github.io/index.html" class="logo-image logo-animated"><img src="http://adron.github.io/img/logos/logo.png" alt="logo"></a>
+            <!-- End of Logo Image-->
+          </div>
+          <div class="col-md-9 col-sm-6 col-xs-6">
+            <!-- Menu-->
+            <nav class="right helper">
+              <ul class="menu sf-menu js-menu">
+                <li><a href="/thrashingcodenews.html">Thrashing Code News</a></li>
+                <li><a href="#">Conf/Meetup/UserGroup Events</a>
+                  <ul>
+                    <li><a href="/docs/Speaking-Presentations-Workshops/">Speaking - Presentations, Workshops, Etc</a></li>
+                  </ul>
+                </li>
+                <li><a href="/docs/about/">About</a></li>
+              </ul>
+            </nav>
+            <!-- End of Menu-->
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="header-back header-back-simple header-back-small">
+      <div class="header-back-container">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <!-- Page Info-->
+              <div class="page-info page-info-simple">
+                <h1>Hacking Fsharp Systems Not Windows</h1>
+                <p class="author">Written by <span class="author">Adron Hall</span>
+                </p>
+                <div class="nav"><a href="/">« Home</a></div>
+              </div>
+              <!-- End Page Info-->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="content">
+      <div class="container">
+        <div class="layout with-right-sidebar js-layout">
+          <div class="row">
+            <div class="col-md-9">
+              <div class="main-content">
+                <!-- Blog Page-->
+                <docs class="article">
+                  <section class="content"><h2 id="hacking-fsharp-systems-not-windows">Hacking Fsharp Systems Not&nbsp;Windows</h2>
+<h3 id="-on-2015-09-05-"><em>on&nbsp;2015-09-05</em></h3>
+<p>The basic idea behind this talk is to bring everybody through a quick history of Visual Studio Code, Atom and other editors in relation to F# development and take a look at .<span class="caps">NET</span>’s compatibility across operating systems. I’ll be giving this <a href="http://devday.pl/" target="_blank">presentation at Dev Day Poland in Krakow on September the 18<span class="ord">th</span></a>.</p>
+<h2 id="prerequisites-to-follow-along-other-details">Prerequisites to Follow Along <span class="amp">&amp;</span> Other&nbsp;Details</h2>
+<ul>
+<li>Install <a href="https://git-scm.com/" target="_blank">Git</a>.</li>
+<li><a href="https://www.apple.com/osx/" target="_blank"><span class="caps">OS</span>-X</a>, <a href="http://www.ubuntu.com/" target="_blank">Ubuntu</a>, and <a href="http://www.microsoftstore.com/store/msusa/en_US/cat/Windows-8.1/categoryID.62684800" target="_blank">Windows</a> (At least, these are the operating systems I’ve tested the presentation code on - specifically <span class="caps">OS</span>-X Yosemite, Ubuntu Server/Desktop 14.04.2 LTS, and Windows&nbsp;8.1)</li>
+<li><a href="https://code.visualstudio.com/" target="_blank">Visual Studio Code</a> - <a href="https://code.visualstudio.com/Docs/setup" target="_blank">Getting Started with Visual Studio&nbsp;Code</a></li>
+<li>Check out <a href="http://compositecode.wordpress.com/2015/05/07/os-x-and-f-clone-it-build-it-install-it-hack-it/"><span class="caps">OS</span>-X and F# [Clone It, Build It, Install It, Hack It]</a> and <a href="http://compositecode.wordpress.com/2015/05/15/simplifying-bash-repl-use-with-f/">Simplifying bash <span class="amp">&amp;</span> repl Use With F#</a> for more information on setting up and using <a href="http://compositecode.wordpress.com/2015/05/10/why-f-and-why-not-windows/">F# on non-Windows Platforms</a> (and Windows to some&nbsp;degree).</li>
+<li><p>Also I’ve started a series on F# which includes a lot of the troubleshooting and steps I took to get things running on the various operating&nbsp;systems;</p>
+</li>
+<li><p><a href="http://compositecode.wordpress.com/2015/06/16/_______1-f-getting-started-thinking-functionally/" target="_blank"><strong>___</strong>1 |&gt; F# – Getting Started, Thinking Functionally&nbsp;(Notes)</a></p>
+</li>
+<li><a href="http://compositecode.wordpress.com/2015/06/22/______11-f-some-hackery-a-string-calculator-ka/" target="_blank"><strong>__</strong>11 |&gt; F# – Some Hackery – A String Calculator&nbsp;Kata</a></li>
+<li><a href="http://compositecode.wordpress.com/2015/06/24/______10-f-moar-thinking-functionally-notes/"><strong>__</strong>10 |&gt; F# – Moar Thinking Functionally&nbsp;(Notes)</a></li>
+<li><a href="http://compositecode.wordpress.com/2015/06/28/_____100-f-some-troubleshooting-linux/" target="_blank"><strong>_</strong>100 |&gt; F# Some Troubleshooting&nbsp;Linux</a></li>
+<li><p><a href="http://compositecode.wordpress.com/2015/08/23/_____101-f-coding-ecosystem-paket-atom-w-paket/" target="_blank"><strong>_</strong>101 |&gt; F# Coding Ecosystem: Paket &amp;&amp; Atom w/&nbsp;Paket</a></p>
+</li>
+<li><p>Some of the issues I discussed are available on <a href="http://www.stackoverflow.com/" target="_blank">Stack Overflow</a> titled “<a href="http://stackoverflow.com/questions/30972220/how-can-i-resolve-the-could-not-fix-timestamps-in-error-the-requested" target="_blank">How can I resolve the “Could not fix timestamps in …” “…Error: The requested feature is not implemented.”</a>“ and “<a href="http://stackoverflow.com/questions/30992501/projectscaffold-error-on-linux-generating-documentation" target="_blank">ProjectScaffold Error on Linux Generating Documentation</a>“</p>
+</li>
+<li>Even though<a href="https://github.com/ThrashingCode/nodejs-training-prerequisites" target="_blank"> these are primarily prerequisites focused around having Node.js and JavaScript working</a> on your machine they’re also extremely helpful to have installed for a number of reasons, such as using yo as a scaffold builder for F# Projects and such. To paraphrase, get JavaScript <span class="amp">&amp;</span> Node.js working on any development machine, it will pay off big over time, even if you’re not writing JavaScript&nbsp;code.</li>
+</ul>
+<h2 id="presentation-collateral">Presentation&nbsp;Collateral</h2>
+<ul>
+<li><strong>Demo Code: Just checkout the <a href="https://github.com/Adron/sharpdev" target="_blank">sharpdev repository</a>.</strong></li>
+<li><strong>Slides:</strong> <a href="https://speakerdeck.com/adron/hacking-f-number-on-systems-not-windows" target="_blank">https://speakerdeck.com/adron/hacking-f-number-on-systems-not-windows</a></strong></li>
+</ul>
+</section>
+                </docs>
+                <!-- End of Blog Page-->
+              </div>
+            </div>
+            <div class="col-md-3 hidden-sm hidden-xs">
+              <div class="sidebar js-sidebar-fixed">
+                <!-- Vertical Menu-->
+                <div class="widget">
+                  <!-- Search-->
+                  <div class="search">
+                    <form action="https://google.com/search" method="get">
+                      <input type="hidden" name="sitesearch" value="http://blog.adron.me">
+                      <input type="text" name="q" placeholder="search" class="search-input form-control"><i class="fa fa-search search-icon"></i>
+                    </form>
+                  </div>
+                  <!-- End of Search-->
+                </div>
+                <div class="widget">
+                  <h3 class="widget-title">Keyword Search</h3>
+                  <!-- Tags-->
+                  <ul class="tags">
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=html">html</a></li>
+                    <!--li.tag-item-->
+                    <!--  a(href='https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&q=css') css-->
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=javascript">javascript</a></li>
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=ubuntu">ubuntu</a></li>
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=node pdx">node pdx</a></li>
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=.NET fringe">.net fringe</a></li>
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=videos">videos</a></li>
+                  </ul>
+                  <!-- End of Tags-->
+                </div>
+                <nav class="menu-vertical-wrapper">
+                  <ul data-prepend-to=".js-layout" data-select="Menu" class="menu-vertical js-menu-vertical">
+                    <li><a href="#">About</a>
+                      <ul>
+                        <li><a href="/docs/about/">Me, Adron</a></li>
+                        <li><a href="#">My Hobbies</a>
+                          <ul>
+                            <li><a href="http://photos.adron.me">My Photos</a></li>
+                          </ul>
+                        </li>
+                        <li><a href="/docs/Speaking-Presentations-Workshops">My Presentations</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </nav>
+                <div class="widget">
+                  <h3 class="widget-title">Photos</h3>
+                  <!-- Photos-->
+                  <ul class="widget-recommended-products">
+                    <!-- Photos-->
+                    <li class="widget-recommended-product"><img src="/img/photos/IMG_1836.jpg" alt="Jon Oropeza" class="widget-recommended-product-img"><a href="http://photos.adron.me/Software/Meetups-N-Conferences/Conferences/Node-PDX-2016/i-D9qFQ6m" class="widget-recommended-product-link">
+                        <h5 class="widget-recommended-product-link-title">Node PDX 2016<i class="fa fa-angle-right"></i></h5>
+                        <p class="widget-recommended-product-link-description">Jon Oropeza @ Node PDX 2016</p></a></li>
+                    <!-- End of Recommended product Item-->
+                    <!-- Recommended product Item-->
+                    <li class="widget-recommended-product"><img src="/img/photos/IMG_1812.jpg" alt="Liz Abinante" class="widget-recommended-product-img"><a href="http://photos.adron.me/Software/Meetups-N-Conferences/Conferences/Node-PDX-2016/i-g2m2hgP" class="widget-recommended-product-link">
+                        <h5 class="widget-recommended-product-link-title">Node PDX 2016<i class="fa fa-angle-right"></i></h5>
+                        <p class="widget-recommended-product-link-description">Liz Abinante @ Node PDX 2016</p></a></li>
+                    <!-- End of Recommended product Item-->
+                    <!-- Recommended product Item-->
+                    <li class="widget-recommended-product"><img src="/img/photos/IMG_5709.jpg" alt="Praha hlavní nádraží" class="widget-recommended-product-img"><a href="http://photos.adron.me/Travels-N-Traversings/Across-the-Pond-2016-Travels/September-Krakow/Week-4-Prague/i-62ZPsPb" class="widget-recommended-product-link">
+                        <h5 class="widget-recommended-product-link-title">Prague (Praha)<i class="fa fa-angle-right"></i></h5>
+                        <p class="widget-recommended-product-link-description">Praha hlavní nádraží</p></a></li>
+                    <!-- End of photos row one-->
+                  </ul>
+                  <ul class="widget-recommended-products">
+                    <!-- Photos-->
+                    <li class="widget-recommended-product"><img src="/img/photos/IMG_4417.jpg" alt="St Mary's Basilica" class="widget-recommended-product-img"><a href="http://photos.adron.me/Travels-N-Traversings/Across-the-Pond-2016-Travels/September-Krakow/Krakow/i-KnZf6pK/A" class="widget-recommended-product-link">
+                        <h5 class="widget-recommended-product-link-title">St Mary's Basilica<i class="fa fa-angle-right"></i></h5>
+                        <p class="widget-recommended-product-link-description">Bazylika Mariacka in Rynek Główny.</p></a></li>
+                    <!-- End of Recommended product Item-->
+                    <!-- Recommended product Item-->
+                    <li class="widget-recommended-product"><img src="/img/photos/VSC_03.png" alt="Visual Studio Code" class="widget-recommended-product-img"><a href="http://photos.adron.me/Software/Software-Development/Visual-Studio-Things/i-LLW7WcD/A" class="widget-recommended-product-link">
+                        <h5 class="widget-recommended-product-link-title">Visual Studio Code<i class="fa fa-angle-right"></i></h5>
+                        <p class="widget-recommended-product-link-description">Images from a review of Visual Studio Code.</p></a></li>
+                    <!-- End of Recommended product Item-->
+                    <!-- Recommended product Item-->
+                    <li class="widget-recommended-product"><img src="/img/photos/-home-adronhall-Pictures-Selection_002.png - Shutter_003.png" alt="" class="widget-recommended-product-img"><a href="http://photos.adron.me/Software/Software-Development/Ubuntu/i-CQsQ4zj/A" class="widget-recommended-product-link">
+                        <h5 class="widget-recommended-product-link-title">Mono Develop & WebStorm<i class="fa fa-angle-right"></i></h5>
+                        <p class="widget-recommended-product-link-description">Working through Mono Develop & WebStorm.</p></a>
+                      <!-- End of photos row two-->
+                    </li>
+                  </ul>
+                  <!-- End Photos-->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="nav"><a href="/">« Home</a></div>
+      </div>
+    </div>
+    <script src="http://adron.github.io/js/all.js"></script>
+    <script src="http://adron.github.io/js/custom.js"></script>
+    <!-- Google Tag Manager-->
+    <noscript>
+      <iframe src="//www.googletagmanager.com/ns.html?id=GTM-KMMZX2" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <script>
+      console.log(document.getElementById("search-google"));
+      console.log(document.getElementById("search-google").innerText);
+      
+      var searchBox = document.getElementById("search-google");
+      
+      function googleSearch(search_string) {
+        alert(search_string);
+      }
+      
+      document.getElementById("search-google").addEventListener("onClick", function () {
+        alert(document.getElementById("search-google").innerHTML);
+      });
+      
+      document.getElementById("search-google").addEventListener("onClick", function () {
+        googleSearch(document.getElementById("search-google").innerHTML)
+      });
+      
+    </script>
+    <script>
+      (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+                  (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+      })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+      ga('create', 'UA-39158070-6', 'auto');
+      ga('send', 'pageview');
+    </script>
+  </body>
+</html>
