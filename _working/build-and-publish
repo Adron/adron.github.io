@@ -7,6 +7,8 @@ if [ ! $# == 1 ]
     exit 1
 fi
 
+npm install
+
 cd ~/Codez/adron.github.io/_working/
 wintersmith build
 
