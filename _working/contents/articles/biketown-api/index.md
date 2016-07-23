@@ -4,6 +4,8 @@ author: Adron Hall
 date: 2016-07-21 08:13
 template: article.jade
 ---
+[![Biketown Logo](logo.png)](https://www.biketownpdx.com)
+
 Good morning Portland! After a few years of hiccups, the Portland Bike Share has finally gotten started! We can thank our corporate overlords over at Nike for kicking in that last chunk of millions to get a bike and station layout that is absolutely superb!
 
 For a little bit more about the opening day and metrics on uses check out [Bike Portland](http://bikeportland.org/) has posted [Over 2,300 trips taken on Biketown bike share in first 24 hours](http://bikeportland.org/2016/07/20/over-2300-trips-taken-on-biketown-bike-share-in-first-24-hours-187922), [“This is awesome!” Photos and notes from the Biketown launch event](http://bikeportland.org/2016/07/19/bike-share-is-alive-photos-and-recap-from-the-launch-event-187867), and others.
