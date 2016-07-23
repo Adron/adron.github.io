@@ -5,9 +5,202 @@
     <atom:link href="http://adron.github.io/feed.xml" rel="self" type="application/rss+xml"></atom:link>
     <link>http://adron.github.io</link>
     <description>Coder, Messenger, Recon, Infrastructure, Ops</description>
-    <pubDate>Thu, 14 Jul 2016 17:00:00 -0700</pubDate>
+    <pubDate>Thu, 21 Jul 2016 08:13:00 -0700</pubDate>
     <generator>Wintersmith - https://github.com/jnordberg/wintersmith</generator>
     <language>en</language>
+    <item>
+      <title>Portland Biketown Launches - Check out the API</title>
+      <link>http://adron.github.io/articles/biketown-api/</link>
+      <pubDate>Thu, 21 Jul 2016 08:13:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/biketown-api/</guid>
+      <author></author>
+      <description>&lt;p&gt;Good morning Portland! After a few years of hiccups, the Portland Bike Share has finally gotten started! We can thank our corporate overlords over at Nike for kicking in that last chunk of millions to get a bike and station layout that is absolutely superb!&lt;/p&gt;
+&lt;p&gt;For a little bit more about the opening day and metrics on uses check out &lt;a href=&quot;http://bikeportland.org/&quot;&gt;Bike Portland&lt;/a&gt; has posted &lt;a href=&quot;http://bikeportland.org/2016/07/20/over-2300-trips-taken-on-biketown-bike-share-in-first-24-hours-187922&quot;&gt;Over 2,300 trips taken on Biketown bike share in first 24 hours&lt;/a&gt;, &lt;a href=&quot;http://bikeportland.org/2016/07/19/bike-share-is-alive-photos-and-recap-from-the-launch-event-187867&quot;&gt;“This is awesome!” Photos and notes from the Biketown launch event&lt;/a&gt;, and others.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;h2 id=&quot;biketown-pdx-&quot;&gt;Biketown PDX!&lt;/h2&gt;
+&lt;p&gt;Alright, before diving into the API, let’s discuss the actual way the system works. There are several components to how things go, but it involves the &lt;strong&gt;&lt;em&gt;workflow&lt;/em&gt;&lt;/strong&gt; of &lt;strong&gt;&lt;em&gt;joining&lt;/em&gt;&lt;/strong&gt;, then &lt;strong&gt;&lt;em&gt;unlocking&lt;/em&gt;&lt;/strong&gt;, &lt;strong&gt;&lt;em&gt;riding&lt;/em&gt;&lt;/strong&gt;, and then &lt;strong&gt;&lt;em&gt;locking&lt;/em&gt;&lt;/strong&gt; it back up. At least, that’s the basic workflow, but there’s obviously a bit more understanding needed to know what to actually do with the bike share. In the next few sections, I’ll break this into &lt;strong&gt;&lt;em&gt;Workflow&lt;/em&gt;&lt;/strong&gt; and &lt;strong&gt;&lt;em&gt;Systemic Geographic Mapping and Stuff&lt;/em&gt;&lt;/strong&gt;.&lt;/p&gt;
+&lt;h3 id=&quot;workflow&quot;&gt;Workflow&lt;/h3&gt;
+&lt;div class=&quot;image float-right&quot;&gt;
+    &lt;a href=&quot;https://www.biketownpdx.com/pricing&quot;&gt;&lt;img src=&quot;/articles/biketown-api/join.png&quot; alt=&quot;Join&quot;&gt;&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;p&gt;The first step of the workflow is joining. There’s three ways to do this: single ride, day pass, or annual membership. The single ride is $2.50 per trip. The day pass is $12 a day and the annual membership is $12 per month. Now each of these prices are pretty straight forward, but there are indeed a few little gotchas here and there. Nothing that would break the bank, but let’s talk more about this first step.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;em&gt;Single Ride&lt;/em&gt; - The single ride is good if you’ve arrived somewhere but have a short distance to go. Like say you arrive at Pioneer Square on the MAX, and want to get over to the east side real quick around area Burnside. Obviously using transit to get back over the Burnside is an awkward mess, so jumping on a Biketown bike is a perfect solution. This is where the quick $2.50 ride comes into play. Now theoretically most human beings could clear Pioneer Square clear up to about 20th &amp;amp; Burnside in under 30 minutes. However, this is one of the gotchas - exceed 30 minutes and it is 10 cents a minute after that. Not a big deal, but if you didn’t read the fine print it’ll sneak up on ya. There’s one more note to this situation though, it isn’t all penalty fees. When you bring your bike back to the station you actually get a $1.00 account credit! So really, if you use the bike share even somewhat regularly, such as once or twice a month, your price really ends up being about a $1.50 per ride instead of $2.50.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;em&gt;Day Pass&lt;/em&gt; - This basically provides 180 minutes per day and an unlimited number of rides. Which this dual qualifier just doesn’t sound right. If I can have unlimited rides, but am limited to 180 minutes, it doesn’t sound like unlimited rides. Grumble grumble &lt;em&gt;nothing bugs me like poor logic applied in real world business&lt;/em&gt;. But anyway, that’s what is written. The other add, but benificial thing is that if you get a day pass, you can expand on that day pass to take out 4 additional bikes at a time, the first bike counts as the day pass purchaser’s bike, then the other 3 are only $6 per hour, nor do these bikes count toward the 180 minutes. Overall, sounds like a deal, but it’s also attached to that oddly worded logic of the day pass deal. I guess it works out. One the 180 minutes is exceed, it’s 10 cents a minute (so not unlimited rides, but just this…) and upon returning the bike to a rack station, a $1 is applied back to the account as credit.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;em&gt;Annual Membership&lt;/em&gt; - This is the account I bought, partially to get into the founders 1000. Which I’m a proud member of. Basically I get extra benifits, but even purchasing one now, post the first founders round of purchasers gets you a good deal. The $12 a month cost gets you unlimited rides, with 90 minutes of ride time included per day. Over 90 minutes is 10 cents a minute. All the other specs are basically the same, but this is a great deal if you want to insure you have easy access at any time to the bike share.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;em&gt;Other Notes&lt;/em&gt; - It’s important to note also, that if you don’t park the bike back at a Biketown rack it’s $2.00 within the system area and $20 outside the system area. The later price can hit the piggy bank a bit. If you’re curious what the service area is, check out the &lt;em&gt;Systemic Geographic Mapping&lt;/em&gt; section below. If you somehow manage to &lt;strong&gt;&lt;em&gt;lose&lt;/em&gt;&lt;/strong&gt; a bike, heaven forbid, you’ll owe a  &lt;strong&gt;$1500.00&lt;/strong&gt; whopper, which they can and likely would nail your ass in small claims for that.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Alright, so that is the levels of joining you can partake upon, but what about actually joining? One way is to sign up on the &lt;a href=&quot;https://www.biketownpdx.com/&quot;&gt;Biketown site itself&lt;/a&gt;. Signing up on the site is likely the easiest of all the methods. Then you’ll get an account number and your passcode, then you can just use that to rent a bike wherever and whenever. The next way is to sign up with the little computer attached to the bike. I’ve seen one person do this, and I’m to fidgety to even attempt this, I did my registration via the site. Then the other way is via the mobile app (&lt;a href=&quot;https://play.google.com/store/apps/details?id=com.biketownpdx&quot;&gt;Android&lt;/a&gt; or &lt;a href=&quot;https://itunes.apple.com/us/app/biketownpdx/id1132076989&quot;&gt;iOS&lt;/a&gt;, which is also really easy. Ok, that’s basically it for signing up. Now you’ll be in the system and able to work with the various aspects of the system, such as obviously the bikes themselves.&lt;/p&gt;
+&lt;div class=&quot;image float-right&quot;&gt;
+    &lt;a href=&quot;https://www.biketownpdx.com&quot;&gt;&lt;img src=&quot;/articles/biketown-api/unlock.png&quot; alt=&quot;Unlock&quot;&gt;&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Now comes the part where you go get a bike and unlock it. There are three absurdly easy ways to find the bikes. One, is to simply see the unbelievably orange things sitting about the area locked to whatever. Two, you can go out to the website and check out the &lt;a href=&quot;https://www.biketownpdx.com/map&quot;&gt;map and go to one of those locations&lt;/a&gt;. Third, you can use the mobile application, which is likely the most useful since you’d often be on the go when you get a bike. At least, for me that’s the way I generally use the system.&lt;/p&gt;
+&lt;p&gt;The overall map looks a bit like this…&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.biketownpdx.com/map&quot;&gt;&lt;img src=&quot;/articles/biketown-api/maps.jpg&quot; alt=&quot;The Bike Map&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The other way to find and get a bike at the same time is to actually reserve a bike. This puts a hold on a particular bike as you travel toward the bike to pick it up. To learn more about reserving a bike download the app and give it a try.&lt;/p&gt;
+&lt;p&gt;If you just go to where a bike or bikes are then you’ll click a button, the screen will come alive, then enter your account number and your account code. Once you’ve done that you’ve checked out the bike and are ready to ride. Also, feel free to enjoy a video on the matter of unlocking and locking.&lt;/p&gt;
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/mPWZhknfI48?rel=0&amp;amp;showinfo=0&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;p&gt;So moving right along…&lt;/p&gt;
+&lt;div class=&quot;image float-right&quot;&gt;
+    &lt;a href=&quot;https://www.biketownpdx.com&quot;&gt;&lt;img src=&quot;/articles/biketown-api/ride.png&quot; alt=&quot;ride&quot;&gt;&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Riding… ok, ummm, I think this is pretty self-explanatory. You ride the bicycle to where you intend to go. It’s really not complicated. But just in case here are a few tips:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Ride at a steady speed in the bike lane, path, or if there isn’t a path or bike lane take the full lane as the law states in Oregon code.&lt;/li&gt;
+&lt;li&gt;Don’t ride on the sidewalk unless you have to. It’s a pretty shitty thing to do in all seriousness, and also illegal in some circumstances.&lt;/li&gt;
+&lt;li&gt;Enjoy the ride!&lt;/li&gt;
+&lt;li&gt;Don’t ride into trees. They’re really hard.&lt;/li&gt;
+&lt;li&gt;Enjoy the breeze flowing through your hair (or if you’re like me, flowing over your scalp!)&lt;/li&gt;
+&lt;li&gt;Enjoy the fact you’re being super clean, responsible, you’re doing your body and everybody else some good by riding a bike, and getting things done at the same time!&lt;/li&gt;
+&lt;li&gt;Just take your time and keep an eye out, you’ll get there just fine.&lt;/li&gt;
+&lt;li&gt;You’re not reducing yourself to motor-vehicle usage, be proud of that.&lt;/li&gt;
+&lt;li&gt;Also be glad you’re not some asshole in a car. Everybody, even me, when we drive we’re assholes. It’s just the law of physics and the rule of cages is all, don’t cry over it or anything.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Ok, enough random rules, observations, and guidelines. You get the idea, ride the bike, have fun, get where you’re going. Smile, love one another. Koombayaaaa and stuff.&lt;/p&gt;
+&lt;div class=&quot;image float-right&quot;&gt;
+    &lt;a href=&quot;https://www.biketownpdx.com/pricing&quot;&gt;&lt;img src=&quot;/articles/biketown-api/lock.png&quot; alt=&quot;lock&quot;&gt;&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Once you’re done with the bike lock it up to a bike kiosk. You can technically just lock it to a post or what not, it’s up to you, but note the costs above in the plans I described earlier. If out of zone it’s $20 bucks, if inside the zone and not in a kiosk it’ll cost you $2.00. So it’s usually best to just lock it to a standard bright orange rack kiosk.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Whew, done with the description. Let’s talk about the coding factor now…&lt;/em&gt;&lt;/p&gt;
+&lt;h3 id=&quot;systemic-geographic-mapping-api-stuff&quot;&gt;Systemic Geographic Mapping API Stuff&lt;/h3&gt;
+&lt;p&gt;Ok, I don’t really know what “Systemic Geographic Mapping API Stuff” but it sounds like it encompasses the key aspects of what features the API has. So let’s talk data.&lt;/p&gt;
+&lt;p&gt;The first bit of data that is useful is the GBFS. This is the &lt;strong&gt;G&lt;/strong&gt;eneral &lt;strong&gt;B&lt;/strong&gt;ikeshare &lt;strong&gt;F&lt;/strong&gt;eed &lt;strong&gt;S&lt;/strong&gt;pecification. This is available here: &lt;a href=&quot;http://biketownpdx.socialbicycles.com/opendata/gbfs.json&quot;&gt;http://biketownpdx.socialbicycles.com/opendata/gbfs.json&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;That’s a &lt;em&gt;little&lt;/em&gt; data, an overview of the system one could say. The real meat however is in the authenticate API. It’s available at &lt;a href=&quot;https://app.socialbicycles.com/developer&quot;&gt;https://app.socialbicycles.com/developer&lt;/a&gt;. Give it a try with a curl.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;curl http://biketownpdx.socialbicycles.com/opendata/gbfs.json
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The response is as shown. A pretty straight forward JSON data blurb. Showing the pricing, alerts, regions, calendar, hours, free bike status (??), station status, station information, and system information url references.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;{
+  &amp;quot;last_updated&amp;quot;: 1469237395,
+  &amp;quot;ttl&amp;quot;: 60,
+  &amp;quot;data&amp;quot;: {
+    &amp;quot;en&amp;quot;: {
+      &amp;quot;feeds&amp;quot;: [
+        {
+          &amp;quot;name&amp;quot;: &amp;quot;gbfs&amp;quot;,
+          &amp;quot;url&amp;quot;: &amp;quot;http://biketownpdx.socialbicycles.com/opendata/gbfs.json&amp;quot;
+        },
+        {
+          &amp;quot;name&amp;quot;: &amp;quot;system_information&amp;quot;,
+          &amp;quot;url&amp;quot;: &amp;quot;http://biketownpdx.socialbicycles.com/opendata/system_information.json&amp;quot;
+        },
+        {
+          &amp;quot;name&amp;quot;: &amp;quot;station_information&amp;quot;,
+          &amp;quot;url&amp;quot;: &amp;quot;http://biketownpdx.socialbicycles.com/opendata/station_information.json&amp;quot;
+        },
+        {
+          &amp;quot;name&amp;quot;: &amp;quot;station_status&amp;quot;,
+          &amp;quot;url&amp;quot;: &amp;quot;http://biketownpdx.socialbicycles.com/opendata/station_status.json&amp;quot;
+        },
+        {
+          &amp;quot;name&amp;quot;: &amp;quot;free_bike_status&amp;quot;,
+          &amp;quot;url&amp;quot;: &amp;quot;http://biketownpdx.socialbicycles.com/opendata/free_bike_status.json&amp;quot;
+        },
+        {
+          &amp;quot;name&amp;quot;: &amp;quot;system_hours&amp;quot;,
+          &amp;quot;url&amp;quot;: &amp;quot;http://biketownpdx.socialbicycles.com/opendata/system_hours.json&amp;quot;
+        },
+        {
+          &amp;quot;name&amp;quot;: &amp;quot;system_calendar&amp;quot;,
+          &amp;quot;url&amp;quot;: &amp;quot;http://biketownpdx.socialbicycles.com/opendata/system_calendar.json&amp;quot;
+        },
+        {
+          &amp;quot;name&amp;quot;: &amp;quot;system_regions&amp;quot;,
+          &amp;quot;url&amp;quot;: &amp;quot;http://biketownpdx.socialbicycles.com/opendata/system_regions.json&amp;quot;
+        },
+        {
+          &amp;quot;name&amp;quot;: &amp;quot;system_pricing_plans&amp;quot;,
+          &amp;quot;url&amp;quot;: &amp;quot;http://biketownpdx.socialbicycles.com/opendata/system_pricing_plans.json&amp;quot;
+        },
+        {
+          &amp;quot;name&amp;quot;: &amp;quot;system_alerts&amp;quot;,
+          &amp;quot;url&amp;quot;: &amp;quot;http://biketownpdx.socialbicycles.com/opendata/system_alerts.json&amp;quot;
+        }
+      ]
+    }
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Any of the references you can do a simple curl against and get a good chunk of data. For instance.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;curl http://biketownpdx.socialbicycles.com/opendata/system_information.json
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The result returns as such.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;{
+  &amp;quot;last_updated&amp;quot;: 1469290649,
+  &amp;quot;ttl&amp;quot;: 60,
+  &amp;quot;data&amp;quot;: {
+    &amp;quot;system_id&amp;quot;: &amp;quot;biketownpdx&amp;quot;,
+    &amp;quot;language&amp;quot;: &amp;quot;en&amp;quot;,
+    &amp;quot;name&amp;quot;: &amp;quot;BIKETOWNpdx&amp;quot;,
+    &amp;quot;url&amp;quot;: &amp;quot;http://biketownpdx.com/&amp;quot;,
+    &amp;quot;purchase_url&amp;quot;: &amp;quot;http://biketownpdx.com/&amp;quot;,
+    &amp;quot;timezone&amp;quot;: &amp;quot;America/Los_Angeles&amp;quot;,
+    &amp;quot;phone_number&amp;quot;: &amp;quot;(866) 512-2453&amp;quot;,
+    &amp;quot;email&amp;quot;: &amp;quot;customerservice@biketownpdx.com&amp;quot;
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;When I first looked at this list I got keenly interested in the &lt;code&gt;free_bike_status&lt;/code&gt;. I’d always want to know where the free bikes are when I want to rent one. A simple curl request and I knew what I could accrue from this end point. The blurb is sizably bigger than the previous two, so I actually cut out the mid section so it didn’t take until tomorrow to scroll to the end.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;  {
+    &amp;quot;last_updated&amp;quot;: 1469290813,
+    &amp;quot;ttl&amp;quot;: 60,
+    &amp;quot;data&amp;quot;: {
+      &amp;quot;bikes&amp;quot;: [
+        {
+          &amp;quot;bike_id&amp;quot;: &amp;quot;bike_6779&amp;quot;,
+          &amp;quot;name&amp;quot;: &amp;quot;0218 BIKETOWN&amp;quot;,
+          &amp;quot;lon&amp;quot;: -122.65348833333333,
+          &amp;quot;lat&amp;quot;: 45.50477166666667,
+          &amp;quot;is_reserved&amp;quot;: 0,
+          &amp;quot;is_disabled&amp;quot;: 0
+        },
+        {
+          &amp;quot;bike_id&amp;quot;: &amp;quot;bike_6265&amp;quot;,
+          &amp;quot;name&amp;quot;: &amp;quot;0188 BIKETOWN&amp;quot;,
+          &amp;quot;lon&amp;quot;: -122.70043833333334,
+          &amp;quot;lat&amp;quot;: 45.535826666666665,
+          &amp;quot;is_reserved&amp;quot;: 0,
+          &amp;quot;is_disabled&amp;quot;: 0
+        },
+        {
+          &amp;quot;bike_id&amp;quot;: &amp;quot;bike_7160&amp;quot;,
+          &amp;quot;name&amp;quot;: &amp;quot;0131 BIKETOWN&amp;quot;,
+          &amp;quot;lon&amp;quot;: -122.674115,
+          &amp;quot;lat&amp;quot;: 45.51180333333333,
+          &amp;quot;is_reserved&amp;quot;: 0,
+          &amp;quot;is_disabled&amp;quot;: 0
+        },
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;…a whole bunch of entries cut out for brevity…&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;        {
+          &amp;quot;bike_id&amp;quot;: &amp;quot;bike_7308&amp;quot;,
+          &amp;quot;name&amp;quot;: &amp;quot;0984 AIR TRAINER&amp;quot;,
+          &amp;quot;lon&amp;quot;: -122.64039333333334,
+          &amp;quot;lat&amp;quot;: 45.55905833333333,
+          &amp;quot;is_reserved&amp;quot;: 0,
+          &amp;quot;is_disabled&amp;quot;: 0
+        },
+        {
+          &amp;quot;bike_id&amp;quot;: &amp;quot;bike_7301&amp;quot;,
+          &amp;quot;name&amp;quot;: &amp;quot;0971 AIR TRAINER&amp;quot;,
+          &amp;quot;lon&amp;quot;: -122.644855,
+          &amp;quot;lat&amp;quot;: 45.516286666666666,
+          &amp;quot;is_reserved&amp;quot;: 0,
+          &amp;quot;is_disabled&amp;quot;: 0
+        }
+      ]
+    }
+  }
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;So far this is purely the public facing, non-authentication based API for Biketown. You can get a host of information and do all sorts of useful things with just this information. But, I will be following up in the coming days with a review of the actual authenticated API for Biketown. I’m looking forward to hacking together some cool apps and interfaces myself, but I’m also really interested to see what others put together!&lt;/p&gt;
+&lt;p&gt;Last thing for this post, if you’re curious about the oddly colored bikes that are clearly not orange. You can rent those two, they have a particular theme as detailed here. Something to do with Nike branding and Nike shoes of some sort, I’m not entirely sure as I don’t really wear any Nike gear. Ironically, since I bike I need tougher stuff that’s oriented toward biking. Nike doesn’t really seem to have any market play in that realm.&lt;/p&gt;
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/qs6m9lQ9qRE?rel=0&amp;amp;showinfo=0&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;p&gt;Until that next API call, cheers!&lt;/p&gt;
+</description>
+    </item>
     <item>
       <title>NGinx Notes from URL Redirect Project on Google Cloud with Terraform &amp; Packer - Part 1</title>
       <link>http://adron.github.io/articles/nginx-notes-from-the-url-redirect/</link>
@@ -745,6 +938,27 @@ export TF_VAR_password=&amp;quot;someSecretPassword&amp;quot;
 </description>
     </item>
     <item>
+      <title>How to Electron by Blaine Schmeisser</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-blaine-schmeisser/</link>
+      <pubDate>Sun, 05 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-blaine-schmeisser/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-blaine-schmeisser/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-left&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-blaine-schmeisser/blainesch.jpg&quot; alt=&quot;Blaine Schmeisser&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;I’m happy to introduce Blaine Schmeisser. He’s a recent Portland transplant currently working as a Senior Software Engineer at New Relic. He has a passion for building and shipping software and an advocate for pair programming. Outside of tech, Blaine spends his free time with his dog and maintains a simplistic, eco-friendly lifestyle.&lt;/p&gt;
+&lt;p&gt;Blaine’s “How to Electron” answers questions you have about building user interface applications with JavaScript. Have you ever wanted to build desktop apps with web technology you already know? If you’ve never heard of Electron or just want to learn more about it, this talk will cover what Electron is and how to utilize it to create powerful tools like Atom and Slack. You will learn the history of Electron, how to get started, the trade-offs of picking various boiler plates, and the unique Electron specific APIs that are vital to being a Electron developer.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;GitHub: &lt;a href=&quot;https://github.com/blainesch&quot;&gt;https://github.com/blainesch&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Twitter: &lt;a href=&quot;https://twitter.com/blainesch&quot;&gt;https://twitter.com/blainesch&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Website: &lt;a href=&quot;http://blainesch.com&quot;&gt;http://blainesch.com&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    <item>
       <title>Demystifying TypeScript Decorators by James Churchill</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-james-churchill/</link>
       <pubDate>Sun, 05 Jun 2016 17:00:00 -0700</pubDate>
@@ -764,27 +978,6 @@ export TF_VAR_password=&amp;quot;someSecretPassword&amp;quot;
 &lt;li&gt;Blog: &lt;a href=&quot;http://smashdev.com&quot;&gt;http://smashdev.com&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Github: &lt;a href=&quot;http://github.com/smashdevcode&quot;&gt;http://github.com/smashdevcode&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Twitter: &lt;a href=&quot;http://twitter.com/SmashDev&quot;&gt;http://twitter.com/SmashDev&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-    </item>
-    <item>
-      <title>How to Electron by Blaine Schmeisser</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-blaine-schmeisser/</link>
-      <pubDate>Sun, 05 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-blaine-schmeisser/</guid>
-      <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-blaine-schmeisser/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-left&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-blaine-schmeisser/blainesch.jpg&quot; alt=&quot;Blaine Schmeisser&quot;&gt;
-&lt;/div&gt;
-
-&lt;p&gt;I’m happy to introduce Blaine Schmeisser. He’s a recent Portland transplant currently working as a Senior Software Engineer at New Relic. He has a passion for building and shipping software and an advocate for pair programming. Outside of tech, Blaine spends his free time with his dog and maintains a simplistic, eco-friendly lifestyle.&lt;/p&gt;
-&lt;p&gt;Blaine’s “How to Electron” answers questions you have about building user interface applications with JavaScript. Have you ever wanted to build desktop apps with web technology you already know? If you’ve never heard of Electron or just want to learn more about it, this talk will cover what Electron is and how to utilize it to create powerful tools like Atom and Slack. You will learn the history of Electron, how to get started, the trade-offs of picking various boiler plates, and the unique Electron specific APIs that are vital to being a Electron developer.&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;GitHub: &lt;a href=&quot;https://github.com/blainesch&quot;&gt;https://github.com/blainesch&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Twitter: &lt;a href=&quot;https://twitter.com/blainesch&quot;&gt;https://twitter.com/blainesch&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Website: &lt;a href=&quot;http://blainesch.com&quot;&gt;http://blainesch.com&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>
@@ -849,23 +1042,6 @@ key concepts of SAM and walk the audience through some node.js code samples (inc
 </description>
     </item>
     <item>
-      <title>WebSockets Bring Light at the End of the Tunnel by Joel Lord</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</link>
-      <pubDate>Fri, 03 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</guid>
-      <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-left&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/joel-lord.jpg&quot; alt=&quot;Joel Lord&quot;&gt;
-&lt;/div&gt;
-
-&lt;p&gt;As a Development Manager, Joel’s motivation and proven technical prowess makes him a key member of Spiria’s software development team. With a degree in computational astrophysics, his interests eventually made their way to software and Web design. Today, his knowledge of JavaScript lets him to support a variety of projects on both the front end and back end. As we move into the age of the Internet of Things, Joel is ready with his passion for programming node bots and experimenting with gadgets.&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Joel is going to speak on Web Sockets and tunnels of light… or to describe it more specifically more and more, people seem to be obsessed with real-time data.  But what does real-time mean in the world of REST servers and one-way communication?  Most modern web applications are now either displaying a snapshot of data at a given time or use a polling mechanism to update series of data at a given interval.
-In this talk, you will learn about the power of WebSockets and how they can (and should!) be used in your modern web applications. In these 30 minutes, I will go through the process of building a Node server that can push data to multiple clients in real-time.  You will see how this can be easy using the socket.io library.&lt;/p&gt;
-</description>
-    </item>
-    <item>
       <title>MMOWAM - Build Server-less Games with a DSN by Josh Marinacci</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-josh-marinacci/</link>
       <pubDate>Fri, 03 Jun 2016 17:00:00 -0700</pubDate>
@@ -903,6 +1079,40 @@ it can be.&lt;/p&gt;
 </description>
     </item>
     <item>
+      <title>WebSockets Bring Light at the End of the Tunnel by Joel Lord</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</link>
+      <pubDate>Fri, 03 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-left&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/joel-lord.jpg&quot; alt=&quot;Joel Lord&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;As a Development Manager, Joel’s motivation and proven technical prowess makes him a key member of Spiria’s software development team. With a degree in computational astrophysics, his interests eventually made their way to software and Web design. Today, his knowledge of JavaScript lets him to support a variety of projects on both the front end and back end. As we move into the age of the Internet of Things, Joel is ready with his passion for programming node bots and experimenting with gadgets.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Joel is going to speak on Web Sockets and tunnels of light… or to describe it more specifically more and more, people seem to be obsessed with real-time data.  But what does real-time mean in the world of REST servers and one-way communication?  Most modern web applications are now either displaying a snapshot of data at a given time or use a polling mechanism to update series of data at a given interval.
+In this talk, you will learn about the power of WebSockets and how they can (and should!) be used in your modern web applications. In these 30 minutes, I will go through the process of building a Node server that can push data to multiple clients in real-time.  You will see how this can be easy using the socket.io library.&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>I Play the JavaScript by Matt McKegg</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</link>
+      <pubDate>Thu, 02 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-left&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/mattmckegg.jpg&quot; alt=&quot;Matt McKegg&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;A JavaScript hacker and backyard musician and from Wellington, New Zealand. Lover of all things open and modular. I spend most of my time pressing buttons of various shapes, sizes and colours. Sometimes these buttons make sounds.&lt;/p&gt;
+&lt;p&gt;Matt has been making music with computers for about 10 years, but once he tried to move from bedroom composing to live performance, he got incredibly frustrated at how hard it was to play computer music live. He decided to start working on his own live electronic performance software written in JavaScript that would let me play the way he wanted to play. 3 years later, it’s finally starting to become a reality.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Here is one of the Matt’s recent performances, for your viewing pleasure. &lt;/p&gt;
+&lt;iframe width=&quot;1280&quot; height=&quot;720&quot; src=&quot;https://www.youtube.com/embed/L2BVDJWHdy0?rel=0&amp;amp;showinfo=0&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;</description>
+    </item>
+    <item>
       <title>The Web Platform is the Universal Instrument by Ben Michel</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-ben-michel/</link>
       <pubDate>Thu, 02 Jun 2016 17:00:00 -0700</pubDate>
@@ -928,23 +1138,6 @@ it can be.&lt;/p&gt;
 &lt;li&gt;Audience interaction with the exposed parameters of a live band’s instrumentation–via broadcast methods and microcontroller installations.”&lt;/li&gt;
 &lt;/ul&gt;
 </description>
-    </item>
-    <item>
-      <title>I Play the JavaScript by Matt McKegg</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</link>
-      <pubDate>Thu, 02 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</guid>
-      <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-left&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/mattmckegg.jpg&quot; alt=&quot;Matt McKegg&quot;&gt;
-&lt;/div&gt;
-
-&lt;p&gt;A JavaScript hacker and backyard musician and from Wellington, New Zealand. Lover of all things open and modular. I spend most of my time pressing buttons of various shapes, sizes and colours. Sometimes these buttons make sounds.&lt;/p&gt;
-&lt;p&gt;Matt has been making music with computers for about 10 years, but once he tried to move from bedroom composing to live performance, he got incredibly frustrated at how hard it was to play computer music live. He decided to start working on his own live electronic performance software written in JavaScript that would let me play the way he wanted to play. 3 years later, it’s finally starting to become a reality.&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Here is one of the Matt’s recent performances, for your viewing pleasure. &lt;/p&gt;
-&lt;iframe width=&quot;1280&quot; height=&quot;720&quot; src=&quot;https://www.youtube.com/embed/L2BVDJWHdy0?rel=0&amp;amp;showinfo=0&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;</description>
     </item>
     <item>
       <title>The House Is Not On Fire - Building a home automation robot with Arduino, Raspberry Pi and Node.js by Artur Paikin</title>
