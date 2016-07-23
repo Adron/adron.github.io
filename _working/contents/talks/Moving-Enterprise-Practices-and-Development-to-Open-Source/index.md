@@ -5,7 +5,7 @@ date: 2016-07-02:21:36:04
 template: talk.jade
 ---
 ## Moving Enterprise Practices and Development to Open Source
-### *on 2016-07-02*
+### *on October 19-21, 2016*
 
 Description
 
