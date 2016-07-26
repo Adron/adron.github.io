@@ -9,17 +9,24 @@ talkdate=$3
 published=`date +%Y-%m-%d:%H:%M:%S`
 author='Adron Hall'
 
+<<<<<<< HEAD
 cd contents/talks
 
 echo "Changed into talks directory."
 
 if [ ! $# == 3 ]
+=======
+if [ ! $# == 2 ]
+>>>>>>> next
     then
     echo "There should be at least the title of the talk, conference name, and the date of the talk."
     exit 1
 fi
 
-echo "Creating $talktitle."
+cd contents/talks
+
+echo "Changed into talks directory. Creating $talktitle."
+
 mkdir "$talktitle"
 cd "$talktitle"
 
