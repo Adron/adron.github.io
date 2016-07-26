@@ -7,17 +7,16 @@ confname=$2
 published=`date +%Y-%m-%d:%H:%M:%S`
 author='Adron Hall'
 
-cd contents/talks
-
-echo "Changed into talks directory."
-
 if [ ! $# == 2 ]
     then
     echo "There should be at least the title of the talk and of the conference."
     exit 1
 fi
 
-echo "Creating $talktitle."
+cd contents/talks
+
+echo "Changed into talks directory. Creating $talktitle."
+
 mkdir "$talktitle"
 cd "$talktitle"
 
