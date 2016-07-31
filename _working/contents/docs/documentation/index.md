@@ -59,5 +59,16 @@ template: doc.jade
                 </li>
             </ul>
         </li>
+        <li class="is-folder">Coding -
+            <span class="file-tree-description">Random Notes, Docs, and Other Bits</span>
+            <ul>
+                <li class="is-file">Nginx -
+                    <span class="file-tree-description">[Python PIP](../../docs/Python-PIP-Etc/)</span>
+                </li>
+                <li class="is-file">Google Chrome -
+                    <span class="file-tree-description">[Best Practice Way to Install Node.js](../../docs/Best-Practice-Way-To-Install-Nodejs/)</span>
+                </li>
+            </ul>
+        </li>
     </ul>
 </div>
