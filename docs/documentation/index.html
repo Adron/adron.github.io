@@ -60,7 +60,7 @@
             <div class="col-md-12">
               <!-- Page Info-->
               <div class="page-info page-info-simple">
-                <h1>The SAM Pattern - a distributed system view of Front-End architectures by Jean-Jacques Dubray</h1>
+                <h1>Documentation - Because RTFM</h1>
                 <p class="author">Written by <span class="author">Adron Hall</span>
                 </p>
                 <div class="nav"><a href="/">« Home</a></div>
@@ -78,31 +78,65 @@
             <div class="col-md-9">
               <div class="main-content">
                 <!-- Blog Page-->
-                <article class="article">
-                  <section class="content"><p><a href="http://nodepdx.org"><img src="/articles/node-pdx-2016-speaker-jean-jacques-dubray/nodepdx-2016-logo.png" alt="Node PDX 2016"></a></p>
-<div class="image float-left">
-    <img src="/articles/node-pdx-2016-speaker-jean-jacques-dubray/jj-sized.png" alt="Jean-Jacques Dubray">
+                <docs class="article">
+                  <section class="content"><h2 id="documentation-index">Documentation&nbsp;Index</h2>
+<div class="file-tree">
+    <div class="file-tree-title"> Docs file hierarchy
+        <ul class="file-tree-buttons">
+            <li class="js-expand">
+                <i class="fa fa-plus"></i> Expand&nbsp;all</li>
+            <li class="js-collapse">
+                <i class="fa fa-minus"></i> Collapse&nbsp;all</li>
+        </ul>
+    </div>
+    <ul class="file-tree-list js-file-tree" data-expanded="">
+        <li class="is-folder"><span class="caps">OS</span> -
+            <span class="file-tree-description">Operating Systems</span>
+            <ul>
+                <li class="is-folder">Linux -
+                    <span class="file-tree-description">Ubuntu, Debian, CentOS, Etc</span>
+                    <ul>
+                        <li class="is-folder">Terminals <span class="amp">&amp;</span> Bash -
+                            <span class="file-tree-description">JavaScript libraries</span>
+                            <ul>
+                                <li class="is-file"><a href="/docs/linux-terminator">Terminator</a></li>
+                            </ul>
+                        </li>
+                        <li class="is-folder">Ubuntu -
+                            <span class="file-tree-description">JavaScript libraries</span>
+                            <ul>
+                                <li class="is-file"><a href="/docs/Screen-Scaling-Fix-Ubuntu/">Screen&nbsp;Scaling</a></li>
+                                <li class="is-file"><a href="/docs/Ubuntu-Dev-Tools-List/">Dev&nbsp;Tools</a></li>
+                                <li class="is-file"><a href="/docs/Ubuntu-HandleLidSwitch/">Handle Lid Switch&nbsp;Hack</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="is-folder"><span class="caps">OS</span>-X -
+                    <span class="file-tree-description">Sierra, El Capitan, Yosemite, Mavericks, etc</span>
+                    <ul>
+                        <li class="is-file">⌘ ⌥ ^
+                            <span class="file-tree-description"><a href="/docs/Mac-OS-X-Keyboard-Keys/">Mac Keyboard&nbsp;Keys</a></span>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li class="is-folder">Tertiary -
+            <span class="file-tree-description">Servers <span class="amp">&amp;</span> Apps</span>
+            <ul>
+                <li class="is-file">Nginx -
+                    <span class="file-tree-description"><a href="/docs/nginx-default-config-file/">Default Config&nbsp;File</a></span>
+                </li>
+                <li class="is-file">Google Chrome -
+                    <span class="file-tree-description"><a href="/docs/Google-Chrome-Mac-Shortcuts/">Mac&nbsp;Shortcuts</a></span>
+                </li>
+            </ul>
+        </li>
+    </ul>
 </div>
-
-<p>Jean-Jacques Dubray is the founder of <a href="http://xgen.io">xgen.io</a> and <a href="http://www.gliiph.com">gliiph</a>. He has been building Service Oriented Architectures,
-and <span class="caps">API</span> platforms for the last 15 years. He is a former member of the research staff at HRL and earned his Ph.D. from
-the University of Provence (Luminy campus), home of the Prolog language. He is the inventor of the <a href="http://www.xgenio.com/bolt-introduction.pdf"><span class="caps">BOLT</span> methodology</a> and the <span class="caps">SAM</span>&nbsp;pattern.</p>
-<p>In his talk Jean-Jacques Dubray presents that Web Applications are rapidly becoming sophisticated distributed systems. When you look at a Facebook page or a Netflix catalog,
-the number of components interacting with each other requires complex synchronization and state management capabilities, reaching
-the limits of the <span class="caps">MVC</span>&nbsp;pattern.</p>
-<p><span class="more"></span></p>
-<p>In the last couple of years, several reactive architectures have started to get some interest (React, Cycle.js, <span class="caps">ELM</span>) without
-generating significant traction (compared to established frameworks like Angular), while struggling to position effects in their
-programming model. A new reactive, functional pattern, the State-Action-Model pattern (SAM) was introduced in early 2016 on the
-foundation of TLA+&nbsp;semantics.</p>
-<p>The pattern, which is unapologetically driven by simplicity, promotes a clear delineation between the business logic and the view
-and challenges the complexity of frameworks like Google’s Angular or Facebook’s&nbsp;React/Redux.</p>
-<p><span class="caps">SAM</span>’s unidirectional flow is also challenging interactive patterns like BFF (Back-End for Front-End) or the Vertical Slice Pattern
-which suggest creating view-specific APIs, per platform, app, versions of an&nbsp;app…</p>
-<p>We’ll start by reviewing some of the key challenges of modern <span class="caps">UX</span> and Front-End Architectures. We will then present the
-key concepts of SAM and walk the audience through some node.js code samples (including server-side&nbsp;TimeTravel).</p>
 </section>
-                </article>
+                </docs>
                 <!-- End of Blog Page-->
               </div>
             </div>
