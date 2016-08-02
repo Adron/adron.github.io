@@ -1,8 +1,8 @@
 {
   "variables": {
     "account_json": "{{env `packer_account_json`}}",
-    "instance_name": "hdqc-url-redirector-{{timestamp}}",
-    "image_name": "hdqc-url-redirector-{{timestamp}}"
+    "instance_name": "nginx-server-{{timestamp}}-{{uuid}}",
+    "image_name": "nginx-server-{{timestamp}}-{{uuid}}"
   },
   "builders": [
     {
@@ -17,6 +17,5 @@
       "communicator": "ssh",
       "ssh_username": "nginxadmin"
     }
-  ],
-  "provisioners": []
+  ]
 }
