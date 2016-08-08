@@ -84,7 +84,7 @@ This is the seriously bad ass era of immutable infrastructure, self-deploying ap
 
 ***...Updated as of August 7th, 2016***
 
-I **might** have the video posted here if and when it's available. That'll be sometime after the conference, which is September 6th-8th.
+I *might* have the video posted here if and when it's available. That'll be sometime after the conference, which is September 6th-8th.
 
 More to come, but if you want to join the conversation, see, and hear the presentation you'll have to join Evan and I [@hashiconf](https://www.hashiconf.com/)!
 
