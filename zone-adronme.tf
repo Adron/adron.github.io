@@ -23,8 +23,8 @@ resource "google_dns_record_set" "photos" {
 resource "google_dns_record_set" "data" {
     managed_zone = "${google_dns_managed_zone.adronme.name}"
     name = "data.${google_dns_managed_zone.adronme.dns_name}"
-    type = "CNAME"
+    type = "A"
     ttl = 5
     rrdatas = [
-        "${google_compute_address.nginx-server.address}"]
+        "${google_compute_address.nginx.address}"]
 }
