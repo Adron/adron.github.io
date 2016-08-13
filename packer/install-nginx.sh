@@ -12,7 +12,7 @@ sudo apt-get -y install nginx
 sudo service nginx stop
 sudo update-rc.d nginx defaults
 
-# sudo mv nginx.conf /var/nginx/nginx.conf
+sudo mv nginx.conf /etc/nginx/nginx.conf
 
 sudo service nginx start
 sudo service nginx restart
