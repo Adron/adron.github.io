@@ -1,12 +1,12 @@
-resource "google_compute_network" "worker-space" {
-  name = "worker-space"
+resource "google_compute_network" "production-space" {
+  name = "production-space"
   auto_create_subnetworks = false
 }
 
 resource "google_compute_subnetwork" "worker-us-west1" {
-  name = "worker-space"
+  name = "production-space"
   ip_cidr_range = "10.138.0.0/18"
-  network = "${google_compute_network.worker-space.self_link}"
+  network = "${google_compute_network.production-space.self_link}"
   region = "us-west1"
 }
 
