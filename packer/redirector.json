@@ -1,0 +1,40 @@
+{
+  "variables": {
+    "account_json": "../../secrets/account.json",
+    "instance_name": "redirector-{{timestamp}}",
+    "image_name": "redirector-{{timestamp}}"
+  },
+  "builders": [
+    {
+      "type": "googlecompute",
+      "account_file": "{{user `account_json`}}",
+      "project_id": "that-big-universe",
+      "source_image": "debian-8-jessie-v20160803",
+      "zone": "us-central1-a",
+      "instance_name": "sample-{{timestamp}}",
+      "image_name": "sample-{{uuid}}",
+      "image_description": "Nginx Server.",
+      "communicator": "ssh",
+      "ssh_username": "nginxadmin"
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "shell",
+      "inline": [
+        "sleep 3",
+        "echo \"slept for 3 seconds.\""
+      ]
+    },
+    {
+      "type": "file",
+      "source": "install-nginx.sh",
+      "destination": "install-nginx.sh"
+    },
+    {
+      "type": "shell",
+      "script": "install-nginx.sh",
+      "pause_before": "10s"
+    }
+  ]
+}
