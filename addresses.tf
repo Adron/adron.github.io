@@ -1,3 +1,3 @@
-//resource "google_compute_address" "redirector" {
-//  name = "redirector"
-//}
+resource "google_compute_address" "redirector" {
+  name = "redirector"
+}

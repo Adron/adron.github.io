@@ -9,8 +9,10 @@ echo "y" | sudo ufw enable
 
 # Install nginx, stop, start, and restart the server for verification. Then set startup defaults.
 sudo apt-get -y install nginx
-
 sudo service nginx stop
+sudo update-rc.d nginx defaults
+
+# sudo mv nginx.conf /var/nginx/nginx.conf
+
 sudo service nginx start
 sudo service nginx restart
-sudo update-rc.d nginx defaults

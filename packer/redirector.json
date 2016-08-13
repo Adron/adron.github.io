@@ -27,6 +27,11 @@
     },
     {
       "type": "file",
+      "source": "nginx.conf",
+      "destination": "nginx.conf"
+    },
+    {
+      "type": "file",
       "source": "install-nginx.sh",
       "destination": "install-nginx.sh"
     },
