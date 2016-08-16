@@ -8,7 +8,7 @@ resource "google_compute_instance" "redirector" {
   zone = "us-central1-b"
 
   disk {
-    image = "redirector-1471113508"
+    image = "redirector-1471307522"
   }
 
   network_interface {
@@ -17,28 +17,6 @@ resource "google_compute_instance" "redirector" {
       nat_ip = "${google_compute_address.redirector.address}"
     }
   }
-
-  //  provisioner "file" {
-  //    source = "scripts/run-remote.sh"
-  //    destination = "run-remote.sh"
-  //    connection {
-  //      type = "ssh"
-  //      user = "adron"
-  //      private_key = "${file("~/.ssh/google_compute_engine")}"
-  //    }
-//  }
-//
-  //  provisioner "remote-exec" {
-  //    inline = [
-  //      "chmod +x run-remote.sh",
-  //      "./run-remote.sh"
-  //    ]
-  //    connection {
-  //      type = "ssh"
-  //      user = "adron"
-  //      private_key = "${file("~/.ssh/google_compute_engine")}"
-//    }
-//  }
 
   service_account {
     scopes = [
