@@ -297,7 +297,8 @@ http {
     }
 </code></pre><p>Now, I can use the Terraform <span class="caps">CLI</span> and it’ll pull in the all the .tf files for processing and build out the static IP, DNS entry, and respective instance with the nginx.conf file already baked in. With a single command of <code>terraform apply</code> and it will all be&nbsp;done!</p>
 <p><img src="/articles/nginx-notes-from-the-url-redirect-part-two/terraform-apply.gif" alt="terraform apply"></p>
-<p>Now, of course the first time this is applied, be sure to give the <span class="caps">DNS</span> Servers some time to&nbsp;propagate.</p>
+<p>Now, of course the first time this is applied, be sure to give the <span class="caps">DNS</span> Servers some time to propagate. When done, the URL redirection will be in&nbsp;place.</p>
+<p>If you see any errors or confusing parts of this article or <a href="http://blog.adron.me/articles/nginx-notes-from-the-url-redirect/">part 1</a> let me know. You can even take it a step further and <a href="https://github.com/Adron/adron.github.io">fork my repo</a> and, make the changes to the <a href="https://github.com/Adron/adron.github.io/blob/master/_working/contents/articles/nginx-notes-from-the-url-redirect-part-two/index.md">markdown file here</a> and submit a pull request. I’ll review and get a new static site built with the edits <span class="caps">ASAP</span>!&nbsp;Thanks.</p>
 </section>
                 </article>
                 <!-- End of Blog Page-->

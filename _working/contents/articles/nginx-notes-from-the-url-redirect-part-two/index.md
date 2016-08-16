@@ -248,4 +248,6 @@ Now, I can use the Terraform CLI and it'll pull in the all the .tf files for pro
   
 ![terraform apply](terraform-apply.gif)
 
-Now, of course the first time this is applied, be sure to give the DNS Servers some time to propagate.
+Now, of course the first time this is applied, be sure to give the DNS Servers some time to propagate. When done, the URL redirection will be in place.
+
+If you see any errors or confusing parts of this article or [part 1](http://blog.adron.me/articles/nginx-notes-from-the-url-redirect/) let me know. You can even take it a step further and [fork my repo](https://github.com/Adron/adron.github.io) and, make the changes to the [markdown file here](https://github.com/Adron/adron.github.io/blob/master/_working/contents/articles/nginx-notes-from-the-url-redirect-part-two/index.md) and submit a pull request. I'll review and get a new static site built with the edits ASAP! Thanks.
