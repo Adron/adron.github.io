@@ -12,6 +12,8 @@ DevOps Days PDX just wrapped up and I'm at home, working remotely today, digging
 
 I have a host of tools at my disposal that help tremendously with this endeavor. There is Packer, to help build the base images I need that have Elasticsearch, Beats, or whatever else needs to be on an image. There is Terraform that helps me to get the images deployed and start the final configuration process. Then there is the configuration process, which is a mix of bash, go, and other things to insure that the configuration of and services around Elasticsearch are started appropriately.
 
+a
+
 <span class="more"></span>
 
 ## DevOps Tooling vs. Culture
