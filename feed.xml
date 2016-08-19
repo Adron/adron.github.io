@@ -5,9 +5,46 @@
     <atom:link href="http://adron.github.io/feed.xml" rel="self" type="application/rss+xml"></atom:link>
     <link>http://adron.github.io</link>
     <description>Coder, Messenger, Recon, Infrastructure, Ops</description>
-    <pubDate>Sun, 31 Jul 2016 17:00:00 -0700</pubDate>
+    <pubDate>Wed, 10  Aug 2016 17:00:00 -0700</pubDate>
     <generator>Wintersmith - https://github.com/jnordberg/wintersmith</generator>
     <language>en</language>
+    <item>
+      <title>DevOps Thoughts, Fixing Culture Roadblocks, and Cultural Anti-Pattern Practices</title>
+      <link>http://adron.github.io/articles/devops-thoughts/</link>
+      <pubDate>Wed, 10  Aug 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/devops-thoughts/</guid>
+      <author></author>
+      <description>&lt;div class=&quot;image float-right&quot;&gt;
+    &lt;img src=&quot;/articles/devops-thoughts/artisanal.jpg&quot; alt=&quot;Artisanal&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;DevOps Days PDX just wrapped up and I’m at home, working remotely today, digging into some deployment work around building Elasticsearch Clusters for monitoring with Beats. It’s a tricky beast at this point but I’m getting all the nuances figured out.&lt;/p&gt;
+&lt;p&gt;I have a host of tools at my disposal that help tremendously with this endeavor. There is Packer, to help build the base images I need that have Elasticsearch, Beats, or whatever else needs to be on an image. There is Terraform that helps me to get the images deployed and start the final configuration process. Then there is the configuration process, which is a mix of bash, go, and other things to insure that the configuration of and services around Elasticsearch are started appropriately.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;h2 id=&quot;devops-tooling-vs-culture&quot;&gt;DevOps Tooling vs. Culture&lt;/h2&gt;
+&lt;p&gt;It’s a cool thing to have all this tooling at my disposal. For me to be able to whip together these solutions for myself and any clients or cohort that needs these solutions. But there’s so much more to the premise of &lt;em&gt;DevOps&lt;/em&gt; (or lack of premise, more on that in the future), or at least that of an efficient and forward thinking &lt;em&gt;DevOps&lt;/em&gt; culture that the tooling is almost irrelevant. Without effective cultural change in an organization all the fancy tooling is for naught.&lt;/p&gt;
+&lt;p&gt;A momentary reflection I’ve had as I hack deeper into &lt;strong&gt;DevOps&lt;/strong&gt; idealism and ideas with these notions of &lt;a href=&quot;http://blog.adron.me/articles/immutable-infrastructure-some-reads-clarification-what-it-is/&quot;&gt;immutable infrastructure&lt;/a&gt;, &lt;a href=&quot;http://autopilotpattern.io/&quot;&gt;autopilot pattern applications&lt;/a&gt;, &lt;a href=&quot;http://12factor.net/&quot;&gt;12-factor apps&lt;/a&gt;, and related ideas, the more I find myself between a rock and a hard place with any existing system and existing development cultures.&lt;/p&gt;
+&lt;p&gt;This is where I fight with the world, with existing cultures, and fight to make changes. You see, I grew up with more than a few dogs. Many people always said, “you can’t teach an old dog new tricks” to which I retort, “bullshit, you just suck at teaching your fellow dogs new tricks”. Ok, that’s my reactionary activist style response to someone saying I can’t do something, but it’s well founded. Because you see, every dog I ever grew up with would learn new tricks until the day that dog was laid to rest. I &lt;em&gt;respect&lt;/em&gt; dogs in that way and I &lt;em&gt;sure as hell expect more from humans&lt;/em&gt;, even though we humans can be such an enthusiastic let down sometimes.&lt;/p&gt;
+&lt;h2 id=&quot;cultural-road-blocks-to-technology-solutions&quot;&gt;Cultural Road Blocks to Technology Solutions&lt;/h2&gt;
+&lt;p&gt;So how does culture create an environment that makes all the tools for naught and encourages me to write articles where it takes me 3-5 paragraphs to get to the meat. Here’s a list of the key parts of culture that I’ve fought with over the years. These are greater roadblocks than any processor limit, bad code, or other simple technical limitation. The cultural roadblocks are far more of an issue than any code or technical roadblock in the vast majority of places. Suffice it to say, if you aren’t working on rockets and jets with Nasa, Space-X, or fighting some disease or cancer, it’s a cultural roadblock not a technical one that will stop you from progressing.&lt;/p&gt;
+&lt;p&gt;With all that said, here’s my list of cultural problems along with a few suggestions on fixing them. These could also be called “cultural anti-pattern practices”.&lt;/p&gt;
+&lt;h2 id=&quot;cultural-anti-pattern-practices&quot;&gt;Cultural Anti-Pattern Practices&lt;/h2&gt;
+&lt;h3 id=&quot;-we-always-did-it-this-way-&quot;&gt;&lt;em&gt;“We always did it this way”&lt;/em&gt;&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This practice basically defines the insanity of always repeating a practice without ever checking to see if it should still be done, if it’s still needed, or if there might be a better way to do things. Someone might respond with, “If it aint broke, don’t fix it!”, but this goes far beyond an refuses to even check it its broke, needs fixing, or otherwise. This cultural characteristic of an organization crosses into so many other ways of thinking and other practices it’s too hard to enumerate how damaging it truly is to any project or effort. It’s definitely a major anti-pattern in technology in general, and a massive cultural roadblock in any group that wants a more “DevOps” Culture of forward progress.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;-fire-fight-while-you-research-&quot;&gt;&lt;em&gt;“Fire Fight While you Research”&lt;/em&gt;&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;We all know task-switching kills productivity (re: &lt;a href=&quot;https://blog.todoist.com/2014/05/13/how-multitasking-slows-your-brain-and-kills-your-productivity/&quot;&gt;this&lt;/a&gt;, &lt;a href=&quot;https://www.wrike.com/blog/high-cost-of-multitasking-for-productivity/&quot;&gt;this&lt;/a&gt;, &lt;a href=&quot;http://www.umich.edu/~bcalab/multitasking.html&quot;&gt;this&lt;/a&gt;, and &lt;a href=&quot;https://www.psychologytoday.com/blog/brain-wise/201209/the-true-cost-multi-tasking&quot;&gt;this&lt;/a&gt; for example) and the mother load of task switching is going from researching &amp;amp; testing out an idea to being thrown into the hot seat to fight a fire. In this type of task-switch, which is effectively the definition of opposing activities, the mental energy is more than merely exhausting. This type of task switch is a 10 foot thick brick wall of research &amp;amp; learn destruction. There is no way to recover after a fire-fight and immediately dive back into calm, thoughtful, and concentrated creative effort. This type of cultural characteristic will turn any week long project into something that has a delivery date somewhere next to infinity. You think I say that hyperbolically, but it’s basically true. Have regular fires and put a team on those that needs to develop a solution for tomorrow, and you’ll never have a solution for tomorrow. Simply put, DevOps shouldn’t be your “quick fire fight this emergency over here” or the “why is this unique artisanal, hand made, oven baked, organic, custom configured spice rack of a server on fire?” team. This should and needs to be handled in an entirely different way.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;-always-silo-for-the-work-&quot;&gt;&lt;em&gt;“Always Silo for the Work”&lt;/em&gt;&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This is not what Adam Smith meant by &lt;a href=&quot;https://en.wikipedia.org/wiki/Division_of_labour&quot;&gt;division of labor&lt;/a&gt;. This is a serious problem that I see continuing in so many places. If you want to get some more ideas about why not to silo work, go read up on the research and work of &lt;a href=&quot;https://en.wikipedia.org/wiki/W._Edwards_Deming&quot;&gt;W. Edwards Deming&lt;/a&gt; and for some semantic breakdown of the problem &lt;a href=&quot;https://www.infoq.com/articles/break-silos-ventilators&quot;&gt;Don’t Break Your Silos - Push Out the Silo Mentality&lt;/a&gt; is a great article. Creating a silo that creates walls around it and prevents communication or cross-training of necessary knowledge throughout an organization is a surefire way to squander any hopes of a DevOps Culture. The very words pulled together to for DevOps (ya know, Development and Operations) is the breaking down of barriers and silos and bringing together the skills and teamwork necessary.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;These are the top three practices that I see and have experienced for a few years. In a subsequent article I’ll take these and others and write about some solutions. As discussed previously, the solutions are hard because it involves people changing their practices. At a core level that is difficult, but again, teaching old dogs new tricks isn’t so hard, it just takes persistence. Keep at it and happy hacking.&lt;/p&gt;
+&lt;p&gt;Got comments, thoughts, or some other thing to ramble on about? Ping me via the Twitters &lt;a href=&quot;https://twitter.com/Adron&quot;&gt;@Adron&lt;/a&gt; or via wherever you saw this posted. Always happy to discuss, argue, chat, or otherwise work toward finding new solutions!&lt;/p&gt;
+</description>
+    </item>
     <item>
       <title>NGinx Notes from URL Redirect Project on Google Cloud with Terraform &amp; Packer - Part 2</title>
       <link>http://adron.github.io/articles/nginx-notes-from-the-url-redirect-part-two/</link>
@@ -1278,6 +1315,36 @@ export TF_VAR_password=&amp;quot;someSecretPassword&amp;quot;
 </description>
     </item>
     <item>
+      <title>Modern Javascript Frameworks - Introduction to Ember.JS and Ember-CLI by Suchita Doshi</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-suchita-doshi/</link>
+      <pubDate>Sat, 04 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-suchita-doshi/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-suchita-doshi/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-right&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-suchita-doshi/suchita-doshi.jpg&quot; alt=&quot;Suchita Doshi&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Suchita is UI Lead for the analytics module of Yahoo Admanager Plus team and Core member of Emberjs group @Yahoo, Speaker at Women Who code organization (Introduction To Emberjs/Ember CLI), Conducted Webinar for the TenXList members on EmberJS. She’s passionate about improving developers ergonomics and a hardcore “cricket” fan.&lt;/p&gt;
+&lt;p&gt;In other Suchita news, she’s opening bats-woman for the Bay Area Cricket Association team! 😀&lt;/p&gt;
+&lt;p&gt;Suchita describes her talk as “There will never be a “one size fits all” approach to web development. If you want your application to be minimally interactive, then server side rendered HTML would be the way to go, else, if it were a more interactive application, then client side framework would benefit you.
+Why not use just JQuery instead of adopting these Modern Javascript Frameworks? Think about it! If your application has interactivity on the lighter side, then JQuery would work well, but as soon as you introduce more states in your application, it would then become messier and heavier on the DOM. You would need to use the ‘data-‘ attributes to store the data in your DOM and also remember how to map them with the triggered events.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Here is where client side frameworks come to the rescue. I have worked on several client side frameworks like Backbone.js, Ember.js. Few of the many features I love about Ember.js are the two-way data binding, Computed Properties, the run loop, convention over configuration nature, ease of handling routing and many more.
+In this talk I would be covering the following:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Introduction to Emberjs and why Ember&lt;/li&gt;
+&lt;li&gt;How Ember js makes a difference&lt;/li&gt;
+&lt;li&gt;Ember convention over configuration nature&lt;/li&gt;
+&lt;li&gt;Introduction to Ember routes, components and templates&lt;/li&gt;
+&lt;li&gt;Introduction to Ember CLI&lt;/li&gt;
+&lt;li&gt;Computed Properties&lt;/li&gt;
+&lt;li&gt;Live Demo on how it’s really intuitive in a couple of non-trivial scenarios.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;So basically my goal is to attract more developers to adapt modern javascript frameworks and make a difference in the way complex apps are built.”&lt;/p&gt;
+</description>
+    </item>
+    <item>
       <title>The SAM Pattern - a distributed system view of Front-End architectures by Jean-Jacques Dubray</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-jean-jacques-dubray/</link>
       <pubDate>Sat, 04 Jun 2016 17:00:00 -0700</pubDate>
@@ -1308,33 +1375,20 @@ key concepts of SAM and walk the audience through some node.js code samples (inc
 </description>
     </item>
     <item>
-      <title>Modern Javascript Frameworks - Introduction to Ember.JS and Ember-CLI by Suchita Doshi</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-suchita-doshi/</link>
-      <pubDate>Sat, 04 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-suchita-doshi/</guid>
+      <title>WebSockets Bring Light at the End of the Tunnel by Joel Lord</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</link>
+      <pubDate>Fri, 03 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</guid>
       <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-suchita-doshi/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-right&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-suchita-doshi/suchita-doshi.jpg&quot; alt=&quot;Suchita Doshi&quot;&gt;
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-left&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/joel-lord.jpg&quot; alt=&quot;Joel Lord&quot;&gt;
 &lt;/div&gt;
 
-&lt;p&gt;Suchita is UI Lead for the analytics module of Yahoo Admanager Plus team and Core member of Emberjs group @Yahoo, Speaker at Women Who code organization (Introduction To Emberjs/Ember CLI), Conducted Webinar for the TenXList members on EmberJS. She’s passionate about improving developers ergonomics and a hardcore “cricket” fan.&lt;/p&gt;
-&lt;p&gt;In other Suchita news, she’s opening bats-woman for the Bay Area Cricket Association team! 😀&lt;/p&gt;
-&lt;p&gt;Suchita describes her talk as “There will never be a “one size fits all” approach to web development. If you want your application to be minimally interactive, then server side rendered HTML would be the way to go, else, if it were a more interactive application, then client side framework would benefit you.
-Why not use just JQuery instead of adopting these Modern Javascript Frameworks? Think about it! If your application has interactivity on the lighter side, then JQuery would work well, but as soon as you introduce more states in your application, it would then become messier and heavier on the DOM. You would need to use the ‘data-‘ attributes to store the data in your DOM and also remember how to map them with the triggered events.&lt;/p&gt;
+&lt;p&gt;As a Development Manager, Joel’s motivation and proven technical prowess makes him a key member of Spiria’s software development team. With a degree in computational astrophysics, his interests eventually made their way to software and Web design. Today, his knowledge of JavaScript lets him to support a variety of projects on both the front end and back end. As we move into the age of the Internet of Things, Joel is ready with his passion for programming node bots and experimenting with gadgets.&lt;/p&gt;
 &lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Here is where client side frameworks come to the rescue. I have worked on several client side frameworks like Backbone.js, Ember.js. Few of the many features I love about Ember.js are the two-way data binding, Computed Properties, the run loop, convention over configuration nature, ease of handling routing and many more.
-In this talk I would be covering the following:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Introduction to Emberjs and why Ember&lt;/li&gt;
-&lt;li&gt;How Ember js makes a difference&lt;/li&gt;
-&lt;li&gt;Ember convention over configuration nature&lt;/li&gt;
-&lt;li&gt;Introduction to Ember routes, components and templates&lt;/li&gt;
-&lt;li&gt;Introduction to Ember CLI&lt;/li&gt;
-&lt;li&gt;Computed Properties&lt;/li&gt;
-&lt;li&gt;Live Demo on how it’s really intuitive in a couple of non-trivial scenarios.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;So basically my goal is to attract more developers to adapt modern javascript frameworks and make a difference in the way complex apps are built.”&lt;/p&gt;
+&lt;p&gt;Joel is going to speak on Web Sockets and tunnels of light… or to describe it more specifically more and more, people seem to be obsessed with real-time data.  But what does real-time mean in the world of REST servers and one-way communication?  Most modern web applications are now either displaying a snapshot of data at a given time or use a polling mechanism to update series of data at a given interval.
+In this talk, you will learn about the power of WebSockets and how they can (and should!) be used in your modern web applications. In these 30 minutes, I will go through the process of building a Node server that can push data to multiple clients in real-time.  You will see how this can be easy using the socket.io library.&lt;/p&gt;
 </description>
     </item>
     <item>
@@ -1372,23 +1426,6 @@ it can be.&lt;/p&gt;
 &lt;li&gt;show number of players&lt;/li&gt;
 &lt;li&gt;start when 4 players in? one player hit’s start? let all player see total count as well and status of the other players&lt;/li&gt;
 &lt;/ul&gt;
-</description>
-    </item>
-    <item>
-      <title>WebSockets Bring Light at the End of the Tunnel by Joel Lord</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</link>
-      <pubDate>Fri, 03 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</guid>
-      <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-left&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/joel-lord.jpg&quot; alt=&quot;Joel Lord&quot;&gt;
-&lt;/div&gt;
-
-&lt;p&gt;As a Development Manager, Joel’s motivation and proven technical prowess makes him a key member of Spiria’s software development team. With a degree in computational astrophysics, his interests eventually made their way to software and Web design. Today, his knowledge of JavaScript lets him to support a variety of projects on both the front end and back end. As we move into the age of the Internet of Things, Joel is ready with his passion for programming node bots and experimenting with gadgets.&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Joel is going to speak on Web Sockets and tunnels of light… or to describe it more specifically more and more, people seem to be obsessed with real-time data.  But what does real-time mean in the world of REST servers and one-way communication?  Most modern web applications are now either displaying a snapshot of data at a given time or use a polling mechanism to update series of data at a given interval.
-In this talk, you will learn about the power of WebSockets and how they can (and should!) be used in your modern web applications. In these 30 minutes, I will go through the process of building a Node server that can push data to multiple clients in real-time.  You will see how this can be easy using the socket.io library.&lt;/p&gt;
 </description>
     </item>
     <item>
