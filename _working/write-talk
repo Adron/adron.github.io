@@ -1,0 +1,45 @@
+#!/usr/bin/env bash
+
+# Just a title
+talktitle=$1
+confname=$2
+talkdate=$3
+
+# Format 2013-04-30
+published=`date +%Y-%m-%d:%H:%M:%S`
+author='Adron Hall'
+
+<<<<<<< HEAD
+cd contents/talks
+
+echo "Changed into talks directory."
+
+if [ ! $# == 3 ]
+=======
+if [ ! $# == 2 ]
+>>>>>>> next
+    then
+    echo "There should be at least the title of the talk, conference name, and the date of the talk."
+    exit 1
+fi
+
+cd contents/talks
+
+echo "Changed into talks directory. Creating $talktitle."
+
+mkdir "$talktitle"
+cd "$talktitle"
+
+# Takes out the dashes. Still needs title cased.
+cleanedTitle=${talktitle//[-]/' '}
+
+cat <<EOT >> index.md
+---
+title: $cleanedTitle
+author: $author
+date: $published
+template: talk.jade
+---
+## $cleanedTitle
+### *@ $confname on $talkdate
+EOT

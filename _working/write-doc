@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+
+# Just a title
+blogtitle=$1
+# Format 2013-04-30
+blogdate=`date +%Y-%m-%d:%H:%M:%S`
+
+cd contents/docs
+
+echo "Changed into docs directory."
+
+if [ ! $# == 1 ]
+    then
+    echo "There should be at least the title."
+    exit 1
+fi
+
+echo "Creating $blogtitle."
+mkdir "$blogtitle"
+cd "$blogtitle"
+
+# Takes out the dashes. Still needs title cased.
+cleanedTitle=${blogtitle//[-]/' '}
+
+cat <<EOT >> index.md
+---
+title: $cleanedTitle
+author: Adron Hall
+date: $blogdate
+template: doc.jade
+---
+<div class="image float-left">
+    ![Somebody](anImage.jpg)
+</div>
+
+[Documentation Root](/someplace/here.html)
+
+EOT

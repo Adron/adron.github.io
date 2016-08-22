@@ -5,35 +5,25 @@ block content
   include author
 
   .blog
-  each article in articles
     .row
-      .col-md-12.col-lg-12
-        // Blog Grid
+  each article in articles
+      .col-md-12.col-sm-12
+        // Blog List
         .blog-grid
-          .blog-grid-image
-            a(href=article.url)
-              span.blog-grid-image-over
-              img(src='http://placehold.it/1280x853', alt='article image')
-       
-          h3.blog-grid-title
-            article.article.intro
-              header
-                p.date
-                  span= moment.utc(article.date).format('DD. MMMM YYYY')
-                h2
-                  a(href=article.url)= article.title
-              section.content
+          .row
+            .col-md-12.col-sm-12
+              h3.blog-grid-title
+                a(href=article.url)= article.title
+              p.blog-grid-excerpt
                 if article.intro.length > 0
                   != typogr(article.intro).typogrify()
                 if article.hasMore
                   p.more
                     a(href=article.url) more
-          .blog-grid-meta
-            span.blog-grid-date= moment.utc(article.date).format('DD. MMMM YYYY')
-            span.blog-grid-author
-              | by
-              div= article.author
-  // End of Blog Page
+              .blog-grid-meta
+                span.blog-grid-date= moment.utc(article.date).format('DD. MMMM YYYY')
+        // End of Blog List
+
 block prepend footer
   div.nav
     if prevPage
@@ -41,4 +31,5 @@ block prepend footer
     else
       a(href='/archive.html') « Archives
     if nextPage
-      a(href=nextPage.url) Next page »
+      | &nbsp;
+      a(href=nextPage.url) Previous »
