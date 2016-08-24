@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="http://adron.github.io/css/style.min.css">
     <script src="http://adron.github.io/js/modernizr.js"></script>
   </head>
-  <body>
+  <body class="article-detail">
     <!--[if lt IE 8]>
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -61,8 +61,10 @@
             <div class="col-md-12">
               <!-- Page Info-->
               <div class="page-info page-info-simple">
-                <h1>Adron's Composite Code</h1>
-                <h2 class="description">Coder, Messenger, Recon, Infrastructure, Ops</h2>
+                <h1>Visual Studio Code (an intro with snark!) and Hashicorp Configuration Language</h1>
+                <p class="author">Written by <span class="author">Adron Hall</span>
+                </p>
+                <div class="nav"><a href="/">« Home</a></div>
               </div>
               <!-- End Page Info-->
             </div>
@@ -77,62 +79,43 @@
             <div class="col-md-9">
               <div class="main-content">
                 <!-- Blog Page-->
-                <div class="blog">
-                  <div class="row"></div>
-                </div>
-                <div class="col-md-12 col-sm-12">
-                  <!-- Blog List-->
-                  <div class="blog-grid">
-                    <div class="row">
-                      <div class="col-md-12 col-sm-12">
-                        <h3 class="blog-grid-title"><a href="/articles/research-learning-about-zookeeper/">Researching &amp; Learning About Zookeeper - A Guide</a></h3>
-                        <p class="blog-grid-excerpt"><p>I’ve started working with Zookeeper. Since I’ve started doing that I’ve put together this blog post. It’s aim is to provide a structured approach to learning Zookeeper and researching the elements that make its features tick. Along the way I have a few call outs to people that have also provided excellent talks, material, or contributions to learning about Zookeeper along the way. With that, let’s get&nbsp;started.</p>
-<p>Zookeeper is a consensus system written based on ideas presented via consensus algorithms. The idea is key value stores that keep all of their data in memory for read heavy workloads. The qualities in this context present a system that is highly consistent, with intent for access from distributed systems to data that won’t be&nbsp;lost.</p>
-<p>
-                          <p class="more"><a href="/articles/research-learning-about-zookeeper/">more</a></p>
-                        </p>
-                        <div class="blog-grid-meta"><span class="blog-grid-date">02. February 2016</span></div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End of Blog List-->
-                </div>
-                <div class="col-md-12 col-sm-12">
-                  <!-- Blog List-->
-                  <div class="blog-grid">
-                    <div class="row">
-                      <div class="col-md-12 col-sm-12">
-                        <h3 class="blog-grid-title"><a href="/articles/elasticon-tour-2015-in-seattle/">Elasticon Tour 2015 in Seattle</a></h3>
-                        <p class="blog-grid-excerpt"><p>Today is the tour stop of the <a href="https://www.elastic.co/elasticon/tour/2015" target="_blank">Elasticon Tour</a> that swung into Seattle. Myself and some of the <a href="http://hdquotecenter.com/" target="_blank">Home Depot Quote Center</a> team headed up via the <a href="http://www.amtrakcascades.com/" target="_blank">Geek Train</a> for the event. We arrived the night before so we could get up and actually be awake and ready for the&nbsp;event.</p>
-<p>Just to note, a good clean place to stay, that isn’t overpriced like most of Seattle is the <a href="https://www.google.com/search?q=Pioneer+Square+Hotel&amp;oq=Pioneer+Square+Hotel&amp;aqs=chrome..69i57j69i60l3.216j0j7&amp;sourceid=chrome&amp;es_sm=91&amp;ie=UTF-8#safe=off&amp;q=Pioneer+Square+Hotel&amp;rflfq=1&amp;tbm=lcl&amp;rlfi=hd:;si:10477062606859836019" target="_blank">Pioneer Square Hotel</a> - usually about $110-120 bucks. If you’re in town for a conference, sometimes it’s even worth skipping the “preferred hotels” and staying here. But I&nbsp;digress…</p>
-<p>
-                          <p class="more"><a href="/articles/elasticon-tour-2015-in-seattle/">more</a></p>
-                        </p>
-                        <div class="blog-grid-meta"><span class="blog-grid-date">03. December 2015</span></div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End of Blog List-->
-                </div>
-                <div class="col-md-12 col-sm-12">
-                  <!-- Blog List-->
-                  <div class="blog-grid">
-                    <div class="row">
-                      <div class="col-md-12 col-sm-12">
-                        <h3 class="blog-grid-title"><a href="/articles/docker-tips-n-tricks-delete-all-the-images-containers/">Docker Tips n' Tricks - Delete All The Images &amp; Containers</a></h3>
-                        <p class="blog-grid-excerpt"><p>Two simple commands that’ll wipe your installation clean of images and&nbsp;containers.</p>
-<p>Deletes all&nbsp;containers</p>
-<pre><code>docker rm $(docker ps -a -q)
-</code></pre><p>Deletes all&nbsp;images</p>
-<pre><code>docker rmi $(docker images -q)
-</code></pre>
-                        </p>
-                        <div class="blog-grid-meta"><span class="blog-grid-date">02. November 2015</span></div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End of Blog List-->
-                </div>
+                <article class="article">
+                  <section class="content"><p>I sat down to setup Visual Studio Code for some Go coding. That is, #golang or “golang” on Google, because heaven forbid a language is named something that isn’t ubiquitous like the word “go”. But anyway, I digress, because this blog entry isn’t even about golang. It’s about <span class="caps">HCL</span>. You see, I sat down to toy about with golang but then I had to knock out a few tasks with Terraform, Packer, and such. To do that I needed the HCL support that Visual Studio Code has. I knew there was a plugin for Hashicorp Configuration Language (i.e. HCL). So I decided to do that work in Visual Studio Code and try out the HCL Plugin. Maybe next blog entry I’ll get around to writing some golang in Visual Studio&nbsp;Code?</p>
+<p><img src="/articles/visual-studio-code-and-hcl/code-go-00.png" alt="The Site"></p>
+<p><span class="more"></span></p>
+<p>The first thing I needed to do though, was download and get Visual Studio Code. I’d neglected to learn much about it or use Code (I’ll just call it that from now on, Visual Studio Code is way to much to write, plus it’s not really got much in familial relation to Visual Studio). That download, it all started <a href="https://code.visualstudio.com">here</a>. I opened it upon finishing installation to a brand new Visual Studio Code&nbsp;Window.</p>
+<p><img src="/articles/visual-studio-code-and-hcl/code-go-01.png" alt="Visual Studio Code"></p>
+<p>I toyed about a moment looking at the Visual Studio Code website, then toyed around with the editor, and noticed three things&nbsp;immediately.</p>
+<ol>
+<li><p>When I navigated to <code>https://code.visualstudio.com</code> I noticed I was redirected or someway navigated to a link that immediately shoved some type of session mess into the <span class="caps">URI</span>. My link of <code>https://code.visualstudio.com</code> turned into <code>https://code.visualstudio.com/b?utm_expid=101350005-27.GqBWbOBuSRqlazQC_nNSRg.1</code>. Now I’m not sure about you but that type of behavior on a website actually pisses me off and makes me paranoid. I went through various things to determine what was going on, but suffice it to say I determined it was just an annoying contrivance that the site managers make the site do.&nbsp;Whatever…</p>
+</li>
+<li><p>The second thing I noticed was that I had no idea what to do to install plugins. Was it the same as Atom as I’d heard? Was it some other command? I assumed since I’d used Code a few times before, it was likely the command line I tried a few based on other tooling. First <code>⌘ + space</code>, nope, that was dumb. I have that mapped to <a href="https://en.wikipedia.org/wiki/Spotlight_(software">Spotlight</a>). Ok, so then I tried <code>⌥ + space</code>, nope. <code>⌘ + ⌥ + ^ + F12</code>, naw. Ok, dammit, I guess it’s <code>⌘</code> key plus something I’ll bet. Then I tried a whole slew and sure enough, <strong><code>⌘ + p</code></strong> was the magic sauce. But wait, it wasn’t. At this point I thought “maybe I should look this up” but I decide to stay stubborn and try some other things I <em>think</em> I remember about Code. I try the <code>fn + F1</code>, or what might be just <code>F1</code> if you have your keyboard setup for function keys instead of the other <span class="caps">OS</span>-X uses. Sure enough, that was the command dialog I&nbsp;wanted.  </p>
+</li>
+<li><p>I opened up another Code window so that I could also use the editor to write this very blog entry. I use <a href="http://wintersmith.io/">Wintersmith</a> and have even written about it in the past <a href="/articles/wintersmith-creating-documentation">Wintersmith Creating Documentation</a> and <a href="/articles/working-in-34c-wintersmith-customization-and-github-hosting">Working in -34c Wintersmith Customization and Github Hosting</a>. It’s a great Node.js static site generator. I immediately noticed as I started typing that Visual Stuido Code supports basic markdown on the basic installation! Holy shit, that’s super&nbsp;rad!</p>
+</li>
+</ol>
+<p>Ok, on with the meat of all&nbsp;this.</p>
+<p>With the opened Code Window, I hit <code>fn + F1</code> (again, that’s just <code>f1</code> if you’ve got your function keys turned on for <span class="caps">OS</span>-X) and typed in <code>ext</code>. That gave me the following&nbsp;dialog.</p>
+<p><img src="/articles/visual-studio-code-and-hcl/code-go-02.png" alt="Visual Studio Code"></p>
+<p>The list that displays, I then hit the down arrow key and selected <em>Extensions: Install Extensions</em>. With that selected I hit enter and down the left hand side of Code I got the extensions list. The focus changes to that, so no need for the mouse&nbsp;still.</p>
+<p><img src="/articles/visual-studio-code-and-hcl/code-go-03.png" alt="Visual Studio Code"></p>
+<p>I pressed the down arrow to select the <span class="caps">HCL</span> extension, but realized that was taking a minute, so shifted focus to the search box and just typed HCL. That immediately brought up the display of the extension once I hit the down arrow and then&nbsp;enter.</p>
+<p><img src="/articles/visual-studio-code-and-hcl/code-go-04.png" alt="Visual Studio Code"></p>
+<p>Now I wasn’t sure how to install this, since I wanted to avoid using the mouse if possible. I just hit enter again and it worked! Since that worked, I hit enter again with the premise that it would now <em>enable</em> the extension, which it did indeed do with a simple prompt to restart Code. I clicked on <em>ok</em> and on to the restart of&nbsp;Code.</p>
+<p><img src="/articles/visual-studio-code-and-hcl/code-go-05.png" alt="Visual Studio Code"></p>
+<p>When Code restarted and came back up, I had one Code Windows with the default empty document, with no directory opened, and I opened up another using <em>File -&gt; New Window</em> and then used it to open the directory in which I was editing this blog&nbsp;entry. </p>
+<p><img src="/articles/visual-studio-code-and-hcl/code-go-06.png" alt="Visual Studio Code"></p>
+<p>To get the word wrap back (which I’d manually clicked before) I recalled the shortcut key is <code>⌥ + Z</code>. This is super useful when editing markdown like this, so it’s a keyboard shortcut to set to&nbsp;memory.</p>
+<p>Now at this point I should have some <span class="caps">HCL</span>. I kick of my pulling down an existing project that I’m working on. I opened it by using the <code>⌘ + O</code> keys. The project opened up and I immediately opened one of the /*.json files that I have for a Packer&nbsp;image.</p>
+<p><img src="/articles/visual-studio-code-and-hcl/code-go-07.png" alt="Visual Studio Code"></p>
+<p>That looked good so far. Let’s see about intellisense and Terraform. I used <code>ctrl + shift + E</code> to get into the Explorer part of the editor. Then scrolled with the down arrow to the <em>dns-records.tf</em> file. I atttempted to select the file with the <code>return</code> button, but that invoked the <em>rename</em> functionality. I tried a few other things, the <em>space bar</em>, other unusable combinations, and then <code>ctrl + return</code>.</p>
+<p><em>Nothing</em>. This was a bit frustrating, to get this far and stumble because I need to use the bloody mouse. Whatever, I clicked on the mouse to open the <em>dns-records.tf</em> file. I then clicked into the file and tried out something around the intellisense (or is it autocomplete in&nbsp;Code?).</p>
+<p><img src="/articles/visual-studio-code-and-hcl/code-go-08.png" alt="Visual Studio Code"></p>
+<p>This test I found rather interesting. The options, once I started typing <em>goog</em> immediately showed as <em>google_compute_instance</em>, <em>google_dns_managed_zone</em>, and <em>google_dns_record_set</em>. A somewhat odd selection indeed of these resources. You see, there are many other <span class="caps">HCL</span> resources for Google Compute Engine besides these three. But these specific three displayed in the dropdown. I looked throughout the file, and assumed that these three were retrieved from words in the file. Maybe the intellisense is more autocomplete then intellisense. Whatever the case however as I’m happy with just autocomplete. I don’t particularly need intellisense, especially since I haven’t used it now for about 6&nbsp;years.</p>
+<p>So that’s my first tour of Visual Studio Code and <span class="caps">HCL</span>. My next tour and test is going to be finding some more of these bloody shortcuts I haven’t been able to find and to actually write some golang in the editor&nbsp;too.</p>
+<p>For now, I’ve got some <span class="caps">HCL</span> to put together for the coming <a href="https://www.meetup.com/The-Portland-Elasticsearch-Meetup-Group/events/228010912/">Monday night Elastic <span class="caps">UG</span> meetup</a> on <a href="http://blog.adron.me/talks/elastic-with-terraform-packer-and-immutability-magic/">Elastic w/ Terraform, Packer, <span class="amp">&amp;</span> That Immutability Magic</a>.</p>
+</section>
+                </article>
                 <!-- End of Blog Page-->
               </div>
             </div>
@@ -222,8 +205,7 @@
             </div>
           </div>
         </div>
-        <div class="nav"><a href="/page/13/">« Newer</a>&nbsp;<a href="/page/15/">Previous »</a>
-        </div>
+        <div class="nav"><a href="/">« Home</a></div>
       </div>
     </div>
     <script src="http://adron.github.io/js/all.js"></script>

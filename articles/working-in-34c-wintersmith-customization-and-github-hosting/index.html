@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="http://adron.github.io/css/style.min.css">
     <script src="http://adron.github.io/js/modernizr.js"></script>
   </head>
-  <body>
+  <body class="article-detail">
     <!--[if lt IE 8]>
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -61,8 +61,10 @@
             <div class="col-md-12">
               <!-- Page Info-->
               <div class="page-info page-info-simple">
-                <h1>Adron's Composite Code</h1>
-                <h2 class="description">Coder, Messenger, Recon, Infrastructure, Ops</h2>
+                <h1>Working in -34c Wintersmith Customization and Github Hosting</h1>
+                <p class="author">Written by <span class="author">Adron Hall</span>
+                </p>
+                <div class="nav"><a href="/">« Home</a></div>
               </div>
               <!-- End Page Info-->
             </div>
@@ -77,62 +79,51 @@
             <div class="col-md-9">
               <div class="main-content">
                 <!-- Blog Page-->
-                <div class="blog">
-                  <div class="row"></div>
-                </div>
-                <div class="col-md-12 col-sm-12">
-                  <!-- Blog List-->
-                  <div class="blog-grid">
-                    <div class="row">
-                      <div class="col-md-12 col-sm-12">
-                        <h3 class="blog-grid-title"><a href="/articles/research-learning-about-zookeeper/">Researching &amp; Learning About Zookeeper - A Guide</a></h3>
-                        <p class="blog-grid-excerpt"><p>I’ve started working with Zookeeper. Since I’ve started doing that I’ve put together this blog post. It’s aim is to provide a structured approach to learning Zookeeper and researching the elements that make its features tick. Along the way I have a few call outs to people that have also provided excellent talks, material, or contributions to learning about Zookeeper along the way. With that, let’s get&nbsp;started.</p>
-<p>Zookeeper is a consensus system written based on ideas presented via consensus algorithms. The idea is key value stores that keep all of their data in memory for read heavy workloads. The qualities in this context present a system that is highly consistent, with intent for access from distributed systems to data that won’t be&nbsp;lost.</p>
-<p>
-                          <p class="more"><a href="/articles/research-learning-about-zookeeper/">more</a></p>
-                        </p>
-                        <div class="blog-grid-meta"><span class="blog-grid-date">02. February 2016</span></div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End of Blog List-->
-                </div>
-                <div class="col-md-12 col-sm-12">
-                  <!-- Blog List-->
-                  <div class="blog-grid">
-                    <div class="row">
-                      <div class="col-md-12 col-sm-12">
-                        <h3 class="blog-grid-title"><a href="/articles/elasticon-tour-2015-in-seattle/">Elasticon Tour 2015 in Seattle</a></h3>
-                        <p class="blog-grid-excerpt"><p>Today is the tour stop of the <a href="https://www.elastic.co/elasticon/tour/2015" target="_blank">Elasticon Tour</a> that swung into Seattle. Myself and some of the <a href="http://hdquotecenter.com/" target="_blank">Home Depot Quote Center</a> team headed up via the <a href="http://www.amtrakcascades.com/" target="_blank">Geek Train</a> for the event. We arrived the night before so we could get up and actually be awake and ready for the&nbsp;event.</p>
-<p>Just to note, a good clean place to stay, that isn’t overpriced like most of Seattle is the <a href="https://www.google.com/search?q=Pioneer+Square+Hotel&amp;oq=Pioneer+Square+Hotel&amp;aqs=chrome..69i57j69i60l3.216j0j7&amp;sourceid=chrome&amp;es_sm=91&amp;ie=UTF-8#safe=off&amp;q=Pioneer+Square+Hotel&amp;rflfq=1&amp;tbm=lcl&amp;rlfi=hd:;si:10477062606859836019" target="_blank">Pioneer Square Hotel</a> - usually about $110-120 bucks. If you’re in town for a conference, sometimes it’s even worth skipping the “preferred hotels” and staying here. But I&nbsp;digress…</p>
-<p>
-                          <p class="more"><a href="/articles/elasticon-tour-2015-in-seattle/">more</a></p>
-                        </p>
-                        <div class="blog-grid-meta"><span class="blog-grid-date">03. December 2015</span></div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End of Blog List-->
-                </div>
-                <div class="col-md-12 col-sm-12">
-                  <!-- Blog List-->
-                  <div class="blog-grid">
-                    <div class="row">
-                      <div class="col-md-12 col-sm-12">
-                        <h3 class="blog-grid-title"><a href="/articles/docker-tips-n-tricks-delete-all-the-images-containers/">Docker Tips n' Tricks - Delete All The Images &amp; Containers</a></h3>
-                        <p class="blog-grid-excerpt"><p>Two simple commands that’ll wipe your installation clean of images and&nbsp;containers.</p>
-<p>Deletes all&nbsp;containers</p>
-<pre><code>docker rm $(docker ps -a -q)
-</code></pre><p>Deletes all&nbsp;images</p>
-<pre><code>docker rmi $(docker images -q)
-</code></pre>
-                        </p>
-                        <div class="blog-grid-meta"><span class="blog-grid-date">02. November 2015</span></div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End of Blog List-->
-                </div>
+                <article class="article">
+                  <section class="content"><p>Getting Wintersmith customized, building and deployed to Github and a domain name pointed takes a few extra steps. So let’s&nbsp;roll…</p>
+<div class="image float-right">
+    <a href="http://wintersmith.io/"><img src="/articles/working-in-34c-wintersmith-customization-and-github-hosting/wintersmith-01.png" alt="Wintersmith Icon 1"></a>
+</div>
+
+<p><span class="more"></span></p>
+<p><strong>Step&nbsp;#1</strong></p>
+<p>Setup <a href="http://wintersmith.io/" target="_blank">Wintersmith</a>. See my previous blog entry “<a href="/articles/wintersmith-creating-documentation">Wintersmith Creating Documentation</a>“ for this&nbsp;information.</p>
+<div class="image float-right">
+    <a href="http://wintersmith.io/"><img src="/articles/working-in-34c-wintersmith-customization-and-github-hosting/wintersmith-02.png" alt="Wintersmith Icon 2"></a>
+</div>
+
+<p><strong>Step&nbsp;#2</strong></p>
+<p>Now it’s time to get things deployed to Github. This takes a few interesting, non-intuitive steps, but once done things work extremely well. To get the appropriate git branch setup I worked with an existing git repo. This repo is the same repo that I’ve used for the public facing <a href="/docs/deconstructed-once-upon-a-time">Deconstructed Site</a>. The code repo is located @ <a href="/docs/deconstructed-once-upon-a-time">Deconstructed Github Repo</a>. I added a <a href="/docs/deconstructed-once-upon-a-time">github pages branch</a> to this repository, for more information on how to do this check out my Jekyll how-to “<a href="/docs/deconstructed-once-upon-a-time">Bringing to Life an Open Source Project via Github <span class="amp">&amp;</span> Jekyll - Part 1</a>” which I detail at the beginning how to get a Github Pages site&nbsp;running.</p>
+<p>Once the site is up and running I switched over to it and cleared out that path. I kept a few things I’d need like the .gitignore, <span class="caps">README</span>.md and a few other files. I then put the repo directory that I detailed in “<a href="/articles/wintersmith-creating-documentation">Wintersmith Creating Documentation</a>” right here in the gh-pages branch. With that in place I then just committed and pushed this code to the gh-pages repository. That gave me the initial baseline for the&nbsp;site.</p>
+<div class="image float-right">
+    <a href="http://wintersmith.io/"><img src="/articles/working-in-34c-wintersmith-customization-and-github-hosting/wintersmith-03.png" alt="Wintersmith Icon 3"></a>
+</div>
+
+<p><strong>Step&nbsp;#3</strong></p>
+<p>Get the customizations done and site domain/subdomain redirected. The steps to get the domain setup to have a custom domain pointed at your gh-pages github site is as&nbsp;follows:</p>
+<ol>
+<li><p>Create a file named <span class="caps">CNAME</span> in the root of your gh-pages branch and in that CNAME file add one line with the domain that is being directed to this gh-pages site. My <a href="https://github.com/Adron/deconstructed/blob/gh-pages/CNAME" target="_blank"><span class="caps">CNAME</span> file</a> looks simply like this: <code>docs.deconstructed.io</code></p>
+</li>
+<li><p>Next setup either an <span class="caps">DNS</span> A record or cname record. The cname will give you the advantage of having Github manage which IPs are in use in their system, so if there is any failover, DDOS or IP changes then you’re protected from that. To setup an A record add the A record to point to 204.232.175.78 or setup a cname to point to your github .io account, which in my case is <a href="http://adron.github.io/">http://adron.github.io/</a>. The following is what the record looked like in my Route 53 settings.<img src="/articles/working-in-34c-wintersmith-customization-and-github-hosting/dns-deconstructed.png" alt="DNS Setting"></p>
+</li>
+<li><p>Last but not least the configuration settings that need to be made in&nbsp;Wintersmith.</p>
+<ul>
+<li><p>First set the locals url setting to the appropriate domain or subdomain. In my case that meant changing the value from <em><a href="http://localhost:8080/">http://localhost:8080/</a></em> to <em><a href="/docs/deconstructed-once-upon-a-time">http://docs.deconstructed.io/</a></em>.</p>
+<p>  “locals”:&nbsp;{</p>
+<pre><code>  &quot;url&quot;: &quot;http://docs.deconstructed.io&quot;,
+  &quot;name&quot;: &quot;Deconstructed Docs&quot;,
+  &quot;owner&quot;: &quot;Adron Hall&quot;,
+  &quot;description&quot;: &quot;This site provides the documentation around the Deconstructed API Services.&quot;
+</code></pre><p>  }</p>
+</li>
+<li><p>In the root of the project (where the Wintersmith build ends up) add a .nojekyll file so that Jekyll won’t be used unnecessarily to try and build the Wintersmith&nbsp;project.</p>
+</li>
+</ul>
+</li>
+</ol>
+<p>…and with that, I’ve covered the bases for getting a Wintersmith site (blog or whatever you’re like to use it for) up and running. Feel free to ask any questions in the comments and I’ll help work through any issues you’ve encountered.&nbsp;Cheers!</p>
+</section>
+                </article>
                 <!-- End of Blog Page-->
               </div>
             </div>
@@ -222,8 +213,7 @@
             </div>
           </div>
         </div>
-        <div class="nav"><a href="/page/13/">« Newer</a>&nbsp;<a href="/page/15/">Previous »</a>
-        </div>
+        <div class="nav"><a href="/">« Home</a></div>
       </div>
     </div>
     <script src="http://adron.github.io/js/all.js"></script>
