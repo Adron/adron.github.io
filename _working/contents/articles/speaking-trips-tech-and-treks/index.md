@@ -17,7 +17,7 @@ I'll be off on some coding adventures in the coming months. I also hope to catch
 > *in London*
 
 * Official Talk URI: http://conferences.oreilly.com/software-architecture/engineering-business-eu/public/schedule/detail/52257
-* My Talk URI: http://blog.adron.me/talks/Building-Immutably-Continuous-Delivery-Minimal-Inputs-San-Francisco/
+* My Talk URI: http://blog.adron.me/talks/Moving-Enterprise-Practices-and-Development-to-Open-Source/
 
 In this talk I’ll tell the story of our efforts at Home Depot, and provide bullet points and suggestions for helping you to acheive the move to open source practices in your enterprise. The benefits are huge, and overall it’s a lot more fun to boot!
 
@@ -35,7 +35,7 @@ Key Points:
 
 Official Talk URI:
 
-* London http://conferences.oreilly.com/software-architecture/engineering-business-eu/public/schedule/detail/52254 
+* London http://conferences.oreilly.com/software-architecture/engineering-business-eu/public/schedule/detail/52254
 * San Francisco http://conferences.oreilly.com/software-architecture/engineering-business-ca/public/schedule/detail/52258
 
 My Talk URI:
@@ -74,4 +74,3 @@ Key Points:
 I'm super stoked about this talk, as I'm getting to co-present with Evan Brown. Evan's a friend of mine since I met him a whiel back while he worked at AWS, however he's now a Senior Software Engineer at Google. We're going to tag team style this talk to bring you as much information as we can about organzing your infrastructure configuration and workflow.
 
 My abstract for this talk goes something like this, "*When starting with the various products Terraform, Packer, Vagrant, and others, it isn’t always apparent where and in what way one should organize the actual project. In this talk I’d like to delve into what I’ve done to organize solutions for development, production, and related pipelines. I’ll talk from my point of view and what I’ve seen others do to keep their workloads organized and their infrastructure and application pipelines clean and well organized.*"
-
