@@ -45,3 +45,19 @@ When Code restarted and came back up, I had one Code Windows with the default em
 ![Visual Studio Code](code-go-06.png)
 
 To get the word wrap back (which I'd manually clicked before) I recalled the shortcut key is `⌥ + Z`. This is super useful when editing markdown like this, so it's a keyboard shortcut to set to memory.
+
+Now at this point I should have some HCL. I kick of my pulling down an existing project that I'm working on. I opened it by using the `⌘ + O` keys. The project opened up and I immediately opened one of the /*.json files that I have for a Packer image.
+
+![Visual Studio Code](code-go-07.png)
+
+That looked good so far. Let's see about intellisense and Terraform. I used `ctrl + shift + E` to get into the Explorer part of the editor. Then scrolled with the down arrow to the *dns-records.tf* file. I atttempted to select the file with the `return` button, but that invoked the *rename* functionality. I tried a few other things, the *space bar*, other unusable combinations, and then `ctrl + return`.
+
+*Nothing*. This was a bit frustrating, to get this far and stumble because I need to use the bloody mouse. Whatever, I clicked on the mouse to open the *dns-records.tf* file. I then clicked into the file and tried out something around the intellisense (or is it autocomplete in Code?).
+
+![Visual Studio Code](code-go-08.png)
+
+This test I found rather interesting. The options, once I started typing *goog* immediately showed as *google_compute_instance*, *google_dns_managed_zone*, and *google_dns_record_set*. A somewhat odd selection indeed of these resources. You see, there are many other HCL resources for Google Compute Engine besides these three. But these specific three displayed in the dropdown. I looked throughout the file, and assumed that these three were retrieved from words in the file. Maybe the intellisense is more autocomplete then intellisense. Whatever the case however as I'm happy with just autocomplete. I don't particularly need intellisense, especially since I haven't used it now for about 6 years.
+
+So that's my first tour of Visual Studio Code and HCL. My next tour and test is going to be finding some more of these bloody shortcuts I haven't been able to find and to actually write some golang in the editor too.
+
+For now, I've got some HCL to put together for the coming [Monday night Elastic UG meetup](https://www.meetup.com/The-Portland-Elasticsearch-Meetup-Group/events/228010912/) on [Elastic w/ Terraform, Packer, & That Immutability Magic](http://blog.adron.me/talks/elastic-with-terraform-packer-and-immutability-magic/).
