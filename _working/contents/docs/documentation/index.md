@@ -54,8 +54,20 @@ template: doc.jade
                 <li class="is-file">Nginx -
                     <span class="file-tree-description">[Default Config File](../../docs/nginx-default-config-file/)</span>
                 </li>
-                <li class="is-file">Google Chrome -
+                <li class="is-file">Google Chrome Shortcuts -
+                    <span class="file-tree-description">[Shortcuts](../../docs/shortcuts-chrome/)</span>
+                </li>
+                <li class="is-file">More Google Chrome -
                     <span class="file-tree-description">[Mac Shortcuts](../../docs/Google-Chrome-Mac-Shortcuts/)</span>
+                </li>
+                <li class="is-file">Atom Shortcuts -
+                    <span class="file-tree-description">[Mac Shortcuts](../../docs/shortcuts-atom/)</span>
+                </li>
+                <li class="is-file">Visual Studio Code Shortcuts -
+                    <span class="file-tree-description">[Mac Shortcuts](../../docs/shortcuts-visual-studio-code/)</span>
+                </li>
+                <li class="is-file">Iterm2 Shortcuts -
+                    <span class="file-tree-description">[Mac Shortcuts](../../docs/shortcuts-iterm2/)</span>
                 </li>
             </ul>
         </li>
