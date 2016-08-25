@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="http://adron.github.io/css/style.min.css">
     <script src="http://adron.github.io/js/modernizr.js"></script>
   </head>
-  <body>
+  <body class="article-detail">
     <!--[if lt IE 8]>
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -61,8 +61,10 @@
             <div class="col-md-12">
               <!-- Page Info-->
               <div class="page-info page-info-simple">
-                <h1>Adron's Composite Code</h1>
-                <h2 class="description">Coder, Messenger, Recon, Infrastructure, Ops</h2>
+                <h1>Visual Studio Code Shortcuts</h1>
+                <p class="author">Written by <span class="author">Adron Hall</span>
+                </p>
+                <div class="nav"><a href="/">« Home</a></div>
               </div>
               <!-- End Page Info-->
             </div>
@@ -77,99 +79,167 @@
             <div class="col-md-9">
               <div class="main-content">
                 <!-- Blog Page-->
-                <section class="archive">
-                  <h2>Archive</h2>
-                  <ul>
-                    <li><span class="year-label">2016</span>
-                      <ul>
-                        <li><span class="month-label">August</span>
-                          <ul style="margin-left:7em">
-                            <li><a href="/articles/devops-thoughts/">DevOps Thoughts, Fixing Culture Roadblocks, and Cultural Anti-Pattern Practices</a></li>
-                          </ul>
-                        </li>
-                        <li><span class="month-label">July</span>
-                          <ul style="margin-left:7em">
-                            <li><a href="/articles/nginx-notes-from-the-url-redirect-part-two/">NGinx Notes from URL Redirect Project on Google Cloud with Terraform &amp; Packer - Part 2</a></li>
-                            <li><a href="/articles/speaking-trips-tech-and-treks/">Speaking Trips, Tech, and Treks</a></li>
-                            <li><a href="/articles/biketown-api/">Portland Biketown Launches - Check out the API</a></li>
-                            <li><a href="/articles/nginx-notes-from-the-url-redirect/">NGinx Notes from URL Redirect Project on Google Cloud with Terraform &amp; Packer - Part 1</a></li>
-                            <li><a href="/articles/net-fringe-retrospective/">.NET Fringe and Node PDX Conference Retrospective</a></li>
-                            <li><a href="/articles/day-2-multi-thinking-threads-smeared-around-brainstorming/">Day 2 Multi-thinking-threads Smeared Around the Brainstorming at .NET Fringe</a></li>
-                            <li><a href="/articles/Bike-Rides/">.NET Fringe Bike Ride</a></li>
-                          </ul>
-                        </li>
-                        <li><span class="month-label">June</span>
-                          <ul style="margin-left:7em">
-                            <li><a href="/articles/Node-PDX-2016-Photos/">Node PDX 2016 Photos</a></li>
-                            <li><a href="/articles/node-pdx-2016-bike-ride/">Node PDX 2016 Bike Ride, Photos, and More</a></li>
-                            <li><a href="/articles/A-Channel-9-Video-on-dotNET-Fringe-2016/">A Channel 9 Video on .NET Fringe 2016</a></li>
-                            <li><a href="/articles/node-pdx-2016-speaker-azat-mardan/">Node.js Patterns - From Callbacks to Observer by Azat Mardan</a></li>
-                            <li><a href="/articles/working-with-google-compute-engine/">Working With Google Compute Engine (GCE) using Terraform (With a load of Bash Scripts too)</a></li>
-                            <li><a href="/articles/how-ya-linux-0000-Startup-things/">Startup Things - How Ya Linux Series - 0000</a></li>
-                            <li><a href="/articles/node-pdx-2016/">The Short Story of Node PDX, and Node PDX 2016</a></li>
-                            <li><a href="/articles/node-pdx-2016-speaker-david-manning-adam-ulvi/">How to Build a Bike Shed by David Manning &amp; Adam Ulvi</a></li>
-                            <li><a href="/articles/node-pdx-2016-speaker-andrew-chalkley/">Get JavaScript Running on a $2 WiFi-Enabled Device by Andrew Chalkley</a></li>
-                            <li><a href="/articles/node-pdx-2016-speaker-blaine-schmeisser/">How to Electron by Blaine Schmeisser</a></li>
-                            <li><a href="/articles/node-pdx-2016-speaker-james-churchill/">Demystifying TypeScript Decorators by James Churchill</a></li>
-                            <li><a href="/articles/node-pdx-2016-speaker-jean-jacques-dubray/">The SAM Pattern - a distributed system view of Front-End architectures by Jean-Jacques Dubray</a></li>
-                            <li><a href="/articles/node-pdx-2016-suchita-doshi/">Modern Javascript Frameworks - Introduction to Ember.JS and Ember-CLI by Suchita Doshi</a></li>
-                            <li><a href="/articles/node-pdx-2016-speaker-josh-marinacci/">MMOWAM - Build Server-less Games with a DSN by Josh Marinacci</a></li>
-                            <li><a href="/articles/node-pdx-2016-speaker-joel-lord/">WebSockets Bring Light at the End of the Tunnel by Joel Lord</a></li>
-                            <li><a href="/articles/node-pdx-2016-speaker-ben-michel/">The Web Platform is the Universal Instrument by Ben Michel</a></li>
-                            <li><a href="/articles/node-pdx-2016-speaker-matt-mckegg/">I Play the JavaScript by Matt McKegg</a></li>
-                            <li><a href="/articles/node-pdx-2016-speaker-jarod-reyes/">Code First Docs How we Threw Out The Book &amp; Put Code First With Twilio Documentation by Jarod Reyes</a></li>
-                            <li><a href="/articles/node-pdx-2016-speaker-artur-paikin/">The House Is Not On Fire - Building a home automation robot with Arduino, Raspberry Pi and Node.js by Artur Paikin</a></li>
-                          </ul>
-                        </li>
-                        <li><span class="month-label">May</span>
-                          <ul style="margin-left:7em">
-                            <li><a href="/articles/node-pdx-2016-speaker-adam-ulvi/">Ops for Devs by Adam Ulvi</a></li>
-                            <li><a href="/articles/speakers-and-more-for-node-pdx-2016/">Speakers and More For Node PDX 2016</a></li>
-                            <li><a href="/articles/node-pdx-2016-speaker-liz-abinante/">A Foolish Quest Creating Knitting Patterns Using JavaScript by Liz Abinante</a></li>
-                            <li><a href="/articles/node-pdx-2016-speaker-jonny-oropeza/">Isomorphic Business Logic (Or How to convince even the most die-hard C#/Java/Rails-on-the-Backend boss that you need to run a node server) Jonny Oropeza</a></li>
-                            <li><a href="/articles/node-pdx-2016-speaker-tomomi-imura/">From Software to Hardware How Do I Track My Cat with JavaScript Tomomi Imura</a></li>
-                            <li><a href="/articles/dropping-the-ball-gsd-and-staying-productive/">Dropping the Ball, GSD, and Staying Productive</a></li>
-                          </ul>
-                        </li>
-                        <li><span class="month-label">April</span>
-                          <ul style="margin-left:7em">
-                            <li><a href="/articles/immutable-infrastructure-some-reads-clarification-what-it-is/">Immutable Infrastructure - Some Reads and Clarification of What It Is</a></li>
-                          </ul>
-                        </li>
-                        <li><span class="month-label">March</span>
-                          <ul style="margin-left:7em">
-                            <li><a href="/articles/the-difficult-open-source-path/">The Difficult Open Source Path</a></li>
-                            <li><a href="/articles/docker-tips-n-tricks-bash-things-with-docker/">Docker Tips n' Tricks - Bash Things With Docker</a></li>
-                          </ul>
-                        </li>
-                        <li><span class="month-label">February</span>
-                          <ul style="margin-left:7em">
-                            <li><a href="/articles/research-learning-about-zookeeper/">Researching &amp; Learning About Zookeeper - A Guide</a></li>
-                          </ul>
-                        </li>
-                      </ul>
-                    </li>
-                    <li><span class="year-label">2015</span>
-                      <ul>
-                        <li><span class="month-label">December</span>
-                          <ul style="margin-left:7em">
-                            <li><a href="/articles/elasticon-tour-2015-in-seattle/">Elasticon Tour 2015 in Seattle</a></li>
-                          </ul>
-                        </li>
-                        <li><span class="month-label">November</span>
-                          <ul style="margin-left:7em">
-                            <li><a href="/articles/docker-tips-n-tricks-delete-all-the-images-containers/">Docker Tips n' Tricks - Delete All The Images &amp; Containers</a></li>
-                          </ul>
-                        </li>
-                        <li><span class="month-label">July</span>
-                          <ul style="margin-left:7em">
-                            <li><a href="/articles/latest-fifth-gen-dell-xps-13-developer-edition/">The Latest 5th Generation Dell XPS 13 Developer Edition</a></li>
-                          </ul>
-                        </li>
-                      </ul>
-                    </li>
-                  </ul>
-                </section>
+                <docs class="article">
+                  <section class="content"><p>For more on keyboard shortcuts and binding checkout the <a href="https://code.visualstudio.com/docs/customization/keybindings">Key Bindings for Visual Studio Code</a>.</p>
+<h2 id="basic-editing">Basic&nbsp;Editing</h2>
+<p>⌘X    Cut line (empty selection)    editor.action.clipboardCutAction
+⌘C    Copy line (empty selection)    editor.action.clipboardCopyAction
+⇧⌘K    Delete Line    editor.action.deleteLines
+⌘Enter    Insert Line Below    editor.action.insertLineAfter
+⇧⌘Enter    Insert Line Above    editor.action.insertLineBefore
+⌥↓    Move Line Down    editor.action.moveLinesDownAction
+⌥↑    Move Line Up    editor.action.moveLinesUpAction
+⇧⌥↓    Copy Line Down    editor.action.copyLinesDownAction
+⇧⌥↑    Copy Line Up    editor.action.copyLinesUpAction
+⌘D    Add Selection To Next Find Match    editor.action.addSelectionToNextFindMatch
+⌘K ⌘D    Move Last Selection To Next Find Match    editor.action.moveSelectionToNextFindMatch
+⌘U    Undo last cursor operation    cursorUndo
+⇧⌥I    Insert cursor at end of each line selected    editor.action.insertCursorAtEndOfEachLineSelected
+⇧⌘L    Select all occurrences of current selection    editor.action.selectHighlights
+⌘F2    Select all occurrences of current word    editor.action.changeAll
+⌘I    Select current line    expandLineSelection
+⌥⌘↓    Insert Cursor Below    editor.action.insertCursorBelow
+⌥⌘↑    Insert Cursor Above    editor.action.insertCursorAbove
+⇧⌘\    Jump to matching bracket    editor.action.jumpToBracket
+⌘]    Indent Line    editor.action.indentLines
+⌘[    Outdent Line    editor.action.outdentLines
+Home    Go to Beginning of Line    cursorHome
+End    Go to End of Line    cursorEnd
+⌘↓    Go to End of File    cursorBottom
+⌘↑    Go to Beginning of File    cursorTop
+⌃PageDown    Scroll Line Down    scrollLineDown
+⌃PageUp    Scroll Line Up    scrollLineUp
+⌘PageDown    Scroll Page Down    scrollPageDown
+⌘PageUp    Scroll Page Up    scrollPageUp
+⇧⌘[    Fold (collapse) region    editor.fold
+⇧⌘]    Unfold (uncollapse) region    editor.unfold
+⌘K ⌘[    Fold (collapse) all subregions    editor.foldRecursively
+⌘K ⌘]    Unfold (uncollapse) all subregions    editor.unfoldRecursively
+⌘K ⌘0    Fold (collapse) all regions    editor.foldAll
+⌘K ⌘J    Unfold (uncollapse) all regions    editor.unfoldAll
+⌘K ⌘C    Add Line Comment    editor.action.addCommentLine
+⌘K ⌘U    Remove Line Comment    editor.action.removeCommentLine
+⌘/    Toggle Line Comment    editor.action.commentLine
+⇧⌥A    Toggle Block Comment    editor.action.blockComment
+⌘F    Find    actions.find
+⌥⌘F    Replace    editor.action.startFindReplaceAction
+⌘G    Find Next    editor.action.nextMatchFindAction
+⇧⌘G    Find Previous    editor.action.previousMatchFindAction
+⌥Enter    Select All Occurences of Find Match    editor.action.selectAllMatches
+⌥⌘C    Toggle Find Case Sensitive    toggleFindCaseSensitive
+⌥⌘R    Toggle Find Regex    toggleFindRegex
+⌥⌘W    Toggle Find Whole Word    toggleFindWholeWord
+⌃⇧M    Toggle Use of Tab Key for Setting Focus    editor.action.toggleTabFocusMode
+unassigned    Toggle Render Whitespace&nbsp;toggleRenderWhitespace</p>
+<h2 id="rich-languages-editing">Rich Languages&nbsp;Editing</h2>
+<p>⌃Space    Trigger Suggest    editor.action.triggerSuggest
+⇧⌘Space    Trigger Parameter Hints    editor.action.triggerParameterHints
+⇧⌥F    Format Code    editor.action.format
+F12    Go to Definition    editor.action.goToDeclaration
+⌥F12    Peek Definition    editor.action.previewDeclaration
+⌘K F12    Open Definition to the Side    editor.action.openDeclarationToTheSide
+⌘.    Quick Fix    editor.action.quickFix
+⇧F12    Show References    editor.action.referenceSearch.trigger
+F2    Rename Symbol    editor.action.rename
+⇧⌘.    Replace with Next Value    editor.action.inPlaceReplace.down
+⇧⌘,    Replace with Previous Value    editor.action.inPlaceReplace.up
+⌃⇧⌘→    Expand <span class="caps">AST</span> Select    editor.action.smartSelect.grow
+⌃⇧⌘←    Shrink AST Select    editor.action.smartSelect.shrink
+⌘K ⌘X    Trim Trailing Whitespace    editor.action.trimTrailingWhitespace
+⌘K M    Change Language Mode&nbsp;workbench.action.editor.changeLanguageMode</p>
+<h2 id="navigation">Navigation</h2>
+<p>⌘T    Show All Symbols    workbench.action.showAllSymbols
+⌃G    Go to Line…    workbench.action.gotoLine
+⌘P    Go to File…, Quick Open    workbench.action.quickOpen
+⇧⌘O    Go to Symbol…    workbench.action.gotoSymbol
+⇧⌘M    Show Problems    workbench.actions.view.problems
+F8    Go to Next Error or Warning    editor.action.marker.next
+⇧F8    Go to Previous Error or Warning    editor.action.marker.prev
+⇧⌘P    Show All Commands    workbench.action.showCommands
+⌃⇧Tab    Navigate Editor Group History    workbench.action.openPreviousRecentlyUsedEditorInGroup
+⌃-    Go Back    workbench.action.navigateBack
+⌃⇧-    Go Forward&nbsp;workbench.action.navigateForward</p>
+<h2 id="editor-window-management">Editor/Window&nbsp;Management</h2>
+<p>⇧⌘N    New Window    workbench.action.newWindow
+⌘W    Close Window    workbench.action.closeWindow
+⌘W    Close Editor    workbench.action.closeActiveEditor
+⌘K F    Close Folder    workbench.action.closeFolder
+unassigned    Cycle Between Editor Groups    workbench.action.navigateEditorGroups
+⌘ (forward slash)    Split Editor    workbench.action.splitEditor
+⌘1    Focus into Left Editor Group    workbench.action.focusFirstEditorGroup
+⌘2    Focus into Side Editor Group    workbench.action.focusSecondEditorGroup
+⌘3    Focus into Right Editor Group    workbench.action.focusThirdEditorGroup
+⌘K ⌘←    Focus into Editor Group on the Left    workbench.action.focusPreviousGroup
+⌘K ⌘→    Focus into Editor Group on the Right    workbench.action.focusNextGroup
+⌘K ←    Move Active Editor Group Left    workbench.action.moveActiveEditorGroupLeft
+⌘K →    Move Active Editor Group Right&nbsp;workbench.action.moveActiveEditorGroupRight</p>
+<h2 id="file-management">File&nbsp;Management</h2>
+<p>⌘N    New File    workbench.action.files.newUntitledFile
+unassigned    Open File…    workbench.action.files.openFile
+⌘S    Save    workbench.action.files.save
+unassigned    Save All    workbench.action.files.saveAll
+⇧⌘S    Save As…    workbench.action.files.saveAs
+⌘W    Close    workbench.action.closeActiveEditor
+⌥⌘T    Close Others    workbench.action.closeOtherEditors
+⌘K W    Close Group    workbench.action.closeEditorsInGroup
+unassigned    Close Other Groups    workbench.action.closeEditorsInOtherGroups
+unassigned    Close Group to Left    workbench.action.closeEditorsToTheLeft
+unassigned    Close Group to Right    workbench.action.closeEditorsToTheRight
+⌘K ⌘W    Close All    workbench.action.closeAllEditors
+⌘K Enter    Keep Open    workbench.action.keepEditor
+⌃Tab    Open Next    workbench.action.openNextRecentlyUsedEditorInGroup
+⌃⇧Tab    Open Previous    workbench.action.openPreviousRecentlyUsedEditorInGroup
+⌘K P    Copy Path of Active File    workbench.action.files.copyPathOfActiveFile
+⌘K R    Reveal Active File in Windows    workbench.action.files.revealActiveFileInWindows
+⌘K O    Show Opened File in New Window    workbench.action.files.showOpenedFileInNewWindow
+unassigned    Compare Opened File With&nbsp;workbench.files.action.compareFileWith</p>
+<h2 id="display">Display</h2>
+<p>⌃⌘F    Toggle Full Screen    workbench.action.toggleFullScreen
+⌘=    Zoom in    workbench.action.zoomIn
+⌘-    Zoom out    workbench.action.zoomOut
+⌘B    Toggle Sidebar Visibility    workbench.action.toggleSidebarVisibility
+⇧⌘D    Show Debug    workbench.view.debug
+⇧⌘E    Show Explorer / Toggle Focus    workbench.view.explorer
+⌃⇧G    Show Git    workbench.view.git
+⇧⌘F    Show Search    workbench.view.search
+⇧⌘H    Replace in Files    workbench.action.replaceInFiles
+⇧⌘X    Show Extensions    workbench.view.extensions
+⇧⌘J    Toggle Search Details    workbench.action.search.toggleQueryDetails
+⇧⌘C    Open New Command Prompt    workbench.action.terminal.openNativeConsole
+⇧⌘U    Show Output    workbench.action.output.toggleOutput
+⇧⌘V    Toggle Markdown Preview    markdown.showPreview
+⌘K V    Open Preview to the Side    markdown.showPreviewToSide
+⌃ (tick)    Toggle Integrated Terminal&nbsp;workbench.action.terminal.toggleTerminal</p>
+<h2 id="preferences">Preferences</h2>
+<p>⌘,    Open User Settings    workbench.action.openGlobalSettings
+unassigned    Open Workspace Settings    workbench.action.openWorkspaceSettings
+unassigned    Open Keyboard Shortcuts    workbench.action.openGlobalKeybindings
+unassigned    Open User Snippets    workbench.action.openSnippets
+unassigned    Select Color Theme    workbench.action.selectTheme
+unassigned    Configure Display Language    workbench.action.configureLocale
+Debug
+Key    Command    Command id
+F9    Toggle Breakpoint    editor.debug.action.toggleBreakpoint
+F5    Continue    workbench.action.debug.continue
+F5    Pause    workbench.action.debug.start
+F11    Step Into    workbench.action.debug.stepInto
+⇧F11    Step Out    workbench.action.debug.stepOut
+F10    Step Over    workbench.action.debug.stepOver
+⇧F5    Stop    workbench.action.debug.stop
+⌘K ⌘I    Show Hover    editor.action.showHover
+Tasks
+Key    Command    Command id
+⇧⌘B    Run Build Task    workbench.action.tasks.build
+unassigned    Run Test Task    workbench.action.tasks.test
+Extensions
+Key    Command    Command id
+unassigned    Install Extension    workbench.extensions.action.installExtension
+unassigned    Show Installed Extensions    workbench.extensions.action.showInstalledExtensions
+unassigned    Show Outdated Extensions    workbench.extensions.action.listOutdatedExtensions
+unassigned    Show Recommended Extensions    workbench.extensions.action.showRecommendedExtensions
+unassigned    Show Popular Extensions&nbsp;workbench.extensions.action.showPopularExtensions</p>
+</section>
+                </docs>
                 <!-- End of Blog Page-->
               </div>
             </div>
@@ -259,6 +329,7 @@
             </div>
           </div>
         </div>
+        <div class="nav"><a href="/">« Home</a></div>
       </div>
     </div>
     <script src="http://adron.github.io/js/all.js"></script>
