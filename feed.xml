@@ -5,9 +5,51 @@
     <atom:link href="http://adron.github.io/feed.xml" rel="self" type="application/rss+xml"></atom:link>
     <link>http://adron.github.io</link>
     <description>Coder, Messenger, Recon, Infrastructure, Ops</description>
-    <pubDate>Wed, 10  Aug 2016 17:00:00 -0700</pubDate>
+    <pubDate>Mon, 22  Aug 2016 18:21:00 -0700</pubDate>
     <generator>Wintersmith - https://github.com/jnordberg/wintersmith</generator>
     <language>en</language>
+    <item>
+      <title>Visual Studio Code (an intro with snark!) and Hashicorp Configuration Language</title>
+      <link>http://adron.github.io/articles/visual-studio-code-and-hcl/</link>
+      <pubDate>Mon, 22  Aug 2016 18:21:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/visual-studio-code-and-hcl/</guid>
+      <author></author>
+      <description>&lt;p&gt;I sat down to setup Visual Studio Code for some Go coding. That is, #golang or “golang” on Google, because heaven forbid a language is named something that isn’t ubiquitous like the word “go”. But anyway, I digress, because this blog entry isn’t even about golang. It’s about HCL. You see, I sat down to toy about with golang but then I had to knock out a few tasks with Terraform, Packer, and such. To do that I needed the HCL support that Visual Studio Code has. I knew there was a plugin for Hashicorp Configuration Language (i.e. HCL). So I decided to do that work in Visual Studio Code and try out the HCL Plugin. Maybe next blog entry I’ll get around to writing some golang in Visual Studio Code?&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/visual-studio-code-and-hcl/code-go-00.png&quot; alt=&quot;The Site&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;The first thing I needed to do though, was download and get Visual Studio Code. I’d neglected to learn much about it or use Code (I’ll just call it that from now on, Visual Studio Code is way to much to write, plus it’s not really got much in familial relation to Visual Studio). That download, it all started &lt;a href=&quot;https://code.visualstudio.com&quot;&gt;here&lt;/a&gt;. I opened it upon finishing installation to a brand new Visual Studio Code Window.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/visual-studio-code-and-hcl/code-go-01.png&quot; alt=&quot;Visual Studio Code&quot;&gt;&lt;/p&gt;
+&lt;p&gt;I toyed about a moment looking at the Visual Studio Code website, then toyed around with the editor, and noticed three things immediately.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;When I navigated to &lt;code&gt;https://code.visualstudio.com&lt;/code&gt; I noticed I was redirected or someway navigated to a link that immediately shoved some type of session mess into the URI. My link of &lt;code&gt;https://code.visualstudio.com&lt;/code&gt; turned into &lt;code&gt;https://code.visualstudio.com/b?utm_expid=101350005-27.GqBWbOBuSRqlazQC_nNSRg.1&lt;/code&gt;. Now I’m not sure about you but that type of behavior on a website actually pisses me off and makes me paranoid. I went through various things to determine what was going on, but suffice it to say I determined it was just an annoying contrivance that the site managers make the site do. Whatever…&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;The second thing I noticed was that I had no idea what to do to install plugins. Was it the same as Atom as I’d heard? Was it some other command? I assumed since I’d used Code a few times before, it was likely the command line I tried a few based on other tooling. First &lt;code&gt;⌘ + space&lt;/code&gt;, nope, that was dumb. I have that mapped to &lt;a href=&quot;https://en.wikipedia.org/wiki/Spotlight_(software&quot;&gt;Spotlight&lt;/a&gt;). Ok, so then I tried &lt;code&gt;⌥ + space&lt;/code&gt;, nope. &lt;code&gt;⌘ + ⌥ + ^ + F12&lt;/code&gt;, naw. Ok, dammit, I guess it’s &lt;code&gt;⌘&lt;/code&gt; key plus something I’ll bet. Then I tried a whole slew and sure enough, &lt;strong&gt;&lt;code&gt;⌘ + p&lt;/code&gt;&lt;/strong&gt; was the magic sauce. But wait, it wasn’t. At this point I thought “maybe I should look this up” but I decide to stay stubborn and try some other things I &lt;em&gt;think&lt;/em&gt; I remember about Code. I try the &lt;code&gt;fn + F1&lt;/code&gt;, or what might be just &lt;code&gt;F1&lt;/code&gt; if you have your keyboard setup for function keys instead of the other OS-X uses. Sure enough, that was the command dialog I wanted.  &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;I opened up another Code window so that I could also use the editor to write this very blog entry. I use &lt;a href=&quot;http://wintersmith.io/&quot;&gt;Wintersmith&lt;/a&gt; and have even written about it in the past &lt;a href=&quot;http://adron.github.io/articles/wintersmith-creating-documentation&quot;&gt;Wintersmith Creating Documentation&lt;/a&gt; and &lt;a href=&quot;http://adron.github.io/articles/working-in-34c-wintersmith-customization-and-github-hosting&quot;&gt;Working in -34c Wintersmith Customization and Github Hosting&lt;/a&gt;. It’s a great Node.js static site generator. I immediately noticed as I started typing that Visual Stuido Code supports basic markdown on the basic installation! Holy shit, that’s super rad!&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Ok, on with the meat of all this.&lt;/p&gt;
+&lt;p&gt;With the opened Code Window, I hit &lt;code&gt;fn + F1&lt;/code&gt; (again, that’s just &lt;code&gt;f1&lt;/code&gt; if you’ve got your function keys turned on for OS-X) and typed in &lt;code&gt;ext&lt;/code&gt;. That gave me the following dialog.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/visual-studio-code-and-hcl/code-go-02.png&quot; alt=&quot;Visual Studio Code&quot;&gt;&lt;/p&gt;
+&lt;p&gt;The list that displays, I then hit the down arrow key and selected &lt;em&gt;Extensions: Install Extensions&lt;/em&gt;. With that selected I hit enter and down the left hand side of Code I got the extensions list. The focus changes to that, so no need for the mouse still.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/visual-studio-code-and-hcl/code-go-03.png&quot; alt=&quot;Visual Studio Code&quot;&gt;&lt;/p&gt;
+&lt;p&gt;I pressed the down arrow to select the HCL extension, but realized that was taking a minute, so shifted focus to the search box and just typed HCL. That immediately brought up the display of the extension once I hit the down arrow and then enter.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/visual-studio-code-and-hcl/code-go-04.png&quot; alt=&quot;Visual Studio Code&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Now I wasn’t sure how to install this, since I wanted to avoid using the mouse if possible. I just hit enter again and it worked! Since that worked, I hit enter again with the premise that it would now &lt;em&gt;enable&lt;/em&gt; the extension, which it did indeed do with a simple prompt to restart Code. I clicked on &lt;em&gt;ok&lt;/em&gt; and on to the restart of Code.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/visual-studio-code-and-hcl/code-go-05.png&quot; alt=&quot;Visual Studio Code&quot;&gt;&lt;/p&gt;
+&lt;p&gt;When Code restarted and came back up, I had one Code Windows with the default empty document, with no directory opened, and I opened up another using &lt;em&gt;File -&amp;gt; New Window&lt;/em&gt; and then used it to open the directory in which I was editing this blog entry. &lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/visual-studio-code-and-hcl/code-go-06.png&quot; alt=&quot;Visual Studio Code&quot;&gt;&lt;/p&gt;
+&lt;p&gt;To get the word wrap back (which I’d manually clicked before) I recalled the shortcut key is &lt;code&gt;⌥ + Z&lt;/code&gt;. This is super useful when editing markdown like this, so it’s a keyboard shortcut to set to memory.&lt;/p&gt;
+&lt;p&gt;Now at this point I should have some HCL. I kick of my pulling down an existing project that I’m working on. I opened it by using the &lt;code&gt;⌘ + O&lt;/code&gt; keys. The project opened up and I immediately opened one of the /*.json files that I have for a Packer image.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/visual-studio-code-and-hcl/code-go-07.png&quot; alt=&quot;Visual Studio Code&quot;&gt;&lt;/p&gt;
+&lt;p&gt;That looked good so far. Let’s see about intellisense and Terraform. I used &lt;code&gt;ctrl + shift + E&lt;/code&gt; to get into the Explorer part of the editor. Then scrolled with the down arrow to the &lt;em&gt;dns-records.tf&lt;/em&gt; file. I atttempted to select the file with the &lt;code&gt;return&lt;/code&gt; button, but that invoked the &lt;em&gt;rename&lt;/em&gt; functionality. I tried a few other things, the &lt;em&gt;space bar&lt;/em&gt;, other unusable combinations, and then &lt;code&gt;ctrl + return&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Nothing&lt;/em&gt;. This was a bit frustrating, to get this far and stumble because I need to use the bloody mouse. Whatever, I clicked on the mouse to open the &lt;em&gt;dns-records.tf&lt;/em&gt; file. I then clicked into the file and tried out something around the intellisense (or is it autocomplete in Code?).&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/visual-studio-code-and-hcl/code-go-08.png&quot; alt=&quot;Visual Studio Code&quot;&gt;&lt;/p&gt;
+&lt;p&gt;This test I found rather interesting. The options, once I started typing &lt;em&gt;goog&lt;/em&gt; immediately showed as &lt;em&gt;google_compute_instance&lt;/em&gt;, &lt;em&gt;google_dns_managed_zone&lt;/em&gt;, and &lt;em&gt;google_dns_record_set&lt;/em&gt;. A somewhat odd selection indeed of these resources. You see, there are many other HCL resources for Google Compute Engine besides these three. But these specific three displayed in the dropdown. I looked throughout the file, and assumed that these three were retrieved from words in the file. Maybe the intellisense is more autocomplete then intellisense. Whatever the case however as I’m happy with just autocomplete. I don’t particularly need intellisense, especially since I haven’t used it now for about 6 years.&lt;/p&gt;
+&lt;p&gt;So that’s my first tour of Visual Studio Code and HCL. My next tour and test is going to be finding some more of these bloody shortcuts I haven’t been able to find and to actually write some golang in the editor too.&lt;/p&gt;
+&lt;p&gt;For now, I’ve got some HCL to put together for the coming &lt;a href=&quot;https://www.meetup.com/The-Portland-Elasticsearch-Meetup-Group/events/228010912/&quot;&gt;Monday night Elastic UG meetup&lt;/a&gt; on &lt;a href=&quot;http://blog.adron.me/talks/elastic-with-terraform-packer-and-immutability-magic/&quot;&gt;Elastic w/ Terraform, Packer, &amp;amp; That Immutability Magic&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
     <item>
       <title>DevOps Thoughts, Fixing Culture Roadblocks, and Cultural Anti-Pattern Practices</title>
       <link>http://adron.github.io/articles/devops-thoughts/</link>
@@ -1315,36 +1357,6 @@ export TF_VAR_password=&amp;quot;someSecretPassword&amp;quot;
 </description>
     </item>
     <item>
-      <title>The SAM Pattern - a distributed system view of Front-End architectures by Jean-Jacques Dubray</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-jean-jacques-dubray/</link>
-      <pubDate>Sat, 04 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-jean-jacques-dubray/</guid>
-      <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-jean-jacques-dubray/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-left&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-jean-jacques-dubray/jj-sized.png&quot; alt=&quot;Jean-Jacques Dubray&quot;&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Jean-Jacques Dubray is the founder of &lt;a href=&quot;http://xgen.io&quot;&gt;xgen.io&lt;/a&gt; and &lt;a href=&quot;http://www.gliiph.com&quot;&gt;gliiph&lt;/a&gt;. He has been building Service Oriented Architectures,
-and API platforms for the last 15 years. He is a former member of the research staff at HRL and earned his Ph.D. from
-the University of Provence (Luminy campus), home of the Prolog language. He is the inventor of the &lt;a href=&quot;http://www.xgenio.com/bolt-introduction.pdf&quot;&gt;BOLT methodology&lt;/a&gt; and the SAM pattern.&lt;/p&gt;
-&lt;p&gt;In his talk Jean-Jacques Dubray presents that Web Applications are rapidly becoming sophisticated distributed systems. When you look at a Facebook page or a Netflix catalog,
-the number of components interacting with each other requires complex synchronization and state management capabilities, reaching
-the limits of the MVC pattern.&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;In the last couple of years, several reactive architectures have started to get some interest (React, Cycle.js, ELM) without
-generating significant traction (compared to established frameworks like Angular), while struggling to position effects in their
-programming model. A new reactive, functional pattern, the State-Action-Model pattern (SAM) was introduced in early 2016 on the
-foundation of TLA+ semantics.&lt;/p&gt;
-&lt;p&gt;The pattern, which is unapologetically driven by simplicity, promotes a clear delineation between the business logic and the view
-and challenges the complexity of frameworks like Google’s Angular or Facebook’s React/Redux.&lt;/p&gt;
-&lt;p&gt;SAM’s unidirectional flow is also challenging interactive patterns like BFF (Back-End for Front-End) or the Vertical Slice Pattern
-which suggest creating view-specific APIs, per platform, app, versions of an app…&lt;/p&gt;
-&lt;p&gt;We’ll start by reviewing some of the key challenges of modern UX and Front-End Architectures. We will then present the
-key concepts of SAM and walk the audience through some node.js code samples (including server-side TimeTravel).&lt;/p&gt;
-</description>
-    </item>
-    <item>
       <title>Modern Javascript Frameworks - Introduction to Ember.JS and Ember-CLI by Suchita Doshi</title>
       <link>http://adron.github.io/articles/node-pdx-2016-suchita-doshi/</link>
       <pubDate>Sat, 04 Jun 2016 17:00:00 -0700</pubDate>
@@ -1372,6 +1384,36 @@ In this talk I would be covering the following:&lt;/p&gt;
 &lt;li&gt;Live Demo on how it’s really intuitive in a couple of non-trivial scenarios.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;So basically my goal is to attract more developers to adapt modern javascript frameworks and make a difference in the way complex apps are built.”&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>The SAM Pattern - a distributed system view of Front-End architectures by Jean-Jacques Dubray</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-jean-jacques-dubray/</link>
+      <pubDate>Sat, 04 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-jean-jacques-dubray/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-jean-jacques-dubray/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-left&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-jean-jacques-dubray/jj-sized.png&quot; alt=&quot;Jean-Jacques Dubray&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Jean-Jacques Dubray is the founder of &lt;a href=&quot;http://xgen.io&quot;&gt;xgen.io&lt;/a&gt; and &lt;a href=&quot;http://www.gliiph.com&quot;&gt;gliiph&lt;/a&gt;. He has been building Service Oriented Architectures,
+and API platforms for the last 15 years. He is a former member of the research staff at HRL and earned his Ph.D. from
+the University of Provence (Luminy campus), home of the Prolog language. He is the inventor of the &lt;a href=&quot;http://www.xgenio.com/bolt-introduction.pdf&quot;&gt;BOLT methodology&lt;/a&gt; and the SAM pattern.&lt;/p&gt;
+&lt;p&gt;In his talk Jean-Jacques Dubray presents that Web Applications are rapidly becoming sophisticated distributed systems. When you look at a Facebook page or a Netflix catalog,
+the number of components interacting with each other requires complex synchronization and state management capabilities, reaching
+the limits of the MVC pattern.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;In the last couple of years, several reactive architectures have started to get some interest (React, Cycle.js, ELM) without
+generating significant traction (compared to established frameworks like Angular), while struggling to position effects in their
+programming model. A new reactive, functional pattern, the State-Action-Model pattern (SAM) was introduced in early 2016 on the
+foundation of TLA+ semantics.&lt;/p&gt;
+&lt;p&gt;The pattern, which is unapologetically driven by simplicity, promotes a clear delineation between the business logic and the view
+and challenges the complexity of frameworks like Google’s Angular or Facebook’s React/Redux.&lt;/p&gt;
+&lt;p&gt;SAM’s unidirectional flow is also challenging interactive patterns like BFF (Back-End for Front-End) or the Vertical Slice Pattern
+which suggest creating view-specific APIs, per platform, app, versions of an app…&lt;/p&gt;
+&lt;p&gt;We’ll start by reviewing some of the key challenges of modern UX and Front-End Architectures. We will then present the
+key concepts of SAM and walk the audience through some node.js code samples (including server-side TimeTravel).&lt;/p&gt;
 </description>
     </item>
     <item>
@@ -1800,6 +1842,44 @@ Remember one thing. Work is not your core focus and reason to exist in life. &lt
 </description>
     </item>
     <item>
+      <title>Quick Append to Text File with BASH</title>
+      <link>http://adron.github.io/articles/quote-append-to-text-file-with-bash/</link>
+      <pubDate>Sun, 13 Mar 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/quote-append-to-text-file-with-bash/</guid>
+      <author></author>
+      <description>&lt;p&gt;I commonly have the scenario where I want a bash script to throw in something at the tail end of the ~/.bash_profile or ~/.profile script or just append some results like a log file to some existing text file. Well here are two super easy ways to add text to a text file.&lt;/p&gt;
+&lt;p&gt;Method one, using echo to append the text with the I/O redirection to the text file like this.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;echo &amp;quot;line 1&amp;quot; &amp;gt;&amp;gt; greetings.txt
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;or even like this&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;echo &amp;quot;line 1
+line 2
+line 3&amp;quot; &amp;gt;&amp;gt; greetings.txt
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Method two, using cat to read until EOT and redirect it to append to text file.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;cat &amp;lt;&amp;lt;EOT &amp;gt;&amp;gt; greetings.txt
+line 1
+line 2
+line 3
+EOT
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;That’s it, easy peasy. Enjoy your shell hacking!&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>Today I'm Using a Mac</title>
+      <link>http://adron.github.io/articles/today-using-a-mac/</link>
+      <pubDate>Fri, 11 Mar 2016 16:00:00 -0800</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/today-using-a-mac/</guid>
+      <author></author>
+      <description>&lt;p&gt;Today I’m using a Mac (since 2011, but inspired to write this today in 2016) not because I have some profound love for Apple (I don’t really) or miss Steve Jobs (he was a dick, but I bet I’d have gotten along with him) only because I don’t want to spend excess time messing with Windows headaches and the games I generally play over the last 7-8 years have been things like SimCity, Civ 5, and Cities: Skylines. All run perfectly fine on Mac w/ Steam. If I played 1st Person shooters I’d probably still have a Windows machine stashed in the corner for that…&lt;/p&gt;
+&lt;p&gt;…and…&lt;/p&gt;
+&lt;p&gt;…as for Macs, I converted solely because of what I saw a few key coders acheive in seconds over a Windows machine. I’ve not seen a single person come close to what these people could accomplish on a *nix based platform vs Windows. I switched, my headaches went away blagh blagh blagh (you know the ads, I sound like that) and then between OS-X &amp;amp; VMware Fusion I found I had a machine I could do everything from a coding perspective on (I initially bought an MBA). Then when I got the Retina Pro 15” I realized not only did I have every programming platform in existence available to me (even .NET!) I also realized it was the only machine of it’s size, weight, and horsepower that would let me edit in screen full frame 1080p or even 4k video without choking on itself. Windows didn’t even have a viable option on the market at the time (and really, it still doesn’t).&lt;/p&gt;
+&lt;p&gt;At this point I’ve given up trying to even use Windows to do work, primarily cuz it’s bad at video, bad at building code (most comparable machines just don’t build 1 to 1 code bases as fast), has weak POSIX compliance, Powershell is just a pain in the ass, it has poor SSH support (load 3rd party software? does it even internet) and security in general is completely bonkers, and Windows can never seem to find or maintain security integrity around any non-WINS/AD identified network (ok, in Windows defense, this is a Windows Server concern not Windows Desktop).&lt;/p&gt;
+&lt;p&gt;Beyond that even the OS-X UI is preferable to the sluggish, strange multi-tasking awkwardness of Windows 2010 (and it’s dramatically improved over 8/8.1, 7, Vista, XP, &amp;amp; 2000). The fact I can launch a program and it doesn’t kill process &amp;amp; memory resources while I’m doing something has always fascinated me vs. Windows, which seems to hand over every available resource to whatever is attempting to launch. What is that nonsense even? Let it launch on a lower priority thread or something. I could go on…&lt;/p&gt;
+&lt;p&gt;I’ve got plenty of complaints about OS-X, but it stays out of the way when I need to build code, automate infrastructure, sling dynamic code (re: Ruby, JavaScript, etc) and generally tears through Core CLR code &amp;amp; .NET Mono code dramatically better than suggish old VS on a box with more resources then this MBP. Honestly, it’s kind of sad how it seems to magically do better then Windows hardware. There aren’t a whole lot of specific reasons except that Macs are usually just integrated (motherboard/RAM/Proc/Video) better than most of the other junk that gets released to market. Of course if someone wants pure horsepower, yeah, got buy a desktop and get 4x-20x what comes in the best Mac, then run Linux. You’ll get stupid amounts of performance to build and process stuff with that. But in the consumer based world, if you want the maximum options with the minimal amount of bullshit in your life, you go and buy a MBP and get on with life. I could go on…&lt;/p&gt;
+&lt;p&gt;I’m sure there’s a million other things where X device for Y niche is more perfect or perfectly acceptable, and I doubt I’d disagree, so go on, get yourself one of those. But again, for “the maximum options with the minimal amount of bullshit in your life, you go and buy a MBP and get on with life”. On that note, I’m off to sling some Core CLR code against a prospective Scala solution and test a micro-services idea of mine - using Docker and jazz on my OS-X box. I’ll be done in 20 minutes and will move on to probably a relaxing round of Cities: Skyline. ;)&lt;/p&gt;
+&lt;p&gt;Thanks for reading my partial rant /&lt;em&gt;slash&lt;/em&gt;/ exploration of why I’ve ended up on Apple Hardware.&lt;/p&gt;
+</description>
+    </item>
+    <item>
       <title>Docker Tips n' Tricks - Bash Things With Docker</title>
       <link>http://adron.github.io/articles/docker-tips-n-tricks-bash-things-with-docker/</link>
       <pubDate>Wed, 09 Mar 2016 16:00:00 -0800</pubDate>
@@ -2095,6 +2175,279 @@ Talks about why Riak, Cassandra, and even the company Camille works at (Rent the
 &lt;p&gt;Overall, a spectacular laptop in MOST ways. However that keyboard is a serious problem for most people. I can imagine most people will NOT want to deal with the keyboard. I’m ok with it, but I don’t mind typing with hands up and off the resting points on the laptop. If Dell can fix this I’d give it a 100% buy suggestion, but with the keyboard as buggy and flaky as it is, I give the laptop at 60% buy suggestion. If you’re looking for a machine with Ubuntu out of the box, I’d probably aim for a Lenovo until Dell fixes the keyboard situation. Then I’d even suggest this machine over the Lenovo options.&lt;/p&gt;
 &lt;p&gt;…and among all things, I’d still suggest running Linux on a MBA or MBP over any of these - the machines are just more solid in manufacturing quality, durability, and the tech (i.e. battery, screen, etc) are still tops in many ways. But if you don’t want to feed the Apple Nation’s Piggy Bank, dump them and go with this Dell or maybe a Lenovo option.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Happy hacking and cheers!&lt;/em&gt;&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>Working in -34c Wintersmith Customization and Github Hosting</title>
+      <link>http://adron.github.io/articles/working-in-34c-wintersmith-customization-and-github-hosting/</link>
+      <pubDate>Tue, 18 Feb 2014 16:00:00 -0800</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/working-in-34c-wintersmith-customization-and-github-hosting/</guid>
+      <author></author>
+      <description>&lt;p&gt;Getting Wintersmith customized, building and deployed to Github and a domain name pointed takes a few extra steps. So let’s roll…&lt;/p&gt;
+&lt;div class=&quot;image float-right&quot;&gt;
+    &lt;a href=&quot;http://wintersmith.io/&quot;&gt;&lt;img src=&quot;/articles/working-in-34c-wintersmith-customization-and-github-hosting/wintersmith-01.png&quot; alt=&quot;Wintersmith Icon 1&quot;&gt;&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Step #1&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Setup &lt;a href=&quot;http://wintersmith.io/&quot; target=&quot;_blank&quot;&gt;Wintersmith&lt;/a&gt;. See my previous blog entry “&lt;a href=&quot;http://adron.github.io/articles/wintersmith-creating-documentation&quot;&gt;Wintersmith Creating Documentation&lt;/a&gt;“ for this information.&lt;/p&gt;
+&lt;div class=&quot;image float-right&quot;&gt;
+    &lt;a href=&quot;http://wintersmith.io/&quot;&gt;&lt;img src=&quot;/articles/working-in-34c-wintersmith-customization-and-github-hosting/wintersmith-02.png&quot; alt=&quot;Wintersmith Icon 2&quot;&gt;&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Step #2&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Now it’s time to get things deployed to Github. This takes a few interesting, non-intuitive steps, but once done things work extremely well. To get the appropriate git branch setup I worked with an existing git repo. This repo is the same repo that I’ve used for the public facing &lt;a href=&quot;http://adron.github.io/docs/deconstructed-once-upon-a-time&quot;&gt;Deconstructed Site&lt;/a&gt;. The code repo is located @ &lt;a href=&quot;http://adron.github.io/docs/deconstructed-once-upon-a-time&quot;&gt;Deconstructed Github Repo&lt;/a&gt;. I added a &lt;a href=&quot;http://adron.github.io/docs/deconstructed-once-upon-a-time&quot;&gt;github pages branch&lt;/a&gt; to this repository, for more information on how to do this check out my Jekyll how-to “&lt;a href=&quot;http://adron.github.io/docs/deconstructed-once-upon-a-time&quot;&gt;Bringing to Life an Open Source Project via Github &amp;amp; Jekyll - Part 1&lt;/a&gt;” which I detail at the beginning how to get a Github Pages site running.&lt;/p&gt;
+&lt;p&gt;Once the site is up and running I switched over to it and cleared out that path. I kept a few things I’d need like the .gitignore, README.md and a few other files. I then put the repo directory that I detailed in “&lt;a href=&quot;http://adron.github.io/articles/wintersmith-creating-documentation&quot;&gt;Wintersmith Creating Documentation&lt;/a&gt;” right here in the gh-pages branch. With that in place I then just committed and pushed this code to the gh-pages repository. That gave me the initial baseline for the site.&lt;/p&gt;
+&lt;div class=&quot;image float-right&quot;&gt;
+    &lt;a href=&quot;http://wintersmith.io/&quot;&gt;&lt;img src=&quot;/articles/working-in-34c-wintersmith-customization-and-github-hosting/wintersmith-03.png&quot; alt=&quot;Wintersmith Icon 3&quot;&gt;&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Step #3&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Get the customizations done and site domain/subdomain redirected. The steps to get the domain setup to have a custom domain pointed at your gh-pages github site is as follows:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Create a file named CNAME in the root of your gh-pages branch and in that CNAME file add one line with the domain that is being directed to this gh-pages site. My &lt;a href=&quot;https://github.com/Adron/deconstructed/blob/gh-pages/CNAME&quot; target=&quot;_blank&quot;&gt;CNAME file&lt;/a&gt; looks simply like this: &lt;code&gt;docs.deconstructed.io&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Next setup either an DNS A record or cname record. The cname will give you the advantage of having Github manage which IPs are in use in their system, so if there is any failover, DDOS or IP changes then you’re protected from that. To setup an A record add the A record to point to 204.232.175.78 or setup a cname to point to your github .io account, which in my case is &lt;a href=&quot;http://adron.github.io/&quot;&gt;http://adron.github.io/&lt;/a&gt;. The following is what the record looked like in my Route 53 settings.&lt;img src=&quot;/articles/working-in-34c-wintersmith-customization-and-github-hosting/dns-deconstructed.png&quot; alt=&quot;DNS Setting&quot;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Last but not least the configuration settings that need to be made in Wintersmith.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;First set the locals url setting to the appropriate domain or subdomain. In my case that meant changing the value from &lt;em&gt;&lt;a href=&quot;http://localhost:8080/&quot;&gt;http://localhost:8080/&lt;/a&gt;&lt;/em&gt; to &lt;em&gt;&lt;a href=&quot;http://adron.github.io/docs/deconstructed-once-upon-a-time&quot;&gt;http://docs.deconstructed.io/&lt;/a&gt;&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;  “locals”: {&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;  &amp;quot;url&amp;quot;: &amp;quot;http://docs.deconstructed.io&amp;quot;,
+  &amp;quot;name&amp;quot;: &amp;quot;Deconstructed Docs&amp;quot;,
+  &amp;quot;owner&amp;quot;: &amp;quot;Adron Hall&amp;quot;,
+  &amp;quot;description&amp;quot;: &amp;quot;This site provides the documentation around the Deconstructed API Services.&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;  }&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;In the root of the project (where the Wintersmith build ends up) add a .nojekyll file so that Jekyll won’t be used unnecessarily to try and build the Wintersmith project.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;…and with that, I’ve covered the bases for getting a Wintersmith site (blog or whatever you’re like to use it for) up and running. Feel free to ask any questions in the comments and I’ll help work through any issues you’ve encountered. Cheers!&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>Wintersmith Creating Documentation</title>
+      <link>http://adron.github.io/articles/wintersmith-creating-documentation/</link>
+      <pubDate>Sun, 16 Feb 2014 16:00:00 -0800</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/wintersmith-creating-documentation/</guid>
+      <author></author>
+      <description>&lt;p&gt;I set out a few days ago to put together a documentation site. I had a few criteria for this site:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;A static site that I could push to Github to use with their github pages feature.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;The static site is generated from markdown.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;It just works. It’s easy to get it into a workflow without breaking the tool or breaking a solid workflow.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;That was it, what I’d consider some pretty straight forward criteria. However it wasn’t that easy, until it was. Here’s a few of the issues I ran through on the way to getting a solid tool with a solid workflow working together. Beware however if you have fickle reading eyes, the following is a rant about what does and does not work.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;h2&gt;[rant on]&lt;/h2&gt;
+&lt;strong&gt;Middleman Broken Ruby and Broken Gems&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;I have a Mac Book Pro Retina 15”. The machine runs OS-X Mavericks. I’ve had zero issue with this OS. It comes with Ruby 2 and some version of gems. My first attempt was to take a stab with &lt;a href=&quot;http://middlemanapp.com/&quot; target=&quot;_blank&quot;&gt;middleman&lt;/a&gt;, the same static site builder used by many companies including Basho. Even though I ran into problems which I detailed in “&lt;a href=&quot;http://compositecode.com/2012/12/09/basho-first-week-coding-research-adventures/&quot; target=&quot;_blank&quot;&gt;Basho – First Week Coding &amp;amp; Research Adventures…&lt;/a&gt;“ and “&lt;a href=&quot;http://compositecode.com/2012/12/14/un-breaking-mountain-lion-os-x/&quot; target=&quot;_blank&quot;&gt;Un-breaking OS-X Mountain Lion&lt;/a&gt;“ eventually middleman &lt;em&gt;mostly&lt;/em&gt; worked.&lt;/p&gt;
+&lt;p&gt;Well, I didn’t get to a working app very fast. Immediately Ruby 2 had issues and gemsets puked middleman everywhere. I then ran into some confusing permissions errors. About 15 minutes into this process of troubleshooting middleman I had flashbacks of the first few days at Basho and thought, “&lt;em&gt;this is bullshit, something has to work better than this catastrofuck of software version conflicts&lt;/em&gt;“. So I dropped middleman dead.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Assemble, Assemble, Assemble…    ??!?#@$%! WTF!&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;I attempted &lt;a href=&quot;http://assemble.io/&quot; target=&quot;_blank&quot;&gt;assemble&lt;/a&gt; next for the node.js stack. It &lt;em&gt;looked&lt;/em&gt; to have a lot of promise. It uses grunt.js and a bunch of other tools to manage a static site generating, bootstrap using stack. The more I looked at it however it seemed busy. Busy as in “&lt;em&gt;I’m going to do more than three things so I’ll maybe do none of them right&lt;/em&gt;“.&lt;/p&gt;
+&lt;p&gt;Reading about assemble I turned to another hacker slinging some code at the bar I sat at. She looked at the project and asked, “&lt;em&gt;what’s it supposed to do exactly? I get that it’s a framework of tools but it doesn’t’ exactly lay out what it is supposed to be doing besides arbitrarily managing some parts of the stack.&lt;/em&gt;“ That seemed reasonable to me.&lt;/p&gt;
+&lt;p&gt;Before I just tossed assemble.io to the trash heap of options I wanted to ask at least one more person. So the next day I asked my good friend and super genius Troy Howard. It was a short verdict, “drop that shit”.&lt;/p&gt;
+&lt;p&gt;That was enough for me, assemble was officially dead for this project.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Slate, This Seems Slick But…&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;I then took a stab at &lt;a href=&quot;http://tripit.github.io/slate/&quot; target=&quot;_blank&quot;&gt;Slate&lt;/a&gt;. &lt;a href=&quot;http://tripit.github.io/slate/&quot; target=&quot;_blank&quot;&gt;Orchestrate.io just created some excellent documentation&lt;/a&gt; using the Slate solution. So I dove into this, getting a test site up and running rapidly. It seemed like a mostly viable solution until I started running into issues with how and where I wanted things displayed for the code samples and other material. It appeared, if I were going to use Slate, I’d be using it almost exactly as is. I might borrow pieces of it in the future, even the layout to some degree, but for now I wanted something else that I could incorporate my themes as needed. Alas, I was super happy with Slate, it just wasn’t a great fit for now.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Where The Hell Are My Options, Jekyll?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;At this point I was getting a little frustrated. I then went to a tried and true solution in &lt;a href=&quot;http://jekyllrb.com/&quot; target=&quot;_blank&quot;&gt;jekyll&lt;/a&gt;. Jekyll is a pretty solid solution, with some bugs and oddball issues but nothing major. I started working with it and even transitioning a jekyll project into my theme. Hacking a jekyll blog into a reasonable documentation solution this seemed like the way to go.&lt;/p&gt;
+&lt;p&gt;But then I got a wild urge to see if there was anything else in Node.js land that I was missing. I really didn’t want to sling a Ruby project if I didn’t have to. I’d rather keep all the stacks around JavaScript for this particular set of projects. No reason to diverge when I’m just dealing with such simple straight forward web projects. I’ll diverge when something truly validate diverging, like doing some real math with a real functional language or something. Trading Node.js for one single project to go with a pseudo Ruby project for static site generation just didn’t seem appealing. So I started looking around one more time.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Made in -34°C&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-right&quot;&gt;
+    &lt;img src=&quot;/articles/wintersmith-creating-documentation/temp.png&quot; alt=&quot;-34° Celsius&quot;&gt;
+    Yup, -34 Celsius. That’s about as cold as it gets. Click for the full size chart!
+&lt;/div&gt;
+
+&lt;p&gt;The next solution I tried was &lt;a href=&quot;http://wintersmith.io/&quot; target=&quot;_blank&quot;&gt;Wintersmith&lt;/a&gt;. This solution appeared to have everything that I’d been looking for feature wise. It was a node.js project, it generated static content, could generate blogs but other things too, was simple, had plugins, was straight forward and more. I was a little paranoid after the solutions I’d fought my way through earlier so I went to the only place that would insure that I’d have a solution I could be confident in. I went straight to the &lt;a href=&quot;https://github.com/jnordberg/wintersmith&quot; target=&quot;_blank&quot;&gt;source&lt;/a&gt;!&lt;/p&gt;
+&lt;p&gt;I’ll admit I took a peak at the package.json file before going head long into the source. A quick perusal of the dependencies list looked ok.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;  dependencies: {
+    marked: ~0.3.0,
+    coffee-script: ~1.6.3,
+    async: ~0.2.9,
+    highlight.js: ~8.0.0,
+    jade: ~1.1.5,
+    ncp: ~0.5.0,
+    rimraf: ~2.2.6,
+    winston: ~0.7.2,
+    colors: ~0.6.2,
+    optimist: ~0.6.0,
+    minimatch: ~0.2.14,
+    mime: ~1.2.11,
+    js-yaml: ~3.0.1,
+    mkdirp: ~0.3.5,
+    chokidar: ~0.8.1,
+    server-destroy: ~1.0.0,
+    npm: ~1.3.24,
+    slugg: ~0.1.2
+  },
+  devDependencies: {
+    shelljs: 0.1.x
+  }
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;I immediately took note of a few things. The first was that there was actually a breakout of dev dependencies versus actual project dependencies. That’s a good first sign. The second thing I just went through the list and checked the various library dependencies, there were a few that I’ve played around with before that I trusted; highlight.js, coffee-script, async, js-yaml and npm were all cool by me. It didn’t seem to crazy out of whack. With that I went forth into the code with zero expectations…&lt;/p&gt;
+&lt;p&gt;The first files I dug into were the &lt;a href=&quot;https://github.com/jnordberg/wintersmith/blob/master/src/core/config.coffee&quot; target=&quot;_blank&quot;&gt;config.coffee file&lt;/a&gt;, which pointed out a few things I’d want to possibly tweak a little later such as the port number and other things the wintersmith server would use when running the preview server.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;class Config
+  ### The configuration object ###
+
+  @defaults =
+    # path to the directory containing content&amp;#39;s to be scanned
+    contents: &amp;#39;./contents&amp;#39;
+    # list of glob patterns to ignore
+    ignore: []
+    # context variables, passed to views/templates
+    locals: {}
+    # list of modules/files to load as plugins
+    plugins: []
+    # modules/files loaded and added to locals, name: module
+    require: {}
+    # path to the directory containing the templates
+    templates: &amp;#39;./templates&amp;#39;
+    # directory to load custom views from
+    views: null
+    # built product goes here
+    output: &amp;#39;./build&amp;#39;
+    # base url that site lives on, e.g. &amp;#39;/blog/&amp;#39;
+    baseUrl: &amp;#39;/&amp;#39;
+    # preview server settings
+    hostname: null # INADDR_ANY
+    port: 8080
+    # options prefixed with _ are undocumented and should generally not be modified
+    _fileLimit: 40 # max files to keep open at once
+    _restartOnConfChange: true # restart preview server on config change
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Second code file that looked interesting, the &lt;a href=&quot;https://github.com/jnordberg/wintersmith/blob/master/src/core/renderer.coffee&quot; target=&quot;_blank&quot;&gt;renderer.coffee&lt;/a&gt; code file.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;fs = require &amp;#39;fs&amp;#39;
+util = require &amp;#39;util&amp;#39;
+async = require &amp;#39;async&amp;#39;
+path = require &amp;#39;path&amp;#39;
+mkdirp = require &amp;#39;mkdirp&amp;#39;
+{Stream} = require &amp;#39;stream&amp;#39;
+
+{ContentTree} = require &amp;#39;./content&amp;#39;
+{pump, extend} = require &amp;#39;./utils&amp;#39;
+
+if not setImmediate?
+  setImmediate = process.nextTick
+
+renderView = (env, content, locals, contents, templates, callback) -&amp;amp;gt;
+  setImmediate -&amp;amp;gt;
+    # add env and contents to view locals
+    _locals = {env, contents}
+    extend _locals, locals
+
+    # lookup view function if needed
+    view = content.view
+    if typeof view is &amp;#39;string&amp;#39;
+      name = view
+      view = env.views[view]
+      if not view?
+        callback new Error &amp;amp;quot;content &amp;#39;#{ content.filename }&amp;#39; specifies unknown view &amp;#39;#{ name }&amp;#39;&amp;amp;quot;
+        return
+
+    # run view
+    view.call content, env, _locals, contents, templates, (error, result) -&amp;amp;gt;
+      error.message = &amp;amp;quot;#{ content.filename }: #{ error.message }&amp;amp;quot; if error?
+      callback error, result
+
+render = (env, outputDir, contents, templates, locals, callback) -&amp;amp;gt;
+  ### Render *contents* and *templates* using environment *env* to *outputDir*.
+      The output directory will be created if it does not exist. ###
+
+  env.logger.info &amp;amp;quot;rendering tree:\n#{ ContentTree.inspect(contents, 1) }\n&amp;amp;quot;
+  env.logger.verbose &amp;amp;quot;render output directory: #{ outputDir }&amp;amp;quot;
+
+  renderPlugin = (content, callback) -&amp;amp;gt;
+    ### render *content* plugin, calls *callback* with true if a file is written; otherwise false. ###
+    renderView env, content, locals, contents, templates, (error, result) -&amp;amp;gt;
+      if error
+        callback error
+      else if result instanceof Stream or result instanceof Buffer
+        destination = path.join outputDir, content.filename
+        env.logger.verbose &amp;amp;quot;writing content #{ content.url } to #{ destination }&amp;amp;quot;
+        mkdirp.sync path.dirname destination
+        writeStream = fs.createWriteStream destination
+        if result instanceof Stream
+          pump result, writeStream, callback
+        else
+          writeStream.end result, callback
+      else
+        env.logger.verbose &amp;amp;quot;skipping #{ content.url }&amp;amp;quot;
+        callback()
+
+  items = ContentTree.flatten contents
+  async.forEachLimit items, env.config._fileLimit, renderPlugin, callback
+
+module.exports = {render, renderView}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Fairly straight forward code. Puts together the rendered content and I noted a few key things. There was a solid process order that was repeated; env, content, locals, contents, templates, callback. Because of this it looked like local variables were set to statically set certain things based on configuration instead of dynamic location. This could bite me, but with this quick glance, at least I knew where and what was happening with the order of generation.&lt;/p&gt;
+&lt;p&gt;I then did a scan of the &lt;a href=&quot;https://github.com/jnordberg/wintersmith/blob/master/src/core/templates.coffee&quot; target=&quot;_blank&quot;&gt;templates.coffee&lt;/a&gt; and a few other code files. Having gotten a fair idea of where and what was being done, I went looking for a quick start. Things looked pretty good, so I crossed my fingers and my rant ends here…&lt;/p&gt;
+&lt;p&gt;&lt;h2&gt;[/rant off]&lt;/h2&gt;
+So now that the rant mode was over, here’s what I did to make wintersmith my documentation solution. Most of this is in a state of flux as I automate and put more into the project to simplify the workflow.&lt;/p&gt;
+&lt;p&gt;Here’s how I got started super fast.&lt;/p&gt;
+&lt;div class=&quot;image float-right&quot;&gt;
+    &lt;a href=&quot;http://wintersmith.io/&quot;&gt;&lt;img src=&quot;/articles/wintersmith-creating-documentation/wintersmith-04.png&quot; alt=&quot;Wintersmith Icon 4&quot;&gt;&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;p&gt;First step is get &lt;a href=&quot;http://wintersmith.io/&quot; target=&quot;_blank&quot;&gt;Wintersmith&lt;/a&gt; running.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;npm install wintersmith -g
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Note that you’ll need to install it globally (thus the -g) and may need to install Wintersmith with sudo prepended to that command.&lt;/p&gt;
+&lt;p&gt;The next thing that I did was create a directory that I’d use to build the static generated contents. This material I’d put into a git repository on github (namely the &lt;a href=&quot;https://github.com/Deconstructed/deconstructed/tree/gh-pages&quot; target=&quot;_blank&quot;&gt;deconstructed gh-pages repo&lt;/a&gt;). I’ll call this generically the root directory.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;mkdir rootDirectory
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;After that I navigated into the rootDirectory and created a new Wintersmith Application.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;wintersmith new myAppName
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;That now gives me a directory structure like this&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;rootDirectory&lt;/li&gt;
+&lt;li&gt;myAppName&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Now that I have this, the app content, markdown, views and related templates are in myAppName. To view the app, I changed directories into myAppName and ran wintersmith preview like this&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;wintersmith preview
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Opening up a browser I can navigate to &lt;a href=&quot;http://localhost:8080&quot; target=&quot;_blank&quot;&gt;http://localhost:8080&lt;/a&gt; and see the fully rendered site. To publish the site however one needs to run wintersmith build, however there’s one problem. I want the site to publish to the rootDirectory where the application content currently sites. To do this I have to edit the &lt;em&gt;config.json&lt;/em&gt; file. Just above the locals code settings shown below…&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;{
+  locals: {
+    url: http://localhost:8080,
+    name: The Wintersmith&amp;#39;s blog,
+    owner: Someone,
+    description: Ramblings of an immor(t)al demigod
+}
+[/sourcecode]
+
+I added an output key value property to the file as shown. It merely takes the results and shifts them back a directory so they end up in the rootDirectory.
+
+[sourcecode language=&amp;quot;javascript&amp;quot;]
+{
+  output:../,
+  locals: {
+    url: http://docs.deconstructed.io,
+    name: Deconstructed Docs,
+    owner: Adron Hall,
+    description: This site provides the documentation around the Deconstructed API Services.
+  },
+  plugins: [
+    ./plugins/paginator.coffee
+  ],
+  require: {
+    moment: moment,
+    _: underscore,
+    typogr: typogr
+  },
+  jade: {
+    pretty: true
+  },
+  markdown: {
+    smartLists: true,
+    smartypants: true
+  },
+  paginator: {
+    perPage: 6
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;I also changed the perPage setting to 6, just so I could get a little more content on the main page eventually. There is also the change for the domain name and a few other parameters that I’ll catch up on with the next blog entry.&lt;/p&gt;
+&lt;h2 id=&quot;summary&quot;&gt;Summary&lt;/h2&gt;
+&lt;p&gt;In my next blog entry I’ll cover a quick how-to on how to setup the CNAME in github pages to get the static wintersmith site up at a subdomain/domain name. I’ll also dive into setup with AWS Route 53, which generically applies to setting a gh-pages site up with any DNS provider. So subscribe and I’ll have that post in the next 1-2 days.&lt;/p&gt;
 </description>
     </item>
   </channel>

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Adron's Composite Code</title>
+    <meta name="description" content="">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="alternate" href="http://adron.github.io/feed.xml" type="application/rss+xml" title="Coder, Messenger, Recon, Infrastructure, Ops">
+    <link rel="icon" type="image/png" href="http://adron.github.io/img/favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="http://adron.github.io/img/favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="http://adron.github.io/img/favicons/favicon-96x96.png" sizes="96x96">
+    <link rel="apple-touch-icon" sizes="57x57" href="http://adron.github.io/img/favicons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="http://adron.github.io/img/favicons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="http://adron.github.io/img/favicons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="http://adron.github.io/img/favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="http://adron.github.io/img/favicons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="http://adron.github.io/img/favicons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="http://adron.github.io/img/favicons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="http://adron.github.io/img/favicons/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="http://adron.github.io/img/favicons/apple-touch-icon-180x180.png">
+    <link rel="stylesheet" href="http://adron.github.io/css/custom.css">
+    <link rel="stylesheet" href="http://adron.github.io/css/style.min.css">
+    <script src="http://adron.github.io/js/modernizr.js"></script>
+  </head>
+  <body class="article-detail">
+    <!--[if lt IE 8]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <div class="header header-over large">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 col-sm-6 col-xs-6">
+            <!-- Logo Image--><a href="http://adron.github.io/index.html" class="logo-image logo-animated"><img src="http://adron.github.io/img/logos/logo.png" alt="logo"></a>
+            <!-- End of Logo Image-->
+          </div>
+          <div class="col-md-9 col-sm-6 col-xs-6">
+            <!-- Menu-->
+            <nav class="right helper">
+              <ul class="menu sf-menu js-menu">
+                <li><a href="/thrashingcodenews.html">Thrashing Code News</a></li>
+                <li><a href="#">Conf/Meetup/UserGroup Events</a>
+                  <ul>
+                    <li><a href="/docs/Speaking-Presentations-Workshops/">Speaking - Presentations, Workshops, Etc</a></li>
+                    <li><a href="/docs/calendar">Calendar</a></li>
+                  </ul>
+                </li>
+                <li><a href="/docs/documentation/">Docs</a></li>
+                <li><a href="/docs/about/">About</a></li>
+              </ul>
+            </nav>
+            <!-- End of Menu-->
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="header-back header-back-simple header-back-small">
+      <div class="header-back-container">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <!-- Page Info-->
+              <div class="page-info page-info-simple">
+                <h1>Visual Studio Code (an intro with snark!) and Hashicorp Configuration Language</h1>
+                <p class="author">Written by <span class="author">Adron Hall</span>
+                </p>
+                <div class="nav"><a href="/">« Home</a></div>
+              </div>
+              <!-- End Page Info-->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="content">
+      <div class="container">
+        <div class="layout with-right-sidebar js-layout">
+          <div class="row">
+            <div class="col-md-9">
+              <div class="main-content">
+                <!-- Blog Page-->
+                <article class="article">
+                  <section class="content"><p>I sat down to setup Visual Studio Code for some Go coding. That is, #golang or “golang” on Google, because heaven forbid a language is named something that isn’t ubiquitous like the word “go”. But anyway, I digress, because this blog entry isn’t even about golang. It’s about <span class="caps">HCL</span>. You see, I sat down to toy about with golang but then I had to knock out a few tasks with Terraform, Packer, and such. To do that I needed the HCL support that Visual Studio Code has. I knew there was a plugin for Hashicorp Configuration Language (i.e. HCL). So I decided to do that work in Visual Studio Code and try out the HCL Plugin. Maybe next blog entry I’ll get around to writing some golang in Visual Studio&nbsp;Code?</p>
+<p><img src="/articles/visual-studio-code-and-hcl/code-go-00.png" alt="The Site"></p>
+<p><span class="more"></span></p>
+<p>The first thing I needed to do though, was download and get Visual Studio Code. I’d neglected to learn much about it or use Code (I’ll just call it that from now on, Visual Studio Code is way to much to write, plus it’s not really got much in familial relation to Visual Studio). That download, it all started <a href="https://code.visualstudio.com">here</a>. I opened it upon finishing installation to a brand new Visual Studio Code&nbsp;Window.</p>
+<p><img src="/articles/visual-studio-code-and-hcl/code-go-01.png" alt="Visual Studio Code"></p>
+<p>I toyed about a moment looking at the Visual Studio Code website, then toyed around with the editor, and noticed three things&nbsp;immediately.</p>
+<ol>
+<li><p>When I navigated to <code>https://code.visualstudio.com</code> I noticed I was redirected or someway navigated to a link that immediately shoved some type of session mess into the <span class="caps">URI</span>. My link of <code>https://code.visualstudio.com</code> turned into <code>https://code.visualstudio.com/b?utm_expid=101350005-27.GqBWbOBuSRqlazQC_nNSRg.1</code>. Now I’m not sure about you but that type of behavior on a website actually pisses me off and makes me paranoid. I went through various things to determine what was going on, but suffice it to say I determined it was just an annoying contrivance that the site managers make the site do.&nbsp;Whatever…</p>
+</li>
+<li><p>The second thing I noticed was that I had no idea what to do to install plugins. Was it the same as Atom as I’d heard? Was it some other command? I assumed since I’d used Code a few times before, it was likely the command line I tried a few based on other tooling. First <code>⌘ + space</code>, nope, that was dumb. I have that mapped to <a href="https://en.wikipedia.org/wiki/Spotlight_(software">Spotlight</a>). Ok, so then I tried <code>⌥ + space</code>, nope. <code>⌘ + ⌥ + ^ + F12</code>, naw. Ok, dammit, I guess it’s <code>⌘</code> key plus something I’ll bet. Then I tried a whole slew and sure enough, <strong><code>⌘ + p</code></strong> was the magic sauce. But wait, it wasn’t. At this point I thought “maybe I should look this up” but I decide to stay stubborn and try some other things I <em>think</em> I remember about Code. I try the <code>fn + F1</code>, or what might be just <code>F1</code> if you have your keyboard setup for function keys instead of the other <span class="caps">OS</span>-X uses. Sure enough, that was the command dialog I&nbsp;wanted.  </p>
+</li>
+<li><p>I opened up another Code window so that I could also use the editor to write this very blog entry. I use <a href="http://wintersmith.io/">Wintersmith</a> and have even written about it in the past <a href="/articles/wintersmith-creating-documentation">Wintersmith Creating Documentation</a> and <a href="/articles/working-in-34c-wintersmith-customization-and-github-hosting">Working in -34c Wintersmith Customization and Github Hosting</a>. It’s a great Node.js static site generator. I immediately noticed as I started typing that Visual Stuido Code supports basic markdown on the basic installation! Holy shit, that’s super&nbsp;rad!</p>
+</li>
+</ol>
+<p>Ok, on with the meat of all&nbsp;this.</p>
+<p>With the opened Code Window, I hit <code>fn + F1</code> (again, that’s just <code>f1</code> if you’ve got your function keys turned on for <span class="caps">OS</span>-X) and typed in <code>ext</code>. That gave me the following&nbsp;dialog.</p>
+<p><img src="/articles/visual-studio-code-and-hcl/code-go-02.png" alt="Visual Studio Code"></p>
+<p>The list that displays, I then hit the down arrow key and selected <em>Extensions: Install Extensions</em>. With that selected I hit enter and down the left hand side of Code I got the extensions list. The focus changes to that, so no need for the mouse&nbsp;still.</p>
+<p><img src="/articles/visual-studio-code-and-hcl/code-go-03.png" alt="Visual Studio Code"></p>
+<p>I pressed the down arrow to select the <span class="caps">HCL</span> extension, but realized that was taking a minute, so shifted focus to the search box and just typed HCL. That immediately brought up the display of the extension once I hit the down arrow and then&nbsp;enter.</p>
+<p><img src="/articles/visual-studio-code-and-hcl/code-go-04.png" alt="Visual Studio Code"></p>
+<p>Now I wasn’t sure how to install this, since I wanted to avoid using the mouse if possible. I just hit enter again and it worked! Since that worked, I hit enter again with the premise that it would now <em>enable</em> the extension, which it did indeed do with a simple prompt to restart Code. I clicked on <em>ok</em> and on to the restart of&nbsp;Code.</p>
+<p><img src="/articles/visual-studio-code-and-hcl/code-go-05.png" alt="Visual Studio Code"></p>
+<p>When Code restarted and came back up, I had one Code Windows with the default empty document, with no directory opened, and I opened up another using <em>File -&gt; New Window</em> and then used it to open the directory in which I was editing this blog&nbsp;entry. </p>
+<p><img src="/articles/visual-studio-code-and-hcl/code-go-06.png" alt="Visual Studio Code"></p>
+<p>To get the word wrap back (which I’d manually clicked before) I recalled the shortcut key is <code>⌥ + Z</code>. This is super useful when editing markdown like this, so it’s a keyboard shortcut to set to&nbsp;memory.</p>
+<p>Now at this point I should have some <span class="caps">HCL</span>. I kick of my pulling down an existing project that I’m working on. I opened it by using the <code>⌘ + O</code> keys. The project opened up and I immediately opened one of the /*.json files that I have for a Packer&nbsp;image.</p>
+<p><img src="/articles/visual-studio-code-and-hcl/code-go-07.png" alt="Visual Studio Code"></p>
+<p>That looked good so far. Let’s see about intellisense and Terraform. I used <code>ctrl + shift + E</code> to get into the Explorer part of the editor. Then scrolled with the down arrow to the <em>dns-records.tf</em> file. I atttempted to select the file with the <code>return</code> button, but that invoked the <em>rename</em> functionality. I tried a few other things, the <em>space bar</em>, other unusable combinations, and then <code>ctrl + return</code>.</p>
+<p><em>Nothing</em>. This was a bit frustrating, to get this far and stumble because I need to use the bloody mouse. Whatever, I clicked on the mouse to open the <em>dns-records.tf</em> file. I then clicked into the file and tried out something around the intellisense (or is it autocomplete in&nbsp;Code?).</p>
+<p><img src="/articles/visual-studio-code-and-hcl/code-go-08.png" alt="Visual Studio Code"></p>
+<p>This test I found rather interesting. The options, once I started typing <em>goog</em> immediately showed as <em>google_compute_instance</em>, <em>google_dns_managed_zone</em>, and <em>google_dns_record_set</em>. A somewhat odd selection indeed of these resources. You see, there are many other <span class="caps">HCL</span> resources for Google Compute Engine besides these three. But these specific three displayed in the dropdown. I looked throughout the file, and assumed that these three were retrieved from words in the file. Maybe the intellisense is more autocomplete then intellisense. Whatever the case however as I’m happy with just autocomplete. I don’t particularly need intellisense, especially since I haven’t used it now for about 6&nbsp;years.</p>
+<p>So that’s my first tour of Visual Studio Code and <span class="caps">HCL</span>. My next tour and test is going to be finding some more of these bloody shortcuts I haven’t been able to find and to actually write some golang in the editor&nbsp;too.</p>
+<p>For now, I’ve got some <span class="caps">HCL</span> to put together for the coming <a href="https://www.meetup.com/The-Portland-Elasticsearch-Meetup-Group/events/228010912/">Monday night Elastic <span class="caps">UG</span> meetup</a> on <a href="http://blog.adron.me/talks/elastic-with-terraform-packer-and-immutability-magic/">Elastic w/ Terraform, Packer, <span class="amp">&amp;</span> That Immutability Magic</a>.</p>
+</section>
+                </article>
+                <!-- End of Blog Page-->
+              </div>
+            </div>
+            <div class="col-md-3 hidden-sm hidden-xs">
+              <div class="sidebar js-sidebar-fixed">
+                <!-- Vertical Menu-->
+                <div class="widget">
+                  <!-- Search-->
+                  <div class="search">
+                    <form action="https://google.com/search" method="get">
+                      <input type="hidden" name="sitesearch" value="http://blog.adron.me">
+                      <input type="text" name="q" placeholder="search" class="search-input form-control"><i class="fa fa-search search-icon"></i>
+                    </form>
+                  </div>
+                  <!-- End of Search-->
+                </div>
+                <div class="widget">
+                  <h3 class="widget-title">Keyword Search</h3>
+                  <!-- Tags-->
+                  <ul class="tags">
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=html">html</a></li>
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=javascript">javascript</a></li>
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=ubuntu">ubuntu</a></li>
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=node pdx">node pdx</a></li>
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=.NET fringe">.net fringe</a></li>
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=videos">videos</a></li>
+                  </ul>
+                  <!-- End of Tags-->
+                </div>
+                <nav class="menu-vertical-wrapper">
+                  <ul data-prepend-to=".js-layout" data-select="Menu" class="menu-vertical js-menu-vertical">
+                    <li><a href="#">About</a>
+                      <ul>
+                        <li><a href="/docs/about/">Me, Adron</a></li>
+                        <li><a href="#">My Hobbies</a>
+                          <ul>
+                            <li><a href="http://photos.adron.me">My Photos</a></li>
+                          </ul>
+                        </li>
+                        <li><a href="/docs/Speaking-Presentations-Workshops">My Presentations</a></li>
+                        <li><a href="/docs/documentation/">Collection of Docs & Notes</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </nav>
+                <div class="widget">
+                  <h3 class="widget-title">Photos</h3>
+                  <!-- Photos-->
+                  <ul class="widget-recommended-products">
+                    <!-- Photos-->
+                    <li class="widget-recommended-product"><img src="/img/photos/IMG_1836.jpg" alt="Jon Oropeza" class="widget-recommended-product-img"><a href="http://photos.adron.me/Software/Meetups-N-Conferences/Conferences/Node-PDX-2016/i-D9qFQ6m" class="widget-recommended-product-link">
+                        <h5 class="widget-recommended-product-link-title">Node PDX 2016<i class="fa fa-angle-right"></i></h5>
+                        <p class="widget-recommended-product-link-description">Jon Oropeza @ Node PDX 2016</p></a></li>
+                    <!-- End of Recommended product Item-->
+                    <!-- Recommended product Item-->
+                    <li class="widget-recommended-product"><img src="/img/photos/IMG_1812.jpg" alt="Liz Abinante" class="widget-recommended-product-img"><a href="http://photos.adron.me/Software/Meetups-N-Conferences/Conferences/Node-PDX-2016/i-g2m2hgP" class="widget-recommended-product-link">
+                        <h5 class="widget-recommended-product-link-title">Node PDX 2016<i class="fa fa-angle-right"></i></h5>
+                        <p class="widget-recommended-product-link-description">Liz Abinante @ Node PDX 2016</p></a></li>
+                    <!-- End of Recommended product Item-->
+                    <!-- Recommended product Item-->
+                    <li class="widget-recommended-product"><img src="/img/photos/IMG_5709.jpg" alt="Praha hlavní nádraží" class="widget-recommended-product-img"><a href="http://photos.adron.me/Travels-N-Traversings/Across-the-Pond-2016-Travels/September-Krakow/Week-4-Prague/i-62ZPsPb" class="widget-recommended-product-link">
+                        <h5 class="widget-recommended-product-link-title">Prague (Praha)<i class="fa fa-angle-right"></i></h5>
+                        <p class="widget-recommended-product-link-description">Praha hlavní nádraží</p></a></li>
+                    <!-- End of photos row one-->
+                  </ul>
+                  <ul class="widget-recommended-products">
+                    <!-- Photos-->
+                    <li class="widget-recommended-product"><img src="/img/photos/IMG_4417.jpg" alt="St Mary's Basilica" class="widget-recommended-product-img"><a href="http://photos.adron.me/Travels-N-Traversings/Across-the-Pond-2016-Travels/September-Krakow/Krakow/i-KnZf6pK/A" class="widget-recommended-product-link">
+                        <h5 class="widget-recommended-product-link-title">St Mary's Basilica<i class="fa fa-angle-right"></i></h5>
+                        <p class="widget-recommended-product-link-description">Bazylika Mariacka in Rynek Główny.</p></a></li>
+                    <!-- End of Recommended product Item-->
+                    <!-- Recommended product Item-->
+                    <li class="widget-recommended-product"><img src="/img/photos/VSC_03.png" alt="Visual Studio Code" class="widget-recommended-product-img"><a href="http://photos.adron.me/Software/Software-Development/Visual-Studio-Things/i-LLW7WcD/A" class="widget-recommended-product-link">
+                        <h5 class="widget-recommended-product-link-title">Visual Studio Code<i class="fa fa-angle-right"></i></h5>
+                        <p class="widget-recommended-product-link-description">Images from a review of Visual Studio Code.</p></a></li>
+                    <!-- End of Recommended product Item-->
+                    <!-- Recommended product Item-->
+                    <li class="widget-recommended-product"><img src="/img/photos/-home-adronhall-Pictures-Selection_002.png - Shutter_003.png" alt="" class="widget-recommended-product-img"><a href="http://photos.adron.me/Software/Software-Development/Ubuntu/i-CQsQ4zj/A" class="widget-recommended-product-link">
+                        <h5 class="widget-recommended-product-link-title">Mono Develop & WebStorm<i class="fa fa-angle-right"></i></h5>
+                        <p class="widget-recommended-product-link-description">Working through Mono Develop & WebStorm.</p></a>
+                      <!-- End of photos row two-->
+                    </li>
+                  </ul>
+                  <!-- End Photos-->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="nav"><a href="/">« Home</a></div>
+      </div>
+    </div>
+    <script src="http://adron.github.io/js/all.js"></script>
+    <script src="http://adron.github.io/js/custom.js"></script>
+    <!-- Google Tag Manager-->
+    <noscript>
+      <iframe src="//www.googletagmanager.com/ns.html?id=GTM-KMMZX2" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <script>
+      console.log(document.getElementById("search-google"));
+      console.log(document.getElementById("search-google").innerText);
+      
+      var searchBox = document.getElementById("search-google");
+      
+      function googleSearch(search_string) {
+        alert(search_string);
+      }
+      
+      document.getElementById("search-google").addEventListener("onClick", function () {
+        alert(document.getElementById("search-google").innerHTML);
+      });
+      
+      document.getElementById("search-google").addEventListener("onClick", function () {
+        googleSearch(document.getElementById("search-google").innerHTML)
+      });
+      
+    </script>
+    <script>
+      (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+                  (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+      })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+      ga('create', 'UA-39158070-6', 'auto');
+      ga('send', 'pageview');
+    </script>
+  </body>
+</html>
