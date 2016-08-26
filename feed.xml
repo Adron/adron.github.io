@@ -5,9 +5,45 @@
     <atom:link href="http://adron.github.io/feed.xml" rel="self" type="application/rss+xml"></atom:link>
     <link>http://adron.github.io</link>
     <description>Coder, Messenger, Recon, Infrastructure, Ops</description>
-    <pubDate>Mon, 22  Aug 2016 18:21:00 -0700</pubDate>
+    <pubDate>Thu, 25  Aug 2016 17:00:00 -0700</pubDate>
     <generator>Wintersmith - https://github.com/jnordberg/wintersmith</generator>
     <language>en</language>
+    <item>
+      <title>Generate or Regenerate gcloud ssh Keys - How Ya Linux Series - 0001</title>
+      <link>http://adron.github.io/articles/how-ya-linux-0001-generate-regenerate-ssh-key/</link>
+      <pubDate>Thu, 25  Aug 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/how-ya-linux-0001-generate-regenerate-ssh-key/</guid>
+      <author></author>
+      <description>&lt;p&gt;Sometimes while working with the various ssh keys you have you might need to regenerate them. Specifically I ran into this need while working with some Google Cloud Platform (GCP) instances with Terraform and GCP’s &lt;em&gt;gcloud&lt;/em&gt; CLI tool. Generally, when you start working with the &lt;em&gt;gcloud&lt;/em&gt; CLI it will, upon need if it doesn’t exist, create a key for you. When it does so it sticks the key it generates in the &lt;code&gt;~/.ssh/&lt;/code&gt; directory and names the key &lt;code&gt;google_compute_engine&lt;/code&gt;. To create a new ssh key pair here, navigate to the &lt;code&gt;~/.ssh/&lt;/code&gt; directory and issue the following command.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;    sudo ssh-keygen -t rsa -f ~/.ssh/google_compute_engine -C you_fancy_username@whatever.com
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Once that is command is executed, a few moments later and a few prompts later you’ll have a new key.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;    13:16 $ sudo ssh-keygen -t rsa -f ~/.ssh/google_compute_engine -C adron_hall@homedepot.comPassword:
+    Generating public/private rsa key pair.
+    /Users/axh6454/.ssh/google_compute_engine already exists.
+    Overwrite (y/n)? y
+    Enter passphrase (empty for no passphrase):
+    Enter same passphrase again:
+    Your identification has been saved in /Users/axh6454/.ssh/google_compute_engine.
+    Your public key has been saved in /Users/axh6454/.ssh/google_compute_engine.pub.
+    The key fingerprint is:
+    SHA256:8xHVr19EdgPxLr2nWAkuZa8exMdEqbHNzoBxlHhFkZM adron_hall@ataplace.com
+    The key&amp;#39;s randomart image is:
+    +---[RSA 2048]----+
+    |           ooBB= |
+    |          o.=.E.+|
+    |          .= *.*o|
+    |          .o+o= o|
+    |        S . *=o= |
+    |         o * +=.o|
+    |          o o +oo|
+    |           . = .o|
+    |           .+ .  |
+    +----[SHA256]-----+
+    ✔ ~/.ssh
+    13:16 $
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;That’s it.&lt;/p&gt;
+</description>
+    </item>
     <item>
       <title>Visual Studio Code (an intro with snark!) and Hashicorp Configuration Language</title>
       <link>http://adron.github.io/articles/visual-studio-code-and-hcl/</link>

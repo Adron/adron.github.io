@@ -85,6 +85,27 @@
                   <div class="blog-grid">
                     <div class="row">
                       <div class="col-md-12 col-sm-12">
+                        <h3 class="blog-grid-title"><a href="/articles/docker-tips-n-tricks-bash-things-with-docker/">Docker Tips n' Tricks - Bash Things With Docker</a></h3>
+                        <p class="blog-grid-excerpt"><p>If you use Docker frequently, you’ve likely memorized a few repetitive&nbsp;commands…</p>
+<pre><code>docker-machine start XyZvirtualMachine
+</code></pre><p>Then you&nbsp;run…</p>
+<pre><code>docker-machine env XyZvirtualMachine
+</code></pre><p>…and then you&nbsp;type…</p>
+<pre><code>eval $(docker-machine env XyZvirtualMachine)
+</code></pre><p>
+                          <p class="more"><a href="/articles/docker-tips-n-tricks-bash-things-with-docker/">more</a></p>
+                        </p>
+                        <div class="blog-grid-meta"><span class="blog-grid-date">10. March 2016</span></div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- End of Blog List-->
+                </div>
+                <div class="col-md-12 col-sm-12">
+                  <!-- Blog List-->
+                  <div class="blog-grid">
+                    <div class="row">
+                      <div class="col-md-12 col-sm-12">
                         <h3 class="blog-grid-title"><a href="/articles/research-learning-about-zookeeper/">Researching &amp; Learning About Zookeeper - A Guide</a></h3>
                         <p class="blog-grid-excerpt"><p>I’ve started working with Zookeeper. Since I’ve started doing that I’ve put together this blog post. It’s aim is to provide a structured approach to learning Zookeeper and researching the elements that make its features tick. Along the way I have a few call outs to people that have also provided excellent talks, material, or contributions to learning about Zookeeper along the way. With that, let’s get&nbsp;started.</p>
 <p>Zookeeper is a consensus system written based on ideas presented via consensus algorithms. The idea is key value stores that keep all of their data in memory for read heavy workloads. The qualities in this context present a system that is highly consistent, with intent for access from distributed systems to data that won’t be&nbsp;lost.</p>
@@ -109,25 +130,6 @@
                           <p class="more"><a href="/articles/elasticon-tour-2015-in-seattle/">more</a></p>
                         </p>
                         <div class="blog-grid-meta"><span class="blog-grid-date">03. December 2015</span></div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End of Blog List-->
-                </div>
-                <div class="col-md-12 col-sm-12">
-                  <!-- Blog List-->
-                  <div class="blog-grid">
-                    <div class="row">
-                      <div class="col-md-12 col-sm-12">
-                        <h3 class="blog-grid-title"><a href="/articles/docker-tips-n-tricks-delete-all-the-images-containers/">Docker Tips n' Tricks - Delete All The Images &amp; Containers</a></h3>
-                        <p class="blog-grid-excerpt"><p>Two simple commands that’ll wipe your installation clean of images and&nbsp;containers.</p>
-<p>Deletes all&nbsp;containers</p>
-<pre><code>docker rm $(docker ps -a -q)
-</code></pre><p>Deletes all&nbsp;images</p>
-<pre><code>docker rmi $(docker images -q)
-</code></pre>
-                        </p>
-                        <div class="blog-grid-meta"><span class="blog-grid-date">02. November 2015</span></div>
                       </div>
                     </div>
                   </div>
