@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="http://adron.github.io/css/style.min.css">
     <script src="http://adron.github.io/js/modernizr.js"></script>
   </head>
-  <body>
+  <body class="article-detail">
     <!--[if lt IE 8]>
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -61,8 +61,10 @@
             <div class="col-md-12">
               <!-- Page Info-->
               <div class="page-info page-info-simple">
-                <h1>Adron's Composite Code</h1>
-                <h2 class="description">Coder, Messenger, Recon, Infrastructure, Ops</h2>
+                <h1>Generate or Regenerate gcloud ssh Keys - How Ya Linux Series - 0001</h1>
+                <p class="author">Written by <span class="author">Adron Hall</span>
+                </p>
+                <div class="nav"><a href="/">« Home</a></div>
               </div>
               <!-- End Page Info-->
             </div>
@@ -77,60 +79,37 @@
             <div class="col-md-9">
               <div class="main-content">
                 <!-- Blog Page-->
-                <div class="blog">
-                  <div class="row"></div>
-                </div>
-                <div class="col-md-12 col-sm-12">
-                  <!-- Blog List-->
-                  <div class="blog-grid">
-                    <div class="row">
-                      <div class="col-md-12 col-sm-12">
-                        <h3 class="blog-grid-title"><a href="/articles/node-pdx-2016-speaker-tomomi-imura/">From Software to Hardware How Do I Track My Cat with JavaScript Tomomi Imura</a></h3>
-                        <p class="blog-grid-excerpt"><p><a href="http://nodepdx.org"><img src="/articles/node-pdx-2016-speaker-tomomi-imura/nodepdx-2016-logo.png" alt="Node PDX 2016"></a></p>
-<p>I’m stoked to introduce Tomomi (<a href="http://twitter.com/girlie_mac">@girlie_mac</a>). Tomomi is an avid open web <span class="amp">&amp;</span> open technology advocate and creative technologist, who had been active in the mobile space for past 8+ years. Now she is working at PubNub in San Francisco. When she is not at work, she still geeks around and hacks some stuff like Amazon Dash to Rickroll&nbsp;people.</p>
-<p>Tomomi will be presenting “<strong>From Software to Hardware: How Do I Track My Cat with JavaScript</strong>“.</p>
-<p>
-                          <p class="more"><a href="/articles/node-pdx-2016-speaker-tomomi-imura/">more</a></p>
-                        </p>
-                        <div class="blog-grid-meta"><span class="blog-grid-date">18. May 2016</span></div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End of Blog List-->
-                </div>
-                <div class="col-md-12 col-sm-12">
-                  <!-- Blog List-->
-                  <div class="blog-grid">
-                    <div class="row">
-                      <div class="col-md-12 col-sm-12">
-                        <h3 class="blog-grid-title"><a href="/articles/dropping-the-ball-gsd-and-staying-productive/">Dropping the Ball, GSD, and Staying Productive</a></h3>
-                        <p class="blog-grid-excerpt"><p><em>[<strong><span class="caps">NOTE</span>:</strong> This was actually written Thursday the 5<span class="ord">th</span>, things make more sense with that in&nbsp;mind.]</em></p>
-<p>I sat here today, and several normal things happened that made me think of some seriously important things. The thoughts are presented very well by Scott Hanselman in a talk on <em>scaling oneself</em>. He’s got a lot of gems in this presentation (links and video below), which he’s given a few times. In those presentations he makes a few very quotable statements that I had pop into my&nbsp;mind.</p>
-<p>
-                          <p class="more"><a href="/articles/dropping-the-ball-gsd-and-staying-productive/">more</a></p>
-                        </p>
-                        <div class="blog-grid-meta"><span class="blog-grid-date">13. May 2016</span></div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End of Blog List-->
-                </div>
-                <div class="col-md-12 col-sm-12">
-                  <!-- Blog List-->
-                  <div class="blog-grid">
-                    <div class="row">
-                      <div class="col-md-12 col-sm-12">
-                        <h3 class="blog-grid-title"><a href="/articles/immutable-infrastructure-some-reads-clarification-what-it-is/">Immutable Infrastructure - Some Reads and Clarification of What It Is</a></h3>
-                        <p class="blog-grid-excerpt"><p>First let’s get these terms a little more defined with the help of some well written articles on the&nbsp;matter.</p>
-
-                          <p class="more"><a href="/articles/immutable-infrastructure-some-reads-clarification-what-it-is/">more</a></p>
-                        </p>
-                        <div class="blog-grid-meta"><span class="blog-grid-date">12. April 2016</span></div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End of Blog List-->
-                </div>
+                <article class="article">
+                  <section class="content"><p>Sometimes while working with the various ssh keys you have you might need to regenerate them. Specifically I ran into this need while working with some Google Cloud Platform (<span class="caps">GCP</span>) instances with Terraform and GCP’s <em>gcloud</em> <span class="caps">CLI</span> tool. Generally, when you start working with the <em>gcloud</em> <span class="caps">CLI</span> it will, upon need if it doesn’t exist, create a key for you. When it does so it sticks the key it generates in the <code>~/.ssh/</code> directory and names the key <code>google_compute_engine</code>. To create a new ssh key pair here, navigate to the <code>~/.ssh/</code> directory and issue the following&nbsp;command.</p>
+<pre><code>    sudo ssh-keygen -t rsa -f ~/.ssh/google_compute_engine -C you_fancy_username@whatever.com
+</code></pre><p>Once that is command is executed, a few moments later and a few prompts later you’ll have a new&nbsp;key.</p>
+<pre><code>    13:16 $ sudo ssh-keygen -t rsa -f ~/.ssh/google_compute_engine -C adron_hall@homedepot.comPassword:
+    Generating public/private rsa key pair.
+    /Users/axh6454/.ssh/google_compute_engine already exists.
+    Overwrite (y/n)? y
+    Enter passphrase (empty for no passphrase):
+    Enter same passphrase again:
+    Your identification has been saved in /Users/axh6454/.ssh/google_compute_engine.
+    Your public key has been saved in /Users/axh6454/.ssh/google_compute_engine.pub.
+    The key fingerprint is:
+    SHA256:8xHVr19EdgPxLr2nWAkuZa8exMdEqbHNzoBxlHhFkZM adron_hall@ataplace.com
+    The key&#39;s randomart image is:
+    +---[RSA 2048]----+
+    |           ooBB= |
+    |          o.=.E.+|
+    |          .= *.*o|
+    |          .o+o= o|
+    |        S . *=o= |
+    |         o * +=.o|
+    |          o o +oo|
+    |           . = .o|
+    |           .+ .  |
+    +----[SHA256]-----+
+    ✔ ~/.ssh
+    13:16 $
+</code></pre><p>That’s&nbsp;it.</p>
+</section>
+                </article>
                 <!-- End of Blog Page-->
               </div>
             </div>
@@ -220,8 +199,7 @@
             </div>
           </div>
         </div>
-        <div class="nav"><a href="/page/11/">« Newer</a>&nbsp;<a href="/page/13/">Previous »</a>
-        </div>
+        <div class="nav"><a href="/">« Home</a></div>
       </div>
     </div>
     <script src="http://adron.github.io/js/all.js"></script>
