@@ -8,6 +8,7 @@ This page links to my history of speaking via presentations, workshops, or other
 
 **Upcoming Presentations**
 
+* Presenting [Elastic w/ Terraform, Packer, & That Immutability Magic w/ @Adron](/talks/elastic-with-terraform-packer-and-immutability-magic/) at [Elastic User Group PDX](http://www.meetup.com/The-Portland-ElasticSearch-Meetup-Group/) - [Meeting Details](http://www.meetup.com/The-Portland-Elasticsearch-Meetup-Group/events/228010912/).
 * Presenting [Organizing Infrastructure Config & Workflow](/talks/Organizing-Infrastructure-Config-and-Workflow/) at [HashiConf 2016](https://www.hashiconf.com/)
 * Presenting [Building Immutably to Continuous Delivery with Minimal Inputs](/talks/Building-Immutably-Continuous-Delivery-Minimal-Inputs-London) at [O'Reilly Architecture Conference](http://conferences.oreilly.com/software-architecture/engineering-business-eu).
 * Presenting [Moving Enterprise Practices and Development to Open Source](/talks/Moving-Enterprise-Practices-and-Development-to-Open-Source) at [O'Reilly Architecture Conference](http://conferences.oreilly.com/software-architecture/engineering-business-eu).
