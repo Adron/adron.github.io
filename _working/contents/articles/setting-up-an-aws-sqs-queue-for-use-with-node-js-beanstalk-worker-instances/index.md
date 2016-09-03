@@ -4,6 +4,10 @@ author: Adron Hall
 date: 2014-11-06
 template: article.jade
 ---
+<div class="image float-right">
+    ![Amazon Elastic Beanstalk](Deployment-&-Management_Elastic-Beanstalk_200x200.png)
+</div>
+
 * *Part 1* – [Setting up an AWS SQS Queue for Use With Node.js Beanstalk Worker Instances](/articles/setting-up-an-aws-sqs-queue-for-use-with-node-js-beanstalk-worker-instances) (This is the current article you're reading now)
 * *Part 2* – [Setting up a Hapi.js App that sends work to a Node.js AWS Worker via SQS](/articles/hapijs-aws-worker-publish/)
 * *Part 3* – [AWS Beanstalk Worker with Node.js and SQS](/articles/aws-beanstalk-worker-with-node-js-and-sqs/)

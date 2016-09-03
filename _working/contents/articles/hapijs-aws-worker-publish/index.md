@@ -5,7 +5,7 @@ date: 2014-11-07
 template: article.jade
 ---
 <div class="image float-right">
-    ![Amazon SQS](amazon-sqs_200x200.png)
+  ![Node.js SDK](SDKs-copy_nodeJS-200x2100.png)
 </div>
 
 * *Part 1* – [Setting up an AWS SQS Queue for Use With Node.js Beanstalk Worker Instances](/articles/setting-up-an-aws-sqs-queue-for-use-with-node-js-beanstalk-worker-instances)
@@ -14,7 +14,7 @@ template: article.jade
 
 <a name="webapplication"></a>
 
-First I created a project for the node.js web application.
+First I created a project for the node.js web application. This just used the simple `npm init` command and I stepped through the prompts for name, version, description, entry point, and so on.
 
 ```shell-script
 $ npm init
