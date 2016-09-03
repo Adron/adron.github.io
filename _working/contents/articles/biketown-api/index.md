@@ -15,7 +15,7 @@ For a little bit more about the opening day and metrics on uses check out [Bike 
 ## Biketown PDX!
 
 Alright, before diving into the API, let's discuss the actual way the system works. There are several components to how things go, but it involves the ***workflow*** of ***joining***, then ***unlocking***, ***riding***, and then ***locking*** it back up. At least, that's the basic workflow, but there's obviously a bit more understanding needed to know what to actually do with the bike share. In the next few sections, I'll break this into ***Workflow*** and ***Systemic Geographic Mapping and Stuff***.
- 
+
 ### Workflow
 
 <div class="image float-right">
@@ -82,7 +82,7 @@ Once you're done with the bike lock it up to a bike kiosk. You can technically j
 
 Ok, I don't really know what "Systemic Geographic Mapping API Stuff" but it sounds like it encompasses the key aspects of what features the API has. So let's talk data.
 
-The first bit of data that is useful is the GBFS. This is the **G**eneral **B**ikeshare **F**eed **S**pecification. This is available here: http://biketownpdx.socialbicycles.com/opendata/gbfs.json
+The first bit of data that is useful is the GBFS. This is the General Bikeshare Feed Specification. This is available here: http://biketownpdx.socialbicycles.com/opendata/gbfs.json
 
 That's a *little* data, an overview of the system one could say. The real meat however is in the authenticate API. It's available at https://app.socialbicycles.com/developer. Give it a try with a curl.
 
@@ -90,131 +90,142 @@ That's a *little* data, an overview of the system one could say. The real meat h
 
 The response is as shown. A pretty straight forward JSON data blurb. Showing the pricing, alerts, regions, calendar, hours, free bike status (??), station status, station information, and system information url references.
 
-    {
-      "last_updated": 1469237395,
-      "ttl": 60,
-      "data": {
-        "en": {
-          "feeds": [
-            {
-              "name": "gbfs",
-              "url": "http://biketownpdx.socialbicycles.com/opendata/gbfs.json"
-            },
-            {
-              "name": "system_information",
-              "url": "http://biketownpdx.socialbicycles.com/opendata/system_information.json"
-            },
-            {
-              "name": "station_information",
-              "url": "http://biketownpdx.socialbicycles.com/opendata/station_information.json"
-            },
-            {
-              "name": "station_status",
-              "url": "http://biketownpdx.socialbicycles.com/opendata/station_status.json"
-            },
-            {
-              "name": "free_bike_status",
-              "url": "http://biketownpdx.socialbicycles.com/opendata/free_bike_status.json"
-            },
-            {
-              "name": "system_hours",
-              "url": "http://biketownpdx.socialbicycles.com/opendata/system_hours.json"
-            },
-            {
-              "name": "system_calendar",
-              "url": "http://biketownpdx.socialbicycles.com/opendata/system_calendar.json"
-            },
-            {
-              "name": "system_regions",
-              "url": "http://biketownpdx.socialbicycles.com/opendata/system_regions.json"
-            },
-            {
-              "name": "system_pricing_plans",
-              "url": "http://biketownpdx.socialbicycles.com/opendata/system_pricing_plans.json"
-            },
-            {
-              "name": "system_alerts",
-              "url": "http://biketownpdx.socialbicycles.com/opendata/system_alerts.json"
-            }
-          ]
+```javascript
+{
+  "last_updated": 1469237395,
+  "ttl": 60,
+  "data": {
+    "en": {
+      "feeds": [
+        {
+          "name": "gbfs",
+          "url": "http://biketownpdx.socialbicycles.com/opendata/gbfs.json"
+        },
+        {
+          "name": "system_information",
+          "url": "http://biketownpdx.socialbicycles.com/opendata/system_information.json"
+        },
+        {
+          "name": "station_information",
+          "url": "http://biketownpdx.socialbicycles.com/opendata/station_information.json"
+        },
+        {
+          "name": "station_status",
+          "url": "http://biketownpdx.socialbicycles.com/opendata/station_status.json"
+        },
+        {
+          "name": "free_bike_status",
+          "url": "http://biketownpdx.socialbicycles.com/opendata/free_bike_status.json"
+        },
+        {
+          "name": "system_hours",
+          "url": "http://biketownpdx.socialbicycles.com/opendata/system_hours.json"
+        },
+        {
+          "name": "system_calendar",
+          "url": "http://biketownpdx.socialbicycles.com/opendata/system_calendar.json"
+        },
+        {
+          "name": "system_regions",
+          "url": "http://biketownpdx.socialbicycles.com/opendata/system_regions.json"
+        },
+        {
+          "name": "system_pricing_plans",
+          "url": "http://biketownpdx.socialbicycles.com/opendata/system_pricing_plans.json"
+        },
+        {
+          "name": "system_alerts",
+          "url": "http://biketownpdx.socialbicycles.com/opendata/system_alerts.json"
         }
-      }
+      ]
     }
+  }
+}
+```
 
 Any of the references you can do a simple curl against and get a good chunk of data. For instance.
 
-    curl http://biketownpdx.socialbicycles.com/opendata/system_information.json
+```shell-script
+curl http://biketownpdx.socialbicycles.com/opendata/system_information.json
+```
 
 The result returns as such.
 
-    {
-      "last_updated": 1469290649,
-      "ttl": 60,
-      "data": {
-        "system_id": "biketownpdx",
-        "language": "en",
-        "name": "BIKETOWNpdx",
-        "url": "http://biketownpdx.com/",
-        "purchase_url": "http://biketownpdx.com/",
-        "timezone": "America/Los_Angeles",
-        "phone_number": "(866) 512-2453",
-        "email": "customerservice@biketownpdx.com"
-      }
-    }
+```javascript
+{
+  "last_updated": 1469290649,
+  "ttl": 60,
+  "data": {
+    "system_id": "biketownpdx",
+    "language": "en",
+    "name": "BIKETOWNpdx",
+    "url": "http://biketownpdx.com/",
+    "purchase_url": "http://biketownpdx.com/",
+    "timezone": "America/Los_Angeles",
+    "phone_number": "(866) 512-2453",
+    "email": "customerservice@biketownpdx.com"
+  }
+}
+```
 
 When I first looked at this list I got keenly interested in the `free_bike_status`. I'd always want to know where the free bikes are when I want to rent one. A simple curl request and I knew what I could accrue from this end point. The blurb is sizably bigger than the previous two, so I actually cut out the mid section so it didn't take until tomorrow to scroll to the end.
 
+```javascript
+{
+  "last_updated": 1469290813,
+  "ttl": 60,
+  "data": {
+    "bikes": [
       {
-        "last_updated": 1469290813,
-        "ttl": 60,
-        "data": {
-          "bikes": [
-            {
-              "bike_id": "bike_6779",
-              "name": "0218 BIKETOWN",
-              "lon": -122.65348833333333,
-              "lat": 45.50477166666667,
-              "is_reserved": 0,
-              "is_disabled": 0
-            },
-            {
-              "bike_id": "bike_6265",
-              "name": "0188 BIKETOWN",
-              "lon": -122.70043833333334,
-              "lat": 45.535826666666665,
-              "is_reserved": 0,
-              "is_disabled": 0
-            },
-            {
-              "bike_id": "bike_7160",
-              "name": "0131 BIKETOWN",
-              "lon": -122.674115,
-              "lat": 45.51180333333333,
-              "is_reserved": 0,
-              "is_disabled": 0
-            },
-           
+        "bike_id": "bike_6779",
+        "name": "0218 BIKETOWN",
+        "lon": -122.65348833333333,
+        "lat": 45.50477166666667,
+        "is_reserved": 0,
+        "is_disabled": 0
+      },
+      {
+        "bike_id": "bike_6265",
+        "name": "0188 BIKETOWN",
+        "lon": -122.70043833333334,
+        "lat": 45.535826666666665,
+        "is_reserved": 0,
+        "is_disabled": 0
+      },
+      {
+        "bike_id": "bike_7160",
+        "name": "0131 BIKETOWN",
+        "lon": -122.674115,
+        "lat": 45.51180333333333,
+        "is_reserved": 0,
+        "is_disabled": 0
+      },
+      ``
+```
+
 ...a whole bunch of entries cut out for brevity...
-           
-            {
-              "bike_id": "bike_7308",
-              "name": "0984 AIR TRAINER",
-              "lon": -122.64039333333334,
-              "lat": 45.55905833333333,
-              "is_reserved": 0,
-              "is_disabled": 0
-            },
-            {
-              "bike_id": "bike_7301",
-              "name": "0971 AIR TRAINER",
-              "lon": -122.644855,
-              "lat": 45.516286666666666,
-              "is_reserved": 0,
-              "is_disabled": 0
-            }
-          ]
-        }
+
+```javascript
+      {
+        "bike_id": "bike_7308",
+        "name": "0984 AIR TRAINER",
+        "lon": -122.64039333333334,
+        "lat": 45.55905833333333,
+        "is_reserved": 0,
+        "is_disabled": 0
+      },
+      {
+        "bike_id": "bike_7301",
+        "name": "0971 AIR TRAINER",
+        "lon": -122.644855,
+        "lat": 45.516286666666666,
+        "is_reserved": 0,
+        "is_disabled": 0
       }
+    ]
+  }
+}
+```
 
 So far this is purely the public facing, non-authentication based API for Biketown. You can get a host of information and do all sorts of useful things with just this information. But, I will be following up in the coming days with a review of the actual authenticated API for Biketown. I'm looking forward to hacking together some cool apps and interfaces myself, but I'm also really interested to see what others put together!
 
