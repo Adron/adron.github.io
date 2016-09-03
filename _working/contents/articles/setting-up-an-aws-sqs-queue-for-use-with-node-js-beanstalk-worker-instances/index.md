@@ -5,7 +5,7 @@ date: 2014-11-06
 template: article.jade
 ---
 <div class="image float-right">
-    ![Amazon Elastic Beanstalk](Deployment-&-Management_Elastic-Beanstalk_200x200.png)
+    ![Amazon SQS](Amazon-SQS_200x200.png)
 </div>
 
 * *Part 1* – [Setting up an AWS SQS Queue for Use With Node.js Beanstalk Worker Instances](/articles/setting-up-an-aws-sqs-queue-for-use-with-node-js-beanstalk-worker-instances) (This is the current article you're reading now)
