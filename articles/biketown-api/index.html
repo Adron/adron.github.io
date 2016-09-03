@@ -19,9 +19,9 @@
     <link rel="apple-touch-icon" sizes="144x144" href="http://adron.github.io/img/favicons/apple-touch-icon-144x144.png">
     <link rel="apple-touch-icon" sizes="152x152" href="http://adron.github.io/img/favicons/apple-touch-icon-152x152.png">
     <link rel="apple-touch-icon" sizes="180x180" href="http://adron.github.io/img/favicons/apple-touch-icon-180x180.png">
-    <link rel="stylesheet" href="http://adron.github.io/css/custom.css">
-    <link rel="stylesheet" href="http://adron.github.io/css/style.min.css">
-    <script src="http://adron.github.io/js/modernizr.js"></script>
+    <link rel="stylesheet" href="/css/custom.css">
+    <link rel="stylesheet" href="/css/style.min.css">
+    <script src="/js/modernizr.js"></script>
   </head>
   <body class="article-detail">
     <!--[if lt IE 8]>
@@ -140,128 +140,134 @@
 <p><em>Whew, done with the description. Let’s talk about the coding factor&nbsp;now…</em></p>
 <h3 id="systemic-geographic-mapping-api-stuff">Systemic Geographic Mapping <span class="caps">API</span>&nbsp;Stuff</h3>
 <p>Ok, I don’t really know what “Systemic Geographic Mapping <span class="caps">API</span> Stuff” but it sounds like it encompasses the key aspects of what features the API has. So let’s talk&nbsp;data.</p>
-<p>The first bit of data that is useful is the <span class="caps">GBFS</span>. This is the <strong>G</strong>eneral <strong>B</strong>ikeshare <strong>F</strong>eed <strong>S</strong>pecification. This is available here: <a href="http://biketownpdx.socialbicycles.com/opendata/gbfs.json">http://biketownpdx.socialbicycles.com/opendata/gbfs.json</a></p>
+<p>The first bit of data that is useful is the <span class="caps">GBFS</span>. This is the General Bikeshare Feed Specification. This is available here: <a href="http://biketownpdx.socialbicycles.com/opendata/gbfs.json">http://biketownpdx.socialbicycles.com/opendata/gbfs.json</a></p>
 <p>That’s a <em>little</em> data, an overview of the system one could say. The real meat however is in the authenticate <span class="caps">API</span>. It’s available at <a href="https://app.socialbicycles.com/developer">https://app.socialbicycles.com/developer</a>. Give it a try with a&nbsp;curl.</p>
 <pre><code>curl http://biketownpdx.socialbicycles.com/opendata/gbfs.json
 </code></pre><p>The response is as shown. A pretty straight forward <span class="caps">JSON</span> data blurb. Showing the pricing, alerts, regions, calendar, hours, free bike status (??), station status, station information, and system information url&nbsp;references.</p>
-<pre><code>{
-  &quot;last_updated&quot;: 1469237395,
-  &quot;ttl&quot;: 60,
-  &quot;data&quot;: {
-    &quot;en&quot;: {
-      &quot;feeds&quot;: [
+<pre><code class="lang-javascript">{
+  <span class="string">"last_updated"</span>: <span class="number">1469237395</span>,
+  <span class="string">"ttl"</span>: <span class="number">60</span>,
+  <span class="string">"data"</span>: {
+    <span class="string">"en"</span>: {
+      <span class="string">"feeds"</span>: [
         {
-          &quot;name&quot;: &quot;gbfs&quot;,
-          &quot;url&quot;: &quot;http://biketownpdx.socialbicycles.com/opendata/gbfs.json&quot;
+          <span class="string">"name"</span>: <span class="string">"gbfs"</span>,
+          <span class="string">"url"</span>: <span class="string">"http://biketownpdx.socialbicycles.com/opendata/gbfs.json"</span>
         },
         {
-          &quot;name&quot;: &quot;system_information&quot;,
-          &quot;url&quot;: &quot;http://biketownpdx.socialbicycles.com/opendata/system_information.json&quot;
+          <span class="string">"name"</span>: <span class="string">"system_information"</span>,
+          <span class="string">"url"</span>: <span class="string">"http://biketownpdx.socialbicycles.com/opendata/system_information.json"</span>
         },
         {
-          &quot;name&quot;: &quot;station_information&quot;,
-          &quot;url&quot;: &quot;http://biketownpdx.socialbicycles.com/opendata/station_information.json&quot;
+          <span class="string">"name"</span>: <span class="string">"station_information"</span>,
+          <span class="string">"url"</span>: <span class="string">"http://biketownpdx.socialbicycles.com/opendata/station_information.json"</span>
         },
         {
-          &quot;name&quot;: &quot;station_status&quot;,
-          &quot;url&quot;: &quot;http://biketownpdx.socialbicycles.com/opendata/station_status.json&quot;
+          <span class="string">"name"</span>: <span class="string">"station_status"</span>,
+          <span class="string">"url"</span>: <span class="string">"http://biketownpdx.socialbicycles.com/opendata/station_status.json"</span>
         },
         {
-          &quot;name&quot;: &quot;free_bike_status&quot;,
-          &quot;url&quot;: &quot;http://biketownpdx.socialbicycles.com/opendata/free_bike_status.json&quot;
+          <span class="string">"name"</span>: <span class="string">"free_bike_status"</span>,
+          <span class="string">"url"</span>: <span class="string">"http://biketownpdx.socialbicycles.com/opendata/free_bike_status.json"</span>
         },
         {
-          &quot;name&quot;: &quot;system_hours&quot;,
-          &quot;url&quot;: &quot;http://biketownpdx.socialbicycles.com/opendata/system_hours.json&quot;
+          <span class="string">"name"</span>: <span class="string">"system_hours"</span>,
+          <span class="string">"url"</span>: <span class="string">"http://biketownpdx.socialbicycles.com/opendata/system_hours.json"</span>
         },
         {
-          &quot;name&quot;: &quot;system_calendar&quot;,
-          &quot;url&quot;: &quot;http://biketownpdx.socialbicycles.com/opendata/system_calendar.json&quot;
+          <span class="string">"name"</span>: <span class="string">"system_calendar"</span>,
+          <span class="string">"url"</span>: <span class="string">"http://biketownpdx.socialbicycles.com/opendata/system_calendar.json"</span>
         },
         {
-          &quot;name&quot;: &quot;system_regions&quot;,
-          &quot;url&quot;: &quot;http://biketownpdx.socialbicycles.com/opendata/system_regions.json&quot;
+          <span class="string">"name"</span>: <span class="string">"system_regions"</span>,
+          <span class="string">"url"</span>: <span class="string">"http://biketownpdx.socialbicycles.com/opendata/system_regions.json"</span>
         },
         {
-          &quot;name&quot;: &quot;system_pricing_plans&quot;,
-          &quot;url&quot;: &quot;http://biketownpdx.socialbicycles.com/opendata/system_pricing_plans.json&quot;
+          <span class="string">"name"</span>: <span class="string">"system_pricing_plans"</span>,
+          <span class="string">"url"</span>: <span class="string">"http://biketownpdx.socialbicycles.com/opendata/system_pricing_plans.json"</span>
         },
         {
-          &quot;name&quot;: &quot;system_alerts&quot;,
-          &quot;url&quot;: &quot;http://biketownpdx.socialbicycles.com/opendata/system_alerts.json&quot;
+          <span class="string">"name"</span>: <span class="string">"system_alerts"</span>,
+          <span class="string">"url"</span>: <span class="string">"http://biketownpdx.socialbicycles.com/opendata/system_alerts.json"</span>
         }
       ]
     }
   }
 }
-</code></pre><p>Any of the references you can do a simple curl against and get a good chunk of data. For&nbsp;instance.</p>
-<pre><code>curl http://biketownpdx.socialbicycles.com/opendata/system_information.json
-</code></pre><p>The result returns as&nbsp;such.</p>
-<pre><code>{
-  &quot;last_updated&quot;: 1469290649,
-  &quot;ttl&quot;: 60,
-  &quot;data&quot;: {
-    &quot;system_id&quot;: &quot;biketownpdx&quot;,
-    &quot;language&quot;: &quot;en&quot;,
-    &quot;name&quot;: &quot;BIKETOWNpdx&quot;,
-    &quot;url&quot;: &quot;http://biketownpdx.com/&quot;,
-    &quot;purchase_url&quot;: &quot;http://biketownpdx.com/&quot;,
-    &quot;timezone&quot;: &quot;America/Los_Angeles&quot;,
-    &quot;phone_number&quot;: &quot;(866) 512-2453&quot;,
-    &quot;email&quot;: &quot;customerservice@biketownpdx.com&quot;
+</code></pre>
+<p>Any of the references you can do a simple curl against and get a good chunk of data. For&nbsp;instance.</p>
+<pre><code class="lang-shell-script">curl http://biketownpdx.socialbicycles.com/opendata/system_information.json
+</code></pre>
+<p>The result returns as&nbsp;such.</p>
+<pre><code class="lang-javascript">{
+  <span class="string">"last_updated"</span>: <span class="number">1469290649</span>,
+  <span class="string">"ttl"</span>: <span class="number">60</span>,
+  <span class="string">"data"</span>: {
+    <span class="string">"system_id"</span>: <span class="string">"biketownpdx"</span>,
+    <span class="string">"language"</span>: <span class="string">"en"</span>,
+    <span class="string">"name"</span>: <span class="string">"BIKETOWNpdx"</span>,
+    <span class="string">"url"</span>: <span class="string">"http://biketownpdx.com/"</span>,
+    <span class="string">"purchase_url"</span>: <span class="string">"http://biketownpdx.com/"</span>,
+    <span class="string">"timezone"</span>: <span class="string">"America/Los_Angeles"</span>,
+    <span class="string">"phone_number"</span>: <span class="string">"(866) 512-2453"</span>,
+    <span class="string">"email"</span>: <span class="string">"customerservice@biketownpdx.com"</span>
   }
 }
-</code></pre><p>When I first looked at this list I got keenly interested in the <code>free_bike_status</code>. I’d always want to know where the free bikes are when I want to rent one. A simple curl request and I knew what I could accrue from this end point. The blurb is sizably bigger than the previous two, so I actually cut out the mid section so it didn’t take until tomorrow to scroll to the&nbsp;end.</p>
-<pre><code>  {
-    &quot;last_updated&quot;: 1469290813,
-    &quot;ttl&quot;: 60,
-    &quot;data&quot;: {
-      &quot;bikes&quot;: [
-        {
-          &quot;bike_id&quot;: &quot;bike_6779&quot;,
-          &quot;name&quot;: &quot;0218 BIKETOWN&quot;,
-          &quot;lon&quot;: -122.65348833333333,
-          &quot;lat&quot;: 45.50477166666667,
-          &quot;is_reserved&quot;: 0,
-          &quot;is_disabled&quot;: 0
-        },
-        {
-          &quot;bike_id&quot;: &quot;bike_6265&quot;,
-          &quot;name&quot;: &quot;0188 BIKETOWN&quot;,
-          &quot;lon&quot;: -122.70043833333334,
-          &quot;lat&quot;: 45.535826666666665,
-          &quot;is_reserved&quot;: 0,
-          &quot;is_disabled&quot;: 0
-        },
-        {
-          &quot;bike_id&quot;: &quot;bike_7160&quot;,
-          &quot;name&quot;: &quot;0131 BIKETOWN&quot;,
-          &quot;lon&quot;: -122.674115,
-          &quot;lat&quot;: 45.51180333333333,
-          &quot;is_reserved&quot;: 0,
-          &quot;is_disabled&quot;: 0
-        },
-</code></pre><p>…a whole bunch of entries cut out for&nbsp;brevity…</p>
-<pre><code>        {
-          &quot;bike_id&quot;: &quot;bike_7308&quot;,
-          &quot;name&quot;: &quot;0984 AIR TRAINER&quot;,
-          &quot;lon&quot;: -122.64039333333334,
-          &quot;lat&quot;: 45.55905833333333,
-          &quot;is_reserved&quot;: 0,
-          &quot;is_disabled&quot;: 0
-        },
-        {
-          &quot;bike_id&quot;: &quot;bike_7301&quot;,
-          &quot;name&quot;: &quot;0971 AIR TRAINER&quot;,
-          &quot;lon&quot;: -122.644855,
-          &quot;lat&quot;: 45.516286666666666,
-          &quot;is_reserved&quot;: 0,
-          &quot;is_disabled&quot;: 0
-        }
-      ]
-    }
+</code></pre>
+<p>When I first looked at this list I got keenly interested in the <code>free_bike_status</code>. I’d always want to know where the free bikes are when I want to rent one. A simple curl request and I knew what I could accrue from this end point. The blurb is sizably bigger than the previous two, so I actually cut out the mid section so it didn’t take until tomorrow to scroll to the&nbsp;end.</p>
+<pre><code class="lang-javascript">{
+  <span class="string">"last_updated"</span>: <span class="number">1469290813</span>,
+  <span class="string">"ttl"</span>: <span class="number">60</span>,
+  <span class="string">"data"</span>: {
+    <span class="string">"bikes"</span>: [
+      {
+        <span class="string">"bike_id"</span>: <span class="string">"bike_6779"</span>,
+        <span class="string">"name"</span>: <span class="string">"0218 <span class="caps">BIKETOWN</span>"</span>,
+        <span class="string">"lon"</span>: <span class="number">-122.65348833333333</span>,
+        <span class="string">"lat"</span>: <span class="number">45.50477166666667</span>,
+        <span class="string">"is_reserved"</span>: <span class="number">0</span>,
+        <span class="string">"is_disabled"</span>: <span class="number">0</span>
+      },
+      {
+        <span class="string">"bike_id"</span>: <span class="string">"bike_6265"</span>,
+        <span class="string">"name"</span>: <span class="string">"0188 <span class="caps">BIKETOWN</span>"</span>,
+        <span class="string">"lon"</span>: <span class="number">-122.70043833333334</span>,
+        <span class="string">"lat"</span>: <span class="number">45.535826666666665</span>,
+        <span class="string">"is_reserved"</span>: <span class="number">0</span>,
+        <span class="string">"is_disabled"</span>: <span class="number">0</span>
+      },
+      {
+        <span class="string">"bike_id"</span>: <span class="string">"bike_7160"</span>,
+        <span class="string">"name"</span>: <span class="string">"0131 <span class="caps">BIKETOWN</span>"</span>,
+        <span class="string">"lon"</span>: <span class="number">-122.674115</span>,
+        <span class="string">"lat"</span>: <span class="number">45.51180333333333</span>,
+        <span class="string">"is_reserved"</span>: <span class="number">0</span>,
+        <span class="string">"is_disabled"</span>: <span class="number">0</span>
+      },
+      <span class="string">``</span>
+</code></pre>
+<p>…a whole bunch of entries cut out for&nbsp;brevity…</p>
+<pre><code class="lang-javascript">      {
+        <span class="string">"bike_id"</span>: <span class="string">"bike_7308"</span>,
+        <span class="string">"name"</span>: <span class="string">"0984 <span class="caps">AIR</span> TRAINER"</span>,
+        <span class="string">"lon"</span>: <span class="number">-122.64039333333334</span>,
+        <span class="string">"lat"</span>: <span class="number">45.55905833333333</span>,
+        <span class="string">"is_reserved"</span>: <span class="number">0</span>,
+        <span class="string">"is_disabled"</span>: <span class="number">0</span>
+      },
+      {
+        <span class="string">"bike_id"</span>: <span class="string">"bike_7301"</span>,
+        <span class="string">"name"</span>: <span class="string">"0971 <span class="caps">AIR</span> TRAINER"</span>,
+        <span class="string">"lon"</span>: <span class="number">-122.644855</span>,
+        <span class="string">"lat"</span>: <span class="number">45.516286666666666</span>,
+        <span class="string">"is_reserved"</span>: <span class="number">0</span>,
+        <span class="string">"is_disabled"</span>: <span class="number">0</span>
+      }
+    ]
   }
-</code></pre><p>So far this is purely the public facing, non-authentication based <span class="caps">API</span> for Biketown. You can get a host of information and do all sorts of useful things with just this information. But, I will be following up in the coming days with a review of the actual authenticated API for Biketown. I’m looking forward to hacking together some cool apps and interfaces myself, but I’m also really interested to see what others put&nbsp;together!</p>
+}
+</code></pre>
+<p>So far this is purely the public facing, non-authentication based <span class="caps">API</span> for Biketown. You can get a host of information and do all sorts of useful things with just this information. But, I will be following up in the coming days with a review of the actual authenticated API for Biketown. I’m looking forward to hacking together some cool apps and interfaces myself, but I’m also really interested to see what others put&nbsp;together!</p>
 <p>Last thing for this post, if you’re curious about the oddly colored bikes that are clearly not orange. You can rent those two, they have a particular theme as detailed here. Something to do with Nike branding and Nike shoes of some sort, I’m not entirely sure as I don’t really wear any Nike gear. Ironically, since I bike I need tougher stuff that’s oriented toward biking. Nike doesn’t really seem to have any market play in that&nbsp;realm.</p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/qs6m9lQ9qRE?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
 

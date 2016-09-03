@@ -15,33 +15,35 @@
       <guid isPermaLink="true">http://adron.github.io/articles/how-ya-linux-0001-generate-regenerate-ssh-key/</guid>
       <author></author>
       <description>&lt;p&gt;Sometimes while working with the various ssh keys you have you might need to regenerate them. Specifically I ran into this need while working with some Google Cloud Platform (GCP) instances with Terraform and GCP’s &lt;em&gt;gcloud&lt;/em&gt; CLI tool. Generally, when you start working with the &lt;em&gt;gcloud&lt;/em&gt; CLI it will, upon need if it doesn’t exist, create a key for you. When it does so it sticks the key it generates in the &lt;code&gt;~/.ssh/&lt;/code&gt; directory and names the key &lt;code&gt;google_compute_engine&lt;/code&gt;. To create a new ssh key pair here, navigate to the &lt;code&gt;~/.ssh/&lt;/code&gt; directory and issue the following command.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;    sudo ssh-keygen -t rsa -f ~/.ssh/google_compute_engine -C you_fancy_username@whatever.com
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Once that is command is executed, a few moments later and a few prompts later you’ll have a new key.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;    13:16 $ sudo ssh-keygen -t rsa -f ~/.ssh/google_compute_engine -C adron_hall@homedepot.comPassword:
-    Generating public/private rsa key pair.
-    /Users/axh6454/.ssh/google_compute_engine already exists.
-    Overwrite (y/n)? y
-    Enter passphrase (empty for no passphrase):
-    Enter same passphrase again:
-    Your identification has been saved in /Users/axh6454/.ssh/google_compute_engine.
-    Your public key has been saved in /Users/axh6454/.ssh/google_compute_engine.pub.
-    The key fingerprint is:
-    SHA256:8xHVr19EdgPxLr2nWAkuZa8exMdEqbHNzoBxlHhFkZM adron_hall@ataplace.com
-    The key&amp;#39;s randomart image is:
-    +---[RSA 2048]----+
-    |           ooBB= |
-    |          o.=.E.+|
-    |          .= *.*o|
-    |          .o+o= o|
-    |        S . *=o= |
-    |         o * +=.o|
-    |          o o +oo|
-    |           . = .o|
-    |           .+ .  |
-    +----[SHA256]-----+
-    ✔ ~/.ssh
-    13:16 $
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;That’s it.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;sudo ssh-keygen -t rsa -f ~/.ssh/google_compute_engine -C you_fancy_username@whatever.com
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Once that is command is executed, a few moments later and a few prompts later you’ll have a new key.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;13:16 $ sudo ssh-keygen -t rsa -f ~/.ssh/google_compute_engine -C adron_hall@homedepot.comPassword:
+Generating public/private rsa key pair.
+/Users/axh6454/.ssh/google_compute_engine already exists.
+Overwrite (y/n)? y
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /Users/axh6454/.ssh/google_compute_engine.
+Your public key has been saved in /Users/axh6454/.ssh/google_compute_engine.pub.
+The key fingerprint is:
+SHA256:8xHVr19EdgPxLr2nWAkuZa8exMdEqbHNzoBxlHhFkZM adron_hall@ataplace.com
+The key&amp;#39;s randomart image is:
++---[RSA 2048]----+
+|           ooBB= |
+|          o.=.E.+|
+|          .= *.*o|
+|          .o+o= o|
+|        S . *=o= |
+|         o * +=.o|
+|          o o +oo|
+|           . = .o|
+|           .+ .  |
++----[SHA256]-----+
+✔ ~/.ssh
+13:16 $
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;That’s it. Sort of. For GCP be sure to check out the docs on managing ssh keys. There are docs on &lt;a href=&quot;https://cloud.google.com/sdk/gcloud/reference/compute/config-ssh&quot;&gt;&lt;code&gt;gcloud compute config-ssh&lt;/code&gt;&lt;/a&gt; and &lt;a href=&quot;https://cloud.google.com/compute/docs/instances/adding-removing-ssh-keys&quot;&gt;Adding and Removing SSH keys&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     <item>
@@ -484,128 +486,134 @@ http {
 &lt;p&gt;&lt;em&gt;Whew, done with the description. Let’s talk about the coding factor now…&lt;/em&gt;&lt;/p&gt;
 &lt;h3 id=&quot;systemic-geographic-mapping-api-stuff&quot;&gt;Systemic Geographic Mapping API Stuff&lt;/h3&gt;
 &lt;p&gt;Ok, I don’t really know what “Systemic Geographic Mapping API Stuff” but it sounds like it encompasses the key aspects of what features the API has. So let’s talk data.&lt;/p&gt;
-&lt;p&gt;The first bit of data that is useful is the GBFS. This is the &lt;strong&gt;G&lt;/strong&gt;eneral &lt;strong&gt;B&lt;/strong&gt;ikeshare &lt;strong&gt;F&lt;/strong&gt;eed &lt;strong&gt;S&lt;/strong&gt;pecification. This is available here: &lt;a href=&quot;http://biketownpdx.socialbicycles.com/opendata/gbfs.json&quot;&gt;http://biketownpdx.socialbicycles.com/opendata/gbfs.json&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The first bit of data that is useful is the GBFS. This is the General Bikeshare Feed Specification. This is available here: &lt;a href=&quot;http://biketownpdx.socialbicycles.com/opendata/gbfs.json&quot;&gt;http://biketownpdx.socialbicycles.com/opendata/gbfs.json&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;That’s a &lt;em&gt;little&lt;/em&gt; data, an overview of the system one could say. The real meat however is in the authenticate API. It’s available at &lt;a href=&quot;https://app.socialbicycles.com/developer&quot;&gt;https://app.socialbicycles.com/developer&lt;/a&gt;. Give it a try with a curl.&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;curl http://biketownpdx.socialbicycles.com/opendata/gbfs.json
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The response is as shown. A pretty straight forward JSON data blurb. Showing the pricing, alerts, regions, calendar, hours, free bike status (??), station status, station information, and system information url references.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;{
-  &amp;quot;last_updated&amp;quot;: 1469237395,
-  &amp;quot;ttl&amp;quot;: 60,
-  &amp;quot;data&amp;quot;: {
-    &amp;quot;en&amp;quot;: {
-      &amp;quot;feeds&amp;quot;: [
+&lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;{
+  &lt;span class=&quot;string&quot;&gt;&quot;last_updated&quot;&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;1469237395&lt;/span&gt;,
+  &lt;span class=&quot;string&quot;&gt;&quot;ttl&quot;&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;60&lt;/span&gt;,
+  &lt;span class=&quot;string&quot;&gt;&quot;data&quot;&lt;/span&gt;: {
+    &lt;span class=&quot;string&quot;&gt;&quot;en&quot;&lt;/span&gt;: {
+      &lt;span class=&quot;string&quot;&gt;&quot;feeds&quot;&lt;/span&gt;: [
         {
-          &amp;quot;name&amp;quot;: &amp;quot;gbfs&amp;quot;,
-          &amp;quot;url&amp;quot;: &amp;quot;http://biketownpdx.socialbicycles.com/opendata/gbfs.json&amp;quot;
+          &lt;span class=&quot;string&quot;&gt;&quot;name&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;gbfs&quot;&lt;/span&gt;,
+          &lt;span class=&quot;string&quot;&gt;&quot;url&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;http://biketownpdx.socialbicycles.com/opendata/gbfs.json&quot;&lt;/span&gt;
         },
         {
-          &amp;quot;name&amp;quot;: &amp;quot;system_information&amp;quot;,
-          &amp;quot;url&amp;quot;: &amp;quot;http://biketownpdx.socialbicycles.com/opendata/system_information.json&amp;quot;
+          &lt;span class=&quot;string&quot;&gt;&quot;name&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;system_information&quot;&lt;/span&gt;,
+          &lt;span class=&quot;string&quot;&gt;&quot;url&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;http://biketownpdx.socialbicycles.com/opendata/system_information.json&quot;&lt;/span&gt;
         },
         {
-          &amp;quot;name&amp;quot;: &amp;quot;station_information&amp;quot;,
-          &amp;quot;url&amp;quot;: &amp;quot;http://biketownpdx.socialbicycles.com/opendata/station_information.json&amp;quot;
+          &lt;span class=&quot;string&quot;&gt;&quot;name&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;station_information&quot;&lt;/span&gt;,
+          &lt;span class=&quot;string&quot;&gt;&quot;url&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;http://biketownpdx.socialbicycles.com/opendata/station_information.json&quot;&lt;/span&gt;
         },
         {
-          &amp;quot;name&amp;quot;: &amp;quot;station_status&amp;quot;,
-          &amp;quot;url&amp;quot;: &amp;quot;http://biketownpdx.socialbicycles.com/opendata/station_status.json&amp;quot;
+          &lt;span class=&quot;string&quot;&gt;&quot;name&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;station_status&quot;&lt;/span&gt;,
+          &lt;span class=&quot;string&quot;&gt;&quot;url&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;http://biketownpdx.socialbicycles.com/opendata/station_status.json&quot;&lt;/span&gt;
         },
         {
-          &amp;quot;name&amp;quot;: &amp;quot;free_bike_status&amp;quot;,
-          &amp;quot;url&amp;quot;: &amp;quot;http://biketownpdx.socialbicycles.com/opendata/free_bike_status.json&amp;quot;
+          &lt;span class=&quot;string&quot;&gt;&quot;name&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;free_bike_status&quot;&lt;/span&gt;,
+          &lt;span class=&quot;string&quot;&gt;&quot;url&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;http://biketownpdx.socialbicycles.com/opendata/free_bike_status.json&quot;&lt;/span&gt;
         },
         {
-          &amp;quot;name&amp;quot;: &amp;quot;system_hours&amp;quot;,
-          &amp;quot;url&amp;quot;: &amp;quot;http://biketownpdx.socialbicycles.com/opendata/system_hours.json&amp;quot;
+          &lt;span class=&quot;string&quot;&gt;&quot;name&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;system_hours&quot;&lt;/span&gt;,
+          &lt;span class=&quot;string&quot;&gt;&quot;url&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;http://biketownpdx.socialbicycles.com/opendata/system_hours.json&quot;&lt;/span&gt;
         },
         {
-          &amp;quot;name&amp;quot;: &amp;quot;system_calendar&amp;quot;,
-          &amp;quot;url&amp;quot;: &amp;quot;http://biketownpdx.socialbicycles.com/opendata/system_calendar.json&amp;quot;
+          &lt;span class=&quot;string&quot;&gt;&quot;name&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;system_calendar&quot;&lt;/span&gt;,
+          &lt;span class=&quot;string&quot;&gt;&quot;url&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;http://biketownpdx.socialbicycles.com/opendata/system_calendar.json&quot;&lt;/span&gt;
         },
         {
-          &amp;quot;name&amp;quot;: &amp;quot;system_regions&amp;quot;,
-          &amp;quot;url&amp;quot;: &amp;quot;http://biketownpdx.socialbicycles.com/opendata/system_regions.json&amp;quot;
+          &lt;span class=&quot;string&quot;&gt;&quot;name&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;system_regions&quot;&lt;/span&gt;,
+          &lt;span class=&quot;string&quot;&gt;&quot;url&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;http://biketownpdx.socialbicycles.com/opendata/system_regions.json&quot;&lt;/span&gt;
         },
         {
-          &amp;quot;name&amp;quot;: &amp;quot;system_pricing_plans&amp;quot;,
-          &amp;quot;url&amp;quot;: &amp;quot;http://biketownpdx.socialbicycles.com/opendata/system_pricing_plans.json&amp;quot;
+          &lt;span class=&quot;string&quot;&gt;&quot;name&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;system_pricing_plans&quot;&lt;/span&gt;,
+          &lt;span class=&quot;string&quot;&gt;&quot;url&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;http://biketownpdx.socialbicycles.com/opendata/system_pricing_plans.json&quot;&lt;/span&gt;
         },
         {
-          &amp;quot;name&amp;quot;: &amp;quot;system_alerts&amp;quot;,
-          &amp;quot;url&amp;quot;: &amp;quot;http://biketownpdx.socialbicycles.com/opendata/system_alerts.json&amp;quot;
+          &lt;span class=&quot;string&quot;&gt;&quot;name&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;system_alerts&quot;&lt;/span&gt;,
+          &lt;span class=&quot;string&quot;&gt;&quot;url&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;http://biketownpdx.socialbicycles.com/opendata/system_alerts.json&quot;&lt;/span&gt;
         }
       ]
     }
   }
 }
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Any of the references you can do a simple curl against and get a good chunk of data. For instance.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;curl http://biketownpdx.socialbicycles.com/opendata/system_information.json
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The result returns as such.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;{
-  &amp;quot;last_updated&amp;quot;: 1469290649,
-  &amp;quot;ttl&amp;quot;: 60,
-  &amp;quot;data&amp;quot;: {
-    &amp;quot;system_id&amp;quot;: &amp;quot;biketownpdx&amp;quot;,
-    &amp;quot;language&amp;quot;: &amp;quot;en&amp;quot;,
-    &amp;quot;name&amp;quot;: &amp;quot;BIKETOWNpdx&amp;quot;,
-    &amp;quot;url&amp;quot;: &amp;quot;http://biketownpdx.com/&amp;quot;,
-    &amp;quot;purchase_url&amp;quot;: &amp;quot;http://biketownpdx.com/&amp;quot;,
-    &amp;quot;timezone&amp;quot;: &amp;quot;America/Los_Angeles&amp;quot;,
-    &amp;quot;phone_number&amp;quot;: &amp;quot;(866) 512-2453&amp;quot;,
-    &amp;quot;email&amp;quot;: &amp;quot;customerservice@biketownpdx.com&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Any of the references you can do a simple curl against and get a good chunk of data. For instance.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;curl http://biketownpdx.socialbicycles.com/opendata/system_information.json
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The result returns as such.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;{
+  &lt;span class=&quot;string&quot;&gt;&quot;last_updated&quot;&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;1469290649&lt;/span&gt;,
+  &lt;span class=&quot;string&quot;&gt;&quot;ttl&quot;&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;60&lt;/span&gt;,
+  &lt;span class=&quot;string&quot;&gt;&quot;data&quot;&lt;/span&gt;: {
+    &lt;span class=&quot;string&quot;&gt;&quot;system_id&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;biketownpdx&quot;&lt;/span&gt;,
+    &lt;span class=&quot;string&quot;&gt;&quot;language&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;en&quot;&lt;/span&gt;,
+    &lt;span class=&quot;string&quot;&gt;&quot;name&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;BIKETOWNpdx&quot;&lt;/span&gt;,
+    &lt;span class=&quot;string&quot;&gt;&quot;url&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;http://biketownpdx.com/&quot;&lt;/span&gt;,
+    &lt;span class=&quot;string&quot;&gt;&quot;purchase_url&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;http://biketownpdx.com/&quot;&lt;/span&gt;,
+    &lt;span class=&quot;string&quot;&gt;&quot;timezone&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;America/Los_Angeles&quot;&lt;/span&gt;,
+    &lt;span class=&quot;string&quot;&gt;&quot;phone_number&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;(866) 512-2453&quot;&lt;/span&gt;,
+    &lt;span class=&quot;string&quot;&gt;&quot;email&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;customerservice@biketownpdx.com&quot;&lt;/span&gt;
   }
 }
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;When I first looked at this list I got keenly interested in the &lt;code&gt;free_bike_status&lt;/code&gt;. I’d always want to know where the free bikes are when I want to rent one. A simple curl request and I knew what I could accrue from this end point. The blurb is sizably bigger than the previous two, so I actually cut out the mid section so it didn’t take until tomorrow to scroll to the end.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;  {
-    &amp;quot;last_updated&amp;quot;: 1469290813,
-    &amp;quot;ttl&amp;quot;: 60,
-    &amp;quot;data&amp;quot;: {
-      &amp;quot;bikes&amp;quot;: [
-        {
-          &amp;quot;bike_id&amp;quot;: &amp;quot;bike_6779&amp;quot;,
-          &amp;quot;name&amp;quot;: &amp;quot;0218 BIKETOWN&amp;quot;,
-          &amp;quot;lon&amp;quot;: -122.65348833333333,
-          &amp;quot;lat&amp;quot;: 45.50477166666667,
-          &amp;quot;is_reserved&amp;quot;: 0,
-          &amp;quot;is_disabled&amp;quot;: 0
-        },
-        {
-          &amp;quot;bike_id&amp;quot;: &amp;quot;bike_6265&amp;quot;,
-          &amp;quot;name&amp;quot;: &amp;quot;0188 BIKETOWN&amp;quot;,
-          &amp;quot;lon&amp;quot;: -122.70043833333334,
-          &amp;quot;lat&amp;quot;: 45.535826666666665,
-          &amp;quot;is_reserved&amp;quot;: 0,
-          &amp;quot;is_disabled&amp;quot;: 0
-        },
-        {
-          &amp;quot;bike_id&amp;quot;: &amp;quot;bike_7160&amp;quot;,
-          &amp;quot;name&amp;quot;: &amp;quot;0131 BIKETOWN&amp;quot;,
-          &amp;quot;lon&amp;quot;: -122.674115,
-          &amp;quot;lat&amp;quot;: 45.51180333333333,
-          &amp;quot;is_reserved&amp;quot;: 0,
-          &amp;quot;is_disabled&amp;quot;: 0
-        },
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;…a whole bunch of entries cut out for brevity…&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;        {
-          &amp;quot;bike_id&amp;quot;: &amp;quot;bike_7308&amp;quot;,
-          &amp;quot;name&amp;quot;: &amp;quot;0984 AIR TRAINER&amp;quot;,
-          &amp;quot;lon&amp;quot;: -122.64039333333334,
-          &amp;quot;lat&amp;quot;: 45.55905833333333,
-          &amp;quot;is_reserved&amp;quot;: 0,
-          &amp;quot;is_disabled&amp;quot;: 0
-        },
-        {
-          &amp;quot;bike_id&amp;quot;: &amp;quot;bike_7301&amp;quot;,
-          &amp;quot;name&amp;quot;: &amp;quot;0971 AIR TRAINER&amp;quot;,
-          &amp;quot;lon&amp;quot;: -122.644855,
-          &amp;quot;lat&amp;quot;: 45.516286666666666,
-          &amp;quot;is_reserved&amp;quot;: 0,
-          &amp;quot;is_disabled&amp;quot;: 0
-        }
-      ]
-    }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;When I first looked at this list I got keenly interested in the &lt;code&gt;free_bike_status&lt;/code&gt;. I’d always want to know where the free bikes are when I want to rent one. A simple curl request and I knew what I could accrue from this end point. The blurb is sizably bigger than the previous two, so I actually cut out the mid section so it didn’t take until tomorrow to scroll to the end.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;{
+  &lt;span class=&quot;string&quot;&gt;&quot;last_updated&quot;&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;1469290813&lt;/span&gt;,
+  &lt;span class=&quot;string&quot;&gt;&quot;ttl&quot;&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;60&lt;/span&gt;,
+  &lt;span class=&quot;string&quot;&gt;&quot;data&quot;&lt;/span&gt;: {
+    &lt;span class=&quot;string&quot;&gt;&quot;bikes&quot;&lt;/span&gt;: [
+      {
+        &lt;span class=&quot;string&quot;&gt;&quot;bike_id&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;bike_6779&quot;&lt;/span&gt;,
+        &lt;span class=&quot;string&quot;&gt;&quot;name&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;0218 BIKETOWN&quot;&lt;/span&gt;,
+        &lt;span class=&quot;string&quot;&gt;&quot;lon&quot;&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;-122.65348833333333&lt;/span&gt;,
+        &lt;span class=&quot;string&quot;&gt;&quot;lat&quot;&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;45.50477166666667&lt;/span&gt;,
+        &lt;span class=&quot;string&quot;&gt;&quot;is_reserved&quot;&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;,
+        &lt;span class=&quot;string&quot;&gt;&quot;is_disabled&quot;&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;
+      },
+      {
+        &lt;span class=&quot;string&quot;&gt;&quot;bike_id&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;bike_6265&quot;&lt;/span&gt;,
+        &lt;span class=&quot;string&quot;&gt;&quot;name&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;0188 BIKETOWN&quot;&lt;/span&gt;,
+        &lt;span class=&quot;string&quot;&gt;&quot;lon&quot;&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;-122.70043833333334&lt;/span&gt;,
+        &lt;span class=&quot;string&quot;&gt;&quot;lat&quot;&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;45.535826666666665&lt;/span&gt;,
+        &lt;span class=&quot;string&quot;&gt;&quot;is_reserved&quot;&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;,
+        &lt;span class=&quot;string&quot;&gt;&quot;is_disabled&quot;&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;
+      },
+      {
+        &lt;span class=&quot;string&quot;&gt;&quot;bike_id&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;bike_7160&quot;&lt;/span&gt;,
+        &lt;span class=&quot;string&quot;&gt;&quot;name&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;0131 BIKETOWN&quot;&lt;/span&gt;,
+        &lt;span class=&quot;string&quot;&gt;&quot;lon&quot;&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;-122.674115&lt;/span&gt;,
+        &lt;span class=&quot;string&quot;&gt;&quot;lat&quot;&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;45.51180333333333&lt;/span&gt;,
+        &lt;span class=&quot;string&quot;&gt;&quot;is_reserved&quot;&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;,
+        &lt;span class=&quot;string&quot;&gt;&quot;is_disabled&quot;&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;
+      },
+      &lt;span class=&quot;string&quot;&gt;``&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;…a whole bunch of entries cut out for brevity…&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;      {
+        &lt;span class=&quot;string&quot;&gt;&quot;bike_id&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;bike_7308&quot;&lt;/span&gt;,
+        &lt;span class=&quot;string&quot;&gt;&quot;name&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;0984 AIR TRAINER&quot;&lt;/span&gt;,
+        &lt;span class=&quot;string&quot;&gt;&quot;lon&quot;&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;-122.64039333333334&lt;/span&gt;,
+        &lt;span class=&quot;string&quot;&gt;&quot;lat&quot;&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;45.55905833333333&lt;/span&gt;,
+        &lt;span class=&quot;string&quot;&gt;&quot;is_reserved&quot;&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;,
+        &lt;span class=&quot;string&quot;&gt;&quot;is_disabled&quot;&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;
+      },
+      {
+        &lt;span class=&quot;string&quot;&gt;&quot;bike_id&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;bike_7301&quot;&lt;/span&gt;,
+        &lt;span class=&quot;string&quot;&gt;&quot;name&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;0971 AIR TRAINER&quot;&lt;/span&gt;,
+        &lt;span class=&quot;string&quot;&gt;&quot;lon&quot;&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;-122.644855&lt;/span&gt;,
+        &lt;span class=&quot;string&quot;&gt;&quot;lat&quot;&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;45.516286666666666&lt;/span&gt;,
+        &lt;span class=&quot;string&quot;&gt;&quot;is_reserved&quot;&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;,
+        &lt;span class=&quot;string&quot;&gt;&quot;is_disabled&quot;&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;
+      }
+    ]
   }
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;So far this is purely the public facing, non-authentication based API for Biketown. You can get a host of information and do all sorts of useful things with just this information. But, I will be following up in the coming days with a review of the actual authenticated API for Biketown. I’m looking forward to hacking together some cool apps and interfaces myself, but I’m also really interested to see what others put together!&lt;/p&gt;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;So far this is purely the public facing, non-authentication based API for Biketown. You can get a host of information and do all sorts of useful things with just this information. But, I will be following up in the coming days with a review of the actual authenticated API for Biketown. I’m looking forward to hacking together some cool apps and interfaces myself, but I’m also really interested to see what others put together!&lt;/p&gt;
 &lt;p&gt;Last thing for this post, if you’re curious about the oddly colored bikes that are clearly not orange. You can rent those two, they have a particular theme as detailed here. Something to do with Nike branding and Nike shoes of some sort, I’m not entirely sure as I don’t really wear any Nike gear. Ironically, since I bike I need tougher stuff that’s oriented toward biking. Nike doesn’t really seem to have any market play in that realm.&lt;/p&gt;
 &lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/qs6m9lQ9qRE?rel=0&amp;amp;showinfo=0&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;
 
@@ -941,14 +949,15 @@ Mark at NedSpace (thanks again for helping with .NET Fringe Mark!) and have work
       <author></author>
       <description>&lt;p&gt;&lt;strong&gt;Mission:&lt;/strong&gt; I wanted to setup an instance, that I could install various things on and prepare it to act as a Terraformer or central server within GCE to spawn instances, setup networks, and generally manage the network autonomously of any local scripts or junk I have on my local computer. To set this up, I would of course have to launch it from my local computer, so there’s a whole range of things I’d need to have execute. To accomplish this, here’s what I did.&lt;/p&gt;
 &lt;h2 id=&quot;first-steps-google-compute-engine&quot;&gt;First Steps: Google Compute Engine&lt;/h2&gt;
-&lt;p&gt;First I logged in and setup a GCE Account (&lt;a href=&quot;https://cloud.google.com/compute/docs/quickstart&quot;&gt;read specifically about creating and getting started with a GCE account&lt;/a&gt;) and got &lt;em&gt;gcloud&lt;/em&gt; configured. The &lt;em&gt;gcloud&lt;/em&gt; is a cli to manage GCE. It’s actually a super powerful tool that comes in handy for all sorts of things. Besides managing GCE, it has a thin wrapper around &lt;a href=&quot;https://en.wikipedia.org/wiki/Secure_Shell&quot; target=&quot;_blank&quot;&gt;ssh&lt;/a&gt;, &lt;a href=&quot;https://en.wikipedia.org/wiki/Secure_copy&quot; target=&quot;_blank&quot;&gt;scp&lt;/a&gt;, and working with servers with those respective tools. I’ll use it a bit later to actually run some scripts against the instance I’ll be creating.&lt;/p&gt;
-&lt;p&gt;Once you’ve signed up for GCE there’s a few things worth noting. One is the idea of the &lt;em&gt;project&lt;/em&gt; that Google uses within GCE. This is something you’re create, or rename the default, or in some way bring into existence to use. A &lt;em&gt;project&lt;/em&gt; is something that a host of instances, instance groups, load balancers, networks, networking, and more can be allocated against. It’s also something that can be setup for or inside a specific billing group. It might also be helpful to really get an understanding of what a &lt;em&gt;project&lt;/em&gt; is by reading the &lt;a href=&quot;https://cloud.google.com/compute/docs/projects&quot; target=&quot;_blank&quot;&gt;Google documentation on &lt;em&gt;projects&lt;/em&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;First I logged in and setup a GCE Account (&lt;a href=&quot;https://cloud.google.com/compute/docs/quickstart&quot;&gt;read specifically about creating and getting started with a GCE account&lt;/a&gt;) and got &lt;em&gt;gcloud&lt;/em&gt; configured. The &lt;em&gt;gcloud&lt;/em&gt; is a cli to manage GCE. It’s actually a super powerful tool that comes in handy for all sorts of things. Besides managing GCE, it has a thin wrapper around &lt;a href=&quot;https://en.wikipedia.org/wiki/Secure_Shell&quot;&gt;ssh&lt;/a&gt;, &lt;a href=&quot;https://en.wikipedia.org/wiki/Secure_copy&quot;&gt;scp&lt;/a&gt;, and working with servers with those respective tools. I’ll use it a bit later to actually run some scripts against the instance I’ll be creating.&lt;/p&gt;
+&lt;p&gt;Once you’ve signed up for GCE there’s a few things worth noting. One is the idea of the &lt;em&gt;project&lt;/em&gt; that Google uses within GCE. This is something you’re create, or rename the default, or in some way bring into existence to use. A &lt;em&gt;project&lt;/em&gt; is something that a host of instances, instance groups, load balancers, networks, networking, and more can be allocated against. It’s also something that can be setup for or inside a specific billing group. It might also be helpful to really get an understanding of what a &lt;em&gt;project&lt;/em&gt; is by reading the &lt;a href=&quot;https://cloud.google.com/compute/docs/projects&quot;&gt;Google documentation on &lt;em&gt;projects&lt;/em&gt;&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;Once the project is ready, we can move forward with installing &lt;em&gt;gcloud&lt;/em&gt;. The way this is done is by installing the Google Cloud SDK. The curl below pulls down and executes the installation. Then the following command restarts the shell. Finally the gcloud init command kicks off the initialization of the gcloud cli.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;curl https://sdk.cloud.google.com | bash
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;curl https://sdk.cloud.google.com | bash
 exec -l $SHELL
 gcloud init
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Running gcloud init does several things.&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Running gcloud init does several things.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Authenticates the user (or allows re-use of saved credentials).&lt;/li&gt;
 &lt;li&gt;Requests the user’s project &amp;amp; saves it in the gcloud configuration.&lt;/li&gt;
@@ -960,22 +969,28 @@ gcloud init
 
 &lt;p&gt;When building Terraform configurations for Google Cloud there are a number of settings that &lt;em&gt;gcloud&lt;/em&gt; can pull up very easily. Here are some of the commands I’ve used most frequently when setting up google compute instances.&lt;/p&gt;
 &lt;p&gt;List machine types in a project in table.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;gcloud compute machine-types list
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;List the URIs of all machine types in a project.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;gcloud compute machine-types list --uri
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;List all machine types in the us-central1-b and europe-west1-d zones.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;gcloud compute machine-types list --zones us-central1-b europe-west1-d
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;List all images in a project in table.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;gcloud compute images list
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;List all the URI images in a project.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;gcloud compute images list --uri
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The last thing is connecting to instances, with &lt;em&gt;gcloud&lt;/em&gt; looks like the following.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;gcloud compute --project &amp;quot;project-name&amp;quot; ssh --zone &amp;quot;us-central1-b&amp;quot; &amp;quot;instance-name&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;There’s some super useful ways to execute commands with the &lt;em&gt;gcloud&lt;/em&gt; cli, which provides a great way for bash scripting against instances.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;gcloud compute machine-types list
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;List the URIs of all machine types in a project.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;gcloud compute machine-types list --uri
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;List all machine types in the us-central1-b and europe-west1-d zones.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;gcloud compute machine-types list --zones us-central1-b europe-west1-d
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;List all images in a project in table.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;gcloud compute images list
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;List all the URI images in a project.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;gcloud compute images list --uri
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The last thing is connecting to instances, with &lt;em&gt;gcloud&lt;/em&gt; looks like the following.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;gcloud compute --project &amp;quot;project-name&amp;quot; ssh --zone &amp;quot;us-central1-b&amp;quot; &amp;quot;instance-name&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;There’s some super useful ways to execute commands with the &lt;em&gt;gcloud&lt;/em&gt; cli, which provides a great way for bash scripting against instances.&lt;/p&gt;
 &lt;p&gt;These all provide quick ways to get the specific GCE specific settings for the Terraform file. Which brings up a perfect point to get into a basic Terraform instance creation.&lt;/p&gt;
 &lt;h2 id=&quot;next-terraforming-with-terraform&quot;&gt;Next: Terraforming with Terraform&lt;/h2&gt;
-&lt;p&gt;If you don’t have &lt;a href=&quot;https://www.terraform.io/&quot; target=&quot;_blank&quot;&gt;Terraform&lt;/a&gt; installed, the following bash commands will get you all setup on your machine. With this script below I can wrap this up as an installation script for the instance further along in this how-to. We’ll just have to tweak it specifically for Linux, as this script is focused around downloading and installing the Darwin (OS-X) version.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;cd /home/adron
+&lt;p&gt;If you don’t have &lt;a href=&quot;https://www.terraform.io/&quot;&gt;Terraform&lt;/a&gt; installed, the following bash commands will get you all setup on your machine. With this script below I can wrap this up as an installation script for the instance further along in this how-to. We’ll just have to tweak it specifically for Linux, as this script is focused around downloading and installing the Darwin (OS-X) version.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;cd /home/adron
 
 # Create a move into directory.
 mkdir terraform_0_6_14
@@ -987,8 +1002,9 @@ curl -O https://releases.hashicorp.com/terraform/0.6.14/terraform_0.6.14_darwin_
 unzip terraform_0.6.14_darwin_amd64.zip
 
 export PATH=/home/terraform_0_6_14:$PATH
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;To confirm that Terraform is installed correctly, just type terraform. The following should be displayed, which will let you know that the path variable is set to the correct path.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;$ terraform
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;To confirm that Terraform is installed correctly, just type terraform. The following should be displayed, which will let you know that the path variable is set to the correct path.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;$ terraform
 usage: terraform [--version] [--help] &amp;lt;command&amp;gt; [&amp;lt;args&amp;gt;]
 
 Available commands are:
@@ -1007,14 +1023,17 @@ Available commands are:
     untaint     Manually unmark a resource as tainted
     validate    Validates the Terraform files
     version     Prints the Terraform version
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;You may also want to add the PATH to the ~/.bash_profile on your own OS-X machine, like I did. Instead of that last bit of script that just exports the PATH variable, I swapped it out with the following code.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;echo &amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;You may also want to add the PATH to the ~/.bash_profile on your own OS-X machine, like I did. Instead of that last bit of script that just exports the PATH variable, I swapped it out with the following code.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;echo &amp;quot;
 export PATH=/home/terraform_0_6_14:$PATH
 &amp;quot; &amp;gt;&amp;gt; ~/.bash_profile
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Yes, the odd spacing and new lines are important, because that will append the export to PATH in a way that provides space before and below the line. It just leaves the ~/.bash_profile file looking a little cleaner.&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Yes, the odd spacing and new lines are important, because that will append the export to PATH in a way that provides space before and below the line. It just leaves the ~/.bash_profile file looking a little cleaner.&lt;/p&gt;
 &lt;p&gt;Once you’ve added it to your ~/.bash_profile, remember to either restart the terminal or source the file to get the PATH variable updated.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;source ~/.bash_profile
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The next thing we’ll need for Terraform use with GCE is the &lt;em&gt;account.json&lt;/em&gt; file. This is the file that a service account sets up to secure our connection between GCE and Terraform.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;source ~/.bash_profile
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The next thing we’ll need for Terraform use with GCE is the &lt;em&gt;account.json&lt;/em&gt; file. This is the file that a service account sets up to secure our connection between GCE and Terraform.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;/articles/working-with-google-compute-engine/user_accountjson_001.png&quot; alt=&quot;Account JSON Permissions&quot;&gt;&lt;/p&gt;
 &lt;p&gt;Navigate to the Permissions section of the GCE interface and add a service account. When you click to create a service account you’ll be prompted with the following.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;/articles/working-with-google-compute-engine/user_accountjson_002.png&quot; alt=&quot;Furnish Account JSON&quot;&gt;&lt;/p&gt;
@@ -1038,19 +1057,21 @@ export PATH=/home/terraform_0_6_14:$PATH
 &lt;li&gt;README.md&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;These have no relevance to the actual Terraform files, but they’re standard practice and come in very helpful once the project starts to grow. You’ll want a README.md for notes and documentation and you’ll definitely want to keep trash out of the project with the .gitignore, so even though they’re not required right now, if you’re following along add the files.&lt;/p&gt;
-&lt;p&gt;In the &lt;a href=&quot;https://github.com/Adron/starting-with-gce/blob/master/README.md&quot; target=&quot;_blank&quot;&gt;README.md&lt;/a&gt;, of course, we write our documentation! So anyway, it’ll be there in the &lt;a href=&quot;https://github.com/Adron/starting-with-gce&quot; target=&quot;_blank&quot;&gt;repo&lt;/a&gt; I’ve created for this blog entry here.&lt;/p&gt;
+&lt;p&gt;In the &lt;a href=&quot;https://github.com/Adron/starting-with-gce/blob/master/README.md&quot;&gt;README.md&lt;/a&gt;, of course, we write our documentation! So anyway, it’ll be there in the &lt;a href=&quot;https://github.com/Adron/starting-with-gce&quot;&gt;repo&lt;/a&gt; I’ve created for this blog entry here.&lt;/p&gt;
 &lt;p&gt;In the .gitignore file add the following.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;.DS_Store
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;.DS_Store
 account.json
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;In the connection.tf file I added the following connection information. The ${file(“../secrets/account.json”)} configuration interpolates the path of the file based on where the project is located and pulls in the appropriate values for GCE.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;# Configure the Google Cloud provider
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;In the connection.tf file I added the following connection information. The ${file(“../secrets/account.json”)} configuration interpolates the path of the file based on where the project is located and pulls in the appropriate values for GCE.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;# Configure the Google Cloud provider
 provider &amp;quot;google&amp;quot; {
   credentials = &amp;quot;${file(&amp;quot;account.json&amp;quot;)}&amp;quot;
   project     = &amp;quot;that-big-universe&amp;quot;
   region      = &amp;quot;us-central1&amp;quot;
 }
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;With that in place, I added this to the instances.tf file.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;# Create a new instance
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;With that in place, I added this to the instances.tf file.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;# Create a new instance
 resource &amp;quot;google_compute_instance&amp;quot; &amp;quot;flirpderp&amp;quot; {
     name = &amp;quot;flirpderp&amp;quot;
     machine_type = &amp;quot;f1-micro&amp;quot;
@@ -1070,15 +1091,19 @@ resource &amp;quot;google_compute_instance&amp;quot; &amp;quot;flirpderp&amp;quo
         scopes = [&amp;quot;userinfo-email&amp;quot;, &amp;quot;compute-ro&amp;quot;, &amp;quot;storage-ro&amp;quot;]
     }
 }
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;To get the machine_type and disk image above I just used the following gcloud commands.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;gcloud compute machine-types list
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;and&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;gcloud compute images list
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;For this first build, I just wanted to get a basic template with a small (and by association super cheap) instance. For this I went with &lt;em&gt;f1-micro&lt;/em&gt;. For the disk, I used the base disk image load of the &lt;em&gt;ubuntu-1404-trusty-v20160406&lt;/em&gt;.&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;To get the machine_type and disk image above I just used the following gcloud commands.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;gcloud compute machine-types list
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;and&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;gcloud compute images list
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;For this first build, I just wanted to get a basic template with a small (and by association super cheap) instance. For this I went with &lt;em&gt;f1-micro&lt;/em&gt;. For the disk, I used the base disk image load of the &lt;em&gt;ubuntu-1404-trusty-v20160406&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;All configuration set, I opened up a bash terminal and typed in the following.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;terraform plan
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;This command then displayed the following result.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;Refreshing Terraform state prior to plan...
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;terraform plan
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This command then displayed the following result.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;Refreshing Terraform state prior to plan...
 
 The Terraform execution plan has been generated and is shown below.
 Resources are shown in alphabetical order for quick scanning. Green resources
@@ -1114,11 +1139,13 @@ Note: You didn&amp;#39;t specify an &amp;quot;-out&amp;quot; parameter to save t
     zone:                                                &amp;quot;&amp;quot; =&amp;gt; &amp;quot;us-central1-b&amp;quot;
 
 Plan: 1 to add, 0 to change, 0 to destroy.
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Let’s walk through this result to get an idea of what just happened. Terraform has taken all of the Terraform files, which currently is only one file with actual configuration in it, and processed them to create a plan of changes. At the very bottom of the results the line “Plan: 1 to add, 0 to change, 0 to destroy.” simple shows what will occur if I were to apply these changes. Many of the values are also set as which simply means that when processed they’ll be calculated and set. Otherwise most of the other values are simply the settings I’ve put in via the actual Terraform configuration files.&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Let’s walk through this result to get an idea of what just happened. Terraform has taken all of the Terraform files, which currently is only one file with actual configuration in it, and processed them to create a plan of changes. At the very bottom of the results the line “Plan: 1 to add, 0 to change, 0 to destroy.” simple shows what will occur if I were to apply these changes. Many of the values are also set as which simply means that when processed they’ll be calculated and set. Otherwise most of the other values are simply the settings I’ve put in via the actual Terraform configuration files.&lt;/p&gt;
 &lt;p&gt;Now I applied the configuration.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;terraform apply
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The output of this command will display as shown.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;google_compute_instance.flirpderp: Creating...
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;terraform apply
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The output of this command will display as shown.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;google_compute_instance.flirpderp: Creating...
   can_ip_forward:                                      &amp;quot;&amp;quot; =&amp;gt; &amp;quot;0&amp;quot;
   disk.#:                                              &amp;quot;&amp;quot; =&amp;gt; &amp;quot;1&amp;quot;
   disk.0.auto_delete:                                  &amp;quot;&amp;quot; =&amp;gt; &amp;quot;1&amp;quot;
@@ -1151,26 +1178,30 @@ infrastructure, so keep it safe. To inspect the complete state
 use the `terraform show` command.
 
 State path: terraform.tfstate
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;I logged in at this point to verify the creation of the instance.&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;I logged in at this point to verify the creation of the instance.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;/articles/working-with-google-compute-engine/flirpderp.png&quot; alt=&quot;Google Cloud Interface&quot;&gt;&lt;/p&gt;
 &lt;p&gt;In the interface the instance (or instances if I have multiple) shows up in a list underneath the fancy CPU utilization chart.&lt;/p&gt;
 &lt;h3 id=&quot;cleanup&quot;&gt;Cleanup&lt;/h3&gt;
 &lt;p&gt;Since I don’t actually want this instance to stay live currently, to destroy the instance I can use the terraform destroy command. If there were other instances in this set of Terraform configuraiton files, it would also destroy those too. Destroy, suffice to say is something that is very destructive and should be used carefully. For this example I’m going to destroy this instance now, but since I have the configuration I’ll add a little bit more to it and recreate it shortly.&lt;/p&gt;
 &lt;p&gt;I issue this command.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;terraform destroy
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;This displays…&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;Do you really want to destroy?
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;terraform destroy
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This displays…&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;Do you really want to destroy?
   Terraform will delete all your managed infrastructure.
   There is no undo. Only &amp;#39;yes&amp;#39; will be accepted to confirm.
 
   Enter a value: yes
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Then I confirm by typing ‘yes’ and then the following result of this acction is returned.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;google_compute_instance.flirpderp: Refreshing state... (ID: flirpderp)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Then I confirm by typing ‘yes’ and then the following result of this acction is returned.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;google_compute_instance.flirpderp: Refreshing state... (ID: flirpderp)
 google_compute_instance.flirpderp: Destroying...
 google_compute_instance.flirpderp: Destruction complete
 
 Apply complete! Resources: 0 added, 0 changed, 1 destroyed.
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;At this point, it’s pretty cool that I can build a single instance, but that’s of extremely limited use if I can’t get it deployed out into GCE in a usable state. The most common ways I’d want to wrap up configuration and installation of software on an instance is to issue some bash commands to the instance. Well, Terraform has ways that exactly that can be done. I’ll cover that in the follow up to this article.&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;At this point, it’s pretty cool that I can build a single instance, but that’s of extremely limited use if I can’t get it deployed out into GCE in a usable state. The most common ways I’d want to wrap up configuration and installation of software on an instance is to issue some bash commands to the instance. Well, Terraform has ways that exactly that can be done. I’ll cover that in the follow up to this article.&lt;/p&gt;
 &lt;h3 id=&quot;references-&quot;&gt;References:&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https://github.com/Adron/starting-with-gce/tree/blog-entry-01&quot;&gt;The Github Repository branch for this blog entry.&lt;/a&gt;&lt;/li&gt;
@@ -1507,23 +1538,6 @@ it can be.&lt;/p&gt;
 </description>
     </item>
     <item>
-      <title>I Play the JavaScript by Matt McKegg</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</link>
-      <pubDate>Thu, 02 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</guid>
-      <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-left&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/mattmckegg.jpg&quot; alt=&quot;Matt McKegg&quot;&gt;
-&lt;/div&gt;
-
-&lt;p&gt;A JavaScript hacker and backyard musician and from Wellington, New Zealand. Lover of all things open and modular. I spend most of my time pressing buttons of various shapes, sizes and colours. Sometimes these buttons make sounds.&lt;/p&gt;
-&lt;p&gt;Matt has been making music with computers for about 10 years, but once he tried to move from bedroom composing to live performance, he got incredibly frustrated at how hard it was to play computer music live. He decided to start working on his own live electronic performance software written in JavaScript that would let me play the way he wanted to play. 3 years later, it’s finally starting to become a reality.&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Here is one of the Matt’s recent performances, for your viewing pleasure. &lt;/p&gt;
-&lt;iframe width=&quot;1280&quot; height=&quot;720&quot; src=&quot;https://www.youtube.com/embed/L2BVDJWHdy0?rel=0&amp;amp;showinfo=0&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;</description>
-    </item>
-    <item>
       <title>The Web Platform is the Universal Instrument by Ben Michel</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-ben-michel/</link>
       <pubDate>Thu, 02 Jun 2016 17:00:00 -0700</pubDate>
@@ -1551,6 +1565,40 @@ it can be.&lt;/p&gt;
 </description>
     </item>
     <item>
+      <title>I Play the JavaScript by Matt McKegg</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</link>
+      <pubDate>Thu, 02 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-left&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/mattmckegg.jpg&quot; alt=&quot;Matt McKegg&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;A JavaScript hacker and backyard musician and from Wellington, New Zealand. Lover of all things open and modular. I spend most of my time pressing buttons of various shapes, sizes and colours. Sometimes these buttons make sounds.&lt;/p&gt;
+&lt;p&gt;Matt has been making music with computers for about 10 years, but once he tried to move from bedroom composing to live performance, he got incredibly frustrated at how hard it was to play computer music live. He decided to start working on his own live electronic performance software written in JavaScript that would let me play the way he wanted to play. 3 years later, it’s finally starting to become a reality.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Here is one of the Matt’s recent performances, for your viewing pleasure. &lt;/p&gt;
+&lt;iframe width=&quot;1280&quot; height=&quot;720&quot; src=&quot;https://www.youtube.com/embed/L2BVDJWHdy0?rel=0&amp;amp;showinfo=0&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;</description>
+    </item>
+    <item>
+      <title>The House Is Not On Fire - Building a home automation robot with Arduino, Raspberry Pi and Node.js by Artur Paikin</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</link>
+      <pubDate>Wed, 01 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-right&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/art-stida.jpg&quot; alt=&quot;Artur Paikin&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Artur describes himself as, “I’m a web developer and traveler. I write stories about my adventures in Russian and English on my site: &lt;a href=&quot;http://arturpaikin.com&quot;&gt;http://arturpaikin.com&lt;/a&gt; and run a small technology cooperative called &lt;a href=&quot;http://unebaguette.com&quot;&gt;Baguette&lt;/a&gt;, where I work on cool projects, currently building an ambitious next generation file uploader with &lt;a href=&quot;https://transloadit.com/&quot;&gt;Transloadit&lt;/a&gt;. I ride a &lt;a href=&quot;https://www.instagram.com/p/xC0qC2SSYb&quot;&gt;foldable bicycle&lt;/a&gt;, &lt;a href=&quot;http://unebaguette.com/web-course/&quot;&gt;teach&lt;/a&gt; web development and sometimes &lt;a href=&quot;https://www.instagram.com/p/4_6LO8ySVL/&quot;&gt;garden&lt;/a&gt; on the balcony.”&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Artur has built an open source home automation system called &lt;a href=&quot;https://github.com/arturi/kotihome&quot;&gt;Koti Home&lt;/a&gt; (Koti means home in Finnish language). It’s powered by an Arduino connected to Raspberry Pi, MQTT protocol for messaging, Node.js on the client and server, web sockets. You can interact with Koti robot via a React (like the cool kids do) control panel, Telegram Chat Bot and even your own voice.&lt;/p&gt;
+&lt;p&gt;Arthur will talk about how he’s turned this project into reality — the tech he used and the challenges he faced. From a blinking LED to a voice controlled home automation robot.&lt;/p&gt;
+</description>
+    </item>
+    <item>
       <title>Code First Docs How we Threw Out The Book &amp; Put Code First With Twilio Documentation by Jarod Reyes</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-jarod-reyes/</link>
       <pubDate>Wed, 01 Jun 2016 17:00:00 -0700</pubDate>
@@ -1572,23 +1620,6 @@ it can be.&lt;/p&gt;
 &lt;li&gt;Twitter: &lt;a href=&quot;https://twitter.com/jreyesdev&quot;&gt;@jreyesdev&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Github: &lt;a href=&quot;https://github.com/jarodreyes&quot;&gt;github.com/jarodreyes&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-</description>
-    </item>
-    <item>
-      <title>The House Is Not On Fire - Building a home automation robot with Arduino, Raspberry Pi and Node.js by Artur Paikin</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</link>
-      <pubDate>Wed, 01 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</guid>
-      <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-right&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/art-stida.jpg&quot; alt=&quot;Artur Paikin&quot;&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Artur describes himself as, “I’m a web developer and traveler. I write stories about my adventures in Russian and English on my site: &lt;a href=&quot;http://arturpaikin.com&quot;&gt;http://arturpaikin.com&lt;/a&gt; and run a small technology cooperative called &lt;a href=&quot;http://unebaguette.com&quot;&gt;Baguette&lt;/a&gt;, where I work on cool projects, currently building an ambitious next generation file uploader with &lt;a href=&quot;https://transloadit.com/&quot;&gt;Transloadit&lt;/a&gt;. I ride a &lt;a href=&quot;https://www.instagram.com/p/xC0qC2SSYb&quot;&gt;foldable bicycle&lt;/a&gt;, &lt;a href=&quot;http://unebaguette.com/web-course/&quot;&gt;teach&lt;/a&gt; web development and sometimes &lt;a href=&quot;https://www.instagram.com/p/4_6LO8ySVL/&quot;&gt;garden&lt;/a&gt; on the balcony.”&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Artur has built an open source home automation system called &lt;a href=&quot;https://github.com/arturi/kotihome&quot;&gt;Koti Home&lt;/a&gt; (Koti means home in Finnish language). It’s powered by an Arduino connected to Raspberry Pi, MQTT protocol for messaging, Node.js on the client and server, web sockets. You can interact with Koti robot via a React (like the cool kids do) control panel, Telegram Chat Bot and even your own voice.&lt;/p&gt;
-&lt;p&gt;Arthur will talk about how he’s turned this project into reality — the tech he used and the challenges he faced. From a blinking LED to a voice controlled home automation robot.&lt;/p&gt;
 </description>
     </item>
     <item>
@@ -2041,6 +2072,48 @@ Talks about why Riak, Cassandra, and even the company Camille works at (Rent the
 </description>
     </item>
     <item>
+      <title>All That Tech SitRep - Elastic Meetup and Quote Center Updates</title>
+      <link>http://adron.github.io/articles/all-that-tech-sitrep-elastic-meetup-quote-center-updates/</link>
+      <pubDate>Mon, 25 Jan 2016 16:00:00 -0800</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/all-that-tech-sitrep-elastic-meetup-quote-center-updates/</guid>
+      <author></author>
+      <description>&lt;div class=&quot;image float-right&quot;&gt;
+    &lt;img src=&quot;/articles/all-that-tech-sitrep-elastic-meetup-quote-center-updates/qc_377x285.png&quot; alt=&quot;Quote Center&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;I started working with the Quote Center (QC) back in November, and wrote about it in “&lt;a href=&quot;http://compositecode.com/2015/10/31/after-816-days/&quot;&gt;After 816 Days I’m Taking a Job!&lt;/a&gt;“ Now that I’m a few months into the effort, it’s &lt;strong&gt;&lt;em&gt;sitrep&lt;/em&gt;&lt;/strong&gt; time. Sitrep, btw is military speak for&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;S&lt;/em&gt; ituational &lt;em&gt;R&lt;/em&gt; eport.&lt;/p&gt;
+&lt;p&gt;The three core priorities I have at Quote Center in my role are: Community Contributions, Site Reliability, and Talent Recon.&lt;/p&gt;
+&lt;h2 id=&quot;community-contributions-and-organizing-&quot;&gt;Community Contributions (and Organizing)&lt;/h2&gt;
+&lt;p&gt;Some of the progress I’ve made, is direct and immediate involvement with some really interesting groups here in Portland. The first seemed a prime option, and that’s the &lt;a href=&quot;http://www.meetup.com/The-Portland-ElasticSearch-Meetup-Group/&quot;&gt;Elastic User Group&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Myself and some of the QC Team traveled late last year to check out the &lt;a href=&quot;http://compositecode.com/2015/12/03/elasticon-tour-2015-in-seattle/&quot;&gt;Elasticon Tour stop in Seattle&lt;/a&gt;. It was an educational experience where I got some of my first introductions to &lt;a href=&quot;https://www.elastic.co/products/elasticsearch&quot;&gt;Elasticsearch&lt;/a&gt; and also a new product &lt;a href=&quot;https://www.elastic.co/&quot;&gt;Elastic&lt;/a&gt; had just released recently called &lt;a href=&quot;https://www.elastic.co/products/beats&quot;&gt;Beats&lt;/a&gt;. I was fairly impressed by what I saw and several other things aligned perfectly for follow up community involvement after that.&lt;/p&gt;
+&lt;p&gt;I’ve since kept in touch with the Elastic Team and started coordinating the &lt;a href=&quot;http://www.meetup.com/The-Portland-ElasticSearch-Meetup-Group/&quot;&gt;Elastic User Group in Portland&lt;/a&gt; (Join the group on &lt;a href=&quot;http://www.meetup.com/The-Portland-ElasticSearch-Meetup-Group/&quot;&gt;Meetup&lt;/a&gt; for future meetings &amp;amp; content). In March the group will be hosting a great meetup from Ward &amp;amp; Jason…&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.meetup.com/The-Portland-ElasticSearch-Meetup-Group/events/228064228/&quot;&gt;http://www.meetup.com/The-Portland-ElasticSearch-Meetup-Group/events/228064228/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;So be sure to &lt;a href=&quot;http://www.meetup.com/The-Portland-ElasticSearch-Meetup-Group/events/228064228/&quot; target=&quot;_blank&quot;&gt;RSVP&lt;/a&gt; for that &lt;a href=&quot;http://www.meetup.com/The-Portland-ElasticSearch-Meetup-Group/events/228064228/&quot; target=&quot;_blank&quot;&gt;meetup&lt;/a&gt; as it’s looking to be a really interesting presentation.&lt;/p&gt;
+&lt;p&gt;The second group I’ve stepped up to help out with is the &lt;a href=&quot;http://www.meetup.com/Docker-Portland-OR/&quot; target=&quot;_blank&quot;&gt;Docker Meetup&lt;/a&gt; here in Portland. The first meetup we have planned at this time is from Casey West.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.meetup.com/Docker-Portland-OR/events/228249211/&quot;&gt;http://www.meetup.com/Docker-Portland-OR/events/228249211/&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;site-reliability&quot;&gt;Site Reliability&lt;/h2&gt;
+&lt;p&gt;One of the other priorities I’ve been focusing on is standard site reliability. Everything from automation to continuous integration and deployment. I’ve been making progress, albeit at this stage going from zero to something, in the space of a site reliability practice takes time. I’ve achieved a few good milestones however, which will help build upon the next steps of the progress.&lt;/p&gt;
+&lt;p&gt;We’ve started to slowly streamline and change our practice around Rackspace and AWS Usage. This is a very good thing as we move toward a faster paced continuous integration process around our various projects. At this time it’s a wide mixture of .NET Solutions that we’re moving toward .NET Core. At the same time there are some Node.js and other project stacks that we’re adding to our build server process.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Team City&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Our build server at this time is shaping up to be Team City. We have some build processes that are running in Jenkins, but those are being moved off and onto a TeamCity Server for a number of reasons. I’m going to outline these reasons and I’m happy to hear any reasons there may be other better options. So feel free to throw a tweet at me or leave a comment or three.&lt;/p&gt;
+&lt;ol&gt;
+    &lt;li&gt;Jetbrains has a pretty solid and reliable product in Team City. It tends to be cohesive in building the core types of applications that we would prospectively have: Java, .NET, Node.js, C/C++ and a few others. That makes it easy to get all projects onto one build server type.&lt;/li&gt;
+    &lt;li&gt;TeamCity has intelligence about what is and isn’t available for Java &amp;amp; .NET, enabling various package management and other capabilities without extensive scripting or extra coding needed. There are numerous plugins to help with these capabilities also.&lt;/li&gt;
+    &lt;li&gt;TeamCity has fairly solid, quick, and informative support.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Those are my top reasons at this point. Another reason, which isn’t really something I felt should be enumerated, because it’s a feeling versus something I’ve confirmed. That is, the Jenkins Community honestly feels a bit haphazard and disconnected. Maybe I’m just not asking or haven’t seen the right forums to read or something, but I’ve found it a frustrating experience to deal with the Jenkins Server and find information and help regarding getting a disparate and wide ranging set of tech stacks building on it. TeamCity has always just been easy, and getting some continuous integration going the easiest way possible is very appealing.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Monitoring&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;We use a number of resources for monitoring of our systems. New Relic is one of them, and they’re great, however it’s a bit tough when things are locked down inside of a closed (physically closed) network. How does one monitor those systems and the respective network? Well, you get &lt;a href=&quot;http://compositecode.com/2015/11/25/nagios-and-ubuntu-64-bit-14-04-lts-setup-configuration/&quot;&gt;Nagios or something of the sort installed and running&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I installed it, but Nagios left me with another one of those dirty feelings like I just spilled a bunch of sour milk everywhere. I went about cleaning up the Nagios mess I’d made and, upon attending the aforementioned Elasticon Tour Stop in Seattle, decided to give Beats a try. After a solid couple weeks of testing and confirming the various things work well and would work well for our specific needs, I went about deploying Beats among our systems.&lt;/p&gt;
+&lt;p&gt;So far, albeit only being a few weeks into using Beats (and still learning how to actually make reports in Kibana) Beats appears to have been a good decision. Dramatically more cohesive and not spastically splintered all over the place like Nagios. I’m already looking into adding additional Beats beyond the known three; Topbeats, Packetbeats, and Filebeats. There are a number of other beats that we could add specific to our needs, that would be good open source projects. Stay tuned for those, I’ll talk about them in this space and get a release out to all as soon as we lay a single line of code for those.&lt;/p&gt;
+&lt;h2 id=&quot;talent-recon&quot;&gt;Talent Recon&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;Currently, nothing to report, but more to come in the space of talent recon.&lt;/em&gt;&lt;/p&gt;
+</description>
+    </item>
+    <item>
       <title>Elasticon Tour 2015 in Seattle</title>
       <link>http://adron.github.io/articles/elasticon-tour-2015-in-seattle/</link>
       <pubDate>Wed, 02 Dec 2015 16:00:00 -0800</pubDate>
@@ -2211,6 +2284,566 @@ Talks about why Riak, Cassandra, and even the company Camille works at (Rent the
 &lt;p&gt;Overall, a spectacular laptop in MOST ways. However that keyboard is a serious problem for most people. I can imagine most people will NOT want to deal with the keyboard. I’m ok with it, but I don’t mind typing with hands up and off the resting points on the laptop. If Dell can fix this I’d give it a 100% buy suggestion, but with the keyboard as buggy and flaky as it is, I give the laptop at 60% buy suggestion. If you’re looking for a machine with Ubuntu out of the box, I’d probably aim for a Lenovo until Dell fixes the keyboard situation. Then I’d even suggest this machine over the Lenovo options.&lt;/p&gt;
 &lt;p&gt;…and among all things, I’d still suggest running Linux on a MBA or MBP over any of these - the machines are just more solid in manufacturing quality, durability, and the tech (i.e. battery, screen, etc) are still tops in many ways. But if you don’t want to feed the Apple Nation’s Piggy Bank, dump them and go with this Dell or maybe a Lenovo option.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Happy hacking and cheers!&lt;/em&gt;&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>AWS Beanstalk Worker with Node.js and SQS</title>
+      <link>http://adron.github.io/articles/aws-beanstalk-worker-with-node-js-and-sqs/</link>
+      <pubDate>Tue, 18 Nov 2014 16:00:00 -0800</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/aws-beanstalk-worker-with-node-js-and-sqs/</guid>
+      <author></author>
+      <description>&lt;div class=&quot;image float-right&quot;&gt;
+    &lt;img src=&quot;/articles/aws-beanstalk-worker-with-node-js-and-sqs/amazon-sqs_200x200.png&quot; alt=&quot;Amazon SQS&quot;&gt;
+&lt;/div&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;Part 1&lt;/em&gt; – &lt;a href=&quot;http://adron.github.io/articles/setting-up-an-aws-sqs-queue-for-use-with-node-js-beanstalk-worker-instances&quot;&gt;Setting up an AWS SQS Queue for Use With Node.js Beanstalk Worker Instances&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Part 2&lt;/em&gt; – &lt;a href=&quot;http://adron.github.io/articles/hapijs-aws-worker-publish/&quot;&gt;Setting up a Hapi.js App that sends work to a Node.js AWS Worker via SQS&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Part 3&lt;/em&gt; – &lt;a href=&quot;http://adron.github.io/articles/aws-beanstalk-worker-with-node-js-and-sqs/&quot;&gt;AWS Beanstalk Worker with Node.js and SQS&lt;/a&gt; (This is the current article you’re reading now)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;First I created a project for the node.js worker. The first steps for this are identical to that of creating the Hapi.js site that publishes messages to the queue. Go through these three steps for the worker and then I’ll continue from there.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;First &lt;a href=&quot;http://adron.github.io/articles/hapijs-aws-worker-publish#webapplication&quot;&gt;create the web application&lt;/a&gt; which will act as our worker service. I gave mine the name of &lt;a href=&quot;https://github.com/Adron/testing-aws-sqs-worker&quot;&gt;testing-aws-sqs-worker&lt;/a&gt;, the site publishing to the queue I called &lt;a href=&quot;https://github.com/Adron/testing-aws-sqs-site&quot;&gt;testing-aws-sqs-site&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Next &lt;a href=&quot;http://adron.github.io/articles/hapijs-aws-worker-publish/#mocha&quot;&gt;add dependencies needed&lt;/a&gt;, like mocha.&lt;/li&gt;
+&lt;li&gt;Finally make sure the &lt;a href=&quot;http://adron.github.io/articles/hapijs-aws-worker-publish/#aws&quot;&gt;AWS environment variables&lt;/a&gt; are set appropriately.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;em&gt;…and now on to the security, configuration and worker specific parts of this series…&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Security Needs&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Before getting the actual worker setup I need to have a role setup in IAM (&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/aws-beanstalk-worker-with-node-js-and-sqs/sqs-01.png&quot; alt=&quot;Screen 1&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Once here click on the Roles section of IAM. Then click on Create New Role.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/aws-beanstalk-worker-with-node-js-and-sqs/sqs-02.png&quot; alt=&quot;Screen 2&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Next set the role name.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/aws-beanstalk-worker-with-node-js-and-sqs/sqs-03.png&quot; alt=&quot;Screen 3&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Now select Amazon EC2 here. I noted this wasn’t immediately intuitive. But once I realized that the security item I’m looking for is a sub-item under Amazon EC2 things made more sense.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/aws-beanstalk-worker-with-node-js-and-sqs/sqs-04.png&quot; alt=&quot;Screen 4&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Next next odd thing that occurred in this web wizard was that the number 3 step is skipped. Again, that took me a second to realize maybe that’s an optional step. Whatever the case, it shouldn’t be displayed unless it’s a step that might actually occur in all paths, otherwise just make it disappear. Anyway, step 4 is where the next step awaits.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/aws-beanstalk-worker-with-node-js-and-sqs/sqs-05.png&quot; alt=&quot;Screen 5&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/aws-beanstalk-worker-with-node-js-and-sqs/sqs-06.png&quot; alt=&quot;Screen 6&quot;&gt;&lt;/p&gt;
+&lt;p&gt;The next step I’ll add the JSON that defines this role. It looks like this in the wizard (and I’ve included the actual JSON just below the image of the wizard). NOTE: In this screen shot I’ve named the role one thing, but when I select it below I’ve actually renamed it to “serverComms”. These two are indeed the same role, I just didn’t want to go back and redo all the screenshots around a minor rename. :)&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/aws-beanstalk-worker-with-node-js-and-sqs/sqs-07.png&quot; alt=&quot;Screen 7&quot;&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;{
+  &lt;span class=&quot;string&quot;&gt;&quot;Version&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;2012-10-17&quot;&lt;/span&gt;,
+  &lt;span class=&quot;string&quot;&gt;&quot;Statement&quot;&lt;/span&gt;: [
+    {
+      &lt;span class=&quot;string&quot;&gt;&quot;Sid&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;QueueAccess&quot;&lt;/span&gt;,
+      &lt;span class=&quot;string&quot;&gt;&quot;Action&quot;&lt;/span&gt;: [
+        &lt;span class=&quot;string&quot;&gt;&quot;sqs:ChangeMessageVisibility&quot;&lt;/span&gt;,
+        &lt;span class=&quot;string&quot;&gt;&quot;sqs:DeleteMessage&quot;&lt;/span&gt;,
+        &lt;span class=&quot;string&quot;&gt;&quot;sqs:ReceiveMessage&quot;&lt;/span&gt;
+      ],
+      &lt;span class=&quot;string&quot;&gt;&quot;Effect&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;Allow&quot;&lt;/span&gt;,
+      &lt;span class=&quot;string&quot;&gt;&quot;Resource&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;*&quot;&lt;/span&gt;
+    },
+    {
+      &lt;span class=&quot;string&quot;&gt;&quot;Sid&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;MetricsAccess&quot;&lt;/span&gt;,
+      &lt;span class=&quot;string&quot;&gt;&quot;Action&quot;&lt;/span&gt;: [
+        &lt;span class=&quot;string&quot;&gt;&quot;cloudwatch:PutMetricData&quot;&lt;/span&gt;
+      ],
+      &lt;span class=&quot;string&quot;&gt;&quot;Effect&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;Allow&quot;&lt;/span&gt;,
+      &lt;span class=&quot;string&quot;&gt;&quot;Resource&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;*&quot;&lt;/span&gt;
+    }
+  ]
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Click next and the summary is provided before final creation of the role.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/aws-beanstalk-worker-with-node-js-and-sqs/sqs-08.png&quot; alt=&quot;Screen 8&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Web Worker Application&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;The first thing I need is to go ahead and get the worker setup in the AWS Management Console. I create a new environment by clicking on Launch New Environment.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/aws-beanstalk-worker-with-node-js-and-sqs/sqs-09.png&quot; alt=&quot;Screen 9&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Next up is setting the environment tier and type and the configuration. I set these to Worker, Node.js, and Load Balanced.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/aws-beanstalk-worker-with-node-js-and-sqs/sqs-10.png&quot; alt=&quot;Screen 10&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Then upload the project zip file. I zipped and uploaded this file &lt;a href=&quot;http://adron.github.io/articles/aws-beanstalk-worker-with-node-js-and-sqs/articles/hapijs-aws-worker-publish/#upload&quot;&gt;similarly to the way I did the site for submitting messages to the queue&lt;/a&gt;. To see what code I’m uploading - the blog entry is kind of circular - so I added the code part toward the bottom of this entry. For the exact code, check out the later part of the entry and the finished code here in the &lt;a href=&quot;https://github.com/Adron/testing-aws-sqs-worker&quot;&gt;github repo&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/aws-beanstalk-worker-with-node-js-and-sqs/sqs-11.png&quot; alt=&quot;Screen 11&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Now click next through environment info and additional resources. In configuration details the main thing I need is to select the IAM security role for the instance being created.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/aws-beanstalk-worker-with-node-js-and-sqs/sqs-12.png&quot; alt=&quot;Screen 12&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Click through the environment variables and on to Worker Details. Here I select the queue that I created in &lt;a href=&quot;http://adron.github.io/articles/aws-beanstalk-worker-with-node-js-and-sqs/articles/setting-up-an-aws-sqs-queue-for-use-with-node-js-beanstalk-worker-instances/&quot;&gt;part 1 of this series&lt;/a&gt;. Just below that enter the URI end point that the worker will provide the queue to send messages via POST. I’ll get to the code later in this article. But for now, I just selected /hi as the end point.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/aws-beanstalk-worker-with-node-js-and-sqs/sqs-13.png&quot; alt=&quot;Screen 13&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Finally, the last step is to review and Launch the worker instance.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/aws-beanstalk-worker-with-node-js-and-sqs/sqs-14.png&quot; alt=&quot;Screen 14&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Codes&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;At this point I’ll still be using hapi.js and good.js, so I follow the installation of these libraries similar to the ones I used for the site app in &lt;a href=&quot;http://adron.github.io/articles/aws-beanstalk-worker-with-node-js-and-sqs/articles/hapijs-aws-worker-publish/&quot;&gt;part 2 of this series&lt;/a&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;npm install hapi --save
+npm install good --save
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now, I’ve setup a &lt;a href=&quot;https://github.com/Adron/testing-aws-sqs-worker/blob/master/server.js&quot;&gt;server.js&lt;/a&gt; as shown below. This API end point provides an action, in this case a write to the log, and then just finishes. This will prove out a complete movement of message from publisher site to queue to answering worker service.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt;
+  AWS = &lt;span class=&quot;built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;'aws-sdk'&lt;/span&gt;),
+  awsRegion = &lt;span class=&quot;string&quot;&gt;'us-west-2'&lt;/span&gt;,
+  sqs = {},
+  Hapi = &lt;span class=&quot;built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;'hapi'&lt;/span&gt;),
+  Good = &lt;span class=&quot;built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;'good'&lt;/span&gt;),
+  queueUri = &lt;span class=&quot;string&quot;&gt;'https://sqs.us-west-2.amazonaws.com/621392439615/sample'&lt;/span&gt;;
+
+&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; server = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; Hapi.Server(process.env.PORT || &lt;span class=&quot;number&quot;&gt;3000&lt;/span&gt;);
+
+server.route({
+  method: &lt;span class=&quot;string&quot;&gt;'POST'&lt;/span&gt;,
+  path: &lt;span class=&quot;string&quot;&gt;'/hi'&lt;/span&gt;,
+  handler: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;request, reply&lt;/span&gt;) &lt;/span&gt;{
+    AWS.config.update({
+      accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+      secretAccessKey: process.env.AWS_SECRET_KEY,
+      region: awsRegion
+    });
+    sqs = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; AWS.SQS();
+
+    server.log(&lt;span class=&quot;string&quot;&gt;'response: '&lt;/span&gt;, request.payload.name);
+    server.log(&lt;span class=&quot;string&quot;&gt;'Starting receive message.'&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;'...a 200 response should be received.'&lt;/span&gt;);
+
+    reply();
+  }
+});
+
+server.pack.register(Good, &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;err&lt;/span&gt;) &lt;/span&gt;{
+  &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (err) {
+    &lt;span class=&quot;keyword&quot;&gt;throw&lt;/span&gt; err;
+  }
+
+  server.start(&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;{
+    server.log(&lt;span class=&quot;string&quot;&gt;'info'&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;'Server running at: '&lt;/span&gt; + server.info.uri);
+  });
+});
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;In this code, note that Hapi.js takes the request (read more on &lt;a href=&quot;http://hapijs.com/&quot;&gt;Hapi.js here&lt;/a&gt;) and sticks the body of the request in the property payload. Since AWS SQS sends across JSON in the way I’ve set it up (see &lt;a href=&quot;http://adron.github.io/articles/aws-beanstalk-worker-with-node-js-and-sqs/articles/setting-up-an-aws-sqs-queue-for-use-with-node-js-beanstalk-worker-instances/&quot;&gt;part 1&lt;/a&gt; and &lt;a href=&quot;http://adron.github.io/articles/aws-beanstalk-worker-with-node-js-and-sqs/articles/hapijs-aws-worker-publish/&quot;&gt;part 2&lt;/a&gt;) the received message coming in looks like this.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;&lt;span class=&quot;string&quot;&gt;&quot;name&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;April&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;In the above code, the request.payload.name code gives us the name April. Run this and when the SQS receives input to process it will immediately send the message to the worker which will then process the code. When the worker returns a 200, the message is marked complete and removed from the queue. When I navigate to the nodejs.log in the AWS Beanstalk logs section of the environment, I get the last few items that I submitted to the queue for processing. The code above responds as shown below in the log.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;-------------------------------------
+/var/log/nodejs/nodejs.log
+-------------------------------------
+141119/011034.709, response: , Susan
+141119/011034.709, Starting receive message., ...a 200 response should be received.
+141119/011034.688, request, http://ip-172-31-33-151:8081: [1;33mpost[0m /hi {} [32m200[0m (26ms)
+141119/011039.927, response: , April
+141119/011039.928, Starting receive message., ...a 200 response should be received.
+141119/011039.925, request, http://ip-172-31-33-151:8081: [1;33mpost[0m /hi {} [32m200[0m (6ms)
+141119/011045.232, response: , Jessica
+141119/011045.232, Starting receive message., ...a 200 response should be received.
+141119/011045.229, request, http://ip-172-31-33-151:8081: [1;33mpost[0m /hi {} [32m200[0m (7ms)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;BOOM! All done. A few notes before I end this entry though. Note that with the worker feature being used for Beanstalk and SQS there really isn’t much code that is needed on the receipt end of the worker. I merely needed to respond 200, to complete the request from the point of view of the SQS worker service. Then whatever code I have that I want to act on the process with can work on the data received in the body from the queue. More than a few examples out there don’t really show this, but instead show the manual way of writing code that will poll and act upon the messages in the queue. The Beanstalk worker configuration is dramatically simpler in comparison to this practice. If you do want to read more about manually polling and acting on the data check out “&lt;a href=&quot;https://milesplit.wordpress.com/2013/11/07/using-sqs-with-node/&quot;&gt;Using SQS With Node&lt;/a&gt;“, it’s the only end-to-end example I’ve seen with Node.js being used. There is also of course the documentation, but it doesn’t provide clear cut examples of what exactly a good practice around working with the queue and requires a lot of RTFMing which quit frankly is a TLDR; scenario for doing something like this.&lt;/p&gt;
+&lt;p&gt;Hope this blog post is helpful in getting Node.js working with the worker role. If you have any questions, comments or it appears I’ve missed a step, let me know and I’ll edit this and the related posts to make sure they’re as accurate and as simple to follow as I can get them.&lt;/p&gt;
+&lt;p&gt;Cheers!&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;Part 1&lt;/em&gt; – &lt;a href=&quot;http://adron.github.io/articles/setting-up-an-aws-sqs-queue-for-use-with-node-js-beanstalk-worker-instances&quot;&gt;Setting up an AWS SQS Queue for Use With Node.js Beanstalk Worker Instances&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Part 2&lt;/em&gt; – &lt;a href=&quot;http://adron.github.io/articles/hapijs-aws-worker-publish/&quot;&gt;Setting up a Hapi.js App that sends work to a Node.js AWS Worker via SQS&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Part 3&lt;/em&gt; – &lt;a href=&quot;http://adron.github.io/articles/aws-beanstalk-worker-with-node-js-and-sqs/&quot;&gt;AWS Beanstalk Worker with Node.js and SQS&lt;/a&gt; (This is the current article you’re reading now)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Reference:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/Adron/testing-aws-sqs-worker&quot;&gt;Testing AWS SQS Web Worker Github Repo&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/Adron/testing-aws-sqs-site&quot;&gt;Testing AWS SQS Web App Github Repo&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    <item>
+      <title>Setting up a Hapi.js App that sends work to a Node.js AWS Worker via SQS</title>
+      <link>http://adron.github.io/articles/hapijs-aws-worker-publish/</link>
+      <pubDate>Thu, 06 Nov 2014 16:00:00 -0800</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/hapijs-aws-worker-publish/</guid>
+      <author></author>
+      <description>&lt;div class=&quot;image float-right&quot;&gt;
+  &lt;img src=&quot;/articles/hapijs-aws-worker-publish/SDKs-copy_nodeJS-200x2100.png&quot; alt=&quot;Node.js SDK&quot;&gt;
+&lt;/div&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;Part 1&lt;/em&gt; – &lt;a href=&quot;http://adron.github.io/articles/setting-up-an-aws-sqs-queue-for-use-with-node-js-beanstalk-worker-instances&quot;&gt;Setting up an AWS SQS Queue for Use With Node.js Beanstalk Worker Instances&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Part 2&lt;/em&gt; – &lt;a href=&quot;http://adron.github.io/articles/hapijs-aws-worker-publish/&quot;&gt;Setting up a Hapi.js App that sends work to a Node.js AWS Worker via SQS&lt;/a&gt; (This is the current article you’re reading now)&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Part 3&lt;/em&gt; – &lt;a href=&quot;http://adron.github.io/articles/aws-beanstalk-worker-with-node-js-and-sqs/&quot;&gt;AWS Beanstalk Worker with Node.js and SQS&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a name=&quot;webapplication&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;First I created a project for the node.js web application. This just used the simple &lt;code&gt;npm init&lt;/code&gt; command and I stepped through the prompts for name, version, description, entry point, and so on.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;$ npm init
+This utility will walk you through creating a package.json file.
+It only covers the most common items, and tries to guess sane defaults.
+
+See `npm help json` for definitive documentation on these fields
+and exactly what they do.
+
+Use `npm install &amp;amp;pkg&amp;amp; --save` afterwards to install a package and
+save it as a dependency in the package.json file.
+
+Press ^C at any time to quit.
+name: (testing-aws-sqs-site)
+version: (0.0.0) 0.0.1
+description: This project that will feed data to the queue for the AWS SQS sample.
+entry point: (index.js) server.js
+test command: mocha
+git repository: (https://github.com/Adron/testing-aws-sqs-site.git)
+keywords: aws, sqs, elastic, elastic beanstalk, queue, worker
+author: Adron Hall
+license: (ISC) Apache 2.0
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a name=&quot;mocha&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Installing Dependencies&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Next I installed some dependencies like mocha and whatever else I’d need down the line and the next major dependency, the AWS SDK. To see a complete list of the dependencies just check out the &lt;a href=&quot;https://github.com/Adron/testing-aws-sqs-site/blob/master/package.json&quot;&gt;package.json&lt;/a&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;npm install aws-sdk --save
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Next step is to create a test directory which I’ll use to test out some of the services as I move forward. Some of these tests will not fit into the BDD, TDD, or any other style of tests, as I will write them in a way that they’ll test the SDK, system and related elements for future use in continuous delivery. So just follow me here and don’t freak out, they’re not as frivolous as they seem at first.&lt;/p&gt;
+&lt;p&gt;I added mocha as my test framework, and since it uses a folder called test as the default to execute tests, I added a folder and placed a file in that folder called aws_sdk.js. I then added the following test just to have an example test to work from.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; should = &lt;span class=&quot;built_in&quot;&gt;require&lt;/span&gt; (&lt;span class=&quot;string&quot;&gt;'should'&lt;/span&gt;);
+
+describe ( &lt;span class=&quot;string&quot;&gt;'When trying out this sample application in AWS you'&lt;/span&gt;, &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;{
+
+  it ( &lt;span class=&quot;string&quot;&gt;'should have an environment variable set for AWS_ACCESS_KEY_ID'&lt;/span&gt;, &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;{
+    process.env.AWS_ACCESS_KEY_ID.should.exist;
+  });
+
+  it ( &lt;span class=&quot;string&quot;&gt;'should have an environment variables set for AWS_SECRET_KEY'&lt;/span&gt;, &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;{
+    process.env.AWS_SECRET_KEY.should.exist;
+  })
+
+});
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Then execute that with a call to mocha, and the two tests will fail.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;$ mocha
+
+  When trying out this sample application in AWS you
+    1) should have an environment variable set for AWS_ACCESS_KEY_ID
+    2) should have an environment variables set for AWS_SECRET_KEY
+
+  0 passing (4ms)
+  2 failing
+
+  1) When trying out this sample application in AWS you should have an environment variable set for AWS_ACCESS_KEY_ID:
+     TypeError: Cannot read property &amp;#39;should&amp;#39; of undefined
+      at Context.&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;anonymous&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp; (/Users/adron/Codez/testing-aws-sqs-site/test/aws_sdk.js:12:34)
+      at callFn (/usr/local/lib/node_modules/mocha/lib/runnable.js:249:21)
+      at Test.Runnable.run (/usr/local/lib/node_modules/mocha/lib/runnable.js:242:7)
+      at Runner.runTest (/usr/local/lib/node_modules/mocha/lib/runner.js:373:10)
+      at /usr/local/lib/node_modules/mocha/lib/runner.js:451:12
+      at next (/usr/local/lib/node_modules/mocha/lib/runner.js:298:14)
+      at /usr/local/lib/node_modules/mocha/lib/runner.js:308:7
+      at next (/usr/local/lib/node_modules/mocha/lib/runner.js:246:23)
+      at Object._onImmediate (/usr/local/lib/node_modules/mocha/lib/runner.js:275:5)
+      at processImmediate [as _immediateCallback] (timers.js:336:15)
+
+  2) When trying out this sample application in AWS you should have an environment variables set for AWS_SECRET_KEY:
+     TypeError: Cannot read property &amp;#39;should&amp;#39; of undefined
+      at Context.&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;anonymous&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp; (/Users/adron/Codez/testing-aws-sqs-site/test/aws_sdk.js:16:30)
+      at callFn (/usr/local/lib/node_modules/mocha/lib/runnable.js:249:21)
+      at Test.Runnable.run (/usr/local/lib/node_modules/mocha/lib/runnable.js:242:7)
+      at Runner.runTest (/usr/local/lib/node_modules/mocha/lib/runner.js:373:10)
+      at /usr/local/lib/node_modules/mocha/lib/runner.js:451:12
+      at next (/usr/local/lib/node_modules/mocha/lib/runner.js:298:14)
+      at /usr/local/lib/node_modules/mocha/lib/runner.js:308:7
+      at next (/usr/local/lib/node_modules/mocha/lib/runner.js:246:23)
+      at Object._onImmediate (/usr/local/lib/node_modules/mocha/lib/runner.js:275:5)
+      at processImmediate [as _immediateCallback] (timers.js:336:15)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;a name=&quot;aws&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;At this point I’ll go ahead and set these environment variables in my ~/.bash_profile file. On other machines this may just be a .bashrc file or something else you’ve configured for your bash. Add the environment variables.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;# AWS Credentials
+export AWS_ACCESS_KEY_ID=YOUR_AWS_ACCESS_KEY
+export AWS_SECRET_KEY=YOUR_SUPER_SECRET_AWS_KEY
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Once you’ve added these to your bash, source the file to activate and set these new environment variables. My command is to source my local .bash_profile file, but you’d need to source whichever file you’ve set the variables in that starts up with your bash.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;source ~/.bash_profile
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now executing the mocha tests I get a beautiful confirmation that I do have the environment variables in place and set.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;$ mocha
+
+  When trying out this sample application in AWS you
+    ✓ should have an environment variable set for AWS_ACCESS_KEY_ID
+    ✓ should have an environment variables set for AWS_SECRET_KEY
+
+  2 passing (4ms)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now that I have these two passing I’ve added another that shows the SDK to have the settings have actually been set. The main reason here is also to just discover how it is set and where those values are stored on the AWS object. I discovered that to set the config, just issue a call to update({}) and pass in the respective configuration as name value pairs using JSON.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;before(&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;{
+  AWS.config.update({
+    accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+    secretAccessKey: process.env.AWS_SECRET_KEY,
+    region: awsRegion});
+})
+
+it(&lt;span class=&quot;string&quot;&gt;'should have the AWS Access Key set in the AWS config'&lt;/span&gt;, &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;{
+  &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; config = AWS.config;
+  config.credentials.accessKeyId.should.equal(process.env.AWS_ACCESS_KEY_ID);
+  config.credentials.secretAccessKey.should.equal(process.env.AWS_SECRET_KEY);
+})
+
+it(&lt;span class=&quot;string&quot;&gt;'should have the AWS region set to us west 2'&lt;/span&gt;, &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;{
+  AWS.config.region.should.equal(awsRegion);
+})
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The configuration data is then stored in the config credentials for the access key and secret access key. The region is stored as a value on the config object. Those should pass and then let’s move straight on to setting up a basic site that can send the queue some data.&lt;/p&gt;
+&lt;p&gt;For more information about the configuration and setup of the AWS SDK check out the &lt;a href=&quot;http://docs.aws.amazon.com/AWSJavaScriptSDK/guide/node-configuring.html&quot;&gt;SDK Documentation on the topic&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;The Web Site Application&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;To create this web site application I’m going to use hapi.js. You can of course use anything you want to for this part of the example such as express, geddy or whichever. The general premise of what I’m going to put together for the front end of this whole application is going to be extremely simple. By proxy it will then be easily applied to any of the other framework options.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;npm install hapi --save
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Once that was done I installed the good library.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;npm install good --save
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;First part of the site I spooled up was to create a server.js file in the root of the project and add the following code.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; AWS = &lt;span class=&quot;built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;'aws-sdk'&lt;/span&gt;)
+
+&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; Hapi = &lt;span class=&quot;built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;'hapi'&lt;/span&gt;);
+&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; Good = &lt;span class=&quot;built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;'good'&lt;/span&gt;);
+
+&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; server = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; Hapi.Server(&lt;span class=&quot;number&quot;&gt;3000&lt;/span&gt;);
+
+server.route({
+  method: &lt;span class=&quot;string&quot;&gt;'GET'&lt;/span&gt;,
+  path: &lt;span class=&quot;string&quot;&gt;'/'&lt;/span&gt;,
+  handler: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;request, reply&lt;/span&gt;) &lt;/span&gt;{
+    reply(&lt;span class=&quot;string&quot;&gt;'Hello, world!'&lt;/span&gt;);
+  }
+});
+
+server.route({
+  method: &lt;span class=&quot;string&quot;&gt;'GET'&lt;/span&gt;,
+  path: &lt;span class=&quot;string&quot;&gt;'/{name}'&lt;/span&gt;,
+  handler: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;request, reply&lt;/span&gt;) &lt;/span&gt;{
+    reply(&lt;span class=&quot;string&quot;&gt;'Hello, '&lt;/span&gt; + &lt;span class=&quot;built_in&quot;&gt;encodeURIComponent&lt;/span&gt;(request.params.name) + &lt;span class=&quot;string&quot;&gt;'!'&lt;/span&gt;);
+  }
+});
+
+server.pack.register(Good, &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;err&lt;/span&gt;) &lt;/span&gt;{
+  &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (err) {
+    &lt;span class=&quot;keyword&quot;&gt;throw&lt;/span&gt; err; &lt;span class=&quot;comment&quot;&gt;// something bad happened loading the plugin&lt;/span&gt;
+  }
+
+  server.start(&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;{
+    server.log(&lt;span class=&quot;string&quot;&gt;'info'&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;'Server running at: '&lt;/span&gt; + server.info.uri);
+  });
+});
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The dependency I added, good, brings some logging features to the project now. So with this, when executing the server file to get the server running, I get the following response on the command line.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;$ node server.js
+141020/004110.009, info, Server running at: http://adrons-mbp:3000
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Next I issued some curl commands against the end points.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;17:42 $ curl localhost:3000
+Hello, world!~
+17:42 $ curl localhost:3000/Frank
+Hello, Frank!~
+17:42 $ curl localhost:3000/Sally
+Hello, Sally!~
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;With the logging on, the following results proved out that everything was running ok.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;$ node server.js
+141020/004219.213, info, Server running at: http://adrons-mbp:3000
+141020/004230.236, request, http://adrons-mbp:3000: get / {} 200 (10ms)
+141020/004236.850, request, http://adrons-mbp:3000: get /Frank {} 200 (2ms)
+141020/004240.514, request, http://adrons-mbp:3000: get /Sally {} 200 (1ms)
+141020/004254.937, request, http://adrons-mbp:3000: get /Cat {} 200 (0ms)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The next thing I need to actually do is send a message to the queue to be processed. In the server.js file I added the following code, with the entire server.js file shown below.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; should = AWS = &lt;span class=&quot;built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;'aws-sdk'&lt;/span&gt;),
+  awsRegion = &lt;span class=&quot;string&quot;&gt;'us-west-2'&lt;/span&gt;,
+  sqs = {},
+  Hapi = &lt;span class=&quot;built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;'hapi'&lt;/span&gt;),
+  Good = &lt;span class=&quot;built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;'good'&lt;/span&gt;);
+
+&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; server = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; Hapi.Server(process.env.PORT || &lt;span class=&quot;number&quot;&gt;3000&lt;/span&gt;);
+
+server.route({
+  method: &lt;span class=&quot;string&quot;&gt;'GET'&lt;/span&gt;,
+  path: &lt;span class=&quot;string&quot;&gt;'/'&lt;/span&gt;,
+  handler: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;request, reply&lt;/span&gt;) &lt;/span&gt;{
+    reply(&lt;span class=&quot;string&quot;&gt;'Hello, world!'&lt;/span&gt;);
+  }
+});
+
+&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;sendSqsMessage&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;{
+&lt;span class=&quot;meta&quot;&gt;  'use strict'&lt;/span&gt;;
+
+  AWS.config.update({
+    accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+    secretAccessKey: process.env.AWS_SECRET_KEY,
+    region: awsRegion
+  });
+  sqs = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; AWS.SQS();
+
+  &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; params = {
+    MessageBody: &lt;span class=&quot;string&quot;&gt;'The Message Body Goes Here'&lt;/span&gt;,
+    QueueUrl: &lt;span class=&quot;string&quot;&gt;'https://sqs.us-west-2.amazonaws.com/588271471917/a_sample'&lt;/span&gt;,
+    DelaySeconds: &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;
+  };
+
+  sqs.sendMessage(params, &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;err, data&lt;/span&gt;) &lt;/span&gt;{
+    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (err) {
+      &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(err, err.stack);
+    } &lt;span class=&quot;comment&quot;&gt;// an error occurred&lt;/span&gt;
+    &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; {
+      &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;string&quot;&gt;'Victory, message sent for '&lt;/span&gt; + &lt;span class=&quot;built_in&quot;&gt;encodeURIComponent&lt;/span&gt;(request.params.name) + &lt;span class=&quot;string&quot;&gt;'!'&lt;/span&gt;);
+    }
+    ;
+  });
+}
+
+server.route({
+  method: &lt;span class=&quot;string&quot;&gt;'GET'&lt;/span&gt;,
+  path: &lt;span class=&quot;string&quot;&gt;'/{name}'&lt;/span&gt;,
+  handler: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;request, reply&lt;/span&gt;) &lt;/span&gt;{
+    sendSqsMessage(&lt;span class=&quot;built_in&quot;&gt;encodeURIComponent&lt;/span&gt;(request.params.name));
+    reply(&lt;span class=&quot;string&quot;&gt;'Your message '&lt;/span&gt; + &lt;span class=&quot;built_in&quot;&gt;encodeURIComponent&lt;/span&gt;(request.params.name) + &lt;span class=&quot;string&quot;&gt;' has been sent to queue!'&lt;/span&gt;);
+  }
+});
+
+server.pack.register(Good, &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;err&lt;/span&gt;) &lt;/span&gt;{
+  &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (err) {
+    &lt;span class=&quot;keyword&quot;&gt;throw&lt;/span&gt; err; &lt;span class=&quot;comment&quot;&gt;// something bad happened loading the plugin&lt;/span&gt;
+  }
+
+  server.start(&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;{
+    server.log(&lt;span class=&quot;string&quot;&gt;'info'&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;'Server running at: '&lt;/span&gt; + server.info.uri);
+  });
+});
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;I’ll step through the key lines above to detail where and what the functionality is.&lt;/p&gt;
+&lt;p&gt;The line below is important, as AWS Beanstalk assumes the PORT environment variable will be set and used.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; server = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; Hapi.Server(process.env.PORT || &lt;span class=&quot;number&quot;&gt;3000&lt;/span&gt;);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;I added the sendMessage function. In this function I update the configuration, which is required to get the appropriate variables set. On the AWS instance itself, which I’ll cover shortly, these are where the environment variables will be picked up to instantiate the AWS configuration for the SQS object.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;sendSqsMessage&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;{
+&lt;span class=&quot;meta&quot;&gt;  'use strict'&lt;/span&gt;;
+
+  AWS.config.update({
+    accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+    secretAccessKey: process.env.AWS_SECRET_KEY,
+    region: awsRegion
+  });
+  sqs = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; AWS.SQS();
+
+  &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; params = {
+    MessageBody: &lt;span class=&quot;string&quot;&gt;'The Message Body Goes Here'&lt;/span&gt;,
+    QueueUrl: &lt;span class=&quot;string&quot;&gt;'https://sqs.us-west-2.amazonaws.com/588266671666/the_path_to_the_queue'&lt;/span&gt;,
+    DelaySeconds: &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;
+  };
+
+  sqs.sendMessage(params, &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;err, data&lt;/span&gt;) &lt;/span&gt;{
+    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (err) {
+      &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(err, err.stack);
+    } &lt;span class=&quot;comment&quot;&gt;// an error occurred&lt;/span&gt;
+    &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; {
+      &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;string&quot;&gt;'Victory, message sent for '&lt;/span&gt; + &lt;span class=&quot;built_in&quot;&gt;encodeURIComponent&lt;/span&gt;(request.params.name) + &lt;span class=&quot;string&quot;&gt;'!'&lt;/span&gt;);
+    };
+  });
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;So all in all, the code is kind of dirty, but it gets the point across. Whenever I send an HTTP GET request against domain/name a post to the queue with the /name part of the URI will be sent. Now it’s time to get the actual instance deployed in AWS and test this.&lt;/p&gt;
+&lt;p&gt;In the example above, as a reminder where the URL for the queue is located, navigate to the SQS part of the AWS console and click on the actual queue itself. In the information section of the queue you’ll see the URL listed.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/hapijs-aws-worker-publish/SQS_Worker_01.png&quot; alt=&quot;Screen 1&quot;&gt;&lt;/p&gt;
+&lt;p&gt;For more information on the queue and how to set it up check out the preview article here.&lt;/p&gt;
+&lt;h2 id=&quot;setting-up-an-aws-beanstalk-instance&quot;&gt;Setting up an AWS Beanstalk Instance&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/hapijs-aws-worker-publish/SQS_Worker_02.png&quot; alt=&quot;Screen 2&quot;&gt;&lt;/p&gt;
+&lt;p&gt;If you’ve not used AWS Beanstalk the console interface will automatically show a display screen that only has options to create an application. If there are already applications running the Beanstalk Environment the create application button will be toward the top right of the console.&lt;/p&gt;
+&lt;p&gt;It’s important to note I’ll be creating two environments within a single application within the Beanstalk environment. Both of them will be their own load balanced, environments acting just as if they were located in different geographical regions in AWS.&lt;/p&gt;
+&lt;p&gt;The first step once I’ve clicked the create application button is to set the application name and description. The name, is required, the description is not.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/hapijs-aws-worker-publish/SQS_Worker_03.png&quot; alt=&quot;Screen 3&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/hapijs-aws-worker-publish/SQS_Worker_04.png&quot; alt=&quot;Screen 4&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Clicking on next then puts me on the environment creation screen. I’ve set the environment tier to web server, the predefined configuration is using Node.js, and the environment type is a load balanced with autoscaling environment. With these set, click next.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/hapijs-aws-worker-publish/SQS_Worker_05.png&quot; alt=&quot;Screen 5&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a name=&quot;upload&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;For the next step I’ll need to upload the application. I’ve got the cloned application repo navigated to in bash, execute ‘&lt;em&gt;open .&lt;/em&gt;‘ [1] against it to open the finder [2] to that location, right click and compress [3] the folder and all of the contents. I now have a ready to upload and deploy file package.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/hapijs-aws-worker-publish/SQS_Worker_06.png&quot; alt=&quot;Screen 6&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Now select the file, make sure the radio button is selected also, as selecting a file doesn’t automatically select the radio button. Then click on next. The application deployment file will then upload.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/hapijs-aws-worker-publish/SQS_Worker_07.png&quot; alt=&quot;Screen 7&quot;&gt;&lt;/p&gt;
+&lt;p&gt;The next dialog will provide a form to set the environment name, URL, and description. Click on the &lt;em&gt;Check availability&lt;/em&gt; button to determine if the URL is available that is chosen.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/hapijs-aws-worker-publish/SQS_Worker_08.png&quot; alt=&quot;Screen 8&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Next I click through the additional resources, configuration details and environment tags leaving the default settings. The on the final review information screen I’ll click the launch button and the status of deployment will show.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/hapijs-aws-worker-publish/SQS_Worker_09.png&quot; alt=&quot;Screen 9&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Once that spools up, click on the URL to navigate the browser to the URL that the site is now available publicly at and add a name to the URL. Here’s the default &lt;em&gt;Hello World!&lt;/em&gt; display.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/hapijs-aws-worker-publish/SQS_Worker_10.png&quot; alt=&quot;Screen 10&quot;&gt;&lt;/p&gt;
+&lt;p&gt;The display when adding a name (or any set of strings) to the URL, in this particular case to this URL here &lt;em&gt;&lt;a href=&quot;http://awsqueuesampleapp-env.elasticbeanstalk.com/&quot;&gt;http://awsqueuesampleapp-env.elasticbeanstalk.com/&lt;/a&gt;&lt;/em&gt; with a name attached like this &lt;em&gt;&lt;a href=&quot;http://awsqueuesampleapp-env.elasticbeanstalk.com/April&quot;&gt;http://awsqueuesampleapp-env.elasticbeanstalk.com/April&lt;/a&gt;&lt;/em&gt; the following displays and sends the name to the AWS SQS Queue we have setup.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/hapijs-aws-worker-publish/SQS_Worker_11.png&quot; alt=&quot;Screen 11&quot;&gt;&lt;/p&gt;
+&lt;p&gt;To determine if everything I’ve done has worked ok, I navigate back to the AWS console and then into the SQS section. On the queue list I pick the queue that is being used and there sits the queue items I’ve added by hitting the URL shown above.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/hapijs-aws-worker-publish/SQS_Worker_12.png&quot; alt=&quot;Screen 12&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Check under the Messages Available, which I’ve submitted 15 messages and they sit there in the queue, waiting for the next stage of this series - building the worker node. Keep reading, that’s up next. Cheers!&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;Part 1&lt;/em&gt; – &lt;a href=&quot;http://adron.github.io/articles/setting-up-an-aws-sqs-queue-for-use-with-node-js-beanstalk-worker-instances&quot;&gt;Setting up an AWS SQS Queue for Use With Node.js Beanstalk Worker Instances&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Part 2&lt;/em&gt; – &lt;a href=&quot;http://adron.github.io/articles/hapijs-aws-worker-publish/&quot;&gt;Setting up a Hapi.js App that sends work to a Node.js AWS Worker via SQS&lt;/a&gt; (This is the current article you’re reading now)&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Part 3&lt;/em&gt; – &lt;a href=&quot;http://adron.github.io/articles/aws-beanstalk-worker-with-node-js-and-sqs/&quot;&gt;AWS Beanstalk Worker with Node.js and SQS&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Reference:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/Adron/testing-aws-sqs-worker&quot;&gt;Testing AWS SQS Web Worker Github Repo&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/Adron/testing-aws-sqs-site&quot;&gt;Testing AWS SQS Web App Github Repo&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    <item>
+      <title>Setting up an AWS SQS Queue for Use With Node.js Beanstalk Worker Instances</title>
+      <link>http://adron.github.io/articles/setting-up-an-aws-sqs-queue-for-use-with-node-js-beanstalk-worker-instances/</link>
+      <pubDate>Wed, 05 Nov 2014 16:00:00 -0800</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/setting-up-an-aws-sqs-queue-for-use-with-node-js-beanstalk-worker-instances/</guid>
+      <author></author>
+      <description>&lt;div class=&quot;image float-right&quot;&gt;
+    &lt;img src=&quot;/articles/setting-up-an-aws-sqs-queue-for-use-with-node-js-beanstalk-worker-instances/Amazon-SQS_200x200.png&quot; alt=&quot;Amazon SQS&quot;&gt;
+&lt;/div&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;Part 1&lt;/em&gt; – &lt;a href=&quot;http://adron.github.io/articles/setting-up-an-aws-sqs-queue-for-use-with-node-js-beanstalk-worker-instances&quot;&gt;Setting up an AWS SQS Queue for Use With Node.js Beanstalk Worker Instances&lt;/a&gt; (This is the current article you’re reading now)&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Part 2&lt;/em&gt; – &lt;a href=&quot;http://adron.github.io/articles/hapijs-aws-worker-publish/&quot;&gt;Setting up a Hapi.js App that sends work to a Node.js AWS Worker via SQS&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Part 3&lt;/em&gt; – &lt;a href=&quot;http://adron.github.io/articles/aws-beanstalk-worker-with-node-js-and-sqs/&quot;&gt;AWS Beanstalk Worker with Node.js and SQS&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Before diving straight in, I’m going to outline the specific goals and what I am using to accomplish these goals. The goal is to have a simple web application, that will get some element of data posted to a queue. The queue will then have data that a worker service needs to then process. As I step through each of these requirements I’ll determine the actual push and pull mechanisms that will get the job done.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-right&quot;&gt;
+&lt;img src=&quot;/articles/setting-up-an-aws-sqs-queue-for-use-with-node-js-beanstalk-worker-instances/Deployment-&amp;amp;-Management_Elastic-Beanstalk_200x200.png&quot; alt=&quot;Deployment &amp;amp; Management - Elastic Beanstalk&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;http://aws.amazon.com/elasticbeanstalk/&quot;&gt;AWS Elastic Beanstalk Worker&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://aws.amazon.com/elasticbeanstalk/&quot;&gt;AWS Elastic Beanstalk&lt;/a&gt; is a service used to deploy and scale web application and services. In this particular example I’ll be using Node.js for all the work, but other options are available such as Java, .NET, PHP, Python, Ruby and even anything you can stick in a Docker Container. Simply put, you can run whatever you need in Beanstalk and gain all the advantages of the virtualized services and scaling of the toolset.&lt;/p&gt;
+&lt;p&gt;The worker feature that I’ll be using in this how-to, referred to by AWS as Worker Tiers, is setup to handle background tasks at scale. Think of things like doing database cleanup, setting action flags, events, firing triggers or simply sending an email notification. The worker tier that I’ll be using, again with Node.js, will simple be there to process messages that I’ll put into the queue.&lt;/p&gt;
+&lt;div class=&quot;image float-right&quot;&gt;
+    &lt;img src=&quot;/articles/setting-up-an-aws-sqs-queue-for-use-with-node-js-beanstalk-worker-instances/Amazon-SQS_200x200.png&quot; alt=&quot;SQS&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;http://aws.amazon.com/sqs/&quot;&gt;AWS Simple Queue Service (SQS)&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://aws.amazon.com/sqs/&quot;&gt;AWS Simple Queue Service&lt;/a&gt;, or &lt;a href=&quot;http://aws.amazon.com/sqs/&quot;&gt;SQS&lt;/a&gt; for short, is a distributed and scalable hosted queue service for storing messages that need to be reliably available between systems. By using SQS I can then create decoupled components of an application that are autonomous of each other in execution. This provides more options around scaling up or scaling down particular workloads, apps and services throughout the application ecosystem that I’ve built.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;http://aws.amazon.com/cloudwatch/&quot;&gt;CloudWatch&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-right&quot;&gt;
+    &lt;img src=&quot;/articles/setting-up-an-aws-sqs-queue-for-use-with-node-js-beanstalk-worker-instances/Deployment-&amp;amp;-Management_CloudWatch-200x200.png&quot; alt=&quot;Cloudwatch&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Even though the use of &lt;a href=&quot;http://aws.amazon.com/cloudwatch/&quot;&gt;CloudWatch&lt;/a&gt; is actually transparent to this project, I needed to bring it up, because without things being setup appropriately CloudWatch will definitely let you know that it is involved in this architecture.&lt;/p&gt;
+&lt;p&gt;CloudWatch is a monitoring service for cloud resources. In this particular scenario that I’m detailing here it is setup automatically by Elastic Beanstalk to monitor and autoscale instances as demand dictates.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;http://aws.amazon.com/iam/&quot;&gt;Identity and Access Management (IAM)&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-right&quot;&gt;
+    &lt;img src=&quot;/articles/setting-up-an-aws-sqs-queue-for-use-with-node-js-beanstalk-worker-instances/Deployment-&amp;amp;-Management_IAM-200x200.png&quot; alt=&quot;IAM&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://aws.amazon.com/iam/&quot;&gt;AWS IAM&lt;/a&gt; provides security for individual AWS resources and also a way to manage users and administrators of those resources. In this particular scenario I won’t cover the default user that I have setup, but assume that I’m using a user with permissions to all resources. I will be adding some roles to enable CloudWatch and Elastic Beanstalk to interoperate appropriately with the SQS under the premise of an Elastic Beanstalk Worker environment.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;http://aws.amazon.com/sdk-for-node-js/&quot;&gt;AWS Node.js SDK&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;The &lt;a href=&quot;http://aws.amazon.com/sdk-for-node-js/&quot;&gt;Nodejs SDK&lt;/a&gt; that Amazon provides for the AWS Web Services is pretty extensive. I have noticed it suffers a little from the “&lt;em&gt;&lt;a href=&quot;http://en.wikipedia.org/wiki/God_object&quot;&gt;God Object&lt;/a&gt;&lt;/em&gt;“ type of context where it does everything in one giant library, &lt;em&gt;however&lt;/em&gt;, it really kind of makes sense for something like AWS’s Services.&lt;/p&gt;
+&lt;div class=&quot;image float-right&quot;&gt;
+    &lt;img src=&quot;/articles/setting-up-an-aws-sqs-queue-for-use-with-node-js-beanstalk-worker-instances/SDKs-copy_nodeJS-200x2100.png&quot; alt=&quot;Node.js SDK&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;The SDK provides JavaScript objects for AWS services including S3, EC2, and almost every other practical service they have. The package is available for download the standard npm way.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;  npm install aws-sdk
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;In the getting started section of the AWS documentation, the samples are generally given using a loadable json file with the secret key information for connecting to your AWS resources. In this scenario I’ll actually use a different way to setup that configuration, which I’ll elaborate on further into this series.&lt;/p&gt;
+&lt;h2 id=&quot;back-to-business&quot;&gt;Back to Business&lt;/h2&gt;
+&lt;p&gt;The first order of business is to get a queue created. Since everything I’m going to put together in this sample is primarily focused around processing a queue, it seems like the perfect place to start. First open up the AWS Console and navigate to the SQS admin page.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/setting-up-an-aws-sqs-queue-for-use-with-node-js-beanstalk-worker-instances/screen-01.png&quot; alt=&quot;Screen 1&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Next click on the Create New Queue button to launch the create queue dialog.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/setting-up-an-aws-sqs-queue-for-use-with-node-js-beanstalk-worker-instances/screen-02.png&quot; alt=&quot;Screen 2&quot;&gt;&lt;/p&gt;
+&lt;p&gt;On the dialog enter the queue name and change any of the queue settings that you need to. In this particular situation I didn’t change any and just went with the defaults.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/setting-up-an-aws-sqs-queue-for-use-with-node-js-beanstalk-worker-instances/screen-03.png&quot; alt=&quot;Screen 3&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Now the queue is created. However I can’t really do anything with it at this point. I need to open up permissions to whatever I want to have access it. Clicking on the just created queue and then selecting the Permissions tab just below that will bring up the tab dialog that provides options for adding various permission levels for access.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/setting-up-an-aws-sqs-queue-for-use-with-node-js-beanstalk-worker-instances/screen-04.png&quot; alt=&quot;Screen 4&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Adding permissions…&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/setting-up-an-aws-sqs-queue-for-use-with-node-js-beanstalk-worker-instances/screen-05.png&quot; alt=&quot;Screen 5&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Add a Permission to sample&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/setting-up-an-aws-sqs-queue-for-use-with-node-js-beanstalk-worker-instances/screen-06.png&quot; alt=&quot;Screen 6&quot;&gt;&lt;/p&gt;
+&lt;p&gt;The queue is now all setup. In the next entry I’ll setup a web application project that will send data to the queue. I’ll also update this article with the links to the subsequent articles at the very top - and the bottom of the article here.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;Part 1&lt;/em&gt; – &lt;a href=&quot;http://adron.github.io/articles/setting-up-an-aws-sqs-queue-for-use-with-node-js-beanstalk-worker-instances&quot;&gt;Setting up an AWS SQS Queue for Use With Node.js Beanstalk Worker Instances&lt;/a&gt; (This is the current article you’re reading now)&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Part 2&lt;/em&gt; – &lt;a href=&quot;http://adron.github.io/articles/hapijs-aws-worker-publish/&quot;&gt;Setting up a Hapi.js App that sends work to a Node.js AWS Worker via SQS&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Part 3&lt;/em&gt; – &lt;a href=&quot;http://adron.github.io/articles/aws-beanstalk-worker-with-node-js-and-sqs/&quot;&gt;AWS Beanstalk Worker with Node.js and SQS&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Reference:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/Adron/testing-aws-sqs-worker&quot;&gt;Testing AWS SQS Web Worker Github Repo&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/Adron/testing-aws-sqs-site&quot;&gt;Testing AWS SQS Web App Github Repo&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </description>
     </item>
     <item>

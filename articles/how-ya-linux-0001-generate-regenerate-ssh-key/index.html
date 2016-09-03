@@ -19,9 +19,9 @@
     <link rel="apple-touch-icon" sizes="144x144" href="http://adron.github.io/img/favicons/apple-touch-icon-144x144.png">
     <link rel="apple-touch-icon" sizes="152x152" href="http://adron.github.io/img/favicons/apple-touch-icon-152x152.png">
     <link rel="apple-touch-icon" sizes="180x180" href="http://adron.github.io/img/favicons/apple-touch-icon-180x180.png">
-    <link rel="stylesheet" href="http://adron.github.io/css/custom.css">
-    <link rel="stylesheet" href="http://adron.github.io/css/style.min.css">
-    <script src="http://adron.github.io/js/modernizr.js"></script>
+    <link rel="stylesheet" href="/css/custom.css">
+    <link rel="stylesheet" href="/css/style.min.css">
+    <script src="/js/modernizr.js"></script>
   </head>
   <body class="article-detail">
     <!--[if lt IE 8]>
@@ -81,33 +81,35 @@
                 <!-- Blog Page-->
                 <article class="article">
                   <section class="content"><p>Sometimes while working with the various ssh keys you have you might need to regenerate them. Specifically I ran into this need while working with some Google Cloud Platform (<span class="caps">GCP</span>) instances with Terraform and GCP’s <em>gcloud</em> <span class="caps">CLI</span> tool. Generally, when you start working with the <em>gcloud</em> <span class="caps">CLI</span> it will, upon need if it doesn’t exist, create a key for you. When it does so it sticks the key it generates in the <code>~/.ssh/</code> directory and names the key <code>google_compute_engine</code>. To create a new ssh key pair here, navigate to the <code>~/.ssh/</code> directory and issue the following&nbsp;command.</p>
-<pre><code>    sudo ssh-keygen -t rsa -f ~/.ssh/google_compute_engine -C you_fancy_username@whatever.com
-</code></pre><p>Once that is command is executed, a few moments later and a few prompts later you’ll have a new&nbsp;key.</p>
-<pre><code>    13:16 $ sudo ssh-keygen -t rsa -f ~/.ssh/google_compute_engine -C adron_hall@homedepot.comPassword:
-    Generating public/private rsa key pair.
-    /Users/axh6454/.ssh/google_compute_engine already exists.
-    Overwrite (y/n)? y
-    Enter passphrase (empty for no passphrase):
-    Enter same passphrase again:
-    Your identification has been saved in /Users/axh6454/.ssh/google_compute_engine.
-    Your public key has been saved in /Users/axh6454/.ssh/google_compute_engine.pub.
-    The key fingerprint is:
-    SHA256:8xHVr19EdgPxLr2nWAkuZa8exMdEqbHNzoBxlHhFkZM adron_hall@ataplace.com
-    The key&#39;s randomart image is:
-    +---[RSA 2048]----+
-    |           ooBB= |
-    |          o.=.E.+|
-    |          .= *.*o|
-    |          .o+o= o|
-    |        S . *=o= |
-    |         o * +=.o|
-    |          o o +oo|
-    |           . = .o|
-    |           .+ .  |
-    +----[SHA256]-----+
-    ✔ ~/.ssh
-    13:16 $
-</code></pre><p>That’s&nbsp;it.</p>
+<pre><code class="lang-shell-script">sudo ssh-keygen -t rsa -f ~/.ssh/google_compute_engine -C you_fancy_username@whatever.com
+</code></pre>
+<p>Once that is command is executed, a few moments later and a few prompts later you’ll have a new&nbsp;key.</p>
+<pre><code class="lang-shell-script">13:16 $ sudo ssh-keygen -t rsa -f ~/.ssh/google_compute_engine -C adron_hall@homedepot.comPassword:
+Generating public/private rsa key pair.
+/Users/axh6454/.ssh/google_compute_engine already exists.
+Overwrite (y/n)? y
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /Users/axh6454/.ssh/google_compute_engine.
+Your public key has been saved in /Users/axh6454/.ssh/google_compute_engine.pub.
+The key fingerprint is:
+SHA256:8xHVr19EdgPxLr2nWAkuZa8exMdEqbHNzoBxlHhFkZM adron_hall@ataplace.com
+The key&#39;s randomart image is:
++---[RSA 2048]----+
+|           ooBB= |
+|          o.=.E.+|
+|          .= *.*o|
+|          .o+o= o|
+|        S . *=o= |
+|         o * +=.o|
+|          o o +oo|
+|           . = .o|
+|           .+ .  |
++----[SHA256]-----+
+✔ ~/.ssh
+13:16 $
+</code></pre>
+<p>That’s it. Sort of. For <span class="caps">GCP</span> be sure to check out the docs on managing ssh keys. There are docs on <a href="https://cloud.google.com/sdk/gcloud/reference/compute/config-ssh"><code>gcloud compute config-ssh</code></a> and <a href="https://cloud.google.com/compute/docs/instances/adding-removing-ssh-keys">Adding and Removing <span class="caps">SSH</span> keys</a>.</p>
 </section>
                 </article>
                 <!-- End of Blog Page-->

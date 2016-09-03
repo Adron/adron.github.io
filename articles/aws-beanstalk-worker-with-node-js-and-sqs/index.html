@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Adron's Composite Code</title>
+    <meta name="description" content="">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="alternate" href="http://adron.github.io/feed.xml" type="application/rss+xml" title="Coder, Messenger, Recon, Infrastructure, Ops">
+    <link rel="icon" type="image/png" href="http://adron.github.io/img/favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="http://adron.github.io/img/favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="http://adron.github.io/img/favicons/favicon-96x96.png" sizes="96x96">
+    <link rel="apple-touch-icon" sizes="57x57" href="http://adron.github.io/img/favicons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="http://adron.github.io/img/favicons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="http://adron.github.io/img/favicons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="http://adron.github.io/img/favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="http://adron.github.io/img/favicons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="http://adron.github.io/img/favicons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="http://adron.github.io/img/favicons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="http://adron.github.io/img/favicons/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="http://adron.github.io/img/favicons/apple-touch-icon-180x180.png">
+    <link rel="stylesheet" href="/css/custom.css">
+    <link rel="stylesheet" href="/css/style.min.css">
+    <script src="/js/modernizr.js"></script>
+  </head>
+  <body class="article-detail">
+    <!--[if lt IE 8]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <div class="header header-over large">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 col-sm-6 col-xs-6">
+            <!-- Logo Image--><a href="http://adron.github.io/index.html" class="logo-image logo-animated"><img src="http://adron.github.io/img/logos/logo.png" alt="logo"></a>
+            <!-- End of Logo Image-->
+          </div>
+          <div class="col-md-9 col-sm-6 col-xs-6">
+            <!-- Menu-->
+            <nav class="right helper">
+              <ul class="menu sf-menu js-menu">
+                <li><a href="/thrashingcodenews.html">Thrashing Code News</a></li>
+                <li><a href="#">Conf/Meetup/UserGroup Events</a>
+                  <ul>
+                    <li><a href="/docs/Speaking-Presentations-Workshops/">Speaking - Presentations, Workshops, Etc</a></li>
+                    <li><a href="/docs/calendar">Calendar</a></li>
+                  </ul>
+                </li>
+                <li><a href="/docs/documentation/">Docs</a></li>
+                <li><a href="/docs/about/">About</a></li>
+              </ul>
+            </nav>
+            <!-- End of Menu-->
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="header-back header-back-simple header-back-small">
+      <div class="header-back-container">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <!-- Page Info-->
+              <div class="page-info page-info-simple">
+                <h1>AWS Beanstalk Worker with Node.js and SQS</h1>
+                <p class="author">Written by <span class="author">Adron Hall</span>
+                </p>
+                <div class="nav"><a href="/">« Home</a></div>
+              </div>
+              <!-- End Page Info-->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="content">
+      <div class="container">
+        <div class="layout with-right-sidebar js-layout">
+          <div class="row">
+            <div class="col-md-9">
+              <div class="main-content">
+                <!-- Blog Page-->
+                <article class="article">
+                  <section class="content"><div class="image float-right">
+    <img src="/articles/aws-beanstalk-worker-with-node-js-and-sqs/amazon-sqs_200x200.png" alt="Amazon SQS">
+</div>
+
+<ul>
+<li><em>Part 1</em> – <a href="/articles/setting-up-an-aws-sqs-queue-for-use-with-node-js-beanstalk-worker-instances">Setting up an <span class="caps">AWS</span> SQS Queue for Use With Node.js Beanstalk Worker&nbsp;Instances</a></li>
+<li><em>Part 2</em> – <a href="/articles/hapijs-aws-worker-publish/">Setting up a Hapi.js App that sends work to a Node.js <span class="caps">AWS</span> Worker via&nbsp;SQS</a></li>
+<li><em>Part 3</em> – <a href="/articles/aws-beanstalk-worker-with-node-js-and-sqs/"><span class="caps">AWS</span> Beanstalk Worker with Node.js and SQS</a> (This is the current article you’re reading&nbsp;now)</li>
+</ul>
+<p>First I created a project for the node.js worker. The first steps for this are identical to that of creating the Hapi.js site that publishes messages to the queue. Go through these three steps for the worker and then I’ll continue from&nbsp;there.</p>
+<ul>
+<li>First <a href="/articles/hapijs-aws-worker-publish#webapplication">create the web application</a> which will act as our worker service. I gave mine the name of <a href="https://github.com/Adron/testing-aws-sqs-worker">testing-aws-sqs-worker</a>, the site publishing to the queue I called <a href="https://github.com/Adron/testing-aws-sqs-site">testing-aws-sqs-site</a>.</li>
+<li>Next <a href="/articles/hapijs-aws-worker-publish/#mocha">add dependencies needed</a>, like&nbsp;mocha.</li>
+<li>Finally make sure the <a href="/articles/hapijs-aws-worker-publish/#aws"><span class="caps">AWS</span> environment variables</a> are set&nbsp;appropriately.</li>
+</ul>
+<p><em>…and now on to the security, configuration and worker specific parts of this&nbsp;series…</em></p>
+<p><span class="more"></span></p>
+<p><strong>Security&nbsp;Needs</strong></p>
+<p>Before getting the actual worker setup I need to have a role setup in <span class="caps">IAM</span>&nbsp;(</p>
+<p><img src="/articles/aws-beanstalk-worker-with-node-js-and-sqs/sqs-01.png" alt="Screen 1"></p>
+<p>Once here click on the Roles section of <span class="caps">IAM</span>. Then click on Create New&nbsp;Role.</p>
+<p><img src="/articles/aws-beanstalk-worker-with-node-js-and-sqs/sqs-02.png" alt="Screen 2"></p>
+<p>Next set the role&nbsp;name.</p>
+<p><img src="/articles/aws-beanstalk-worker-with-node-js-and-sqs/sqs-03.png" alt="Screen 3"></p>
+<p>Now select Amazon <span class="caps">EC2</span> here. I noted this wasn’t immediately intuitive. But once I realized that the security item I’m looking for is a sub-item under Amazon EC2 things made more&nbsp;sense.</p>
+<p><img src="/articles/aws-beanstalk-worker-with-node-js-and-sqs/sqs-04.png" alt="Screen 4"></p>
+<p>Next next odd thing that occurred in this web wizard was that the number 3 step is skipped. Again, that took me a second to realize maybe that’s an optional step. Whatever the case, it shouldn’t be displayed unless it’s a step that might actually occur in all paths, otherwise just make it disappear. Anyway, step 4 is where the next step&nbsp;awaits.</p>
+<p><img src="/articles/aws-beanstalk-worker-with-node-js-and-sqs/sqs-05.png" alt="Screen 5"></p>
+<p><img src="/articles/aws-beanstalk-worker-with-node-js-and-sqs/sqs-06.png" alt="Screen 6"></p>
+<p>The next step I’ll add the <span class="caps">JSON</span> that defines this role. It looks like this in the wizard (and I’ve included the actual JSON just below the image of the wizard). NOTE: In this screen shot I’ve named the role one thing, but when I select it below I’ve actually renamed it to “serverComms”. These two are indeed the same role, I just didn’t want to go back and redo all the screenshots around a minor rename.&nbsp;:)</p>
+<p><img src="/articles/aws-beanstalk-worker-with-node-js-and-sqs/sqs-07.png" alt="Screen 7"></p>
+<pre><code class="lang-javascript">{
+  <span class="string">"Version"</span>: <span class="string">"2012-10-17"</span>,
+  <span class="string">"Statement"</span>: [
+    {
+      <span class="string">"Sid"</span>: <span class="string">"QueueAccess"</span>,
+      <span class="string">"Action"</span>: [
+        <span class="string">"sqs:ChangeMessageVisibility"</span>,
+        <span class="string">"sqs:DeleteMessage"</span>,
+        <span class="string">"sqs:ReceiveMessage"</span>
+      ],
+      <span class="string">"Effect"</span>: <span class="string">"Allow"</span>,
+      <span class="string">"Resource"</span>: <span class="string">"*"</span>
+    },
+    {
+      <span class="string">"Sid"</span>: <span class="string">"MetricsAccess"</span>,
+      <span class="string">"Action"</span>: [
+        <span class="string">"cloudwatch:PutMetricData"</span>
+      ],
+      <span class="string">"Effect"</span>: <span class="string">"Allow"</span>,
+      <span class="string">"Resource"</span>: <span class="string">"*"</span>
+    }
+  ]
+}
+</code></pre>
+<p>Click next and the summary is provided before final creation of the&nbsp;role.</p>
+<p><img src="/articles/aws-beanstalk-worker-with-node-js-and-sqs/sqs-08.png" alt="Screen 8"></p>
+<p><strong>Web Worker&nbsp;Application</strong></p>
+<p>The first thing I need is to go ahead and get the worker setup in the <span class="caps">AWS</span> Management Console. I create a new environment by clicking on Launch New&nbsp;Environment.</p>
+<p><img src="/articles/aws-beanstalk-worker-with-node-js-and-sqs/sqs-09.png" alt="Screen 9"></p>
+<p>Next up is setting the environment tier and type and the configuration. I set these to Worker, Node.js, and Load&nbsp;Balanced.</p>
+<p><img src="/articles/aws-beanstalk-worker-with-node-js-and-sqs/sqs-10.png" alt="Screen 10"></p>
+<p>Then upload the project zip file. I zipped and uploaded this file <a href="/articles/aws-beanstalk-worker-with-node-js-and-sqs/articles/hapijs-aws-worker-publish/#upload">similarly to the way I did the site for submitting messages to the queue</a>. To see what code I’m uploading - the blog entry is kind of circular - so I added the code part toward the bottom of this entry. For the exact code, check out the later part of the entry and the finished code here in the <a href="https://github.com/Adron/testing-aws-sqs-worker">github repo</a>.</p>
+<p><img src="/articles/aws-beanstalk-worker-with-node-js-and-sqs/sqs-11.png" alt="Screen 11"></p>
+<p>Now click next through environment info and additional resources. In configuration details the main thing I need is to select the <span class="caps">IAM</span> security role for the instance being&nbsp;created.</p>
+<p><img src="/articles/aws-beanstalk-worker-with-node-js-and-sqs/sqs-12.png" alt="Screen 12"></p>
+<p>Click through the environment variables and on to Worker Details. Here I select the queue that I created in <a href="/articles/aws-beanstalk-worker-with-node-js-and-sqs/articles/setting-up-an-aws-sqs-queue-for-use-with-node-js-beanstalk-worker-instances/">part 1 of this series</a>. Just below that enter the <span class="caps">URI</span> end point that the worker will provide the queue to send messages via POST. I’ll get to the code later in this article. But for now, I just selected /hi as the end&nbsp;point.</p>
+<p><img src="/articles/aws-beanstalk-worker-with-node-js-and-sqs/sqs-13.png" alt="Screen 13"></p>
+<p>Finally, the last step is to review and Launch the worker&nbsp;instance.</p>
+<p><img src="/articles/aws-beanstalk-worker-with-node-js-and-sqs/sqs-14.png" alt="Screen 14"></p>
+<p><strong>Codes</strong></p>
+<p>At this point I’ll still be using hapi.js and good.js, so I follow the installation of these libraries similar to the ones I used for the site app in <a href="/articles/aws-beanstalk-worker-with-node-js-and-sqs/articles/hapijs-aws-worker-publish/">part 2 of this series</a>.</p>
+<pre><code class="lang-shell-script">npm install hapi --save
+npm install good --save
+</code></pre>
+<p>Now, I’ve setup a <a href="https://github.com/Adron/testing-aws-sqs-worker/blob/master/server.js">server.js</a> as shown below. This <span class="caps">API</span> end point provides an action, in this case a write to the log, and then just finishes. This will prove out a complete movement of message from publisher site to queue to answering worker&nbsp;service.</p>
+<pre><code class="lang-javascript"><span class="keyword">var</span>
+  <span class="caps">AWS</span> = <span class="built_in">require</span>(<span class="string">'aws-sdk'</span>),
+  awsRegion = <span class="string">'us-west-2'</span>,
+  sqs = {},
+  Hapi = <span class="built_in">require</span>(<span class="string">'hapi'</span>),
+  Good = <span class="built_in">require</span>(<span class="string">'good'</span>),
+  queueUri = <span class="string">'https://sqs.us-west-2.amazonaws.com/621392439615/sample'</span>;
+
+<span class="keyword">var</span> server = <span class="keyword">new</span> Hapi.Server(process.env.<span class="caps">PORT</span> || <span class="number">3000</span>);
+
+server.route({
+  method: <span class="string">'<span class="caps">POST</span>'</span>,
+  path: <span class="string">'/hi'</span>,
+  handler: <span class="function"><span class="keyword">function</span> (<span class="params">request, reply</span>) </span>{
+    <span class="caps">AWS</span>.config.update({
+      accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+      secretAccessKey: process.env.AWS_SECRET_KEY,
+      region: awsRegion
+    });
+    sqs = <span class="keyword">new</span> <span class="caps">AWS</span>.SQS();
+
+    server.log(<span class="string">'response: '</span>, request.payload.name);
+    server.log(<span class="string">'Starting receive message.'</span>, <span class="string">'...a 200 response should be received.'</span>);
+
+    reply();
+  }
+});
+
+server.pack.register(Good, <span class="function"><span class="keyword">function</span> (<span class="params">err</span>) </span>{
+  <span class="keyword">if</span> (err) {
+    <span class="keyword">throw</span> err;
+  }
+
+  server.start(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>{
+    server.log(<span class="string">'info'</span>, <span class="string">'Server running at: '</span> + server.info.uri);
+  });
+});
+</code></pre>
+<p>In this code, note that Hapi.js takes the request (read more on <a href="http://hapijs.com/">Hapi.js here</a>) and sticks the body of the request in the property payload. Since <span class="caps">AWS</span> SQS sends across JSON in the way I’ve set it up (see <a href="/articles/aws-beanstalk-worker-with-node-js-and-sqs/articles/setting-up-an-aws-sqs-queue-for-use-with-node-js-beanstalk-worker-instances/">part 1</a> and <a href="/articles/aws-beanstalk-worker-with-node-js-and-sqs/articles/hapijs-aws-worker-publish/">part 2</a>) the received message coming in looks like&nbsp;this.</p>
+<pre><code class="lang-javascript"><span class="string">"name"</span>: <span class="string">"April"</span>
+</code></pre>
+<p>In the above code, the request.payload.name code gives us the name April. Run this and when the <span class="caps">SQS</span> receives input to process it will immediately send the message to the worker which will then process the code. When the worker returns a 200, the message is marked complete and removed from the queue. When I navigate to the nodejs.log in the AWS Beanstalk logs section of the environment, I get the last few items that I submitted to the queue for processing. The code above responds as shown below in the&nbsp;log.</p>
+<pre><code class="lang-shell-script">-------------------------------------
+/var/log/nodejs/nodejs.log
+-------------------------------------
+141119/011034.709, response: , Susan
+141119/011034.709, Starting receive message., ...a 200 response should be received.
+141119/011034.688, request, http://ip-172-31-33-151:8081: [1;33mpost[0m /hi {} [32m200[0m (26ms)
+141119/011039.927, response: , April
+141119/011039.928, Starting receive message., ...a 200 response should be received.
+141119/011039.925, request, http://ip-172-31-33-151:8081: [1;33mpost[0m /hi {} [32m200[0m (6ms)
+141119/011045.232, response: , Jessica
+141119/011045.232, Starting receive message., ...a 200 response should be received.
+141119/011045.229, request, http://ip-172-31-33-151:8081: [1;33mpost[0m /hi {} [32m200[0m (7ms)
+</code></pre>
+<p><span class="caps">BOOM</span>! All done. A few notes before I end this entry though. Note that with the worker feature being used for Beanstalk and SQS there really isn’t much code that is needed on the receipt end of the worker. I merely needed to respond 200, to complete the request from the point of view of the SQS worker service. Then whatever code I have that I want to act on the process with can work on the data received in the body from the queue. More than a few examples out there don’t really show this, but instead show the manual way of writing code that will poll and act upon the messages in the queue. The Beanstalk worker configuration is dramatically simpler in comparison to this practice. If you do want to read more about manually polling and acting on the data check out “<a href="https://milesplit.wordpress.com/2013/11/07/using-sqs-with-node/">Using <span class="caps">SQS</span> With Node</a>“, it’s the only end-to-end example I’ve seen with Node.js being used. There is also of course the documentation, but it doesn’t provide clear cut examples of what exactly a good practice around working with the queue and requires a lot of RTFMing which quit frankly is a <span class="caps">TLDR</span>; scenario for doing something like&nbsp;this.</p>
+<p>Hope this blog post is helpful in getting Node.js working with the worker role. If you have any questions, comments or it appears I’ve missed a step, let me know and I’ll edit this and the related posts to make sure they’re as accurate and as simple to follow as I can get&nbsp;them.</p>
+<p>Cheers!</p>
+<ul>
+<li><em>Part 1</em> – <a href="/articles/setting-up-an-aws-sqs-queue-for-use-with-node-js-beanstalk-worker-instances">Setting up an <span class="caps">AWS</span> SQS Queue for Use With Node.js Beanstalk Worker&nbsp;Instances</a></li>
+<li><em>Part 2</em> – <a href="/articles/hapijs-aws-worker-publish/">Setting up a Hapi.js App that sends work to a Node.js <span class="caps">AWS</span> Worker via&nbsp;SQS</a></li>
+<li><em>Part 3</em> – <a href="/articles/aws-beanstalk-worker-with-node-js-and-sqs/"><span class="caps">AWS</span> Beanstalk Worker with Node.js and SQS</a> (This is the current article you’re reading&nbsp;now)</li>
+</ul>
+<p><strong>Reference:</strong></p>
+<ul>
+<li><a href="https://github.com/Adron/testing-aws-sqs-worker">Testing <span class="caps">AWS</span> SQS Web Worker Github&nbsp;Repo</a></li>
+<li><a href="https://github.com/Adron/testing-aws-sqs-site">Testing <span class="caps">AWS</span> SQS Web App Github&nbsp;Repo</a></li>
+</ul>
+</section>
+                </article>
+                <!-- End of Blog Page-->
+              </div>
+            </div>
+            <div class="col-md-3 hidden-sm hidden-xs">
+              <div class="sidebar js-sidebar-fixed">
+                <!-- Vertical Menu-->
+                <div class="widget">
+                  <!-- Search-->
+                  <div class="search">
+                    <form action="https://google.com/search" method="get">
+                      <input type="hidden" name="sitesearch" value="http://blog.adron.me">
+                      <input type="text" name="q" placeholder="search" class="search-input form-control"><i class="fa fa-search search-icon"></i>
+                    </form>
+                  </div>
+                  <!-- End of Search-->
+                </div>
+                <div class="widget">
+                  <h3 class="widget-title">Keyword Search</h3>
+                  <!-- Tags-->
+                  <ul class="tags">
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=html">html</a></li>
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=javascript">javascript</a></li>
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=ubuntu">ubuntu</a></li>
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=node pdx">node pdx</a></li>
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=.NET fringe">.net fringe</a></li>
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=videos">videos</a></li>
+                  </ul>
+                  <!-- End of Tags-->
+                </div>
+                <nav class="menu-vertical-wrapper">
+                  <ul data-prepend-to=".js-layout" data-select="Menu" class="menu-vertical js-menu-vertical">
+                    <li><a href="#">About</a>
+                      <ul>
+                        <li><a href="/docs/about/">Me, Adron</a></li>
+                        <li><a href="#">My Hobbies</a>
+                          <ul>
+                            <li><a href="http://photos.adron.me">My Photos</a></li>
+                          </ul>
+                        </li>
+                        <li><a href="/docs/Speaking-Presentations-Workshops">My Presentations</a></li>
+                        <li><a href="/docs/documentation/">Collection of Docs & Notes</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </nav>
+                <div class="widget">
+                  <h3 class="widget-title">Photos</h3>
+                  <!-- Photos-->
+                  <ul class="widget-recommended-products">
+                    <!-- Photos-->
+                    <li class="widget-recommended-product"><img src="/img/photos/IMG_1836.jpg" alt="Jon Oropeza" class="widget-recommended-product-img"><a href="http://photos.adron.me/Software/Meetups-N-Conferences/Conferences/Node-PDX-2016/i-D9qFQ6m" class="widget-recommended-product-link">
+                        <h5 class="widget-recommended-product-link-title">Node PDX 2016<i class="fa fa-angle-right"></i></h5>
+                        <p class="widget-recommended-product-link-description">Jon Oropeza @ Node PDX 2016</p></a></li>
+                    <!-- End of Recommended product Item-->
+                    <!-- Recommended product Item-->
+                    <li class="widget-recommended-product"><img src="/img/photos/IMG_1812.jpg" alt="Liz Abinante" class="widget-recommended-product-img"><a href="http://photos.adron.me/Software/Meetups-N-Conferences/Conferences/Node-PDX-2016/i-g2m2hgP" class="widget-recommended-product-link">
+                        <h5 class="widget-recommended-product-link-title">Node PDX 2016<i class="fa fa-angle-right"></i></h5>
+                        <p class="widget-recommended-product-link-description">Liz Abinante @ Node PDX 2016</p></a></li>
+                    <!-- End of Recommended product Item-->
+                    <!-- Recommended product Item-->
+                    <li class="widget-recommended-product"><img src="/img/photos/IMG_5709.jpg" alt="Praha hlavní nádraží" class="widget-recommended-product-img"><a href="http://photos.adron.me/Travels-N-Traversings/Across-the-Pond-2016-Travels/September-Krakow/Week-4-Prague/i-62ZPsPb" class="widget-recommended-product-link">
+                        <h5 class="widget-recommended-product-link-title">Prague (Praha)<i class="fa fa-angle-right"></i></h5>
+                        <p class="widget-recommended-product-link-description">Praha hlavní nádraží</p></a></li>
+                    <!-- End of photos row one-->
+                  </ul>
+                  <ul class="widget-recommended-products">
+                    <!-- Photos-->
+                    <li class="widget-recommended-product"><img src="/img/photos/IMG_4417.jpg" alt="St Mary's Basilica" class="widget-recommended-product-img"><a href="http://photos.adron.me/Travels-N-Traversings/Across-the-Pond-2016-Travels/September-Krakow/Krakow/i-KnZf6pK/A" class="widget-recommended-product-link">
+                        <h5 class="widget-recommended-product-link-title">St Mary's Basilica<i class="fa fa-angle-right"></i></h5>
+                        <p class="widget-recommended-product-link-description">Bazylika Mariacka in Rynek Główny.</p></a></li>
+                    <!-- End of Recommended product Item-->
+                    <!-- Recommended product Item-->
+                    <li class="widget-recommended-product"><img src="/img/photos/VSC_03.png" alt="Visual Studio Code" class="widget-recommended-product-img"><a href="http://photos.adron.me/Software/Software-Development/Visual-Studio-Things/i-LLW7WcD/A" class="widget-recommended-product-link">
+                        <h5 class="widget-recommended-product-link-title">Visual Studio Code<i class="fa fa-angle-right"></i></h5>
+                        <p class="widget-recommended-product-link-description">Images from a review of Visual Studio Code.</p></a></li>
+                    <!-- End of Recommended product Item-->
+                    <!-- Recommended product Item-->
+                    <li class="widget-recommended-product"><img src="/img/photos/-home-adronhall-Pictures-Selection_002.png - Shutter_003.png" alt="" class="widget-recommended-product-img"><a href="http://photos.adron.me/Software/Software-Development/Ubuntu/i-CQsQ4zj/A" class="widget-recommended-product-link">
+                        <h5 class="widget-recommended-product-link-title">Mono Develop & WebStorm<i class="fa fa-angle-right"></i></h5>
+                        <p class="widget-recommended-product-link-description">Working through Mono Develop & WebStorm.</p></a>
+                      <!-- End of photos row two-->
+                    </li>
+                  </ul>
+                  <!-- End Photos-->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="nav"><a href="/">« Home</a></div>
+      </div>
+    </div>
+    <script src="http://adron.github.io/js/all.js"></script>
+    <script src="http://adron.github.io/js/custom.js"></script>
+    <!-- Google Tag Manager-->
+    <noscript>
+      <iframe src="//www.googletagmanager.com/ns.html?id=GTM-KMMZX2" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <script>
+      console.log(document.getElementById("search-google"));
+      console.log(document.getElementById("search-google").innerText);
+      
+      var searchBox = document.getElementById("search-google");
+      
+      function googleSearch(search_string) {
+        alert(search_string);
+      }
+      
+      document.getElementById("search-google").addEventListener("onClick", function () {
+        alert(document.getElementById("search-google").innerHTML);
+      });
+      
+      document.getElementById("search-google").addEventListener("onClick", function () {
+        googleSearch(document.getElementById("search-google").innerHTML)
+      });
+      
+    </script>
+    <script>
+      (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+                  (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+      })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+      ga('create', 'UA-39158070-6', 'auto');
+      ga('send', 'pageview');
+    </script>
+  </body>
+</html>
