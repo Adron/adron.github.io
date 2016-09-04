@@ -7,6 +7,8 @@ template: talk.jade
 ## Organizing Infrastructure Config and Workflow
 ### *@ [HashiConf 2016](https://www.hashiconf.com/) September 6-8, 2016*
 
+***...Updated as of September 4th, 2016***
+
 ## Slides
 
 <iframe src="https://docs.google.com/presentation/d/1obA_NypaK3tTC_NansiKqV4GaRZ2JEARkG1ZHxjQ7Rk/embed?start=true&loop=false&delayms=3000" frameborder="0" width="850" height="507" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
@@ -85,10 +87,6 @@ These are the systems and applications of the "Renaissance Era".
 #### **Applications "Iron Man Era"**
 
 This is the seriously bad ass era of immutable infrastructure, self-deploying applications, that are continuous integrated and delivered. This is where things get fast, exciting, and quality starts to dramatically improve.
-
-***...Updated as of August 7th, 2016***
-
-I *might* have the video posted here if and when it's available. That'll be sometime after the conference, which is September 6th-8th.
 
 More to come, but if you want to join the conversation, see, and hear the presentation you'll have to join Evan and I [@hashiconf](https://www.hashiconf.com/)!
 
