@@ -1,5 +1,5 @@
 ---
-title: HashiConf Trip - Day 1
+title: HashiConf Trip Day 1 - Coast Starlight and Terraform
 author: Adron Hall
 date: 2016-09-05
 template: article.jade
