@@ -16,13 +16,13 @@ I had more than a few goals for the trip down to Napa Valley for HashiConf. By p
 2. Meet as many of the HashiConf Team as I can.
 3. Make something like a documentary video short of the trip, the conference, and whatever else might be pertinent. It's an experiment, it'll work or it won't.
 4. Blog the event. Maybe just a couple entries, or three, or more.
-5. Have a relaxing, chill, introspective, educational, and laid back trip while enjoying some wine at the Meritage (this is where the conference is being held).
+5. Have a relaxing, chill, introspective, educational, and laid back trip while enjoying some wine at the [Meritage](http://meritagecollection.com/meritageresort/) (this is where the conference is being held).
 
 <span class="more"></span>
 
-## [Organizing Infrastructure Config and Workflow](talks/Organizing-Infrastructure-Config-and-Workflow/)
+## [Organizing Infrastructure Config and Workflow](http://blog.adron.me/talks/Organizing-Infrastructure-Config-and-Workflow/)
 
-I wrapped up a few more things for the talk, which is already 98% done. I just have a 1% review with [Evan](https://twitter.com/evandbrown/), my co-presenter, and then a few tweaks to the repositories I'll be showing and speaking from. You can already find the slide deck and material for the talk [here](talks/Organizing-Infrastructure-Config-and-Workflow/). There will however be more information and details once the talk is over.
+I wrapped up a few more things for the talk, which are now 98% done. I just have a 1% review with my co-presenter [Evan](https://twitter.com/evandbrown/), and then the other 1% a few tweaks to the repositories I'll be showing and speaking from. You can already find the slide deck and material for the talk [here](talks/Organizing-Infrastructure-Config-and-Workflow/). There will however be more information and details once the talk is over.
 
 After that I headed down with [Lena](@lenadroid) and discussed a few things, including giving her the first rough presentation via iPad with the v1 of the Retina Display. This reminded, hot damn that version of the iPad is ridiculously heavy, don't give presentations with it. Afterwards she gave me a critique of things I ought not to forget. With that done, I finished packing up, and we both headed toward the train station.
 
@@ -63,4 +63,4 @@ Flanged wheels are what train use btw, it's that lip on the wheel keeps them on 
     ![Roomette](roomette.jpg)
 </div>
 
-I got comfortable and settled into an evening of blog writing, reading further on Go, enjoy the views, and review the talk. Dinner was served at a punctual 6:00pm reservation I'd attained, and by then I'd accomplished almost every one of these things. In addition to these a *fire* occurred at work where our Stash Git Server went to shit on us. It's a bit difficult to manage a *fire* when one is between Klamath Eugene, Oregon and Mount Shasta, where the mountain isn't really kind to one's internet connectivity. But I did what I could and recovered from some server images. With that up and running I settled in for the night by re-watching Captain America Civil War, ya know, primarily for the absurd comments Peter Parker makes. Until tomorrow... adieu.
+I got comfortable and settled into an evening of blog writing, reading further on Go, enjoy the views, and review the talk. Dinner was served at a punctual 6:00pm reservation I'd attained, and by then I'd accomplished almost every one of these things. In addition to these a *fire* occurred at work where our Stash Git Server went to shit on us. It's a bit difficult to manage a *fire* when one is between Klamath Eugene, Oregon and Mount Shasta, where the mountain isn't really kind to one's internet connectivity. But I did what I could and recovered from some server images. With that up and running I settled in for the night by re-watching Captain America Civil War, ya know, primarily for the hilarious comments Peter Parker makes. Until tomorrow... adieu.
