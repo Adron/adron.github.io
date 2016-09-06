@@ -32,7 +32,4 @@ template: doc.jade
 <div class="image float-left">
     ![Somebody](anImage.jpg)
 </div>
-
-[Documentation Root](/someplace/here.html)
-
 EOT

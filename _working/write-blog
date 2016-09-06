@@ -29,14 +29,11 @@ author: Adron Hall
 date: $blogdate
 template: article.jade
 ---
-<img class="img-responsive" src="./elasticon-tour-2015-in-seattle/streamset3.jpg" />
+<span class="more"></span>
 
 <div class="image float-right">
     ![Streamsets](streamset2.jpg)
 </div>
-
-<span class="more"></span>
-
 EOT
 
 echo "All done!"
