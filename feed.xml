@@ -5,9 +5,58 @@
     <atom:link href="http://adron.github.io/feed.xml" rel="self" type="application/rss+xml"></atom:link>
     <link>http://adron.github.io</link>
     <description>Coder, Messenger, Recon, Infrastructure, Ops</description>
-    <pubDate>Sun, 04 Sep 2016 17:00:00 -0700</pubDate>
+    <pubDate>Mon, 05 Sep 2016 17:00:00 -0700</pubDate>
     <generator>Wintersmith - https://github.com/jnordberg/wintersmith</generator>
     <language>en</language>
+    <item>
+      <title>HashiConf Trip Day 2 - A Bus Ride, Napa Valley City Center, Italian, Coffee, and Terraform Notes</title>
+      <link>http://adron.github.io/articles/hashiconf-trip-day-2/</link>
+      <pubDate>Mon, 05 Sep 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/hashiconf-trip-day-2/</guid>
+      <author></author>
+      <description>&lt;p&gt;Almost to Napa, but not yet. The train pulled in and I detrained. I will admit, I know of nothing about Martinez, California except for two things: It’s a stop on the way to Jack London Square (AKA Oakland) and thus San Francisco and it’s got a lot of knarly looking industrial plants spewing stuff into the air. Poisonous, I’ve no idea, but I know the one’s just west of the city (or town?) are. I enjoyed the ghost fleet at mooring, the sun rising from the east, and the smooth roll of the train. Now I was standing here ready to be on my way to Napa.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/hashiconf-trip-day-2/napa-valley.jpg&quot; alt=&quot;Napa Valley&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;However I have a 2 hour layover (is it a layover, transfer, or something else in train-speak-ese?). So I decided I was going to learn a thing or three about Martinez, California. I walked a few blocks into town and found a Starbucks. I felt like such a filthy tourist walking into a Starbucks in Martinez, hoping they’ve got the local joint somewhere nearby, I gave in and enjoyed the Seattle sugar drink anyway.&lt;/p&gt;
+&lt;p&gt;There I noticed three police officers, somewhat jubilant about whatever day they were going to have. I chatted with them a bit and it seemed there was some easy work they’d be doing at a fair or festival type event. Another few people sat down and enjoyed the fact I’d brought my standard 3 prong adapter along for the ride. Ya see, shockingly, there wasn’t enough outlets for the phones, laptops, and other devices everybody wanted plugged in. So the strip was a welcome addition.&lt;/p&gt;
+&lt;p&gt;I sat down and dorked out on some Terraform templates and started reading up on some blog entries about Terraform Modules. I was pleasantly surprised to find solid material on page 2 of the google results (where I look every other year or so). I found blog entries by &lt;a href=&quot;https://twitter.com/serialseb&quot;&gt;@serialseb&lt;/a&gt;, &lt;a href=&quot;https://github.com/bobtfish&quot;&gt;Tom&lt;/a&gt;, and &lt;a href=&quot;https://opencredo.com/author/bart/&quot;&gt;Bart Spaans&lt;/a&gt; (&lt;em&gt;links below in references&lt;/em&gt;). Those along with a host of other materials I started to get more of a picture around how, what, where, when, and why Terraform Modules. Stay tuned in a subsequent blog entry I’ll have thoughts, hacks, and other collections of things on what I learned and hacked together.&lt;/p&gt;
+&lt;h3 id=&quot;word-absurdities-over-triple-grande-caramel-macchiatos&quot;&gt;Word Absurdities Over Triple Grande Caramel Macchiatos&lt;/h3&gt;
+&lt;p&gt;I penned this blog entry while sipping at my &lt;em&gt;triple grande caramel macchiato&lt;/em&gt;. All the while pondering the absurdity of how English is constructed to identify such a thing as triple grande caramel macchiato and for the millionth time thought about the desecration in re-defining the word macchiato that Starbucks committed. A macchiato is not this strange sugared perverse creation that they serve, but whatever, it tastes good. It’s just a disingenuous and deceitful disrespect, combined with adding confusion to the naive, to taint a word that has existed for over a century which means something entirely different.&lt;/p&gt;
+&lt;p&gt;But whatever, it’s almost time for the final 45 minute ride to Napa.&lt;/p&gt;
+&lt;p&gt;I boarded the bus. The driver greeted me, scanned my ticket, and we discussed shortly the logistics of getting to Napa from Martinez. A timely departure and barely any traffic had me arriving on time.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/hashiconf-trip-day-2/soscol-transit-center.jpg&quot; alt=&quot;Soscol Transit Center&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Since the Soscol Transit Center was located just a few blocks from downtown Napa Valley I decided to spend lunch there and take a walk around.&lt;/p&gt;
+&lt;h3 id=&quot;oh-lunch-&quot;&gt;Oh Lunch!&lt;/h3&gt;
+&lt;div class=&quot;image float-left&quot;&gt;
+    &lt;img src=&quot;/articles/hashiconf-trip-day-2/caprese.jpg&quot; alt=&quot;Caprese&quot;&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;image float-right&quot;&gt;
+    &lt;img src=&quot;/articles/hashiconf-trip-day-2/gnocchi.jpg&quot; alt=&quot;Gnocchi&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Lunch was awesome. Caprese with heirloom tomatoes, actual fresh mozzarella and a thick, sweet, and rich balsamic reduction. Simply, caprese done right! I followed that with some gnocchi and a glass of white wine. It was time after all, being in Napa Valley, that I had some wine.&lt;/p&gt;
+&lt;div class=&quot;image float-left&quot;&gt;
+    &lt;a href=&quot;http://www.ridethevine.com/vine&quot;&gt;&lt;img src=&quot;/articles/hashiconf-trip-day-2/vine-logo.png&quot; alt=&quot;Vine Transit&quot;&gt;&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;p&gt;I hung out downtown for a short time after lunch and then boarded the &lt;a href=&quot;http://www.ridethevine.com/vine&quot;&gt;Vine&lt;/a&gt; Route 11 Bus from downtown Napa out to the &lt;a href=&quot;http://meritagecollection.com/meritageresort/&quot;&gt;Meritage&lt;/a&gt;. I arrived and walked up to the front desk and checked in. Lo and behold there stood &lt;a href=&quot;https://twitter.com/evandbrown/&quot;&gt;Evan&lt;/a&gt;, a most fortuitous timing indeed.&lt;/p&gt;
+&lt;h3 id=&quot;synching-up&quot;&gt;Synching Up&lt;/h3&gt;
+&lt;p&gt;We immediately introduced ourselves to some of the great staff handling HashiConf and plotted to meet and synch up our talk. The deck of course being basically done (and available &lt;a href=&quot;http://blog.adron.me/talks/Organizing-Infrastructure-Config-and-Workflow/&quot;&gt;here&lt;/a&gt;) but we needed to insure some of the surprises that we have are ready. Yes, that’s right, there are surprises we’ll have at the talk itself. So it’s worth tuning in if you’re working with HashiCorp’s Terraform and Google Cloud Platform.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;References:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Those I referred above:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://serialseb.com/blog/2016/05/11/terraform-working-around-no-count-on-module/&quot;&gt;Working Around the Lack of Count in Terraform Modules&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://bobtfish.github.io/blog/2015/03/29/terraform-from-the-ground-up/&quot;&gt;Terraform from the Ground Up&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://opencredo.com/terraform-infrastructure-design-patterns/&quot;&gt;Terraform Infrastructure Design Patterns&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Other Good Entries on Terraform Modules &amp;amp; Related Material:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.davekonopka.com/2016/terraform-conditionals.html&quot;&gt;Terraform Conditionals, Sort of&lt;/a&gt; by &lt;a href=&quot;https://twitter.com/davekonopka&quot;&gt;Dave Konopka&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://aws.amazon.com/blogs/apn/terraform-beyond-the-basics-with-aws/&quot;&gt;Terraform: Beyond the Basics with AWS&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
     <item>
       <title>HashiConf Trip Day 1 - Coast Starlight and Terraform</title>
       <link>http://adron.github.io/articles/hashiconf-trip-day-1/</link>
@@ -30,7 +79,7 @@
 &lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;h2 id=&quot;-organizing-infrastructure-config-and-workflow-http-blog-adron-me-talks-organizing-infrastructure-config-and-workflow-&quot;&gt;&lt;a href=&quot;http://blog.adron.me/talks/Organizing-Infrastructure-Config-and-Workflow/&quot;&gt;Organizing Infrastructure Config and Workflow&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;I wrapped up a few more things for the talk, which are now 98% done. I just have a 1% review with my co-presenter &lt;a href=&quot;https://twitter.com/evandbrown/&quot;&gt;Evan&lt;/a&gt;, and then the other 1% a few tweaks to the repositories I’ll be showing and speaking from. You can already find the slide deck and material for the talk &lt;a href=&quot;http://adron.github.io/articles/hashiconf-trip-day-1/talks/Organizing-Infrastructure-Config-and-Workflow/&quot;&gt;here&lt;/a&gt;. There will however be more information and details once the talk is over.&lt;/p&gt;
-&lt;p&gt;After that I headed down with &lt;a href=&quot;http://adron.github.io/articles/hashiconf-trip-day-1/@lenadroid&quot;&gt;Lena&lt;/a&gt; and discussed a few things, including giving her the first rough presentation via iPad with the v1 of the Retina Display. This reminded, hot damn that version of the iPad is ridiculously heavy, don’t give presentations with it. Afterwards she gave me a critique of things I ought not to forget. With that done, I finished packing up, and we both headed toward the train station.&lt;/p&gt;
+&lt;p&gt;After that I headed down with &lt;a href=&quot;https://twitter.com/lenadroid&quot;&gt;Lena&lt;/a&gt; and discussed a few things, including giving her the first rough presentation via iPad with the v1 of the Retina Display. This reminded, hot damn that version of the iPad is ridiculously heavy, don’t give presentations with it. Afterwards she gave me a critique of things I ought not to forget. With that done, I finished packing up, and we both headed toward the train station.&lt;/p&gt;
 &lt;p&gt;I detrained at Union Station and went in to wait for my train. At this point I have a little aside for this blog entry. It’s just a philosophy I have about things which makes the way I approach life very different than the way much of humanity seems to approach life.&lt;/p&gt;
 &lt;div class=&quot;image float-right&quot;&gt;
     &lt;img src=&quot;/articles/hashiconf-trip-day-1/metropolitan-lounge.jpg&quot; alt=&quot;Metropolitan Lounge&quot;&gt;
