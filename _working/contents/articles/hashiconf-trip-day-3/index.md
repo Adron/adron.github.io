@@ -4,14 +4,14 @@ author: Adron Hall
 date: 2016-09-08
 template: article.jade
 ---
+![Hallway Hacking](01-hallway-hacking.jpg)
+
 Day 3 of my trip, and day 1 of the conference kicked off calmly. I made a cup of coffee with my [Aeropress](http://www.aerobie.com/product/aeropress/) & props to [Aneel](https://twitter.com/aneel) for planting the idea a bunch of months ago by showing me how he uses it.
+
+<span class="more"></span>
 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Good morning <a href="https://twitter.com/hashtag/HashiConf?src=hash">#HashiConf</a>. Cheers! <a href="https://t.co/TxfqtBVmCS">pic.twitter.com/TxfqtBVmCS</a></p>&mdash; Λdrøn (@Adron) <a href="https://twitter.com/Adron/status/773545481704124417">September 7, 2016</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-![Hallway Hacking](01-hallway-hacking.jpg)
-
-<span class="more"></span>
 
 <div class="image float-left">
     ![Representing for Devops Day PDX](02-repping-devopsday-pdx.jpg)
