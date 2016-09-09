@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="http://adron.github.io/css/style.min.css">
     <script src="http://adron.github.io/js/modernizr.js"></script>
   </head>
-  <body>
+  <body class="article-detail">
     <!--[if lt IE 8]>
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -61,8 +61,10 @@
             <div class="col-md-12">
               <!-- Page Info-->
               <div class="page-info page-info-simple">
-                <h1>Adron's Composite Code</h1>
-                <h2 class="description">Coder, Messenger, Recon, Infrastructure, Ops</h2>
+                <h1>HashiConf Trip Day 2 - Part II - Reception and Speakers Dinner</h1>
+                <p class="author">Written by <span class="author">Adron Hall</span>
+                </p>
+                <div class="nav"><a href="/">« Home</a></div>
               </div>
               <!-- End Page Info-->
             </div>
@@ -77,69 +79,38 @@
             <div class="col-md-9">
               <div class="main-content">
                 <!-- Blog Page-->
-                <div class="blog">
-                  <div class="row"></div>
-                </div>
-                <div class="col-md-12 col-sm-12">
-                  <!-- Blog List-->
-                  <div class="blog-grid">
-                    <div class="row">
-                      <div class="col-md-12 col-sm-12">
-                        <h3 class="blog-grid-title"><a href="/articles/docker-tips-n-tricks-bash-things-with-docker/">Docker Tips n' Tricks - Bash Things With Docker</a></h3>
-                        <p class="blog-grid-excerpt"><p>If you use Docker frequently, you’ve likely memorized a few repetitive&nbsp;commands…</p>
-<pre><code>docker-machine start XyZvirtualMachine
-</code></pre><p>Then you&nbsp;run…</p>
-<pre><code>docker-machine env XyZvirtualMachine
-</code></pre><p>…and then you&nbsp;type…</p>
-<pre><code>eval $(docker-machine env XyZvirtualMachine)
-</code></pre><p>
-                          <p class="more"><a href="/articles/docker-tips-n-tricks-bash-things-with-docker/">more</a></p>
-                        </p>
-                        <div class="blog-grid-meta"><span class="blog-grid-date">10. March 2016</span></div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End of Blog List-->
-                </div>
-                <div class="col-md-12 col-sm-12">
-                  <!-- Blog List-->
-                  <div class="blog-grid">
-                    <div class="row">
-                      <div class="col-md-12 col-sm-12">
-                        <h3 class="blog-grid-title"><a href="/articles/research-learning-about-zookeeper/">Researching &amp; Learning About Zookeeper - A Guide</a></h3>
-                        <p class="blog-grid-excerpt"><p>I’ve started working with Zookeeper. Since I’ve started doing that I’ve put together this blog post. It’s aim is to provide a structured approach to learning Zookeeper and researching the elements that make its features tick. Along the way I have a few call outs to people that have also provided excellent talks, material, or contributions to learning about Zookeeper along the way. With that, let’s get&nbsp;started.</p>
-<p>Zookeeper is a consensus system written based on ideas presented via consensus algorithms. The idea is key value stores that keep all of their data in memory for read heavy workloads. The qualities in this context present a system that is highly consistent, with intent for access from distributed systems to data that won’t be&nbsp;lost.</p>
-<p>
-                          <p class="more"><a href="/articles/research-learning-about-zookeeper/">more</a></p>
-                        </p>
-                        <div class="blog-grid-meta"><span class="blog-grid-date">02. February 2016</span></div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End of Blog List-->
-                </div>
-                <div class="col-md-12 col-sm-12">
-                  <!-- Blog List-->
-                  <div class="blog-grid">
-                    <div class="row">
-                      <div class="col-md-12 col-sm-12">
-                        <h3 class="blog-grid-title"><a href="/articles/all-that-tech-sitrep-elastic-meetup-quote-center-updates/">All That Tech SitRep - Elastic Meetup and Quote Center Updates</a></h3>
-                        <p class="blog-grid-excerpt"><div class="image float-right">
-    <img src="/articles/all-that-tech-sitrep-elastic-meetup-quote-center-updates/qc_377x285.png" alt="Quote Center">
+                <article class="article">
+                  <section class="content"><p><img src="/articles/hashiconf-trip-day-3/03-up-the-hill.jpg" alt="Up the Hill"></p>
+<p>Before diving in to day 3 of my trip, I need to do justice to the awesome reception, speakers dinner, and conversations of the night&nbsp;before.</p>
+<p>After arriving and synching up with Evan on our presentation, I wandered around the <a href="http://meritagecollection.com/meritageresort/">Meritage</a> for a little while and just explored what was around. The resort had several bars, a bowling alley, coffee shop, and a host of other amenities along with their endless supply of wine. The views around the vineyard, up on the view point atop the hill next to the resort was very&nbsp;nice.</p>
+<p><span class="more"></span></p>
+<p><img src="/articles/hashiconf-trip-day-3/04-looking-back.jpg" alt="Looking Back"></p>
+<p>I walked up toward where the reception would be to take the picture above. About two thirds of the way to the top I turned around and took this panoramic shot. Then I walked back down to the mid-point and got this panoramic shot of the Meritage&nbsp;itself.</p>
+<p><img src="/articles/hashiconf-trip-day-3/04-the-wide-angle-meritage.jpg" alt="The Wide Angle Meritage"></p>
+<div class="image float-right">
+    <img src="/articles/hashiconf-trip-day-3/02-mary.jpg" alt="Mary">
 </div>
 
-<p>I started working with the Quote Center (<span class="caps">QC</span>) back in November, and wrote about it in “<a href="http://compositecode.com/2015/10/31/after-816-days/">After 816 Days I’m Taking a Job!</a>“ Now that I’m a few months into the effort, it’s <strong><em>sitrep</em></strong> time. Sitrep, btw is military speak&nbsp;for</p>
-<p><em>S</em> ituational <em>R</em>&nbsp;eport.</p>
-<p>The three core priorities I have at Quote Center in my role are: Community Contributions, Site Reliability, and Talent&nbsp;Recon.</p>
+<p>While standing there taking the panoramic I turned around and saw a statue of Mary covered in rosaries. I guess that’s a thing, one I’ve never really understood not being Catholic and all. But I digress, I continued&nbsp;onward.</p>
+<p>Eventually I returned to my room, finished up a few tweaks to my latest Terraform Project and then headed back out for the reception. I walked back up the hill and strolled into the reception area. There were about 100+ people there already hangout out, enjoying a glass or three of vino, and musicians were playing on the raised section of the patio&nbsp;area.</p>
+<p>I didn’t really chat to much with anybody at first as I really needed to wind down after the trip. So for the first 20 minutes of the reception I just kind of zoned out. Taking a few pictures and listening to the music was perfect for this. Eventually I walked around a bit and end up chatting with a number of&nbsp;people.</p>
+<p><img src="/articles/hashiconf-trip-day-3/05-the-reception.jpg" alt="The Reception"></p>
+<p>Evan was out, and we found some of his fellow Googlers <a href="https://twitter.com/kelseyhightower/">Kelsey Hightower</a> and <a href="https://twitter.com/erjohnso/">Eric Johnson</a>, and eventually were joined by a number of others. We all talked shop, containers, some wine, the view, and all sundry of&nbsp;topics.</p>
+<iframe src="https://player.vimeo.com/video/182030548?title=0&byline=0&portrait=0" width="850" height="478" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
-                          <p class="more"><a href="/articles/all-that-tech-sitrep-elastic-meetup-quote-center-updates/">more</a></p>
-                        </p>
-                        <div class="blog-grid-meta"><span class="blog-grid-date">26. January 2016</span></div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End of Blog List-->
-                </div>
+<p>I stopped and took a short video of them playing and the overall view. It was super chill, easy to talk, and a nice breeze was blowing over the hill. A perfect match to the warm&nbsp;day.</p>
+<p>After the reception the speakers dinner kicked off inside the very hill we had just been atop. Entering the cave, as it was logically called, we were greeted by an epic HashiCorp Logo as we speakers walked&nbsp;in.</p>
+<p><img src="/articles/hashiconf-trip-day-3/06-entering-the-cave-hashicorp.jpg" alt="HashiCorp"></p>
+<div class="image float-right">
+    <img src="/articles/hashiconf-trip-day-3/07-the-cave.jpg" alt="The Cave">
+</div>
+
+<p>There we entered a grand room with a number of tables. Enjoyed a round or two of wine, then all took seats at round tables. Conversations were excellent, and we all continued enjoying the evening with a richly and perfectly prepared filet mignon and lobster, surf and turf&nbsp;indeed.</p>
+<p>After the dinner I walked out the entrance and conversation continued among <a href="https://twitter.com/joshkodroff">Josh Kodroff</a>, several other people, and myself. After a while I bid all goodnight and headed off to get some sleep before conference day&nbsp;one!</p>
+<p>A most excellent day, and here the conference hasn’t even started yet. I’ve got to say, this is definitely the way to get ready for any conference though! Good food, good drinks, good conversation, among an excellent&nbsp;atmosphere.</p>
+<p><img src="/articles/hashiconf-trip-day-3/08-the-cave-wide-pano.jpg" alt="The Cave"></p>
+</section>
+                </article>
                 <!-- End of Blog Page-->
               </div>
             </div>
@@ -229,8 +200,7 @@
             </div>
           </div>
         </div>
-        <div class="nav"><a href="/page/14/">« Newer</a>&nbsp;<a href="/page/16/">Previous »</a>
-        </div>
+        <div class="nav"><a href="/">« Home</a></div>
       </div>
     </div>
     <script src="http://adron.github.io/js/all.js"></script>
