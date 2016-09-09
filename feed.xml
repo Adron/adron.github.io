@@ -5,9 +5,52 @@
     <atom:link href="http://adron.github.io/feed.xml" rel="self" type="application/rss+xml"></atom:link>
     <link>http://adron.github.io</link>
     <description>Coder, Messenger, Recon, Infrastructure, Ops</description>
-    <pubDate>Tue, 06 Sep 2016 17:00:00 -0700</pubDate>
+    <pubDate>Wed, 07 Sep 2016 17:00:00 -0700</pubDate>
     <generator>Wintersmith - https://github.com/jnordberg/wintersmith</generator>
     <language>en</language>
+    <item>
+      <title>HashiConf Trip Day 3 - Conference Day 1 - Presentation Time</title>
+      <link>http://adron.github.io/articles/hashiconf-trip-day-3/</link>
+      <pubDate>Wed, 07 Sep 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/hashiconf-trip-day-3/</guid>
+      <author></author>
+      <description>&lt;p&gt;Day 3 of my trip, and day 1 of the conference kicked off calmly. I made a cup of coffee with my &lt;a href=&quot;http://www.aerobie.com/product/aeropress/&quot;&gt;Aeropress&lt;/a&gt; &amp;amp; props to &lt;a href=&quot;https://twitter.com/aneel&quot;&gt;Aneel&lt;/a&gt; for planting the idea a bunch of months ago by showing me how he uses it.&lt;/p&gt;
+&lt;p&gt;&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;en&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;Good morning &lt;a href=&quot;https://twitter.com/hashtag/HashiConf?src=hash&quot;&gt;#HashiConf&lt;/a&gt;. Cheers! &lt;a href=&quot;https://t.co/TxfqtBVmCS&quot;&gt;pic.twitter.com/TxfqtBVmCS&lt;/a&gt;&lt;/p&gt;&amp;mdash; Λdrøn (@Adron) &lt;a href=&quot;https://twitter.com/Adron/status/773545481704124417&quot;&gt;September 7, 2016&lt;/a&gt;&lt;/blockquote&gt;&lt;/p&gt;
+&lt;script async src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;&lt;img src=&quot;/articles/hashiconf-trip-day-3/01-hallway-hacking.jpg&quot; alt=&quot;Hallway Hacking&quot;&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-left&quot;&gt;
+    &lt;img src=&quot;/articles/hashiconf-trip-day-3/02-repping-devopsday-pdx.jpg&quot; alt=&quot;Representing for Devops Day PDX&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;While picking up some breakfast, I realized, how one could create a conference of just hallway activity. I always find myself hacking in a hallway at every conference I’ve ever been to.&lt;/p&gt;
+&lt;p&gt;For my respective tshirt of the day, I had to give some love and rep for Devops Day PDX. It was also an excellent conference that a number of organizers did a great job with.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;After breakfast all of the speakers, attendees, and everybody went into the main room for the keynote. We gathered, two big screens displayed beside the podium. Once everyone got seated &lt;a href=&quot;https://twitter.com/sethvargo&quot;&gt;Seth Vargo&lt;/a&gt; came out to kick off they keynote and introduce the speakers.&lt;/p&gt;
+&lt;div class=&quot;image float-right&quot;&gt;
+&lt;img src=&quot;/articles/hashiconf-trip-day-3/03-ready-for-the-keynote.jpg&quot; alt=&quot;Ready for the Keynote&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;After the keynote I chatted about some thoughts on Vault and related security technology.&lt;/p&gt;
+&lt;p&gt;I started to walk onward toward the speakers room again but ran into Bryan Cantrill (CTO @ Joyent, lover of Oracle) and James Nugent. They discussed a number of things, one being certain failings of Go. This was interesting to me as I’m just starting to hack around with the language and now have a list of things I will ensure I look into within the toolchain itself. I also wish I could have recorded this conversation for you dear reader, because let me tell ya, Bryan has more overheards (you know, OH on twitter) that need to be published on Twitter than I could even hope to record. We’re talking about 10-20 notable overheard quotes per second, he’s boss on phrasing.&lt;/p&gt;
+&lt;p&gt;I’ll have more on Vault, some of the topics that came up in conversation, and more in subsequent blog entries. But for now I was happy with the simple things in life, like tweeting via paper. :-o  #shocks #muchsmartass&lt;/p&gt;
+&lt;p&gt;&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;en&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;Paper &lt;a href=&quot;https://t.co/vFBkijD8Io&quot;&gt;pic.twitter.com/vFBkijD8Io&lt;/a&gt;&lt;/p&gt;&amp;mdash; Λdrøn (@Adron) &lt;a href=&quot;https://twitter.com/Adron/status/773594438195027968&quot;&gt;September 7, 2016&lt;/a&gt;&lt;/blockquote&gt;&lt;/p&gt;
+&lt;script async src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;As scheduled (thanks for wrangling us speakers Kristen, you did an excellent job!) Evan and I were setup and ready precisely on time. We kicked off our presentation at exactly 3:35pm. More details (slide deck, code, links, etc) on the talk can be found on the page I’ve created for the talk &lt;a href=&quot;http://adron.github.io/articles/hashiconf-trip-day-3/&quot;&gt;here&lt;/a&gt; and whenever the video of the talk is available I’ll post a link there and update with a link here.&lt;/p&gt;
+&lt;p&gt;The talk went exceptionally. Both Evan and I were happy with how things turned out. Namely, here are a few high points:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Code was committed live on Github for features related to create GCP Projects with Terraform. The respective resources will be available soon as they’re ready for a subsequent build.&lt;/li&gt;
+&lt;li&gt;Evan did not suffer any consequences from the heat of standing behind the curtain, as wizards sometimes do.&lt;/li&gt;
+&lt;li&gt;Our key points of conversation topics came across well, funny parts delivered with laughs, but more importantly there were more than a few people after the talk that also wanted to contribute and discuss further these ideas. The notion of bridging together one’s autopilot pattern based, 12-factor app style, intelligently monitored systems style architectures into application projects was something that is on more than a few people’s minds. I’ll have more on this as conversations continue, and hope you dear reader may want to jump into that conversation too.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;en&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;Literally hiding behind the curtains at &lt;a href=&quot;https://twitter.com/hashtag/hashiconf?src=hash&quot;&gt;#hashiconf&lt;/a&gt; as &lt;a href=&quot;https://twitter.com/Adron&quot;&gt;@adron&lt;/a&gt; does his part of the talk. &lt;a href=&quot;https://twitter.com/hashtag/spooky?src=hash&quot;&gt;#spooky&lt;/a&gt; &lt;a href=&quot;https://t.co/9w65aQ916T&quot;&gt;pic.twitter.com/9w65aQ916T&lt;/a&gt;&lt;/p&gt;&amp;mdash; Evan Brown (@evandbrown) &lt;a href=&quot;https://twitter.com/evandbrown/status/773664064333492224&quot;&gt;September 7, 2016&lt;/a&gt;&lt;/blockquote&gt;&lt;/p&gt;
+&lt;script async src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;After the presentation conversations went on for another 2 hours or so. But after that a number of Googlers and myself headed off for Oxford Market, Pliny the Elder, and adventure in Napa.&lt;/p&gt;
+&lt;p&gt;If you’d like to dive into the conversations around application organization, configuration, maintenance, and management of said projects, do sign up to &lt;a href=&quot;http://blog.adron.me/thrashingcodenews.html&quot;&gt;Thrashing Code&lt;/a&gt; and I’ll be pushing forward that conversation and herding all of us cats into a medium in which we can discuss these things further.&lt;/p&gt;
+</description>
+    </item>
     <item>
       <title>HashiConf Trip Day 2 - Part II - Reception and Speakers Dinner</title>
       <link>http://adron.github.io/articles/hashiconf-trip-day-2-part-II/</link>
@@ -1727,6 +1770,23 @@ In this talk, you will learn about the power of WebSockets and how they can (and
 &lt;iframe width=&quot;1280&quot; height=&quot;720&quot; src=&quot;https://www.youtube.com/embed/L2BVDJWHdy0?rel=0&amp;amp;showinfo=0&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;</description>
     </item>
     <item>
+      <title>The House Is Not On Fire - Building a home automation robot with Arduino, Raspberry Pi and Node.js by Artur Paikin</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</link>
+      <pubDate>Wed, 01 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-right&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/art-stida.jpg&quot; alt=&quot;Artur Paikin&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Artur describes himself as, “I’m a web developer and traveler. I write stories about my adventures in Russian and English on my site: &lt;a href=&quot;http://arturpaikin.com&quot;&gt;http://arturpaikin.com&lt;/a&gt; and run a small technology cooperative called &lt;a href=&quot;http://unebaguette.com&quot;&gt;Baguette&lt;/a&gt;, where I work on cool projects, currently building an ambitious next generation file uploader with &lt;a href=&quot;https://transloadit.com/&quot;&gt;Transloadit&lt;/a&gt;. I ride a &lt;a href=&quot;https://www.instagram.com/p/xC0qC2SSYb&quot;&gt;foldable bicycle&lt;/a&gt;, &lt;a href=&quot;http://unebaguette.com/web-course/&quot;&gt;teach&lt;/a&gt; web development and sometimes &lt;a href=&quot;https://www.instagram.com/p/4_6LO8ySVL/&quot;&gt;garden&lt;/a&gt; on the balcony.”&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Artur has built an open source home automation system called &lt;a href=&quot;https://github.com/arturi/kotihome&quot;&gt;Koti Home&lt;/a&gt; (Koti means home in Finnish language). It’s powered by an Arduino connected to Raspberry Pi, MQTT protocol for messaging, Node.js on the client and server, web sockets. You can interact with Koti robot via a React (like the cool kids do) control panel, Telegram Chat Bot and even your own voice.&lt;/p&gt;
+&lt;p&gt;Arthur will talk about how he’s turned this project into reality — the tech he used and the challenges he faced. From a blinking LED to a voice controlled home automation robot.&lt;/p&gt;
+</description>
+    </item>
+    <item>
       <title>Code First Docs How we Threw Out The Book &amp; Put Code First With Twilio Documentation by Jarod Reyes</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-jarod-reyes/</link>
       <pubDate>Wed, 01 Jun 2016 17:00:00 -0700</pubDate>
@@ -1748,23 +1808,6 @@ In this talk, you will learn about the power of WebSockets and how they can (and
 &lt;li&gt;Twitter: &lt;a href=&quot;https://twitter.com/jreyesdev&quot;&gt;@jreyesdev&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Github: &lt;a href=&quot;https://github.com/jarodreyes&quot;&gt;github.com/jarodreyes&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-</description>
-    </item>
-    <item>
-      <title>The House Is Not On Fire - Building a home automation robot with Arduino, Raspberry Pi and Node.js by Artur Paikin</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</link>
-      <pubDate>Wed, 01 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</guid>
-      <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-right&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/art-stida.jpg&quot; alt=&quot;Artur Paikin&quot;&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Artur describes himself as, “I’m a web developer and traveler. I write stories about my adventures in Russian and English on my site: &lt;a href=&quot;http://arturpaikin.com&quot;&gt;http://arturpaikin.com&lt;/a&gt; and run a small technology cooperative called &lt;a href=&quot;http://unebaguette.com&quot;&gt;Baguette&lt;/a&gt;, where I work on cool projects, currently building an ambitious next generation file uploader with &lt;a href=&quot;https://transloadit.com/&quot;&gt;Transloadit&lt;/a&gt;. I ride a &lt;a href=&quot;https://www.instagram.com/p/xC0qC2SSYb&quot;&gt;foldable bicycle&lt;/a&gt;, &lt;a href=&quot;http://unebaguette.com/web-course/&quot;&gt;teach&lt;/a&gt; web development and sometimes &lt;a href=&quot;https://www.instagram.com/p/4_6LO8ySVL/&quot;&gt;garden&lt;/a&gt; on the balcony.”&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Artur has built an open source home automation system called &lt;a href=&quot;https://github.com/arturi/kotihome&quot;&gt;Koti Home&lt;/a&gt; (Koti means home in Finnish language). It’s powered by an Arduino connected to Raspberry Pi, MQTT protocol for messaging, Node.js on the client and server, web sockets. You can interact with Koti robot via a React (like the cool kids do) control panel, Telegram Chat Bot and even your own voice.&lt;/p&gt;
-&lt;p&gt;Arthur will talk about how he’s turned this project into reality — the tech he used and the challenges he faced. From a blinking LED to a voice controlled home automation robot.&lt;/p&gt;
 </description>
     </item>
     <item>

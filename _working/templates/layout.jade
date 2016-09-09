@@ -9,22 +9,22 @@ html(lang='en')
       meta(charset='UTF-8')
       meta(http-equiv='X-UA-Compatible', content='IE=edge')
       meta(name='viewport', content='width=device-width, initial-scale=1')
-      link(rel='alternate', href= locals.url + '/feed.xml', type='application/rss+xml', title=locals.description)
-      link(rel='icon', type='image/png', href=locals.url + '/img/favicons/favicon-16x16.png', sizes='16x16')
-      link(rel='icon', type='image/png', href=locals.url + '/img/favicons/favicon-32x32.png', sizes='32x32')
-      link(rel='icon', type='image/png', href=locals.url + '/img/favicons/favicon-96x96.png', sizes='96x96')
-      link(rel='apple-touch-icon', sizes='57x57', href=locals.url + '/img/favicons/apple-touch-icon-57x57.png')
-      link(rel='apple-touch-icon', sizes='60x60', href=locals.url + '/img/favicons/apple-touch-icon-60x60.png')
-      link(rel='apple-touch-icon', sizes='72x72', href=locals.url + '/img/favicons/apple-touch-icon-72x72.png')
-      link(rel='apple-touch-icon', sizes='76x76', href=locals.url + '/img/favicons/apple-touch-icon-76x76.png')
-      link(rel='apple-touch-icon', sizes='114x114', href=locals.url + '/img/favicons/apple-touch-icon-114x114.png')
-      link(rel='apple-touch-icon', sizes='120x120', href=locals.url + '/img/favicons/apple-touch-icon-120x120.png')
-      link(rel='apple-touch-icon', sizes='144x144', href=locals.url + '/img/favicons/apple-touch-icon-144x144.png')
-      link(rel='apple-touch-icon', sizes='152x152', href=locals.url + '/img/favicons/apple-touch-icon-152x152.png')
-      link(rel='apple-touch-icon', sizes='180x180', href=locals.url + '/img/favicons/apple-touch-icon-180x180.png')
-      link(rel='stylesheet', href=locals.url + '/css/custom.css')
-      link(rel='stylesheet', href=locals.url + '/css/style.min.css')
-      script(src=locals.url + '/js/modernizr.js')
+      link(rel='alternate', href= '/feed.xml', type='application/rss+xml', title=locals.description)
+      link(rel='icon', type='image/png', href='/img/favicons/favicon-16x16.png', sizes='16x16')
+      link(rel='icon', type='image/png', href='/img/favicons/favicon-32x32.png', sizes='32x32')
+      link(rel='icon', type='image/png', href='/img/favicons/favicon-96x96.png', sizes='96x96')
+      link(rel='apple-touch-icon', sizes='57x57', href='/img/favicons/apple-touch-icon-57x57.png')
+      link(rel='apple-touch-icon', sizes='60x60', href='/img/favicons/apple-touch-icon-60x60.png')
+      link(rel='apple-touch-icon', sizes='72x72', href='/img/favicons/apple-touch-icon-72x72.png')
+      link(rel='apple-touch-icon', sizes='76x76', href='/img/favicons/apple-touch-icon-76x76.png')
+      link(rel='apple-touch-icon', sizes='114x114', href='/img/favicons/apple-touch-icon-114x114.png')
+      link(rel='apple-touch-icon', sizes='120x120', href='/img/favicons/apple-touch-icon-120x120.png')
+      link(rel='apple-touch-icon', sizes='144x144', href='/img/favicons/apple-touch-icon-144x144.png')
+      link(rel='apple-touch-icon', sizes='152x152', href='/img/favicons/apple-touch-icon-152x152.png')
+      link(rel='apple-touch-icon', sizes='180x180', href='/img/favicons/apple-touch-icon-180x180.png')
+      link(rel='stylesheet', href='/css/custom.css')
+      link(rel='stylesheet', href='/css/style.min.css')
+      script(src='/js/modernizr.js')
   body(class=bodyclass)
     | <!--[if lt IE 8]>
     | <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
@@ -34,8 +34,8 @@ html(lang='en')
         .row
           .col-md-3.col-sm-6.col-xs-6
             // Logo Image
-            a.logo-image.logo-animated(href=locals.url + '/index.html')
-              img(src=locals.url + '/img/logos/logo.png', alt='logo')
+            a.logo-image.logo-animated(href='/index.html')
+              img(src='/img/logos/logo.png', alt='logo')
             // End of Logo Image
           .col-md-9.col-sm-6.col-xs-6
             // Menu
@@ -181,8 +181,8 @@ html(lang='en')
                       // End of photos row two
                   // End Photos
         block prepend footer
-    script(src=locals.url + '/js/all.js')
-    script(src=locals.url + '/js/custom.js')
+    script(src='/js/all.js')
+    script(src='/js/custom.js')
     // Google Tag Manager
     noscript
       iframe(src='//www.googletagmanager.com/ns.html?id=GTM-KMMZX2', height='0', width='0', style='display:none;visibility:hidden')
