@@ -11,6 +11,8 @@ Day 3 of my trip, and day 1 of the conference kicked off calmly. I made a cup of
 
 ![Hallway Hacking](01-hallway-hacking.jpg)
 
+<span class="more"></span>
+
 <div class="image float-left">
     ![Representing for Devops Day PDX](02-repping-devopsday-pdx.jpg)
 </div>
@@ -18,8 +20,6 @@ Day 3 of my trip, and day 1 of the conference kicked off calmly. I made a cup of
 While picking up some breakfast, I realized, how one could create a conference of just hallway activity. I always find myself hacking in a hallway at every conference I've ever been to.
 
 For my respective tshirt of the day, I had to give some love and rep for Devops Day PDX. It was also an excellent conference that a number of organizers did a great job with.
-
-<span class="more"></span>
 
 After breakfast all of the speakers, attendees, and everybody went into the main room for the keynote. We gathered, two big screens displayed beside the podium. Once everyone got seated [Seth Vargo](https://twitter.com/sethvargo) came out to kick off they keynote and introduce the speakers.
 
