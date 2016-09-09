@@ -50,6 +50,8 @@ I hung out downtown for a short time after lunch and then boarded the [Vine](htt
 
 We immediately introduced ourselves to some of the great staff handling HashiConf and plotted to meet and synch up our talk. The deck of course being basically done (and available [here](http://blog.adron.me/talks/Organizing-Infrastructure-Config-and-Workflow/)) but we needed to insure some of the surprises that we have are ready. Yes, that's right, there are surprises we'll have at the talk itself. So it's worth tuning in if you're working with HashiCorp's Terraform and Google Cloud Platform.
 
+For now, I bid adieu, I have conference activities to participate in.
+
 **References:**
 
 Those I referred above:
