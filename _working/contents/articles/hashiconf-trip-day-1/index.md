@@ -24,7 +24,7 @@ I had more than a few goals for the trip down to Napa Valley for HashiConf. By p
 
 I wrapped up a few more things for the talk, which are now 98% done. I just have a 1% review with my co-presenter [Evan](https://twitter.com/evandbrown/), and then the other 1% a few tweaks to the repositories I'll be showing and speaking from. You can already find the slide deck and material for the talk [here](talks/Organizing-Infrastructure-Config-and-Workflow/). There will however be more information and details once the talk is over.
 
-After that I headed down with [Lena](@lenadroid) and discussed a few things, including giving her the first rough presentation via iPad with the v1 of the Retina Display. This reminded, hot damn that version of the iPad is ridiculously heavy, don't give presentations with it. Afterwards she gave me a critique of things I ought not to forget. With that done, I finished packing up, and we both headed toward the train station.
+After that I headed down with [Lena](https://twitter.com/lenadroid) and discussed a few things, including giving her the first rough presentation via iPad with the v1 of the Retina Display. This reminded, hot damn that version of the iPad is ridiculously heavy, don't give presentations with it. Afterwards she gave me a critique of things I ought not to forget. With that done, I finished packing up, and we both headed toward the train station.
 
 I detrained at Union Station and went in to wait for my train. At this point I have a little aside for this blog entry. It's just a philosophy I have about things which makes the way I approach life very different than the way much of humanity seems to approach life.
 
