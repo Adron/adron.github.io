@@ -5,9 +5,82 @@
     <atom:link href="http://adron.github.io/feed.xml" rel="self" type="application/rss+xml"></atom:link>
     <link>http://adron.github.io</link>
     <description>Coder, Messenger, Recon, Infrastructure, Ops</description>
-    <pubDate>Wed, 07 Sep 2016 17:00:00 -0700</pubDate>
+    <pubDate>Thu, 08 Sep 2016 17:00:00 -0700</pubDate>
     <generator>Wintersmith - https://github.com/jnordberg/wintersmith</generator>
     <language>en</language>
+    <item>
+      <title>Autopilot Pattern Application Organization</title>
+      <link>http://adron.github.io/articles/autopilot-pattern-application-organization/</link>
+      <pubDate>Thu, 08 Sep 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/autopilot-pattern-application-organization/</guid>
+      <author></author>
+      <description>&lt;p&gt;Context: What is the &lt;a href=&quot;http://autopilotpattern.io/#how-do-we-do-it&quot;&gt;Autopilot Pattern&lt;/a&gt;?&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The autopilot pattern automates the lifecycle of each component of the application. Whether we architect our application as a single container, in tiers, or as microservices, each container that makes up the application has its own lifecycle, and its own set of actions that are necessary during that lifecycle. Each of these application components are often applications in themselves, like a database server, in-memory cache, or the reverse proxy that fronts our application, in addition to the Node.js, Python, Ruby, or other code that makes the set of components a complete application.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;The only caveat I would add here is that &lt;em&gt;containers&lt;/em&gt; are largely irrelevant as long as your infrastructure virtualization is programmatic controlled. Of course, hyper-visor based virtualization can be more troublesome or simplify things when building out infrastructure programmatically or from a configuration based perspective. Whatever the case, use what works for your situation. The larger point of all this is to automate things for consistency, reliability, and repeatability.&lt;/p&gt;
+&lt;p&gt;The way I have started to break out applications into the autopilot pattern is based on what I’ve dubbed three eras:&lt;/p&gt;
+&lt;h2 id=&quot;iron-throne-era&quot;&gt;Iron Throne Era&lt;/h2&gt;
+&lt;p&gt;In this era has a deluge of nightmarish problems. You might as well as just give up the quest for the throne during this era. Hardware that isn’t programmatic plagues this era. Networking that needs manually configured or applications that don’t even understand basic TCP/IP Networking or related communications throw a massive barrier into full automation in this era.&lt;/p&gt;
+&lt;h2 id=&quot;renaissance-era&quot;&gt;Renaissance Era&lt;/h2&gt;
+&lt;p&gt;This era is when things started getting good. I like to think of this era as starting right around 2007, when automation started to take a much bigger step forward with all sorts of things we could actually automate. AWS launched in 07’ and from there, more networking automation, tooling, and application tooling exploded with the first semblances of real PaaS coming to fruition.&lt;/p&gt;
+&lt;h2 id=&quot;iron-man-era&quot;&gt;Iron Man Era&lt;/h2&gt;
+&lt;p&gt;This era is where we are now. With a plethora of methods to automate networks, applications, deployments, integration, and whatever else that comes up. We’ve gotten to a stage where having viable technology options aren’t the problem anymore. Our question now just lie around how and in which way do we organize, use, and get sorted our various fully automated application deployments.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Let’s take a look at the applications from each of the eras.&lt;/p&gt;
+&lt;h1 id=&quot;iron-throne-era-application&quot;&gt;Iron Throne Era Application&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/autopilot-pattern-application-organization/iron-throne-era.gif&quot; alt=&quot;Iron Throne Era Application&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Yup, so done with that era’s app. It’s best left in the past.&lt;/p&gt;
+&lt;h1 id=&quot;renaissance-era&quot;&gt;Renaissance Era&lt;/h1&gt;
+&lt;p&gt;So let’s talk about this era in respect to the autopilot pattern. There’s still likely to be one or two little pieces here or there that &lt;em&gt;might&lt;/em&gt; not be automated, but it should be an extreme rarity in this era.&lt;/p&gt;
+&lt;p&gt;In this era we might have an ASP.NET MVC Application with a front end using Node.js to build the UI components for deployment. To specifically distinct build operations need to occur. Often this part of the over solution would at least be in one project repository or working directory. Often, and this is where we run into one of the most common plights of today’s devops or developer team. The application is in one directory but the server instances are deployed either manually or in a way that requires regular interaction and manipulation.
+first-steps.gif
+Working through this application working toward deployment often looks like this for this application.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Application Build Starts&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;-&amp;gt; Continuous Integration (passes)&lt;/p&gt;
+&lt;p&gt;-&amp;gt; Pipeline Checks Pass&lt;/p&gt;
+&lt;p&gt;-&amp;gt; Existing Infrastructure Receives Executing Code&lt;/p&gt;
+&lt;p&gt;In this era, the infrastructure is autonomous - almost entirely - of the application that actually runs on the infrastructure. The process for deployment of the infrastructure generally follows an approach like this.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;OS Installed or Image Created/Started&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;-&amp;gt; Server installed (Apache, Nginx, IIS, Etc)&lt;/p&gt;
+&lt;p&gt;-&amp;gt; Networking setup appropriately for DNS/Routing/Etc.&lt;/p&gt;
+&lt;p&gt;-&amp;gt; Structure setup and built/deployment code is placed on server&lt;/p&gt;
+&lt;p&gt;Of course each of these flows are simplified. What I’m drawing an emphasis to is that they’re autonomous but must work in conjunction form the perspective of either repositories (folders or wherever they’re stored). Another thing to think about, is that the application cant’ actually deploy itself, nor can the infrastructure do anything without the application. This is obvious, but if you think about it for a moment, this is actually how we commonly store and organize our applications today. The code is in one repository and the infrastructure bits are shoved off in some other folder or repository somewhere else. This type of organization defines the very essence of the disconnected nature of this era’s efforts to automate application deployment and infrastructure.&lt;/p&gt;
+&lt;h1 id=&quot;iron-man-era&quot;&gt;Iron Man Era&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;and onward to the Jarvis Era&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Alright, this is the era we’re at now. This is the era I’m really looking forward to speaking with people about and coming up with today and tomorrow’s solutions!&lt;/p&gt;
+&lt;p&gt;Forget the disparate nature of the renaissance era. Think of the core principles behind the &lt;a href=&quot;http://autopilotpattern.io/&quot;&gt;Autopilot Pattern&lt;/a&gt;. This is the era where things start to come together. Things are still somewhat in distinct repositories but sometimes might not be (more on that later). But things in this era are brought together via a systemic delivery mechanism, commonly referred to as continuous delivery. The organization of these applications, infrastructure, and related projects are more unclear then some of the limited, vertically developed applications of the renaissance era apps. Why not add the infrastructure markup, code, networking, or other related elements to the code repository? Isn’t that the idea behind devops originally anyway? Whatever the intent, here’s my proposals for this below, using a Node.js Application.&lt;/p&gt;
+&lt;h1 id=&quot;iron-man-era-autopilot-pattern-application-structural-organization&quot;&gt;Iron Man Era Autopilot Pattern Application Structural Organization&lt;/h1&gt;
+&lt;p&gt;Wow, that was a heckuva section title eh!&lt;/p&gt;
+&lt;p&gt;First thing I always do is create a directory, change into that directory and run git init and create an ignore file. I generally go ahead and throw in the most important file of all to ignore at this point, the nefarious .DS_Store file.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;mkdir whatever-the-app-is
+git init
+touch .gitignore
+nano .gitignore
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;em&gt;…add stuff and save it…&lt;/em&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;git add -A
+git commit -m &amp;#39;First commit!&amp;#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/autopilot-pattern-application-organization/first-steps.gif&quot; alt=&quot;First Steps&quot;&gt;&lt;/p&gt;
+&lt;p&gt;After that, I create three directories: terraform, packer, and nodejs.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/autopilot-pattern-application-organization/second-steps.gif&quot; alt=&quot;Second Steps&quot;&gt;&lt;/p&gt;
+&lt;p&gt;From here I create the application project that I’ll develop from.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/autopilot-pattern-application-organization/third-steps.gif&quot; alt=&quot;Third Steps&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Then the final step is to setup the infrastructure parts of the application.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/autopilot-pattern-application-organization/fourth-steps.gif&quot; alt=&quot;Fourth Steps&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;a-few-of-the-key-advantages&quot;&gt;A Few of the Key Advantages&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;With all of the core elements of the application combined; infrastructure, application code, configuration, and others combined there isn’t the confusion about where X or Y repo is located in relation to the overal project. Everything that is needed for the application, for it’s deployment, for it’s development, and for the future of the application is included in the repository.&lt;/li&gt;
+&lt;li&gt;When working on this code repository, it is in essence practicing what is preached with regard to the ideals of &lt;em&gt;DevOps&lt;/em&gt;. Having the infrastructure and application code together truly does bring together development and operations.&lt;/li&gt;
+&lt;li&gt;Communication, pending of course source control practices and workflow are followed, is drawn together even more among the individuals who would be working on the code for the application or infrastructure or whatever element of the solution.&lt;/li&gt;
+&lt;li&gt;The continuous integration (CI) and delivery (CD) services now don’t need multiple authentication credentials or keys to go out and pull together the code, infrastructure, and related elements. Instead we’re down to one repository that then can be deployed via CD to whatever would host the infrastructure.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;the-conversation&quot;&gt;The Conversation&lt;/h2&gt;
+&lt;p&gt;So is setting up directories and tossing the respective elements into the project the best way to do this? It may be, it may not be, but it’s one possible solution. The idea however to bring these things together in a way where they seamlessly work together demands some type of way to connect the architectural elements. Putting them in one repository is one distinctive solution. Another possible solution might be to have a parent repository that collects other repositories together that would have the respective infrastructure, application, and related glue code.&lt;/p&gt;
+&lt;p&gt;Recently with the talk “&lt;a href=&quot;http://blog.adron.me/talks/Organizing-Infrastructure-Config-and-Workflow/&quot;&gt;Organizing Infrastructure Configuration and Workflow&lt;/a&gt;“ at HashiConf, Evan, myself and many others have started to discuss additional ways to put together the meat and potato basics of these applications. I believe I might even have to dub it something new, as it appears the collection of these things could bring together a truly better way to build and deploy applications consistently, reliably, with higher levels of quality.&lt;/p&gt;
+</description>
+    </item>
     <item>
       <title>HashiConf Trip Day 3 - Conference Day 1 - Presentation Time</title>
       <link>http://adron.github.io/articles/hashiconf-trip-day-3/</link>
@@ -1612,36 +1685,6 @@ export TF_VAR_password=&amp;quot;someSecretPassword&amp;quot;
 </description>
     </item>
     <item>
-      <title>Modern Javascript Frameworks - Introduction to Ember.JS and Ember-CLI by Suchita Doshi</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-suchita-doshi/</link>
-      <pubDate>Sat, 04 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-suchita-doshi/</guid>
-      <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-suchita-doshi/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-right&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-suchita-doshi/suchita-doshi.jpg&quot; alt=&quot;Suchita Doshi&quot;&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Suchita is UI Lead for the analytics module of Yahoo Admanager Plus team and Core member of Emberjs group @Yahoo, Speaker at Women Who code organization (Introduction To Emberjs/Ember CLI), Conducted Webinar for the TenXList members on EmberJS. She’s passionate about improving developers ergonomics and a hardcore “cricket” fan.&lt;/p&gt;
-&lt;p&gt;In other Suchita news, she’s opening bats-woman for the Bay Area Cricket Association team! 😀&lt;/p&gt;
-&lt;p&gt;Suchita describes her talk as “There will never be a “one size fits all” approach to web development. If you want your application to be minimally interactive, then server side rendered HTML would be the way to go, else, if it were a more interactive application, then client side framework would benefit you.
-Why not use just JQuery instead of adopting these Modern Javascript Frameworks? Think about it! If your application has interactivity on the lighter side, then JQuery would work well, but as soon as you introduce more states in your application, it would then become messier and heavier on the DOM. You would need to use the ‘data-‘ attributes to store the data in your DOM and also remember how to map them with the triggered events.&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Here is where client side frameworks come to the rescue. I have worked on several client side frameworks like Backbone.js, Ember.js. Few of the many features I love about Ember.js are the two-way data binding, Computed Properties, the run loop, convention over configuration nature, ease of handling routing and many more.
-In this talk I would be covering the following:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Introduction to Emberjs and why Ember&lt;/li&gt;
-&lt;li&gt;How Ember js makes a difference&lt;/li&gt;
-&lt;li&gt;Ember convention over configuration nature&lt;/li&gt;
-&lt;li&gt;Introduction to Ember routes, components and templates&lt;/li&gt;
-&lt;li&gt;Introduction to Ember CLI&lt;/li&gt;
-&lt;li&gt;Computed Properties&lt;/li&gt;
-&lt;li&gt;Live Demo on how it’s really intuitive in a couple of non-trivial scenarios.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;So basically my goal is to attract more developers to adapt modern javascript frameworks and make a difference in the way complex apps are built.”&lt;/p&gt;
-</description>
-    </item>
-    <item>
       <title>The SAM Pattern - a distributed system view of Front-End architectures by Jean-Jacques Dubray</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-jean-jacques-dubray/</link>
       <pubDate>Sat, 04 Jun 2016 17:00:00 -0700</pubDate>
@@ -1669,6 +1712,36 @@ and challenges the complexity of frameworks like Google’s Angular or Facebook�
 which suggest creating view-specific APIs, per platform, app, versions of an app…&lt;/p&gt;
 &lt;p&gt;We’ll start by reviewing some of the key challenges of modern UX and Front-End Architectures. We will then present the
 key concepts of SAM and walk the audience through some node.js code samples (including server-side TimeTravel).&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>Modern Javascript Frameworks - Introduction to Ember.JS and Ember-CLI by Suchita Doshi</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-suchita-doshi/</link>
+      <pubDate>Sat, 04 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-suchita-doshi/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-suchita-doshi/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-right&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-suchita-doshi/suchita-doshi.jpg&quot; alt=&quot;Suchita Doshi&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Suchita is UI Lead for the analytics module of Yahoo Admanager Plus team and Core member of Emberjs group @Yahoo, Speaker at Women Who code organization (Introduction To Emberjs/Ember CLI), Conducted Webinar for the TenXList members on EmberJS. She’s passionate about improving developers ergonomics and a hardcore “cricket” fan.&lt;/p&gt;
+&lt;p&gt;In other Suchita news, she’s opening bats-woman for the Bay Area Cricket Association team! 😀&lt;/p&gt;
+&lt;p&gt;Suchita describes her talk as “There will never be a “one size fits all” approach to web development. If you want your application to be minimally interactive, then server side rendered HTML would be the way to go, else, if it were a more interactive application, then client side framework would benefit you.
+Why not use just JQuery instead of adopting these Modern Javascript Frameworks? Think about it! If your application has interactivity on the lighter side, then JQuery would work well, but as soon as you introduce more states in your application, it would then become messier and heavier on the DOM. You would need to use the ‘data-‘ attributes to store the data in your DOM and also remember how to map them with the triggered events.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Here is where client side frameworks come to the rescue. I have worked on several client side frameworks like Backbone.js, Ember.js. Few of the many features I love about Ember.js are the two-way data binding, Computed Properties, the run loop, convention over configuration nature, ease of handling routing and many more.
+In this talk I would be covering the following:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Introduction to Emberjs and why Ember&lt;/li&gt;
+&lt;li&gt;How Ember js makes a difference&lt;/li&gt;
+&lt;li&gt;Ember convention over configuration nature&lt;/li&gt;
+&lt;li&gt;Introduction to Ember routes, components and templates&lt;/li&gt;
+&lt;li&gt;Introduction to Ember CLI&lt;/li&gt;
+&lt;li&gt;Computed Properties&lt;/li&gt;
+&lt;li&gt;Live Demo on how it’s really intuitive in a couple of non-trivial scenarios.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;So basically my goal is to attract more developers to adapt modern javascript frameworks and make a difference in the way complex apps are built.”&lt;/p&gt;
 </description>
     </item>
     <item>
@@ -1726,23 +1799,6 @@ In this talk, you will learn about the power of WebSockets and how they can (and
 </description>
     </item>
     <item>
-      <title>I Play the JavaScript by Matt McKegg</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</link>
-      <pubDate>Thu, 02 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</guid>
-      <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-left&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/mattmckegg.jpg&quot; alt=&quot;Matt McKegg&quot;&gt;
-&lt;/div&gt;
-
-&lt;p&gt;A JavaScript hacker and backyard musician and from Wellington, New Zealand. Lover of all things open and modular. I spend most of my time pressing buttons of various shapes, sizes and colours. Sometimes these buttons make sounds.&lt;/p&gt;
-&lt;p&gt;Matt has been making music with computers for about 10 years, but once he tried to move from bedroom composing to live performance, he got incredibly frustrated at how hard it was to play computer music live. He decided to start working on his own live electronic performance software written in JavaScript that would let me play the way he wanted to play. 3 years later, it’s finally starting to become a reality.&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Here is one of the Matt’s recent performances, for your viewing pleasure. &lt;/p&gt;
-&lt;iframe width=&quot;1280&quot; height=&quot;720&quot; src=&quot;https://www.youtube.com/embed/L2BVDJWHdy0?rel=0&amp;amp;showinfo=0&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;</description>
-    </item>
-    <item>
       <title>The Web Platform is the Universal Instrument by Ben Michel</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-ben-michel/</link>
       <pubDate>Thu, 02 Jun 2016 17:00:00 -0700</pubDate>
@@ -1770,6 +1826,40 @@ In this talk, you will learn about the power of WebSockets and how they can (and
 </description>
     </item>
     <item>
+      <title>I Play the JavaScript by Matt McKegg</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</link>
+      <pubDate>Thu, 02 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-left&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/mattmckegg.jpg&quot; alt=&quot;Matt McKegg&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;A JavaScript hacker and backyard musician and from Wellington, New Zealand. Lover of all things open and modular. I spend most of my time pressing buttons of various shapes, sizes and colours. Sometimes these buttons make sounds.&lt;/p&gt;
+&lt;p&gt;Matt has been making music with computers for about 10 years, but once he tried to move from bedroom composing to live performance, he got incredibly frustrated at how hard it was to play computer music live. He decided to start working on his own live electronic performance software written in JavaScript that would let me play the way he wanted to play. 3 years later, it’s finally starting to become a reality.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Here is one of the Matt’s recent performances, for your viewing pleasure. &lt;/p&gt;
+&lt;iframe width=&quot;1280&quot; height=&quot;720&quot; src=&quot;https://www.youtube.com/embed/L2BVDJWHdy0?rel=0&amp;amp;showinfo=0&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;</description>
+    </item>
+    <item>
+      <title>The House Is Not On Fire - Building a home automation robot with Arduino, Raspberry Pi and Node.js by Artur Paikin</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</link>
+      <pubDate>Wed, 01 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-right&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/art-stida.jpg&quot; alt=&quot;Artur Paikin&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Artur describes himself as, “I’m a web developer and traveler. I write stories about my adventures in Russian and English on my site: &lt;a href=&quot;http://arturpaikin.com&quot;&gt;http://arturpaikin.com&lt;/a&gt; and run a small technology cooperative called &lt;a href=&quot;http://unebaguette.com&quot;&gt;Baguette&lt;/a&gt;, where I work on cool projects, currently building an ambitious next generation file uploader with &lt;a href=&quot;https://transloadit.com/&quot;&gt;Transloadit&lt;/a&gt;. I ride a &lt;a href=&quot;https://www.instagram.com/p/xC0qC2SSYb&quot;&gt;foldable bicycle&lt;/a&gt;, &lt;a href=&quot;http://unebaguette.com/web-course/&quot;&gt;teach&lt;/a&gt; web development and sometimes &lt;a href=&quot;https://www.instagram.com/p/4_6LO8ySVL/&quot;&gt;garden&lt;/a&gt; on the balcony.”&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Artur has built an open source home automation system called &lt;a href=&quot;https://github.com/arturi/kotihome&quot;&gt;Koti Home&lt;/a&gt; (Koti means home in Finnish language). It’s powered by an Arduino connected to Raspberry Pi, MQTT protocol for messaging, Node.js on the client and server, web sockets. You can interact with Koti robot via a React (like the cool kids do) control panel, Telegram Chat Bot and even your own voice.&lt;/p&gt;
+&lt;p&gt;Arthur will talk about how he’s turned this project into reality — the tech he used and the challenges he faced. From a blinking LED to a voice controlled home automation robot.&lt;/p&gt;
+</description>
+    </item>
+    <item>
       <title>Code First Docs How we Threw Out The Book &amp; Put Code First With Twilio Documentation by Jarod Reyes</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-jarod-reyes/</link>
       <pubDate>Wed, 01 Jun 2016 17:00:00 -0700</pubDate>
@@ -1791,23 +1881,6 @@ In this talk, you will learn about the power of WebSockets and how they can (and
 &lt;li&gt;Twitter: &lt;a href=&quot;https://twitter.com/jreyesdev&quot;&gt;@jreyesdev&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Github: &lt;a href=&quot;https://github.com/jarodreyes&quot;&gt;github.com/jarodreyes&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-</description>
-    </item>
-    <item>
-      <title>The House Is Not On Fire - Building a home automation robot with Arduino, Raspberry Pi and Node.js by Artur Paikin</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</link>
-      <pubDate>Wed, 01 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</guid>
-      <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-right&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/art-stida.jpg&quot; alt=&quot;Artur Paikin&quot;&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Artur describes himself as, “I’m a web developer and traveler. I write stories about my adventures in Russian and English on my site: &lt;a href=&quot;http://arturpaikin.com&quot;&gt;http://arturpaikin.com&lt;/a&gt; and run a small technology cooperative called &lt;a href=&quot;http://unebaguette.com&quot;&gt;Baguette&lt;/a&gt;, where I work on cool projects, currently building an ambitious next generation file uploader with &lt;a href=&quot;https://transloadit.com/&quot;&gt;Transloadit&lt;/a&gt;. I ride a &lt;a href=&quot;https://www.instagram.com/p/xC0qC2SSYb&quot;&gt;foldable bicycle&lt;/a&gt;, &lt;a href=&quot;http://unebaguette.com/web-course/&quot;&gt;teach&lt;/a&gt; web development and sometimes &lt;a href=&quot;https://www.instagram.com/p/4_6LO8ySVL/&quot;&gt;garden&lt;/a&gt; on the balcony.”&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Artur has built an open source home automation system called &lt;a href=&quot;https://github.com/arturi/kotihome&quot;&gt;Koti Home&lt;/a&gt; (Koti means home in Finnish language). It’s powered by an Arduino connected to Raspberry Pi, MQTT protocol for messaging, Node.js on the client and server, web sockets. You can interact with Koti robot via a React (like the cool kids do) control panel, Telegram Chat Bot and even your own voice.&lt;/p&gt;
-&lt;p&gt;Arthur will talk about how he’s turned this project into reality — the tech he used and the challenges he faced. From a blinking LED to a voice controlled home automation robot.&lt;/p&gt;
 </description>
     </item>
     <item>
