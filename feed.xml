@@ -34,7 +34,6 @@
 &lt;h1 id=&quot;renaissance-era&quot;&gt;Renaissance Era&lt;/h1&gt;
 &lt;p&gt;So let’s talk about this era in respect to the autopilot pattern. There’s still likely to be one or two little pieces here or there that &lt;em&gt;might&lt;/em&gt; not be automated, but it should be an extreme rarity in this era.&lt;/p&gt;
 &lt;p&gt;In this era we might have an ASP.NET MVC Application with a front end using Node.js to build the UI components for deployment. To specifically distinct build operations need to occur. Often this part of the over solution would at least be in one project repository or working directory. Often, and this is where we run into one of the most common plights of today’s devops or developer team. The application is in one directory but the server instances are deployed either manually or in a way that requires regular interaction and manipulation.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/articles/autopilot-pattern-application-organization/first-steps.gif&quot; alt=&quot;First Steps&quot;&gt;&lt;/p&gt;
 &lt;p&gt;Working through this application working toward deployment often looks like this for this application.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Application Build Starts&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;-&amp;gt; Continuous Integration (passes)&lt;/p&gt;
