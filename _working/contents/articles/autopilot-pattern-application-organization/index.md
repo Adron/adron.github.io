@@ -39,7 +39,9 @@ Yup, so done with that era's app. It's best left in the past.
 So let's talk about this era in respect to the autopilot pattern. There's still likely to be one or two little pieces here or there that *might* not be automated, but it should be an extreme rarity in this era.
 
 In this era we might have an ASP.NET MVC Application with a front end using Node.js to build the UI components for deployment. To specifically distinct build operations need to occur. Often this part of the over solution would at least be in one project repository or working directory. Often, and this is where we run into one of the most common plights of today's devops or developer team. The application is in one directory but the server instances are deployed either manually or in a way that requires regular interaction and manipulation.
-first-steps.gif
+
+![First Steps](first-steps.gif)
+
 Working through this application working toward deployment often looks like this for this application.
 
 *Application Build Starts*
