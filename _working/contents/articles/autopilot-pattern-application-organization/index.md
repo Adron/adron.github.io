@@ -4,11 +4,11 @@ author: Adron Hall
 date: 2016-09-09
 template: article.jade
 ---
-Context: What is the [Autopilot Patter](http://autopilotpattern.io/#how-do-we-do-it)?
+Context: What is the [Autopilot Pattern](http://autopilotpattern.io/#how-do-we-do-it)?
 
 > The autopilot pattern automates the lifecycle of each component of the application. Whether we architect our application as a single container, in tiers, or as microservices, each container that makes up the application has its own lifecycle, and its own set of actions that are necessary during that lifecycle. Each of these application components are often applications in themselves, like a database server, in-memory cache, or the reverse proxy that fronts our application, in addition to the Node.js, Python, Ruby, or other code that makes the set of components a complete application.
 
-The only caveat I would add here is that *containers* are largely irrelevant as long as your infrastructure virtualization is programmatic. Of course, hyper-visor based virtualization can be more troublesome or simplify things when building out infrastructure programmatically or from a configuration based perspective. Whatever the case, use what works for your situation. The larger point of all this is to automate things for consistency, reliability, and repeatability.
+The only caveat I would add here is that *containers* are largely irrelevant as long as your infrastructure virtualization is programmatic controlled. Of course, hyper-visor based virtualization can be more troublesome or simplify things when building out infrastructure programmatically or from a configuration based perspective. Whatever the case, use what works for your situation. The larger point of all this is to automate things for consistency, reliability, and repeatability.
 
 The way I have started to break out applications into the autopilot pattern is based on what I've dubbed three eras:
 
@@ -32,7 +32,7 @@ Let's take a look at the applications from each of the eras.
 
 ![Iron Throne Era Application](iron-throne-era.gif)
 
-Yup, so done with that era's app.
+Yup, so done with that era's app. It's best left in the past.
 
 # Renaissance Era
 
@@ -75,15 +75,19 @@ Wow, that was a heckuva section title eh!
 
 First thing I always do is create a directory, change into that directory and run git init and create an ignore file. I generally go ahead and throw in the most important file of all to ignore at this point, the nefarious .DS_Store file.
 
-        mkdir whatever-the-app-is
-        git init
-        touch .gitignore
-        nano .gitignore
+```shell-script
+mkdir whatever-the-app-is
+git init
+touch .gitignore
+nano .gitignore
+```
 
 *...add stuff and save it...*
 
-        git add -A
-        git commit -m 'First commit!'
+```shell-script
+git add -A
+git commit -m 'First commit!'
+```
 
 ![First Steps](first-steps.gif)
 
@@ -105,3 +109,9 @@ Then the final step is to setup the infrastructure parts of the application.
 2. When working on this code repository, it is in essence practicing what is preached with regard to the ideals of *DevOps*. Having the infrastructure and application code together truly does bring together development and operations.
 3. Communication, pending of course source control practices and workflow are followed, is drawn together even more among the individuals who would be working on the code for the application or infrastructure or whatever element of the solution.
 4. The continuous integration (CI) and delivery (CD) services now don't need multiple authentication credentials or keys to go out and pull together the code, infrastructure, and related elements. Instead we're down to one repository that then can be deployed via CD to whatever would host the infrastructure.
+
+## The Conversation
+
+So is setting up directories and tossing the respective elements into the project the best way to do this? It may be, it may not be, but it's one possible solution. The idea however to bring these things together in a way where they seamlessly work together demands some type of way to connect the architectural elements. Putting them in one repository is one distinctive solution. Another possible solution might be to have a parent repository that collects other repositories together that would have the respective infrastructure, application, and related glue code.
+
+Recently with the talk "[Organizing Infrastructure Configuration and Workflow](http://blog.adron.me/talks/Organizing-Infrastructure-Config-and-Workflow/)" at HashiConf, Evan, myself and many others have started to discuss additional ways to put together the meat and potato basics of these applications. I believe I might even have to dub it something new, as it appears the collection of these things could bring together a truly better way to build and deploy applications consistently, reliably, with higher levels of quality.
