@@ -1,5 +1,5 @@
 ---
-title: hashiconf trip day 4
+title: HashiConf Trip Day 4 - Conference Day 2 - A Short Summary
 author: Adron Hall
 date: 2016-09-12
 template: article.jade
