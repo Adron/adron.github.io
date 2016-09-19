@@ -8,7 +8,7 @@ This page links to my history of speaking via presentations, workshops, or other
 
 **Upcoming Presentations**
 
-* [Continuous Delivery for Cloud Native Applications](/talks/cloud-native-pdx/) at [CNPDX](https://www.meetup.com/Cloud-Native-PDX/).
+* Presenting [Continuous Delivery for Cloud Native Applications](/talks/cloud-native-pdx/) at [CNPDX](https://www.meetup.com/Cloud-Native-PDX/).
 * Presenting [Managing (or not) the Data in Immutable Infrastructure](https://datalayer.com/#schedule) at [Data Layer](https://datalayer.com/).
 * Presenting [Building Immutably to Continuous Delivery with Minimal Inputs](/talks/Building-Immutably-Continuous-Delivery-Minimal-Inputs-London) at [O'Reilly Architecture Conference](http://conferences.oreilly.com/software-architecture/engineering-business-eu).
 * Presenting [Moving Enterprise Practices and Development to Open Source](/talks/Moving-Enterprise-Practices-and-Development-to-Open-Source) at [O'Reilly Architecture Conference](http://conferences.oreilly.com/software-architecture/engineering-business-eu).
@@ -17,7 +17,7 @@ This page links to my history of speaking via presentations, workshops, or other
 
 **Past Presentations**
 
-* Presenting [Organizing Infrastructure Config & Workflow](/talks/Organizing-Infrastructure-Config-and-Workflow/) at [HashiConf 2016](https://www.hashiconf.com/)
+* [Organizing Infrastructure Config & Workflow](/talks/Organizing-Infrastructure-Config-and-Workflow/) at [HashiConf 2016](https://www.hashiconf.com/)
 * [Elastic w/ Terraform, Packer, & That Immutability Magic w/ @Adron](/talks/elastic-with-terraform-packer-and-immutability-magic/) at [Elastic User Group PDX](http://www.meetup.com/The-Portland-ElasticSearch-Meetup-Group/) - [Meeting Details](http://www.meetup.com/The-Portland-Elasticsearch-Meetup-Group/events/228010912/).
 * [Hacking F# on Systems, Not Windows](/talks/Hacking-Fsharp-Systems-Not-Windows) @ [Dev Day](http://devday.pl/)
 * TypeScript PDXTypeScript Editor Shootout (Needs link re-added, coming back soon) in [Portland](https://www.google.com/maps/place/Portland,+OR/@45.5424364,-122.654422,11z/data=!3m1!4b1!4m2!3m1!1s0x54950b0b7da97427:0x1c36b9e6f6d18591) @ [CSG Pro](http://www.csgpro.com/)
