@@ -1659,6 +1659,29 @@ export TF_VAR_password=&amp;quot;someSecretPassword&amp;quot;
 </description>
     </item>
     <item>
+      <title>Demystifying TypeScript Decorators by James Churchill</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-james-churchill/</link>
+      <pubDate>Sun, 05 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-james-churchill/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-james-churchill/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-right&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-james-churchill/james-churchill-nyc.jpg&quot; alt=&quot;James Churchill&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Portlander James has worked extensively with a variety of technologies, including ASP.NET MVC, SQL Server, JavaScript, TypeScript, Knockout.js, and AngularJS. James, a self-confessed geek, enjoys talking about programming and learning new technologies. He recently joined the Treehouse team as a teacher and is excited to have the opportunity to help beginners become developers.&lt;/p&gt;
+&lt;p&gt;James also enjoys participating in the greater Cascadian Developer Community, presenting talks in Portland, Seattle, Salt Lake City, Boise, Eugene, Salem, and Hood River. Last April, James started and co-organized the Portland TypeScript Meetup (&lt;a href=&quot;http://typescriptpdx.com/&quot;&gt;http://typescriptpdx.com/&lt;/a&gt; which is an awesome meetup, come check it out sometime!).&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;When he is not working, he can be found skiing with his wife and kids, remodeling the house, playing music with his band, or hanging out in the yard with his chickens.&lt;/p&gt;
+&lt;p&gt;In “Demystifying TypeScript Decorators” will show us TypeScript decorators, based on the ES2016 decorator proposal and introduced as part of TypeScript 1.5, provide developers with a way to modify a JavaScript class, property, method, or method parameter using a convenient declarative syntax. We’ll start this session by creating our own decorator, to see firsthand how they work. Then, we’ll take a look at how decorators can be used in a variety of settings.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Blog: &lt;a href=&quot;http://smashdev.com&quot;&gt;http://smashdev.com&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Github: &lt;a href=&quot;http://github.com/smashdevcode&quot;&gt;http://github.com/smashdevcode&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Twitter: &lt;a href=&quot;http://twitter.com/SmashDev&quot;&gt;http://twitter.com/SmashDev&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    <item>
       <title>How to Electron by Blaine Schmeisser</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-blaine-schmeisser/</link>
       <pubDate>Sun, 05 Jun 2016 17:00:00 -0700</pubDate>
@@ -1680,26 +1703,33 @@ export TF_VAR_password=&amp;quot;someSecretPassword&amp;quot;
 </description>
     </item>
     <item>
-      <title>Demystifying TypeScript Decorators by James Churchill</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-james-churchill/</link>
-      <pubDate>Sun, 05 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-james-churchill/</guid>
+      <title>Modern Javascript Frameworks - Introduction to Ember.JS and Ember-CLI by Suchita Doshi</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-suchita-doshi/</link>
+      <pubDate>Sat, 04 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-suchita-doshi/</guid>
       <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-james-churchill/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-suchita-doshi/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;div class=&quot;image float-right&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-james-churchill/james-churchill-nyc.jpg&quot; alt=&quot;James Churchill&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-suchita-doshi/suchita-doshi.jpg&quot; alt=&quot;Suchita Doshi&quot;&gt;
 &lt;/div&gt;
 
-&lt;p&gt;Portlander James has worked extensively with a variety of technologies, including ASP.NET MVC, SQL Server, JavaScript, TypeScript, Knockout.js, and AngularJS. James, a self-confessed geek, enjoys talking about programming and learning new technologies. He recently joined the Treehouse team as a teacher and is excited to have the opportunity to help beginners become developers.&lt;/p&gt;
-&lt;p&gt;James also enjoys participating in the greater Cascadian Developer Community, presenting talks in Portland, Seattle, Salt Lake City, Boise, Eugene, Salem, and Hood River. Last April, James started and co-organized the Portland TypeScript Meetup (&lt;a href=&quot;http://typescriptpdx.com/&quot;&gt;http://typescriptpdx.com/&lt;/a&gt; which is an awesome meetup, come check it out sometime!).&lt;/p&gt;
+&lt;p&gt;Suchita is UI Lead for the analytics module of Yahoo Admanager Plus team and Core member of Emberjs group @Yahoo, Speaker at Women Who code organization (Introduction To Emberjs/Ember CLI), Conducted Webinar for the TenXList members on EmberJS. She’s passionate about improving developers ergonomics and a hardcore “cricket” fan.&lt;/p&gt;
+&lt;p&gt;In other Suchita news, she’s opening bats-woman for the Bay Area Cricket Association team! 😀&lt;/p&gt;
+&lt;p&gt;Suchita describes her talk as “There will never be a “one size fits all” approach to web development. If you want your application to be minimally interactive, then server side rendered HTML would be the way to go, else, if it were a more interactive application, then client side framework would benefit you.
+Why not use just JQuery instead of adopting these Modern Javascript Frameworks? Think about it! If your application has interactivity on the lighter side, then JQuery would work well, but as soon as you introduce more states in your application, it would then become messier and heavier on the DOM. You would need to use the ‘data-‘ attributes to store the data in your DOM and also remember how to map them with the triggered events.&lt;/p&gt;
 &lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;When he is not working, he can be found skiing with his wife and kids, remodeling the house, playing music with his band, or hanging out in the yard with his chickens.&lt;/p&gt;
-&lt;p&gt;In “Demystifying TypeScript Decorators” will show us TypeScript decorators, based on the ES2016 decorator proposal and introduced as part of TypeScript 1.5, provide developers with a way to modify a JavaScript class, property, method, or method parameter using a convenient declarative syntax. We’ll start this session by creating our own decorator, to see firsthand how they work. Then, we’ll take a look at how decorators can be used in a variety of settings.&lt;/p&gt;
+&lt;p&gt;Here is where client side frameworks come to the rescue. I have worked on several client side frameworks like Backbone.js, Ember.js. Few of the many features I love about Ember.js are the two-way data binding, Computed Properties, the run loop, convention over configuration nature, ease of handling routing and many more.
+In this talk I would be covering the following:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Blog: &lt;a href=&quot;http://smashdev.com&quot;&gt;http://smashdev.com&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Github: &lt;a href=&quot;http://github.com/smashdevcode&quot;&gt;http://github.com/smashdevcode&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Twitter: &lt;a href=&quot;http://twitter.com/SmashDev&quot;&gt;http://twitter.com/SmashDev&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Introduction to Emberjs and why Ember&lt;/li&gt;
+&lt;li&gt;How Ember js makes a difference&lt;/li&gt;
+&lt;li&gt;Ember convention over configuration nature&lt;/li&gt;
+&lt;li&gt;Introduction to Ember routes, components and templates&lt;/li&gt;
+&lt;li&gt;Introduction to Ember CLI&lt;/li&gt;
+&lt;li&gt;Computed Properties&lt;/li&gt;
+&lt;li&gt;Live Demo on how it’s really intuitive in a couple of non-trivial scenarios.&lt;/li&gt;
 &lt;/ul&gt;
+&lt;p&gt;So basically my goal is to attract more developers to adapt modern javascript frameworks and make a difference in the way complex apps are built.”&lt;/p&gt;
 </description>
     </item>
     <item>
@@ -1733,33 +1763,20 @@ key concepts of SAM and walk the audience through some node.js code samples (inc
 </description>
     </item>
     <item>
-      <title>Modern Javascript Frameworks - Introduction to Ember.JS and Ember-CLI by Suchita Doshi</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-suchita-doshi/</link>
-      <pubDate>Sat, 04 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-suchita-doshi/</guid>
+      <title>WebSockets Bring Light at the End of the Tunnel by Joel Lord</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</link>
+      <pubDate>Fri, 03 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</guid>
       <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-suchita-doshi/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-right&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-suchita-doshi/suchita-doshi.jpg&quot; alt=&quot;Suchita Doshi&quot;&gt;
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-left&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/joel-lord.jpg&quot; alt=&quot;Joel Lord&quot;&gt;
 &lt;/div&gt;
 
-&lt;p&gt;Suchita is UI Lead for the analytics module of Yahoo Admanager Plus team and Core member of Emberjs group @Yahoo, Speaker at Women Who code organization (Introduction To Emberjs/Ember CLI), Conducted Webinar for the TenXList members on EmberJS. She’s passionate about improving developers ergonomics and a hardcore “cricket” fan.&lt;/p&gt;
-&lt;p&gt;In other Suchita news, she’s opening bats-woman for the Bay Area Cricket Association team! 😀&lt;/p&gt;
-&lt;p&gt;Suchita describes her talk as “There will never be a “one size fits all” approach to web development. If you want your application to be minimally interactive, then server side rendered HTML would be the way to go, else, if it were a more interactive application, then client side framework would benefit you.
-Why not use just JQuery instead of adopting these Modern Javascript Frameworks? Think about it! If your application has interactivity on the lighter side, then JQuery would work well, but as soon as you introduce more states in your application, it would then become messier and heavier on the DOM. You would need to use the ‘data-‘ attributes to store the data in your DOM and also remember how to map them with the triggered events.&lt;/p&gt;
+&lt;p&gt;As a Development Manager, Joel’s motivation and proven technical prowess makes him a key member of Spiria’s software development team. With a degree in computational astrophysics, his interests eventually made their way to software and Web design. Today, his knowledge of JavaScript lets him to support a variety of projects on both the front end and back end. As we move into the age of the Internet of Things, Joel is ready with his passion for programming node bots and experimenting with gadgets.&lt;/p&gt;
 &lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Here is where client side frameworks come to the rescue. I have worked on several client side frameworks like Backbone.js, Ember.js. Few of the many features I love about Ember.js are the two-way data binding, Computed Properties, the run loop, convention over configuration nature, ease of handling routing and many more.
-In this talk I would be covering the following:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Introduction to Emberjs and why Ember&lt;/li&gt;
-&lt;li&gt;How Ember js makes a difference&lt;/li&gt;
-&lt;li&gt;Ember convention over configuration nature&lt;/li&gt;
-&lt;li&gt;Introduction to Ember routes, components and templates&lt;/li&gt;
-&lt;li&gt;Introduction to Ember CLI&lt;/li&gt;
-&lt;li&gt;Computed Properties&lt;/li&gt;
-&lt;li&gt;Live Demo on how it’s really intuitive in a couple of non-trivial scenarios.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;So basically my goal is to attract more developers to adapt modern javascript frameworks and make a difference in the way complex apps are built.”&lt;/p&gt;
+&lt;p&gt;Joel is going to speak on Web Sockets and tunnels of light… or to describe it more specifically more and more, people seem to be obsessed with real-time data.  But what does real-time mean in the world of REST servers and one-way communication?  Most modern web applications are now either displaying a snapshot of data at a given time or use a polling mechanism to update series of data at a given interval.
+In this talk, you will learn about the power of WebSockets and how they can (and should!) be used in your modern web applications. In these 30 minutes, I will go through the process of building a Node server that can push data to multiple clients in real-time.  You will see how this can be easy using the socket.io library.&lt;/p&gt;
 </description>
     </item>
     <item>
@@ -1800,40 +1817,6 @@ it can be.&lt;/p&gt;
 </description>
     </item>
     <item>
-      <title>WebSockets Bring Light at the End of the Tunnel by Joel Lord</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</link>
-      <pubDate>Fri, 03 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</guid>
-      <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-left&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/joel-lord.jpg&quot; alt=&quot;Joel Lord&quot;&gt;
-&lt;/div&gt;
-
-&lt;p&gt;As a Development Manager, Joel’s motivation and proven technical prowess makes him a key member of Spiria’s software development team. With a degree in computational astrophysics, his interests eventually made their way to software and Web design. Today, his knowledge of JavaScript lets him to support a variety of projects on both the front end and back end. As we move into the age of the Internet of Things, Joel is ready with his passion for programming node bots and experimenting with gadgets.&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Joel is going to speak on Web Sockets and tunnels of light… or to describe it more specifically more and more, people seem to be obsessed with real-time data.  But what does real-time mean in the world of REST servers and one-way communication?  Most modern web applications are now either displaying a snapshot of data at a given time or use a polling mechanism to update series of data at a given interval.
-In this talk, you will learn about the power of WebSockets and how they can (and should!) be used in your modern web applications. In these 30 minutes, I will go through the process of building a Node server that can push data to multiple clients in real-time.  You will see how this can be easy using the socket.io library.&lt;/p&gt;
-</description>
-    </item>
-    <item>
-      <title>I Play the JavaScript by Matt McKegg</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</link>
-      <pubDate>Thu, 02 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</guid>
-      <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-left&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/mattmckegg.jpg&quot; alt=&quot;Matt McKegg&quot;&gt;
-&lt;/div&gt;
-
-&lt;p&gt;A JavaScript hacker and backyard musician and from Wellington, New Zealand. Lover of all things open and modular. I spend most of my time pressing buttons of various shapes, sizes and colours. Sometimes these buttons make sounds.&lt;/p&gt;
-&lt;p&gt;Matt has been making music with computers for about 10 years, but once he tried to move from bedroom composing to live performance, he got incredibly frustrated at how hard it was to play computer music live. He decided to start working on his own live electronic performance software written in JavaScript that would let me play the way he wanted to play. 3 years later, it’s finally starting to become a reality.&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Here is one of the Matt’s recent performances, for your viewing pleasure. &lt;/p&gt;
-&lt;iframe width=&quot;1280&quot; height=&quot;720&quot; src=&quot;https://www.youtube.com/embed/L2BVDJWHdy0?rel=0&amp;amp;showinfo=0&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;</description>
-    </item>
-    <item>
       <title>The Web Platform is the Universal Instrument by Ben Michel</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-ben-michel/</link>
       <pubDate>Thu, 02 Jun 2016 17:00:00 -0700</pubDate>
@@ -1859,6 +1842,23 @@ In this talk, you will learn about the power of WebSockets and how they can (and
 &lt;li&gt;Audience interaction with the exposed parameters of a live band’s instrumentation–via broadcast methods and microcontroller installations.”&lt;/li&gt;
 &lt;/ul&gt;
 </description>
+    </item>
+    <item>
+      <title>I Play the JavaScript by Matt McKegg</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</link>
+      <pubDate>Thu, 02 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-left&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/mattmckegg.jpg&quot; alt=&quot;Matt McKegg&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;A JavaScript hacker and backyard musician and from Wellington, New Zealand. Lover of all things open and modular. I spend most of my time pressing buttons of various shapes, sizes and colours. Sometimes these buttons make sounds.&lt;/p&gt;
+&lt;p&gt;Matt has been making music with computers for about 10 years, but once he tried to move from bedroom composing to live performance, he got incredibly frustrated at how hard it was to play computer music live. He decided to start working on his own live electronic performance software written in JavaScript that would let me play the way he wanted to play. 3 years later, it’s finally starting to become a reality.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Here is one of the Matt’s recent performances, for your viewing pleasure. &lt;/p&gt;
+&lt;iframe width=&quot;1280&quot; height=&quot;720&quot; src=&quot;https://www.youtube.com/embed/L2BVDJWHdy0?rel=0&amp;amp;showinfo=0&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;</description>
     </item>
     <item>
       <title>The House Is Not On Fire - Building a home automation robot with Arduino, Raspberry Pi and Node.js by Artur Paikin</title>
