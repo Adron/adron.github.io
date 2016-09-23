@@ -29,16 +29,16 @@ This is a list of links to public repos, open source, or other "code related" ef
 
 * <a href="https://github.com/Adron" target="_blank">https://github.com/Adron</a>
 
-##  Social 
+##  Social
 
 Want to talk, chit chat, argue, discuss, debate, or otherwise communicate? These are the mediums.
 
 * <a href="https://twitter.com/adron" target="_blank">https://twitter.com/adron</a>
 * <a href="http://blog.adron.me">http://blog.adron.me</a>
 
-##  Resume 
+##  Resume
 
-* <a href="http://www.linkedin.com/in/adron" target="_blank">My LinkedIn</a> (Which has all my resume information and a lot more). Want a <a href="http://www.linkedin.com/profile/pdf?id=1178188&amp;locale=en_US&amp;authType=name&amp;authToken=PKIm&amp;pdfFileName=AdronHall&amp;disablePdfCompression=true&amp;trk=pdf_pro_full" target="_blank">PDF</a> of my LinkedIn, just <a href="http://www.linkedin.com/profile/pdf?id=1178188&amp;locale=en_US&amp;authType=name&amp;authToken=PKIm&amp;pdfFileName=AdronHall&amp;disablePdfCompression=true&amp;trk=pdf_pro_full" target="_blank">click here</a>.
+* <a href="http://www.linkedin.com/in/adron" target="_blank">My LinkedIn</a> (Which has all my resume information and a lot more). Click here for a [PDF of my LinkedIn](http://www.linkedin.com/profile/pdf?id=1178188&amp;locale=en_US&amp;authType=name&amp;authToken=PKIm&amp;pdfFileName=AdronHall&amp;disablePdfCompression=true&amp;trk=pdf_pro_full).
 
 Currently I'm pretty busy delivering some sweet immutable infrastructure, actively involved in the community here in Portland, Oregon, writing a ton of polyglot code, and generally staying active. So to save time for you and I when contacting me for a chat about software, technology, jobs, or a related topic, please tweet at me (@adron) with a direct message (you may have to @ me first) the following information:
 
