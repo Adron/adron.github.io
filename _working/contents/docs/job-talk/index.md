@@ -1,6 +1,6 @@
 ---
-title: Job Talk
-author: 
+title: Let's Talk Jobs
+author: Adron Hall
 date: 2016-09-23:10:13:15
 template: doc.jade
 ---
