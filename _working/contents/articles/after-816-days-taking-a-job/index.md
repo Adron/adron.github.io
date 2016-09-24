@@ -1,5 +1,5 @@
 ---
-title: after 816 days taking a job
+title: After 816 Days I'm Taking a Job!
 author: Adron Hall
 date: 2015-10-31
 template: article.jade
