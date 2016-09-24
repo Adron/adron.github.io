@@ -4,6 +4,8 @@ author: Adron Hall
 date: 2015-10-31
 template: article.jade
 ---
+![MAX Train](header.jpg)
+
 The new mission, or as some may call it, a job! The context for those that might not be familiar with my adventures is that I've been working independently as a consultant, contractor, community builder, beer drinker, hacker, teacher, trainer, mentor, curriculum builder, and training content creator. The last time I held something that resembled a job was 560 business days ago, or more specifically 816 days ago. Honestly, I'm not even sure that <a href="http://compositecode.wordpress.com/2012/11/21/sitrep-thor-iron-foundry-basho/" target="_blank">it could be considered a job, it was a strange gig to say the least</a>. Recently after this long break I'm taking up a new job position with some interesting objectives and priorities.
 
 <span class="more"></span>
