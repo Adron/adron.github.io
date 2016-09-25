@@ -4,6 +4,7 @@
 talktitle=$1
 confname=$2
 talkdate=$3
+confuri=$4
 
 # Format 2013-04-30
 published=`date +%Y-%m-%d:%H:%M:%S`
@@ -37,5 +38,5 @@ date: $published
 template: talk.jade
 ---
 ## $cleanedTitle
-### *@ $confname on $talkdate
+*@ [$confname]($confuri) on $talkdate*
 EOT

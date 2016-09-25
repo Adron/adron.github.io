@@ -8,7 +8,7 @@ This page links to my history of speaking via presentations, workshops, or other
 
 **Upcoming Presentations**
 
-* Presenting [Managing (or not) the Data in Immutable Infrastructure](https://datalayer.com/#schedule) at [Data Layer](https://datalayer.com/).
+* Presenting [Managing (or not) the Data in Immutable Infrastructure](/talks/managing-or-not-the-data-in-immutable-infrastructure) at [Data Layer](https://datalayer.com/).
 * Presenting [Building Immutably to Continuous Delivery with Minimal Inputs](/talks/Building-Immutably-Continuous-Delivery-Minimal-Inputs-London) at [O'Reilly Architecture Conference](http://conferences.oreilly.com/software-architecture/engineering-business-eu).
 * Presenting [Moving Enterprise Practices and Development to Open Source](/talks/Moving-Enterprise-Practices-and-Development-to-Open-Source) at [O'Reilly Architecture Conference](http://conferences.oreilly.com/software-architecture/engineering-business-eu).
 * Presenting [Using Kubernetes, Containers, and Getting Development Done](http://events.linuxfoundation.org/events/kubecon/program/schedule) at [Cloud Native + Kubecon](http://events.linuxfoundation.org/events/kubecon/program/about).
