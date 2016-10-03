@@ -16,7 +16,7 @@ On to the rest of the news. If you've seen me speak lately I've mentioned the op
 
 Since this is one of those rare times in my career where I'm not 100% sold on what I'll do next, I'm open to fielding prospects and seeing what is out there. This is a different approach for me, as I usually determine a company, particular work that needs done and go after that gap. But I'd like to get a feel for what companies feel they need at this particular time. Since I have a wide range of skills, I can step into a number of positions and immediately start to contribute to projects within a company.
 
-Here are some theoretical positions I'd find attractive.
+Here are some positions I'd find attractive and could provide value for (or build) a team immediately!
 
 **Building or Expanding a Team**
 
@@ -34,9 +34,13 @@ Here are some theoretical positions I'd find attractive.
 
 > If you have an open source project I'd love to take lead on it and also provide advocacy for that project. This role is not to be confused with evangelist, as that's a fine role for other people, but I want to be in the code and advocating from a position with the team. I've done this before with projects like the Iron Foundry for Cloud Foundry and others, and loved it. [Let's talk jobs](/docs/job-talk/).
 
+**Mergers & Acquisition Technical Evaluations**
+
+> This is not something one sees everyday, but I've worked in a consulting role and have assisted others with this work before. I find it really interesting looking at prospective ROI, current run rates, but also at the specific details of whehter a product or service can even be incorporated and integrated into the acquiring company. In the case of merging, this differs from acquisition in that both entities and both companies' products and services will both need to polymorph into a new whole. If you're company is looking to get into some M & A's, [let's talk about how I can help](/docs/job-talk/).
+
 If any of these sound like a need you have, please [reach out with additional information](/docs/job-talk/) and I will be in contact ASAP.
 
-Besides the above theoretical jobs, here are a few other things that I would like in a job. Things that just make it all worthwhile, here's a list.
+Besides the above theoretical jobs above, here are a few other things that I would like in a job. Things that just make it all worthwhile, here's a list.
 
 **Work Environ / Soft Skills / Culture**
 
