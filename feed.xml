@@ -5,9 +5,81 @@
     <atom:link href="http://adron.github.io/feed.xml" rel="self" type="application/rss+xml"></atom:link>
     <link>http://adron.github.io</link>
     <description>Coder, Messenger, Recon, Infrastructure, Ops</description>
-    <pubDate>Sun, 11 Sep 2016 17:00:00 -0700</pubDate>
+    <pubDate>Thu, 29 Sep 2016 17:00:00 -0700</pubDate>
     <generator>Wintersmith - https://github.com/jnordberg/wintersmith</generator>
     <language>en</language>
+    <item>
+      <title>Home Depot Wrap Up and Job Talk</title>
+      <link>http://adron.github.io/articles/sitrep-home-depot-wrap-up-next-talks-next-job/</link>
+      <pubDate>Thu, 29 Sep 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/sitrep-home-depot-wrap-up-next-talks-next-job/</guid>
+      <author></author>
+      <description>&lt;div class=&quot;image float-right&quot;&gt;
+    &lt;img src=&quot;/articles/sitrep-home-depot-wrap-up-next-talks-next-job/home-depot.png&quot; alt=&quot;Home Depot&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;First, I will be available to start work with a possible start date of November the 4th. I’m currently wrapping up some big projects and completing training for the Home Depot Team. If your company is looking for someone with my wild array of technical skills and soft skills, you can &lt;a href=&quot;http://adron.github.io/docs/about&quot;&gt;check out my resume &amp;amp; details&lt;/a&gt; and initiate &lt;a href=&quot;http://adron.github.io/docs/job-talk/&quot;&gt;job talk with me here&lt;/a&gt;!&lt;/p&gt;
+&lt;p&gt;On to the rest of the news. If you’ve seen me speak lately I’ve mentioned the open source efforts we’ve had going on at &lt;a href=&quot;http://www.homedepot.com/&quot;&gt;Home Depot&lt;/a&gt; and related efforts I was working on. Some I’m working dilligently to release via the &lt;a href=&quot;https://github.com/homedepot/&quot;&gt;Home Depot OSS Organization on Github&lt;/a&gt; and I’ll still be releasing others soon via my Github account (&lt;a href=&quot;https://github.com/Adron&quot;&gt;@Adron&lt;/a&gt;) and blogging about it here on &lt;a href=&quot;http://blog.adron.me&quot;&gt;Composite Code&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Since this is one of those rare times in my career where I’m not 100% sold on what I’ll do next, I’m open to fielding prospects and seeing what is out there. This is a different approach for me, as I usually determine a company, particular work that needs done and go after that gap. But I’d like to get a feel for what companies feel they need at this particular time. Since I have a wide range of skills, I can step into a number of positions and immediately start to contribute to projects within a company.&lt;/p&gt;
+&lt;p&gt;Here are some positions I’d find attractive and could provide value for (or build) a team immediately!&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Building or Expanding a Team&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Need someone to hire, build, and create a cohesive, diverse, and powerful culture of core contributors (developers, designers, advocates, evangelists, or similar). I can knock this one out of the park for the right company. Yes, I’m a bit particular, but I’m not just going to whimsically work for any company (the best people won’t work for just any old company anyway). If you are looking to put a team together and want somebody that can do that for you, I’d like to sit down to a conversation soon. &lt;a href=&quot;http://adron.github.io/docs/job-talk/&quot;&gt;Let’s talk jobs&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Coding Architect&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Have some architecture problems, that seem a bit unique or problematic? If you need someone to come in and push forward on design, patterns, practices, and actual implementation then this would also be a conversation I’d be interested in having. I’d be happy to dive into whatever the stack might be (or help decide on the stack): Java (Scala/Kotlin), Golang, Node.js or even .NET (C#/F#) for the right company. &lt;a href=&quot;http://adron.github.io/docs/job-talk/&quot;&gt;Let’s talk jobs&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Development &amp;amp; Operations Architect&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Have some architecture that needs to go along with an application and want to build or insure a solid continuous integration and delivery pipeline (or messaging based queue for delivery to production)? This is another possibility I’d be happy to talk about. I really love working with systems to build out reliable immutable infrastructure, data storage mechanisms (distributed, RDBMS, whatever the need calls for) and insure development can continue forward with extremely high confidence levels. &lt;a href=&quot;http://adron.github.io/docs/job-talk/&quot;&gt;Let’s talk jobs&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Developer Advocate/OSS Project Lead&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;If you have an open source project I’d love to take lead on it and also provide advocacy for that project. This role is not to be confused with evangelist, as that’s a fine role for other people, but I want to be in the code and advocating from a position with the team. I’ve done this before with projects like the Iron Foundry for Cloud Foundry and others, and loved it. &lt;a href=&quot;http://adron.github.io/docs/job-talk/&quot;&gt;Let’s talk jobs&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Mergers &amp;amp; Acquisition Technical Evaluations&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This is not something one sees everyday, but I’ve worked in a consulting role and have assisted others with this work before. I find it really interesting looking at prospective ROI, current run rates, but also at the specific details of whehter a product or service can even be incorporated and integrated into the acquiring company. In the case of merging, this differs from acquisition in that both entities and both companies’ products and services will both need to polymorph into a new whole. If you’re company is looking to get into some M &amp;amp; A’s, &lt;a href=&quot;http://adron.github.io/docs/job-talk/&quot;&gt;let’s talk about how I can help&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;If any of these sound like a need you have, please &lt;a href=&quot;http://adron.github.io/docs/job-talk/&quot;&gt;reach out with additional information&lt;/a&gt; and I will be in contact ASAP.&lt;/p&gt;
+&lt;p&gt;Besides the above theoretical jobs above, here are a few other things that I would like in a job. Things that just make it all worthwhile, here’s a list.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Work Environ / Soft Skills / Culture&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Flexible hours remote or remote (out of office). Whatever the case, I’d like to work with a company that has the ability and acumen to manage the workflow and efforts among team members remotely. If you’re a company that wants to upgrade the development and operational characteristics of the culture, I can also help your company incorporate highly effective remote capabilities.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;image float-right&quot;&gt;
+    &lt;img src=&quot;/articles/sitrep-home-depot-wrap-up-next-talks-next-job/cascadia-bioregion.png&quot; alt=&quot;Cascadia&quot;&gt;
+&lt;/div&gt;
+
+&lt;ul&gt;
+&lt;li&gt;If there is travel, I prefer to keep it to a productively effective 10-15% of the time. Traveling dramatically decreases overall ability to contribute to actual work in an effective way. I do love to travel, speak, and get involved with the worldwide community but I always like to make sure that this involvement doesn’t stymie me from contributing to actual coding, design, and related efforts.  NOTE: If travel is within the Cascadian Bioregion (see image: includes YVR, PDX, SEA, etc) it’s easy to increase my travel to 15-25% of the time as travel within the region is so easy. I probably should include SFO too, it’s super easy to get there and doesn’t cause disruption to daily workflow. (i.e. &amp;lt; 2 hr trip)&lt;/li&gt;
+&lt;li&gt;Design, build, and communicate. These are the things I like to do. I like to create what will work for high volume or high speed systems, then build prototypes and communicate how these work. Maybe I would be the one deploying to production, maybe the system is production that I’m deploying, but whatever the case is I’m happy to lead efforts on architecture and work with teams to build that architecture.&lt;/li&gt;
+&lt;li&gt;I love to provide leadership for teams, I love to build teams, and I like working with teams. Albeit I’m particular about team diversity and culture, I can bring my own skills and the ability to bring people together on a team and expand teams. If the culture is off kilter, I can help with that. If the culture is spot on, I can work effectively with that. Whatever the case, I’m a high communication, GSD type of guy provided the right environment and reigns removed.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;image float-right&quot;&gt;
+    &lt;img src=&quot;/articles/sitrep-home-depot-wrap-up-next-talks-next-job/gcp.png&quot; alt=&quot;Google Cloud Platform&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Technical Skills&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;I’ve found Google Cloud Platform (GCP) a pleasure to work with lately. That combined with Terraform, Packer, and related HashiCorp tooling has been a lot of fun and provided an extremely high value for us at Home Depot.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;image float-right&quot;&gt;
+    &lt;img src=&quot;/articles/sitrep-home-depot-wrap-up-next-talks-next-job/hashicorp.png&quot; alt=&quot;HashiCorp&quot;&gt;
+&lt;/div&gt;
+
+&lt;ul&gt;
+&lt;li&gt;AWS has been another I’ve worked with that has been of stellar value, not particularly at Home Depot but at multitudes of startups and during consulting. AWS is still for many things my go to cloud provider option.&lt;/li&gt;
+&lt;li&gt;Azure is another I’ve used that would be an interesting service to use again. It’s been well over 2 years since I worked with or provided Azure support or consulting. I’ve got a soft spot in my heart for this cloud provider since I led teams back in 2010 writing some of the first &lt;em&gt;white papers&lt;/em&gt; for the service!&lt;/li&gt;
+&lt;li&gt;I’m comfortable with C#, JavaScript, Java (mostly), and am looking forward to writing more Golang and happily will dive into Scala, Erlang, F#, and a whole host of other languages.&lt;/li&gt;
+&lt;li&gt;I’m happy to work with container tech (Rocket/CoreOS) or Docker and I’ll also help keep your company grounded that it might not be the panacea you’re looking for. But they definitely have lots of awesome uses!&lt;/li&gt;
+&lt;li&gt;I’d prefer a Unix/Linux environment to work in, but I’ll happily help remove Windows Servers from deployment requirements!  ;-)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href=&quot;http://adron.github.io/docs/&quot;&gt;Contact me&lt;/a&gt; or let’s &lt;a href=&quot;http://adron.github.io/docs/&quot;&gt;talk jobs&lt;/a&gt;, cheers!&lt;/p&gt;
+</description>
+    </item>
     <item>
       <title>HashiConf Trip Day 4 - Conference Day 2 - A Short Summary</title>
       <link>http://adron.github.io/articles/hashiconf-trip-day-4/</link>
@@ -1861,6 +1933,23 @@ it can be.&lt;/p&gt;
 </description>
     </item>
     <item>
+      <title>The House Is Not On Fire - Building a home automation robot with Arduino, Raspberry Pi and Node.js by Artur Paikin</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</link>
+      <pubDate>Wed, 01 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-right&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/art-stida.jpg&quot; alt=&quot;Artur Paikin&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Artur describes himself as, “I’m a web developer and traveler. I write stories about my adventures in Russian and English on my site: &lt;a href=&quot;http://arturpaikin.com&quot;&gt;http://arturpaikin.com&lt;/a&gt; and run a small technology cooperative called &lt;a href=&quot;http://unebaguette.com&quot;&gt;Baguette&lt;/a&gt;, where I work on cool projects, currently building an ambitious next generation file uploader with &lt;a href=&quot;https://transloadit.com/&quot;&gt;Transloadit&lt;/a&gt;. I ride a &lt;a href=&quot;https://www.instagram.com/p/xC0qC2SSYb&quot;&gt;foldable bicycle&lt;/a&gt;, &lt;a href=&quot;http://unebaguette.com/web-course/&quot;&gt;teach&lt;/a&gt; web development and sometimes &lt;a href=&quot;https://www.instagram.com/p/4_6LO8ySVL/&quot;&gt;garden&lt;/a&gt; on the balcony.”&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Artur has built an open source home automation system called &lt;a href=&quot;https://github.com/arturi/kotihome&quot;&gt;Koti Home&lt;/a&gt; (Koti means home in Finnish language). It’s powered by an Arduino connected to Raspberry Pi, MQTT protocol for messaging, Node.js on the client and server, web sockets. You can interact with Koti robot via a React (like the cool kids do) control panel, Telegram Chat Bot and even your own voice.&lt;/p&gt;
+&lt;p&gt;Arthur will talk about how he’s turned this project into reality — the tech he used and the challenges he faced. From a blinking LED to a voice controlled home automation robot.&lt;/p&gt;
+</description>
+    </item>
+    <item>
       <title>Code First Docs How we Threw Out The Book &amp; Put Code First With Twilio Documentation by Jarod Reyes</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-jarod-reyes/</link>
       <pubDate>Wed, 01 Jun 2016 17:00:00 -0700</pubDate>
@@ -1882,23 +1971,6 @@ it can be.&lt;/p&gt;
 &lt;li&gt;Twitter: &lt;a href=&quot;https://twitter.com/jreyesdev&quot;&gt;@jreyesdev&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Github: &lt;a href=&quot;https://github.com/jarodreyes&quot;&gt;github.com/jarodreyes&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-</description>
-    </item>
-    <item>
-      <title>The House Is Not On Fire - Building a home automation robot with Arduino, Raspberry Pi and Node.js by Artur Paikin</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</link>
-      <pubDate>Wed, 01 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</guid>
-      <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-right&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/art-stida.jpg&quot; alt=&quot;Artur Paikin&quot;&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Artur describes himself as, “I’m a web developer and traveler. I write stories about my adventures in Russian and English on my site: &lt;a href=&quot;http://arturpaikin.com&quot;&gt;http://arturpaikin.com&lt;/a&gt; and run a small technology cooperative called &lt;a href=&quot;http://unebaguette.com&quot;&gt;Baguette&lt;/a&gt;, where I work on cool projects, currently building an ambitious next generation file uploader with &lt;a href=&quot;https://transloadit.com/&quot;&gt;Transloadit&lt;/a&gt;. I ride a &lt;a href=&quot;https://www.instagram.com/p/xC0qC2SSYb&quot;&gt;foldable bicycle&lt;/a&gt;, &lt;a href=&quot;http://unebaguette.com/web-course/&quot;&gt;teach&lt;/a&gt; web development and sometimes &lt;a href=&quot;https://www.instagram.com/p/4_6LO8ySVL/&quot;&gt;garden&lt;/a&gt; on the balcony.”&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Artur has built an open source home automation system called &lt;a href=&quot;https://github.com/arturi/kotihome&quot;&gt;Koti Home&lt;/a&gt; (Koti means home in Finnish language). It’s powered by an Arduino connected to Raspberry Pi, MQTT protocol for messaging, Node.js on the client and server, web sockets. You can interact with Koti robot via a React (like the cool kids do) control panel, Telegram Chat Bot and even your own voice.&lt;/p&gt;
-&lt;p&gt;Arthur will talk about how he’s turned this project into reality — the tech he used and the challenges he faced. From a blinking LED to a voice controlled home automation robot.&lt;/p&gt;
 </description>
     </item>
     <item>
