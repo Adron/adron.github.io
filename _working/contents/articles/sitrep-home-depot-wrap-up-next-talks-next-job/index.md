@@ -8,7 +8,7 @@ template: article.jade
     ![Home Depot](home-depot.png)
 </div>
 
-First, I will be available to start work with a possible start date of November the 4th. I'm currently wrapping up some big projects and completing training for the Home Depot Team. If your company is looking for someone with my wild array of technical skills and soft skills, you can [check out my resume & details](/docs/about) and initiate [job talk with me here](/docs/job-talk/)!
+First, I will be available to start work with a possible start date of November the 7th. I'm currently wrapping up some big projects and completing training for the Home Depot Team. If your company is looking for someone with my wild array of technical skills and soft skills, you can [check out my resume & details](/docs/about) and initiate [job talk with me here](/docs/job-talk/)!
 
 On to the rest of the news. If you've seen me speak lately I've mentioned the open source efforts we've had going on at [Home Depot](http://www.homedepot.com/) and related efforts I was working on. Some I'm working dilligently to release via the [Home Depot OSS Organization on Github](https://github.com/homedepot/) and I'll still be releasing others soon via my Github account ([@Adron](https://github.com/Adron)) and blogging about it here on [Composite Code](http://blog.adron.me).
 
