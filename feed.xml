@@ -18,7 +18,7 @@
     &lt;img src=&quot;/articles/sitrep-home-depot-wrap-up-next-talks-next-job/home-depot.png&quot; alt=&quot;Home Depot&quot;&gt;
 &lt;/div&gt;
 
-&lt;p&gt;First, I will be available to start work with a possible start date of November the 7th. I’m currently wrapping up some big projects and completing training for the Home Depot Team. If your company is looking for someone with my wild array of technical skills and soft skills, you can &lt;a href=&quot;http://adron.github.io/docs/about&quot;&gt;check out my resume &amp;amp; details&lt;/a&gt; and initiate &lt;a href=&quot;http://adron.github.io/docs/job-talk/&quot;&gt;job talk with me here&lt;/a&gt;!&lt;/p&gt;
+&lt;p&gt;First, I will be available with a possible start date of November the 28th. I’m currently wrapping up some big projects and completing training for the Home Depot Team and the great progress we’ve made over the last year. If your company is looking for someone with my mixed array of technical skills and soft skills, you can &lt;a href=&quot;http://adron.github.io/docs/about&quot;&gt;check out my resume &amp;amp; details&lt;/a&gt; and initiate &lt;a href=&quot;http://adron.github.io/docs/job-talk/&quot;&gt;job talk with me here&lt;/a&gt;!&lt;/p&gt;
 &lt;p&gt;On to the rest of the news. If you’ve seen me speak lately I’ve mentioned the open source efforts we’ve had going on at &lt;a href=&quot;http://www.homedepot.com/&quot;&gt;Home Depot&lt;/a&gt; and related efforts I was working on. Some I’m working dilligently to release via the &lt;a href=&quot;https://github.com/homedepot/&quot;&gt;Home Depot OSS Organization on Github&lt;/a&gt; and I’ll still be releasing others soon via my Github account (&lt;a href=&quot;https://github.com/Adron&quot;&gt;@Adron&lt;/a&gt;) and blogging about it here on &lt;a href=&quot;http://blog.adron.me&quot;&gt;Composite Code&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;Since this is one of those rare times in my career where I’m not 100% sold on what I’ll do next, I’m open to fielding prospects and seeing what is out there. This is a different approach for me, as I usually determine a company, particular work that needs done and go after that gap. But I’d like to get a feel for what companies feel they need at this particular time. Since I have a wide range of skills, I can step into a number of positions and immediately start to contribute to projects within a company.&lt;/p&gt;
@@ -1835,6 +1835,23 @@ In this talk I would be covering the following:&lt;/p&gt;
 </description>
     </item>
     <item>
+      <title>WebSockets Bring Light at the End of the Tunnel by Joel Lord</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</link>
+      <pubDate>Fri, 03 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-left&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/joel-lord.jpg&quot; alt=&quot;Joel Lord&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;As a Development Manager, Joel’s motivation and proven technical prowess makes him a key member of Spiria’s software development team. With a degree in computational astrophysics, his interests eventually made their way to software and Web design. Today, his knowledge of JavaScript lets him to support a variety of projects on both the front end and back end. As we move into the age of the Internet of Things, Joel is ready with his passion for programming node bots and experimenting with gadgets.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Joel is going to speak on Web Sockets and tunnels of light… or to describe it more specifically more and more, people seem to be obsessed with real-time data.  But what does real-time mean in the world of REST servers and one-way communication?  Most modern web applications are now either displaying a snapshot of data at a given time or use a polling mechanism to update series of data at a given interval.
+In this talk, you will learn about the power of WebSockets and how they can (and should!) be used in your modern web applications. In these 30 minutes, I will go through the process of building a Node server that can push data to multiple clients in real-time.  You will see how this can be easy using the socket.io library.&lt;/p&gt;
+</description>
+    </item>
+    <item>
       <title>MMOWAM - Build Server-less Games with a DSN by Josh Marinacci</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-josh-marinacci/</link>
       <pubDate>Fri, 03 Jun 2016 17:00:00 -0700</pubDate>
@@ -1869,23 +1886,6 @@ it can be.&lt;/p&gt;
 &lt;li&gt;show number of players&lt;/li&gt;
 &lt;li&gt;start when 4 players in? one player hit’s start? let all player see total count as well and status of the other players&lt;/li&gt;
 &lt;/ul&gt;
-</description>
-    </item>
-    <item>
-      <title>WebSockets Bring Light at the End of the Tunnel by Joel Lord</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</link>
-      <pubDate>Fri, 03 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</guid>
-      <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-left&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/joel-lord.jpg&quot; alt=&quot;Joel Lord&quot;&gt;
-&lt;/div&gt;
-
-&lt;p&gt;As a Development Manager, Joel’s motivation and proven technical prowess makes him a key member of Spiria’s software development team. With a degree in computational astrophysics, his interests eventually made their way to software and Web design. Today, his knowledge of JavaScript lets him to support a variety of projects on both the front end and back end. As we move into the age of the Internet of Things, Joel is ready with his passion for programming node bots and experimenting with gadgets.&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Joel is going to speak on Web Sockets and tunnels of light… or to describe it more specifically more and more, people seem to be obsessed with real-time data.  But what does real-time mean in the world of REST servers and one-way communication?  Most modern web applications are now either displaying a snapshot of data at a given time or use a polling mechanism to update series of data at a given interval.
-In this talk, you will learn about the power of WebSockets and how they can (and should!) be used in your modern web applications. In these 30 minutes, I will go through the process of building a Node server that can push data to multiple clients in real-time.  You will see how this can be easy using the socket.io library.&lt;/p&gt;
 </description>
     </item>
     <item>
