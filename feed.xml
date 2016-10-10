@@ -49,7 +49,8 @@
 &lt;h2 id=&quot;the-other-fix-x-plat-net-core&quot;&gt;The Other Fix, X-Plat .NET Core&lt;/h2&gt;
 &lt;p&gt;The other solution, post Windows Server 2016, which I look forward to with even more excitement is the ability to run .NET Core Apps on Linux. The reason, is that the operational characteristics for Linux, especially in a high availability, highly scalable, cloud environment (etc., etc., etc.) are years ahead of the Windows Server solutions at this time. On a cost per server and cost per unit of compute, Linux is easily the winner - and of course that is if you are even dealing with an OS yourself - if you’re in the vmless or serverless game then prices get even cheaper prospectively. However, as is obvious, Windows Server isn’t even in that game, it’s a purely cloud play really.&lt;/p&gt;
 &lt;p&gt;If you are a Windows Server advocate and you do have legitimate needs to use Windows Server, but still want all the good bits that come along with container technology, Windows Server 2016 is going to be your salvation! Maybe. Soon it’ll even be available in Google Cloud (I hope REAL soon) and I can spool up a few examples of said OS with said .NET Core bits and then migrate said .NET Core bits directly to Linux! At least, I’m looking forward to doing just that.&lt;/p&gt;
-&lt;p&gt;Anyway, enough of the Windows Server quagmires, and on to the open source efforts of the last year.&lt;/p&gt;
+&lt;h2 id=&quot;summary-how-you-could-help&quot;&gt;Summary &amp;amp; How You Could Help&lt;/h2&gt;
+&lt;p&gt;As you know, from my article “&lt;a href=&quot;http://blog.adron.me/articles/sitrep-home-depot-wrap-up-next-talks-next-job/&quot;&gt;Home Depot Wrap Up and Job Talk&lt;/a&gt;“, I’ve moved to Seattle and am working on a transition. Quote Center is looking for people who would love to dive into the world of site reliability, working with not just Windows but also Linux, Node.js, and a host of other systems. If you’re keen on joining the team, feel free to &lt;a href=&quot;http://adron.github.io/articles/the-curse-of-windows-server-windows-server-2016-salvation/&quot;&gt;reach out to me&lt;/a&gt; and I can put you in touch with the right people to get the conversation rolling. Otherwise you can also just check out the &lt;a href=&quot;http://quotecenter.com/#openpositions&quot;&gt;job descriptions here&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     <item>
@@ -1879,23 +1880,6 @@ In this talk I would be covering the following:&lt;/p&gt;
 </description>
     </item>
     <item>
-      <title>WebSockets Bring Light at the End of the Tunnel by Joel Lord</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</link>
-      <pubDate>Fri, 03 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</guid>
-      <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-left&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/joel-lord.jpg&quot; alt=&quot;Joel Lord&quot;&gt;
-&lt;/div&gt;
-
-&lt;p&gt;As a Development Manager, Joel’s motivation and proven technical prowess makes him a key member of Spiria’s software development team. With a degree in computational astrophysics, his interests eventually made their way to software and Web design. Today, his knowledge of JavaScript lets him to support a variety of projects on both the front end and back end. As we move into the age of the Internet of Things, Joel is ready with his passion for programming node bots and experimenting with gadgets.&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Joel is going to speak on Web Sockets and tunnels of light… or to describe it more specifically more and more, people seem to be obsessed with real-time data.  But what does real-time mean in the world of REST servers and one-way communication?  Most modern web applications are now either displaying a snapshot of data at a given time or use a polling mechanism to update series of data at a given interval.
-In this talk, you will learn about the power of WebSockets and how they can (and should!) be used in your modern web applications. In these 30 minutes, I will go through the process of building a Node server that can push data to multiple clients in real-time.  You will see how this can be easy using the socket.io library.&lt;/p&gt;
-</description>
-    </item>
-    <item>
       <title>MMOWAM - Build Server-less Games with a DSN by Josh Marinacci</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-josh-marinacci/</link>
       <pubDate>Fri, 03 Jun 2016 17:00:00 -0700</pubDate>
@@ -1930,6 +1914,23 @@ it can be.&lt;/p&gt;
 &lt;li&gt;show number of players&lt;/li&gt;
 &lt;li&gt;start when 4 players in? one player hit’s start? let all player see total count as well and status of the other players&lt;/li&gt;
 &lt;/ul&gt;
+</description>
+    </item>
+    <item>
+      <title>WebSockets Bring Light at the End of the Tunnel by Joel Lord</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</link>
+      <pubDate>Fri, 03 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-left&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/joel-lord.jpg&quot; alt=&quot;Joel Lord&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;As a Development Manager, Joel’s motivation and proven technical prowess makes him a key member of Spiria’s software development team. With a degree in computational astrophysics, his interests eventually made their way to software and Web design. Today, his knowledge of JavaScript lets him to support a variety of projects on both the front end and back end. As we move into the age of the Internet of Things, Joel is ready with his passion for programming node bots and experimenting with gadgets.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Joel is going to speak on Web Sockets and tunnels of light… or to describe it more specifically more and more, people seem to be obsessed with real-time data.  But what does real-time mean in the world of REST servers and one-way communication?  Most modern web applications are now either displaying a snapshot of data at a given time or use a polling mechanism to update series of data at a given interval.
+In this talk, you will learn about the power of WebSockets and how they can (and should!) be used in your modern web applications. In these 30 minutes, I will go through the process of building a Node server that can push data to multiple clients in real-time.  You will see how this can be easy using the socket.io library.&lt;/p&gt;
 </description>
     </item>
     <item>

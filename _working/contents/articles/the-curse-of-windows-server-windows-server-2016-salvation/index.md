@@ -53,4 +53,6 @@ The other solution, post Windows Server 2016, which I look forward to with even 
 
 If you are a Windows Server advocate and you do have legitimate needs to use Windows Server, but still want all the good bits that come along with container technology, Windows Server 2016 is going to be your salvation! Maybe. Soon it'll even be available in Google Cloud (I hope REAL soon) and I can spool up a few examples of said OS with said .NET Core bits and then migrate said .NET Core bits directly to Linux! At least, I'm looking forward to doing just that.
 
-Anyway, enough of the Windows Server quagmires, and on to the open source efforts of the last year.
+## Summary & How You Could Help
+
+As you know, from my article "[Home Depot Wrap Up and Job Talk](http://blog.adron.me/articles/sitrep-home-depot-wrap-up-next-talks-next-job/)", I've moved to Seattle and am working on a transition. Quote Center is looking for people who would love to dive into the world of site reliability, working with not just Windows but also Linux, Node.js, and a host of other systems. If you're keen on joining the team, feel free to [reach out to me]() and I can put you in touch with the right people to get the conversation rolling. Otherwise you can also just check out the [job descriptions here](http://quotecenter.com/#openpositions).
