@@ -4,7 +4,7 @@ author: Adron Hall
 date: 2016-10-07 14:38
 template: article.jade
 ---
-Over the last year I've worked with [Home Depot](https://homedepot.com), specifically the [Quote Center](http://www.quotecenter.com/) Group, strive forward toward a better future. Yeah, that sounds a bit campy, but seriously. The aim start out with [three core objectives I wrote about previously](http://blog.adron.me/articles/after-816-days-taking-a-job/).
+Over the last year I've worked with [Home Depot](https://homedepot.com), specifically the [Quote Center](http://www.quotecenter.com/) Group, strive forward toward a better future. Yeah, that sounds a bit campy, but seriously. I started with [three core objectives, which I wrote about previously](http://blog.adron.me/articles/after-816-days-taking-a-job/).
 
 * Community Contributions
 * Site Reliability
