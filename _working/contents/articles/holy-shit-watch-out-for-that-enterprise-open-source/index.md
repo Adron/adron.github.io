@@ -125,7 +125,7 @@ With that in mind, the idea for Home Depot to begin using more open source was s
   * Request open source submission approval
   * Push the code
 
-This is of course our version of the OSS Manifesto as detailed at [http://ossmanifesto.org/](http://ossmanifesto.org/). This is one piece I highly suggest any group of individuals at an enterprise to give a read to, and create their own manifesto per their enterprise they work for. It's good for many reasons to write this out and provide it.
+This is of course our version of the OSS Manifesto as detailed at http://ossmanifesto.org/ (after I posted, realized this site is dead!  :( But here's the [repo of the HD Manifesto](https://github.com/allspark-thd/manifesto)). This is one piece I highly suggest any group of individuals at an enterprise to give a read to, and create their own manifesto per their enterprise they work for. It's good for many reasons to write this out and provide it.
 
 The main two reasons I really like the OSS Manifesto include:
 
