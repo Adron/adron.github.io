@@ -53,15 +53,97 @@ With that in mind, the idea for Home Depot to begin using more open source was s
 
 ## Our Efforts So Far!
 
-[Home Depot's OSS Manifesto](http://allspark-thd.github.io/manifesto/) reads with the intent of the efforts with a break out of six specific points:
+[Home Depot's OSS Manifesto](http://allspark-thd.github.io/manifesto/) reads with the intent of the efforts and a break out of six specific tenets:
 
 * We Value
-* We Believe
-* Have an Idea?
-* README
-* Trade Secrets
-* Tactical Process
+  * Giving Back
+    * As developers we use tools provided by the wider community – it’s our responsibility to pay it forward
+    * Beyond the ethics, as we contribute, so will others – which improves the software we use
+  * Excellent Customer Server
+    * By using and improving open source, the software we provide to our associates and customers is of higher quality
+  * Creating shareholder value
+    * Making use of open source makes us more productive and efficient
+    * As we contribute software, we get the benefit of improvements from the entire community
+  * Entrepreneurial Spirit
+    * Encouraging associates to develop the software that interests them provides a creative outlet
+    * Many key software components we rely on were created as side projects
 
+  * Taking care of our people
+
+    * Allows associates to contribute, gives them a public showcase for their talents
+
+    * Participating in open source is a fantastic forum for learning from industry experts
+
+  * Respect for all people
+
+    * Open source is one of the most diverse communities available
+
+    * Great feedback and communication skills can be developed working on large open source efforts
+
+  * Doing the right thing
+
+    * Making code public is the best way to ensure that you take pride in your work
+
+  * Building strong relationships
+
+    * Open source allows developers to build relationships beyond their team
+
+* We Believe
+
+  * Have a readme file
+
+  * Have a contributing file
+
+  * Have a license file
+
+  * Follow semantic versioning
+
+  * Have easily visible CI
+
+  * Tag all releases
+
+* Have an Idea?
+
+  * Could my code be helpful for other devs, and is it something that doesn’t already exist?
+
+  * Do I feel comfortable that work I’m doing does not include trade secrets?
+
+  * Do I have CI setup, and is it publically visible?
+
+  * Why are you still asking questions, push some code!
+
+* Readme file
+
+  * The readme is the first thing will people will see about your project. This should provide an explanation for why it exists, and why anyone would care about it.
+    * What are my rights?
+    > You also should include license information, so they understand how to use it. Our default license is Apache 2
+
+    * How can I help?
+    > If you’re open sourcing something, you are hopefully open to outside contributions. Make sure your expectations and process are clearly laid out for people who want to help. You should tell them how to make the thing run and how to test it – in simple, easy to follow steps.
+
+    * Does this thing even work?
+    > A sign of a high quality project is well written tests, that are continuously run. By having CI setup and publicly shown, visitors to your repo can have confidence in the code. This could include badges or a link to an example of the live application
+
+    * Is anyone maintaining this and/or what just changed?
+    > As you update the project, you should provide semantic versioning to allow consumers to understand the types of changes made, and allow them to use the project with security. You should include release notes that detail any important features or bug fixes, and specifics on any breaking changes.
+
+* Trade Secrets
+What shouldn’t be open sourced?
+  * Code that includes work that is licensed by someone else
+  * Work that provides a significant competetive advantage over other retailers
+  * Projects that are dependent on THD specific environment
+    * This should be only true in rare cases
+  * Code that does not have CI or automated unit tests
+    * Please don’t do this, even if you aren’t open sourcing
+  * Code that is essentially the same as other open source projects
+    * Could you contribute to those projects instead?
+
+* Tactical Process
+  * Ensure your manage/team lead approves the effort
+  * Request open source submission approval
+  * Push the code
+
+This is of course our version of the OSS Manifesto as detailed at [http://ossmanifesto.org/](http://ossmanifesto.org/).
 
 **References:**
 
