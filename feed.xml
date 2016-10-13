@@ -5,9 +5,160 @@
     <atom:link href="http://adron.github.io/feed.xml" rel="self" type="application/rss+xml"></atom:link>
     <link>http://adron.github.io</link>
     <description>Coder, Messenger, Recon, Infrastructure, Ops</description>
-    <pubDate>Fri, 07 Oct 2016 14:38:00 -0700</pubDate>
+    <pubDate>Tue, 11 Oct 2016 17:00:00 -0700</pubDate>
     <generator>Wintersmith - https://github.com/jnordberg/wintersmith</generator>
     <language>en</language>
+    <item>
+      <title>Holy Shit Watch Out for That Enterprise Open Source!</title>
+      <link>http://adron.github.io/articles/holy-shit-watch-out-for-that-enterprise-open-source/</link>
+      <pubDate>Tue, 11 Oct 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/holy-shit-watch-out-for-that-enterprise-open-source/</guid>
+      <author></author>
+      <description>&lt;p&gt;This blog entry is going to be the conjoined events of open source work at Home Depot, enterprise open source in general, and the ideas and punch lists for a talk I have coming up in London on open source enterprise practices. So this will be a hard drifting whirlwind, buckle up!&lt;/p&gt;
+&lt;p&gt;In the last year there’s been several specific projects I’ve led and consulted on:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;My work at Home Depot included efforts to bring various closed sourced solutions into the open, some which have been and others that have not been - but may be on their way! Read to the end to see how you might be able to help with this.&lt;/li&gt;
+&lt;li&gt;I’ve provided consulting to several enterprise efforts over the last year as they’ve looked toward bolstering their experience and effort providing a coordinated participation within the open source community.&lt;/li&gt;
+&lt;li&gt;Putting together a talk related specifically to helping enterprises bridge the gap between insular, closed source, limiting internal development to a inclusive, open source, community oriented contributor and user of software solutions.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;h2 id=&quot;enterprise-software&quot;&gt;Enterprise software&lt;/h2&gt;
+&lt;p&gt;First let’s talk a little bit about enterprise software in general. There is an extremely wide range of disparity in Enterprise software. Some software turns out pretty good, others are complete catastrophes to the point the projects are cancelled and the software is deleted without remorse.&lt;/p&gt;
+&lt;p&gt;Just recently this disparity in quality was brought up on via some tweets.&lt;/p&gt;
+&lt;p&gt;&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;en&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;I don&amp;#39;t understand how huge companies with major $$$ can release software that&amp;#39;s such a shit-show - don&amp;#39;t they test it, dogfood, etc.?&lt;/p&gt;&amp;mdash; Dave Glick (@daveaglick) &lt;a href=&quot;https://twitter.com/daveaglick/status/786247215660621824&quot;&gt;October 12, 2016&lt;/a&gt;&lt;/blockquote&gt;&lt;/p&gt;
+&lt;script async src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;Dave Glick stated this and it spiraled into a conversation about how big companies, with seemingly endless budgets still produce such horrible applications sometimes. It reminds me of this article I read on the Pivatol Blog by Stacey Schneider (&lt;a href=&quot;https://twitter.com/sparkystacey&quot;&gt;@sparkystacey&lt;/a&gt; ), “Quiz Your Company: How Well Are You Setup to Develop Great Software?”&lt;/p&gt;
+&lt;p&gt;Over time this horrible disparity can be narrowed, and the band of good to bad can move toward the “good software” end of the spectrum for enterprises. One of the key steps that helps to produce a better culture around good software for enterprises is moving the effort toward a more open practice with transparent communications, public involvement, and of course actual open source code and licensing.&lt;/p&gt;
+&lt;h2 id=&quot;enterprise-open-source&quot;&gt;Enterprise Open Source&lt;/h2&gt;
+&lt;p&gt;Let’s take a look at one of the best examples of an open source enterprise. Let’s talk about &lt;a href=&quot;https://www.netflix.com&quot;&gt;Netflix&lt;/a&gt;. Ok, you may be screaming in your head that Netflix doesn’t count, but at 19 years old (August 29th, of 1997 it was founded), $6.78 billion in 2015 revenue, $10.2 billion in assets, 83 million worldwide users, and 3,500 employees Netflix absolutely counts as a large enterprise.&lt;/p&gt;
+&lt;div class=&quot;image float-right&quot;&gt;
+    &lt;a href=&quot;https://netflix.github.io/&quot;&gt;&lt;img src=&quot;/articles/holy-shit-watch-out-for-that-enterprise-open-source/netflix-oss-logo.png&quot; alt=&quot;Netflix OSS&quot;&gt;&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Netflix has gone hard core into the OSS realm. They’ve &lt;a href=&quot;http://techblog.netflix.com/2015/10/evolution-of-open-source-at-netflix.html&quot;&gt;written about it&lt;/a&gt; on their &lt;a href=&quot;http://techblog.netflix.com/&quot;&gt;Netflix Tech Blog&lt;/a&gt;. They’ve even gone so far as to create a &lt;a href=&quot;https://netflix.github.io/&quot;&gt;Netflix Open Source Software Center&lt;/a&gt; too. Of course all of this is is rolled together in the repositories on Github under the &lt;a href=&quot;https://github.com/Netflix&quot;&gt;Netflix Organization&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;This has given Netflix massive credibility within the world of developers, providing a true resource and partner to the developer community. But what does that give Netflix from a more tactical point of view? I’ll list a few things:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;More eyes on their code that they use to run production. Which translates into more ideas on improvements, catching issues faster, bug fixes inside and outside of the company, and more from this angle.&lt;/li&gt;
+&lt;li&gt;Credibility in the industry translates to gaining the eye of the top tier people that Netflix wants and needs for their organization.&lt;/li&gt;
+&lt;li&gt;Massive clout as a leader in innovation and technological change, which provides even more of both 1 and 2.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&quot;home-depot-open-source-enterprise&quot;&gt;Home Depot, Open Source Enterprise&lt;/h1&gt;
+&lt;p&gt;Ok, so Netflix is a big enterprise that has done it right. They’ve also been reaping the rewards in a huge way, and they’ve set a kind of guidance to others trying to tread that path. At Home Depot it’s been a bit work, but the effort has started with some tangible progress. Since software development and computer tech things is not the focus point at Home Depot, it is a logical path for the company to shift with it’s IT and related resources. As you probably know very well dear reader, Home Depot is a large brick and mortar storefront operation, and it’s best for Home Depot to focus on this, where their customers are!&lt;/p&gt;
+&lt;p&gt;With that in mind, the idea for Home Depot to begin using more open source was super easy. But to start providing open source of their own and to get involved has been a dramatically larger challenge. The leadership has a very smart view of the matter, they want to be part of the community and provide and gain the advantages of going open source. Just like Netflix, there’s a lot to be gained.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/holy-shit-watch-out-for-that-enterprise-open-source/homedepot-contributors.png&quot; alt=&quot;Home Depot Contributors&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;getting-things-started&quot;&gt;Getting Things Started&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;http://allspark-thd.github.io/manifesto/&quot;&gt;Home Depot’s OSS Manifesto&lt;/a&gt; reads with the intent of the efforts and a break out of six specific tenets:&lt;/p&gt;
+&lt;h3 id=&quot;we-value&quot;&gt;We Value&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Giving Back&lt;ul&gt;
+&lt;li&gt;As developers we use tools provided by the wider community – it’s our responsibility to pay it forward&lt;/li&gt;
+&lt;li&gt;Beyond the ethics, as we contribute, so will others – which improves the software we use&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Excellent Customer Server&lt;ul&gt;
+&lt;li&gt;By using and improving open source, the software we provide to our associates and customers is of higher quality&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Creating shareholder value&lt;ul&gt;
+&lt;li&gt;Making use of open source makes us more productive and efficient&lt;/li&gt;
+&lt;li&gt;As we contribute software, we get the benefit of improvements from the entire community&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Entrepreneurial Spirit&lt;ul&gt;
+&lt;li&gt;Encouraging associates to develop the software that interests them provides a creative outlet&lt;/li&gt;
+&lt;li&gt;Many key software components we rely on were created as side projects&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Taking care of our people&lt;ul&gt;
+&lt;li&gt;Allows associates to contribute, gives them a public showcase for their talents&lt;/li&gt;
+&lt;li&gt;Participating in open source is a fantastic forum for learning from industry experts&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Respect for all people&lt;ul&gt;
+&lt;li&gt;Open source is one of the most diverse communities available&lt;/li&gt;
+&lt;li&gt;Great feedback and communication skills can be developed working on large open source efforts&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Doing the right thing&lt;ul&gt;
+&lt;li&gt;Making code public is the best way to ensure that you take pride in your work&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Building strong relationships&lt;ul&gt;
+&lt;li&gt;Open source allows developers to build relationships beyond their team&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;we-believe&quot;&gt;We Believe&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Have a readme file&lt;/li&gt;
+&lt;li&gt;Have a contributing file&lt;/li&gt;
+&lt;li&gt;Have a license file&lt;/li&gt;
+&lt;li&gt;Follow semantic versioning&lt;/li&gt;
+&lt;li&gt;Have easily visible CI&lt;/li&gt;
+&lt;li&gt;Tag all releases&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;have-an-idea-&quot;&gt;Have an Idea?&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Could my code be helpful for other devs, and is it something that doesn’t already exist?&lt;/li&gt;
+&lt;li&gt;Do I feel comfortable that work I’m doing does not include trade secrets?&lt;/li&gt;
+&lt;li&gt;Do I have CI setup, and is it publically visible?&lt;/li&gt;
+&lt;li&gt;Why are you still asking questions, push some code!&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;readme-file&quot;&gt;Readme file&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;The readme is the first thing will people will see about your project. This should provide an explanation for why it exists, and why anyone would care about it.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;What are my rights?
+You also should include license information, so they understand how to use it. Our default license is Apache 2
+How can I help?
+If you’re open sourcing something, you are hopefully open to outside contributions. Make sure your expectations and process are clearly laid out for people who want to help. You should tell them how to make the thing run and how to test it – in simple, easy to follow steps.&lt;/li&gt;
+&lt;li&gt;Does this thing even work?
+A sign of a high quality project is well written tests, that are continuously run. By having CI setup and publicly shown, visitors to your repo can have confidence in the code. This could include badges or a link to an example of the live application&lt;/li&gt;
+&lt;li&gt;Is anyone maintaining this and/or what just changed?
+As you update the project, you should provide semantic versioning to allow consumers to understand the types of changes made, and allow them to use the project with security. You should include release notes that detail any important features or bug fixes, and specifics on any breaking changes.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;trade-secrets-what-shouldn-t-be-open-sourced-&quot;&gt;Trade Secrets - What shouldn’t be open sourced?&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Code that includes work that is licensed by someone else&lt;/li&gt;
+&lt;li&gt;Work that provides a significant competetive advantage over other retailers&lt;/li&gt;
+&lt;li&gt;Projects that are dependent on THD specific environment&lt;ul&gt;
+&lt;li&gt;This should be only true in rare cases&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Code that does not have CI or automated unit tests&lt;ul&gt;
+&lt;li&gt;Please don’t do this, even if you aren’t open sourcing&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Code that is essentially the same as other open source projects&lt;ul&gt;
+&lt;li&gt;Could you contribute to those projects instead?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;tactical-process&quot;&gt;Tactical Process&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Ensure your manage/team lead approves the effort&lt;/li&gt;
+&lt;li&gt;Request open source submission approval&lt;/li&gt;
+&lt;li&gt;Push the code&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This is of course our version of the OSS Manifesto as detailed at &lt;a href=&quot;http://ossmanifesto.org/&quot;&gt;http://ossmanifesto.org/&lt;/a&gt;. This is one piece I highly suggest any group of individuals at an enterprise to give a read to, and create their own manifesto per their enterprise they work for. It’s good for many reasons to write this out and provide it.&lt;/p&gt;
+&lt;p&gt;The main two reasons I really like the OSS Manifesto include:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;The transparency it provides to users of the project(s) of a particular enterprise.&lt;/li&gt;
+&lt;li&gt;The other thing is that it provides a much needed brain storming session to identify and define the groups intent and efforts on a more metaphsycial level, which is hugely needed to understand how a team working on a project and it’s prospective contributors would interact with each other. Defining these core tenants is fundamental to a smooth workflow between contributors.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;That’s it for this part of the series. In the next part I’ll dive into some of the tactical problems we ran into. Where to put code, how to identify what, where, and how people could or should contribute, and related practices. &lt;strong&gt;&lt;em&gt;[Will update this to link to subsequent part when it is published.]&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;References:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.netflix.com&quot;&gt;Netflix&lt;/a&gt; and &lt;a href=&quot;https://en.wikipedia.org/wiki/Netflix&quot;&gt;Netflix Wikipedia&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.homedepot.com&quot;&gt;Home Depot&lt;/a&gt; and &lt;a href=&quot;https://github.com/homedepot&quot;&gt;Home Depot Github Org&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
     <item>
       <title>The Curse of Windows Server &amp; Windows Server 2016 Salvation</title>
       <link>http://adron.github.io/articles/the-curse-of-windows-server-windows-server-2016-salvation/</link>
@@ -1776,27 +1927,6 @@ export TF_VAR_password=&amp;quot;someSecretPassword&amp;quot;
 </description>
     </item>
     <item>
-      <title>How to Electron by Blaine Schmeisser</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-blaine-schmeisser/</link>
-      <pubDate>Sun, 05 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-blaine-schmeisser/</guid>
-      <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-blaine-schmeisser/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-left&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-blaine-schmeisser/blainesch.jpg&quot; alt=&quot;Blaine Schmeisser&quot;&gt;
-&lt;/div&gt;
-
-&lt;p&gt;I’m happy to introduce Blaine Schmeisser. He’s a recent Portland transplant currently working as a Senior Software Engineer at New Relic. He has a passion for building and shipping software and an advocate for pair programming. Outside of tech, Blaine spends his free time with his dog and maintains a simplistic, eco-friendly lifestyle.&lt;/p&gt;
-&lt;p&gt;Blaine’s “How to Electron” answers questions you have about building user interface applications with JavaScript. Have you ever wanted to build desktop apps with web technology you already know? If you’ve never heard of Electron or just want to learn more about it, this talk will cover what Electron is and how to utilize it to create powerful tools like Atom and Slack. You will learn the history of Electron, how to get started, the trade-offs of picking various boiler plates, and the unique Electron specific APIs that are vital to being a Electron developer.&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;GitHub: &lt;a href=&quot;https://github.com/blainesch&quot;&gt;https://github.com/blainesch&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Twitter: &lt;a href=&quot;https://twitter.com/blainesch&quot;&gt;https://twitter.com/blainesch&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Website: &lt;a href=&quot;http://blainesch.com&quot;&gt;http://blainesch.com&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-    </item>
-    <item>
       <title>Demystifying TypeScript Decorators by James Churchill</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-james-churchill/</link>
       <pubDate>Sun, 05 Jun 2016 17:00:00 -0700</pubDate>
@@ -1820,33 +1950,24 @@ export TF_VAR_password=&amp;quot;someSecretPassword&amp;quot;
 </description>
     </item>
     <item>
-      <title>The SAM Pattern - a distributed system view of Front-End architectures by Jean-Jacques Dubray</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-jean-jacques-dubray/</link>
-      <pubDate>Sat, 04 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-jean-jacques-dubray/</guid>
+      <title>How to Electron by Blaine Schmeisser</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-blaine-schmeisser/</link>
+      <pubDate>Sun, 05 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-blaine-schmeisser/</guid>
       <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-jean-jacques-dubray/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-blaine-schmeisser/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;div class=&quot;image float-left&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-jean-jacques-dubray/jj-sized.png&quot; alt=&quot;Jean-Jacques Dubray&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-blaine-schmeisser/blainesch.jpg&quot; alt=&quot;Blaine Schmeisser&quot;&gt;
 &lt;/div&gt;
 
-&lt;p&gt;Jean-Jacques Dubray is the founder of &lt;a href=&quot;http://xgen.io&quot;&gt;xgen.io&lt;/a&gt; and &lt;a href=&quot;http://www.gliiph.com&quot;&gt;gliiph&lt;/a&gt;. He has been building Service Oriented Architectures,
-and API platforms for the last 15 years. He is a former member of the research staff at HRL and earned his Ph.D. from
-the University of Provence (Luminy campus), home of the Prolog language. He is the inventor of the &lt;a href=&quot;http://www.xgenio.com/bolt-introduction.pdf&quot;&gt;BOLT methodology&lt;/a&gt; and the SAM pattern.&lt;/p&gt;
-&lt;p&gt;In his talk Jean-Jacques Dubray presents that Web Applications are rapidly becoming sophisticated distributed systems. When you look at a Facebook page or a Netflix catalog,
-the number of components interacting with each other requires complex synchronization and state management capabilities, reaching
-the limits of the MVC pattern.&lt;/p&gt;
+&lt;p&gt;I’m happy to introduce Blaine Schmeisser. He’s a recent Portland transplant currently working as a Senior Software Engineer at New Relic. He has a passion for building and shipping software and an advocate for pair programming. Outside of tech, Blaine spends his free time with his dog and maintains a simplistic, eco-friendly lifestyle.&lt;/p&gt;
+&lt;p&gt;Blaine’s “How to Electron” answers questions you have about building user interface applications with JavaScript. Have you ever wanted to build desktop apps with web technology you already know? If you’ve never heard of Electron or just want to learn more about it, this talk will cover what Electron is and how to utilize it to create powerful tools like Atom and Slack. You will learn the history of Electron, how to get started, the trade-offs of picking various boiler plates, and the unique Electron specific APIs that are vital to being a Electron developer.&lt;/p&gt;
 &lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;In the last couple of years, several reactive architectures have started to get some interest (React, Cycle.js, ELM) without
-generating significant traction (compared to established frameworks like Angular), while struggling to position effects in their
-programming model. A new reactive, functional pattern, the State-Action-Model pattern (SAM) was introduced in early 2016 on the
-foundation of TLA+ semantics.&lt;/p&gt;
-&lt;p&gt;The pattern, which is unapologetically driven by simplicity, promotes a clear delineation between the business logic and the view
-and challenges the complexity of frameworks like Google’s Angular or Facebook’s React/Redux.&lt;/p&gt;
-&lt;p&gt;SAM’s unidirectional flow is also challenging interactive patterns like BFF (Back-End for Front-End) or the Vertical Slice Pattern
-which suggest creating view-specific APIs, per platform, app, versions of an app…&lt;/p&gt;
-&lt;p&gt;We’ll start by reviewing some of the key challenges of modern UX and Front-End Architectures. We will then present the
-key concepts of SAM and walk the audience through some node.js code samples (including server-side TimeTravel).&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;GitHub: &lt;a href=&quot;https://github.com/blainesch&quot;&gt;https://github.com/blainesch&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Twitter: &lt;a href=&quot;https://twitter.com/blainesch&quot;&gt;https://twitter.com/blainesch&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Website: &lt;a href=&quot;http://blainesch.com&quot;&gt;http://blainesch.com&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </description>
     </item>
     <item>
@@ -1877,6 +1998,36 @@ In this talk I would be covering the following:&lt;/p&gt;
 &lt;li&gt;Live Demo on how it’s really intuitive in a couple of non-trivial scenarios.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;So basically my goal is to attract more developers to adapt modern javascript frameworks and make a difference in the way complex apps are built.”&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>The SAM Pattern - a distributed system view of Front-End architectures by Jean-Jacques Dubray</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-jean-jacques-dubray/</link>
+      <pubDate>Sat, 04 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-jean-jacques-dubray/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-jean-jacques-dubray/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-left&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-jean-jacques-dubray/jj-sized.png&quot; alt=&quot;Jean-Jacques Dubray&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Jean-Jacques Dubray is the founder of &lt;a href=&quot;http://xgen.io&quot;&gt;xgen.io&lt;/a&gt; and &lt;a href=&quot;http://www.gliiph.com&quot;&gt;gliiph&lt;/a&gt;. He has been building Service Oriented Architectures,
+and API platforms for the last 15 years. He is a former member of the research staff at HRL and earned his Ph.D. from
+the University of Provence (Luminy campus), home of the Prolog language. He is the inventor of the &lt;a href=&quot;http://www.xgenio.com/bolt-introduction.pdf&quot;&gt;BOLT methodology&lt;/a&gt; and the SAM pattern.&lt;/p&gt;
+&lt;p&gt;In his talk Jean-Jacques Dubray presents that Web Applications are rapidly becoming sophisticated distributed systems. When you look at a Facebook page or a Netflix catalog,
+the number of components interacting with each other requires complex synchronization and state management capabilities, reaching
+the limits of the MVC pattern.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;In the last couple of years, several reactive architectures have started to get some interest (React, Cycle.js, ELM) without
+generating significant traction (compared to established frameworks like Angular), while struggling to position effects in their
+programming model. A new reactive, functional pattern, the State-Action-Model pattern (SAM) was introduced in early 2016 on the
+foundation of TLA+ semantics.&lt;/p&gt;
+&lt;p&gt;The pattern, which is unapologetically driven by simplicity, promotes a clear delineation between the business logic and the view
+and challenges the complexity of frameworks like Google’s Angular or Facebook’s React/Redux.&lt;/p&gt;
+&lt;p&gt;SAM’s unidirectional flow is also challenging interactive patterns like BFF (Back-End for Front-End) or the Vertical Slice Pattern
+which suggest creating view-specific APIs, per platform, app, versions of an app…&lt;/p&gt;
+&lt;p&gt;We’ll start by reviewing some of the key challenges of modern UX and Front-End Architectures. We will then present the
+key concepts of SAM and walk the audience through some node.js code samples (including server-side TimeTravel).&lt;/p&gt;
 </description>
     </item>
     <item>
