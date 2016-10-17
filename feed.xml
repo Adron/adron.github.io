@@ -42,6 +42,8 @@
 &lt;p&gt;Now, with all the negatives pointed out, one could actually use JIRA, Stash, and Confluence for open source work. You just need to open up all of the software to the public. They’ve be perfectly capable from a technical point of view to accomplish the mission, albeit it’d probably cost a ton of cash.&lt;/p&gt;
 &lt;h4 id=&quot;jell&quot;&gt;Jell&lt;/h4&gt;
 &lt;p&gt;Need a quick tool for managing the daily punch list, or more simply, what I generally call the &lt;em&gt;My GSD for Today&lt;/em&gt; items? Jell is a great tool for this. Others that come to mind are Trello or even just plain old Google Docs (I guess that’s G-suite now). Whatever the case, it helps members to have a punch list if it’s a day-to-day, regularly worked on project. This helps with that communication across any contributors, even if contributors are all in a single office.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://adron.github.io/articles/holy-shit-watch-out-for-that-enterprise-open-source/&quot;&gt;Part I&lt;/a&gt;
+&lt;a href=&quot;http://adron.github.io/articles/enterprise-open-source-tactical/&quot;&gt;Part II (That’s this article)&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;That’s it for part II. More to come for this series real soon, and I’ll update the post with a link right here to Part III as soon as it’s published.&lt;/p&gt;
 </description>
     </item>
@@ -190,7 +192,8 @@ As you update the project, you should provide semantic versioning to allow consu
 &lt;li&gt;The transparency it provides to users of the project(s) of a particular enterprise.&lt;/li&gt;
 &lt;li&gt;The other thing is that it provides a much needed brain storming session to identify and define the groups intent and efforts on a more metaphsycial level, which is hugely needed to understand how a team working on a project and it’s prospective contributors would interact with each other. Defining these core tenants is fundamental to a smooth workflow between contributors.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;That’s it for this part of the series. In the next part I’ll dive into some of the tactical problems we ran into. Where to put code, how to identify what, where, and how people could or should contribute, and related practices. &lt;strong&gt;&lt;em&gt;[Will update this to link to subsequent part when it is published.]&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://adron.github.io/articles/holy-shit-watch-out-for-that-enterprise-open-source/&quot;&gt;Part I (That’s this article)&lt;/a&gt;
+&lt;a href=&quot;http://adron.github.io/articles/enterprise-open-source-tactical/&quot;&gt;Part II&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;References:&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https://www.netflix.com&quot;&gt;Netflix&lt;/a&gt; and &lt;a href=&quot;https://en.wikipedia.org/wiki/Netflix&quot;&gt;Netflix Wikipedia&lt;/a&gt;.&lt;/li&gt;
@@ -2124,6 +2127,23 @@ In this talk, you will learn about the power of WebSockets and how they can (and
 </description>
     </item>
     <item>
+      <title>I Play the JavaScript by Matt McKegg</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</link>
+      <pubDate>Thu, 02 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-left&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/mattmckegg.jpg&quot; alt=&quot;Matt McKegg&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;A JavaScript hacker and backyard musician and from Wellington, New Zealand. Lover of all things open and modular. I spend most of my time pressing buttons of various shapes, sizes and colours. Sometimes these buttons make sounds.&lt;/p&gt;
+&lt;p&gt;Matt has been making music with computers for about 10 years, but once he tried to move from bedroom composing to live performance, he got incredibly frustrated at how hard it was to play computer music live. He decided to start working on his own live electronic performance software written in JavaScript that would let me play the way he wanted to play. 3 years later, it’s finally starting to become a reality.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Here is one of the Matt’s recent performances, for your viewing pleasure. &lt;/p&gt;
+&lt;iframe width=&quot;1280&quot; height=&quot;720&quot; src=&quot;https://www.youtube.com/embed/L2BVDJWHdy0?rel=0&amp;amp;showinfo=0&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;</description>
+    </item>
+    <item>
       <title>The Web Platform is the Universal Instrument by Ben Michel</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-ben-michel/</link>
       <pubDate>Thu, 02 Jun 2016 17:00:00 -0700</pubDate>
@@ -2149,23 +2169,6 @@ In this talk, you will learn about the power of WebSockets and how they can (and
 &lt;li&gt;Audience interaction with the exposed parameters of a live band’s instrumentation–via broadcast methods and microcontroller installations.”&lt;/li&gt;
 &lt;/ul&gt;
 </description>
-    </item>
-    <item>
-      <title>I Play the JavaScript by Matt McKegg</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</link>
-      <pubDate>Thu, 02 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</guid>
-      <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-left&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/mattmckegg.jpg&quot; alt=&quot;Matt McKegg&quot;&gt;
-&lt;/div&gt;
-
-&lt;p&gt;A JavaScript hacker and backyard musician and from Wellington, New Zealand. Lover of all things open and modular. I spend most of my time pressing buttons of various shapes, sizes and colours. Sometimes these buttons make sounds.&lt;/p&gt;
-&lt;p&gt;Matt has been making music with computers for about 10 years, but once he tried to move from bedroom composing to live performance, he got incredibly frustrated at how hard it was to play computer music live. He decided to start working on his own live electronic performance software written in JavaScript that would let me play the way he wanted to play. 3 years later, it’s finally starting to become a reality.&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Here is one of the Matt’s recent performances, for your viewing pleasure. &lt;/p&gt;
-&lt;iframe width=&quot;1280&quot; height=&quot;720&quot; src=&quot;https://www.youtube.com/embed/L2BVDJWHdy0?rel=0&amp;amp;showinfo=0&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;</description>
     </item>
     <item>
       <title>The House Is Not On Fire - Building a home automation robot with Arduino, Raspberry Pi and Node.js by Artur Paikin</title>

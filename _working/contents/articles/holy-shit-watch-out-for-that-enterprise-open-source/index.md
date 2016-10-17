@@ -135,7 +135,8 @@ The main two reasons I really like the OSS Manifesto include:
 1. The transparency it provides to users of the project(s) of a particular enterprise.
 2. The other thing is that it provides a much needed brain storming session to identify and define the groups intent and efforts on a more metaphsycial level, which is hugely needed to understand how a team working on a project and it's prospective contributors would interact with each other. Defining these core tenants is fundamental to a smooth workflow between contributors.
 
-That's it for this part of the series. In the next part I'll dive into some of the tactical problems we ran into. Where to put code, how to identify what, where, and how people could or should contribute, and related practices. ***[Will update this to link to subsequent part when it is published.]***
+[Part I (That's this article)](/articles/holy-shit-watch-out-for-that-enterprise-open-source/)
+[Part II](/articles/enterprise-open-source-tactical/)
 
 **References:**
 

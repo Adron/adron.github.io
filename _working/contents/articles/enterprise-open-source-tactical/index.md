@@ -53,4 +53,7 @@ Now, with all the negatives pointed out, one could actually use JIRA, Stash, and
 
 Need a quick tool for managing the daily punch list, or more simply, what I generally call the *My GSD for Today* items? Jell is a great tool for this. Others that come to mind are Trello or even just plain old Google Docs (I guess that's G-suite now). Whatever the case, it helps members to have a punch list if it's a day-to-day, regularly worked on project. This helps with that communication across any contributors, even if contributors are all in a single office.
  
+[Part I](/articles/holy-shit-watch-out-for-that-enterprise-open-source/)
+[Part II (That's this article)](/articles/enterprise-open-source-tactical/)
+
 That's it for part II. More to come for this series real soon, and I'll update the post with a link right here to Part III as soon as it's published.
