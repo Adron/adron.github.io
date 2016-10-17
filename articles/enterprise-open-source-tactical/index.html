@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="/css/style.min.css">
     <script src="/js/modernizr.js"></script>
   </head>
-  <body>
+  <body class="article-detail">
     <!--[if lt IE 8]>
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -67,8 +67,10 @@
             <div class="col-md-12">
               <!-- Page Info-->
               <div class="page-info page-info-simple">
-                <h1>Adron's Composite Code</h1>
-                <h2 class="description">Coder, Messenger, Recon, Infrastructure, Ops</h2>
+                <h1>Let's Talk Tactical Tools for Enterprise Open Source</h1>
+                <p class="author">Written by <span class="author">Adron Hall</span>
+                </p>
+                <div class="nav"><a href="/">« Home</a></div>
               </div>
               <!-- End Page Info-->
             </div>
@@ -83,101 +85,37 @@
             <div class="col-md-9">
               <div class="main-content">
                 <!-- Blog Page-->
-                <div class="blog">
-                  <div class="row"></div>
-                </div>
-                <div class="col-md-12 col-sm-12">
-                  <!-- Blog List-->
-                  <div class="blog-grid">
-                    <div class="row">
-                      <div class="col-md-12 col-sm-12">
-                        <h3 class="blog-grid-title"><a href="/articles/hapijs-aws-worker-publish/">Setting up a Hapi.js App that sends work to a Node.js AWS Worker via SQS</a></h3>
-                        <p class="blog-grid-excerpt"><div class="image float-right">
-  <img src="/articles/hapijs-aws-worker-publish/SDKs-copy_nodeJS-200x2100.png" alt="Node.js SDK">
-</div>
-
+                <article class="article">
+                  <section class="content"><p>Part <span class="caps">II</span> on the topic of Enterprise OSS. Part I is <a href="/articles/holy-shit-watch-out-for-that-enterprise-open-source/">here</a>.</p>
+<p>In the first part I wrote about the Enterprise Open Source Manifesto that was written up for Home Depot’s open source efforts. In this part I’m going to tactical some of tooling <span class="amp">&amp;</span> cultural characteristics that came into&nbsp;play.</p>
+<h3 id="enterprise-open-source-tooling">Enterprise Open Source&nbsp;Tooling</h3>
+<p>Every team had a number of tools in use upon the beginning of these efforts. I’m going to dive into a few of the tools we used and how those helped and hurt us all at the same time. After that Iv’e got a discussion on future tool choices, current tool migrations, and&nbsp;goals.</p>
+<h3 id="existing-pre-oss-efforts">Existing Pre-<span class="caps">OSS</span>&nbsp;Efforts</h3>
 <ul>
-<li><em>Part 1</em> – <a href="/articles/setting-up-an-aws-sqs-queue-for-use-with-node-js-beanstalk-worker-instances">Setting up an <span class="caps">AWS</span> SQS Queue for Use With Node.js Beanstalk Worker&nbsp;Instances</a></li>
-<li><em>Part 2</em> – <a href="/articles/hapijs-aws-worker-publish/">Setting up a Hapi.js App that sends work to a Node.js <span class="caps">AWS</span> Worker via SQS</a> (This is the current article you’re reading&nbsp;now)</li>
-<li><em>Part 3</em> – <a href="/articles/aws-beanstalk-worker-with-node-js-and-sqs/"><span class="caps">AWS</span> Beanstalk Worker with Node.js and&nbsp;SQS</a></li>
+<li><span class="caps">JIRA</span></li>
+<li>Confluence</li>
+<li>Stash</li>
 </ul>
-<p><a name="webapplication"></a></p>
-<p>First I created a project for the node.js web application. This just used the simple <code>npm init</code> command and I stepped through the prompts for name, version, description, entry point, and so&nbsp;on.</p>
-<pre><code class="lang-shell-script">$ npm init
-This utility will walk you through creating a package.json file.
-It only covers the most common items, and tries to guess sane defaults.
-
-See `npm help json` for definitive documentation on these fields
-and exactly what they do.
-
-Use `npm install &amp;pkg&amp; --save` afterwards to install a package and
-save it as a dependency in the package.json file.
-
-Press ^C at any time to quit.
-name: (testing-aws-sqs-site)
-version: (0.0.0) 0.0.1
-description: This project that will feed data to the queue for the AWS SQS sample.
-entry point: (index.js) server.js
-test command: mocha
-git repository: (https://github.com/Adron/testing-aws-sqs-site.git)
-keywords: aws, sqs, elastic, elastic beanstalk, queue, worker
-author: Adron Hall
-license: (ISC) Apache 2.0
-</code></pre>
-<p>
-                          <p class="more"><a href="/articles/hapijs-aws-worker-publish/">more</a></p>
-                        </p>
-                        <div class="blog-grid-meta"><span class="blog-grid-date">07. November 2014</span></div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End of Blog List-->
-                </div>
-                <div class="col-md-12 col-sm-12">
-                  <!-- Blog List-->
-                  <div class="blog-grid">
-                    <div class="row">
-                      <div class="col-md-12 col-sm-12">
-                        <h3 class="blog-grid-title"><a href="/articles/setting-up-an-aws-sqs-queue-for-use-with-node-js-beanstalk-worker-instances/">Setting up an AWS SQS Queue for Use With Node.js Beanstalk Worker Instances</a></h3>
-                        <p class="blog-grid-excerpt"><div class="image float-right">
-    <img src="/articles/setting-up-an-aws-sqs-queue-for-use-with-node-js-beanstalk-worker-instances/Amazon-SQS_200x200.png" alt="Amazon SQS">
-</div>
-
-<ul>
-<li><em>Part 1</em> – <a href="/articles/setting-up-an-aws-sqs-queue-for-use-with-node-js-beanstalk-worker-instances">Setting up an <span class="caps">AWS</span> SQS Queue for Use With Node.js Beanstalk Worker Instances</a> (This is the current article you’re reading&nbsp;now)</li>
-<li><em>Part 2</em> – <a href="/articles/hapijs-aws-worker-publish/">Setting up a Hapi.js App that sends work to a Node.js <span class="caps">AWS</span> Worker via&nbsp;SQS</a></li>
-<li><em>Part 3</em> – <a href="/articles/aws-beanstalk-worker-with-node-js-and-sqs/"><span class="caps">AWS</span> Beanstalk Worker with Node.js and&nbsp;SQS</a></li>
-</ul>
-<p>Before diving straight in, I’m going to outline the specific goals and what I am using to accomplish these goals. The goal is to have a simple web application, that will get some element of data posted to a queue. The queue will then have data that a worker service needs to then process. As I step through each of these requirements I’ll determine the actual push and pull mechanisms that will get the job&nbsp;done.</p>
-<p>
-                          <p class="more"><a href="/articles/setting-up-an-aws-sqs-queue-for-use-with-node-js-beanstalk-worker-instances/">more</a></p>
-                        </p>
-                        <div class="blog-grid-meta"><span class="blog-grid-date">06. November 2014</span></div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End of Blog List-->
-                </div>
-                <div class="col-md-12 col-sm-12">
-                  <!-- Blog List-->
-                  <div class="blog-grid">
-                    <div class="row">
-                      <div class="col-md-12 col-sm-12">
-                        <h3 class="blog-grid-title"><a href="/articles/working-in-34c-wintersmith-customization-and-github-hosting/">Working in -34c Wintersmith Customization and Github Hosting</a></h3>
-                        <p class="blog-grid-excerpt"><p>Getting Wintersmith customized, building and deployed to Github and a domain name pointed takes a few extra steps. So let’s&nbsp;roll…</p>
-<div class="image float-right">
-    <a href="http://wintersmith.io/"><img src="/articles/working-in-34c-wintersmith-customization-and-github-hosting/wintersmith-01.png" alt="Wintersmith Icon 1"></a>
-</div>
-
-<p>
-                          <p class="more"><a href="/articles/working-in-34c-wintersmith-customization-and-github-hosting/">more</a></p>
-                        </p>
-                        <div class="blog-grid-meta"><span class="blog-grid-date">19. February 2014</span></div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End of Blog List-->
-                </div>
+<p><span class="more"></span></p>
+<h4 id="jira-stash-and-confluence"><span class="caps">JIRA</span>, Stash, and&nbsp;Confluence</h4>
+<p><span class="caps">JIRA</span> has a lot of pluses and negatives, and I do mean a lot! I’m going to start with the pain points and then move onto the&nbsp;positives.</p>
+<p>Access - One of the major pain points was that <span class="caps">JIRA</span> had harbored a completely closed communication practice. What I mean by this was that all communications, as one would assume, were being done in a very insular way. Since the tool had traditionally been used only for closed source development, it was by it’s very nature configured to be exclusionary to any and all possible open source&nbsp;efforts.</p>
+<p>User Limits - The way <span class="caps">JIRA</span> is configured, one doesn’t merely get added or become a contributor in any general sense. One needs to fall under a particular user paradigm like Active Directory, controlled auth SSO style accounts, or something of that sort. This leaves JIRA very limited for public access and contributions from an organizational&nbsp;perspective.</p>
+<p><span class="caps">JIRA</span> is extremely heavy and many open source efforts are super lean. I realize for a project with a lot of pull requests and interactions there needs some way to oganize all the interactions, but for small projects or even reasonably sized projects JIRA is&nbsp;overkill.</p>
+<p>Another issue is that <span class="caps">JIRA</span> becomes a practice that dictates effort versus effort and results that dictate practice. This in turn makes it even more difficult to break certain practices and dogma to move toward lighter weight practices. More seamless open source projects and the practices that would and can move an open source project forward are disregarded because X, Y, and Z activities must be performed because of the&nbsp;“JIRA”.</p>
+<p>Confluence is actually a great wiki tool. Albeit again, it’s a matter of overkill. Often the wiki that is needed is just a simple tool that can provide absolutely minimalistic wiki features. Maybe markdown is the standard mechanism to markup wiki pages with even. Whatever the case it needs to be&nbsp;simple.</p>
+<p>However, again just like with <span class="caps">JIRA</span>, these tools work great for dramatically larger and more complex projects. They can and do provide a great ability to cohesively bring together larger teams of people to work together in a more effective&nbsp;manner.</p>
+<p>Stash is useful in some ways, but again just like with <span class="caps">JIRA</span>, Confluence and related tooling it tends to be used to provide a way to hide away the source code internally. This in turn, just as with JIRA and Confluence work toward hiding software and not toward bringing it forward in an open and transparent way for others to work&nbsp;with.</p>
+<h3 id="new-tools-for-enterprise-oss-efforts">New Tools for Enterprise <span class="caps">OSS</span>&nbsp;Efforts</h3>
+<h4 id="github">Github</h4>
+<p>So Github comes to the rescue. For the most part there is a simple reason that it is the defacto go-to place for open source. It’s in the open, millions already use it, their git intergration is good, they have pretty straight forward minimalist focused interfaces and features, and it gets the job&nbsp;done.</p>
+<p>Does Github miss key features for some? Absolutely. Do issues get cumbersome and out of control after moderate conversation. Of course they do, especially with their single depth style of forum comments. Even with whatever disadvantages it has, Github was the go-to for us when we wanted to open source software too. It provided many of the key features we need; wiki, issues, and simple ways to track for simple&nbsp;projects.</p>
+<p>Now, with all the negatives pointed out, one could actually use <span class="caps">JIRA</span>, Stash, and Confluence for open source work. You just need to open up all of the software to the public. They’ve be perfectly capable from a technical point of view to accomplish the mission, albeit it’d probably cost a ton of&nbsp;cash.</p>
+<h4 id="jell">Jell</h4>
+<p>Need a quick tool for managing the daily punch list, or more simply, what I generally call the <em>My <span class="caps">GSD</span> for Today</em> items? Jell is a great tool for this. Others that come to mind are Trello or even just plain old Google Docs (I guess that’s G-suite now). Whatever the case, it helps members to have a punch list if it’s a day-to-day, regularly worked on project. This helps with that communication across any contributors, even if contributors are all in a single&nbsp;office.</p>
+<p>That’s it for part <span class="caps">II</span>. More to come for this series real soon, and I’ll update the post with a link right here to Part III as soon as it’s&nbsp;published.</p>
+</section>
+                </article>
                 <!-- End of Blog Page-->
               </div>
             </div>
@@ -267,8 +205,7 @@ license: (ISC) Apache 2.0
             </div>
           </div>
         </div>
-        <div class="nav"><a href="/page/19/">« Newer</a>&nbsp;<a href="/page/21/">Previous »</a>
-        </div>
+        <div class="nav"><a href="/">« Home</a></div>
       </div>
     </div>
     <script src="/js/all.js"></script>
