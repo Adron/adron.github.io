@@ -4,6 +4,9 @@ author: Adron Hall
 date: 2016-10-12
 template: article.jade
 ---
+[Part I (That's this article)](/articles/holy-shit-watch-out-for-that-enterprise-open-source/)
+[Part II](/articles/enterprise-open-source-tactical/)
+
 This blog entry is going to be the conjoined events of open source work at Home Depot, enterprise open source in general, and the ideas and punch lists for a talk I have coming up in London on open source enterprise practices. So this will be a hard drifting whirlwind, buckle up!
 
 In the last year there's been several specific projects I've led and consulted on:

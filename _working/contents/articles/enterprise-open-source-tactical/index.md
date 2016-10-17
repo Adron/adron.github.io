@@ -4,7 +4,8 @@ author: Adron Hall
 date: 2016-10-16
 template: article.jade
 ---
-Part II on the topic of Enterprise OSS. Part I is [here](/articles/holy-shit-watch-out-for-that-enterprise-open-source/).
+[Part I](/articles/holy-shit-watch-out-for-that-enterprise-open-source/)
+[Part II (That's this article)](/articles/enterprise-open-source-tactical/)
 
 In the first part I wrote about the Enterprise Open Source Manifesto that was written up for Home Depot's open source efforts. In this part I'm going to tactical some of tooling & cultural characteristics that came into play.
 
