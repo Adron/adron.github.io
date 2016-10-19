@@ -8,12 +8,12 @@ This page links to my history of speaking via presentations, workshops, or other
 
 **Upcoming Presentations**
 
-* Presenting [Building Immutably to Continuous Delivery with Minimal Inputs](/talks/Building-Immutably-Continuous-Delivery-Minimal-Inputs-London) at [O'Reilly Architecture Conference](http://conferences.oreilly.com/software-architecture/engineering-business-eu).
 * Presenting [Moving Enterprise Practices and Development to Open Source](/talks/Moving-Enterprise-Practices-and-Development-to-Open-Source) at [O'Reilly Architecture Conference](http://conferences.oreilly.com/software-architecture/engineering-business-eu).
 * Presenting [Building Immutably to Continuous Delivery with Minimal Inputs](/talks/Building-Immutably-Continuous-Delivery-Minimal-Inputs-San-Francisco/) at [O'Reilly Architecture Conference](http://conferences.oreilly.com/software-architecture/engineering-business-ca).
 
 **Past Presentations**
 
+* Presenting [Building Immutably to Continuous Delivery with Minimal Inputs](/talks/Building-Immutably-Continuous-Delivery-Minimal-Inputs-London) at [O'Reilly Architecture Conference](http://conferences.oreilly.com/software-architecture/engineering-business-eu).
 * [Managing (or not) the Data in Immutable Infrastructure](/talks/managing-or-not-the-data-in-immutable-infrastructure) at [Data Layer](https://datalayer.com/).
 * [Organizing Infrastructure Config & Workflow](/talks/Organizing-Infrastructure-Config-and-Workflow/) at [HashiConf 2016](https://www.hashiconf.com/)
 * [Elastic w/ Terraform, Packer, & That Immutability Magic w/ @Adron](/talks/elastic-with-terraform-packer-and-immutability-magic/) at [Elastic User Group PDX](http://www.meetup.com/The-Portland-ElasticSearch-Meetup-Group/) - [Meeting Details](http://www.meetup.com/The-Portland-Elasticsearch-Meetup-Group/events/228010912/).
