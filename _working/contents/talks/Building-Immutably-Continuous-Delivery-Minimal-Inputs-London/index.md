@@ -1,10 +1,10 @@
 ---
-title: Building Immutably Continuous Delivery Minimal Inputs London
+title: Building Immutably Continuous Delivery with Minimal Inputs in London
 author: Adron Hall
 date: 2016-07-02:21:36:27
 template: talk.jade
 ---
-## Building Immutably Continuous Delivery Minimal Inputs London
+## Building Immutably Continuous Delivery with Minimal Inputs in London
 ### *on October 19-21, 2016*
 
 This workshop focuses on building a continuously delivered pipeline using Node.js (however easily transferable to Ruby/Rails/Java/Scala/.NET etc.). The workshop will trace the steps from inception to deployed application (with a domain pointed appropriately and all) that can then be developed against to continue whatever effort and intent of the developer(s)!
@@ -14,6 +14,8 @@ This workshop focuses on building a continuously delivered pipeline using Node.j
 * Getting a domain name, determining name servers & DNS servers, setting it up and getting it pointed at our application.
 * Setting up and determining the deployment scenario on AWS & discussion of other infrastructure choices.
 * Deploying the application through the complete process of code, integrate, test, build, deploy.
+
+The code used as demo during the workshop is located here > https://github.com/Adron/multi-cloud
 
 The Workshop is broken into two sections. The slide deck for the first section is below.
 
