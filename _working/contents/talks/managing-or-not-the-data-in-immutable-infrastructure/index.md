@@ -13,6 +13,8 @@ The idea of immutable infrastructure is awesome. However a major problem immedia
     ![Home Depot](home-depot.png)
 </div>
 
-In this talk I dive into the needs and problems of two specific data systems we've deployed at Home Depot. One is our use of [Elasticsearch](https://www.elastic.co/products/elasticsearch) and the other is [SQL Server](https://www.microsoft.com/en-us/cloud-platform/sql-server). 
+In this talk I talk about the needs and problems of two specific data systems we've deployed at Home Depot. One is our use of [Elasticsearch](https://www.elastic.co/products/elasticsearch) and the other is [SQL Server](https://www.microsoft.com/en-us/cloud-platform/sql-server).
+
+<iframe width="960" height="540" src="https://www.youtube.com/embed/9LRNdbj041Q?list=PLcENCb4ZF_mzk-jqgEFTBXRTU9zhD471J&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
 
 <iframe src="https://docs.google.com/presentation/d/1VhWQeNUrxZB5CVN1C1RALUigC-ayr5ZMitl10W5mHcY/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
