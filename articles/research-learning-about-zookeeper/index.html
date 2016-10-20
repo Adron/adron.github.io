@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Adron's Composite Code</title>
+    <meta name="description" content="">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="alternate" href="/feed.xml" type="application/rss+xml" title="Coder, Messenger, Recon, Infrastructure, Ops">
+    <link rel="icon" type="image/png" href="/img/favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/img/favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/img/favicons/favicon-96x96.png" sizes="96x96">
+    <link rel="apple-touch-icon" sizes="57x57" href="/img/favicons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/img/favicons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/img/favicons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/img/favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/img/favicons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/img/favicons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/img/favicons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/img/favicons/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/favicons/apple-touch-icon-180x180.png">
+    <link rel="stylesheet" href="/css/custom.css">
+    <link rel="stylesheet" href="/css/style.min.css">
+    <script src="/js/modernizr.js"></script>
+  </head>
+  <body class="article-detail">
+    <!--[if lt IE 8]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <div class="header header-over large">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 col-sm-6 col-xs-6">
+            <!-- Logo Image--><a href="/index.html" class="logo-image logo-animated"><img src="/img/logos/logo.png" alt="logo"></a>
+            <!-- End of Logo Image-->
+          </div>
+          <div class="col-md-9 col-sm-6 col-xs-6">
+            <!-- Menu-->
+            <nav class="right helper">
+              <ul class="menu sf-menu js-menu">
+                <li><a href="/docs/thrashing-code-news/">Thrashing Code News</a></li>
+                <li><a href="#">Conf - Meetup - Events</a>
+                  <ul>
+                    <li><a href="/docs/Speaking-Presentations-Workshops/">Speaking - Presentations - Workshops</a></li>
+                    <li><a href="/docs/calendar">Calendar of Engagements</a></li>
+                  </ul>
+                </li>
+                <li><a href="/docs/documentation/">Docs</a></li>
+                <li><a href="#">Contact</a>
+                  <ul>
+                    <li><a href="/docs/contact">Message</a></li>
+                    <li><a href="/docs/job-talk/">Hire</a></li>
+                  </ul>
+                </li>
+                <li><a href="/docs/about/">About</a></li>
+              </ul>
+            </nav>
+            <!-- End of Menu-->
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="header-back header-back-simple header-back-small">
+      <div class="header-back-container">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <!-- Page Info-->
+              <div class="page-info page-info-simple">
+                <h1>Researching &amp; Learning About Zookeeper - A Guide</h1>
+                <p class="author">Written by <span class="author">Adron Hall</span>
+                </p>
+                <div class="nav"><a href="/">« Home</a></div>
+              </div>
+              <!-- End Page Info-->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="content">
+      <div class="container">
+        <div class="layout with-right-sidebar js-layout">
+          <div class="row">
+            <div class="col-md-9">
+              <div class="main-content">
+                <!-- Blog Page-->
+                <article class="article">
+                  <section class="content"><p>I’ve started working with Zookeeper. Since I’ve started doing that I’ve put together this blog post. It’s aim is to provide a structured approach to learning Zookeeper and researching the elements that make its features tick. Along the way I have a few call outs to people that have also provided excellent talks, material, or contributions to learning about Zookeeper along the way. With that, let’s get&nbsp;started.</p>
+<p>Zookeeper is a consensus system written based on ideas presented via consensus algorithms. The idea is key value stores that keep all of their data in memory for read heavy workloads. The qualities in this context present a system that is highly consistent, with intent for access from distributed systems to data that won’t be&nbsp;lost.</p>
+<p><span class="more"></span></p>
+<h3 id="start-learning">Start&nbsp;Learning</h3>
+<p>The starting point should be a complete read of the <a href="https://zookeeper.apache.org/">Apache Zookeeper Project Home Page</a>.</p>
+<p>At this point I took an administrators’ angle on determining what I needed to know and do next. I knew that my situation would meet the basic assumptions of reliability around Zookeeper; First is that only a minority of servers in a deployment would fail at a particular time or become inaccessible from a crash, partition, or related issue, and second is that deployed machines would have correctly operating clocks, storage, and network components that perform&nbsp;consistently.</p>
+<p>I had also made an assumption that I would need <em><strong>2 x F + 1</strong> </em>machines in order to maintain data consistency. The F here is the number of failed or inaccessible machines. This meant that if I wanted to have 2 failures, I’d need at least 5 machines. For a failure of up to 3 machines, that would be 7 machines. Pretty easy, just a little simple&nbsp;math.</p>
+<p>The other thing I was curious about, especially on a single machine, would be Zookeeper’s overall overhead. Would it come into contention with the services that are already running? Would it be ok to put Zookeeper on the machines that run the micro-services that Zookeeper is providing information to? Well, Zookeeper does indeed content with other application for <span class="caps">CPU</span>, network, memory, and storage. For this reason I have to balance the deployment of Zookeeper in relation to the other applications, as my server loads may not be super high, and thus I’d be able to have Zookeeper on some of the servers that have actual other services deployed. But YMMV depending on your services you’ve got&nbsp;deployed.</p>
+<p>While I was thinking through how I’d build out the architecture for my implementation of Zookeeper I came upon a very important note in the&nbsp;documentation,</p>
+<blockquote>
+<p>“ZooKeeper’s transaction log must be on a dedicated device. (A dedicated partition is not enough.) ZooKeeper writes the log sequentially, without seeking Sharing your log device with other processes can cause seeks and contention, which in turn can cause multi-second&nbsp;delays.</p>
+<p>Do not put ZooKeeper in a situation that can cause a swap. In order for ZooKeeper to function with any sort of timeliness, it simply cannot be allowed to swap. Therefore, make certain that the maximum heap size given to ZooKeeper is not bigger than the amount of real memory available to ZooKeeper. For more on this, see Things to Avoid&nbsp;below.”</p>
+</blockquote>
+<p>After reading up on the following documentation it seemed like a good time to do a test&nbsp;deployment:</p>
+<ul>
+<li><a href="https://zookeeper.apache.org/doc/trunk/zookeeperAdmin.html" target="_blank">Zookeeper&nbsp;Admin</a></li>
+<li><a href="https://zookeeper.apache.org/doc/trunk/zookeeperAdmin.html#sc_minimumConfiguration" target="_blank">Zookeeper Minimum&nbsp;Configuration</a></li>
+</ul>
+<p><strong><span class="caps">BEGIN</span> BUG DESCRIPTION - 1ST DOCKER&nbsp;ATTEMPT</strong></p>
+<p><span class="caps">NOTE</span>: If you just want to get to the Zookeeper installation <span class="amp">&amp;</span> setup and skip this issue, <span class="caps">GOTO</span> <a href="#awsInstallation">here</a>.</p>
+<p>My first go was to pull up a clean Ubuntu docker image and prep it as a container. Then start installing the necessary parts of Zookeeper. These steps consisted of the following. I made a video for it (see toward the bottom of this entry), so you can actually see the flow and I also wrote the commands I’m tying in bash below. Then you can pick your preferred&nbsp;use.</p>
+<pre><code>docker-machine start fusion-fire
+</code></pre><p>Docker machine starts my virtual machine on <span class="caps">OS</span>-X that runs the Docker daemon, which I’ve named fusion-fire, thus the command above. Then after that I pulled down an Ubuntu image, started a container from the image, connecting to the container and all set for&nbsp;installation.</p>
+<pre><code>docker pull ubuntu
+docker run -it ubuntu
+</code></pre><p>To install the Zookeeper server and begin execution I then issued the&nbsp;following.</p>
+<pre><code>sudo apt-get update
+sudo apt-get -Y install default-jdk
+</code></pre><p>While this was executing I also ran into a situation where the Java Development Kit was hanging on getting the certificates put into&nbsp;place.</p>
+<p><blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">The last dozen or so <a href="https://twitter.com/hashtag/Ubuntu?src=hash">#Ubuntu</a> <a href="https://twitter.com/hashtag/docker?src=hash">#docker</a> images I&#39;ve tried to run &quot;sudo apt-get install default-jre&quot; on have all ended up spiking the&nbsp;<span class="caps">CPU</span>.</p>&mdash; Λdrøn (@Adron) <a href="https://twitter.com/Adron/status/693219719441096704">January 29, 2016</a></blockquote></p>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<p>I began looking into this problem, and found currently on Ubuntu 14.04, running sudo-apt-get update and then running the install will trigger the bug. Two other points of reference are <a href="https://github.com/docker/docker/issues/18180" target="_blank">here</a>, <a href="https://bugs.launchpad.net/ubuntu/+source/ca-certificates-java/+bug/1396760" target="_blank">here</a>, and there are other postings and issues related to the issue, just google. So what I did at that point to fix this issue was the&nbsp;following.</p>
+<p>First I forcefully killed the docker container by just restarting the whole docker&nbsp;<span class="caps">VM</span>.</p>
+<pre><code>docker-machine stop fusion-fire
+docker-machine start fusion-fire
+</code></pre><p>Once that stopped I then started the virtual machine&nbsp;again.</p>
+<pre><code>sudo apt-get -y install default-jre
+</code></pre><p>When it started I ran sudo apt-get install again. At that point apt-get attempted to recover but the install kept getting stuck on registering the certificates. So I gave up on this avenue for now. Hopefully a future Docker <span class="amp">&amp;</span> Linux Kernal fixes the problem. So instead I went out and just spooled up some <span class="caps">AWS</span> instances for now, I’ll update this blog entry with a “Part II: Docker is Zookeeper Fixed” when the Java + Linux Kernal + Docker issue is remedied, until then, here’s the installation process on the AWS&nbsp;instances.</p>
+<p><a name="awsInstallation"></a>
+<strong><span class="caps">END</span> BUG DESCRIPTION - AWS Instance Zookeeper&nbsp;Installation</strong></p>
+<p>Once this was setup I started 5 nano instances for Zookeeper (nano, since it’s just a test example for learning) and then logged in using broadcast with iTerm 2. From there each instance had the following commands&nbsp;executed.</p>
+<pre><code>sudo apt-get update
+sudo apt-get install -y default-jdk
+cd /opt/
+sudo mkdir zookeeper
+cd zookeeper/
+sudo wget http://mirror.tcpdiag.net/apache/zookeeper/zookeeper-3.4.6/zookeeper-3.4.6.tar.gz
+sudo tar -zxvf zookeeper-3.4.6.tar.gz
+cd conf/
+sudo nano zoo.cfg
+</code></pre><p><span class="caps">NOTE</span>: Nano is the text editor I used above for “sudo nano zoo.cfg”. If you don’t have it available just install it with “sudo apt-get install&nbsp;nano”.</p>
+<p>In that zoo.cfg I entered the following. For the IPs I actually used the <span class="caps">AWS</span> private IPs for the config file example&nbsp;below.</p>
+<blockquote>
+<p>tickTime=2000
+dataDir=/var/zookeeper
+clientPort=2181
+initLimit=5
+syncLimit=2
+server.1=172.31.19.66:2888:3888
+server.2=172.31.19.67:2888:3888
+server.3=172.31.19.68:2888:3888
+server.4=172.31.19.69:2888:3888&nbsp;server.5=172.31.19.70:2888:3888</p>
+</blockquote>
+<p>Now I started the service using the zkServer.sh script&nbsp;file.</p>
+<pre><code>sudo /opt/zookeeper/zookeeper-3.4.6/bin/zkServer.sh start-foreground
+</code></pre><p>When I booted up I ran into an error about the myid file, so I added the file with a sequential number for the byid in the /var/zookeeper&nbsp;directory.</p>
+<pre><code>sudo nano /var/zookeeper/myid
+</code></pre><p>In each of the files I added a number, respectively 1 through 5 for the id of each and saved those files. Upon attempting to start the zookeeper service with the following command I finally got to see the various nodes in the ensemble gain access to each other and start working. Which, I gotta admit, was a pretty damn cool&nbsp;feeling.</p>
+<p>After all that fussing it seemed good to note, especially since they’re hard to find in the documentation (which is kind of a bit hard to use), here are some of the switches for&nbsp;zkServer.sh.</p>
+<blockquote>
+<p>start
+start-foreground (super useful for debugging)
+stop
+restart
+status
+upgrade&nbsp;print-cmd</p>
+</blockquote>
+<p>Once this is done, restart the service but this time instead of using the start-foreground command, just use the start command and that will start the service and return the bash back to you to issues commands or whatnot. An easy way to test out Zookeeper now that it is running is to use the Zookeeper <span class="caps">CLI</span>. This is the zkCli.sh shell script (or zkcli.bat file if you’re running it on windows - which I’d strongly suggest NOT to&nbsp;do).</p>
+<p>Ok, that’s it for this entry. More to come in the near future.&nbsp;Cheers!</p>
+<p><strong>Excellent Additional&nbsp;References</strong></p>
+<ul>
+<li><a title="raft" href="https://compositecode.files.wordpress.com/2016/01/raft.pdf">In Search of an Understandable Consensus Algorithm (Extended Version)</a> - Diego Ongaro <span class="amp">&amp;</span> John Ousterhout @ Stanford&nbsp;University</li>
+<li><a title="paxos-simple" href="https://compositecode.files.wordpress.com/2016/01/paxos-simple.pdf">Paxos Made Simple</a> by Leslie&nbsp;Lamport</li>
+<li>Camille Fournier (<a href="https://twitter.com/skamille" target="_blank">@skamille</a>) provided an excellent talk about <a href="http://www.infoq.com/interviews/fournier-consensus" target="_blank">Zookeeper (Consensus Systems) on InfoQ</a>. In this talk Camille also mentions the <a title="chubby-osdi06" href="https://compositecode.files.wordpress.com/2016/01/chubby-osdi06.pdf">The Chubby Lock Service for Loosely Coupled Distributed Systems</a>.</li>
+<li><a href="https://youtu.be/j4uwKP7WJFk" target="_blank">Zookeeper for the Skeptical Architect by Camille Fournier</a> - <span class="caps">RICON</span> East 2013
+<iframe width="560" height="315" src="https://www.youtube.com/embed/j4uwKP7WJFk?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+Talks about why Riak, Cassandra, and even the company Camille works at (Rent the Runway) doesn’t use Zookeeper. An interesting talk from the regard of why not to use it in some&nbsp;cases.</li>
+</ul>
+</section>
+                </article>
+                <!-- End of Blog Page-->
+              </div>
+            </div>
+            <div class="col-md-3 hidden-sm hidden-xs">
+              <div class="sidebar js-sidebar-fixed">
+                <!-- Vertical Menu-->
+                <div class="widget">
+                  <!-- Search-->
+                  <div class="search">
+                    <form action="https://google.com/search" method="get">
+                      <input type="hidden" name="sitesearch" value="http://blog.adron.me">
+                      <input type="text" name="q" placeholder="search" class="search-input form-control"><i class="fa fa-search search-icon"></i>
+                    </form>
+                  </div>
+                  <!-- End of Search-->
+                </div>
+                <div class="widget">
+                  <h3 class="widget-title">Keyword Search</h3>
+                  <!-- Tags-->
+                  <ul class="tags">
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=html">html</a></li>
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=javascript">javascript</a></li>
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=ubuntu">ubuntu</a></li>
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=node pdx">node pdx</a></li>
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=.NET fringe">.net fringe</a></li>
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=videos">videos</a></li>
+                  </ul>
+                  <!-- End of Tags-->
+                </div>
+                <nav class="menu-vertical-wrapper">
+                  <ul data-prepend-to=".js-layout" data-select="Menu" class="menu-vertical js-menu-vertical">
+                    <li><a href="#">About</a>
+                      <ul>
+                        <li><a href="/docs/about/">Me, Adron</a></li>
+                        <li><a href="#">My Hobbies</a>
+                          <ul>
+                            <li><a href="http://photos.adron.me">My Photos</a></li>
+                          </ul>
+                        </li>
+                        <li><a href="/docs/Speaking-Presentations-Workshops">My Presentations</a></li>
+                        <li><a href="/docs/documentation/">Collection of Docs & Notes</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </nav>
+                <div class="widget">
+                  <h3 class="widget-title">Photos</h3>
+                  <!-- Photos-->
+                  <ul class="widget-recommended-products">
+                    <!-- Photos-->
+                    <li class="widget-recommended-product"><img src="/img/photos/IMG_1836.jpg" alt="Jon Oropeza" class="widget-recommended-product-img"><a href="http://photos.adron.me/Software/Meetups-N-Conferences/Conferences/Node-PDX-2016/i-D9qFQ6m" class="widget-recommended-product-link">
+                        <h5 class="widget-recommended-product-link-title">Node PDX 2016<i class="fa fa-angle-right"></i></h5>
+                        <p class="widget-recommended-product-link-description">Jon Oropeza @ Node PDX 2016</p></a></li>
+                    <!-- End of Recommended product Item-->
+                    <!-- Recommended product Item-->
+                    <li class="widget-recommended-product"><img src="/img/photos/IMG_1812.jpg" alt="Liz Abinante" class="widget-recommended-product-img"><a href="http://photos.adron.me/Software/Meetups-N-Conferences/Conferences/Node-PDX-2016/i-g2m2hgP" class="widget-recommended-product-link">
+                        <h5 class="widget-recommended-product-link-title">Node PDX 2016<i class="fa fa-angle-right"></i></h5>
+                        <p class="widget-recommended-product-link-description">Liz Abinante @ Node PDX 2016</p></a></li>
+                    <!-- End of Recommended product Item-->
+                    <!-- Recommended product Item-->
+                    <li class="widget-recommended-product"><img src="/img/photos/IMG_5709.jpg" alt="Praha hlavní nádraží" class="widget-recommended-product-img"><a href="http://photos.adron.me/Travels-N-Traversings/Across-the-Pond-2016-Travels/September-Krakow/Week-4-Prague/i-62ZPsPb" class="widget-recommended-product-link">
+                        <h5 class="widget-recommended-product-link-title">Prague (Praha)<i class="fa fa-angle-right"></i></h5>
+                        <p class="widget-recommended-product-link-description">Praha hlavní nádraží</p></a></li>
+                    <!-- End of photos row one-->
+                  </ul>
+                  <ul class="widget-recommended-products">
+                    <!-- Photos-->
+                    <li class="widget-recommended-product"><img src="/img/photos/IMG_4417.jpg" alt="St Mary's Basilica" class="widget-recommended-product-img"><a href="http://photos.adron.me/Travels-N-Traversings/Across-the-Pond-2016-Travels/September-Krakow/Krakow/i-KnZf6pK/A" class="widget-recommended-product-link">
+                        <h5 class="widget-recommended-product-link-title">St Mary's Basilica<i class="fa fa-angle-right"></i></h5>
+                        <p class="widget-recommended-product-link-description">Bazylika Mariacka in Rynek Główny.</p></a></li>
+                    <!-- End of Recommended product Item-->
+                    <!-- Recommended product Item-->
+                    <li class="widget-recommended-product"><img src="/img/photos/VSC_03.png" alt="Visual Studio Code" class="widget-recommended-product-img"><a href="http://photos.adron.me/Software/Software-Development/Visual-Studio-Things/i-LLW7WcD/A" class="widget-recommended-product-link">
+                        <h5 class="widget-recommended-product-link-title">Visual Studio Code<i class="fa fa-angle-right"></i></h5>
+                        <p class="widget-recommended-product-link-description">Images from a review of Visual Studio Code.</p></a></li>
+                    <!-- End of Recommended product Item-->
+                    <!-- Recommended product Item-->
+                    <li class="widget-recommended-product"><img src="/img/photos/-home-adronhall-Pictures-Selection_002.png - Shutter_003.png" alt="" class="widget-recommended-product-img"><a href="http://photos.adron.me/Software/Software-Development/Ubuntu/i-CQsQ4zj/A" class="widget-recommended-product-link">
+                        <h5 class="widget-recommended-product-link-title">Mono Develop & WebStorm<i class="fa fa-angle-right"></i></h5>
+                        <p class="widget-recommended-product-link-description">Working through Mono Develop & WebStorm.</p></a>
+                      <!-- End of photos row two-->
+                    </li>
+                  </ul>
+                  <!-- End Photos-->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="nav"><a href="/">« Home</a></div>
+      </div>
+    </div>
+    <script src="/js/all.js"></script>
+    <script src="/js/custom.js"></script>
+    <!-- Google Tag Manager-->
+    <noscript>
+      <iframe src="//www.googletagmanager.com/ns.html?id=GTM-KMMZX2" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <script>
+      console.log(document.getElementById("search-google"));
+      console.log(document.getElementById("search-google").innerText);
+      
+      var searchBox = document.getElementById("search-google");
+      
+      function googleSearch(search_string) {
+        alert(search_string);
+      }
+      
+      document.getElementById("search-google").addEventListener("onClick", function () {
+        alert(document.getElementById("search-google").innerHTML);
+      });
+      
+      document.getElementById("search-google").addEventListener("onClick", function () {
+        googleSearch(document.getElementById("search-google").innerHTML)
+      });
+      
+    </script>
+    <script>
+      (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+                  (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+      })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+      ga('create', 'UA-39158070-6', 'auto');
+      ga('send', 'pageview');
+    </script>
+  </body>
+</html>
