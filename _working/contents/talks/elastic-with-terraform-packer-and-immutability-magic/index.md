@@ -10,7 +10,7 @@ template: talk.jade
 
 Skip to 1:46 in video to get past our friendly banter and into the talk.
 
-<iframe src="https://player.vimeo.com/video/181143547?byline=0&portrait=0" width="850" height="478" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<iframe src="https://player.vimeo.com/video/181143547?byline=0&portrait=0" width="960" height="540" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
 Link to video: [Elasticsearch with Terraform, Packer, and Immutability Magic](https://vimeo.com/181143547)
 

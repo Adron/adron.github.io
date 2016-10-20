@@ -9,11 +9,11 @@ template: talk.jade
 
 ## Video
 
-<iframe width="850" height="478" src="https://www.youtube.com/embed/fYNb3obVqMg?list=PL81sUbsFNc5bDS1lH0HPJFyBnAP8Iv4t0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+<iframe width="960" height="540" src="https://www.youtube.com/embed/fYNb3obVqMg?list=PL81sUbsFNc5bDS1lH0HPJFyBnAP8Iv4t0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
 
 ## Slides
 
-<iframe src="https://docs.google.com/presentation/d/1obA_NypaK3tTC_NansiKqV4GaRZ2JEARkG1ZHxjQ7Rk/embed?start=true&loop=false&delayms=3000" frameborder="0" width="850" height="507" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+<iframe src="https://docs.google.com/presentation/d/1obA_NypaK3tTC_NansiKqV4GaRZ2JEARkG1ZHxjQ7Rk/embed?start=true&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
 
 ## Abstract
 
