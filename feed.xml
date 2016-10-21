@@ -5,16 +5,61 @@
     <atom:link href="http://adron.github.io/feed.xml" rel="self" type="application/rss+xml"></atom:link>
     <link>http://adron.github.io</link>
     <description>Coder, Messenger, Recon, Infrastructure, Ops</description>
-    <pubDate>Mon, 17 Oct 2016 01:00:00 +0100</pubDate>
+    <pubDate>Thu, 20 Oct 2016 01:00:00 +0100</pubDate>
     <generator>Wintersmith - https://github.com/jnordberg/wintersmith</generator>
     <language>en</language>
+    <item>
+      <title>Enterprise Open Source Anti-patterns</title>
+      <link>http://adron.github.io/articles/enterprise-open-source-anti-patterns/</link>
+      <pubDate>Thu, 20 Oct 2016 01:00:00 +0100</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/enterprise-open-source-anti-patterns/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;a href=&quot;http://adron.github.io/articles/holy-shit-watch-out-for-that-enterprise-open-source/&quot;&gt;Part I&lt;/a&gt;, &lt;a href=&quot;http://adron.github.io/articles/enterprise-open-source-tactical/&quot;&gt;Part II&lt;/a&gt;, &lt;a href=&quot;http://adron.github.io/articles/enterprise-cultural-characteristics/&quot;&gt;Part III&lt;/a&gt;,
+&lt;a href=&quot;http://adron.github.io/articles/enterprise-open-source-anti-patterns&quot;&gt;Part IV (That’s this article)&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;In the &lt;a href=&quot;http://adron.github.io/articles/holy-shit-watch-out-for-that-enterprise-open-source/&quot;&gt;first part&lt;/a&gt; of this series I kicked off writing about how we created a manifesto at &lt;a href=&quot;http://www.homedepot.com&quot;&gt;Home Depot&lt;/a&gt;. This is something I’d strongly urge anybody that is helping to lead an enterprise toward open source efforts. The &lt;a href=&quot;http://adron.github.io/articles/enterprise-open-source-tactical/&quot;&gt;second part&lt;/a&gt; focused on tactical tools used with open source software development. I’ll be adding more to the tools conversation a bit later in this series. Then in &lt;a href=&quot;http://adron.github.io/articles/enterprise-cultural-characteristics/&quot;&gt;part three&lt;/a&gt; I delved into some of the positive cultural characteristics of a team working on open source projects.&lt;/p&gt;
+&lt;p&gt;In this part of the series I want to share a few thoughts on some of the anti-patterns that came up in the process. These are specific hurdles that continue to afflict the efforts, and range from a general disturbance or an outright conflict with efforts.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;As I was creating these, I did a quick search to see what prospective open source anti-patterns existing with or without the context of enterprise open source. Not surprisingly there were a few, and the few that I found via the search I’ve attributed to who I found had written about them just under each description.&lt;/p&gt;
+&lt;h2 id=&quot;1-insular-anti-pattern&quot;&gt;1. Insular Anti-Pattern&lt;/h2&gt;
+&lt;p&gt;This is the idea that a group is so used to interacting behind closed doors, only among each other, that they fail to message, market, or even discuss the actual open source project with prospective contributors or others that are interested in public. This makes for code repositories that are starkly devoid of any conversation or information about what is being developed or why. It’s also a pretty sure fire way of killing your project, or insuring that the only group that uses it and develops the code for the project are those that started it.&lt;/p&gt;
+&lt;h2 id=&quot;2-no-source-anti-pattern&quot;&gt;2. No Source Anti-pattern&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;via &lt;a href=&quot;https://twitter.com/bcantrill&quot;&gt;Bryan Cantrill @bcantrill&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;This is when a project is announced, usually by upper management that has somehow failed to determine where, who, or who they’re going to create or get the source code written. Companies that do this look embarrassingly absurd and out of touch with their actual employees that do the actual work at the company. Do NOT be this company.&lt;/p&gt;
+&lt;h2 id=&quot;3-wishful-thinking-anti-pattern&quot;&gt;3. Wishful Thinking Anti-pattern&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;via &lt;a href=&quot;https://twitter.com/bcantrill&quot;&gt;Bryan Cantrill @bcantrill&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;This is the broken idea that because a project is brought into the open (new or existing) someone else will join in and do the work. If you’re not ready to do the work yourself, then don’t expect others to want to jump in and help you.&lt;/p&gt;
+&lt;h2 id=&quot;4-extroverted-anti-pattern&quot;&gt;4. Extroverted Anti-pattern&lt;/h2&gt;
+&lt;p&gt;This is similar to the No Source Anti-pattern. The pattern here is that a group - not particularly management - has gotten so excited preaching the idea of the project even when the project may or may not be moving forward. They see talk of the project as the means to an end even more than the actual code and project itself. This is most identifiable when a marketing or recruitment team sees the project as a means to market or recruit people but don’t have any vested interest in the actual code or project itself.&lt;/p&gt;
+&lt;h2 id=&quot;5-forkaphobia-anti-pattern&quot;&gt;5. Forkaphobia Anti-pattern&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;via &lt;a href=&quot;https://twitter.com/bcantrill&quot;&gt;Bryan Cantrill @bcantrill&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;This is one of the craziest anti-patterns. The juxtoposition of this anti-pattern is the &lt;em&gt;forking paradox&lt;/em&gt;. The forking paradox is stated as &lt;em&gt;the easier it is to fork the software, the more difficult it is to the fork the community. If forking is easy, experimentation with ideas is persued while still remaining safely downstream. If forking is difficult, experimenters are reduced to dissenters - resulting in endless arguments (best case) or divorce (worst case).&lt;/em&gt; Bryan summarizes this one well with “Corporate Entities must therefore encourage forking - open source that cannot be forked has no vitality”.&lt;/p&gt;
+&lt;h2 id=&quot;6-governance-anti-pattern&quot;&gt;6. Governance Anti-pattern&lt;/h2&gt;
+&lt;p&gt;This is best seen in governance of real things, like people. The massive and complex ordeal of maintaining governance around a software project can become so large and unwieldy to to enforce an order and dictate on the future progress of the project. Necessitating a governance body or board is often a sign the project has become unwieldy with to many influencers who can’t agree on the direction. At this point, to maintain health and vitality it’s often best to fork the solution to break the stranglehold of the Governance Anti-pattern.&lt;/p&gt;
+&lt;h2 id=&quot;7-eschewing-leadership-anti-pattern&quot;&gt;7. Eschewing Leadership Anti-pattern&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;via &lt;a href=&quot;https://twitter.com/bcantrill&quot;&gt;Bryan Cantrill @bcantrill&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Good open source have good leadership. When consensus isn’t available, good leadership turns that into positive direction and inspires people to move forward regardless. Projects that are started but nobody wants to take a leading role, even among people who generally decide on the direction, leads to a project that quickly spirals out of control into branches and forks and gets lost.&lt;/p&gt;
+&lt;h2 id=&quot;8-demanding-assignment-anti-pattern&quot;&gt;8. Demanding Assignment Anti-pattern&lt;/h2&gt;
+&lt;p&gt;Demanding assignment relies on a community trusting a commercial entity. Bad actors in open source (a notorious example is Oracle) however have destroyed that trust. To prevent this anti-pattern a contributor agreement to protect the source base from 3rd party claims of copyright and patent infringement. Copyright assignment still may make sense, but should be used only as a social contract.&lt;/p&gt;
+&lt;h2 id=&quot;9-apathy-anti-pattern&quot;&gt;9. Apathy Anti-pattern&lt;/h2&gt;
+&lt;p&gt;This anti-pattern is a combination of things like the Extroverted, Wishful Thinking, or No Source Anti-patterns. When this occurs a group simply throws their source code into a public repository but then does nothing else with it in the public repository. If active development isn’t done in the public repository, or a very effective story and information is provided as to why it’s a read-only kind of copy, there is an immediate threat that the project won’t just have apathetic developers that created it but worse, an apathetic audience who simply just won’t use it.&lt;/p&gt;
+&lt;h2 id=&quot;10-opaque-anti-pattern&quot;&gt;10. Opaque Anti-pattern&lt;/h2&gt;
+&lt;p&gt;In this anti-pattern a tool, set of tools, or other medium in which communication about the project is done almost entirely in a closed and invisible way. There are Github repositories for instance that the issues and wiki are turned off, and nobody communicates around the repository itself. Sometimes the communiation occurs in a closed email thread or other medium, like a closed Slack channel that is invite only. This isn’t to say that some communication could and should be kept in private, because there is some that should, but the bulk of the community’s communication should be available via public means. This is needed for others to use, understand, and work with the project. Otherwise the trust to make the project effective and move forward is simply not there. Don’t make your open source project efforts opaque!&lt;/p&gt;
+&lt;p&gt;That’s my list of anti-patterns to watch out for when starting or moving an enterprise project into an open source model. There are probably more, and as usual, it’s an open invite to add more. Just let me know via twitter &lt;a href=&quot;https://twitter.com/Adron&quot;&gt;@Adron&lt;/a&gt; and I’ll get them added right away.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;For more on Bryan’s talk on the anti-patterns he discusses, here is a video of the talk: &lt;iframe width=&quot;960&quot; height=&quot;540&quot; src=&quot;https://www.youtube.com/embed/NhgXQFk9noI?rel=0&amp;amp;showinfo=0&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;&lt;/p&gt;
+&lt;p&gt;Here’s what I believe is the &lt;a href=&quot;http://www.slideshare.net/bcantrill/corporate-open-source-antipatterns&quot;&gt;slide deck&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://adron.github.io/articles/holy-shit-watch-out-for-that-enterprise-open-source/&quot;&gt;Part I&lt;/a&gt;, &lt;a href=&quot;http://adron.github.io/articles/enterprise-open-source-tactical/&quot;&gt;Part II&lt;/a&gt;, &lt;a href=&quot;http://adron.github.io/articles/enterprise-cultural-characteristics/&quot;&gt;Part III&lt;/a&gt;,
+&lt;a href=&quot;http://adron.github.io/articles/enterprise-open-source-anti-patterns&quot;&gt;Part IV (That’s this article)&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
     <item>
       <title>Enterprise Open Source Cultural Characteristics</title>
       <link>http://adron.github.io/articles/enterprise-cultural-characteristics/</link>
       <pubDate>Mon, 17 Oct 2016 01:00:00 +0100</pubDate>
       <guid isPermaLink="true">http://adron.github.io/articles/enterprise-cultural-characteristics/</guid>
       <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://adron.github.io/articles/holy-shit-watch-out-for-that-enterprise-open-source/&quot;&gt;Part I&lt;/a&gt;, &lt;a href=&quot;http://adron.github.io/articles/enterprise-open-source-tactical/&quot;&gt;Part II&lt;/a&gt;, &lt;a href=&quot;http://adron.github.io/articles/enterprise-cultural-characteristics/&quot;&gt;Part III (That’s this article)&lt;/a&gt;.&lt;/p&gt;
+      <description>&lt;p&gt;&lt;a href=&quot;http://adron.github.io/articles/holy-shit-watch-out-for-that-enterprise-open-source/&quot;&gt;Part I&lt;/a&gt;, &lt;a href=&quot;http://adron.github.io/articles/enterprise-open-source-tactical/&quot;&gt;Part II&lt;/a&gt;, &lt;a href=&quot;http://adron.github.io/articles/enterprise-cultural-characteristics/&quot;&gt;Part III (That’s this article)&lt;/a&gt;,
+&lt;a href=&quot;http://adron.github.io/articles/enterprise-open-source-anti-patterns&quot;&gt;Part IV&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;My friend Glenn Block &lt;a href=&quot;https://twitter.com/gblock&quot;&gt;@gblock&lt;/a&gt; contacted me via Twitter and we discussed some of what I had discussed in the previous post. He brought up some good points and I realized there were a few points I ought to bring up regarding what I’d previously written about.&lt;/p&gt;
 &lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;h3 id=&quot;atlassian-tools-good-stuff&quot;&gt;Atlassian Tools, Good Stuff&lt;/h3&gt;
@@ -39,7 +84,8 @@
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;There are more, but these are the top 5 at the moment. If you think I’ve missed any really important trait that should be mentioned, tweet at me &lt;a href=&quot;https://twitter.com/Adron&quot;&gt;@Adron&lt;/a&gt; and it’s possible we could get the top 6.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;http://adron.github.io/articles/holy-shit-watch-out-for-that-enterprise-open-source/&quot;&gt;Part I&lt;/a&gt;, &lt;a href=&quot;http://adron.github.io/articles/enterprise-open-source-tactical/&quot;&gt;Part II&lt;/a&gt;, &lt;a href=&quot;http://adron.github.io/articles/enterprise-cultural-characteristics/&quot;&gt;Part III (That’s this article)&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://adron.github.io/articles/holy-shit-watch-out-for-that-enterprise-open-source/&quot;&gt;Part I&lt;/a&gt;, &lt;a href=&quot;http://adron.github.io/articles/enterprise-open-source-tactical/&quot;&gt;Part II&lt;/a&gt;, &lt;a href=&quot;http://adron.github.io/articles/enterprise-cultural-characteristics/&quot;&gt;Part III (That’s this article)&lt;/a&gt;,
+&lt;a href=&quot;http://adron.github.io/articles/enterprise-open-source-anti-patterns&quot;&gt;Part IV&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     <item>
@@ -48,8 +94,10 @@
       <pubDate>Sun, 16 Oct 2016 01:00:00 +0100</pubDate>
       <guid isPermaLink="true">http://adron.github.io/articles/enterprise-open-source-tactical/</guid>
       <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://adron.github.io/articles/holy-shit-watch-out-for-that-enterprise-open-source/&quot;&gt;Part I&lt;/a&gt;, &lt;a href=&quot;http://adron.github.io/articles/enterprise-open-source-tactical/&quot;&gt;Part II (That’s this article)&lt;/a&gt;, &lt;a href=&quot;http://adron.github.io/articles/enterprise-cultural-characteristics/&quot;&gt;Part III&lt;/a&gt;.&lt;/p&gt;
+      <description>&lt;p&gt;&lt;a href=&quot;http://adron.github.io/articles/holy-shit-watch-out-for-that-enterprise-open-source/&quot;&gt;Part I&lt;/a&gt;, &lt;a href=&quot;http://adron.github.io/articles/enterprise-open-source-tactical/&quot;&gt;Part II (That’s this article)&lt;/a&gt;, &lt;a href=&quot;http://adron.github.io/articles/enterprise-cultural-characteristics/&quot;&gt;Part III&lt;/a&gt;,
+&lt;a href=&quot;http://adron.github.io/articles/enterprise-open-source-anti-patterns&quot;&gt;Part IV&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;In the first part I wrote about the Enterprise Open Source Manifesto that was written up for Home Depot’s open source efforts. In this part I’m going to tactical some of tooling &amp;amp; cultural characteristics that came into play.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;h3 id=&quot;enterprise-open-source-tooling&quot;&gt;Enterprise Open Source Tooling&lt;/h3&gt;
 &lt;p&gt;Every team had a number of tools in use upon the beginning of these efforts. I’m going to dive into a few of the tools we used and how those helped and hurt us all at the same time. After that Iv’e got a discussion on future tool choices, current tool migrations, and goals.&lt;/p&gt;
 &lt;h3 id=&quot;existing-pre-oss-efforts&quot;&gt;Existing Pre-OSS Efforts&lt;/h3&gt;
@@ -58,7 +106,6 @@
 &lt;li&gt;Confluence&lt;/li&gt;
 &lt;li&gt;Stash&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;h4 id=&quot;jira-stash-and-confluence&quot;&gt;JIRA, Stash, and Confluence&lt;/h4&gt;
 &lt;p&gt;JIRA has a lot of pluses and negatives, and I do mean a lot! I’m going to start with the pain points and then move onto the positives.&lt;/p&gt;
 &lt;p&gt;Access - One of the major pain points was that JIRA had harbored a completely closed communication practice. What I mean by this was that all communications, as one would assume, were being done in a very insular way. Since the tool had traditionally been used only for closed source development, it was by it’s very nature configured to be exclusionary to any and all possible open source efforts.&lt;/p&gt;
@@ -75,7 +122,8 @@
 &lt;p&gt;Now, with all the negatives pointed out, one could actually use JIRA, Stash, and Confluence for open source work. You just need to open up all of the software to the public. They’ve be perfectly capable from a technical point of view to accomplish the mission, albeit it’d probably cost a ton of cash.&lt;/p&gt;
 &lt;h4 id=&quot;jell&quot;&gt;Jell&lt;/h4&gt;
 &lt;p&gt;Need a quick tool for managing the daily punch list, or more simply, what I generally call the &lt;em&gt;My GSD for Today&lt;/em&gt; items? Jell is a great tool for this. Others that come to mind are Trello or even just plain old Google Docs (I guess that’s G-suite now). Whatever the case, it helps members to have a punch list if it’s a day-to-day, regularly worked on project. This helps with that communication across any contributors, even if contributors are all in a single office.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;http://adron.github.io/articles/holy-shit-watch-out-for-that-enterprise-open-source/&quot;&gt;Part I&lt;/a&gt;, &lt;a href=&quot;http://adron.github.io/articles/enterprise-open-source-tactical/&quot;&gt;Part II (That’s this article)&lt;/a&gt;, &lt;a href=&quot;http://adron.github.io/articles/enterprise-cultural-characteristics/&quot;&gt;Part III&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://adron.github.io/articles/holy-shit-watch-out-for-that-enterprise-open-source/&quot;&gt;Part I&lt;/a&gt;, &lt;a href=&quot;http://adron.github.io/articles/enterprise-open-source-tactical/&quot;&gt;Part II (That’s this article)&lt;/a&gt;, &lt;a href=&quot;http://adron.github.io/articles/enterprise-cultural-characteristics/&quot;&gt;Part III&lt;/a&gt;,
+&lt;a href=&quot;http://adron.github.io/articles/enterprise-open-source-anti-patterns&quot;&gt;Part IV&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;That’s it for part II. More to come for this series real soon, and I’ll update the post with a link right here to Part III as soon as it’s published.&lt;/p&gt;
 </description>
     </item>
@@ -85,15 +133,16 @@
       <pubDate>Wed, 12 Oct 2016 01:00:00 +0100</pubDate>
       <guid isPermaLink="true">http://adron.github.io/articles/holy-shit-watch-out-for-that-enterprise-open-source/</guid>
       <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://adron.github.io/articles/holy-shit-watch-out-for-that-enterprise-open-source/&quot;&gt;Part I (That’s this article)&lt;/a&gt;, &lt;a href=&quot;http://adron.github.io/articles/enterprise-open-source-tactical/&quot;&gt;Part II&lt;/a&gt;, &lt;a href=&quot;http://adron.github.io/articles/enterprise-cultural-characteristics/&quot;&gt;Part III&lt;/a&gt;.&lt;/p&gt;
+      <description>&lt;p&gt;&lt;a href=&quot;http://adron.github.io/articles/holy-shit-watch-out-for-that-enterprise-open-source/&quot;&gt;Part I (That’s this article)&lt;/a&gt;, &lt;a href=&quot;http://adron.github.io/articles/enterprise-open-source-tactical/&quot;&gt;Part II&lt;/a&gt;, &lt;a href=&quot;http://adron.github.io/articles/enterprise-cultural-characteristics/&quot;&gt;Part III&lt;/a&gt;,
+&lt;a href=&quot;http://adron.github.io/articles/enterprise-open-source-anti-patterns&quot;&gt;Part IV&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;This blog entry is going to be the conjoined events of open source work at Home Depot, enterprise open source in general, and the ideas and punch lists for a talk I have coming up in London on open source enterprise practices. So this will be a hard drifting whirlwind, buckle up!&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;In the last year there’s been several specific projects I’ve led and consulted on:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;My work at Home Depot included efforts to bring various closed sourced solutions into the open, some which have been and others that have not been - but may be on their way! Read to the end to see how you might be able to help with this.&lt;/li&gt;
 &lt;li&gt;I’ve provided consulting to several enterprise efforts over the last year as they’ve looked toward bolstering their experience and effort providing a coordinated participation within the open source community.&lt;/li&gt;
 &lt;li&gt;Putting together a talk related specifically to helping enterprises bridge the gap between insular, closed source, limiting internal development to a inclusive, open source, community oriented contributor and user of software solutions.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;h2 id=&quot;enterprise-software&quot;&gt;Enterprise software&lt;/h2&gt;
 &lt;p&gt;First let’s talk a little bit about enterprise software in general. There is an extremely wide range of disparity in Enterprise software. Some software turns out pretty good, others are complete catastrophes to the point the projects are cancelled and the software is deleted without remorse.&lt;/p&gt;
 &lt;p&gt;Just recently this disparity in quality was brought up on via some tweets.&lt;/p&gt;
@@ -223,7 +272,8 @@ As you update the project, you should provide semantic versioning to allow consu
 &lt;li&gt;The transparency it provides to users of the project(s) of a particular enterprise.&lt;/li&gt;
 &lt;li&gt;The other thing is that it provides a much needed brain storming session to identify and define the groups intent and efforts on a more metaphsycial level, which is hugely needed to understand how a team working on a project and it’s prospective contributors would interact with each other. Defining these core tenants is fundamental to a smooth workflow between contributors.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;a href=&quot;http://adron.github.io/articles/holy-shit-watch-out-for-that-enterprise-open-source/&quot;&gt;Part I (That’s this article)&lt;/a&gt;, &lt;a href=&quot;http://adron.github.io/articles/enterprise-open-source-tactical/&quot;&gt;Part II&lt;/a&gt;, &lt;a href=&quot;http://adron.github.io/articles/enterprise-cultural-characteristics/&quot;&gt;Part III&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://adron.github.io/articles/holy-shit-watch-out-for-that-enterprise-open-source/&quot;&gt;Part I (That’s this article)&lt;/a&gt;, &lt;a href=&quot;http://adron.github.io/articles/enterprise-open-source-tactical/&quot;&gt;Part II&lt;/a&gt;, &lt;a href=&quot;http://adron.github.io/articles/enterprise-cultural-characteristics/&quot;&gt;Part III&lt;/a&gt;,
+&lt;a href=&quot;http://adron.github.io/articles/enterprise-open-source-anti-patterns&quot;&gt;Part IV&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;References:&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https://www.netflix.com&quot;&gt;Netflix&lt;/a&gt; and &lt;a href=&quot;https://en.wikipedia.org/wiki/Netflix&quot;&gt;Netflix Wikipedia&lt;/a&gt;.&lt;/li&gt;
@@ -2157,6 +2207,23 @@ In this talk, you will learn about the power of WebSockets and how they can (and
 </description>
     </item>
     <item>
+      <title>I Play the JavaScript by Matt McKegg</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</link>
+      <pubDate>Fri, 03 Jun 2016 01:00:00 +0100</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-left&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/mattmckegg.jpg&quot; alt=&quot;Matt McKegg&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;A JavaScript hacker and backyard musician and from Wellington, New Zealand. Lover of all things open and modular. I spend most of my time pressing buttons of various shapes, sizes and colours. Sometimes these buttons make sounds.&lt;/p&gt;
+&lt;p&gt;Matt has been making music with computers for about 10 years, but once he tried to move from bedroom composing to live performance, he got incredibly frustrated at how hard it was to play computer music live. He decided to start working on his own live electronic performance software written in JavaScript that would let me play the way he wanted to play. 3 years later, it’s finally starting to become a reality.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Here is one of the Matt’s recent performances, for your viewing pleasure. &lt;/p&gt;
+&lt;iframe width=&quot;1280&quot; height=&quot;720&quot; src=&quot;https://www.youtube.com/embed/L2BVDJWHdy0?rel=0&amp;amp;showinfo=0&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;</description>
+    </item>
+    <item>
       <title>The Web Platform is the Universal Instrument by Ben Michel</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-ben-michel/</link>
       <pubDate>Fri, 03 Jun 2016 01:00:00 +0100</pubDate>
@@ -2184,21 +2251,21 @@ In this talk, you will learn about the power of WebSockets and how they can (and
 </description>
     </item>
     <item>
-      <title>I Play the JavaScript by Matt McKegg</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</link>
-      <pubDate>Fri, 03 Jun 2016 01:00:00 +0100</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</guid>
+      <title>The House Is Not On Fire - Building a home automation robot with Arduino, Raspberry Pi and Node.js by Artur Paikin</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</link>
+      <pubDate>Thu, 02 Jun 2016 01:00:00 +0100</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</guid>
       <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-left&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/mattmckegg.jpg&quot; alt=&quot;Matt McKegg&quot;&gt;
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-right&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/art-stida.jpg&quot; alt=&quot;Artur Paikin&quot;&gt;
 &lt;/div&gt;
 
-&lt;p&gt;A JavaScript hacker and backyard musician and from Wellington, New Zealand. Lover of all things open and modular. I spend most of my time pressing buttons of various shapes, sizes and colours. Sometimes these buttons make sounds.&lt;/p&gt;
-&lt;p&gt;Matt has been making music with computers for about 10 years, but once he tried to move from bedroom composing to live performance, he got incredibly frustrated at how hard it was to play computer music live. He decided to start working on his own live electronic performance software written in JavaScript that would let me play the way he wanted to play. 3 years later, it’s finally starting to become a reality.&lt;/p&gt;
+&lt;p&gt;Artur describes himself as, “I’m a web developer and traveler. I write stories about my adventures in Russian and English on my site: &lt;a href=&quot;http://arturpaikin.com&quot;&gt;http://arturpaikin.com&lt;/a&gt; and run a small technology cooperative called &lt;a href=&quot;http://unebaguette.com&quot;&gt;Baguette&lt;/a&gt;, where I work on cool projects, currently building an ambitious next generation file uploader with &lt;a href=&quot;https://transloadit.com/&quot;&gt;Transloadit&lt;/a&gt;. I ride a &lt;a href=&quot;https://www.instagram.com/p/xC0qC2SSYb&quot;&gt;foldable bicycle&lt;/a&gt;, &lt;a href=&quot;http://unebaguette.com/web-course/&quot;&gt;teach&lt;/a&gt; web development and sometimes &lt;a href=&quot;https://www.instagram.com/p/4_6LO8ySVL/&quot;&gt;garden&lt;/a&gt; on the balcony.”&lt;/p&gt;
 &lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Here is one of the Matt’s recent performances, for your viewing pleasure. &lt;/p&gt;
-&lt;iframe width=&quot;1280&quot; height=&quot;720&quot; src=&quot;https://www.youtube.com/embed/L2BVDJWHdy0?rel=0&amp;amp;showinfo=0&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;</description>
+&lt;p&gt;Artur has built an open source home automation system called &lt;a href=&quot;https://github.com/arturi/kotihome&quot;&gt;Koti Home&lt;/a&gt; (Koti means home in Finnish language). It’s powered by an Arduino connected to Raspberry Pi, MQTT protocol for messaging, Node.js on the client and server, web sockets. You can interact with Koti robot via a React (like the cool kids do) control panel, Telegram Chat Bot and even your own voice.&lt;/p&gt;
+&lt;p&gt;Arthur will talk about how he’s turned this project into reality — the tech he used and the challenges he faced. From a blinking LED to a voice controlled home automation robot.&lt;/p&gt;
+</description>
     </item>
     <item>
       <title>Code First Docs How we Threw Out The Book &amp; Put Code First With Twilio Documentation by Jarod Reyes</title>
@@ -2222,23 +2289,6 @@ In this talk, you will learn about the power of WebSockets and how they can (and
 &lt;li&gt;Twitter: &lt;a href=&quot;https://twitter.com/jreyesdev&quot;&gt;@jreyesdev&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Github: &lt;a href=&quot;https://github.com/jarodreyes&quot;&gt;github.com/jarodreyes&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-</description>
-    </item>
-    <item>
-      <title>The House Is Not On Fire - Building a home automation robot with Arduino, Raspberry Pi and Node.js by Artur Paikin</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</link>
-      <pubDate>Thu, 02 Jun 2016 01:00:00 +0100</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</guid>
-      <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-right&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/art-stida.jpg&quot; alt=&quot;Artur Paikin&quot;&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Artur describes himself as, “I’m a web developer and traveler. I write stories about my adventures in Russian and English on my site: &lt;a href=&quot;http://arturpaikin.com&quot;&gt;http://arturpaikin.com&lt;/a&gt; and run a small technology cooperative called &lt;a href=&quot;http://unebaguette.com&quot;&gt;Baguette&lt;/a&gt;, where I work on cool projects, currently building an ambitious next generation file uploader with &lt;a href=&quot;https://transloadit.com/&quot;&gt;Transloadit&lt;/a&gt;. I ride a &lt;a href=&quot;https://www.instagram.com/p/xC0qC2SSYb&quot;&gt;foldable bicycle&lt;/a&gt;, &lt;a href=&quot;http://unebaguette.com/web-course/&quot;&gt;teach&lt;/a&gt; web development and sometimes &lt;a href=&quot;https://www.instagram.com/p/4_6LO8ySVL/&quot;&gt;garden&lt;/a&gt; on the balcony.”&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Artur has built an open source home automation system called &lt;a href=&quot;https://github.com/arturi/kotihome&quot;&gt;Koti Home&lt;/a&gt; (Koti means home in Finnish language). It’s powered by an Arduino connected to Raspberry Pi, MQTT protocol for messaging, Node.js on the client and server, web sockets. You can interact with Koti robot via a React (like the cool kids do) control panel, Telegram Chat Bot and even your own voice.&lt;/p&gt;
-&lt;p&gt;Arthur will talk about how he’s turned this project into reality — the tech he used and the challenges he faced. From a blinking LED to a voice controlled home automation robot.&lt;/p&gt;
 </description>
     </item>
     <item>

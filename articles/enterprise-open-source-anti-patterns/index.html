@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="/css/style.min.css">
     <script src="/js/modernizr.js"></script>
   </head>
-  <body>
+  <body class="article-detail">
     <!--[if lt IE 8]>
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -67,8 +67,10 @@
             <div class="col-md-12">
               <!-- Page Info-->
               <div class="page-info page-info-simple">
-                <h1>Adron's Composite Code</h1>
-                <h2 class="description">Coder, Messenger, Recon, Infrastructure, Ops</h2>
+                <h1>Enterprise Open Source Anti-patterns</h1>
+                <p class="author">Written by <span class="author">Adron Hall</span>
+                </p>
+                <div class="nav"><a href="/">« Home</a></div>
               </div>
               <!-- End Page Info-->
             </div>
@@ -83,115 +85,45 @@
             <div class="col-md-9">
               <div class="main-content">
                 <!-- Blog Page-->
-                <div class="blog">
-                  <div class="row"></div>
-                </div>
-                <div class="col-md-12 col-sm-12">
-                  <!-- Blog List-->
-                  <div class="blog-grid">
-                    <div class="row">
-                      <div class="col-md-12 col-sm-12">
-                        <h3 class="blog-grid-title"><a href="/articles/latest-fifth-gen-dell-xps-13-developer-edition/">The Latest 5th Generation Dell XPS 13 Developer Edition</a></h3>
-                        <p class="blog-grid-excerpt"><p>Just about 4 weeks ago now I purchased a Dell <span class="caps">XPS</span> 13 Developer Edition directly from Dell. The reason I purchased this laptop is because of two needs I have while traveling and writing&nbsp;code.</p>
-<ol>
-<li>I wanted something <em>small</em>, <em>compact</em>, that had <em>reasonable power</em>,&nbsp;and…</li>
-<li>It needed to run <em>Linux</em> (likely <em>Ubuntu</em>, but I’d have taken whatever) from the factory and have active&nbsp;support.</li>
-</ol>
-<p>Here’s my experience with this machine so far. There are lots of good things, and some really lousy things about this laptop. This is the lowdown on all the plusses and minuses. But before I dive into the plusses and minuses, it is important to understand more of the context in which I’m doing this&nbsp;review.</p>
-<ul>
-<li>Dell didn’t send me a free laptop. I paid $1869 for the laptop. Nobody has paid me to review this laptop. I purchased it and am reviewing it purely out of my own&nbsp;interest.</li>
-<li>The <strong><a href="http://www.dell.com/us/business/p/xps-13-linux/pd" target="_blank"><span class="caps">XPS</span> 13 Developer Edition</a></strong> that I have has <em><span class="caps">8GB</span> RAM</em>, <em>512 <span class="caps">GB</span> SSD</em>, and the stunningly beautiful 13.3-inch <em>UltraSharp™ <span class="caps">QHD</span>+ (3200 x 1800) InfinityEdge Touch Display</em>.</li>
-<li><strong>Exterior Chassis Materials</strong> -&gt; <span class="caps">CNC</span> machined aluminum w/ Edge-to-edge Corning® Gorilla® Glass NBT™ on QHD+ w/ Carbon fiber composite palm rest with soft touch&nbsp;paint.</li>
-<li><strong>Keyboard</strong> -&gt; Full size, backlit chiclet keyboard; 1.3mm&nbsp;travel</li>
-<li><strong>Touchpad</strong> -&gt; Precision touchpad, seamless glass integrated&nbsp;button</li>
-</ul>
-<p>
-                          <p class="more"><a href="/articles/latest-fifth-gen-dell-xps-13-developer-edition/">more</a></p>
-                        </p>
-                        <div class="blog-grid-meta"><span class="blog-grid-date">22. July 2015</span></div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End of Blog List-->
-                </div>
-                <div class="col-md-12 col-sm-12">
-                  <!-- Blog List-->
-                  <div class="blog-grid">
-                    <div class="row">
-                      <div class="col-md-12 col-sm-12">
-                        <h3 class="blog-grid-title"><a href="/articles/aws-beanstalk-worker-with-node-js-and-sqs/">AWS Beanstalk Worker with Node.js and SQS</a></h3>
-                        <p class="blog-grid-excerpt"><div class="image float-right">
-    <img src="/articles/aws-beanstalk-worker-with-node-js-and-sqs/amazon-sqs_200x200.png" alt="Amazon SQS">
-</div>
-
-<ul>
-<li><em>Part 1</em> – <a href="/articles/setting-up-an-aws-sqs-queue-for-use-with-node-js-beanstalk-worker-instances">Setting up an <span class="caps">AWS</span> SQS Queue for Use With Node.js Beanstalk Worker&nbsp;Instances</a></li>
-<li><em>Part 2</em> – <a href="/articles/hapijs-aws-worker-publish/">Setting up a Hapi.js App that sends work to a Node.js <span class="caps">AWS</span> Worker via&nbsp;SQS</a></li>
-<li><em>Part 3</em> – <a href="/articles/aws-beanstalk-worker-with-node-js-and-sqs/"><span class="caps">AWS</span> Beanstalk Worker with Node.js and SQS</a> (This is the current article you’re reading&nbsp;now)</li>
-</ul>
-<p>First I created a project for the node.js worker. The first steps for this are identical to that of creating the Hapi.js site that publishes messages to the queue. Go through these three steps for the worker and then I’ll continue from&nbsp;there.</p>
-<ul>
-<li>First <a href="/articles/hapijs-aws-worker-publish#webapplication">create the web application</a> which will act as our worker service. I gave mine the name of <a href="https://github.com/Adron/testing-aws-sqs-worker">testing-aws-sqs-worker</a>, the site publishing to the queue I called <a href="https://github.com/Adron/testing-aws-sqs-site">testing-aws-sqs-site</a>.</li>
-<li>Next <a href="/articles/hapijs-aws-worker-publish/#mocha">add dependencies needed</a>, like&nbsp;mocha.</li>
-<li>Finally make sure the <a href="/articles/hapijs-aws-worker-publish/#aws"><span class="caps">AWS</span> environment variables</a> are set&nbsp;appropriately.</li>
-</ul>
-<p><em>…and now on to the security, configuration and worker specific parts of this&nbsp;series…</em></p>
-<p>
-                          <p class="more"><a href="/articles/aws-beanstalk-worker-with-node-js-and-sqs/">more</a></p>
-                        </p>
-                        <div class="blog-grid-meta"><span class="blog-grid-date">19. November 2014</span></div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End of Blog List-->
-                </div>
-                <div class="col-md-12 col-sm-12">
-                  <!-- Blog List-->
-                  <div class="blog-grid">
-                    <div class="row">
-                      <div class="col-md-12 col-sm-12">
-                        <h3 class="blog-grid-title"><a href="/articles/hapijs-aws-worker-publish/">Setting up a Hapi.js App that sends work to a Node.js AWS Worker via SQS</a></h3>
-                        <p class="blog-grid-excerpt"><div class="image float-right">
-  <img src="/articles/hapijs-aws-worker-publish/SDKs-copy_nodeJS-200x2100.png" alt="Node.js SDK">
-</div>
-
-<ul>
-<li><em>Part 1</em> – <a href="/articles/setting-up-an-aws-sqs-queue-for-use-with-node-js-beanstalk-worker-instances">Setting up an <span class="caps">AWS</span> SQS Queue for Use With Node.js Beanstalk Worker&nbsp;Instances</a></li>
-<li><em>Part 2</em> – <a href="/articles/hapijs-aws-worker-publish/">Setting up a Hapi.js App that sends work to a Node.js <span class="caps">AWS</span> Worker via SQS</a> (This is the current article you’re reading&nbsp;now)</li>
-<li><em>Part 3</em> – <a href="/articles/aws-beanstalk-worker-with-node-js-and-sqs/"><span class="caps">AWS</span> Beanstalk Worker with Node.js and&nbsp;SQS</a></li>
-</ul>
-<p><a name="webapplication"></a></p>
-<p>First I created a project for the node.js web application. This just used the simple <code>npm init</code> command and I stepped through the prompts for name, version, description, entry point, and so&nbsp;on.</p>
-<pre><code class="lang-shell-script">$ npm init
-This utility will walk you through creating a package.json file.
-It only covers the most common items, and tries to guess sane defaults.
-
-See `npm help json` for definitive documentation on these fields
-and exactly what they do.
-
-Use `npm install &amp;pkg&amp; --save` afterwards to install a package and
-save it as a dependency in the package.json file.
-
-Press ^C at any time to quit.
-name: (testing-aws-sqs-site)
-version: (0.0.0) 0.0.1
-description: This project that will feed data to the queue for the AWS SQS sample.
-entry point: (index.js) server.js
-test command: mocha
-git repository: (https://github.com/Adron/testing-aws-sqs-site.git)
-keywords: aws, sqs, elastic, elastic beanstalk, queue, worker
-author: Adron Hall
-license: (ISC) Apache 2.0
-</code></pre>
-<p>
-                          <p class="more"><a href="/articles/hapijs-aws-worker-publish/">more</a></p>
-                        </p>
-                        <div class="blog-grid-meta"><span class="blog-grid-date">07. November 2014</span></div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End of Blog List-->
-                </div>
+                <article class="article">
+                  <section class="content"><p><a href="/articles/holy-shit-watch-out-for-that-enterprise-open-source/">Part I</a>, <a href="/articles/enterprise-open-source-tactical/">Part <span class="caps">II</span></a>, <a href="/articles/enterprise-cultural-characteristics/">Part <span class="caps">III</span></a>,
+<a href="/articles/enterprise-open-source-anti-patterns">Part <span class="caps">IV</span> (That’s this article)</a>.</p>
+<p>In the <a href="/articles/holy-shit-watch-out-for-that-enterprise-open-source/">first part</a> of this series I kicked off writing about how we created a manifesto at <a href="http://www.homedepot.com">Home Depot</a>. This is something I’d strongly urge anybody that is helping to lead an enterprise toward open source efforts. The <a href="/articles/enterprise-open-source-tactical/">second part</a> focused on tactical tools used with open source software development. I’ll be adding more to the tools conversation a bit later in this series. Then in <a href="/articles/enterprise-cultural-characteristics/">part three</a> I delved into some of the positive cultural characteristics of a team working on open source&nbsp;projects.</p>
+<p>In this part of the series I want to share a few thoughts on some of the anti-patterns that came up in the process. These are specific hurdles that continue to afflict the efforts, and range from a general disturbance or an outright conflict with&nbsp;efforts.</p>
+<p><span class="more"></span></p>
+<p>As I was creating these, I did a quick search to see what prospective open source anti-patterns existing with or without the context of enterprise open source. Not surprisingly there were a few, and the few that I found via the search I’ve attributed to who I found had written about them just under each&nbsp;description.</p>
+<h2 id="1-insular-anti-pattern">1. Insular&nbsp;Anti-Pattern</h2>
+<p>This is the idea that a group is so used to interacting behind closed doors, only among each other, that they fail to message, market, or even discuss the actual open source project with prospective contributors or others that are interested in public. This makes for code repositories that are starkly devoid of any conversation or information about what is being developed or why. It’s also a pretty sure fire way of killing your project, or insuring that the only group that uses it and develops the code for the project are those that started&nbsp;it.</p>
+<h2 id="2-no-source-anti-pattern">2. No Source&nbsp;Anti-pattern</h2>
+<p><em>via <a href="https://twitter.com/bcantrill">Bryan Cantrill&nbsp;@bcantrill</a></em></p>
+<p>This is when a project is announced, usually by upper management that has somehow failed to determine where, who, or who they’re going to create or get the source code written. Companies that do this look embarrassingly absurd and out of touch with their actual employees that do the actual work at the company. Do <span class="caps">NOT</span> be this&nbsp;company.</p>
+<h2 id="3-wishful-thinking-anti-pattern">3. Wishful Thinking&nbsp;Anti-pattern</h2>
+<p><em>via <a href="https://twitter.com/bcantrill">Bryan Cantrill&nbsp;@bcantrill</a></em></p>
+<p>This is the broken idea that because a project is brought into the open (new or existing) someone else will join in and do the work. If you’re not ready to do the work yourself, then don’t expect others to want to jump in and help&nbsp;you.</p>
+<h2 id="4-extroverted-anti-pattern">4. Extroverted&nbsp;Anti-pattern</h2>
+<p>This is similar to the No Source Anti-pattern. The pattern here is that a group - not particularly management - has gotten so excited preaching the idea of the project even when the project may or may not be moving forward. They see talk of the project as the means to an end even more than the actual code and project itself. This is most identifiable when a marketing or recruitment team sees the project as a means to market or recruit people but don’t have any vested interest in the actual code or project&nbsp;itself.</p>
+<h2 id="5-forkaphobia-anti-pattern">5. Forkaphobia&nbsp;Anti-pattern</h2>
+<p><em>via <a href="https://twitter.com/bcantrill">Bryan Cantrill&nbsp;@bcantrill</a></em></p>
+<p>This is one of the craziest anti-patterns. The juxtoposition of this anti-pattern is the <em>forking paradox</em>. The forking paradox is stated as <em>the easier it is to fork the software, the more difficult it is to the fork the community. If forking is easy, experimentation with ideas is persued while still remaining safely downstream. If forking is difficult, experimenters are reduced to dissenters - resulting in endless arguments (best case) or divorce (worst case).</em> Bryan summarizes this one well with “Corporate Entities must therefore encourage forking - open source that cannot be forked has no&nbsp;vitality”.</p>
+<h2 id="6-governance-anti-pattern">6. Governance&nbsp;Anti-pattern</h2>
+<p>This is best seen in governance of real things, like people. The massive and complex ordeal of maintaining governance around a software project can become so large and unwieldy to to enforce an order and dictate on the future progress of the project. Necessitating a governance body or board is often a sign the project has become unwieldy with to many influencers who can’t agree on the direction. At this point, to maintain health and vitality it’s often best to fork the solution to break the stranglehold of the Governance&nbsp;Anti-pattern.</p>
+<h2 id="7-eschewing-leadership-anti-pattern">7. Eschewing Leadership&nbsp;Anti-pattern</h2>
+<p><em>via <a href="https://twitter.com/bcantrill">Bryan Cantrill&nbsp;@bcantrill</a></em></p>
+<p>Good open source have good leadership. When consensus isn’t available, good leadership turns that into positive direction and inspires people to move forward regardless. Projects that are started but nobody wants to take a leading role, even among people who generally decide on the direction, leads to a project that quickly spirals out of control into branches and forks and gets&nbsp;lost.</p>
+<h2 id="8-demanding-assignment-anti-pattern">8. Demanding Assignment&nbsp;Anti-pattern</h2>
+<p>Demanding assignment relies on a community trusting a commercial entity. Bad actors in open source (a notorious example is Oracle) however have destroyed that trust. To prevent this anti-pattern a contributor agreement to protect the source base from 3<span class="ord">rd</span> party claims of copyright and patent infringement. Copyright assignment still may make sense, but should be used only as a social&nbsp;contract.</p>
+<h2 id="9-apathy-anti-pattern">9. Apathy&nbsp;Anti-pattern</h2>
+<p>This anti-pattern is a combination of things like the Extroverted, Wishful Thinking, or No Source Anti-patterns. When this occurs a group simply throws their source code into a public repository but then does nothing else with it in the public repository. If active development isn’t done in the public repository, or a very effective story and information is provided as to why it’s a read-only kind of copy, there is an immediate threat that the project won’t just have apathetic developers that created it but worse, an apathetic audience who simply just won’t use&nbsp;it.</p>
+<h2 id="10-opaque-anti-pattern">10. Opaque&nbsp;Anti-pattern</h2>
+<p>In this anti-pattern a tool, set of tools, or other medium in which communication about the project is done almost entirely in a closed and invisible way. There are Github repositories for instance that the issues and wiki are turned off, and nobody communicates around the repository itself. Sometimes the communiation occurs in a closed email thread or other medium, like a closed Slack channel that is invite only. This isn’t to say that some communication could and should be kept in private, because there is some that should, but the bulk of the community’s communication should be available via public means. This is needed for others to use, understand, and work with the project. Otherwise the trust to make the project effective and move forward is simply not there. Don’t make your open source project efforts&nbsp;opaque!</p>
+<p>That’s my list of anti-patterns to watch out for when starting or moving an enterprise project into an open source model. There are probably more, and as usual, it’s an open invite to add more. Just let me know via twitter <a href="https://twitter.com/Adron">@Adron</a> and I’ll get them added right&nbsp;away.</p>
+<hr>
+<p>For more on Bryan’s talk on the anti-patterns he discusses, here is a video of the talk: <iframe width="960" height="540" src="https://www.youtube.com/embed/NhgXQFk9noI?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe></p>
+<p>Here’s what I believe is the <a href="http://www.slideshare.net/bcantrill/corporate-open-source-antipatterns">slide deck</a>.</p>
+<p><a href="/articles/holy-shit-watch-out-for-that-enterprise-open-source/">Part I</a>, <a href="/articles/enterprise-open-source-tactical/">Part <span class="caps">II</span></a>, <a href="/articles/enterprise-cultural-characteristics/">Part <span class="caps">III</span></a>,
+<a href="/articles/enterprise-open-source-anti-patterns">Part <span class="caps">IV</span> (That’s this article)</a>.</p>
+</section>
+                </article>
                 <!-- End of Blog Page-->
               </div>
             </div>
@@ -281,8 +213,7 @@ license: (ISC) Apache 2.0
             </div>
           </div>
         </div>
-        <div class="nav"><a href="/page/19/">« Newer</a>&nbsp;<a href="/page/21/">Previous »</a>
-        </div>
+        <div class="nav"><a href="/">« Home</a></div>
       </div>
     </div>
     <script src="/js/all.js"></script>
