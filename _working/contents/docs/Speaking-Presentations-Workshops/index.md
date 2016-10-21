@@ -23,7 +23,7 @@ This page links to my history of speaking via presentations, workshops, or other
 * [Continuous Integration &amp; Delivery](http://compositecode.wordpress.com/speaking-presentations-workshops/integrating-deployment-continuously/) ([video](http://nodesummit.com/media/day-zero-node-js-continuous-integration-to-delivery/) &amp; [deck](https://speakerdeck.com/adron/integration-and-delivery-continuously)) - @ [Node.js Summit 2015](http://nodesummit.com/) in San Francisco
 * [Continuous Integration &amp; Delivery](http://compositecode.wordpress.com/speaking-presentations-workshops/integrating-deployment-continuously/) ([video](https://vimeo.com/119367013) &amp; [deck](https://speakerdeck.com/adron/integration-and-delivery-continuously)) - @ [Node.js Club San Francisco](http://www.meetup.com/Node-js-Serverside-Javascripters-Club-SF/)
 * [Programming Languages from 30,000 Feet](http://compositecode.wordpress.com/coding-community/speaking-presentations-workshops/programming-languages-from-30000-feet/)
-* [Distributed Systems: How do we get there? A SITREP](http://compositecode.wordpress.com/coding-community/speaking-presentations-workshops/sitrep/
+* [Distributed Systems: How do we get there? A SITREP](http://compositecode.wordpress.com/coding-community/speaking-presentations-workshops/sitrep/)
 * [Intro to Riak with anything...](http://compositecode.wordpress.com/coding-community/speaking-presentations-workshops/riak-intro-with-anything-ya-want/)
 * [Riak Intro with Windows Azure](http://compositecode.wordpress.com/coding-community/speaking-presentations-workshops/riak-windows-azure/)
 * [AWS Toolkit + VS 2010](http://compositecode.wordpress.com/2011/10/25/aws-toolkit-vs-2010-awesome/)
