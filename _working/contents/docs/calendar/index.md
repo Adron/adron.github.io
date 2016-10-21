@@ -1,5 +1,5 @@
 ---
-title: calendar
+title: Calendar
 author: Adron Hall
 date: 2016-08-10:16:06:59
 template: doc.jade
