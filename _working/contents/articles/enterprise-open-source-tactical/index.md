@@ -4,9 +4,12 @@ author: Adron Hall
 date: 2016-10-16
 template: article.jade
 ---
-[Part I](/articles/holy-shit-watch-out-for-that-enterprise-open-source/), [Part II (That's this article)](/articles/enterprise-open-source-tactical/), [Part III](/articles/enterprise-cultural-characteristics/).
+[Part I](/articles/holy-shit-watch-out-for-that-enterprise-open-source/), [Part II (That's this article)](/articles/enterprise-open-source-tactical/), [Part III](/articles/enterprise-cultural-characteristics/),
+[Part IV](/articles/enterprise-open-source-anti-patterns).
 
 In the first part I wrote about the Enterprise Open Source Manifesto that was written up for Home Depot's open source efforts. In this part I'm going to tactical some of tooling & cultural characteristics that came into play.
+
+<span class="more"></span>
 
 ### Enterprise Open Source Tooling
 
@@ -17,8 +20,6 @@ Every team had a number of tools in use upon the beginning of these efforts. I'm
 * JIRA
 * Confluence
 * Stash
-
-<span class="more"></span>
 
 #### JIRA, Stash, and Confluence
 
@@ -52,6 +53,7 @@ Now, with all the negatives pointed out, one could actually use JIRA, Stash, and
 
 Need a quick tool for managing the daily punch list, or more simply, what I generally call the *My GSD for Today* items? Jell is a great tool for this. Others that come to mind are Trello or even just plain old Google Docs (I guess that's G-suite now). Whatever the case, it helps members to have a punch list if it's a day-to-day, regularly worked on project. This helps with that communication across any contributors, even if contributors are all in a single office.
 
-[Part I](/articles/holy-shit-watch-out-for-that-enterprise-open-source/), [Part II (That's this article)](/articles/enterprise-open-source-tactical/), [Part III](/articles/enterprise-cultural-characteristics/).
+[Part I](/articles/holy-shit-watch-out-for-that-enterprise-open-source/), [Part II (That's this article)](/articles/enterprise-open-source-tactical/), [Part III](/articles/enterprise-cultural-characteristics/),
+[Part IV](/articles/enterprise-open-source-anti-patterns).
 
 That's it for part II. More to come for this series real soon, and I'll update the post with a link right here to Part III as soon as it's published.

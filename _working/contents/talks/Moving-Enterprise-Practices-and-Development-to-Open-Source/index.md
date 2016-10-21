@@ -19,3 +19,5 @@ Key Points:
 * Things to avoid when moving to open source models.
 * How to make the most of things for the community and the enterprise.
 * Tooling, interoperability, services, and how to get it done.
+
+Link to O'Reilly Architecture Conference Listing: http://conferences.oreilly.com/software-architecture/engineering-business-eu/public/schedule/detail/52257

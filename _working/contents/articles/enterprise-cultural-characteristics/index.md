@@ -4,7 +4,8 @@ author: Adron Hall
 date: 2016-10-17
 template: article.jade
 ---
-[Part I](/articles/holy-shit-watch-out-for-that-enterprise-open-source/), [Part II](/articles/enterprise-open-source-tactical/), [Part III (That's this article)](/articles/enterprise-cultural-characteristics/).
+[Part I](/articles/holy-shit-watch-out-for-that-enterprise-open-source/), [Part II](/articles/enterprise-open-source-tactical/), [Part III (That's this article)](/articles/enterprise-cultural-characteristics/),
+[Part IV](/articles/enterprise-open-source-anti-patterns).
 
 My friend Glenn Block [@gblock](https://twitter.com/gblock) contacted me via Twitter and we discussed some of what I had discussed in the previous post. He brought up some good points and I realized there were a few points I ought to bring up regarding what I'd previously written about.
 
@@ -39,4 +40,5 @@ First, here are some of the positive characteristics that always help. Whether i
 
 There are more, but these are the top 5 at the moment. If you think I've missed any really important trait that should be mentioned, tweet at me [@Adron](https://twitter.com/Adron) and it's possible we could get the top 6.
 
-[Part I](/articles/holy-shit-watch-out-for-that-enterprise-open-source/), [Part II](/articles/enterprise-open-source-tactical/), [Part III (That's this article)](/articles/enterprise-cultural-characteristics/).
+[Part I](/articles/holy-shit-watch-out-for-that-enterprise-open-source/), [Part II](/articles/enterprise-open-source-tactical/), [Part III (That's this article)](/articles/enterprise-cultural-characteristics/),
+[Part IV](/articles/enterprise-open-source-anti-patterns).

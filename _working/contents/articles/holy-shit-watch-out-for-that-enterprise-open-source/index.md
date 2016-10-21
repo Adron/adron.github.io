@@ -4,17 +4,18 @@ author: Adron Hall
 date: 2016-10-12
 template: article.jade
 ---
-[Part I (That's this article)](/articles/holy-shit-watch-out-for-that-enterprise-open-source/), [Part II](/articles/enterprise-open-source-tactical/), [Part III](/articles/enterprise-cultural-characteristics/).
+[Part I (That's this article)](/articles/holy-shit-watch-out-for-that-enterprise-open-source/), [Part II](/articles/enterprise-open-source-tactical/), [Part III](/articles/enterprise-cultural-characteristics/),
+[Part IV](/articles/enterprise-open-source-anti-patterns).
 
 This blog entry is going to be the conjoined events of open source work at Home Depot, enterprise open source in general, and the ideas and punch lists for a talk I have coming up in London on open source enterprise practices. So this will be a hard drifting whirlwind, buckle up!
+
+<span class="more"></span>
 
 In the last year there's been several specific projects I've led and consulted on:
 
 * My work at Home Depot included efforts to bring various closed sourced solutions into the open, some which have been and others that have not been - but may be on their way! Read to the end to see how you might be able to help with this.
 * I've provided consulting to several enterprise efforts over the last year as they've looked toward bolstering their experience and effort providing a coordinated participation within the open source community.
 * Putting together a talk related specifically to helping enterprises bridge the gap between insular, closed source, limiting internal development to a inclusive, open source, community oriented contributor and user of software solutions.
-
-<span class="more"></span>
 
 ## Enterprise software
 
@@ -134,7 +135,8 @@ The main two reasons I really like the OSS Manifesto include:
 1. The transparency it provides to users of the project(s) of a particular enterprise.
 2. The other thing is that it provides a much needed brain storming session to identify and define the groups intent and efforts on a more metaphsycial level, which is hugely needed to understand how a team working on a project and it's prospective contributors would interact with each other. Defining these core tenants is fundamental to a smooth workflow between contributors.
 
-[Part I (That's this article)](/articles/holy-shit-watch-out-for-that-enterprise-open-source/), [Part II](/articles/enterprise-open-source-tactical/), [Part III](/articles/enterprise-cultural-characteristics/).
+[Part I (That's this article)](/articles/holy-shit-watch-out-for-that-enterprise-open-source/), [Part II](/articles/enterprise-open-source-tactical/), [Part III](/articles/enterprise-cultural-characteristics/),
+[Part IV](/articles/enterprise-open-source-anti-patterns).
 
 **References:**
 
