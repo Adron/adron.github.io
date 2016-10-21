@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Adron's Composite Code</title>
+    <meta name="description" content="">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="alternate" href="/feed.xml" type="application/rss+xml" title="Coder, Messenger, Recon, Infrastructure, Ops">
+    <link rel="icon" type="image/png" href="/img/favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/img/favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/img/favicons/favicon-96x96.png" sizes="96x96">
+    <link rel="apple-touch-icon" sizes="57x57" href="/img/favicons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/img/favicons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/img/favicons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/img/favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/img/favicons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/img/favicons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/img/favicons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/img/favicons/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/favicons/apple-touch-icon-180x180.png">
+    <link rel="stylesheet" href="/css/custom.css">
+    <link rel="stylesheet" href="/css/style.min.css">
+    <script src="/js/modernizr.js"></script>
+  </head>
+  <body class="article-detail">
+    <!--[if lt IE 8]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <div class="header header-over large">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 col-sm-6 col-xs-6">
+            <!-- Logo Image--><a href="/index.html" class="logo-image logo-animated"><img src="/img/logos/logo.png" alt="logo"></a>
+            <!-- End of Logo Image-->
+          </div>
+          <div class="col-md-9 col-sm-6 col-xs-6">
+            <!-- Menu-->
+            <nav class="right helper">
+              <ul class="menu sf-menu js-menu">
+                <li><a href="/docs/thrashing-code-news/">Thrashing Code News</a></li>
+                <li><a href="#">Conf - Meetup - Events</a>
+                  <ul>
+                    <li><a href="/docs/Speaking-Presentations-Workshops/">Speaking - Presentations - Workshops</a></li>
+                    <li><a href="/docs/calendar">Calendar of Engagements</a></li>
+                  </ul>
+                </li>
+                <li><a href="/docs/documentation/">Docs</a></li>
+                <li><a href="#">Contact</a>
+                  <ul>
+                    <li><a href="/docs/contact">Message</a></li>
+                    <li><a href="/docs/job-talk/">Hire</a></li>
+                  </ul>
+                </li>
+                <li><a href="/docs/about/">About</a></li>
+              </ul>
+            </nav>
+            <!-- End of Menu-->
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="header-back header-back-simple header-back-small">
+      <div class="header-back-container">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <!-- Page Info-->
+              <div class="page-info page-info-simple">
+                <h1>Autopilot Pattern Application Organization</h1>
+                <p class="author">Written by <span class="author">Adron Hall</span>
+                </p>
+                <div class="nav"><a href="/">« Home</a></div>
+              </div>
+              <!-- End Page Info-->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="content">
+      <div class="container">
+        <div class="layout with-right-sidebar js-layout">
+          <div class="row">
+            <div class="col-md-9">
+              <div class="main-content">
+                <!-- Blog Page-->
+                <article class="article">
+                  <section class="content"><p>Context: What is the <a href="http://autopilotpattern.io/#how-do-we-do-it">Autopilot Pattern</a>?</p>
+<blockquote>
+<p>The autopilot pattern automates the lifecycle of each component of the application. Whether we architect our application as a single container, in tiers, or as microservices, each container that makes up the application has its own lifecycle, and its own set of actions that are necessary during that lifecycle. Each of these application components are often applications in themselves, like a database server, in-memory cache, or the reverse proxy that fronts our application, in addition to the Node.js, Python, Ruby, or other code that makes the set of components a complete&nbsp;application.</p>
+</blockquote>
+<p>The only caveat I would add here is that <em>containers</em> are largely irrelevant as long as your infrastructure virtualization is programmatic controlled. Of course, hyper-visor based virtualization can be more troublesome or simplify things when building out infrastructure programmatically or from a configuration based perspective. Whatever the case, use what works for your situation. The larger point of all this is to automate things for consistency, reliability, and&nbsp;repeatability.</p>
+<p>The way I have started to break out applications into the autopilot pattern is based on what I’ve dubbed three&nbsp;eras:</p>
+<h2 id="iron-throne-era">Iron Throne&nbsp;Era</h2>
+<p>In this era has a deluge of nightmarish problems. You might as well as just give up the quest for the throne during this era. Hardware that isn’t programmatic plagues this era. Networking that needs manually configured or applications that don’t even understand basic <span class="caps">TCP</span>/IP Networking or related communications throw a massive barrier into full automation in this&nbsp;era.</p>
+<h2 id="renaissance-era">Renaissance&nbsp;Era</h2>
+<p>This era is when things started getting good. I like to think of this era as starting right around 2007, when automation started to take a much bigger step forward with all sorts of things we could actually automate. <span class="caps">AWS</span> launched in 07’ and from there, more networking automation, tooling, and application tooling exploded with the first semblances of real PaaS coming to&nbsp;fruition.</p>
+<h2 id="iron-man-era">Iron Man&nbsp;Era</h2>
+<p>This era is where we are now. With a plethora of methods to automate networks, applications, deployments, integration, and whatever else that comes up. We’ve gotten to a stage where having viable technology options aren’t the problem anymore. Our question now just lie around how and in which way do we organize, use, and get sorted our various fully automated application&nbsp;deployments.</p>
+<p><span class="more"></span></p>
+<p>Let’s take a look at the applications from each of the&nbsp;eras.</p>
+<h1 id="iron-throne-era-application">Iron Throne Era&nbsp;Application</h1>
+<p><img src="/articles/autopilot-pattern-application-organization/iron-throne-era.gif" alt="Iron Throne Era Application"></p>
+<p>Yup, so done with that era’s app. It’s best left in the&nbsp;past.</p>
+<h1 id="renaissance-era">Renaissance&nbsp;Era</h1>
+<p>So let’s talk about this era in respect to the autopilot pattern. There’s still likely to be one or two little pieces here or there that <em>might</em> not be automated, but it should be an extreme rarity in this&nbsp;era.</p>
+<p>In this era we might have an <span class="caps">ASP</span>.NET MVC Application with a front end using Node.js to build the UI components for deployment. To specifically distinct build operations need to occur. Often this part of the over solution would at least be in one project repository or working directory. Often, and this is where we run into one of the most common plights of today’s devops or developer team. The application is in one directory but the server instances are deployed either manually or in a way that requires regular interaction and&nbsp;manipulation.</p>
+<p>Working through this application working toward deployment often looks like this for this&nbsp;application.</p>
+<p><em>Application Build&nbsp;Starts</em></p>
+<p>-&gt; Continuous Integration&nbsp;(passes)</p>
+<p>-&gt; Pipeline Checks&nbsp;Pass</p>
+<p>-&gt; Existing Infrastructure Receives Executing&nbsp;Code</p>
+<p>In this era, the infrastructure is autonomous - almost entirely - of the application that actually runs on the infrastructure. The process for deployment of the infrastructure generally follows an approach like&nbsp;this.</p>
+<p><em><span class="caps">OS</span> Installed or Image&nbsp;Created/Started</em></p>
+<p>-&gt; Server installed (Apache, Nginx, <span class="caps">IIS</span>,&nbsp;Etc)</p>
+<p>-&gt; Networking setup appropriately for&nbsp;<span class="caps">DNS</span>/Routing/Etc.</p>
+<p>-&gt; Structure setup and built/deployment code is placed on&nbsp;server</p>
+<p>Of course each of these flows are simplified. What I’m drawing an emphasis to is that they’re autonomous but must work in conjunction form the perspective of either repositories (folders or wherever they’re stored). Another thing to think about, is that the application cant’ actually deploy itself, nor can the infrastructure do anything without the application. This is obvious, but if you think about it for a moment, this is actually how we commonly store and organize our applications today. The code is in one repository and the infrastructure bits are shoved off in some other folder or repository somewhere else. This type of organization defines the very essence of the disconnected nature of this era’s efforts to automate application deployment and&nbsp;infrastructure.</p>
+<h1 id="iron-man-era">Iron Man&nbsp;Era</h1>
+<p><strong><em>and onward to the Jarvis&nbsp;Era</em></strong></p>
+<p>Alright, this is the era we’re at now. This is the era I’m really looking forward to speaking with people about and coming up with today and tomorrow’s&nbsp;solutions!</p>
+<p>Forget the disparate nature of the renaissance era. Think of the core principles behind the <a href="http://autopilotpattern.io/">Autopilot Pattern</a>. This is the era where things start to come together. Things are still somewhat in distinct repositories but sometimes might not be (more on that later). But things in this era are brought together via a systemic delivery mechanism, commonly referred to as continuous delivery. The organization of these applications, infrastructure, and related projects are more unclear then some of the limited, vertically developed applications of the renaissance era apps. Why not add the infrastructure markup, code, networking, or other related elements to the code repository? Isn’t that the idea behind devops originally anyway? Whatever the intent, here’s my proposals for this below, using a Node.js&nbsp;Application.</p>
+<h1 id="iron-man-era-autopilot-pattern-application-structural-organization">Iron Man Era Autopilot Pattern Application Structural&nbsp;Organization</h1>
+<p>Wow, that was a heckuva section title&nbsp;eh!</p>
+<p>First thing I always do is create a directory, change into that directory and run git init and create an ignore file. I generally go ahead and throw in the most important file of all to ignore at this point, the nefarious .DS_Store&nbsp;file.</p>
+<pre><code class="lang-shell-script">mkdir whatever-the-app-is
+git init
+touch .gitignore
+nano .gitignore
+</code></pre>
+<p><em>…add stuff and save&nbsp;it…</em></p>
+<pre><code class="lang-shell-script">git add -A
+git commit -m &#39;First commit!&#39;
+</code></pre>
+<p><img src="/articles/autopilot-pattern-application-organization/first-steps.gif" alt="First Steps"></p>
+<p>After that, I create three directories: terraform, packer, and&nbsp;nodejs.</p>
+<p><img src="/articles/autopilot-pattern-application-organization/second-steps.gif" alt="Second Steps"></p>
+<p>From here I create the application project that I’ll develop&nbsp;from.</p>
+<p><img src="/articles/autopilot-pattern-application-organization/third-steps.gif" alt="Third Steps"></p>
+<p>Then the final step is to setup the infrastructure parts of the&nbsp;application.</p>
+<p><img src="/articles/autopilot-pattern-application-organization/fourth-steps.gif" alt="Fourth Steps"></p>
+<h2 id="a-few-of-the-key-advantages">A Few of the Key&nbsp;Advantages</h2>
+<ol>
+<li>With all of the core elements of the application combined; infrastructure, application code, configuration, and others combined there isn’t the confusion about where X or Y repo is located in relation to the overal project. Everything that is needed for the application, for it’s deployment, for it’s development, and for the future of the application is included in the&nbsp;repository.</li>
+<li>When working on this code repository, it is in essence practicing what is preached with regard to the ideals of <em>DevOps</em>. Having the infrastructure and application code together truly does bring together development and&nbsp;operations.</li>
+<li>Communication, pending of course source control practices and workflow are followed, is drawn together even more among the individuals who would be working on the code for the application or infrastructure or whatever element of the&nbsp;solution.</li>
+<li>The continuous integration (<span class="caps">CI</span>) and delivery (CD) services now don’t need multiple authentication credentials or keys to go out and pull together the code, infrastructure, and related elements. Instead we’re down to one repository that then can be deployed via CD to whatever would host the&nbsp;infrastructure.</li>
+</ol>
+<h2 id="the-conversation">The&nbsp;Conversation</h2>
+<p>So is setting up directories and tossing the respective elements into the project the best way to do this? It may be, it may not be, but it’s one possible solution. The idea however to bring these things together in a way where they seamlessly work together demands some type of way to connect the architectural elements. Putting them in one repository is one distinctive solution. Another possible solution might be to have a parent repository that collects other repositories together that would have the respective infrastructure, application, and related glue&nbsp;code.</p>
+<p>Recently with the talk “<a href="http://blog.adron.me/talks/Organizing-Infrastructure-Config-and-Workflow/">Organizing Infrastructure Configuration and Workflow</a>“ at HashiConf, Evan, myself and many others have started to discuss additional ways to put together the meat and potato basics of these applications. I believe I might even have to dub it something new, as it appears the collection of these things could bring together a truly better way to build and deploy applications consistently, reliably, with higher levels of&nbsp;quality.</p>
+</section>
+                </article>
+                <!-- End of Blog Page-->
+              </div>
+            </div>
+            <div class="col-md-3 hidden-sm hidden-xs">
+              <div class="sidebar js-sidebar-fixed">
+                <!-- Vertical Menu-->
+                <div class="widget">
+                  <!-- Search-->
+                  <div class="search">
+                    <form action="https://google.com/search" method="get">
+                      <input type="hidden" name="sitesearch" value="http://blog.adron.me">
+                      <input type="text" name="q" placeholder="search" class="search-input form-control"><i class="fa fa-search search-icon"></i>
+                    </form>
+                  </div>
+                  <!-- End of Search-->
+                </div>
+                <div class="widget">
+                  <h3 class="widget-title">Keyword Search</h3>
+                  <!-- Tags-->
+                  <ul class="tags">
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=html">html</a></li>
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=javascript">javascript</a></li>
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=ubuntu">ubuntu</a></li>
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=node pdx">node pdx</a></li>
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=.NET fringe">.net fringe</a></li>
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=videos">videos</a></li>
+                  </ul>
+                  <!-- End of Tags-->
+                </div>
+                <nav class="menu-vertical-wrapper">
+                  <ul data-prepend-to=".js-layout" data-select="Menu" class="menu-vertical js-menu-vertical">
+                    <li><a href="#">About</a>
+                      <ul>
+                        <li><a href="/docs/about/">Me, Adron</a></li>
+                        <li><a href="#">My Hobbies</a>
+                          <ul>
+                            <li><a href="http://photos.adron.me">My Photos</a></li>
+                          </ul>
+                        </li>
+                        <li><a href="/docs/Speaking-Presentations-Workshops">My Presentations</a></li>
+                        <li><a href="/docs/documentation/">Collection of Docs & Notes</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </nav>
+                <div class="widget">
+                  <h3 class="widget-title">Photos</h3>
+                  <!-- Photos-->
+                  <ul class="widget-recommended-products">
+                    <!-- Photos-->
+                    <li class="widget-recommended-product"><img src="/img/photos/IMG_1836.jpg" alt="Jon Oropeza" class="widget-recommended-product-img"><a href="http://photos.adron.me/Software/Meetups-N-Conferences/Conferences/Node-PDX-2016/i-D9qFQ6m" class="widget-recommended-product-link">
+                        <h5 class="widget-recommended-product-link-title">Node PDX 2016<i class="fa fa-angle-right"></i></h5>
+                        <p class="widget-recommended-product-link-description">Jon Oropeza @ Node PDX 2016</p></a></li>
+                    <!-- End of Recommended product Item-->
+                    <!-- Recommended product Item-->
+                    <li class="widget-recommended-product"><img src="/img/photos/IMG_1812.jpg" alt="Liz Abinante" class="widget-recommended-product-img"><a href="http://photos.adron.me/Software/Meetups-N-Conferences/Conferences/Node-PDX-2016/i-g2m2hgP" class="widget-recommended-product-link">
+                        <h5 class="widget-recommended-product-link-title">Node PDX 2016<i class="fa fa-angle-right"></i></h5>
+                        <p class="widget-recommended-product-link-description">Liz Abinante @ Node PDX 2016</p></a></li>
+                    <!-- End of Recommended product Item-->
+                    <!-- Recommended product Item-->
+                    <li class="widget-recommended-product"><img src="/img/photos/IMG_5709.jpg" alt="Praha hlavní nádraží" class="widget-recommended-product-img"><a href="http://photos.adron.me/Travels-N-Traversings/Across-the-Pond-2016-Travels/September-Krakow/Week-4-Prague/i-62ZPsPb" class="widget-recommended-product-link">
+                        <h5 class="widget-recommended-product-link-title">Prague (Praha)<i class="fa fa-angle-right"></i></h5>
+                        <p class="widget-recommended-product-link-description">Praha hlavní nádraží</p></a></li>
+                    <!-- End of photos row one-->
+                  </ul>
+                  <ul class="widget-recommended-products">
+                    <!-- Photos-->
+                    <li class="widget-recommended-product"><img src="/img/photos/IMG_4417.jpg" alt="St Mary's Basilica" class="widget-recommended-product-img"><a href="http://photos.adron.me/Travels-N-Traversings/Across-the-Pond-2016-Travels/September-Krakow/Krakow/i-KnZf6pK/A" class="widget-recommended-product-link">
+                        <h5 class="widget-recommended-product-link-title">St Mary's Basilica<i class="fa fa-angle-right"></i></h5>
+                        <p class="widget-recommended-product-link-description">Bazylika Mariacka in Rynek Główny.</p></a></li>
+                    <!-- End of Recommended product Item-->
+                    <!-- Recommended product Item-->
+                    <li class="widget-recommended-product"><img src="/img/photos/VSC_03.png" alt="Visual Studio Code" class="widget-recommended-product-img"><a href="http://photos.adron.me/Software/Software-Development/Visual-Studio-Things/i-LLW7WcD/A" class="widget-recommended-product-link">
+                        <h5 class="widget-recommended-product-link-title">Visual Studio Code<i class="fa fa-angle-right"></i></h5>
+                        <p class="widget-recommended-product-link-description">Images from a review of Visual Studio Code.</p></a></li>
+                    <!-- End of Recommended product Item-->
+                    <!-- Recommended product Item-->
+                    <li class="widget-recommended-product"><img src="/img/photos/-home-adronhall-Pictures-Selection_002.png - Shutter_003.png" alt="" class="widget-recommended-product-img"><a href="http://photos.adron.me/Software/Software-Development/Ubuntu/i-CQsQ4zj/A" class="widget-recommended-product-link">
+                        <h5 class="widget-recommended-product-link-title">Mono Develop & WebStorm<i class="fa fa-angle-right"></i></h5>
+                        <p class="widget-recommended-product-link-description">Working through Mono Develop & WebStorm.</p></a>
+                      <!-- End of photos row two-->
+                    </li>
+                  </ul>
+                  <!-- End Photos-->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="nav"><a href="/">« Home</a></div>
+      </div>
+    </div>
+    <script src="/js/all.js"></script>
+    <script src="/js/custom.js"></script>
+    <!-- Google Tag Manager-->
+    <noscript>
+      <iframe src="//www.googletagmanager.com/ns.html?id=GTM-KMMZX2" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <script>
+      console.log(document.getElementById("search-google"));
+      console.log(document.getElementById("search-google").innerText);
+      
+      var searchBox = document.getElementById("search-google");
+      
+      function googleSearch(search_string) {
+        alert(search_string);
+      }
+      
+      document.getElementById("search-google").addEventListener("onClick", function () {
+        alert(document.getElementById("search-google").innerHTML);
+      });
+      
+      document.getElementById("search-google").addEventListener("onClick", function () {
+        googleSearch(document.getElementById("search-google").innerHTML)
+      });
+      
+    </script>
+    <script>
+      (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+                  (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+      })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+      ga('create', 'UA-39158070-6', 'auto');
+      ga('send', 'pageview');
+    </script>
+  </body>
+</html>

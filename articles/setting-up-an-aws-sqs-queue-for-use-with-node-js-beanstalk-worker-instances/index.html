@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Adron's Composite Code</title>
+    <meta name="description" content="">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="alternate" href="/feed.xml" type="application/rss+xml" title="Coder, Messenger, Recon, Infrastructure, Ops">
+    <link rel="icon" type="image/png" href="/img/favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/img/favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/img/favicons/favicon-96x96.png" sizes="96x96">
+    <link rel="apple-touch-icon" sizes="57x57" href="/img/favicons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/img/favicons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/img/favicons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/img/favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/img/favicons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/img/favicons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/img/favicons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/img/favicons/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/favicons/apple-touch-icon-180x180.png">
+    <link rel="stylesheet" href="/css/custom.css">
+    <link rel="stylesheet" href="/css/style.min.css">
+    <script src="/js/modernizr.js"></script>
+  </head>
+  <body class="article-detail">
+    <!--[if lt IE 8]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <div class="header header-over large">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 col-sm-6 col-xs-6">
+            <!-- Logo Image--><a href="/index.html" class="logo-image logo-animated"><img src="/img/logos/logo.png" alt="logo"></a>
+            <!-- End of Logo Image-->
+          </div>
+          <div class="col-md-9 col-sm-6 col-xs-6">
+            <!-- Menu-->
+            <nav class="right helper">
+              <ul class="menu sf-menu js-menu">
+                <li><a href="/docs/thrashing-code-news/">Thrashing Code News</a></li>
+                <li><a href="#">Conf - Meetup - Events</a>
+                  <ul>
+                    <li><a href="/docs/Speaking-Presentations-Workshops/">Speaking - Presentations - Workshops</a></li>
+                    <li><a href="/docs/calendar">Calendar of Engagements</a></li>
+                  </ul>
+                </li>
+                <li><a href="/docs/documentation/">Docs</a></li>
+                <li><a href="#">Contact</a>
+                  <ul>
+                    <li><a href="/docs/contact">Message</a></li>
+                    <li><a href="/docs/job-talk/">Hire</a></li>
+                  </ul>
+                </li>
+                <li><a href="/docs/about/">About</a></li>
+              </ul>
+            </nav>
+            <!-- End of Menu-->
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="header-back header-back-simple header-back-small">
+      <div class="header-back-container">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <!-- Page Info-->
+              <div class="page-info page-info-simple">
+                <h1>Setting up an AWS SQS Queue for Use With Node.js Beanstalk Worker Instances</h1>
+                <p class="author">Written by <span class="author">Adron Hall</span>
+                </p>
+                <div class="nav"><a href="/">« Home</a></div>
+              </div>
+              <!-- End Page Info-->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="content">
+      <div class="container">
+        <div class="layout with-right-sidebar js-layout">
+          <div class="row">
+            <div class="col-md-9">
+              <div class="main-content">
+                <!-- Blog Page-->
+                <article class="article">
+                  <section class="content"><div class="image float-right">
+    <img src="/articles/setting-up-an-aws-sqs-queue-for-use-with-node-js-beanstalk-worker-instances/Amazon-SQS_200x200.png" alt="Amazon SQS">
+</div>
+
+<ul>
+<li><em>Part 1</em> – <a href="/articles/setting-up-an-aws-sqs-queue-for-use-with-node-js-beanstalk-worker-instances">Setting up an <span class="caps">AWS</span> SQS Queue for Use With Node.js Beanstalk Worker Instances</a> (This is the current article you’re reading&nbsp;now)</li>
+<li><em>Part 2</em> – <a href="/articles/hapijs-aws-worker-publish/">Setting up a Hapi.js App that sends work to a Node.js <span class="caps">AWS</span> Worker via&nbsp;SQS</a></li>
+<li><em>Part 3</em> – <a href="/articles/aws-beanstalk-worker-with-node-js-and-sqs/"><span class="caps">AWS</span> Beanstalk Worker with Node.js and&nbsp;SQS</a></li>
+</ul>
+<p>Before diving straight in, I’m going to outline the specific goals and what I am using to accomplish these goals. The goal is to have a simple web application, that will get some element of data posted to a queue. The queue will then have data that a worker service needs to then process. As I step through each of these requirements I’ll determine the actual push and pull mechanisms that will get the job&nbsp;done.</p>
+<p><span class="more"></span></p>
+<div class="image float-right">
+<img src="/articles/setting-up-an-aws-sqs-queue-for-use-with-node-js-beanstalk-worker-instances/Deployment-&amp;-Management_Elastic-Beanstalk_200x200.png" alt="Deployment &amp; Management - Elastic Beanstalk">
+</div>
+
+<p><strong><a href="http://aws.amazon.com/elasticbeanstalk/"><span class="caps">AWS</span> Elastic Beanstalk&nbsp;Worker</a></strong></p>
+<p><a href="http://aws.amazon.com/elasticbeanstalk/"><span class="caps">AWS</span> Elastic Beanstalk</a> is a service used to deploy and scale web application and services. In this particular example I’ll be using Node.js for all the work, but other options are available such as Java, .<span class="caps">NET</span>, PHP, Python, Ruby and even anything you can stick in a Docker Container. Simply put, you can run whatever you need in Beanstalk and gain all the advantages of the virtualized services and scaling of the&nbsp;toolset.</p>
+<p>The worker feature that I’ll be using in this how-to, referred to by <span class="caps">AWS</span> as Worker Tiers, is setup to handle background tasks at scale. Think of things like doing database cleanup, setting action flags, events, firing triggers or simply sending an email notification. The worker tier that I’ll be using, again with Node.js, will simple be there to process messages that I’ll put into the&nbsp;queue.</p>
+<div class="image float-right">
+    <img src="/articles/setting-up-an-aws-sqs-queue-for-use-with-node-js-beanstalk-worker-instances/Amazon-SQS_200x200.png" alt="SQS">
+</div>
+
+<p><strong><a href="http://aws.amazon.com/sqs/"><span class="caps">AWS</span> Simple Queue Service&nbsp;(SQS)</a></strong></p>
+<p><a href="http://aws.amazon.com/sqs/"><span class="caps">AWS</span> Simple Queue Service</a>, or <a href="http://aws.amazon.com/sqs/"><span class="caps">SQS</span></a> for short, is a distributed and scalable hosted queue service for storing messages that need to be reliably available between systems. By using <span class="caps">SQS</span> I can then create decoupled components of an application that are autonomous of each other in execution. This provides more options around scaling up or scaling down particular workloads, apps and services throughout the application ecosystem that I’ve&nbsp;built.</p>
+<p><strong><a href="http://aws.amazon.com/cloudwatch/">CloudWatch</a></strong></p>
+<div class="image float-right">
+    <img src="/articles/setting-up-an-aws-sqs-queue-for-use-with-node-js-beanstalk-worker-instances/Deployment-&amp;-Management_CloudWatch-200x200.png" alt="Cloudwatch">
+</div>
+
+<p>Even though the use of <a href="http://aws.amazon.com/cloudwatch/">CloudWatch</a> is actually transparent to this project, I needed to bring it up, because without things being setup appropriately CloudWatch will definitely let you know that it is involved in this&nbsp;architecture.</p>
+<p>CloudWatch is a monitoring service for cloud resources. In this particular scenario that I’m detailing here it is setup automatically by Elastic Beanstalk to monitor and autoscale instances as demand&nbsp;dictates.</p>
+<p><strong><a href="http://aws.amazon.com/iam/">Identity and Access Management&nbsp;(<span class="caps">IAM</span>)</a></strong></p>
+<div class="image float-right">
+    <img src="/articles/setting-up-an-aws-sqs-queue-for-use-with-node-js-beanstalk-worker-instances/Deployment-&amp;-Management_IAM-200x200.png" alt="IAM">
+</div>
+
+<p><a href="http://aws.amazon.com/iam/"><span class="caps">AWS</span> IAM</a> provides security for individual <span class="caps">AWS</span> resources and also a way to manage users and administrators of those resources. In this particular scenario I won’t cover the default user that I have setup, but assume that I’m using a user with permissions to all resources. I will be adding some roles to enable CloudWatch and Elastic Beanstalk to interoperate appropriately with the SQS under the premise of an Elastic Beanstalk Worker&nbsp;environment.</p>
+<p><strong><a href="http://aws.amazon.com/sdk-for-node-js/"><span class="caps">AWS</span> Node.js&nbsp;SDK</a></strong></p>
+<p>The <a href="http://aws.amazon.com/sdk-for-node-js/">Nodejs <span class="caps">SDK</span></a> that Amazon provides for the <span class="caps">AWS</span> Web Services is pretty extensive. I have noticed it suffers a little from the “<em><a href="http://en.wikipedia.org/wiki/God_object">God Object</a></em>“ type of context where it does everything in one giant library, <em>however</em>, it really kind of makes sense for something like <span class="caps">AWS</span>’s&nbsp;Services.</p>
+<div class="image float-right">
+    <img src="/articles/setting-up-an-aws-sqs-queue-for-use-with-node-js-beanstalk-worker-instances/SDKs-copy_nodeJS-200x2100.png" alt="Node.js SDK">
+</div>
+
+<p>The <span class="caps">SDK</span> provides JavaScript objects for AWS services including S3, EC2, and almost every other practical service they have. The package is available for download the standard npm&nbsp;way.</p>
+<pre><code>  npm install aws-sdk
+</code></pre><p>In the getting started section of the <span class="caps">AWS</span> documentation, the samples are generally given using a loadable json file with the secret key information for connecting to your AWS resources. In this scenario I’ll actually use a different way to setup that configuration, which I’ll elaborate on further into this&nbsp;series.</p>
+<h2 id="back-to-business">Back to&nbsp;Business</h2>
+<p>The first order of business is to get a queue created. Since everything I’m going to put together in this sample is primarily focused around processing a queue, it seems like the perfect place to start. First open up the <span class="caps">AWS</span> Console and navigate to the SQS admin&nbsp;page.</p>
+<p><img src="/articles/setting-up-an-aws-sqs-queue-for-use-with-node-js-beanstalk-worker-instances/screen-01.png" alt="Screen 1"></p>
+<p>Next click on the Create New Queue button to launch the create queue&nbsp;dialog.</p>
+<p><img src="/articles/setting-up-an-aws-sqs-queue-for-use-with-node-js-beanstalk-worker-instances/screen-02.png" alt="Screen 2"></p>
+<p>On the dialog enter the queue name and change any of the queue settings that you need to. In this particular situation I didn’t change any and just went with the&nbsp;defaults.</p>
+<p><img src="/articles/setting-up-an-aws-sqs-queue-for-use-with-node-js-beanstalk-worker-instances/screen-03.png" alt="Screen 3"></p>
+<p>Now the queue is created. However I can’t really do anything with it at this point. I need to open up permissions to whatever I want to have access it. Clicking on the just created queue and then selecting the Permissions tab just below that will bring up the tab dialog that provides options for adding various permission levels for&nbsp;access.</p>
+<p><img src="/articles/setting-up-an-aws-sqs-queue-for-use-with-node-js-beanstalk-worker-instances/screen-04.png" alt="Screen 4"></p>
+<p>Adding&nbsp;permissions…</p>
+<p><img src="/articles/setting-up-an-aws-sqs-queue-for-use-with-node-js-beanstalk-worker-instances/screen-05.png" alt="Screen 5"></p>
+<p>Add a Permission to&nbsp;sample</p>
+<p><img src="/articles/setting-up-an-aws-sqs-queue-for-use-with-node-js-beanstalk-worker-instances/screen-06.png" alt="Screen 6"></p>
+<p>The queue is now all setup. In the next entry I’ll setup a web application project that will send data to the queue. I’ll also update this article with the links to the subsequent articles at the very top - and the bottom of the article&nbsp;here.</p>
+<ul>
+<li><em>Part 1</em> – <a href="/articles/setting-up-an-aws-sqs-queue-for-use-with-node-js-beanstalk-worker-instances">Setting up an <span class="caps">AWS</span> SQS Queue for Use With Node.js Beanstalk Worker Instances</a> (This is the current article you’re reading&nbsp;now)</li>
+<li><em>Part 2</em> – <a href="/articles/hapijs-aws-worker-publish/">Setting up a Hapi.js App that sends work to a Node.js <span class="caps">AWS</span> Worker via&nbsp;SQS</a></li>
+<li><em>Part 3</em> – <a href="/articles/aws-beanstalk-worker-with-node-js-and-sqs/"><span class="caps">AWS</span> Beanstalk Worker with Node.js and&nbsp;SQS</a></li>
+</ul>
+<p><strong>Reference:</strong></p>
+<ul>
+<li><a href="https://github.com/Adron/testing-aws-sqs-worker">Testing <span class="caps">AWS</span> SQS Web Worker Github&nbsp;Repo</a></li>
+<li><a href="https://github.com/Adron/testing-aws-sqs-site">Testing <span class="caps">AWS</span> SQS Web App Github&nbsp;Repo</a></li>
+</ul>
+</section>
+                </article>
+                <!-- End of Blog Page-->
+              </div>
+            </div>
+            <div class="col-md-3 hidden-sm hidden-xs">
+              <div class="sidebar js-sidebar-fixed">
+                <!-- Vertical Menu-->
+                <div class="widget">
+                  <!-- Search-->
+                  <div class="search">
+                    <form action="https://google.com/search" method="get">
+                      <input type="hidden" name="sitesearch" value="http://blog.adron.me">
+                      <input type="text" name="q" placeholder="search" class="search-input form-control"><i class="fa fa-search search-icon"></i>
+                    </form>
+                  </div>
+                  <!-- End of Search-->
+                </div>
+                <div class="widget">
+                  <h3 class="widget-title">Keyword Search</h3>
+                  <!-- Tags-->
+                  <ul class="tags">
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=html">html</a></li>
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=javascript">javascript</a></li>
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=ubuntu">ubuntu</a></li>
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=node pdx">node pdx</a></li>
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=.NET fringe">.net fringe</a></li>
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=videos">videos</a></li>
+                  </ul>
+                  <!-- End of Tags-->
+                </div>
+                <nav class="menu-vertical-wrapper">
+                  <ul data-prepend-to=".js-layout" data-select="Menu" class="menu-vertical js-menu-vertical">
+                    <li><a href="#">About</a>
+                      <ul>
+                        <li><a href="/docs/about/">Me, Adron</a></li>
+                        <li><a href="#">My Hobbies</a>
+                          <ul>
+                            <li><a href="http://photos.adron.me">My Photos</a></li>
+                          </ul>
+                        </li>
+                        <li><a href="/docs/Speaking-Presentations-Workshops">My Presentations</a></li>
+                        <li><a href="/docs/documentation/">Collection of Docs & Notes</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </nav>
+                <div class="widget">
+                  <h3 class="widget-title">Photos</h3>
+                  <!-- Photos-->
+                  <ul class="widget-recommended-products">
+                    <!-- Photos-->
+                    <li class="widget-recommended-product"><img src="/img/photos/IMG_1836.jpg" alt="Jon Oropeza" class="widget-recommended-product-img"><a href="http://photos.adron.me/Software/Meetups-N-Conferences/Conferences/Node-PDX-2016/i-D9qFQ6m" class="widget-recommended-product-link">
+                        <h5 class="widget-recommended-product-link-title">Node PDX 2016<i class="fa fa-angle-right"></i></h5>
+                        <p class="widget-recommended-product-link-description">Jon Oropeza @ Node PDX 2016</p></a></li>
+                    <!-- End of Recommended product Item-->
+                    <!-- Recommended product Item-->
+                    <li class="widget-recommended-product"><img src="/img/photos/IMG_1812.jpg" alt="Liz Abinante" class="widget-recommended-product-img"><a href="http://photos.adron.me/Software/Meetups-N-Conferences/Conferences/Node-PDX-2016/i-g2m2hgP" class="widget-recommended-product-link">
+                        <h5 class="widget-recommended-product-link-title">Node PDX 2016<i class="fa fa-angle-right"></i></h5>
+                        <p class="widget-recommended-product-link-description">Liz Abinante @ Node PDX 2016</p></a></li>
+                    <!-- End of Recommended product Item-->
+                    <!-- Recommended product Item-->
+                    <li class="widget-recommended-product"><img src="/img/photos/IMG_5709.jpg" alt="Praha hlavní nádraží" class="widget-recommended-product-img"><a href="http://photos.adron.me/Travels-N-Traversings/Across-the-Pond-2016-Travels/September-Krakow/Week-4-Prague/i-62ZPsPb" class="widget-recommended-product-link">
+                        <h5 class="widget-recommended-product-link-title">Prague (Praha)<i class="fa fa-angle-right"></i></h5>
+                        <p class="widget-recommended-product-link-description">Praha hlavní nádraží</p></a></li>
+                    <!-- End of photos row one-->
+                  </ul>
+                  <ul class="widget-recommended-products">
+                    <!-- Photos-->
+                    <li class="widget-recommended-product"><img src="/img/photos/IMG_4417.jpg" alt="St Mary's Basilica" class="widget-recommended-product-img"><a href="http://photos.adron.me/Travels-N-Traversings/Across-the-Pond-2016-Travels/September-Krakow/Krakow/i-KnZf6pK/A" class="widget-recommended-product-link">
+                        <h5 class="widget-recommended-product-link-title">St Mary's Basilica<i class="fa fa-angle-right"></i></h5>
+                        <p class="widget-recommended-product-link-description">Bazylika Mariacka in Rynek Główny.</p></a></li>
+                    <!-- End of Recommended product Item-->
+                    <!-- Recommended product Item-->
+                    <li class="widget-recommended-product"><img src="/img/photos/VSC_03.png" alt="Visual Studio Code" class="widget-recommended-product-img"><a href="http://photos.adron.me/Software/Software-Development/Visual-Studio-Things/i-LLW7WcD/A" class="widget-recommended-product-link">
+                        <h5 class="widget-recommended-product-link-title">Visual Studio Code<i class="fa fa-angle-right"></i></h5>
+                        <p class="widget-recommended-product-link-description">Images from a review of Visual Studio Code.</p></a></li>
+                    <!-- End of Recommended product Item-->
+                    <!-- Recommended product Item-->
+                    <li class="widget-recommended-product"><img src="/img/photos/-home-adronhall-Pictures-Selection_002.png - Shutter_003.png" alt="" class="widget-recommended-product-img"><a href="http://photos.adron.me/Software/Software-Development/Ubuntu/i-CQsQ4zj/A" class="widget-recommended-product-link">
+                        <h5 class="widget-recommended-product-link-title">Mono Develop & WebStorm<i class="fa fa-angle-right"></i></h5>
+                        <p class="widget-recommended-product-link-description">Working through Mono Develop & WebStorm.</p></a>
+                      <!-- End of photos row two-->
+                    </li>
+                  </ul>
+                  <!-- End Photos-->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="nav"><a href="/">« Home</a></div>
+      </div>
+    </div>
+    <script src="/js/all.js"></script>
+    <script src="/js/custom.js"></script>
+    <!-- Google Tag Manager-->
+    <noscript>
+      <iframe src="//www.googletagmanager.com/ns.html?id=GTM-KMMZX2" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <script>
+      console.log(document.getElementById("search-google"));
+      console.log(document.getElementById("search-google").innerText);
+      
+      var searchBox = document.getElementById("search-google");
+      
+      function googleSearch(search_string) {
+        alert(search_string);
+      }
+      
+      document.getElementById("search-google").addEventListener("onClick", function () {
+        alert(document.getElementById("search-google").innerHTML);
+      });
+      
+      document.getElementById("search-google").addEventListener("onClick", function () {
+        googleSearch(document.getElementById("search-google").innerHTML)
+      });
+      
+    </script>
+    <script>
+      (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+                  (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+      })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+      ga('create', 'UA-39158070-6', 'auto');
+      ga('send', 'pageview');
+    </script>
+  </body>
+</html>
