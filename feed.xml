@@ -10,12 +10,12 @@
     <language>en</language>
     <item>
       <title>Marketing Obliviousness of DevOps, WTF is Site Reliability</title>
-      <link>http://adron.github.io/articles/devops-ignorance-site-reliability-wtf/</link>
+      <link>http://adron.github.io/articles/devops-obliviousness-site-reliability-wtf/</link>
       <pubDate>Mon, 24 Oct 2016 01:00:00 +0100</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/devops-ignorance-site-reliability-wtf/</guid>
+      <guid isPermaLink="true">http://adron.github.io/articles/devops-obliviousness-site-reliability-wtf/</guid>
       <author></author>
       <description>&lt;p&gt;Recently I started researching what people think DevOps means. What it was originally intended to mean and how ridiculous it is to actually see it in a job title. On the flip of that, since one of my titles was actually “Site Reliability Engineer” I started looking into what is perceived to be the roles of that job. This article is my findings, in full unconstrained wording, about the absurdity of one as a title and the specifics of the other.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://adron.github.io/articles/devops-ignorance-site-reliability-wtf/syntax%20error.gif&quot; alt=&quot;Syntax Error Explosion&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://adron.github.io/articles/devops-obliviousness-site-reliability-wtf/syntax%20error.gif&quot; alt=&quot;Syntax Error Explosion&quot;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;h2 id=&quot;part-i-devops-is-nope&quot;&gt;Part I - DevOps is… Nope&lt;/h2&gt;
 &lt;p&gt;In linguistics the word DevOps is generally considered a &lt;em&gt;blend word&lt;/em&gt; or a &lt;em&gt;portmanteau&lt;/em&gt;. It’s the combination of developer or development and operations. Meanwhile, Google actually understands what it is. But hey, we know Google is basically a smarter than humanity AI at this point right? Well, ok, maybe Google’s definition of DevOps isn’t 100% spot on, but it’s fairly close to its perceived meaning.&lt;/p&gt;
