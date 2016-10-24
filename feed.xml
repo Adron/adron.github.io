@@ -5,9 +5,61 @@
     <atom:link href="http://adron.github.io/feed.xml" rel="self" type="application/rss+xml"></atom:link>
     <link>http://adron.github.io</link>
     <description>Coder, Messenger, Recon, Infrastructure, Ops</description>
-    <pubDate>Thu, 20 Oct 2016 01:00:00 +0100</pubDate>
+    <pubDate>Mon, 24 Oct 2016 01:00:00 +0100</pubDate>
     <generator>Wintersmith - https://github.com/jnordberg/wintersmith</generator>
     <language>en</language>
+    <item>
+      <title>Marketing Obliviousness of DevOps, WTF is Site Reliability</title>
+      <link>http://adron.github.io/articles/devops-ignorance-site-reliability-wtf/</link>
+      <pubDate>Mon, 24 Oct 2016 01:00:00 +0100</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/devops-ignorance-site-reliability-wtf/</guid>
+      <author></author>
+      <description>&lt;p&gt;Recently I started researching what people think DevOps means. What it was originally intended to mean and how ridiculous it is to actually see it in a job title. On the flip of that, since one of my titles was actually “Site Reliability Engineer” I started looking into what is perceived to be the roles of that job. This article is my findings, in full unconstrained wording, about the absurdity of one as a title and the specifics of the other.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://adron.github.io/articles/devops-ignorance-site-reliability-wtf/syntax%20error.gif&quot; alt=&quot;Syntax Error Explosion&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;h2 id=&quot;part-i-devops-is-nope&quot;&gt;Part I - DevOps is… Nope&lt;/h2&gt;
+&lt;p&gt;In linguistics the word DevOps is generally considered a &lt;em&gt;blend word&lt;/em&gt; or a &lt;em&gt;portmanteau&lt;/em&gt;. It’s the combination of developer or development and operations. Meanwhile, Google actually understands what it is. But hey, we know Google is basically a smarter than humanity AI at this point right? Well, ok, maybe Google’s definition of DevOps isn’t 100% spot on, but it’s fairly close to its perceived meaning.&lt;/p&gt;
+&lt;p&gt;Google’s definition reads, “DevOps (a clipped compound of development and operations) is a culture, movement or practice that emphasizes the collaboration and communication of both software developers and other information-technology (IT) professionals while automating the process of software delivery and infrastructure changes.”&lt;/p&gt;
+&lt;p&gt;Part of that definition also takes it into account that some companies have no clue what they’re doing. Hiring a “DevOps Engineer” and then they end up throwing that person into the fire of systems administration menial servitude or the absurdity of &lt;em&gt;cluster fucked crossed wires&lt;/em&gt; network administration. So often a DevOps Engineer is hired without a company, human resources department, or management having any idea that DevOps was and is mostly focused around an idea more than any practice or notion. Sure, some of the practices we undertake are specific, but the idea is more important. It’s the combination of development and operations into a focused effort instead of being two battling organizations.&lt;/p&gt;
+&lt;p&gt;But has that even really happened? In most offices DevOps has grown into another segmented, broken, and often dysfunctional group autonomous of both operations and development. Where the DevOps engineers may be creating automation or who knows, maybe just off drinking in the corner, ops doesn’t know because they’re fighting fires and development doesn’t have any idea because they’re building flame throwers to put the fires out (ya know, fighting fire with fire and all).&lt;/p&gt;
+&lt;p&gt;If you want to get super pedantic about DevOps and what it might mean, check out the Wikipedia or go get your google-fu karate ninja chops going and make up your own definition from the various sources. I’m sure it would be super entertaining! …or not?&lt;/p&gt;
+&lt;p&gt;Suffice to say, DevOps hit full buzzword bingo status a few years ago now. Now it exists in that strange limbo of &lt;em&gt;worthless buzzword&lt;/em&gt; and &lt;em&gt;relatively useful in a relative way&lt;/em&gt;.&lt;/p&gt;
+&lt;h3 id=&quot;devops-damage-an-aside&quot;&gt;DevOps Damage - An Aside&lt;/h3&gt;
+&lt;p&gt;During one of my efforts researching DevOps I stumbled into Pete Cheslock’s blog post, “&lt;a href=&quot;https://pete.wtf/2013/05/03/devops-in-your-job-title-is-doing-you-harm/&quot;&gt;DevOps in Your job Title is Doing You Harm&lt;/a&gt;“. He points out it is better to title yourself something like&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Site Reliability Engineer&lt;/li&gt;
+&lt;li&gt;Automation Engineer&lt;/li&gt;
+&lt;li&gt;Release Engineer&lt;/li&gt;
+&lt;li&gt;DevTools Engineer&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I’ll add, if you see titles like…&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;DevOps Hadoop Cloud Engineer&lt;/li&gt;
+&lt;li&gt;DevOps Ninja&lt;/li&gt;
+&lt;li&gt;DevOps Programmer&lt;/li&gt;
+&lt;li&gt;Operations DevOps&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;…it’s ok to respond with a &lt;em&gt;“WTF did I just read?”&lt;/em&gt; and then just go ahead and fire that company. The company obviously hasn’t invested even the 10-30 minutes into figuring out what they’re trying to do. The risk is huge, everything is just gonna be a giant tire fire, &lt;em&gt;leave before you even apply to a job with a title like one of these.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Pete actually goes on to mention,&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;I don’t know why recently there is a need to move away from the same job titles we’ve used in the past, as if there is some negative connotation towards them.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;To which my research into what exactly a Site Reliability Engineer differs versus titles like&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;System Administrator&lt;/li&gt;
+&lt;li&gt;Operations Engineer&lt;/li&gt;
+&lt;li&gt;Network Engineer&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;These notes aren’t the only gem of smarts in this post of Pete’s. Go read the blog entry, it’s &lt;a href=&quot;https://pete.wtf/2013/05/03/devops-in-your-job-title-is-doing-you-harm/&quot;&gt;here&lt;/a&gt;, I’ll wait as you should have the context. One more solid blog entry, check out Jez Humble’s “&lt;a href=&quot;https://continuousdelivery.com/2012/10/theres-no-such-thing-as-a-devops-team/&quot;&gt;There’s No Such Thing as a DevOps Team&lt;/a&gt;“. Again, I’ll wait so go ahead and read it.&lt;/p&gt;
+&lt;p&gt;Well, it’s time I dove into role of Site Reliability Engineer.&lt;/p&gt;
+&lt;h2 id=&quot;site-reliability-engineer&quot;&gt;Site Reliability Engineer&lt;/h2&gt;
+&lt;p&gt;I’ve gotten a few mixed results around what people think this role and title encompasses, but unlike DevOps which has unfortunately become a buzzword with oodles of overloaded context and meaning. What is generally sought out in the role of a site reliability engineer can be described best by what Ben Traynor stated:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;“Fundamentally, it’s what happens when you ask a software engineer to design an operations function.”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;I see SRE individuals and teams as the people who are actually moving us past the dark past inferred with the mystic past associated with the strange black magic mysticism of systems administration, operations, and network engineering of the past. It’s setting the practices involved in running those systems into a known manner of operation, that is repeatable, and in many ways more importantly able to be automated.&lt;/p&gt;
+</description>
+    </item>
     <item>
       <title>Enterprise Open Source Anti-patterns</title>
       <link>http://adron.github.io/articles/enterprise-open-source-anti-patterns/</link>
@@ -2153,23 +2205,6 @@ key concepts of SAM and walk the audience through some node.js code samples (inc
 </description>
     </item>
     <item>
-      <title>WebSockets Bring Light at the End of the Tunnel by Joel Lord</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</link>
-      <pubDate>Sat, 04 Jun 2016 01:00:00 +0100</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</guid>
-      <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-left&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/joel-lord.jpg&quot; alt=&quot;Joel Lord&quot;&gt;
-&lt;/div&gt;
-
-&lt;p&gt;As a Development Manager, Joel’s motivation and proven technical prowess makes him a key member of Spiria’s software development team. With a degree in computational astrophysics, his interests eventually made their way to software and Web design. Today, his knowledge of JavaScript lets him to support a variety of projects on both the front end and back end. As we move into the age of the Internet of Things, Joel is ready with his passion for programming node bots and experimenting with gadgets.&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Joel is going to speak on Web Sockets and tunnels of light… or to describe it more specifically more and more, people seem to be obsessed with real-time data.  But what does real-time mean in the world of REST servers and one-way communication?  Most modern web applications are now either displaying a snapshot of data at a given time or use a polling mechanism to update series of data at a given interval.
-In this talk, you will learn about the power of WebSockets and how they can (and should!) be used in your modern web applications. In these 30 minutes, I will go through the process of building a Node server that can push data to multiple clients in real-time.  You will see how this can be easy using the socket.io library.&lt;/p&gt;
-</description>
-    </item>
-    <item>
       <title>MMOWAM - Build Server-less Games with a DSN by Josh Marinacci</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-josh-marinacci/</link>
       <pubDate>Sat, 04 Jun 2016 01:00:00 +0100</pubDate>
@@ -2207,6 +2242,40 @@ it can be.&lt;/p&gt;
 </description>
     </item>
     <item>
+      <title>WebSockets Bring Light at the End of the Tunnel by Joel Lord</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</link>
+      <pubDate>Sat, 04 Jun 2016 01:00:00 +0100</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-left&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/joel-lord.jpg&quot; alt=&quot;Joel Lord&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;As a Development Manager, Joel’s motivation and proven technical prowess makes him a key member of Spiria’s software development team. With a degree in computational astrophysics, his interests eventually made their way to software and Web design. Today, his knowledge of JavaScript lets him to support a variety of projects on both the front end and back end. As we move into the age of the Internet of Things, Joel is ready with his passion for programming node bots and experimenting with gadgets.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Joel is going to speak on Web Sockets and tunnels of light… or to describe it more specifically more and more, people seem to be obsessed with real-time data.  But what does real-time mean in the world of REST servers and one-way communication?  Most modern web applications are now either displaying a snapshot of data at a given time or use a polling mechanism to update series of data at a given interval.
+In this talk, you will learn about the power of WebSockets and how they can (and should!) be used in your modern web applications. In these 30 minutes, I will go through the process of building a Node server that can push data to multiple clients in real-time.  You will see how this can be easy using the socket.io library.&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>I Play the JavaScript by Matt McKegg</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</link>
+      <pubDate>Fri, 03 Jun 2016 01:00:00 +0100</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-left&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/mattmckegg.jpg&quot; alt=&quot;Matt McKegg&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;A JavaScript hacker and backyard musician and from Wellington, New Zealand. Lover of all things open and modular. I spend most of my time pressing buttons of various shapes, sizes and colours. Sometimes these buttons make sounds.&lt;/p&gt;
+&lt;p&gt;Matt has been making music with computers for about 10 years, but once he tried to move from bedroom composing to live performance, he got incredibly frustrated at how hard it was to play computer music live. He decided to start working on his own live electronic performance software written in JavaScript that would let me play the way he wanted to play. 3 years later, it’s finally starting to become a reality.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Here is one of the Matt’s recent performances, for your viewing pleasure. &lt;/p&gt;
+&lt;iframe width=&quot;1280&quot; height=&quot;720&quot; src=&quot;https://www.youtube.com/embed/L2BVDJWHdy0?rel=0&amp;amp;showinfo=0&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;</description>
+    </item>
+    <item>
       <title>The Web Platform is the Universal Instrument by Ben Michel</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-ben-michel/</link>
       <pubDate>Fri, 03 Jun 2016 01:00:00 +0100</pubDate>
@@ -2232,23 +2301,6 @@ it can be.&lt;/p&gt;
 &lt;li&gt;Audience interaction with the exposed parameters of a live band’s instrumentation–via broadcast methods and microcontroller installations.”&lt;/li&gt;
 &lt;/ul&gt;
 </description>
-    </item>
-    <item>
-      <title>I Play the JavaScript by Matt McKegg</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</link>
-      <pubDate>Fri, 03 Jun 2016 01:00:00 +0100</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</guid>
-      <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-left&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/mattmckegg.jpg&quot; alt=&quot;Matt McKegg&quot;&gt;
-&lt;/div&gt;
-
-&lt;p&gt;A JavaScript hacker and backyard musician and from Wellington, New Zealand. Lover of all things open and modular. I spend most of my time pressing buttons of various shapes, sizes and colours. Sometimes these buttons make sounds.&lt;/p&gt;
-&lt;p&gt;Matt has been making music with computers for about 10 years, but once he tried to move from bedroom composing to live performance, he got incredibly frustrated at how hard it was to play computer music live. He decided to start working on his own live electronic performance software written in JavaScript that would let me play the way he wanted to play. 3 years later, it’s finally starting to become a reality.&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Here is one of the Matt’s recent performances, for your viewing pleasure. &lt;/p&gt;
-&lt;iframe width=&quot;1280&quot; height=&quot;720&quot; src=&quot;https://www.youtube.com/embed/L2BVDJWHdy0?rel=0&amp;amp;showinfo=0&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;</description>
     </item>
     <item>
       <title>Code First Docs How we Threw Out The Book &amp; Put Code First With Twilio Documentation by Jarod Reyes</title>
