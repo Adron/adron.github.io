@@ -15,7 +15,7 @@ This workshop focuses on building a continuously delivered pipeline using Node.j
 * Setting up and determining the deployment scenario on AWS & discussion of other infrastructure choices.
 * Deploying the application through the complete process of code, integrate, test, build, deploy.
 
-The Workshop is broken into two sections. The slide deck for the first section is below.
+Here are the slides I used for the London version of this workshop, which I'll update these once I add a few updates and other assets on learning for the San Francisco workshop. The Workshop is broken into two sections. The slide deck for the first section is below.
 
 <iframe src="https://docs.google.com/presentation/d/1X5gViz85wrmcdFvrpFddrJqrckiUCuXcR7s3AEJiSMQ/embed?start=true&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
 
