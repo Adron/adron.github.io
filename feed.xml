@@ -5,67 +5,91 @@
     <atom:link href="http://adron.github.io/feed.xml" rel="self" type="application/rss+xml"></atom:link>
     <link>http://adron.github.io</link>
     <description>Coder, Messenger, Recon, Infrastructure, Ops</description>
-    <pubDate>Mon, 24 Oct 2016 01:00:00 +0100</pubDate>
+    <pubDate>Tue, 09 Jan 2018 16:00:00 -0800</pubDate>
     <generator>Wintersmith - https://github.com/jnordberg/wintersmith</generator>
     <language>en</language>
     <item>
-      <title>Marketing Obliviousness of DevOps, WTF is Site Reliability</title>
-      <link>http://adron.github.io/articles/devops-ignorance-site-reliability-wtf/</link>
-      <pubDate>Mon, 24 Oct 2016 01:00:00 +0100</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/devops-ignorance-site-reliability-wtf/</guid>
+      <title>I Want a Go CLI</title>
+      <link>http://adron.github.io/articles/want-a-golang-cli/</link>
+      <pubDate>Tue, 09 Jan 2018 16:00:00 -0800</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/want-a-golang-cli/</guid>
       <author></author>
-      <description>&lt;p&gt;Recently I started researching what people think DevOps means. What it was originally intended to mean and how ridiculous it is to actually see it in a job title. On the flip of that, since one of my titles was actually “Site Reliability Engineer” I started looking into what is perceived to be the roles of that job. This article is my findings, in full unconstrained wording, about the absurdity of one as a title and the specifics of the other.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://adron.github.io/articles/devops-ignorance-site-reliability-wtf/syntax%20error.gif&quot; alt=&quot;Syntax Error Explosion&quot;&gt;&lt;/p&gt;
+      <description>&lt;div class=&quot;image float-left&quot;&gt;
+    &lt;img src=&quot;/articles/want-a-golang-cli/united-airlines-boeing-777.jpg&quot; alt=&quot;United Airlines Boeing 777&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;I sat in seat 20B on United Airlines Flight UA 949, enjoying the roominess of the Boeing 777 in service on this route between London (LHR) and San Francisco (SFO). At this time I decided it was time to hack together a &lt;a href=&quot;https://golang.org/&quot;&gt;Go&lt;/a&gt; &lt;a href=&quot;https://en.wikipedia.org/wiki/Command-line_interface&quot;&gt;CLI&lt;/a&gt; Project.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Mission:&lt;/strong&gt; Create a Command Line Interface (CLI) that takes some flags, basic user input, and prints out something.&lt;/p&gt;
 &lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;h2 id=&quot;devops-is-nope&quot;&gt;DevOps is… Nope&lt;/h2&gt;
-&lt;p&gt;In linguistics the word DevOps is generally considered a &lt;em&gt;blend word&lt;/em&gt; or a &lt;em&gt;portmanteau&lt;/em&gt;. It’s the combination of developer or development and operations. Meanwhile, Google actually understands what it is. But hey, we know Google is basically a smarter than humanity AI at this point right? Well, ok, maybe Google’s definition of DevOps isn’t 100% spot on, but it’s fairly close to its perceived meaning.&lt;/p&gt;
-&lt;p&gt;Google’s definition reads, “DevOps (a clipped compound of development and operations) is a culture, movement or practice that emphasizes the collaboration and communication of both software developers and other information-technology (IT) professionals while automating the process of software delivery and infrastructure changes.”&lt;/p&gt;
-&lt;p&gt;Part of that definition also takes it into account that some companies have no clue what they’re doing. Hiring a “DevOps Engineer” and then they end up throwing that person into the fire of systems administration menial servitude or the absurdity of &lt;em&gt;cluster fucked crossed wires&lt;/em&gt; network administration. So often a DevOps Engineer is hired without a company, human resources department, or management having any idea that DevOps was and is mostly focused around an idea more than any practice or notion. Sure, some of the practices we undertake are specific, but the idea is more important. It’s the combination of development and operations into a focused effort instead of being two battling organizations.&lt;/p&gt;
-&lt;p&gt;But has that even really happened? In most offices DevOps has grown into another segmented, broken, and often dysfunctional group autonomous of both operations and development. Where the DevOps engineers may be creating automation or who knows, maybe just off drinking in the corner, ops doesn’t know because they’re fighting fires and development doesn’t have any idea because they’re building flame throwers to put the fires out (ya know, fighting fire with fire and all).&lt;/p&gt;
-&lt;p&gt;If you want to get super pedantic about DevOps and what it might mean, check out the Wikipedia or go get your google-fu karate ninja chops going and make up your own definition from the various sources. I’m sure it would be super entertaining! …or not?&lt;/p&gt;
-&lt;p&gt;Suffice to say, DevOps hit full buzzword bingo status a few years ago now. Now it exists in that strange limbo of &lt;em&gt;worthless buzzword&lt;/em&gt; and &lt;em&gt;relatively useful in a relative way&lt;/em&gt;.&lt;/p&gt;
-&lt;h3 id=&quot;devops-damage-an-aside&quot;&gt;DevOps Damage - An Aside&lt;/h3&gt;
-&lt;p&gt;During one of my efforts researching DevOps I stumbled into Pete Cheslock’s blog post, “&lt;a href=&quot;https://pete.wtf/2013/05/03/devops-in-your-job-title-is-doing-you-harm/&quot;&gt;DevOps in Your job Title is Doing You Harm&lt;/a&gt;“. He points out it is better to title yourself something like&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Site Reliability Engineer&lt;/li&gt;
-&lt;li&gt;Automation Engineer&lt;/li&gt;
-&lt;li&gt;Release Engineer&lt;/li&gt;
-&lt;li&gt;DevTools Engineer&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;I’ll add, if you see titles like…&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;DevOps Hadoop Cloud Engineer&lt;/li&gt;
-&lt;li&gt;DevOps Ninja&lt;/li&gt;
-&lt;li&gt;DevOps Programmer&lt;/li&gt;
-&lt;li&gt;Operations DevOps&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;…it’s ok to respond with a &lt;em&gt;“WTF did I just read?”&lt;/em&gt; and then just go ahead and fire that company. The company obviously hasn’t invested even the 10-30 minutes into figuring out what they’re trying to do. The risk is huge, everything is just gonna be a giant tire fire, &lt;em&gt;leave before you even apply to a job with a title like one of these.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;Pete actually goes on to mention,&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;I don’t know why recently there is a need to move away from the same job titles we’ve used in the past, as if there is some negative connotation towards them.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;To which my research into what exactly a Site Reliability Engineer differs versus titles like&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;System Administrator&lt;/li&gt;
-&lt;li&gt;Operations Engineer&lt;/li&gt;
-&lt;li&gt;Network Engineer&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;These notes aren’t the only gem of smarts in this post of Pete’s. Go read the blog entry, it’s &lt;a href=&quot;https://pete.wtf/2013/05/03/devops-in-your-job-title-is-doing-you-harm/&quot;&gt;here&lt;/a&gt;, I’ll wait as you should have the context. One more solid blog entry, check out Jez Humble’s “&lt;a href=&quot;https://continuousdelivery.com/2012/10/theres-no-such-thing-as-a-devops-team/&quot;&gt;There’s No Such Thing as a DevOps Team&lt;/a&gt;“. Again, I’ll wait so go ahead and read it.&lt;/p&gt;
-&lt;p&gt;Well, it’s time I dove into role of Site Reliability Engineer.&lt;/p&gt;
-&lt;h2 id=&quot;site-reliability-engineer&quot;&gt;Site Reliability Engineer&lt;/h2&gt;
-&lt;p&gt;I’ve gotten a few mixed results around what people think this role and title encompasses, but unlike DevOps which has unfortunately become a buzzword with oodles of overloaded context and meaning. What is generally sought out in the role of a site reliability engineer can be described best by what Ben Traynor stated:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;“Fundamentally, it’s what happens when you ask a software engineer to design an operations function.”&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;I see SRE individuals and teams as the people who are actually moving us past the dark past inferred with the mystic past associated with the strange black magic mysticism of systems administration, operations, and network engineering of the past. It’s setting the practices involved in running those systems into a known manner of operation, that is repeatable, and automated.&lt;/p&gt;
-&lt;p&gt;The work Site Reliability Engineers do covers the fundamental notion of what one, especially the management and C-suite think they want, want when discussing DevOps &lt;em&gt;people&lt;/em&gt;. The key difference is site reliability engineering covers the tactical technical aspects, where as DevOps still has a soft skill sociability notion in it, which really simplifies to communicate, communicate across artificial corporate boundaries, interdepartmental boundaries, and generally don’t let things build barriers to communication.&lt;/p&gt;
-&lt;p&gt;With all this researched and reviewed I’m going to set a personal goal to avoid using DevOps and instead try to use a word that means what I am attempting to communicate. I’ve got my fingers crossed, maybe I can pull it off.&lt;/p&gt;
+&lt;div class=&quot;image float-right&quot;&gt;
+    &lt;img src=&quot;/articles/want-a-golang-cli/golang-mascot.png&quot; alt=&quot;Go Language Mascot&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;I quickly threw together just a simple “hi” CLI App.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;package main
+
+&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&quot;fmt&quot;&lt;/span&gt;
+
+func main() {
+    fmt.Println(&lt;span class=&quot;string&quot;&gt;&quot;Hi&quot;&lt;/span&gt;)
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Then I ran that just to make sure I had Go installed properly and all that.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;go run hi-cli.go
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;That’s super boring, so first things first, let’s take some input from the command line and print it back out to the screen. I’ll start by passing a few parameters along with the hi-cli call.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;package main
+
+&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; (
+    &lt;span class=&quot;string&quot;&gt;&quot;bufio&quot;&lt;/span&gt;
+    &lt;span class=&quot;string&quot;&gt;&quot;fmt&quot;&lt;/span&gt;
+    &lt;span class=&quot;string&quot;&gt;&quot;os&quot;&lt;/span&gt;
+)
+
+func main() {
+    reader := bufio.NewReader(os.Stdin)
+    fmt.Print(&lt;span class=&quot;string&quot;&gt;&quot;Enter text: &quot;&lt;/span&gt;)
+    text, _ := reader.ReadString(&lt;span class=&quot;string&quot;&gt;'\n'&lt;/span&gt;)
+    fmt.Println(text)
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;What this bit of code gives me looks like this when I execute it now.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/want-a-golang-cli/hi-cli-01.png&quot; alt=&quot;Running hi-cli.go&quot;&gt;&lt;/p&gt;
+&lt;p&gt;A quick few notes if you’re not familiar with Go. The := is a reassignment (or assignment) and declaration operator. It’s actually equivalent to the following statement.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; reader = bufio.NewReader(os.Stdin)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;So that’s the notion behind the := syntax.&lt;/p&gt;
+&lt;p&gt;Ok, so now I wanted some other features to the cli. The first is the ability to pass in some flags. There is a library for that, simply called &lt;em&gt;flag&lt;/em&gt; which I’ll add. I added that to the import list.&lt;/p&gt;
+&lt;p&gt;One of the really cool features of the flag library is that it will auto-generate flag help documentation. To display the flag documentation pass the -h flag. For instance, to see the flag documentation type in &lt;code&gt;go run hi-cli.go -h&lt;/code&gt;. However, I need to actually add some flags with their appropriate descriptions and actually use them somewhere. So I’ve edited my go code file as shown.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;func main() {
+  wordFlag := flag.String(&lt;span class=&quot;string&quot;&gt;&quot;wordly&quot;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&quot;the-word&quot;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&quot;A string value.&quot;&lt;/span&gt;)
+  numberFlag := flag.Int(&lt;span class=&quot;string&quot;&gt;&quot;numeraly&quot;&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;42012&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&quot;An integer value.&quot;&lt;/span&gt;)
+  booleanFlag := flag.Bool(&lt;span class=&quot;string&quot;&gt;&quot;booly&quot;&lt;/span&gt;, &lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&quot;A boolean value.&quot;&lt;/span&gt;)
+  nameFlag := flag.String(&lt;span class=&quot;string&quot;&gt;&quot;yourname&quot;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&quot;Person With No Name&quot;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&quot;Put your name here.&quot;&lt;/span&gt;)
+
+  flag.Parse()
+
+  &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; reader = bufio.NewReader(os.Stdin)
+  fmt.Print(&lt;span class=&quot;string&quot;&gt;&quot;Hello, &quot;&lt;/span&gt; + *nameFlag + &lt;span class=&quot;string&quot;&gt;&quot;, please enter some text: &quot;&lt;/span&gt;)
+  text, _ := reader.ReadString(&lt;span class=&quot;string&quot;&gt;'\n'&lt;/span&gt;)
+  fmt.Println(text)
+
+  fmt.Println(&lt;span class=&quot;string&quot;&gt;&quot;word: &quot;&lt;/span&gt;, *wordFlag)
+  fmt.Println(&lt;span class=&quot;string&quot;&gt;&quot;numb: &quot;&lt;/span&gt;, *numberFlag)
+  fmt.Println(&lt;span class=&quot;string&quot;&gt;&quot;fork: &quot;&lt;/span&gt;, *booleanFlag)
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now I can ask for help with the &lt;code&gt;go run hi-cli.go -h&lt;/code&gt; and I get the following.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/want-a-golang-cli/hi-cli-02.png&quot; alt=&quot;Running hi-cli.go&quot;&gt;&lt;/p&gt;
+&lt;p&gt;That’s what I expected, so now I’m going to test out the different flags I set. So I go ahead and set each of the flags just to see. My command reads nice and long as &lt;code&gt;go run hi-cli.go -booly=false -wordly=testing -numeraly=909 -yourname=&amp;quot;Adron Hall&amp;quot;&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/want-a-golang-cli/hi-cli-03.png&quot; alt=&quot;Running hi-cli.go&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Again, everything I expected. Based on the mission I set out at the beginning of this entry, mission is accomplished. So until next time, happy hacking.&lt;/p&gt;
 </description>
     </item>
     <item>
       <title>Marketing Obliviousness of DevOps, WTF is Site Reliability</title>
       <link>http://adron.github.io/articles/devops-obliviousness-site-reliability-wtf/</link>
-      <pubDate>Mon, 24 Oct 2016 01:00:00 +0100</pubDate>
+      <pubDate>Sun, 23 Oct 2016 17:00:00 -0700</pubDate>
       <guid isPermaLink="true">http://adron.github.io/articles/devops-obliviousness-site-reliability-wtf/</guid>
       <author></author>
       <description>&lt;p&gt;Recently I started researching what people think DevOps means. What it was originally intended to mean and how ridiculous it is to actually see it in a job title. On the flip of that, since one of my titles was actually “Site Reliability Engineer” I started looking into what is perceived to be the roles of that job. This article is my findings, in full unconstrained wording, about the absurdity of one as a title and the specifics of the other.&lt;/p&gt;
@@ -117,7 +141,7 @@
     <item>
       <title>Enterprise Open Source Anti-patterns</title>
       <link>http://adron.github.io/articles/enterprise-open-source-anti-patterns/</link>
-      <pubDate>Thu, 20 Oct 2016 01:00:00 +0100</pubDate>
+      <pubDate>Wed, 19 Oct 2016 17:00:00 -0700</pubDate>
       <guid isPermaLink="true">http://adron.github.io/articles/enterprise-open-source-anti-patterns/</guid>
       <author></author>
       <description>&lt;p&gt;&lt;a href=&quot;http://adron.github.io/articles/holy-shit-watch-out-for-that-enterprise-open-source/&quot;&gt;Part I&lt;/a&gt;, &lt;a href=&quot;http://adron.github.io/articles/enterprise-open-source-tactical/&quot;&gt;Part II&lt;/a&gt;, &lt;a href=&quot;http://adron.github.io/articles/enterprise-cultural-characteristics/&quot;&gt;Part III&lt;/a&gt;,
@@ -161,7 +185,7 @@
     <item>
       <title>Enterprise Open Source Cultural Characteristics</title>
       <link>http://adron.github.io/articles/enterprise-cultural-characteristics/</link>
-      <pubDate>Mon, 17 Oct 2016 01:00:00 +0100</pubDate>
+      <pubDate>Sun, 16 Oct 2016 17:00:00 -0700</pubDate>
       <guid isPermaLink="true">http://adron.github.io/articles/enterprise-cultural-characteristics/</guid>
       <author></author>
       <description>&lt;p&gt;&lt;a href=&quot;http://adron.github.io/articles/holy-shit-watch-out-for-that-enterprise-open-source/&quot;&gt;Part I&lt;/a&gt;, &lt;a href=&quot;http://adron.github.io/articles/enterprise-open-source-tactical/&quot;&gt;Part II&lt;/a&gt;, &lt;a href=&quot;http://adron.github.io/articles/enterprise-cultural-characteristics/&quot;&gt;Part III (That’s this article)&lt;/a&gt;,
@@ -197,7 +221,7 @@
     <item>
       <title>Let's Talk Tactical Tools for Enterprise Open Source</title>
       <link>http://adron.github.io/articles/enterprise-open-source-tactical/</link>
-      <pubDate>Sun, 16 Oct 2016 01:00:00 +0100</pubDate>
+      <pubDate>Sat, 15 Oct 2016 17:00:00 -0700</pubDate>
       <guid isPermaLink="true">http://adron.github.io/articles/enterprise-open-source-tactical/</guid>
       <author></author>
       <description>&lt;p&gt;&lt;a href=&quot;http://adron.github.io/articles/holy-shit-watch-out-for-that-enterprise-open-source/&quot;&gt;Part I&lt;/a&gt;, &lt;a href=&quot;http://adron.github.io/articles/enterprise-open-source-tactical/&quot;&gt;Part II (That’s this article)&lt;/a&gt;, &lt;a href=&quot;http://adron.github.io/articles/enterprise-cultural-characteristics/&quot;&gt;Part III&lt;/a&gt;,
@@ -236,7 +260,7 @@
     <item>
       <title>Holy Shit Watch Out for That Enterprise Open Source!</title>
       <link>http://adron.github.io/articles/holy-shit-watch-out-for-that-enterprise-open-source/</link>
-      <pubDate>Wed, 12 Oct 2016 01:00:00 +0100</pubDate>
+      <pubDate>Tue, 11 Oct 2016 17:00:00 -0700</pubDate>
       <guid isPermaLink="true">http://adron.github.io/articles/holy-shit-watch-out-for-that-enterprise-open-source/</guid>
       <author></author>
       <description>&lt;p&gt;&lt;a href=&quot;http://adron.github.io/articles/holy-shit-watch-out-for-that-enterprise-open-source/&quot;&gt;Part I (That’s this article)&lt;/a&gt;, &lt;a href=&quot;http://adron.github.io/articles/enterprise-open-source-tactical/&quot;&gt;Part II&lt;/a&gt;, &lt;a href=&quot;http://adron.github.io/articles/enterprise-cultural-characteristics/&quot;&gt;Part III&lt;/a&gt;,
@@ -390,7 +414,7 @@ As you update the project, you should provide semantic versioning to allow consu
     <item>
       <title>The Curse of Windows Server &amp; Windows Server 2016 Salvation</title>
       <link>http://adron.github.io/articles/the-curse-of-windows-server-windows-server-2016-salvation/</link>
-      <pubDate>Fri, 07 Oct 2016 14:38:00 +0100</pubDate>
+      <pubDate>Fri, 07 Oct 2016 14:38:00 -0700</pubDate>
       <guid isPermaLink="true">http://adron.github.io/articles/the-curse-of-windows-server-windows-server-2016-salvation/</guid>
       <author></author>
       <description>&lt;p&gt;Over the last year I’ve worked with &lt;a href=&quot;https://homedepot.com&quot;&gt;Home Depot&lt;/a&gt;, specifically the &lt;a href=&quot;http://www.quotecenter.com/&quot;&gt;Quote Center&lt;/a&gt; Group, strive forward toward a better future. Yeah, that sounds a bit campy, but seriously. I started with &lt;a href=&quot;http://blog.adron.me/articles/after-816-days-taking-a-job/&quot;&gt;three core objectives, which I wrote about previously&lt;/a&gt;.&lt;/p&gt;
@@ -435,7 +459,7 @@ As you update the project, you should provide semantic versioning to allow consu
     <item>
       <title>Home Depot Wrap Up and Job Talk</title>
       <link>http://adron.github.io/articles/sitrep-home-depot-wrap-up-next-talks-next-job/</link>
-      <pubDate>Fri, 30 Sep 2016 01:00:00 +0100</pubDate>
+      <pubDate>Thu, 29 Sep 2016 17:00:00 -0700</pubDate>
       <guid isPermaLink="true">http://adron.github.io/articles/sitrep-home-depot-wrap-up-next-talks-next-job/</guid>
       <author></author>
       <description>&lt;div class=&quot;image float-right&quot;&gt;
@@ -507,7 +531,7 @@ As you update the project, you should provide semantic versioning to allow consu
     <item>
       <title>HashiConf Trip Day 4 - Conference Day 2 - A Short Summary</title>
       <link>http://adron.github.io/articles/hashiconf-trip-day-4/</link>
-      <pubDate>Mon, 12 Sep 2016 01:00:00 +0100</pubDate>
+      <pubDate>Sun, 11 Sep 2016 17:00:00 -0700</pubDate>
       <guid isPermaLink="true">http://adron.github.io/articles/hashiconf-trip-day-4/</guid>
       <author></author>
       <description>&lt;p&gt;I’m working on getting back in the saddle after a great week at HashiConf and a weekend away at Seaside on the Oregon Coast. With that, I haven’t had a lot of time to write up day 4, which involved a lot of great talks and conversations. Those topics will come up in some subsequent articles, in the meantime please enjoy these videos I made of my HashiConf Adventures.&lt;/p&gt;
@@ -526,7 +550,7 @@ As you update the project, you should provide semantic versioning to allow consu
     <item>
       <title>Autopilot Pattern Application Organization</title>
       <link>http://adron.github.io/articles/autopilot-pattern-application-organization/</link>
-      <pubDate>Fri, 09 Sep 2016 01:00:00 +0100</pubDate>
+      <pubDate>Thu, 08 Sep 2016 17:00:00 -0700</pubDate>
       <guid isPermaLink="true">http://adron.github.io/articles/autopilot-pattern-application-organization/</guid>
       <author></author>
       <description>&lt;p&gt;Context: What is the &lt;a href=&quot;http://autopilotpattern.io/#how-do-we-do-it&quot;&gt;Autopilot Pattern&lt;/a&gt;?&lt;/p&gt;
@@ -598,7 +622,7 @@ git commit -m &amp;#39;First commit!&amp;#39;
     <item>
       <title>HashiConf Trip Day 3 - Conference Day 1 - Presentation Time</title>
       <link>http://adron.github.io/articles/hashiconf-trip-day-3/</link>
-      <pubDate>Thu, 08 Sep 2016 01:00:00 +0100</pubDate>
+      <pubDate>Wed, 07 Sep 2016 17:00:00 -0700</pubDate>
       <guid isPermaLink="true">http://adron.github.io/articles/hashiconf-trip-day-3/</guid>
       <author></author>
       <description>&lt;p&gt;&lt;img src=&quot;/articles/hashiconf-trip-day-3/01-hallway-hacking.jpg&quot; alt=&quot;Hallway Hacking&quot;&gt;&lt;/p&gt;
@@ -641,7 +665,7 @@ git commit -m &amp;#39;First commit!&amp;#39;
     <item>
       <title>HashiConf Trip Day 2 - Part II - Reception and Speakers Dinner</title>
       <link>http://adron.github.io/articles/hashiconf-trip-day-2-part-II/</link>
-      <pubDate>Wed, 07 Sep 2016 01:00:00 +0100</pubDate>
+      <pubDate>Tue, 06 Sep 2016 17:00:00 -0700</pubDate>
       <guid isPermaLink="true">http://adron.github.io/articles/hashiconf-trip-day-2-part-II/</guid>
       <author></author>
       <description>&lt;p&gt;&lt;img src=&quot;/articles/hashiconf-trip-day-2-part-II/03-up-the-hill.jpg&quot; alt=&quot;Up the Hill&quot;&gt;&lt;/p&gt;
@@ -678,7 +702,7 @@ git commit -m &amp;#39;First commit!&amp;#39;
     <item>
       <title>HashiConf Trip Day 2 - A Bus Ride, Napa Valley City Center, Italian, Coffee, and Terraform Notes</title>
       <link>http://adron.github.io/articles/hashiconf-trip-day-2/</link>
-      <pubDate>Tue, 06 Sep 2016 01:00:00 +0100</pubDate>
+      <pubDate>Mon, 05 Sep 2016 17:00:00 -0700</pubDate>
       <guid isPermaLink="true">http://adron.github.io/articles/hashiconf-trip-day-2/</guid>
       <author></author>
       <description>&lt;p&gt;Almost to Napa, but not yet. The train pulled in and I detrained. I will admit, I know of nothing about Martinez, California except for two things: It’s a stop on the way to Jack London Square (AKA Oakland) and thus San Francisco and it’s got a lot of knarly looking industrial plants spewing stuff into the air. Poisonous, I’ve no idea, but I know the one’s just west of the city (or town?) are. I enjoyed the ghost fleet at mooring, the sun rising from the east, and the smooth roll of the train. Now I was standing here ready to be on my way to Napa.&lt;/p&gt;
@@ -728,7 +752,7 @@ git commit -m &amp;#39;First commit!&amp;#39;
     <item>
       <title>HashiConf Trip Day 1 - Coast Starlight and Terraform</title>
       <link>http://adron.github.io/articles/hashiconf-trip-day-1/</link>
-      <pubDate>Mon, 05 Sep 2016 01:00:00 +0100</pubDate>
+      <pubDate>Sun, 04 Sep 2016 17:00:00 -0700</pubDate>
       <guid isPermaLink="true">http://adron.github.io/articles/hashiconf-trip-day-1/</guid>
       <author></author>
       <description>&lt;p&gt;This week, my trip to &lt;a href=&quot;https://hashiconf.com&quot;&gt;HashiConf&lt;/a&gt; kicked off officially at 2:25pm, when the Amtrak Coast Starlight departed Portland.&lt;/p&gt;
@@ -786,7 +810,7 @@ git commit -m &amp;#39;First commit!&amp;#39;
     <item>
       <title>Generate or Regenerate gcloud ssh Keys - How Ya Linux Series - 0001</title>
       <link>http://adron.github.io/articles/how-ya-linux-0001-generate-regenerate-ssh-key/</link>
-      <pubDate>Fri, 26  Aug 2016 01:00:00 +0100</pubDate>
+      <pubDate>Thu, 25  Aug 2016 17:00:00 -0700</pubDate>
       <guid isPermaLink="true">http://adron.github.io/articles/how-ya-linux-0001-generate-regenerate-ssh-key/</guid>
       <author></author>
       <description>&lt;p&gt;Sometimes while working with the various ssh keys you have you might need to regenerate them. Specifically I ran into this need while working with some Google Cloud Platform (GCP) instances with Terraform and GCP’s &lt;em&gt;gcloud&lt;/em&gt; CLI tool. Generally, when you start working with the &lt;em&gt;gcloud&lt;/em&gt; CLI it will, upon need if it doesn’t exist, create a key for you. When it does so it sticks the key it generates in the &lt;code&gt;~/.ssh/&lt;/code&gt; directory and names the key &lt;code&gt;google_compute_engine&lt;/code&gt;. To create a new ssh key pair here, navigate to the &lt;code&gt;~/.ssh/&lt;/code&gt; directory and issue the following command.&lt;/p&gt;
@@ -824,7 +848,7 @@ The key&amp;#39;s randomart image is:
     <item>
       <title>Visual Studio Code (an intro with snark!) and Hashicorp Configuration Language</title>
       <link>http://adron.github.io/articles/visual-studio-code-and-hcl/</link>
-      <pubDate>Mon, 22  Aug 2016 18:21:00 +0100</pubDate>
+      <pubDate>Mon, 22  Aug 2016 18:21:00 -0700</pubDate>
       <guid isPermaLink="true">http://adron.github.io/articles/visual-studio-code-and-hcl/</guid>
       <author></author>
       <description>&lt;p&gt;I sat down to setup Visual Studio Code for some Go coding. That is, #golang or “golang” on Google, because heaven forbid a language is named something that isn’t ubiquitous like the word “go”. But anyway, I digress, because this blog entry isn’t even about golang. It’s about HCL. You see, I sat down to toy about with golang but then I had to knock out a few tasks with Terraform, Packer, and such. To do that I needed the HCL support that Visual Studio Code has. I knew there was a plugin for Hashicorp Configuration Language (i.e. HCL). So I decided to do that work in Visual Studio Code and try out the HCL Plugin. Maybe next blog entry I’ll get around to writing some golang in Visual Studio Code?&lt;/p&gt;
@@ -866,7 +890,7 @@ The key&amp;#39;s randomart image is:
     <item>
       <title>DevOps Thoughts, Fixing Culture Roadblocks, and Cultural Anti-Pattern Practices</title>
       <link>http://adron.github.io/articles/devops-thoughts/</link>
-      <pubDate>Thu, 11  Aug 2016 01:00:00 +0100</pubDate>
+      <pubDate>Wed, 10  Aug 2016 17:00:00 -0700</pubDate>
       <guid isPermaLink="true">http://adron.github.io/articles/devops-thoughts/</guid>
       <author></author>
       <description>&lt;div class=&quot;image float-right&quot;&gt;
@@ -903,7 +927,7 @@ The key&amp;#39;s randomart image is:
     <item>
       <title>NGinx Notes from URL Redirect Project on Google Cloud with Terraform &amp; Packer - Part 2</title>
       <link>http://adron.github.io/articles/nginx-notes-from-the-url-redirect-part-two/</link>
-      <pubDate>Mon, 01  Aug 2016 01:00:00 +0100</pubDate>
+      <pubDate>Sun, 31 Jul 2016 17:00:00 -0700</pubDate>
       <guid isPermaLink="true">http://adron.github.io/articles/nginx-notes-from-the-url-redirect-part-two/</guid>
       <author></author>
       <description>&lt;div class=&quot;image float-right&quot;&gt;
@@ -1131,7 +1155,7 @@ http {
     <item>
       <title>Speaking Trips, Tech, and Treks</title>
       <link>http://adron.github.io/articles/speaking-trips-tech-and-treks/</link>
-      <pubDate>Mon, 25 Jul 2016 19:35:00 +0100</pubDate>
+      <pubDate>Mon, 25 Jul 2016 19:35:00 -0700</pubDate>
       <guid isPermaLink="true">http://adron.github.io/articles/speaking-trips-tech-and-treks/</guid>
       <author></author>
       <description>&lt;p&gt;I’ll be off on some coding adventures in the coming months. I also hope to catch up with a lot of people and their respective projects, learn a few things, and if it’s possible maybe teach a few people a thing or three about immutable infrastructure, lessons I’ve learned, and how to avoid infrastructure catastrophes while building the next bad ass awesome application. This blog entry is about the details of my logistics, and I’ll follow up with more details of the coding adventure along the way. For now: details, details, and details.&lt;/p&gt;
@@ -1198,7 +1222,7 @@ http {
     <item>
       <title>Portland Biketown Launches - Check out the API</title>
       <link>http://adron.github.io/articles/biketown-api/</link>
-      <pubDate>Thu, 21 Jul 2016 08:13:00 +0100</pubDate>
+      <pubDate>Thu, 21 Jul 2016 08:13:00 -0700</pubDate>
       <guid isPermaLink="true">http://adron.github.io/articles/biketown-api/</guid>
       <author></author>
       <description>&lt;p&gt;&lt;a href=&quot;https://www.biketownpdx.com&quot;&gt;&lt;img src=&quot;/articles/biketown-api/logo.png&quot; alt=&quot;Biketown Logo&quot;&gt;&lt;/a&gt;&lt;/p&gt;
@@ -1398,7 +1422,7 @@ http {
     <item>
       <title>NGinx Notes from URL Redirect Project on Google Cloud with Terraform &amp; Packer - Part 1</title>
       <link>http://adron.github.io/articles/nginx-notes-from-the-url-redirect/</link>
-      <pubDate>Fri, 15 Jul 2016 01:00:00 +0100</pubDate>
+      <pubDate>Thu, 14 Jul 2016 17:00:00 -0700</pubDate>
       <guid isPermaLink="true">http://adron.github.io/articles/nginx-notes-from-the-url-redirect/</guid>
       <author></author>
       <description>&lt;p&gt;I set out on a mission yesterday to put together a URL Redirect Server. Before I even get into the nitty gritty of how I got this to work via Nginx, I’ll add two caveats:&lt;/p&gt;
@@ -1500,7 +1524,7 @@ sudo ufw enable
     <item>
       <title>.NET Fringe and Node PDX Conference Retrospective</title>
       <link>http://adron.github.io/articles/net-fringe-retrospective/</link>
-      <pubDate>Tue, 12 Jul 2016 13:37:00 +0100</pubDate>
+      <pubDate>Tue, 12 Jul 2016 13:37:00 -0700</pubDate>
       <guid isPermaLink="true">http://adron.github.io/articles/net-fringe-retrospective/</guid>
       <author></author>
       <description>&lt;p&gt;Well, that’s a wrap - tied with a bow - for .NET Fringe 2016 and Node PDX 2016. That’s two years in a row for .NET Fringe and the 3rd year for Node PDX (2012, 2013, and 2016). All of the conferences have been very stressful, intense, and rewarding. I’ve learned a lot in the process and had a chance to work together with a lot of great people including Troy Howard, Glenn Block, Scott Hanselman, Phil Haack, Itamar Syn-Hersko, Alena Hall, and many others.&lt;/p&gt;
@@ -1549,7 +1573,7 @@ Mark at NedSpace (thanks again for helping with .NET Fringe Mark!) and have work
     <item>
       <title>Day 2 Multi-thinking-threads Smeared Around the Brainstorming at .NET Fringe</title>
       <link>http://adron.github.io/articles/day-2-multi-thinking-threads-smeared-around-brainstorming/</link>
-      <pubDate>Tue, 12 Jul 2016 09:04:00 +0100</pubDate>
+      <pubDate>Tue, 12 Jul 2016 09:04:00 -0700</pubDate>
       <guid isPermaLink="true">http://adron.github.io/articles/day-2-multi-thinking-threads-smeared-around-brainstorming/</guid>
       <author></author>
       <description>&lt;p&gt;&lt;img src=&quot;/articles/day-2-multi-thinking-threads-smeared-around-brainstorming/logo.png&quot; alt=&quot;.NET Fringe Logo&quot;&gt;&lt;/p&gt;
@@ -1572,7 +1596,7 @@ Mark at NedSpace (thanks again for helping with .NET Fringe Mark!) and have work
     <item>
       <title>.NET Fringe Bike Ride</title>
       <link>http://adron.github.io/articles/Bike-Rides/</link>
-      <pubDate>Fri, 08 Jul 2016 07:29:00 +0100</pubDate>
+      <pubDate>Fri, 08 Jul 2016 07:29:00 -0700</pubDate>
       <guid isPermaLink="true">http://adron.github.io/articles/Bike-Rides/</guid>
       <author></author>
       <description>&lt;p&gt;In my &lt;strong&gt;&lt;em&gt;not so humble opinion&lt;/em&gt;&lt;/strong&gt; every conference should have a bike ride. But I realize it isn’t always possible. This is one of the ways conferences that Troy &amp;amp; I put on here in Portland are very different. We have a love for Portland; &lt;em&gt;the energy, the chill, vibrant yet relaxed, laid back, bike like, walking friendly city that it is&lt;/em&gt;. It’s a beautiful city that really can only be seen or felt by active transportation. If you walk, run, bike, skate board, dog sled, sled, cross country ski, or otherwise travel around Portland you get to actually see, feel, and hear this city. No other mode really works. Transit is fun, driving is like a cage, and with both you miss the vast majority of the life and blood of what makes Portland a great city!&lt;/p&gt;
@@ -1604,7 +1628,7 @@ Mark at NedSpace (thanks again for helping with .NET Fringe Mark!) and have work
     <item>
       <title>Node PDX 2016 Photos</title>
       <link>http://adron.github.io/articles/Node-PDX-2016-Photos/</link>
-      <pubDate>Wed, 29 Jun 2016 11:25:00 +0100</pubDate>
+      <pubDate>Wed, 29 Jun 2016 11:25:00 -0700</pubDate>
       <guid isPermaLink="true">http://adron.github.io/articles/Node-PDX-2016-Photos/</guid>
       <author></author>
       <description>&lt;p&gt;Here’s a selection of photos from Node PDX. To check out all of the photos I’ve uploaded them on &lt;a href=&quot;http://photos.adron.me/Software/Meetups-N-Conferences/Conferences/Node-PDX-2016/&quot;&gt;http://photos.adron.me/Software/Meetups-N-Conferences/Conferences/Node-PDX-2016/&lt;/a&gt;.&lt;/p&gt;
@@ -1646,7 +1670,7 @@ Mark at NedSpace (thanks again for helping with .NET Fringe Mark!) and have work
     <item>
       <title>Node PDX 2016 Bike Ride, Photos, and More</title>
       <link>http://adron.github.io/articles/node-pdx-2016-bike-ride/</link>
-      <pubDate>Wed, 29 Jun 2016 10:25:00 +0100</pubDate>
+      <pubDate>Wed, 29 Jun 2016 10:25:00 -0700</pubDate>
       <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-bike-ride/</guid>
       <author></author>
       <description>&lt;p&gt;Node PDX, at least for me, kicked off Saturday morning before the conference. This involved the Geek Train, which as always was a great ride. After returning everyone went off for the evening and I prepared more for the conference.&lt;/p&gt;
@@ -1662,7 +1686,7 @@ Mark at NedSpace (thanks again for helping with .NET Fringe Mark!) and have work
     <item>
       <title>A Channel 9 Video on .NET Fringe 2016</title>
       <link>http://adron.github.io/articles/A-Channel-9-Video-on-dotNET-Fringe-2016/</link>
-      <pubDate>Thu, 16 Jun 2016 01:00:00 +0100</pubDate>
+      <pubDate>Wed, 15 Jun 2016 17:00:00 -0700</pubDate>
       <guid isPermaLink="true">http://adron.github.io/articles/A-Channel-9-Video-on-dotNET-Fringe-2016/</guid>
       <author></author>
       <description>&lt;div class=&quot;image float-right&quot;&gt;
@@ -1685,7 +1709,7 @@ Mark at NedSpace (thanks again for helping with .NET Fringe Mark!) and have work
     <item>
       <title>Node.js Patterns - From Callbacks to Observer by Azat Mardan</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-azat-mardan/</link>
-      <pubDate>Tue, 14 Jun 2016 19:35:00 +0100</pubDate>
+      <pubDate>Tue, 14 Jun 2016 19:35:00 -0700</pubDate>
       <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-azat-mardan/</guid>
       <author></author>
       <description>&lt;div class=&quot;image float-right&quot;&gt;
@@ -1719,7 +1743,7 @@ Mark at NedSpace (thanks again for helping with .NET Fringe Mark!) and have work
     <item>
       <title>Working With Google Compute Engine (GCE) using Terraform (With a load of Bash Scripts too)</title>
       <link>http://adron.github.io/articles/working-with-google-compute-engine/</link>
-      <pubDate>Sun, 12 Jun 2016 15:54:00 +0100</pubDate>
+      <pubDate>Sun, 12 Jun 2016 15:54:00 -0700</pubDate>
       <guid isPermaLink="true">http://adron.github.io/articles/working-with-google-compute-engine/</guid>
       <author></author>
       <description>&lt;p&gt;&lt;strong&gt;Mission:&lt;/strong&gt; I wanted to setup an instance, that I could install various things on and prepare it to act as a Terraformer or central server within GCE to spawn instances, setup networks, and generally manage the network autonomously of any local scripts or junk I have on my local computer. To set this up, I would of course have to launch it from my local computer, so there’s a whole range of things I’d need to have execute. To accomplish this, here’s what I did.&lt;/p&gt;
@@ -1986,7 +2010,7 @@ Apply complete! Resources: 0 added, 0 changed, 1 destroyed.
     <item>
       <title>Startup Things - How Ya Linux Series - 0000</title>
       <link>http://adron.github.io/articles/how-ya-linux-0000-Startup-things/</link>
-      <pubDate>Sat, 11 Jun 2016 15:35:00 +0100</pubDate>
+      <pubDate>Sat, 11 Jun 2016 15:35:00 -0700</pubDate>
       <guid isPermaLink="true">http://adron.github.io/articles/how-ya-linux-0000-Startup-things/</guid>
       <author></author>
       <description>&lt;div class=&quot;image float-right&quot;&gt;
@@ -2026,7 +2050,7 @@ export TF_VAR_password=&amp;quot;someSecretPassword&amp;quot;
     <item>
       <title>The Short Story of Node PDX, and Node PDX 2016</title>
       <link>http://adron.github.io/articles/node-pdx-2016/</link>
-      <pubDate>Wed, 08 Jun 2016 14:30:00 +0100</pubDate>
+      <pubDate>Wed, 08 Jun 2016 14:30:00 -0700</pubDate>
       <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016/</guid>
       <author></author>
       <description>&lt;p&gt;Some of you may know the story, but I’ll tell it again for those that don’t. In 2012 Troy Howard (&lt;a href=&quot;https://twitter.com/thoward37&quot;&gt;@thoward37&lt;/a&gt;) and I were sitting at the Side Door hacking on some project code. We started talking about where and what was up with the Node.js project, community, and asking ourselves what the future of that was. You see, we’d toyed about with the technology here and there but we hadn’t really done anything with it.&lt;/p&gt;
@@ -2110,7 +2134,7 @@ export TF_VAR_password=&amp;quot;someSecretPassword&amp;quot;
     <item>
       <title>How to Build a Bike Shed by David Manning &amp; Adam Ulvi</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-david-manning-adam-ulvi/</link>
-      <pubDate>Tue, 07 Jun 2016 19:20:00 +0100</pubDate>
+      <pubDate>Tue, 07 Jun 2016 19:20:00 -0700</pubDate>
       <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-david-manning-adam-ulvi/</guid>
       <author></author>
       <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-david-manning-adam-ulvi/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
@@ -2135,7 +2159,7 @@ export TF_VAR_password=&amp;quot;someSecretPassword&amp;quot;
     <item>
       <title>Get JavaScript Running on a $2 WiFi-Enabled Device by Andrew Chalkley</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-andrew-chalkley/</link>
-      <pubDate>Tue, 07 Jun 2016 11:20:00 +0100</pubDate>
+      <pubDate>Tue, 07 Jun 2016 11:20:00 -0700</pubDate>
       <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-andrew-chalkley/</guid>
       <author></author>
       <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-andrew-chalkley/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
@@ -2157,7 +2181,7 @@ export TF_VAR_password=&amp;quot;someSecretPassword&amp;quot;
     <item>
       <title>How to Electron by Blaine Schmeisser</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-blaine-schmeisser/</link>
-      <pubDate>Mon, 06 Jun 2016 01:00:00 +0100</pubDate>
+      <pubDate>Sun, 05 Jun 2016 17:00:00 -0700</pubDate>
       <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-blaine-schmeisser/</guid>
       <author></author>
       <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-blaine-schmeisser/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
@@ -2178,7 +2202,7 @@ export TF_VAR_password=&amp;quot;someSecretPassword&amp;quot;
     <item>
       <title>Demystifying TypeScript Decorators by James Churchill</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-james-churchill/</link>
-      <pubDate>Mon, 06 Jun 2016 01:00:00 +0100</pubDate>
+      <pubDate>Sun, 05 Jun 2016 17:00:00 -0700</pubDate>
       <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-james-churchill/</guid>
       <author></author>
       <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-james-churchill/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
@@ -2199,39 +2223,9 @@ export TF_VAR_password=&amp;quot;someSecretPassword&amp;quot;
 </description>
     </item>
     <item>
-      <title>Modern Javascript Frameworks - Introduction to Ember.JS and Ember-CLI by Suchita Doshi</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-suchita-doshi/</link>
-      <pubDate>Sun, 05 Jun 2016 01:00:00 +0100</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-suchita-doshi/</guid>
-      <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-suchita-doshi/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-right&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-suchita-doshi/suchita-doshi.jpg&quot; alt=&quot;Suchita Doshi&quot;&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Suchita is UI Lead for the analytics module of Yahoo Admanager Plus team and Core member of Emberjs group @Yahoo, Speaker at Women Who code organization (Introduction To Emberjs/Ember CLI), Conducted Webinar for the TenXList members on EmberJS. She’s passionate about improving developers ergonomics and a hardcore “cricket” fan.&lt;/p&gt;
-&lt;p&gt;In other Suchita news, she’s opening bats-woman for the Bay Area Cricket Association team! 😀&lt;/p&gt;
-&lt;p&gt;Suchita describes her talk as “There will never be a “one size fits all” approach to web development. If you want your application to be minimally interactive, then server side rendered HTML would be the way to go, else, if it were a more interactive application, then client side framework would benefit you.
-Why not use just JQuery instead of adopting these Modern Javascript Frameworks? Think about it! If your application has interactivity on the lighter side, then JQuery would work well, but as soon as you introduce more states in your application, it would then become messier and heavier on the DOM. You would need to use the ‘data-‘ attributes to store the data in your DOM and also remember how to map them with the triggered events.&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Here is where client side frameworks come to the rescue. I have worked on several client side frameworks like Backbone.js, Ember.js. Few of the many features I love about Ember.js are the two-way data binding, Computed Properties, the run loop, convention over configuration nature, ease of handling routing and many more.
-In this talk I would be covering the following:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Introduction to Emberjs and why Ember&lt;/li&gt;
-&lt;li&gt;How Ember js makes a difference&lt;/li&gt;
-&lt;li&gt;Ember convention over configuration nature&lt;/li&gt;
-&lt;li&gt;Introduction to Ember routes, components and templates&lt;/li&gt;
-&lt;li&gt;Introduction to Ember CLI&lt;/li&gt;
-&lt;li&gt;Computed Properties&lt;/li&gt;
-&lt;li&gt;Live Demo on how it’s really intuitive in a couple of non-trivial scenarios.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;So basically my goal is to attract more developers to adapt modern javascript frameworks and make a difference in the way complex apps are built.”&lt;/p&gt;
-</description>
-    </item>
-    <item>
       <title>The SAM Pattern - a distributed system view of Front-End architectures by Jean-Jacques Dubray</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-jean-jacques-dubray/</link>
-      <pubDate>Sun, 05 Jun 2016 01:00:00 +0100</pubDate>
+      <pubDate>Sat, 04 Jun 2016 17:00:00 -0700</pubDate>
       <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-jean-jacques-dubray/</guid>
       <author></author>
       <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-jean-jacques-dubray/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
@@ -2259,26 +2253,39 @@ key concepts of SAM and walk the audience through some node.js code samples (inc
 </description>
     </item>
     <item>
-      <title>WebSockets Bring Light at the End of the Tunnel by Joel Lord</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</link>
-      <pubDate>Sat, 04 Jun 2016 01:00:00 +0100</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</guid>
+      <title>Modern Javascript Frameworks - Introduction to Ember.JS and Ember-CLI by Suchita Doshi</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-suchita-doshi/</link>
+      <pubDate>Sat, 04 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-suchita-doshi/</guid>
       <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-left&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/joel-lord.jpg&quot; alt=&quot;Joel Lord&quot;&gt;
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-suchita-doshi/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-right&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-suchita-doshi/suchita-doshi.jpg&quot; alt=&quot;Suchita Doshi&quot;&gt;
 &lt;/div&gt;
 
-&lt;p&gt;As a Development Manager, Joel’s motivation and proven technical prowess makes him a key member of Spiria’s software development team. With a degree in computational astrophysics, his interests eventually made their way to software and Web design. Today, his knowledge of JavaScript lets him to support a variety of projects on both the front end and back end. As we move into the age of the Internet of Things, Joel is ready with his passion for programming node bots and experimenting with gadgets.&lt;/p&gt;
+&lt;p&gt;Suchita is UI Lead for the analytics module of Yahoo Admanager Plus team and Core member of Emberjs group @Yahoo, Speaker at Women Who code organization (Introduction To Emberjs/Ember CLI), Conducted Webinar for the TenXList members on EmberJS. She’s passionate about improving developers ergonomics and a hardcore “cricket” fan.&lt;/p&gt;
+&lt;p&gt;In other Suchita news, she’s opening bats-woman for the Bay Area Cricket Association team! 😀&lt;/p&gt;
+&lt;p&gt;Suchita describes her talk as “There will never be a “one size fits all” approach to web development. If you want your application to be minimally interactive, then server side rendered HTML would be the way to go, else, if it were a more interactive application, then client side framework would benefit you.
+Why not use just JQuery instead of adopting these Modern Javascript Frameworks? Think about it! If your application has interactivity on the lighter side, then JQuery would work well, but as soon as you introduce more states in your application, it would then become messier and heavier on the DOM. You would need to use the ‘data-‘ attributes to store the data in your DOM and also remember how to map them with the triggered events.&lt;/p&gt;
 &lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Joel is going to speak on Web Sockets and tunnels of light… or to describe it more specifically more and more, people seem to be obsessed with real-time data.  But what does real-time mean in the world of REST servers and one-way communication?  Most modern web applications are now either displaying a snapshot of data at a given time or use a polling mechanism to update series of data at a given interval.
-In this talk, you will learn about the power of WebSockets and how they can (and should!) be used in your modern web applications. In these 30 minutes, I will go through the process of building a Node server that can push data to multiple clients in real-time.  You will see how this can be easy using the socket.io library.&lt;/p&gt;
+&lt;p&gt;Here is where client side frameworks come to the rescue. I have worked on several client side frameworks like Backbone.js, Ember.js. Few of the many features I love about Ember.js are the two-way data binding, Computed Properties, the run loop, convention over configuration nature, ease of handling routing and many more.
+In this talk I would be covering the following:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Introduction to Emberjs and why Ember&lt;/li&gt;
+&lt;li&gt;How Ember js makes a difference&lt;/li&gt;
+&lt;li&gt;Ember convention over configuration nature&lt;/li&gt;
+&lt;li&gt;Introduction to Ember routes, components and templates&lt;/li&gt;
+&lt;li&gt;Introduction to Ember CLI&lt;/li&gt;
+&lt;li&gt;Computed Properties&lt;/li&gt;
+&lt;li&gt;Live Demo on how it’s really intuitive in a couple of non-trivial scenarios.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;So basically my goal is to attract more developers to adapt modern javascript frameworks and make a difference in the way complex apps are built.”&lt;/p&gt;
 </description>
     </item>
     <item>
       <title>MMOWAM - Build Server-less Games with a DSN by Josh Marinacci</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-josh-marinacci/</link>
-      <pubDate>Sat, 04 Jun 2016 01:00:00 +0100</pubDate>
+      <pubDate>Fri, 03 Jun 2016 17:00:00 -0700</pubDate>
       <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-josh-marinacci/</guid>
       <author></author>
       <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-josh-marinacci/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
@@ -2313,26 +2320,26 @@ it can be.&lt;/p&gt;
 </description>
     </item>
     <item>
-      <title>I Play the JavaScript by Matt McKegg</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</link>
-      <pubDate>Fri, 03 Jun 2016 01:00:00 +0100</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</guid>
+      <title>WebSockets Bring Light at the End of the Tunnel by Joel Lord</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</link>
+      <pubDate>Fri, 03 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</guid>
       <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;div class=&quot;image float-left&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/mattmckegg.jpg&quot; alt=&quot;Matt McKegg&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/joel-lord.jpg&quot; alt=&quot;Joel Lord&quot;&gt;
 &lt;/div&gt;
 
-&lt;p&gt;A JavaScript hacker and backyard musician and from Wellington, New Zealand. Lover of all things open and modular. I spend most of my time pressing buttons of various shapes, sizes and colours. Sometimes these buttons make sounds.&lt;/p&gt;
-&lt;p&gt;Matt has been making music with computers for about 10 years, but once he tried to move from bedroom composing to live performance, he got incredibly frustrated at how hard it was to play computer music live. He decided to start working on his own live electronic performance software written in JavaScript that would let me play the way he wanted to play. 3 years later, it’s finally starting to become a reality.&lt;/p&gt;
+&lt;p&gt;As a Development Manager, Joel’s motivation and proven technical prowess makes him a key member of Spiria’s software development team. With a degree in computational astrophysics, his interests eventually made their way to software and Web design. Today, his knowledge of JavaScript lets him to support a variety of projects on both the front end and back end. As we move into the age of the Internet of Things, Joel is ready with his passion for programming node bots and experimenting with gadgets.&lt;/p&gt;
 &lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Here is one of the Matt’s recent performances, for your viewing pleasure. &lt;/p&gt;
-&lt;iframe width=&quot;1280&quot; height=&quot;720&quot; src=&quot;https://www.youtube.com/embed/L2BVDJWHdy0?rel=0&amp;amp;showinfo=0&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;</description>
+&lt;p&gt;Joel is going to speak on Web Sockets and tunnels of light… or to describe it more specifically more and more, people seem to be obsessed with real-time data.  But what does real-time mean in the world of REST servers and one-way communication?  Most modern web applications are now either displaying a snapshot of data at a given time or use a polling mechanism to update series of data at a given interval.
+In this talk, you will learn about the power of WebSockets and how they can (and should!) be used in your modern web applications. In these 30 minutes, I will go through the process of building a Node server that can push data to multiple clients in real-time.  You will see how this can be easy using the socket.io library.&lt;/p&gt;
+</description>
     </item>
     <item>
       <title>The Web Platform is the Universal Instrument by Ben Michel</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-ben-michel/</link>
-      <pubDate>Fri, 03 Jun 2016 01:00:00 +0100</pubDate>
+      <pubDate>Thu, 02 Jun 2016 17:00:00 -0700</pubDate>
       <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-ben-michel/</guid>
       <author></author>
       <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-ben-michel/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
@@ -2357,9 +2364,26 @@ it can be.&lt;/p&gt;
 </description>
     </item>
     <item>
+      <title>I Play the JavaScript by Matt McKegg</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</link>
+      <pubDate>Thu, 02 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-left&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/mattmckegg.jpg&quot; alt=&quot;Matt McKegg&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;A JavaScript hacker and backyard musician and from Wellington, New Zealand. Lover of all things open and modular. I spend most of my time pressing buttons of various shapes, sizes and colours. Sometimes these buttons make sounds.&lt;/p&gt;
+&lt;p&gt;Matt has been making music with computers for about 10 years, but once he tried to move from bedroom composing to live performance, he got incredibly frustrated at how hard it was to play computer music live. He decided to start working on his own live electronic performance software written in JavaScript that would let me play the way he wanted to play. 3 years later, it’s finally starting to become a reality.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Here is one of the Matt’s recent performances, for your viewing pleasure. &lt;/p&gt;
+&lt;iframe width=&quot;1280&quot; height=&quot;720&quot; src=&quot;https://www.youtube.com/embed/L2BVDJWHdy0?rel=0&amp;amp;showinfo=0&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;</description>
+    </item>
+    <item>
       <title>Code First Docs How we Threw Out The Book &amp; Put Code First With Twilio Documentation by Jarod Reyes</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-jarod-reyes/</link>
-      <pubDate>Thu, 02 Jun 2016 01:00:00 +0100</pubDate>
+      <pubDate>Wed, 01 Jun 2016 17:00:00 -0700</pubDate>
       <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-jarod-reyes/</guid>
       <author></author>
       <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-jarod-reyes/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
@@ -2383,7 +2407,7 @@ it can be.&lt;/p&gt;
     <item>
       <title>The House Is Not On Fire - Building a home automation robot with Arduino, Raspberry Pi and Node.js by Artur Paikin</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</link>
-      <pubDate>Thu, 02 Jun 2016 01:00:00 +0100</pubDate>
+      <pubDate>Wed, 01 Jun 2016 17:00:00 -0700</pubDate>
       <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</guid>
       <author></author>
       <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
@@ -2400,7 +2424,7 @@ it can be.&lt;/p&gt;
     <item>
       <title>Ops for Devs by Adam Ulvi</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-adam-ulvi/</link>
-      <pubDate>Wed, 01 Jun 2016 01:00:00 +0100</pubDate>
+      <pubDate>Tue, 31 May 2016 17:00:00 -0700</pubDate>
       <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-adam-ulvi/</guid>
       <author></author>
       <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-adam-ulvi/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
@@ -2424,7 +2448,7 @@ it can be.&lt;/p&gt;
     <item>
       <title>Speakers and More For Node PDX 2016</title>
       <link>http://adron.github.io/articles/speakers-and-more-for-node-pdx-2016/</link>
-      <pubDate>Wed, 25 May 2016 01:00:00 +0100</pubDate>
+      <pubDate>Tue, 24 May 2016 17:00:00 -0700</pubDate>
       <guid isPermaLink="true">http://adron.github.io/articles/speakers-and-more-for-node-pdx-2016/</guid>
       <author></author>
       <description>&lt;p&gt;Spock and I are excited to announce our first set of speakers for &lt;a href=&quot;http://nodepdx.org/&quot; target=&quot;_blank&quot;&gt;Node PDX 2016&lt;/a&gt;, which you’ve seen slowly coming out each day! I hope you’re ready and have your &lt;a href=&quot;http://nodepdx.org/#tickets&quot; target=&quot;_blank&quot;&gt;tickets&lt;/a&gt; bought already. So far I’ve introduced &lt;a href=&quot;http://blog.adron.me/articles/node-pdx-2016-speaker-tomomi-imura/&quot;&gt;Tomomi&lt;/a&gt;, &lt;a href=&quot;http://blog.adron.me/articles/node-pdx-2016-speaker-jonny-oropeza/&quot;&gt;Jon&lt;/a&gt;, and &lt;a href=&quot;http://blog.adron.me/articles/node-pdx-2016-speaker-liz-abinante/&quot;&gt;Liz&lt;/a&gt;. Today I’ll introduce Adam Ulvi a bit later.&lt;/p&gt;
@@ -2445,7 +2469,7 @@ it can be.&lt;/p&gt;
     <item>
       <title>A Foolish Quest Creating Knitting Patterns Using JavaScript by Liz Abinante</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-liz-abinante/</link>
-      <pubDate>Tue, 24 May 2016 01:00:00 +0100</pubDate>
+      <pubDate>Mon, 23 May 2016 17:00:00 -0700</pubDate>
       <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-liz-abinante/</guid>
       <author></author>
       <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-liz-abinante/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
@@ -2459,7 +2483,7 @@ it can be.&lt;/p&gt;
     <item>
       <title>Isomorphic Business Logic (Or How to convince even the most die-hard C#/Java/Rails-on-the-Backend boss that you need to run a node server) Jonny Oropeza</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-jonny-oropeza/</link>
-      <pubDate>Thu, 19 May 2016 01:00:00 +0100</pubDate>
+      <pubDate>Wed, 18 May 2016 17:00:00 -0700</pubDate>
       <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-jonny-oropeza/</guid>
       <author></author>
       <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-jonny-oropeza/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
@@ -2486,7 +2510,7 @@ it can be.&lt;/p&gt;
     <item>
       <title>From Software to Hardware How Do I Track My Cat with JavaScript Tomomi Imura</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-tomomi-imura/</link>
-      <pubDate>Wed, 18 May 2016 01:00:00 +0100</pubDate>
+      <pubDate>Tue, 17 May 2016 17:00:00 -0700</pubDate>
       <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-tomomi-imura/</guid>
       <author></author>
       <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-tomomi-imura/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
@@ -2502,7 +2526,7 @@ it can be.&lt;/p&gt;
     <item>
       <title>Dropping the Ball, GSD, and Staying Productive</title>
       <link>http://adron.github.io/articles/dropping-the-ball-gsd-and-staying-productive/</link>
-      <pubDate>Fri, 13 May 2016 01:00:00 +0100</pubDate>
+      <pubDate>Thu, 12 May 2016 17:00:00 -0700</pubDate>
       <guid isPermaLink="true">http://adron.github.io/articles/dropping-the-ball-gsd-and-staying-productive/</guid>
       <author></author>
       <description>&lt;p&gt;&lt;em&gt;[&lt;strong&gt;NOTE:&lt;/strong&gt; This was actually written Thursday the 5th, things make more sense with that in mind.]&lt;/em&gt;&lt;/p&gt;
@@ -2595,7 +2619,7 @@ Remember one thing. Work is not your core focus and reason to exist in life. &lt
     <item>
       <title>Immutable Infrastructure - Some Reads and Clarification of What It Is</title>
       <link>http://adron.github.io/articles/immutable-infrastructure-some-reads-clarification-what-it-is/</link>
-      <pubDate>Tue, 12 Apr 2016 13:39:00 +0100</pubDate>
+      <pubDate>Tue, 12 Apr 2016 13:39:00 -0700</pubDate>
       <guid isPermaLink="true">http://adron.github.io/articles/immutable-infrastructure-some-reads-clarification-what-it-is/</guid>
       <author></author>
       <description>&lt;p&gt;First let’s get these terms a little more defined with the help of some well written articles on the matter.&lt;/p&gt;
@@ -2630,7 +2654,7 @@ Remember one thing. Work is not your core focus and reason to exist in life. &lt
     <item>
       <title>The Difficult Open Source Path</title>
       <link>http://adron.github.io/articles/the-difficult-open-source-path/</link>
-      <pubDate>Fri, 25 Mar 2016 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 24 Mar 2016 17:00:00 -0700</pubDate>
       <guid isPermaLink="true">http://adron.github.io/articles/the-difficult-open-source-path/</guid>
       <author></author>
       <description>&lt;p&gt;Bringing a closed source, or just simply an internally managed code base, into the wild of open source software can be an arduous and surreal process. In this article I’m going to ramble on about exactly that, with a few learned lessons and key successes I’ve had.&lt;/p&gt;
@@ -2686,7 +2710,7 @@ Remember one thing. Work is not your core focus and reason to exist in life. &lt
     <item>
       <title>Quick Append to Text File with BASH</title>
       <link>http://adron.github.io/articles/quote-append-to-text-file-with-bash/</link>
-      <pubDate>Mon, 14 Mar 2016 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 13 Mar 2016 17:00:00 -0700</pubDate>
       <guid isPermaLink="true">http://adron.github.io/articles/quote-append-to-text-file-with-bash/</guid>
       <author></author>
       <description>&lt;p&gt;I commonly have the scenario where I want a bash script to throw in something at the tail end of the ~/.bash_profile or ~/.profile script or just append some results like a log file to some existing text file. Well here are two super easy ways to add text to a text file.&lt;/p&gt;
@@ -2708,7 +2732,7 @@ EOT
     <item>
       <title>Today I'm Using a Mac</title>
       <link>http://adron.github.io/articles/today-using-a-mac/</link>
-      <pubDate>Sat, 12 Mar 2016 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 11 Mar 2016 16:00:00 -0800</pubDate>
       <guid isPermaLink="true">http://adron.github.io/articles/today-using-a-mac/</guid>
       <author></author>
       <description>&lt;p&gt;Today I’m using a Mac (since 2011, but inspired to write this today in 2016) not because I have some profound love for Apple (I don’t really) or miss Steve Jobs (he was a dick, but I bet I’d have gotten along with him) only because I don’t want to spend excess time messing with Windows headaches and the games I generally play over the last 7-8 years have been things like SimCity, Civ 5, and Cities: Skylines. All run perfectly fine on Mac w/ Steam. If I played 1st Person shooters I’d probably still have a Windows machine stashed in the corner for that…&lt;/p&gt;
@@ -2724,7 +2748,7 @@ EOT
     <item>
       <title>Docker Tips n' Tricks - Bash Things With Docker</title>
       <link>http://adron.github.io/articles/docker-tips-n-tricks-bash-things-with-docker/</link>
-      <pubDate>Thu, 10 Mar 2016 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 09 Mar 2016 16:00:00 -0800</pubDate>
       <guid isPermaLink="true">http://adron.github.io/articles/docker-tips-n-tricks-bash-things-with-docker/</guid>
       <author></author>
       <description>&lt;p&gt;If you use Docker frequently, you’ve likely memorized a few repetitive commands…&lt;/p&gt;
@@ -2750,7 +2774,7 @@ fi }
     <item>
       <title>Researching &amp; Learning About Zookeeper - A Guide</title>
       <link>http://adron.github.io/articles/research-learning-about-zookeeper/</link>
-      <pubDate>Mon, 01 Feb 2016 16:30:00 +0000</pubDate>
+      <pubDate>Mon, 01 Feb 2016 16:30:00 -0800</pubDate>
       <guid isPermaLink="true">http://adron.github.io/articles/research-learning-about-zookeeper/</guid>
       <author></author>
       <description>&lt;p&gt;I’ve started working with Zookeeper. Since I’ve started doing that I’ve put together this blog post. It’s aim is to provide a structured approach to learning Zookeeper and researching the elements that make its features tick. Along the way I have a few call outs to people that have also provided excellent talks, material, or contributions to learning about Zookeeper along the way. With that, let’s get started.&lt;/p&gt;
@@ -2849,7 +2873,7 @@ Talks about why Riak, Cassandra, and even the company Camille works at (Rent the
     <item>
       <title>All That Tech SitRep - Elastic Meetup and Quote Center Updates</title>
       <link>http://adron.github.io/articles/all-that-tech-sitrep-elastic-meetup-quote-center-updates/</link>
-      <pubDate>Tue, 26 Jan 2016 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 25 Jan 2016 16:00:00 -0800</pubDate>
       <guid isPermaLink="true">http://adron.github.io/articles/all-that-tech-sitrep-elastic-meetup-quote-center-updates/</guid>
       <author></author>
       <description>&lt;div class=&quot;image float-right&quot;&gt;
@@ -2891,7 +2915,7 @@ Talks about why Riak, Cassandra, and even the company Camille works at (Rent the
     <item>
       <title>Elasticon Tour 2015 in Seattle</title>
       <link>http://adron.github.io/articles/elasticon-tour-2015-in-seattle/</link>
-      <pubDate>Thu, 03 Dec 2015 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 02 Dec 2015 16:00:00 -0800</pubDate>
       <guid isPermaLink="true">http://adron.github.io/articles/elasticon-tour-2015-in-seattle/</guid>
       <author></author>
       <description>&lt;p&gt;Today is the tour stop of the &lt;a href=&quot;https://www.elastic.co/elasticon/tour/2015&quot; target=&quot;_blank&quot;&gt;Elasticon Tour&lt;/a&gt; that swung into Seattle. Myself and some of the &lt;a href=&quot;http://hdquotecenter.com/&quot; target=&quot;_blank&quot;&gt;Home Depot Quote Center&lt;/a&gt; team headed up via the &lt;a href=&quot;http://www.amtrakcascades.com/&quot; target=&quot;_blank&quot;&gt;Geek Train&lt;/a&gt; for the event. We arrived the night before so we could get up and actually be awake and ready for the event.&lt;/p&gt;
@@ -2963,7 +2987,7 @@ Talks about why Riak, Cassandra, and even the company Camille works at (Rent the
     <item>
       <title>Docker Tips n' Tricks - Delete All The Images &amp; Containers</title>
       <link>http://adron.github.io/articles/docker-tips-n-tricks-delete-all-the-images-containers/</link>
-      <pubDate>Mon, 02 Nov 2015 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 01 Nov 2015 16:00:00 -0800</pubDate>
       <guid isPermaLink="true">http://adron.github.io/articles/docker-tips-n-tricks-delete-all-the-images-containers/</guid>
       <author></author>
       <description>&lt;p&gt;Two simple commands that’ll wipe your installation clean of images and containers.&lt;/p&gt;
@@ -2976,7 +3000,7 @@ Talks about why Riak, Cassandra, and even the company Camille works at (Rent the
     <item>
       <title>After 816 Days I'm Taking a Job!</title>
       <link>http://adron.github.io/articles/after-816-days-taking-a-job/</link>
-      <pubDate>Sat, 31 Oct 2015 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 30 Oct 2015 17:00:00 -0700</pubDate>
       <guid isPermaLink="true">http://adron.github.io/articles/after-816-days-taking-a-job/</guid>
       <author></author>
       <description>&lt;p&gt;&lt;img src=&quot;/articles/after-816-days-taking-a-job/header.jpg&quot; alt=&quot;MAX Train&quot;&gt;&lt;/p&gt;
@@ -2995,7 +3019,7 @@ Talks about why Riak, Cassandra, and even the company Camille works at (Rent the
     <item>
       <title>The Latest 5th Generation Dell XPS 13 Developer Edition</title>
       <link>http://adron.github.io/articles/latest-fifth-gen-dell-xps-13-developer-edition/</link>
-      <pubDate>Wed, 22 Jul 2015 14:54:00 +0100</pubDate>
+      <pubDate>Wed, 22 Jul 2015 14:54:00 -0700</pubDate>
       <guid isPermaLink="true">http://adron.github.io/articles/latest-fifth-gen-dell-xps-13-developer-edition/</guid>
       <author></author>
       <description>&lt;p&gt;Just about 4 weeks ago now I purchased a Dell XPS 13 Developer Edition directly from Dell. The reason I purchased this laptop is because of two needs I have while traveling and writing code.&lt;/p&gt;
@@ -3083,7 +3107,7 @@ Talks about why Riak, Cassandra, and even the company Camille works at (Rent the
     <item>
       <title>AWS Beanstalk Worker with Node.js and SQS</title>
       <link>http://adron.github.io/articles/aws-beanstalk-worker-with-node-js-and-sqs/</link>
-      <pubDate>Wed, 19 Nov 2014 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 18 Nov 2014 16:00:00 -0800</pubDate>
       <guid isPermaLink="true">http://adron.github.io/articles/aws-beanstalk-worker-with-node-js-and-sqs/</guid>
       <author></author>
       <description>&lt;div class=&quot;image float-right&quot;&gt;
@@ -3235,7 +3259,7 @@ server.pack.register(Good, &lt;span class=&quot;function&quot;&gt;&lt;span class
     <item>
       <title>Setting up a Hapi.js App that sends work to a Node.js AWS Worker via SQS</title>
       <link>http://adron.github.io/articles/hapijs-aws-worker-publish/</link>
-      <pubDate>Fri, 07 Nov 2014 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 06 Nov 2014 16:00:00 -0800</pubDate>
       <guid isPermaLink="true">http://adron.github.io/articles/hapijs-aws-worker-publish/</guid>
       <author></author>
       <description>&lt;div class=&quot;image float-right&quot;&gt;
@@ -3565,7 +3589,7 @@ server.pack.register(Good, &lt;span class=&quot;function&quot;&gt;&lt;span class
     <item>
       <title>Setting up an AWS SQS Queue for Use With Node.js Beanstalk Worker Instances</title>
       <link>http://adron.github.io/articles/setting-up-an-aws-sqs-queue-for-use-with-node-js-beanstalk-worker-instances/</link>
-      <pubDate>Thu, 06 Nov 2014 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 05 Nov 2014 16:00:00 -0800</pubDate>
       <guid isPermaLink="true">http://adron.github.io/articles/setting-up-an-aws-sqs-queue-for-use-with-node-js-beanstalk-worker-instances/</guid>
       <author></author>
       <description>&lt;div class=&quot;image float-right&quot;&gt;
@@ -3643,7 +3667,7 @@ server.pack.register(Good, &lt;span class=&quot;function&quot;&gt;&lt;span class
     <item>
       <title>Working in -34c Wintersmith Customization and Github Hosting</title>
       <link>http://adron.github.io/articles/working-in-34c-wintersmith-customization-and-github-hosting/</link>
-      <pubDate>Wed, 19 Feb 2014 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 18 Feb 2014 16:00:00 -0800</pubDate>
       <guid isPermaLink="true">http://adron.github.io/articles/working-in-34c-wintersmith-customization-and-github-hosting/</guid>
       <author></author>
       <description>&lt;p&gt;Getting Wintersmith customized, building and deployed to Github and a domain name pointed takes a few extra steps. So let’s roll…&lt;/p&gt;
@@ -3693,7 +3717,7 @@ server.pack.register(Good, &lt;span class=&quot;function&quot;&gt;&lt;span class
     <item>
       <title>Wintersmith Creating Documentation</title>
       <link>http://adron.github.io/articles/wintersmith-creating-documentation/</link>
-      <pubDate>Mon, 17 Feb 2014 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 16 Feb 2014 16:00:00 -0800</pubDate>
       <guid isPermaLink="true">http://adron.github.io/articles/wintersmith-creating-documentation/</guid>
       <author></author>
       <description>&lt;p&gt;I set out a few days ago to put together a documentation site. I had a few criteria for this site:&lt;/p&gt;
@@ -3916,7 +3940,7 @@ I added an output key value property to the file as shown. It merely takes the r
     <item>
       <title>my top 4 ideal dev shop product characteristics yours</title>
       <link>http://adron.github.io/articles/my-top-4-ideal-dev-shop-product-characteristics-yours/</link>
-      <pubDate>Sat, 22 Oct 2011 01:00:00 +0100</pubDate>
+      <pubDate>Fri, 21 Oct 2011 17:00:00 -0700</pubDate>
       <guid isPermaLink="true">http://adron.github.io/articles/my-top-4-ideal-dev-shop-product-characteristics-yours/</guid>
       <author></author>
       <description>&lt;p&gt;What is an ideal software project? What is an ideal delivery cycle? What is an ideal culture? From a client’s perspective do they see the team as a sluggish liability or is the development team proactive and looking for the next strategic or tactical step to take?&lt;/p&gt;
