@@ -1,7 +1,7 @@
 ---
 title: I Want a Go CLI
 author: Adron Hall
-date: 2016-25-10
+date: 2016-10-25
 template: article.jade
 ---
 <div class="image float-left">
@@ -100,3 +100,8 @@ That's what I expected, so now I'm going to test out the different flags I set. 
 ![Running hi-cli.go](hi-cli-03.png)
 
 Again, everything I expected. Based on the mission I set out at the beginning of this entry, mission is accomplished. So until next time, happy hacking.
+
+**References:**
+
+* [Github Repo](https://github.com/Adron/golang-cli)
+* [Go language site](https://golang.org/)
