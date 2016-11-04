@@ -5,13 +5,130 @@
     <atom:link href="http://adron.github.io/feed.xml" rel="self" type="application/rss+xml"></atom:link>
     <link>http://adron.github.io</link>
     <description>Coder, Messenger, Recon, Infrastructure, Ops</description>
-    <pubDate>Tue, 09 Jan 2018 16:00:00 -0800</pubDate>
+    <pubDate>Mon, 31 Oct 2016 17:00:00 -0700</pubDate>
     <generator>Wintersmith - https://github.com/jnordberg/wintersmith</generator>
     <language>en</language>
     <item>
+      <title>I Want a Go Service</title>
+      <link>http://adron.github.io/articles/want-a-golang-service/</link>
+      <pubDate>Mon, 31 Oct 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/want-a-golang-service/</guid>
+      <author></author>
+      <description>&lt;p&gt;In the last post, I put together a quick Go CLI that took some flags and acted upon each of the flags. So today, instead of a Bowing 777 I’m aboard Amtrak Cascade’s service to Portland (from Seattle) aboard a &lt;em&gt;Tren Articulado Ligero Goicoechea Oriol&lt;/em&gt;, or &lt;em&gt;Talgo&lt;/em&gt; Train.&lt;/p&gt;
+&lt;div class=&quot;image float-right&quot;&gt;
+    &lt;img src=&quot;/articles/want-a-golang-service/american-talgo.jpg&quot; alt=&quot;Amtrak Cascades Talgo&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Traveling in comfort is an unbelievably great way to get some coding done. It’s easy to disconnect form interruptions (albeit there is internet access, but just enough, not to much) and just get some coding done. &lt;strong&gt;Mission:&lt;/strong&gt; &lt;em&gt;Put together a service that has a basic response for a request, with some message. There needs to be a root response of the service, but also a response from one or more URI end points.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;The first thing I did was get the basic package designated and added the imports I’d need for the libraries I’d use for this. I created a file called &lt;code&gt;service.go&lt;/code&gt; to add this code to.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;package main
+
+&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; (
+  &lt;span class=&quot;string&quot;&gt;&quot;fmt&quot;&lt;/span&gt;
+  &lt;span class=&quot;string&quot;&gt;&quot;log&quot;&lt;/span&gt;
+  &lt;span class=&quot;string&quot;&gt;&quot;net/http&quot;&lt;/span&gt;
+)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Next I added a little trip specific message for the hello world aspect of the service.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;func handler(w http.ResponseWriter, r *http.Request) {
+    fmt.Fprintf(w, &lt;span class=&quot;string&quot;&gt;&quot;Welcome to the early morning Amtrak Cascades, %s!&quot;&lt;/span&gt;, r.URL.Path[&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;:])
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This is a super simple handler that works to handle the request and response by returning a message. Note the parameter &lt;code&gt;r.URL.Path[1:]&lt;/code&gt; that is passed in via the &lt;code&gt;%s&lt;/code&gt; if it is available.&lt;/p&gt;
+&lt;p&gt;For the last bit of this sample I added the necessary main function.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;func main() {
+    http.HandleFunc(&lt;span class=&quot;string&quot;&gt;&quot;/&quot;&lt;/span&gt;, handler)
+    log.Fatal(http.ListenAndServe(&lt;span class=&quot;string&quot;&gt;&quot;:8080&quot;&lt;/span&gt;, nil))
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Here I call the http function &lt;code&gt;HandleFunc&lt;/code&gt; and pass in the necessary parameters, including the handler. Next I pass to the log function &lt;code&gt;Fatal&lt;/code&gt; the http &lt;code&gt;ListenAndServe&lt;/code&gt; function and pass it the port 8080 to listen on.&lt;/p&gt;
+&lt;p&gt;Now I built the code and run it to prove it out. To build I executed the standard go build command.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;go build service.go
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Then executing the service.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;19:47 $ ./service
+_
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;If for some reason you have something using that port already, the following error displays.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;19:48 $ ./service
+2016/11/03 19:48:15 listen tcp :8080: bind: address already in use
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This happened to me routinely since I was running the &lt;code&gt;wintersmith preview&lt;/code&gt; instance on port 8080 while I write this very blog entry. I try to prevent port conflicts, but one knows how that goes, sometimes you just gotta lock horns with all the ports.&lt;/p&gt;
+&lt;p&gt;If everything runs accordingly however, I get the following when I browser to &lt;a href=&quot;http://localhost:8080&quot;&gt;http://localhost:8080&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/want-a-golang-service/localhost-01.png&quot; alt=&quot;Browser Results&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;add-features&quot;&gt;Add Features&lt;/h2&gt;
+&lt;p&gt;What I did so far didn’t really meet the mission statement to the extent I wanted to. I decided to add a few more things, so I went ahead and created another file in the repo called &lt;code&gt;service-twosi.go&lt;/code&gt;. No, I don’t know why I named it that other than naming is hard and this is the second services example.&lt;/p&gt;
+&lt;p&gt;Again, added the package and imports, which were almost the same as before.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;package main
+
+&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; (
+   &lt;span class=&quot;string&quot;&gt;&quot;encoding/json&quot;&lt;/span&gt;
+   &lt;span class=&quot;string&quot;&gt;&quot;fmt&quot;&lt;/span&gt;
+   &lt;span class=&quot;string&quot;&gt;&quot;net/http&quot;&lt;/span&gt;
+   &lt;span class=&quot;string&quot;&gt;&quot;log&quot;&lt;/span&gt;
+)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;I wanted to get some json action into place, thus the addition of the encoding/json library.&lt;/p&gt;
+&lt;p&gt;Next I basically kept the previous response writer handler function.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;func handler(w http.ResponseWriter, r *http.Request) {
+   fmt.Fprintf(w, &lt;span class=&quot;string&quot;&gt;&quot;Welcome to the early morning Amtrak Cascades, %s!&quot;&lt;/span&gt;, r.URL.Path[&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;:])
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Next I added a simple struct message type.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;type Message struct {
+   Text string
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This would be for the message and json manipulation. Next I added a function called about, which would eventually be an API call directly to &lt;a href=&quot;http://localhost:8080/about&quot;&gt;http://localhost:8080/about&lt;/a&gt;. Note I’ve assigned m the Message, which is parsed into json via the json Marshal function call.&lt;/p&gt;
+&lt;p&gt;I then added a little error catch in case the json blows up for whatever reason. Then I write it out via this function.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;func about (w http.ResponseWriter, r *http.Request) {
+
+   m := Message{&lt;span class=&quot;string&quot;&gt;&quot;Welcome to the Twosi API, build v0.0.001.&quot;&lt;/span&gt;}
+   b, err := json.Marshal(m)
+
+   &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; err != nil {
+       panic(err)
+   }
+
+    w.Write(b)
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Finally, it’s main function time again.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;func main() {
+   http.HandleFunc(&lt;span class=&quot;string&quot;&gt;&quot;/&quot;&lt;/span&gt;, handler)
+   http.HandleFunc(&lt;span class=&quot;string&quot;&gt;&quot;/about/&quot;&lt;/span&gt;, about)
+   log.Fatal(http.ListenAndServe(&lt;span class=&quot;string&quot;&gt;&quot;:8080&quot;&lt;/span&gt;, nil))
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;A quick build.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;go build service-twosi.go
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Then execution.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;./service-twosi
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Gives me this.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;20:09 $ go run service-twosi.go
+_
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now if I navigate to &lt;a href=&quot;http://localhost:8080/&quot;&gt;http://localhost:8080/&lt;/a&gt; I get this.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/want-a-golang-service/localhost-02.png&quot; alt=&quot;Browser Results&quot;&gt;&lt;/p&gt;
+&lt;p&gt;If I pass in a name as part of the URI like &lt;a href=&quot;http://localhost:8080/John&quot;&gt;http://localhost:8080/John&lt;/a&gt; I get the following.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/want-a-golang-service/localhost-03.png&quot; alt=&quot;Browser Results&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Of course the last URI to try out is the about URI path of &lt;a href=&quot;http://localhost:8080/about&quot;&gt;http://localhost:8080/about&lt;/a&gt; which provides some nice json data returned in the browser.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/want-a-golang-service/localhost-04.png&quot; alt=&quot;Browser Results&quot;&gt;&lt;/p&gt;
+&lt;p&gt;That covers this mission, features implemented and done.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;References:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/Adron/golang-service&quot;&gt;Github Repo&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://golang.org/&quot;&gt;Go language site&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    <item>
       <title>I Want a Go CLI</title>
       <link>http://adron.github.io/articles/want-a-golang-cli/</link>
-      <pubDate>Tue, 09 Jan 2018 16:00:00 -0800</pubDate>
+      <pubDate>Mon, 24 Oct 2016 17:00:00 -0700</pubDate>
       <guid isPermaLink="true">http://adron.github.io/articles/want-a-golang-cli/</guid>
       <author></author>
       <description>&lt;div class=&quot;image float-left&quot;&gt;
@@ -84,6 +201,11 @@ func main() {
 &lt;p&gt;That’s what I expected, so now I’m going to test out the different flags I set. So I go ahead and set each of the flags just to see. My command reads nice and long as &lt;code&gt;go run hi-cli.go -booly=false -wordly=testing -numeraly=909 -yourname=&amp;quot;Adron Hall&amp;quot;&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;/articles/want-a-golang-cli/hi-cli-03.png&quot; alt=&quot;Running hi-cli.go&quot;&gt;&lt;/p&gt;
 &lt;p&gt;Again, everything I expected. Based on the mission I set out at the beginning of this entry, mission is accomplished. So until next time, happy hacking.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;References:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/Adron/golang-cli&quot;&gt;Github Repo&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://golang.org/&quot;&gt;Go language site&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </description>
     </item>
     <item>
@@ -2337,6 +2459,23 @@ it can be.&lt;/p&gt;
 </description>
     </item>
     <item>
+      <title>I Play the JavaScript by Matt McKegg</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</link>
+      <pubDate>Thu, 02 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-left&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/mattmckegg.jpg&quot; alt=&quot;Matt McKegg&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;A JavaScript hacker and backyard musician and from Wellington, New Zealand. Lover of all things open and modular. I spend most of my time pressing buttons of various shapes, sizes and colours. Sometimes these buttons make sounds.&lt;/p&gt;
+&lt;p&gt;Matt has been making music with computers for about 10 years, but once he tried to move from bedroom composing to live performance, he got incredibly frustrated at how hard it was to play computer music live. He decided to start working on his own live electronic performance software written in JavaScript that would let me play the way he wanted to play. 3 years later, it’s finally starting to become a reality.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Here is one of the Matt’s recent performances, for your viewing pleasure. &lt;/p&gt;
+&lt;iframe width=&quot;1280&quot; height=&quot;720&quot; src=&quot;https://www.youtube.com/embed/L2BVDJWHdy0?rel=0&amp;amp;showinfo=0&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;</description>
+    </item>
+    <item>
       <title>The Web Platform is the Universal Instrument by Ben Michel</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-ben-michel/</link>
       <pubDate>Thu, 02 Jun 2016 17:00:00 -0700</pubDate>
@@ -2362,23 +2501,6 @@ it can be.&lt;/p&gt;
 &lt;li&gt;Audience interaction with the exposed parameters of a live band’s instrumentation–via broadcast methods and microcontroller installations.”&lt;/li&gt;
 &lt;/ul&gt;
 </description>
-    </item>
-    <item>
-      <title>I Play the JavaScript by Matt McKegg</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</link>
-      <pubDate>Thu, 02 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</guid>
-      <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-left&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/mattmckegg.jpg&quot; alt=&quot;Matt McKegg&quot;&gt;
-&lt;/div&gt;
-
-&lt;p&gt;A JavaScript hacker and backyard musician and from Wellington, New Zealand. Lover of all things open and modular. I spend most of my time pressing buttons of various shapes, sizes and colours. Sometimes these buttons make sounds.&lt;/p&gt;
-&lt;p&gt;Matt has been making music with computers for about 10 years, but once he tried to move from bedroom composing to live performance, he got incredibly frustrated at how hard it was to play computer music live. He decided to start working on his own live electronic performance software written in JavaScript that would let me play the way he wanted to play. 3 years later, it’s finally starting to become a reality.&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Here is one of the Matt’s recent performances, for your viewing pleasure. &lt;/p&gt;
-&lt;iframe width=&quot;1280&quot; height=&quot;720&quot; src=&quot;https://www.youtube.com/embed/L2BVDJWHdy0?rel=0&amp;amp;showinfo=0&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;</description>
     </item>
     <item>
       <title>Code First Docs How we Threw Out The Book &amp; Put Code First With Twilio Documentation by Jarod Reyes</title>

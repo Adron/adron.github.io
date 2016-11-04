@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="/css/style.min.css">
     <script src="/js/modernizr.js"></script>
   </head>
-  <body>
+  <body class="article-detail">
     <!--[if lt IE 8]>
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -67,8 +67,10 @@
             <div class="col-md-12">
               <!-- Page Info-->
               <div class="page-info page-info-simple">
-                <h1>Adron's Composite Code</h1>
-                <h2 class="description">Coder, Messenger, Recon, Infrastructure, Ops</h2>
+                <h1>I Want a Go Service</h1>
+                <p class="author">Written by <span class="author">Adron Hall</span>
+                </p>
+                <div class="nav"><a href="/">« Home</a></div>
               </div>
               <!-- End Page Info-->
             </div>
@@ -83,78 +85,118 @@
             <div class="col-md-9">
               <div class="main-content">
                 <!-- Blog Page-->
-                <div class="blog">
-                  <div class="row"></div>
-                </div>
-                <div class="col-md-12 col-sm-12">
-                  <!-- Blog List-->
-                  <div class="blog-grid">
-                    <div class="row">
-                      <div class="col-md-12 col-sm-12">
-                        <h3 class="blog-grid-title"><a href="/articles/how-ya-linux-0000-Startup-things/">Startup Things - How Ya Linux Series - 0000</a></h3>
-                        <p class="blog-grid-excerpt"><div class="image float-right">
-    <img src="/articles/how-ya-linux-0000-Startup-things/penguinbash.jpg" alt="Penguin Bash">
-</div>
-
-<p>When Linux starts up (or most Unix variants or <span class="caps">OS</span>-X for that matter, which is after all a kind of Unix variant) there are particular scrips that execute. The key two are ~/.bash_profile and ~./bashrc. When you log in the ~/.bash_profile executes and when you startup a shell then the ~/.bashrc&nbsp;executes.</p>
-<p>These two files are standard executable script files, so any bash will do. For instance, some of the bash script I end up in my ~/.bash_profile includes a git prompt, as shown&nbsp;below.</p>
-<p>
-                          <p class="more"><a href="/articles/how-ya-linux-0000-Startup-things/">more</a></p>
-                        </p>
-                        <div class="blog-grid-meta"><span class="blog-grid-date">11. June 2016</span></div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End of Blog List-->
-                </div>
-                <div class="col-md-12 col-sm-12">
-                  <!-- Blog List-->
-                  <div class="blog-grid">
-                    <div class="row">
-                      <div class="col-md-12 col-sm-12">
-                        <h3 class="blog-grid-title"><a href="/articles/node-pdx-2016/">The Short Story of Node PDX, and Node PDX 2016</a></h3>
-                        <p class="blog-grid-excerpt"><p>Some of you may know the story, but I’ll tell it again for those that don’t. In 2012 Troy Howard (<a href="https://twitter.com/thoward37">@thoward37</a>) and I were sitting at the Side Door hacking on some project code. We started talking about where and what was up with the Node.js project, community, and asking ourselves what the future of that was. You see, we’d toyed about with the technology here and there but we hadn’t really done anything with&nbsp;it.</p>
-<p>We continued our coding, enjoying a tasty locally brewed beer, frothy and good. After a reasonable amount of said tasty beer, we started discussing a way to get up to speed faster on Node.js. In our infinitely wise and slightly intoxicated minds we both thought, “Hey, let’s throw a conference!”. We immediately started discussing this idea and a number of decisions were&nbsp;made…</p>
-<p>
-                          <p class="more"><a href="/articles/node-pdx-2016/">more</a></p>
-                        </p>
-                        <div class="blog-grid-meta"><span class="blog-grid-date">08. June 2016</span></div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End of Blog List-->
-                </div>
-                <div class="col-md-12 col-sm-12">
-                  <!-- Blog List-->
-                  <div class="blog-grid">
-                    <div class="row">
-                      <div class="col-md-12 col-sm-12">
-                        <h3 class="blog-grid-title"><a href="/articles/node-pdx-2016-speaker-david-manning-adam-ulvi/">How to Build a Bike Shed by David Manning &amp; Adam Ulvi</a></h3>
-                        <p class="blog-grid-excerpt"><p><a href="http://nodepdx.org"><img src="/articles/node-pdx-2016-speaker-david-manning-adam-ulvi/nodepdx-2016-logo.png" alt="Node PDX 2016"></a></p>
+                <article class="article">
+                  <section class="content"><p>In the last post, I put together a quick Go <span class="caps">CLI</span> that took some flags and acted upon each of the flags. So today, instead of a Bowing 777 I’m aboard Amtrak Cascade’s service to Portland (from Seattle) aboard a <em>Tren Articulado Ligero Goicoechea Oriol</em>, or <em>Talgo</em>&nbsp;Train.</p>
 <div class="image float-right">
-    <img src="/articles/node-pdx-2016-speaker-david-manning-adam-ulvi/davidadam.jpg" alt="David Manning &amp; Team">
+    <img src="/articles/want-a-golang-service/american-talgo.jpg" alt="Amtrak Cascades Talgo">
 </div>
 
-<p>This is a very Portland, very unique to Node <span class="caps">PDX</span> talk, by Adam and David who work at ZHealth Documentation and have opinions about&nbsp;things.</p>
-<p><em>Nuff’ said&nbsp;eh!</em></p>
-<blockquote>
-<p>Despite having no formal construction experience, Adam and David have been tasked with designing a new bike shed outside of the Olympic Mills Commerce Center. They have spent long hours in extensive research, and are excited to share their results with the&nbsp;community.</p>
-</blockquote>
-<p><strong><em>Attendees will receive plans and a Starter Kit of building&nbsp;materials.</em></strong></p>
-<p>For more important information about what a bike is, what a shed is, and how these two things combined make bike sheds, check out this useful&nbsp;links.</p>
-<ul>
-<li>Bikes: <a href="https://en.wikipedia.org/wiki/Bicycle">https://en.wikipedia.org/wiki/Bicycle</a></li>
-<li>Sheds: <a href="https://en.wikipedia.org/wiki/Shed">https://en.wikipedia.org/wiki/Shed</a></li>
-<li>Bike Sheds: <a href="https://en.wikipedia.org/wiki/Law_of_triviality">https://en.wikipedia.org/wiki/Shed#Specific-use_sheds</a></li>
-</ul>
+<p>Traveling in comfort is an unbelievably great way to get some coding done. It’s easy to disconnect form interruptions (albeit there is internet access, but just enough, not to much) and just get some coding done. <strong>Mission:</strong> <em>Put together a service that has a basic response for a request, with some message. There needs to be a root response of the service, but also a response from one or more <span class="caps">URI</span> end&nbsp;points.</em></p>
+<p><span class="more"></span></p>
+<p>The first thing I did was get the basic package designated and added the imports I’d need for the libraries I’d use for this. I created a file called <code>service.go</code> to add this code&nbsp;to.</p>
+<pre><code class="lang-javascript">package main
 
-                        </p>
-                        <div class="blog-grid-meta"><span class="blog-grid-date">08. June 2016</span></div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End of Blog List-->
-                </div>
+<span class="keyword">import</span> (
+  <span class="string">"fmt"</span>
+  <span class="string">"log"</span>
+  <span class="string">"net/http"</span>
+)
+</code></pre>
+<p>Next I added a little trip specific message for the hello world aspect of the&nbsp;service.</p>
+<pre><code class="lang-javascript">func handler(w http.ResponseWriter, r *http.Request) {
+    fmt.Fprintf(w, <span class="string">"Welcome to the early morning Amtrak Cascades, %s!"</span>, r.<span class="caps">URL</span>.Path[<span class="number">1</span>:])
+}
+</code></pre>
+<p>This is a super simple handler that works to handle the request and response by returning a message. Note the parameter <code>r.URL.Path[1:]</code> that is passed in via the <code>%s</code> if it is&nbsp;available.</p>
+<p>For the last bit of this sample I added the necessary main&nbsp;function.</p>
+<pre><code class="lang-javascript">func main() {
+    http.HandleFunc(<span class="string">"/"</span>, handler)
+    log.Fatal(http.ListenAndServe(<span class="string">":8080"</span>, nil))
+}
+</code></pre>
+<p>Here I call the http function <code>HandleFunc</code> and pass in the necessary parameters, including the handler. Next I pass to the log function <code>Fatal</code> the http <code>ListenAndServe</code> function and pass it the port 8080 to listen&nbsp;on.</p>
+<p>Now I built the code and run it to prove it out. To build I executed the standard go build&nbsp;command.</p>
+<pre><code class="lang-shell-script">go build service.go
+</code></pre>
+<p>Then executing the&nbsp;service.</p>
+<pre><code class="lang-shell-script">19:47 $ ./service
+_
+</code></pre>
+<p>If for some reason you have something using that port already, the following error&nbsp;displays.</p>
+<pre><code class="lang-shell-script">19:48 $ ./service
+2016/11/03 19:48:15 listen tcp :8080: bind: address already in use
+</code></pre>
+<p>This happened to me routinely since I was running the <code>wintersmith preview</code> instance on port 8080 while I write this very blog entry. I try to prevent port conflicts, but one knows how that goes, sometimes you just gotta lock horns with all the&nbsp;ports.</p>
+<p>If everything runs accordingly however, I get the following when I browser to <a href="http://localhost:8080">http://localhost:8080</a>.</p>
+<p><img src="/articles/want-a-golang-service/localhost-01.png" alt="Browser Results"></p>
+<h2 id="add-features">Add&nbsp;Features</h2>
+<p>What I did so far didn’t really meet the mission statement to the extent I wanted to. I decided to add a few more things, so I went ahead and created another file in the repo called <code>service-twosi.go</code>. No, I don’t know why I named it that other than naming is hard and this is the second services&nbsp;example.</p>
+<p>Again, added the package and imports, which were almost the same as&nbsp;before.</p>
+<pre><code class="lang-javascript">package main
+
+<span class="keyword">import</span> (
+   <span class="string">"encoding/json"</span>
+   <span class="string">"fmt"</span>
+   <span class="string">"net/http"</span>
+   <span class="string">"log"</span>
+)
+</code></pre>
+<p>I wanted to get some json action into place, thus the addition of the encoding/json&nbsp;library.</p>
+<p>Next I basically kept the previous response writer handler&nbsp;function.</p>
+<pre><code class="lang-javascript">func handler(w http.ResponseWriter, r *http.Request) {
+   fmt.Fprintf(w, <span class="string">"Welcome to the early morning Amtrak Cascades, %s!"</span>, r.<span class="caps">URL</span>.Path[<span class="number">1</span>:])
+}
+</code></pre>
+<p>Next I added a simple struct message&nbsp;type.</p>
+<pre><code class="lang-javascript">type Message struct {
+   Text string
+}
+</code></pre>
+<p>This would be for the message and json manipulation. Next I added a function called about, which would eventually be an <span class="caps">API</span> call directly to <a href="http://localhost:8080/about">http://localhost:8080/about</a>. Note I’ve assigned m the Message, which is parsed into json via the json Marshal function&nbsp;call.</p>
+<p>I then added a little error catch in case the json blows up for whatever reason. Then I write it out via this&nbsp;function.</p>
+<pre><code class="lang-javascript">func about (w http.ResponseWriter, r *http.Request) {
+
+   m := Message{<span class="string">"Welcome to the Twosi <span class="caps">API</span>, build v0.0.001."</span>}
+   b, err := json.Marshal(m)
+
+   <span class="keyword">if</span> err != nil {
+       panic(err)
+   }
+
+    w.Write(b)
+}
+</code></pre>
+<p>Finally, it’s main function time&nbsp;again.</p>
+<pre><code class="lang-javascript">func main() {
+   http.HandleFunc(<span class="string">"/"</span>, handler)
+   http.HandleFunc(<span class="string">"/about/"</span>, about)
+   log.Fatal(http.ListenAndServe(<span class="string">":8080"</span>, nil))
+}
+</code></pre>
+<p>A quick&nbsp;build.</p>
+<pre><code class="lang-shell-script">go build service-twosi.go
+</code></pre>
+<p>Then&nbsp;execution.</p>
+<pre><code class="lang-shell-script">./service-twosi
+</code></pre>
+<p>Gives me&nbsp;this.</p>
+<pre><code class="lang-shell-script">20:09 $ go run service-twosi.go
+_
+</code></pre>
+<p>Now if I navigate to <a href="http://localhost:8080/">http://localhost:8080/</a> I get&nbsp;this.</p>
+<p><img src="/articles/want-a-golang-service/localhost-02.png" alt="Browser Results"></p>
+<p>If I pass in a name as part of the <span class="caps">URI</span> like <a href="http://localhost:8080/John">http://localhost:8080/John</a> I get the&nbsp;following.</p>
+<p><img src="/articles/want-a-golang-service/localhost-03.png" alt="Browser Results"></p>
+<p>Of course the last <span class="caps">URI</span> to try out is the about URI path of <a href="http://localhost:8080/about">http://localhost:8080/about</a> which provides some nice json data returned in the&nbsp;browser.</p>
+<p><img src="/articles/want-a-golang-service/localhost-04.png" alt="Browser Results"></p>
+<p>That covers this mission, features implemented and&nbsp;done.</p>
+<p><strong>References:</strong></p>
+<ul>
+<li><a href="https://github.com/Adron/golang-service">Github&nbsp;Repo</a></li>
+<li><a href="https://golang.org/">Go language&nbsp;site</a></li>
+</ul>
+</section>
+                </article>
                 <!-- End of Blog Page-->
               </div>
             </div>
@@ -244,8 +286,7 @@
             </div>
           </div>
         </div>
-        <div class="nav"><a href="/page/10/">« Newer</a>&nbsp;<a href="/page/12/">Previous »</a>
-        </div>
+        <div class="nav"><a href="/">« Home</a></div>
       </div>
     </div>
     <script src="/js/all.js"></script>
