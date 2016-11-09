@@ -69,19 +69,109 @@ golang-cli
 golang-service
 ```
 
-I renamed to.
+I moved to.
 
 ```shell-script
 github.com/adron/golang-cli
 github.com/adron/golang-service
 ```
 
-Important to note, is that I named the folders the projects are in to *github.com/adron/golang-cli* so that the contents of those directories are still under source control just as before. Also the folder is called *github.com/adron/golang-cli*, the */* are merely part of the folder name, not breaks in the folder structure hierarchy in this particular case.
+Important to note, is that I moved these folders into a multi-level deep directory structure. I created a github.com directory instide the src directory and inside that I created the adron directory and then moved the golang-cli and golang-service projects respectively. I note this because if one navigates into `src` with finder, some other manager, or uses the command to move and attempts to *move* the directory like this:
+
+```shell-script
+mv src golang-cli github.com/adron/golang-cli
+```
+
+Many of the managers or otherwise will attempt to, and by default will create a folder called *github.com/adron/golang-cli* NOT a folder called *golang-cli* inside of a folder called *adron* inside of a folder called *github.com*. This is a pretty basic thing, but often can lead even the most experienced to mistakenly moving files around incorrectly.
 
 ## 4. Go Install (Making a Program)
 
 Now using the two existing Go Programs that I've just cloned, I can execute either of those via the command line by using the `go install` command. Navigating in the terminal to the root of the golang-cli program I then execute this at the root of that project.
 
-```javascript
+```shell-script
 go install
 ```
+
+The other option, which can be typed in a terminal regardless of location.
+
+```shell-script
+go install github.com/adron/golang-cli
+```
+
+Now, for this particular application, with it installed I can now use the command `golang-cli`.
+
+```shell-script
+$ golang-cli
+Hello, Person With No Name, please enter some text: Heather
+Heather
+
+word:  the-word
+numb:  42012
+fork:  true
+```
+
+Here I've entered the command and followed the prompt. Again, for reference check out the [quick CLI I put together previously](http://blog.adron.me/articles/want-a-golang-cli/).
+
+For the the golang-service project it's a little trickier because of how I setup the code. I had written the code to show a quick example of creating a service and then running that service via the command `go run service.go` or `go run service-twosi.go`. If I were to try to install the project via the `go install` command I'd get the following results.
+
+```shell-script
+go install github.com/adron/golang-service
+# github.com/adron/golang-service
+Codez/GOLANG_WORK/src/github.com/adron/golang-service/service.go:9: handler redeclared in this block
+	previous declaration at Codez/GOLANG_WORK/src/github.com/adron/golang-service/service-twosi.go:10
+Codez/GOLANG_WORK/src/github.com/adron/golang-service/service.go:13: main redeclared in this block
+	previous declaration at Codez/GOLANG_WORK/src/github.com/adron/golang-service/service-twosi.go:30
+```
+
+The package `main` and the *handler* is declared twice. This causes a problem since the compiler doesn't have a way to inform which one to build. For this example, what I would need to do is remove one of the handlers and one of the packages and just keep a singular one. With that I did a quick replace of the *service.go* file and replaced it with the contents of the *service-twosi.go*  example code. At this point my *service.go* code file looks like this.
+
+```javascript
+package main
+
+import (
+   "encoding/json"
+   "fmt"
+   "net/http"
+   "log"
+)
+
+func handler(w http.ResponseWriter, r *http.Request) {
+   fmt.Fprintf(w, "Welcome to the early morning Amtrak Cascades, %s!", r.URL.Path[1:])
+}
+
+type Message struct {
+   Text string
+}
+
+func about (w http.ResponseWriter, r *http.Request) {
+
+   m := Message{"Welcome to the Twosi API, build v0.0.001."}
+   b, err := json.Marshal(m)
+
+   if err != nil {
+       panic(err)
+   }
+
+    w.Write(b)
+}
+
+func main() {
+   http.HandleFunc("/", handler)
+   http.HandleFunc("/about/", about)
+   log.Fatal(http.ListenAndServe(":8080", nil))
+}
+```
+
+Now I can run `go install` and run the service via the command line, from anywhere on machine. Just to test it out I issue the `golang-service` command and navigate in the browser to the http://localhost:8080/about/ path. Sure enough, the JSON appears.
+
+```javascript
+{
+"Text": "Welcome to the Twosi API, build v0.0.001."
+}
+```
+
+## 5. Project Collateral
+
+It's all nice and groovy that I have a Go project and some code, but if I really want to make something out of it I should be a good open source citizen. This is where a few other pieces of the repository come together for the project. Now, one might say, "but that's not part of the Go ecosystem/tooling/whatyamakallit" but that's not being very respectable about your intent. I'll admit, I make a mess of a repo now and again too, but these are some good things to include so your repository isn't a confusing mess of code trash waiting to be set on fire.
+
+* .github Directory and *gasp* some basic instructions and documentation. Inside the .github directory there are three key files that ought to be included with some notion of useful information. For these two projects I've added some basic contribution information [here]() and [here]().
