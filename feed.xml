@@ -5,9 +5,144 @@
     <atom:link href="http://adron.github.io/feed.xml" rel="self" type="application/rss+xml"></atom:link>
     <link>http://adron.github.io</link>
     <description>Coder, Messenger, Recon, Infrastructure, Ops</description>
-    <pubDate>Mon, 31 Oct 2016 17:00:00 -0700</pubDate>
+    <pubDate>Thu, 03 Nov 2016 17:00:00 -0700</pubDate>
     <generator>Wintersmith - https://github.com/jnordberg/wintersmith</generator>
     <language>en</language>
+    <item>
+      <title>I Want an Organized Go Project</title>
+      <link>http://adron.github.io/articles/want-organized-golang/</link>
+      <pubDate>Thu, 03 Nov 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/want-organized-golang/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;a href=&quot;http://www.pelotonseattle.com/&quot;&gt;&lt;img src=&quot;/articles/want-organized-golang/peloton.jpg&quot; alt=&quot;Hacking @ Peloton&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;After the last two cookbook style blog entries on a &lt;a href=&quot;http://adron.github.io/articles/want-a-golang-cli/&quot;&gt;basic CLI&lt;/a&gt; with a &lt;a href=&quot;http://adron.github.io/articles/want-a-golang-service/&quot;&gt;simple service&lt;/a&gt; with Go there needed to be some organization around the projects. Here’s the next steps on getting those projects organized.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;h2 id=&quot;1-workspace-directory&quot;&gt;1. Workspace Directory&lt;/h2&gt;
+&lt;p&gt;Workspaces in Go are a simple structure of directories within a root. They include the following three directories:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;src - Used to store the Go source files.&lt;/li&gt;
+&lt;li&gt;pkg - This contains the package objects.&lt;/li&gt;
+&lt;li&gt;bin - As in so many other projects with compilable code, this contains the binary executable commands.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The Go tool specifically uses this directory structure to place the respective files in the respective directories. One thing that isn’t entirely obvious is that the &lt;code&gt;src&lt;/code&gt; directory is the only directory that should be put in source control.&lt;/p&gt;
+&lt;p&gt;Let’s setup one of the existing projects, I’ll take the &lt;a href=&quot;https://github.com/Adron/golang-cli&quot;&gt;golang-cli&lt;/a&gt; that I wrote about here and set it up according to the actual workspace configuration that go tool expects.&lt;/p&gt;
+&lt;p&gt;Create a directory to use as the workspace and then create the three directories. I’m going to create this workspace directory within my own code project directory that I call &lt;code&gt;Codez&lt;/code&gt;. It’s a directory I put all of my code projects of varying sorts in, be it C++, Erlang, or F# they all are somewhere in this directory.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;mkdir GOLANG_WORK
+cd GOLANG_WORK
+mkdir src bin pkg
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&quot;2-gopath-environment-variable&quot;&gt;2. GOPATH Environment Variable&lt;/h2&gt;
+&lt;p&gt;The GOPATH environment variable specifies the location of the working area for Go coding. It’s setup, and in this particular situation it would point to the &lt;code&gt;GOLANG_WORK&lt;/code&gt; directory that I just created previously.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;$ export GOPATH=$HOME/Codez/GOLANG_WORK
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;I wanted to have this upon restart, so I added an appropriate append to the $PATH variable by adding this to my &lt;code&gt;~/.bash_profile&lt;/code&gt; file.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;# GO Path Workspace
+export GOPATH=~/Codez/GOLANG_WORK
+export PATH=$PATH:$GOPATH/bin
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;With a simple sourcing of the file the new path variables were ready for use.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;source ~/.bash_profile
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Next I pulled in the previous projects. I’ll use these projects to show how the various Go tools work. I simply cloned both of them into the &lt;code&gt;src&lt;/code&gt; path.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;git clone
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&quot;3-import-paths&quot;&gt;3. Import Paths&lt;/h2&gt;
+&lt;p&gt;Now, the import path is something that isn’t always immediately intuitive. I had to dive in and RTFM before I realized what was going on here. It also isn’t something that isn’t regularly discussed as a “first step” when learning Go. It isn’t, after all, part of the actual code syntax, it’s part of the ecosystem around the language and tooling. Ya know, the part that often is somewhat neglected as a first step in the learning process.&lt;/p&gt;
+&lt;p&gt;The import path is basically the path where the code goes within the &lt;code&gt;src&lt;/code&gt; directory as relating to where it would be publicly shared. For a standard &lt;a href=&quot;https://github.com&quot;&gt;Github&lt;/a&gt; account such as mine I should use github.com/Adron as the base path. To straighten out the organization here, from a Go perspective I changed the name of the folders in which I just cloned to the following.&lt;/p&gt;
+&lt;p&gt;These two folders within &lt;code&gt;$HOME/src/&lt;/code&gt;:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;golang-cli
+golang-service
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;I moved to.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;github.com/adron/golang-cli
+github.com/adron/golang-service
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Important to note, is that I moved these folders into a multi-level deep directory structure. I created a github.com directory instide the src directory and inside that I created the adron directory and then moved the golang-cli and golang-service projects respectively. I note this because if one navigates into &lt;code&gt;src&lt;/code&gt; with finder, some other manager, or uses the command to move and attempts to &lt;em&gt;move&lt;/em&gt; the directory like this:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;mv src golang-cli github.com/adron/golang-cli
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Many of the managers or otherwise will attempt to, and by default will create a folder called &lt;em&gt;github.com/adron/golang-cli&lt;/em&gt; NOT a folder called &lt;em&gt;golang-cli&lt;/em&gt; inside of a folder called &lt;em&gt;adron&lt;/em&gt; inside of a folder called &lt;em&gt;github.com&lt;/em&gt;. This is a pretty basic thing, but often can lead even the most experienced to mistakenly moving files around incorrectly.&lt;/p&gt;
+&lt;h2 id=&quot;4-go-install-making-a-program-&quot;&gt;4. Go Install (Making a Program)&lt;/h2&gt;
+&lt;p&gt;Now using the two existing Go Programs that I’ve just cloned, I can execute either of those via the command line by using the &lt;code&gt;go install&lt;/code&gt; command. Navigating in the terminal to the root of the golang-cli program I then execute this at the root of that project.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;go install
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The other option, which can be typed in a terminal regardless of location.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;go install github.com/adron/golang-cli
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now, for this particular application, with it installed I can now use the command &lt;code&gt;golang-cli&lt;/code&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;$ golang-cli
+Hello, Person With No Name, please enter some text: Heather
+Heather
+
+word:  the-word
+numb:  42012
+fork:  true
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Here I’ve entered the command and followed the prompt. Again, for reference check out the &lt;a href=&quot;http://blog.adron.me/articles/want-a-golang-cli/&quot;&gt;quick CLI I put together previously&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;For the the golang-service project it’s a little trickier because of how I setup the code. I had written the code to show a quick example of creating a service and then running that service via the command &lt;code&gt;go run service.go&lt;/code&gt; or &lt;code&gt;go run service-twosi.go&lt;/code&gt;. If I were to try to install the project via the &lt;code&gt;go install&lt;/code&gt; command I’d get the following results.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;go install github.com/adron/golang-service
+# github.com/adron/golang-service
+Codez/GOLANG_WORK/src/github.com/adron/golang-service/service.go:9: handler redeclared in this block
+    previous declaration at Codez/GOLANG_WORK/src/github.com/adron/golang-service/service-twosi.go:10
+Codez/GOLANG_WORK/src/github.com/adron/golang-service/service.go:13: main redeclared in this block
+    previous declaration at Codez/GOLANG_WORK/src/github.com/adron/golang-service/service-twosi.go:30
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The package &lt;code&gt;main&lt;/code&gt; and the &lt;em&gt;handler&lt;/em&gt; is declared twice. This causes a problem since the compiler doesn’t have a way to inform which one to build. For this example, what I would need to do is remove one of the handlers and one of the packages and just keep a singular one. With that I did a quick replace of the &lt;em&gt;service.go&lt;/em&gt; file and replaced it with the contents of the &lt;em&gt;service-twosi.go&lt;/em&gt;  example code. At this point my &lt;em&gt;service.go&lt;/em&gt; code file looks like this.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;package main
+
+&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; (
+   &lt;span class=&quot;string&quot;&gt;&quot;encoding/json&quot;&lt;/span&gt;
+   &lt;span class=&quot;string&quot;&gt;&quot;fmt&quot;&lt;/span&gt;
+   &lt;span class=&quot;string&quot;&gt;&quot;net/http&quot;&lt;/span&gt;
+   &lt;span class=&quot;string&quot;&gt;&quot;log&quot;&lt;/span&gt;
+)
+
+func handler(w http.ResponseWriter, r *http.Request) {
+   fmt.Fprintf(w, &lt;span class=&quot;string&quot;&gt;&quot;Welcome to the early morning Amtrak Cascades, %s!&quot;&lt;/span&gt;, r.URL.Path[&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;:])
+}
+
+type Message struct {
+   Text string
+}
+
+func about (w http.ResponseWriter, r *http.Request) {
+
+   m := Message{&lt;span class=&quot;string&quot;&gt;&quot;Welcome to the Twosi API, build v0.0.001.&quot;&lt;/span&gt;}
+   b, err := json.Marshal(m)
+
+   &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; err != nil {
+       panic(err)
+   }
+
+    w.Write(b)
+}
+
+func main() {
+   http.HandleFunc(&lt;span class=&quot;string&quot;&gt;&quot;/&quot;&lt;/span&gt;, handler)
+   http.HandleFunc(&lt;span class=&quot;string&quot;&gt;&quot;/about/&quot;&lt;/span&gt;, about)
+   log.Fatal(http.ListenAndServe(&lt;span class=&quot;string&quot;&gt;&quot;:8080&quot;&lt;/span&gt;, nil))
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now I can run &lt;code&gt;go install&lt;/code&gt; and run the service via the command line, from anywhere on machine. Just to test it out I issue the &lt;code&gt;golang-service&lt;/code&gt; command and navigate in the browser to the &lt;a href=&quot;http://localhost:8080/about/&quot;&gt;http://localhost:8080/about/&lt;/a&gt; path. Sure enough, the JSON appears.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;{
+&lt;span class=&quot;string&quot;&gt;&quot;Text&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;Welcome to the Twosi API, build v0.0.001.&quot;&lt;/span&gt;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&quot;5-project-collateral&quot;&gt;5. Project Collateral&lt;/h2&gt;
+&lt;p&gt;It’s all nice and groovy that I have a Go project and some code, but if I really want to make something out of it I should be a good open source citizen. This is where a few other pieces of the repository come together for the project. Now, one might say, “but that’s not part of the Go ecosystem/tooling/whatyamakallit” but that’s not being very respectable about your intent. I’ll admit, I make a mess of a repo now and again too, but these are some good things to include so your repository isn’t a confusing mess of code trash waiting to be set on fire.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;.github Directory and &lt;em&gt;gasp&lt;/em&gt; some basic instructions and documentation. Inside the .github directory there are three key files that ought to be included with some notion of useful information. For these two projects I’ve added some basic contribution information &lt;a href=&quot;http://adron.github.io/articles/want-a-golang-cli/&quot;&gt;here&lt;/a&gt; and &lt;a href=&quot;http://adron.github.io/articles/want-a-golang-service/&quot;&gt;here&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;README.md with some simple instructions on getting started, installing, etc. This file also should always describe what a project is and what it is for. Another way to put it, the README.md should have some sort of mission description.&lt;/li&gt;
+&lt;li&gt;Badges &amp;amp; Status should be shown in the README.md or in some way somewhere on or in the project. A popular way is using badges to show the status of the build, license, dependencies status, and related information about the project. I don’t have those displayed as of this blog entry, but will dive into that and continuous integration and delivery of Go in subsequent blog entries.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;That’s it for this write up. More to come and more news about these projects, paths to production, and related patterns and deployment techniques in the coming weeks. Stay tuned and if you’d like blog entry summaries and other updates delivered to your mailbox, check out &lt;a href=&quot;http://adron.github.io/docs/thrashing-code-news/&quot;&gt;Thrashing Code News&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Cheers!&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;References:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Peloton Seattle - This is the image at the top of this blog entry, and where I wrote 90% and put together 90% of the code. Per their website, “Peloton is a different approach to the traditional bike shop.  In addition to being a full service repair shop, our cafe offers meals made from ingredients sourced from local farms, coffee made from locally roasted beans, and beer brewed in Washington.  Peloton is your destination whether you’re craving a morning coffee and snack, you need bicycle maintenance and advice, or you want to grab a beer with your riding buddies.  Peloton provides delicious healthy food, professional bicycle service, and a variety of beverages for any time of the day.  We’d love to share our passions with you.”&lt;/li&gt;
+&lt;li&gt;The &lt;a href=&quot;https://github.com/Adron/golang-cli&quot;&gt;Go CLI Sample App&lt;/a&gt; and &lt;a href=&quot;https://github.com/Adron/golang-service&quot;&gt;Go Service Sample&lt;/a&gt; Repositories.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
     <item>
       <title>I Want a Go Service</title>
       <link>http://adron.github.io/articles/want-a-golang-service/</link>
@@ -2405,23 +2540,6 @@ key concepts of SAM and walk the audience through some node.js code samples (inc
 </description>
     </item>
     <item>
-      <title>WebSockets Bring Light at the End of the Tunnel by Joel Lord</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</link>
-      <pubDate>Fri, 03 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</guid>
-      <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-left&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/joel-lord.jpg&quot; alt=&quot;Joel Lord&quot;&gt;
-&lt;/div&gt;
-
-&lt;p&gt;As a Development Manager, Joel’s motivation and proven technical prowess makes him a key member of Spiria’s software development team. With a degree in computational astrophysics, his interests eventually made their way to software and Web design. Today, his knowledge of JavaScript lets him to support a variety of projects on both the front end and back end. As we move into the age of the Internet of Things, Joel is ready with his passion for programming node bots and experimenting with gadgets.&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Joel is going to speak on Web Sockets and tunnels of light… or to describe it more specifically more and more, people seem to be obsessed with real-time data.  But what does real-time mean in the world of REST servers and one-way communication?  Most modern web applications are now either displaying a snapshot of data at a given time or use a polling mechanism to update series of data at a given interval.
-In this talk, you will learn about the power of WebSockets and how they can (and should!) be used in your modern web applications. In these 30 minutes, I will go through the process of building a Node server that can push data to multiple clients in real-time.  You will see how this can be easy using the socket.io library.&lt;/p&gt;
-</description>
-    </item>
-    <item>
       <title>MMOWAM - Build Server-less Games with a DSN by Josh Marinacci</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-josh-marinacci/</link>
       <pubDate>Fri, 03 Jun 2016 17:00:00 -0700</pubDate>
@@ -2456,6 +2574,23 @@ it can be.&lt;/p&gt;
 &lt;li&gt;show number of players&lt;/li&gt;
 &lt;li&gt;start when 4 players in? one player hit’s start? let all player see total count as well and status of the other players&lt;/li&gt;
 &lt;/ul&gt;
+</description>
+    </item>
+    <item>
+      <title>WebSockets Bring Light at the End of the Tunnel by Joel Lord</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</link>
+      <pubDate>Fri, 03 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-left&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/joel-lord.jpg&quot; alt=&quot;Joel Lord&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;As a Development Manager, Joel’s motivation and proven technical prowess makes him a key member of Spiria’s software development team. With a degree in computational astrophysics, his interests eventually made their way to software and Web design. Today, his knowledge of JavaScript lets him to support a variety of projects on both the front end and back end. As we move into the age of the Internet of Things, Joel is ready with his passion for programming node bots and experimenting with gadgets.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Joel is going to speak on Web Sockets and tunnels of light… or to describe it more specifically more and more, people seem to be obsessed with real-time data.  But what does real-time mean in the world of REST servers and one-way communication?  Most modern web applications are now either displaying a snapshot of data at a given time or use a polling mechanism to update series of data at a given interval.
+In this talk, you will learn about the power of WebSockets and how they can (and should!) be used in your modern web applications. In these 30 minutes, I will go through the process of building a Node server that can push data to multiple clients in real-time.  You will see how this can be easy using the socket.io library.&lt;/p&gt;
 </description>
     </item>
     <item>
