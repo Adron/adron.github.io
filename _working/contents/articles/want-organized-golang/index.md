@@ -4,6 +4,8 @@ author: Adron Hall
 date: 2016-11-04
 template: article.jade
 ---
+[![Hacking @ Peloton](peloton.jpg)](http://www.pelotonseattle.com/)
+
 After the last two cookbook style blog entries on a [basic CLI](/articles/want-a-golang-cli/) with a [simple service](/articles/want-a-golang-service/) with Go there needed to be some organization around the projects. Here's the next steps on getting those projects organized.
 
 <span class="more"></span>
@@ -174,4 +176,15 @@ Now I can run `go install` and run the service via the command line, from anywhe
 
 It's all nice and groovy that I have a Go project and some code, but if I really want to make something out of it I should be a good open source citizen. This is where a few other pieces of the repository come together for the project. Now, one might say, "but that's not part of the Go ecosystem/tooling/whatyamakallit" but that's not being very respectable about your intent. I'll admit, I make a mess of a repo now and again too, but these are some good things to include so your repository isn't a confusing mess of code trash waiting to be set on fire.
 
-* .github Directory and *gasp* some basic instructions and documentation. Inside the .github directory there are three key files that ought to be included with some notion of useful information. For these two projects I've added some basic contribution information [here]() and [here]().
+* .github Directory and *gasp* some basic instructions and documentation. Inside the .github directory there are three key files that ought to be included with some notion of useful information. For these two projects I've added some basic contribution information [here](/articles/want-a-golang-cli/) and [here](/articles/want-a-golang-service/).
+* README.md with some simple instructions on getting started, installing, etc. This file also should always describe what a project is and what it is for. Another way to put it, the README.md should have some sort of mission description.
+* Badges & Status should be shown in the README.md or in some way somewhere on or in the project. A popular way is using badges to show the status of the build, license, dependencies status, and related information about the project. I don't have those displayed as of this blog entry, but will dive into that and continuous integration and delivery of Go in subsequent blog entries.
+
+That's it for this write up. More to come and more news about these projects, paths to production, and related patterns and deployment techniques in the coming weeks. Stay tuned and if you'd like blog entry summaries and other updates delivered to your mailbox, check out [Thrashing Code News](/docs/thrashing-code-news/).
+
+Cheers!
+
+**References:**
+
+* Peloton Seattle - This is the image at the top of this blog entry, and where I wrote 90% and put together 90% of the code. Per their website, "Peloton is a different approach to the traditional bike shop.  In addition to being a full service repair shop, our cafe offers meals made from ingredients sourced from local farms, coffee made from locally roasted beans, and beer brewed in Washington.  Peloton is your destination whether you’re craving a morning coffee and snack, you need bicycle maintenance and advice, or you want to grab a beer with your riding buddies.  Peloton provides delicious healthy food, professional bicycle service, and a variety of beverages for any time of the day.  We’d love to share our passions with you."
+* The [Go CLI Sample App](https://github.com/Adron/golang-cli) and [Go Service Sample](https://github.com/Adron/golang-service) Repositories.
