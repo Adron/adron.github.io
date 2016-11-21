@@ -4,6 +4,4 @@ author: Adron Hall
 date: 2016-11-20:03:40:46
 template: doc.jade
 ---
-<div class="image float-left">
-    ![Somebody](anImage.jpg)
-</div>
+dockerize that application for microservice use.
