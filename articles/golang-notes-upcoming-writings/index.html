@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="/css/style.min.css">
     <script src="/js/modernizr.js"></script>
   </head>
-  <body>
+  <body class="article-detail">
     <!--[if lt IE 8]>
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -67,8 +67,10 @@
             <div class="col-md-12">
               <!-- Page Info-->
               <div class="page-info page-info-simple">
-                <h1>Adron's Composite Code</h1>
-                <h2 class="description">Coder, Messenger, Recon, Infrastructure, Ops</h2>
+                <h1>Notes on Go / Future Writings</h1>
+                <p class="author">Written by <span class="author">Adron Hall</span>
+                </p>
+                <div class="nav"><a href="/">« Home</a></div>
               </div>
               <!-- End Page Info-->
             </div>
@@ -83,80 +85,67 @@
             <div class="col-md-9">
               <div class="main-content">
                 <!-- Blog Page-->
-                <div class="blog">
-                  <div class="row"></div>
-                </div>
-                <div class="col-md-12 col-sm-12">
-                  <!-- Blog List-->
-                  <div class="blog-grid">
-                    <div class="row">
-                      <div class="col-md-12 col-sm-12">
-                        <h3 class="blog-grid-title"><a href="/articles/quote-append-to-text-file-with-bash/">Quick Append to Text File with BASH</a></h3>
-                        <p class="blog-grid-excerpt"><p>I commonly have the scenario where I want a bash script to throw in something at the tail end of the ~/.bash_profile or ~/.profile script or just append some results like a log file to some existing text file. Well here are two super easy ways to add text to a text&nbsp;file.</p>
-<p>Method one, using echo to append the text with the I/O redirection to the text file like&nbsp;this.</p>
-<pre><code>echo &quot;line 1&quot; &gt;&gt; greetings.txt
-</code></pre><p>or even like&nbsp;this</p>
-<pre><code>echo &quot;line 1
-line 2
-line 3&quot; &gt;&gt; greetings.txt
-</code></pre><p>Method two, using cat to read until <span class="caps">EOT</span> and redirect it to append to text&nbsp;file.</p>
-<pre><code>cat &lt;&lt;EOT &gt;&gt; greetings.txt
-line 1
-line 2
-line 3
-EOT
-</code></pre><p>That’s it, easy peasy. Enjoy your shell&nbsp;hacking!</p>
+                <article class="article">
+                  <section class="content"><div class="image float-right">
+    <img src="/articles/golang-notes-upcoming-writings/golang-mascot.png" alt="Go Language Mascot">
+</div>
 
-                        </p>
-                        <div class="blog-grid-meta"><span class="blog-grid-date">14. March 2016</span></div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End of Blog List-->
-                </div>
-                <div class="col-md-12 col-sm-12">
-                  <!-- Blog List-->
-                  <div class="blog-grid">
-                    <div class="row">
-                      <div class="col-md-12 col-sm-12">
-                        <h3 class="blog-grid-title"><a href="/articles/today-using-a-mac/">Today I'm Using a Mac</a></h3>
-                        <p class="blog-grid-excerpt"><p>Today I’m using a Mac (since 2011, but inspired to write this today in 2016) not because I have some profound love for Apple (I don’t really) or miss Steve Jobs (he was a dick, but I bet I’d have gotten along with him) only because I don’t want to spend excess time messing with Windows headaches and the games I generally play over the last 7-8 years have been things like SimCity, Civ 5, and Cities: Skylines. All run perfectly fine on Mac w/ Steam. If I played 1<span class="ord">st</span> Person shooters I’d probably still have a Windows machine stashed in the corner for&nbsp;that…</p>
-<p>…and…</p>
-<p>…as for Macs, I converted solely because of what I saw a few key coders acheive in seconds over a Windows machine. I’ve not seen a single person come close to what these people could accomplish on a *nix based platform vs Windows. I switched, my headaches went away blagh blagh blagh (you know the ads, I sound like that) and then between <span class="caps">OS</span>-X <span class="amp">&amp;</span> VMware Fusion I found I had a machine I could do everything from a coding perspective on (I initially bought an <span class="caps">MBA</span>). Then when I got the Retina Pro 15” I realized not only did I have every programming platform in existence available to me (even .NET!) I also realized it was the only machine of it’s size, weight, and horsepower that would let me edit in screen full frame 1080p or even 4k video without choking on itself. Windows didn’t even have a viable option on the market at the time (and really, it still&nbsp;doesn’t).</p>
-<p>At this point I’ve given up trying to even use Windows to do work, primarily cuz it’s bad at video, bad at building code (most comparable machines just don’t build 1 to 1 code bases as fast), has weak <span class="caps">POSIX</span> compliance, Powershell is just a pain in the ass, it has poor SSH support (load 3<span class="ord">rd</span> party software? does it even internet) and security in general is completely bonkers, and Windows can never seem to find or maintain security integrity around any non-WINS/AD identified network (ok, in Windows defense, this is a Windows Server concern not Windows&nbsp;Desktop).</p>
-<p>Beyond that even the <span class="caps">OS</span>-X UI is preferable to the sluggish, strange multi-tasking awkwardness of Windows 2010 (and it’s dramatically improved over 8/8.1, 7, Vista, XP, <span class="amp">&amp;</span> 2000). The fact I can launch a program and it doesn’t kill process <span class="amp">&amp;</span> memory resources while I’m doing something has always fascinated me vs. Windows, which seems to hand over every available resource to whatever is attempting to launch. What is that nonsense even? Let it launch on a lower priority thread or something. I could go&nbsp;on…</p>
-<p>I’ve got plenty of complaints about <span class="caps">OS</span>-X, but it stays out of the way when I need to build code, automate infrastructure, sling dynamic code (re: Ruby, JavaScript, etc) and generally tears through Core CLR code <span class="amp">&amp;</span> .<span class="caps">NET</span> Mono code dramatically better than suggish old VS on a box with more resources then this MBP. Honestly, it’s kind of sad how it seems to magically do better then Windows hardware. There aren’t a whole lot of specific reasons except that Macs are usually just integrated (motherboard/RAM/Proc/Video) better than most of the other junk that gets released to market. Of course if someone wants pure horsepower, yeah, got buy a desktop and get 4x-20x what comes in the best Mac, then run Linux. You’ll get stupid amounts of performance to build and process stuff with that. But in the consumer based world, if you want the maximum options with the minimal amount of bullshit in your life, you go and buy a MBP and get on with life. I could go&nbsp;on…</p>
-<p>I’m sure there’s a million other things where X device for Y niche is more perfect or perfectly acceptable, and I doubt I’d disagree, so go on, get yourself one of those. But again, for “the maximum options with the minimal amount of bullshit in your life, you go and buy a <span class="caps">MBP</span> and get on with life”. On that note, I’m off to sling some Core CLR code against a prospective Scala solution and test a micro-services idea of mine - using Docker and jazz on my OS-X box. I’ll be done in 20 minutes and will move on to probably a relaxing round of Cities: Skyline.&nbsp;;)</p>
-<p>Thanks for reading my partial rant /<em>slash</em>/ exploration of why I’ve ended up on Apple&nbsp;Hardware.</p>
+<p><strong>Notes <span class="amp">&amp;</span> Thoughts on&nbsp;Go:</strong></p>
+<p>So far I like Go. Primarily because it is just simple. Simply RTFMing it gets one pretty far without any fuss. The hardest part of the language to grasp seems to be the same things I often have issue with, which is the ecosystem has it’s own conventions are related things one just simply doesn’t <em>know</em>. It involves going through the docs and just remembering where the <span class="caps">GOPATH</span> is, where the build files go, what the go commands do with the toolset, and related&nbsp;things.</p>
+<p>One thing that required a bit of fiddling around with to get figured out was writing tests for Go. The convention to mark tests and have them executed is actually super easy once you know the specifics of the&nbsp;toolchain.</p>
+<p><span class="more"></span></p>
+<p>The first thing one does is create a file or add tests to the file that has the code you want to test. For example, here’s a simple sample I created in an existing project I’m working&nbsp;on.</p>
+<p>I created a file called <code>main_test.go</code>. The convention follows that any file with <em>test</em> at the end of the filename and before the extension will be processed as a file that includes tests. This by its very nature makes it necessary to place tests in the code with the functions that are being tested specifically. This could cause issue for some that are used to writing tests another way, but it also makes a lot of sense. But I’m not debating that in this write up, so&nbsp;onward.</p>
+<p>I created the file <code>main_test.go</code> in the root of the project directory. Once I created the file I added the following code. The package is part of the <em>main</em> package, and I’d need the <em>test</em> library&nbsp;imported.</p>
+<pre><code class="lang-javascript">package main
 
-                        </p>
-                        <div class="blog-grid-meta"><span class="blog-grid-date">12. March 2016</span></div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End of Blog List-->
-                </div>
-                <div class="col-md-12 col-sm-12">
-                  <!-- Blog List-->
-                  <div class="blog-grid">
-                    <div class="row">
-                      <div class="col-md-12 col-sm-12">
-                        <h3 class="blog-grid-title"><a href="/articles/docker-tips-n-tricks-bash-things-with-docker/">Docker Tips n' Tricks - Bash Things With Docker</a></h3>
-                        <p class="blog-grid-excerpt"><p>If you use Docker frequently, you’ve likely memorized a few repetitive&nbsp;commands…</p>
-<pre><code>docker-machine start XyZvirtualMachine
-</code></pre><p>Then you&nbsp;run…</p>
-<pre><code>docker-machine env XyZvirtualMachine
-</code></pre><p>…and then you&nbsp;type…</p>
-<pre><code>eval $(docker-machine env XyZvirtualMachine)
-</code></pre><p>
-                          <p class="more"><a href="/articles/docker-tips-n-tricks-bash-things-with-docker/">more</a></p>
-                        </p>
-                        <div class="blog-grid-meta"><span class="blog-grid-date">10. March 2016</span></div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End of Blog List-->
-                </div>
+<span class="keyword">import</span> <span class="string">"testing"</span>
+</code></pre>
+<p>Next I added a struct to use for test data. Below that I created variable with the test data that I would use to test my average function. Then below that I wrote a test that would assert that the function averages numbers appropriately. In the <em>Error</em> I’ve followed the <em>for</em>, <em>expected</em>, <em>got</em> testing flow to asset the expectation of the result of the&nbsp;function.</p>
+<pre><code class="lang-javascript">type testpair struct {
+  values []float64
+  result float64
+}
+
+<span class="keyword">var</span> testAverages = []testpair{
+  { []float64{<span class="number">1</span>,<span class="number">2</span>}, <span class="number">1.5</span> },
+  { []float64{<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>}, <span class="number">1</span> },
+  { []float64{<span class="number">-2</span>,<span class="number">2</span>}, <span class="number">0</span> },
+}
+
+func TestAverage(t *testing.T) {
+  <span class="keyword">for</span> _, pair := range testAverages {
+    v := Average(pair.values)
+    <span class="keyword">if</span> v != pair.result {
+      t.Error(
+        <span class="string">"For"</span>, pair.values,
+        <span class="string">"expected"</span>, pair.result,
+        <span class="string">"got"</span>, v,
+      )
+    }
+  }
+}
+</code></pre>
+<p>At this point, following this <span class="caps">TDD</span> style approach, the build fails without the <code>Average</code> func implemented. I continued forward and implement the function as shown&nbsp;below.</p>
+<pre><code class="lang-javascript">func Average(xs []float64) float64 {
+  total := float64(<span class="number">0</span>)
+  <span class="keyword">for</span> _, x := range xs {
+    total += x
+  }
+  <span class="keyword">return</span> total / float64(len(xs))
+}
+</code></pre>
+<p>I execute the test with the Go toolchain command. When executing this command it needs to be called from the root of the Go project&nbsp;code.</p>
+<pre><code class="lang-shell-script">go test
+</code></pre>
+<p>With that I get a nice clean execution and shown that the test passes. More on this later. For now on to other news about myself and&nbsp;Go.</p>
+<h2 id="go-projects-">Go&nbsp;Projects!</h2>
+<p>Over the last few weeks I’ve been speaking with the crew at Codeship. If you’re not familiar with this company and its products you should check them out <span class="caps">ASAP</span>. They’re easily producing some of the best material on continuous integration, delivery, and related conversations and implementations of immutable infrastructure, immutable deployments, and related container based development practices and patterns. I’m super stoked to announce that I’ve started working with them on some material that you’ll see in the coming days related to just&nbsp;that.</p>
+<p>Some of my first contributions to their blog will be step by step details on setting up Go projects within Codeship, stepping all the way through to continuous delivery, local development with Codeship Pro capabilities and container technology, and onward to more complex deployments including things like Terraform, Packer, Kubernetes, and other toolchains. Keep an eye out here and on their blog (<a href="https://blog.codeship.com">https://blog.codeship.com</a>) and I’ll be sure to let you know when the posts are going live&nbsp;<span class="caps">ASAP</span>.</p>
+<p>Also, for a less regular bombardment of posts than my <a href="https://twitter.com/Adron">@Adron</a> or <a href="https://twitter.com/ThrashingCode">@ThrashingCode</a> Twitter accounts, you can also sign up for my very low volume email newsletter <a href="/docs/thrashing-code-news/">Thrashing Code News</a> to get rolled up release notes and&nbsp;links.</p>
+<p>Cheers!</p>
+</section>
+                </article>
                 <!-- End of Blog Page-->
               </div>
             </div>
@@ -246,8 +235,7 @@ EOT
             </div>
           </div>
         </div>
-        <div class="nav"><a href="/page/18/">« Newer</a>&nbsp;<a href="/page/20/">Previous »</a>
-        </div>
+        <div class="nav"><a href="/">« Home</a></div>
       </div>
     </div>
     <script src="/js/all.js"></script>
