@@ -1,7 +1,7 @@
 ---
 title: golang testing kata
 author: Adron Hall
-date: 2016-11-22
+date: 2016-12-01
 template: article.jade
 ---
 I searched and wandered the web. It didn't seem to exist. There are a lot of katas using Ruby, C#, and other languages but not a one in Go. At least, not that a search with variable variances would uncover. I tried "golang kata" and I was left in the cold by ole' Google. So then I tried "golang testing kata", and even "gimme a damn kata in golang google" and finally, a few bubbled up to the top of the search results.
