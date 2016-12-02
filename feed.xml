@@ -5,9 +5,26 @@
     <atom:link href="http://adron.github.io/feed.xml" rel="self" type="application/rss+xml"></atom:link>
     <link>http://adron.github.io</link>
     <description>Coder, Messenger, Recon, Infrastructure, Ops</description>
-    <pubDate>Sat, 19 Nov 2016 16:00:00 -0800</pubDate>
+    <pubDate>Tue, 29 Nov 2016 16:00:00 -0800</pubDate>
     <generator>Wintersmith - https://github.com/jnordberg/wintersmith</generator>
     <language>en</language>
+    <item>
+      <title>December Coding &amp; Hacking Projects | Top 5 Priorities</title>
+      <link>http://adron.github.io/articles/december-projects-and-coding/</link>
+      <pubDate>Tue, 29 Nov 2016 16:00:00 -0800</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/december-projects-and-coding/</guid>
+      <author></author>
+      <description>&lt;p&gt;As of today I’ve made a few specific decisions that I’ll announce on January 1st of 2017. But for now I’ve got a slew of other things I’m going to attempt to knock out in the coming days. Hopefully I can make them useful and fun to read, if not, that’s cool too since I’ll make use of it!&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;If you’re a regular reader you’ll get a few pieces of my opinion in the next 31 days.&lt;/li&gt;
+&lt;li&gt;The plan is to produce one blog entry per week related to Go around the language, toolchain, and hacking around in IDEs and related tooling.&lt;/li&gt;
+&lt;li&gt;I will be wrapping up several blog entries that you’ll see going live over on &lt;a href=&quot;https://blog.codeship.com&quot;&gt;Codeship’s Blog&lt;/a&gt;. Topics include a bit o’ Jenkins, Go, and what you can get out of Codeship and their respective toolchain and services!&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;li&gt;I am putting together some other project work for some un-named companies (primarily because I’m unsure if they’d want me to mention what they’re working on at this time, so I’ll keep that on the down low). But by proxy I will have some reviews of several technologies.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;So mark, and go. We’ll all see if I can knock these five things out by the end of December!&lt;/p&gt;
+</description>
+    </item>
     <item>
       <title>Notes on Go / Future Writings</title>
       <link>http://adron.github.io/articles/golang-notes-upcoming-writings/</link>
