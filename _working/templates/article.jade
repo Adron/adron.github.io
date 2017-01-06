@@ -14,7 +14,7 @@ block header
   p.author
     | #{ 'Written by ' }
     mixin author(page.metadata.author)
-    | and published on
+    |  and published on 
     span= moment.utc(page.metadata.date).format('MMMM, DD of YYYY.')
   div.nav
     a(href=contents.index.url) « Home
