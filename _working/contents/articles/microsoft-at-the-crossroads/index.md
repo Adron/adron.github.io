@@ -1,7 +1,7 @@
 ---
 title: Microsoft's Scorched Earth History and The Current Crossroads
 author: Adron Hall
-date: 2016-12-19 10:17
+date: 2017-1-6 10:17
 template: article.jade
 ---
 Microsoft is at a crossroads. If you're not familiar with Microsoft at all, then just go ahead and skip this blog entry. It won't matter to you anyway, at least not in the grand scheme of things. Only read forward if you're curious about the conflict, the inner battles, and perverse juxtaposition that Microsoft exists within.
