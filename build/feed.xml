@@ -2755,6 +2755,23 @@ In this talk I would be covering the following:&lt;/p&gt;
 </description>
     </item>
     <item>
+      <title>WebSockets Bring Light at the End of the Tunnel by Joel Lord</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</link>
+      <pubDate>Fri, 03 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-left&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/joel-lord.jpg&quot; alt=&quot;Joel Lord&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;As a Development Manager, Joel’s motivation and proven technical prowess makes him a key member of Spiria’s software development team. With a degree in computational astrophysics, his interests eventually made their way to software and Web design. Today, his knowledge of JavaScript lets him to support a variety of projects on both the front end and back end. As we move into the age of the Internet of Things, Joel is ready with his passion for programming node bots and experimenting with gadgets.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Joel is going to speak on Web Sockets and tunnels of light… or to describe it more specifically more and more, people seem to be obsessed with real-time data.  But what does real-time mean in the world of REST servers and one-way communication?  Most modern web applications are now either displaying a snapshot of data at a given time or use a polling mechanism to update series of data at a given interval.
+In this talk, you will learn about the power of WebSockets and how they can (and should!) be used in your modern web applications. In these 30 minutes, I will go through the process of building a Node server that can push data to multiple clients in real-time.  You will see how this can be easy using the socket.io library.&lt;/p&gt;
+</description>
+    </item>
+    <item>
       <title>MMOWAM - Build Server-less Games with a DSN by Josh Marinacci</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-josh-marinacci/</link>
       <pubDate>Fri, 03 Jun 2016 17:00:00 -0700</pubDate>
@@ -2789,23 +2806,6 @@ it can be.&lt;/p&gt;
 &lt;li&gt;show number of players&lt;/li&gt;
 &lt;li&gt;start when 4 players in? one player hit’s start? let all player see total count as well and status of the other players&lt;/li&gt;
 &lt;/ul&gt;
-</description>
-    </item>
-    <item>
-      <title>WebSockets Bring Light at the End of the Tunnel by Joel Lord</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</link>
-      <pubDate>Fri, 03 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</guid>
-      <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-left&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/joel-lord.jpg&quot; alt=&quot;Joel Lord&quot;&gt;
-&lt;/div&gt;
-
-&lt;p&gt;As a Development Manager, Joel’s motivation and proven technical prowess makes him a key member of Spiria’s software development team. With a degree in computational astrophysics, his interests eventually made their way to software and Web design. Today, his knowledge of JavaScript lets him to support a variety of projects on both the front end and back end. As we move into the age of the Internet of Things, Joel is ready with his passion for programming node bots and experimenting with gadgets.&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Joel is going to speak on Web Sockets and tunnels of light… or to describe it more specifically more and more, people seem to be obsessed with real-time data.  But what does real-time mean in the world of REST servers and one-way communication?  Most modern web applications are now either displaying a snapshot of data at a given time or use a polling mechanism to update series of data at a given interval.
-In this talk, you will learn about the power of WebSockets and how they can (and should!) be used in your modern web applications. In these 30 minutes, I will go through the process of building a Node server that can push data to multiple clients in real-time.  You will see how this can be easy using the socket.io library.&lt;/p&gt;
 </description>
     </item>
     <item>
@@ -2853,6 +2853,23 @@ In this talk, you will learn about the power of WebSockets and how they can (and
 &lt;iframe width=&quot;1280&quot; height=&quot;720&quot; src=&quot;https://www.youtube.com/embed/L2BVDJWHdy0?rel=0&amp;amp;showinfo=0&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;</description>
     </item>
     <item>
+      <title>The House Is Not On Fire - Building a home automation robot with Arduino, Raspberry Pi and Node.js by Artur Paikin</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</link>
+      <pubDate>Wed, 01 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-right&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/art-stida.jpg&quot; alt=&quot;Artur Paikin&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Artur describes himself as, “I’m a web developer and traveler. I write stories about my adventures in Russian and English on my site: &lt;a href=&quot;http://arturpaikin.com&quot;&gt;http://arturpaikin.com&lt;/a&gt; and run a small technology cooperative called &lt;a href=&quot;http://unebaguette.com&quot;&gt;Baguette&lt;/a&gt;, where I work on cool projects, currently building an ambitious next generation file uploader with &lt;a href=&quot;https://transloadit.com/&quot;&gt;Transloadit&lt;/a&gt;. I ride a &lt;a href=&quot;https://www.instagram.com/p/xC0qC2SSYb&quot;&gt;foldable bicycle&lt;/a&gt;, &lt;a href=&quot;http://unebaguette.com/web-course/&quot;&gt;teach&lt;/a&gt; web development and sometimes &lt;a href=&quot;https://www.instagram.com/p/4_6LO8ySVL/&quot;&gt;garden&lt;/a&gt; on the balcony.”&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Artur has built an open source home automation system called &lt;a href=&quot;https://github.com/arturi/kotihome&quot;&gt;Koti Home&lt;/a&gt; (Koti means home in Finnish language). It’s powered by an Arduino connected to Raspberry Pi, MQTT protocol for messaging, Node.js on the client and server, web sockets. You can interact with Koti robot via a React (like the cool kids do) control panel, Telegram Chat Bot and even your own voice.&lt;/p&gt;
+&lt;p&gt;Arthur will talk about how he’s turned this project into reality — the tech he used and the challenges he faced. From a blinking LED to a voice controlled home automation robot.&lt;/p&gt;
+</description>
+    </item>
+    <item>
       <title>Code First Docs How we Threw Out The Book &amp; Put Code First With Twilio Documentation by Jarod Reyes</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-jarod-reyes/</link>
       <pubDate>Wed, 01 Jun 2016 17:00:00 -0700</pubDate>
@@ -2874,23 +2891,6 @@ In this talk, you will learn about the power of WebSockets and how they can (and
 &lt;li&gt;Twitter: &lt;a href=&quot;https://twitter.com/jreyesdev&quot;&gt;@jreyesdev&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Github: &lt;a href=&quot;https://github.com/jarodreyes&quot;&gt;github.com/jarodreyes&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-</description>
-    </item>
-    <item>
-      <title>The House Is Not On Fire - Building a home automation robot with Arduino, Raspberry Pi and Node.js by Artur Paikin</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</link>
-      <pubDate>Wed, 01 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</guid>
-      <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-right&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/art-stida.jpg&quot; alt=&quot;Artur Paikin&quot;&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Artur describes himself as, “I’m a web developer and traveler. I write stories about my adventures in Russian and English on my site: &lt;a href=&quot;http://arturpaikin.com&quot;&gt;http://arturpaikin.com&lt;/a&gt; and run a small technology cooperative called &lt;a href=&quot;http://unebaguette.com&quot;&gt;Baguette&lt;/a&gt;, where I work on cool projects, currently building an ambitious next generation file uploader with &lt;a href=&quot;https://transloadit.com/&quot;&gt;Transloadit&lt;/a&gt;. I ride a &lt;a href=&quot;https://www.instagram.com/p/xC0qC2SSYb&quot;&gt;foldable bicycle&lt;/a&gt;, &lt;a href=&quot;http://unebaguette.com/web-course/&quot;&gt;teach&lt;/a&gt; web development and sometimes &lt;a href=&quot;https://www.instagram.com/p/4_6LO8ySVL/&quot;&gt;garden&lt;/a&gt; on the balcony.”&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Artur has built an open source home automation system called &lt;a href=&quot;https://github.com/arturi/kotihome&quot;&gt;Koti Home&lt;/a&gt; (Koti means home in Finnish language). It’s powered by an Arduino connected to Raspberry Pi, MQTT protocol for messaging, Node.js on the client and server, web sockets. You can interact with Koti robot via a React (like the cool kids do) control panel, Telegram Chat Bot and even your own voice.&lt;/p&gt;
-&lt;p&gt;Arthur will talk about how he’s turned this project into reality — the tech he used and the challenges he faced. From a blinking LED to a voice controlled home automation robot.&lt;/p&gt;
 </description>
     </item>
     <item>
@@ -3454,6 +3454,48 @@ docker run -it elasticsearch
 </description>
     </item>
     <item>
+      <title>Elasticsearch, Beats, and Learning in Portland</title>
+      <link>http://adron.github.io/articles/elasticsearch-beats-learning-in-portland/</link>
+      <pubDate>Thu, 17 Dec 2015 16:00:00 -0800</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/elasticsearch-beats-learning-in-portland/</guid>
+      <author></author>
+      <description>&lt;p&gt;Recently I attended the &lt;a href=&quot;http://compositecode.com/2015/12/03/elasticon-tour-2015-in-seattle/&quot; target=&quot;_blank&quot;&gt;Elasticon Tour Stop in Seattle&lt;/a&gt; with &lt;a href=&quot;https://twitter.com/thebigscaryguy&quot; target=&quot;_blank&quot;&gt;@thebigscaryguy&lt;/a&gt; &amp;amp; the Elastic Team we have at the Home Depot Quote Center. I have always dug &lt;a href=&quot;https://www.elastic.co/products/elasticsearch&quot; target=&quot;_blank&quot;&gt;Elastic Search&lt;/a&gt; a bit and after the tour stop &amp;amp; some research I was very interested in &lt;a href=&quot;https://www.elastic.co/products/beats&quot; target=&quot;_blank&quot;&gt;Beats&lt;/a&gt; too. After that we decided we’d help to kick start the &lt;a href=&quot;http://www.meetup.com/The-Portlandia-ElasticSearch-Meetup-Group/&quot; target=&quot;_blank&quot;&gt;Portland Elastic Meetup&lt;/a&gt; again. So I reached out, as usual, via twitter first for a pulse on interest.&lt;/p&gt;
+&lt;p&gt;&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;en&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;Hey Portlanders! Who uses or is interested in Elastic Search, Beats, Kibana or other Elastic related tech?&lt;/p&gt;&amp;mdash; Λdrøn (@Adron) &lt;a href=&quot;https://twitter.com/Adron/status/674358248611307520&quot;&gt;December 8, 2015&lt;/a&gt;&lt;/blockquote&gt;&lt;/p&gt;
+&lt;script async src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;I got some immediate interest in a few tweets from &lt;a href=&quot;https://twitter.com/WardCunningham&quot; target=&quot;_blank&quot;&gt;@WardCunningham&lt;/a&gt; &lt;a href=&quot;https://twitter.com/tweetcaco&quot; target=&quot;_blank&quot;&gt;@tweetcaco&lt;/a&gt; and others that made me think, “&lt;em&gt;yup, definitely something worth pursuing!&lt;/em&gt;“&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;Next Steps…&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Next I’m aiming to get a few speakers lined up. This is where I’d love your help. What would you like to hear about? What would you like to learn? Want to learn more about &lt;a href=&quot;https://www.elastic.co/products/elasticsearch&quot; target=&quot;_blank&quot;&gt;Elastic&lt;/a&gt;, &lt;a href=&quot;https://www.elastic.co/products/beats&quot; target=&quot;_blank&quot;&gt;Beats&lt;/a&gt;, or some other &lt;a href=&quot;https://lucene.apache.org/core/&quot; target=&quot;_blank&quot;&gt;Lucene&lt;/a&gt; related, distributed style system, or something inside or even outside of Elastic’s product offerings? Let me know about what you’d like to hear about and the team will make it happen one way or another!&lt;/p&gt;
+&lt;p&gt;[googleapps domain=”docs” dir=”forms/d/14cEu_UE61lzXdaqrPtP2w618SjmP7Is3f88CPuHuzI8/viewform” query=”embedded=true” width=”900” height=”1600” /]&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>not totally done with 2015</title>
+      <link>http://adron.github.io/articles/not-totally-done-with-2015/</link>
+      <pubDate>Tue, 15 Dec 2015 16:00:00 -0800</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/not-totally-done-with-2015/</guid>
+      <author></author>
+      <description>&lt;p&gt;I was sitting hacking away on my ride into work (I ride the bus/train so I can get a solid hour of work in before I ever get to the office). I was dorking around with a bash script I’d recently written that was taking the place of a file watcher.&lt;/p&gt;
+&lt;p&gt;At the same time I was toying around with keywords and such on a watcher that watches twitter, and stumbled onto @poornima’s tweet.&lt;/p&gt;
+&lt;p&gt;&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;en&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;What Happens When You Don’t Acknowledge Your Accomplishments: By Poornima Vijayashanker Earlier this week I me… &lt;a href=&quot;https://t.co/OG1wdcPAZi&quot;&gt;https://t.co/OG1wdcPAZi&lt;/a&gt;&lt;/p&gt;&amp;mdash; poornima (@poornima) &lt;a href=&quot;https://twitter.com/poornima/status/677146823883022336&quot;&gt;December 16, 2015&lt;/a&gt;&lt;/blockquote&gt;&lt;/p&gt;
+&lt;script async src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;At first I just read &lt;a href=&quot;http://femgineer.com/2015/12/what-happens-when-you-dont-acknowledge-your-accomplishments/&quot; target=&quot;_blank&quot;&gt;the article&lt;/a&gt;, but then I thought it would be a good idea to actually write up what I’d accomplished for this year too. Especially being that 2015 has been an exceptional and very different year for me.&lt;/p&gt;
+&lt;p&gt;First however, a little context of why 2015 was an exceptional year. 2013 ended in a ridiculous way. I’d just finished 2+ years working as a tech evangelist and product manager &amp;amp; coder for AppFog, Tier 3, and then Basho while writing with the Orchestrate.io Team. I’d however gotten ridiculously burned out by the end of 2013, so I literally took time to sit on my porch, have a beer, and watch the trees blow in the breeze.&lt;/p&gt;
+&lt;p&gt;To recover from my burn out I kicked off 2014 by co-founding a start with a friend, Aaron. We proved out a lot of things, for one that 40 hour work weeks are utter bullshit. The whole startup work yourself to the bone is also bullshit. We accomplished a ton of things and built a system with barely any capital whatsoever. I was impressed, and when I showed others they were impressed.&lt;/p&gt;
+&lt;p&gt;Then at the end of that, I realized I hadn’t resolved my burn out, it had just abated while I lived the startup life. So I started 2015 off by not doing anything. That’s right, I didn’t do a damn thing. However many in the industry thought I was still working, I still dropped into a meetup here or there, but otherwise I was pretty sick of the whole tech industry. At least, I felt I was sick of it.&lt;/p&gt;
+&lt;p&gt;By February I had landed a gig helping out &lt;a href=&quot;https://strongloop.com/&quot; target=&quot;_blank&quot;&gt;Strongloop&lt;/a&gt; put together its curriculum and training material. I even went and delivered some of the training. It was good, but that wasn’t really the exact thing I wanted to do either (it didn’t help that it was all in the suburbs, and that’s another whole point of burn out I have - I’m done with suburbia).&lt;/p&gt;
+&lt;p&gt;But as I wrapped that up I put together some more training material and worked on a few side jobs. I realized something at this time, I’d removed so many of my expenses that I was doing fine even without working much at all. I learned that I didn’t need to have the “&lt;em&gt;American Life&lt;/em&gt;“ with a noose around my neck of debt and other nonsense. I was, in essence, debt free, mortgage free, loan free, and I didn’t owe anybody a thing.&lt;/p&gt;
+&lt;p&gt;So April rolled around and .NET Fringe happened. That was interesting because I started getting interested in technology again in a huge way. Oddly, not particularly .NET, but just in languages and systems in general. I started digging in again to things that made me curious that I wanted to implement.&lt;/p&gt;
+&lt;p&gt;Again, not working but just learning. Then I started working on a contract at CDK Global, helped some interns put together a hackathon team, and generally just enjoyed being in the field and getting things done. Without any tie downs or nooses anywhere to be seen.&lt;/p&gt;
+&lt;p&gt;Then I realized, “Holy shit Adron, you’d gotten burned out because of things - often just daily nonsense - that was tying you down and when you’re free and don’t have to live at the whim of managers, loans, money and others you’re happy…”&lt;/p&gt;
+&lt;p&gt;At that moment I realized the real accomplishment in 2015. I learned what I need to stay happy in the industry. That’s what I’m doing today, at a strategic level, is staying happy with my work. On a tactical level I’ve been slowly working toward that and the fruits of that work will be self-evident in 2016.&lt;/p&gt;
+&lt;p&gt;I hope 2015 kick ass for you, enjoy Star Wars, and see you all in 2016!&lt;/p&gt;
+</description>
+    </item>
+    <item>
       <title>Elasticon Tour 2015 in Seattle</title>
       <link>http://adron.github.io/articles/elasticon-tour-2015-in-seattle/</link>
       <pubDate>Wed, 02 Dec 2015 16:00:00 -0800</pubDate>
@@ -3523,6 +3565,271 @@ docker run -it elasticsearch
 &lt;li&gt;&lt;a href=&quot;https://github.com/elastic/beats&quot; target=&quot;_blank&quot;&gt;Beats on Github&lt;/a&gt;&lt;/li&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;That’s it for the highlights so far. If anything else catches my eye this evening at the Elasticon Tour, I’ll get started rambling about it too!&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>nagios ubuntu setup configuration</title>
+      <link>http://adron.github.io/articles/nagios-ubuntu-setup-configuration/</link>
+      <pubDate>Tue, 24 Nov 2015 16:00:00 -0800</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/nagios-ubuntu-setup-configuration/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;h2&gt;1st - The Virtual Machine&lt;/h2&gt;
+First I created a virtual machine for use with VMware Fusion on OS-X. Once I got a nice clean Ubuntu 14.04 image setup I installed SSH on it so I could manage it as if it were a headless (i.e. no monitor attached) machine (&lt;a href=&quot;http://compositecode.com/setting-up-ubuntu-with-ssh-wmware-tools-on-vmware-fusion/&quot;&gt;instructions&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;In addition to installing openssh, these steps also include build-essential, make, and gcc along with instructions for, but don’t worry about installing VMware Tools. The instructions are cumbersome and in parts just wrong, so skip that. The virtual machine is up and running with ssh and a good C compiler at this point, so we’re all set.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;h2&gt;2nd - The LAMP Stack&lt;/h2&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;sudo apt-get install apache2
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Once installed the default page will be available on the server, so navigate over to 192.168.x.x and view the page to insure it is up and running.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/nagios-ubuntu-setup-configuration/lampsetup.png&quot; alt=&quot;LAMP Setup&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Next install mysql and php5 mysql.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;sudo apt-get install mysql-server php5-mysql
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;During this installation you will be prompted for the mysql root account password. It is advisable to set one.&lt;/p&gt;
+&lt;p&gt;Then you will be asked to enter the password (the one you just set about 2 seconds ago) for the MySQL root account. Next, it will ask you if you want to change that password. Select ‘n’ so as not to create another password for the root acount since you’ve already created the password just a few seconds before.&lt;/p&gt;
+&lt;p&gt;For the rest of the questions, you should simply hit the enter key for each prompt. This will accept the default values. This will remove some sample users and databases, disable remote root logins, and load these new rules so that MySQL immediately respects the changes we have made.&lt;/p&gt;
+&lt;p&gt;Next up is to install PHP. No grumbling, just install PHP.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;sudo apt-get install php5 libapache2-mod-php5 php5-mcrypt
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Next let’s open up dir.conf and change a small section to change what files apache will provide upon request. Here’s what the edit should look like.&lt;/p&gt;
+&lt;p&gt;Open up the file to edit. (in vi, to insert or edit, hit the ‘i’ button. To save hit escape and ‘:w’ and to exit vi after saving it escape and then ‘:q’. To force exit without saving hit escape and ‘:q!’)&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;sudo vi /etc/apache2/mods-enabled/dir.conf
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This is what the file will likely look like once opened.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;&amp;lt;IfModule mod_dir.c&amp;gt;
+DirectoryIndex index.html index.cgi index.pl index.php index.xhtml index.htm
+&amp;lt;/IfModule&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Move the index.php file to the beginning of the DirectoryIndex list.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;&amp;lt;IfModule mod_dir.c&amp;gt;
+DirectoryIndex index.php index.html index.cgi index.pl index.xhtml index.htm
+&amp;lt;/IfModule&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now restart apache so the changes will take effect.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;sudo service apache2 restart
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Next let’s setup some public key for authentication. On your local box complete the following.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;ssh-keygen
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;If you don’t enter a passphrase, you will be able to use the private key for auth without entering a passphrase. If you’ve entered one, you’ll need it and the private key to log in. Securing your keys with passphrases is more secure, but either way the system is more secure this way then with basic password authentication. For this particular situation, I’m skipping the passphrase.&lt;/p&gt;
+&lt;p&gt;What is generated is id_rsa, the private key and the id_rsa.pub the public key. They’re put in a directory called .ssh of the local user.&lt;/p&gt;
+&lt;p&gt;At this point copy the public key to the remote server. On OS-X grab the easy to use ssh-copy-id script with this command.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;brew install ssh-copy-id
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;or&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;curl -L https://raw.githubusercontent.com/beautifulcode/ssh-copy-id-for-OSX/master/install.sh | sh
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Then use the script to copy the ssh key to the server.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;ssh-copy-id adron@192.168.x.x
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Next let’s setup some public key for authentication. On your local box complete the following.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;ssh-keygen
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;That should give you the ability to log into the machine without a password everytime. Give it a try.&lt;/p&gt;
+&lt;p&gt;Ok, so now on to the meat of this entry, Nagios itself.&lt;/p&gt;
+&lt;p&gt;&lt;h2&gt;Nagios Installation&lt;/h2&gt;
+Create a user and group that will be used to run the Nagios process.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;sudo useradd nagios
+sudo groupadd nagcmd
+sudo usermod -a -G nagcmd nagios
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Install these other essentials.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;sudo apt-get install libgd2-xpm-dev openssl libssl-dev xinetd apache2-utils unzip
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Download the source and extract it, then change into the directory.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;curl -L -O https://assets.nagios.com/downloads/nagioscore/releases/nagios-4.1.1.tar.gz
+tar xvf nagios-*.tar.gz
+cd nagios-*
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Next run the command to configure Nagios with the appropriate user and group.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;./configure --with-nagios-group=nagios --with-command-group=nagcmd
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;When the configuration is done you’ll see a display like this.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;Creating sample config files in sample-config/ ...
+
+*** Configuration summary for nagios 4.1.1 08-19-2015 ***:
+
+General Options:
+-------------------------
+Nagios executable: nagios
+Nagios user/group: nagios,nagios
+Command user/group: nagios,nagcmd
+Event Broker: yes
+Install ${prefix}: /usr/local/nagios
+Install ${includedir}: /usr/local/nagios/include/nagios
+Lock file: ${prefix}/var/nagios.lock
+Check result directory: ${prefix}/var/spool/checkresults
+Init directory: /etc/init.d
+Apache conf.d directory: /etc/httpd/conf.d
+Mail program: /bin/mail
+Host OS: linux-gnu
+IOBroker Method: epoll
+
+Web Interface Options:
+------------------------
+HTML URL: http://localhost/nagios/
+CGI URL: http://localhost/nagios/cgi-bin/
+Traceroute (used by WAP):
+
+Review the options above for accuracy. If they look okay,
+type &amp;#39;make all&amp;#39; to compile the main program and CGIs.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now run the following make commands. First run make all as shown.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;make all
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Once that runs the following will be displayed upon success. I’ve included it here as there are a few useful commands in it.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;*** Compile finished ***
+
+If the main program and CGIs compiled without any errors, you
+can continue with installing Nagios as follows (type &amp;#39;make&amp;#39;
+without any arguments for a list of all possible options):
+
+make install
+- This installs the main program, CGIs, and HTML files
+
+make install-init
+- This installs the init script in /etc/init.d
+
+make install-commandmode
+- This installs and configures permissions on the
+directory for holding the external command file
+
+make install-config
+- This installs *SAMPLE* config files in /usr/local/nagios/etc
+You&amp;#39;ll have to modify these sample files before you can
+use Nagios. Read the HTML documentation for more info
+on doing this. Pay particular attention to the docs on
+object configuration files, as they determine what/how
+things get monitored!
+
+make install-webconf
+- This installs the Apache config file for the Nagios
+web interface
+
+make install-exfoliation
+- This installs the Exfoliation theme for the Nagios
+web interface
+
+make install-classicui
+- This installs the classic theme for the Nagios
+web interface
+
+*** Support Notes *******************************************
+
+If you have questions about configuring or running Nagios,
+please make sure that you:
+
+- Look at the sample config files
+- Read the documentation on the Nagios Library at:
+https://library.nagios.com
+
+before you post a question to one of the mailing lists.
+Also make sure to include pertinent information that could
+help others help you. This might include:
+
+- What version of Nagios you are using
+- What version of the plugins you are using
+- Relevant snippets from your config files
+- Relevant error messages from the Nagios log file
+
+For more information on obtaining support for Nagios, visit:
+
+https://support.nagios.com
+
+*************************************************************
+
+Enjoy.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;After that successfully finishes, then execute the following.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;sudo make install
+sudo make install-commandmode
+sudo make install-init
+sudo make install-config
+sudo /usr/bin/install -c -m 644 sample-config/httpd.conf /etc/apache2/sites-available/nagios.conf
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now some tinkering to setup the web server user in www-data and nagcmd group.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;sudo usermod -G nagcmd www-data
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now some Nagios plugins. You can find the plugins listed for download here: &lt;a href=&quot;http://nagios-plugins.org/download/&quot;&gt;http://nagios-plugins.org/download/&lt;/a&gt; The following are based on the 2.1.1 release of plugins.&lt;/p&gt;
+&lt;p&gt;Change back out to the user directory on the server and download, tar, and change into the newly unzipped files.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;cd ~
+curl -L -O http://nagios-plugins.org/download/nagios-plugins-2.1.1.tar.gz
+tar xvf nagios-plugins-*.tar.gz
+cd nagios-plugins-*
+./configure --with-nagios-user=nagios --with-nagios-group=nagios --with-openssl
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now for some ole compilation magic.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;make
+sudo make install
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now pretty much the same things for NRPE. Look &lt;a href=&quot;http://sourceforge.net/projects/nagios/files/nrpe-2.x/&quot;&gt;here&lt;/a&gt; to insure that 2.15 is the latest version.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;cd ~
+curl -L -O http://downloads.sourceforge.net/project/nagios/nrpe-2.x/nrpe-2.15/nrpe-2.15.tar.gz
+tar xvf nrpe-*.tar.gz
+cd nrpe-*
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Then configure the NRPE bits.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;./configure --enable-command-args --with-nagios-user=nagios --with-nagios-group=nagios --with-ssl=/usr/bin/openssl --with-ssl-lib=/usr/lib/x86_64-linux-gnu
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Then get to making it all.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;make all
+sudo make install
+sudo make install-xinetd
+sudo make install-daemon-config
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Then a little file editing.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;sudo vi /etc/xinetd.d/nrpe
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Edit the file for the line only_from to include the following where 192.x.x.x is the IP of the Nagios Server.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;only_from = 127.0.0.1 192.x.x.x
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Save the file, and restart the Nagios server service.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;sudo service xinetd restart
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now begins the Nagios Server configuration. Edit the Nagios configuration file.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;sudo vi /usr/local/nagios/etc/nagios.cfg
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Find this line and uncomment the line.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;#cfg_dir=/usr/local/nagios/etc/servers
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Save it and exit.&lt;/p&gt;
+&lt;p&gt;Next creat the configuration file for the servers to monitor.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;sudo mkdir /usr/local/nagios/etc/servers
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Next configure the contacts config file.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;sudo vi /usr/local/nagios/etc/objects/contacts.cfg
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Fine this line and set the email address to one you’ll be using.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;email adronsemail@compositecode.com
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now add a Nagios service definition for the check_nrpe command.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;sudo vi /usr/local/nagios/etc/objects/commands.cfg
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Add this to the end of the file.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;define command{
+command_name check_nrpe
+command_line $USER1$/check_nrpe -H $HOSTADDRESS$ -c $ARG1$
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Save and exit the file.&lt;/p&gt;
+&lt;p&gt;Now a few last touches for configuration in Apache. We’ll want the Apache rewrite and cgi modules enabled.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;sudo a2enmod rewrite
+sudo a2enmod cgi
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now create an admin user, we’ll call them ‘nagiosadmin’.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;sudo htpasswd -c /usr/local/nagios/etc/htpasswd.users nagiosadmin
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Create a symbolic link of nagios.conf to the sites-enabled directory and then start the Nagios server and restart apache2.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;sudo ln -s /etc/apache2/sites-available/nagios.conf /etc/apache2/sites-enabled/
+sudo service nagios start
+sudo service apache2 restart
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Enable Nagios to start on server boot (because, ya know, that’s what this server is going to be used for).&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;sudo ln -s /etc/init.d/nagios /etc/rcS.d/S99nagios
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now navigate to the server and you’ll be prompted to login to the web user interface.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/nagios-ubuntu-setup-configuration/nagioslogin.png&quot; alt=&quot;Nagios Login&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Now begins the process of setting up servers you want to monitor… stay tuned, more to come.&lt;/p&gt;
 </description>
     </item>
     <item>
