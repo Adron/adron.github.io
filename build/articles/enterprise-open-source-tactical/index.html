@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Adron's Composite Code</title>
+    <meta name="description" content="">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="alternate" href="/feed.xml" type="application/rss+xml" title="Coder, Messenger, Recon, Infrastructure, Ops">
+    <link rel="icon" type="image/png" href="/img/favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/img/favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/img/favicons/favicon-96x96.png" sizes="96x96">
+    <link rel="apple-touch-icon" sizes="57x57" href="/img/favicons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/img/favicons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/img/favicons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/img/favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/img/favicons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/img/favicons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/img/favicons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/img/favicons/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/favicons/apple-touch-icon-180x180.png">
+    <link rel="stylesheet" href="/css/custom.css">
+    <link rel="stylesheet" href="/css/style.min.css">
+    <script src="/js/modernizr.js"></script>
+  </head>
+  <body class="article-detail">
+    <!--[if lt IE 8]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <div class="header header-over large">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 col-sm-6 col-xs-6">
+            <!-- Logo Image--><a href="/index.html" class="logo-image logo-animated"><img src="/img/logos/logo.png" alt="logo"></a>
+            <!-- End of Logo Image-->
+          </div>
+          <div class="col-md-9 col-sm-6 col-xs-6">
+            <!-- Menu-->
+            <nav class="right helper">
+              <ul class="menu sf-menu js-menu">
+                <li><a href="/docs/thrashing-code-news/">Thrashing Code News</a></li>
+                <li><a href="#">Conf - Meetup - Events</a>
+                  <ul>
+                    <li><a href="/docs/Speaking-Presentations-Workshops/">Speaking - Presentations - Workshops</a></li>
+                    <li><a href="/docs/calendar">Calendar of Engagements</a></li>
+                  </ul>
+                </li>
+                <li><a href="/docs/documentation/">Docs</a></li>
+                <li><a href="#">Contact</a>
+                  <ul>
+                    <li><a href="/docs/contact">Message</a></li>
+                    <li><a href="/docs/job-talk/">Hire</a></li>
+                  </ul>
+                </li>
+                <li><a href="/docs/about/">About</a></li>
+              </ul>
+            </nav>
+            <!-- End of Menu-->
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="header-back header-back-simple header-back-small">
+      <div class="header-back-container">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <!-- Page Info-->
+              <div class="page-info page-info-simple">
+                <h1>Let's Talk Tactical Tools for Enterprise Open Source</h1>
+                <p class="author">Written by <span class="author">Adron Hall</span> and published on <span>October, 16 of 2016.</span>
+                </p>
+                <div class="nav"><a href="/">« Home</a></div>
+              </div>
+              <!-- End Page Info-->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="content">
+      <div class="container">
+        <div class="layout with-right-sidebar js-layout">
+          <div class="row">
+            <div class="col-md-9">
+              <div class="main-content">
+                <!-- Blog Page-->
+                <article class="article">
+                  <section class="content"><p><a href="/articles/holy-shit-watch-out-for-that-enterprise-open-source/">Part I</a>, <a href="/articles/enterprise-open-source-tactical/">Part <span class="caps">II</span> (That’s this article)</a>, <a href="/articles/enterprise-cultural-characteristics/">Part <span class="caps">III</span></a>,
+<a href="/articles/enterprise-open-source-anti-patterns">Part <span class="caps">IV</span></a>.</p>
+<p>In the first part I wrote about the Enterprise Open Source Manifesto that was written up for Home Depot’s open source efforts. In this part I’m going to tactical some of tooling <span class="amp">&amp;</span> cultural characteristics that came into&nbsp;play.</p>
+<p><span class="more"></span></p>
+<h3 id="enterprise-open-source-tooling">Enterprise Open Source&nbsp;Tooling</h3>
+<p>Every team had a number of tools in use upon the beginning of these efforts. I’m going to dive into a few of the tools we used and how those helped and hurt us all at the same time. After that Iv’e got a discussion on future tool choices, current tool migrations, and&nbsp;goals.</p>
+<h3 id="existing-pre-oss-efforts">Existing Pre-<span class="caps">OSS</span>&nbsp;Efforts</h3>
+<ul>
+<li><span class="caps">JIRA</span></li>
+<li>Confluence</li>
+<li>Stash</li>
+</ul>
+<h4 id="jira-stash-and-confluence"><span class="caps">JIRA</span>, Stash, and&nbsp;Confluence</h4>
+<p><span class="caps">JIRA</span> has a lot of pluses and negatives, and I do mean a lot! I’m going to start with the pain points and then move onto the&nbsp;positives.</p>
+<p>Access - One of the major pain points was that <span class="caps">JIRA</span> had harbored a completely closed communication practice. What I mean by this was that all communications, as one would assume, were being done in a very insular way. Since the tool had traditionally been used only for closed source development, it was by it’s very nature configured to be exclusionary to any and all possible open source&nbsp;efforts.</p>
+<p>User Limits - The way <span class="caps">JIRA</span> is configured, one doesn’t merely get added or become a contributor in any general sense. One needs to fall under a particular user paradigm like Active Directory, controlled auth SSO style accounts, or something of that sort. This leaves JIRA very limited for public access and contributions from an organizational&nbsp;perspective.</p>
+<p><span class="caps">JIRA</span> is extremely heavy and many open source efforts are super lean. I realize for a project with a lot of pull requests and interactions there needs some way to oganize all the interactions, but for small projects or even reasonably sized projects JIRA is&nbsp;overkill.</p>
+<p>Another issue is that <span class="caps">JIRA</span> becomes a practice that dictates effort versus effort and results that dictate practice. This in turn makes it even more difficult to break certain practices and dogma to move toward lighter weight practices. More seamless open source projects and the practices that would and can move an open source project forward are disregarded because X, Y, and Z activities must be performed because of the&nbsp;“JIRA”.</p>
+<p>Confluence is actually a great wiki tool. Albeit again, it’s a matter of overkill. Often the wiki that is needed is just a simple tool that can provide absolutely minimalistic wiki features. Maybe markdown is the standard mechanism to markup wiki pages with even. Whatever the case it needs to be&nbsp;simple.</p>
+<p>However, again just like with <span class="caps">JIRA</span>, these tools work great for dramatically larger and more complex projects. They can and do provide a great ability to cohesively bring together larger teams of people to work together in a more effective&nbsp;manner.</p>
+<p>Stash is useful in some ways, but again just like with <span class="caps">JIRA</span>, Confluence and related tooling it tends to be used to provide a way to hide away the source code internally. This in turn, just as with JIRA and Confluence work toward hiding software and not toward bringing it forward in an open and transparent way for others to work&nbsp;with.</p>
+<h3 id="new-tools-for-enterprise-oss-efforts">New Tools for Enterprise <span class="caps">OSS</span>&nbsp;Efforts</h3>
+<h4 id="github">Github</h4>
+<p>So Github comes to the rescue. For the most part there is a simple reason that it is the defacto go-to place for open source. It’s in the open, millions already use it, their git intergration is good, they have pretty straight forward minimalist focused interfaces and features, and it gets the job&nbsp;done.</p>
+<p>Does Github miss key features for some? Absolutely. Do issues get cumbersome and out of control after moderate conversation. Of course they do, especially with their single depth style of forum comments. Even with whatever disadvantages it has, Github was the go-to for us when we wanted to open source software too. It provided many of the key features we need; wiki, issues, and simple ways to track for simple&nbsp;projects.</p>
+<p>Now, with all the negatives pointed out, one could actually use <span class="caps">JIRA</span>, Stash, and Confluence for open source work. You just need to open up all of the software to the public. They’ve be perfectly capable from a technical point of view to accomplish the mission, albeit it’d probably cost a ton of&nbsp;cash.</p>
+<h4 id="jell">Jell</h4>
+<p>Need a quick tool for managing the daily punch list, or more simply, what I generally call the <em>My <span class="caps">GSD</span> for Today</em> items? Jell is a great tool for this. Others that come to mind are Trello or even just plain old Google Docs (I guess that’s G-suite now). Whatever the case, it helps members to have a punch list if it’s a day-to-day, regularly worked on project. This helps with that communication across any contributors, even if contributors are all in a single&nbsp;office.</p>
+<p><a href="/articles/holy-shit-watch-out-for-that-enterprise-open-source/">Part I</a>, <a href="/articles/enterprise-open-source-tactical/">Part <span class="caps">II</span> (That’s this article)</a>, <a href="/articles/enterprise-cultural-characteristics/">Part <span class="caps">III</span></a>,
+<a href="/articles/enterprise-open-source-anti-patterns">Part <span class="caps">IV</span></a>.</p>
+<p>That’s it for part <span class="caps">II</span>. More to come for this series real soon, and I’ll update the post with a link right here to Part III as soon as it’s&nbsp;published.</p>
+</section>
+                </article>
+                <!-- End of Blog Page-->
+              </div>
+            </div>
+            <div class="col-md-3 hidden-sm hidden-xs">
+              <div class="sidebar js-sidebar-fixed">
+                <!-- Vertical Menu-->
+                <div class="widget">
+                  <!-- Search-->
+                  <div class="search">
+                    <form action="https://google.com/search" method="get">
+                      <input type="hidden" name="sitesearch" value="http://blog.adron.me">
+                      <input type="text" name="q" placeholder="search" class="search-input form-control"><i class="fa fa-search search-icon"></i>
+                    </form>
+                  </div>
+                  <!-- End of Search-->
+                </div>
+                <div class="widget">
+                  <h3 class="widget-title">Keyword Search</h3>
+                  <!-- Tags-->
+                  <ul class="tags">
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=html">html</a></li>
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=javascript">javascript</a></li>
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=ubuntu">ubuntu</a></li>
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=node pdx">node pdx</a></li>
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=.NET fringe">.net fringe</a></li>
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=videos">videos</a></li>
+                  </ul>
+                  <!-- End of Tags-->
+                </div>
+                <nav class="menu-vertical-wrapper">
+                  <ul data-prepend-to=".js-layout" data-select="Menu" class="menu-vertical js-menu-vertical">
+                    <li><a href="#">About</a>
+                      <ul>
+                        <li><a href="/docs/about/">Me, Adron</a></li>
+                        <li><a href="#">My Hobbies</a>
+                          <ul>
+                            <li><a href="http://photos.adron.me">My Photos</a></li>
+                          </ul>
+                        </li>
+                        <li><a href="/docs/Speaking-Presentations-Workshops">My Presentations</a></li>
+                        <li><a href="/docs/documentation/">Collection of Docs & Notes</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </nav>
+                <div class="widget">
+                  <h3 class="widget-title">Photos</h3>
+                  <!-- Photos-->
+                  <ul class="widget-recommended-products">
+                    <!-- Photos-->
+                    <li class="widget-recommended-product"><img src="/img/photos/IMG_1836.jpg" alt="Jon Oropeza" class="widget-recommended-product-img"><a href="http://photos.adron.me/Software/Meetups-N-Conferences/Conferences/Node-PDX-2016/i-D9qFQ6m" class="widget-recommended-product-link">
+                        <h5 class="widget-recommended-product-link-title">Node PDX 2016<i class="fa fa-angle-right"></i></h5>
+                        <p class="widget-recommended-product-link-description">Jon Oropeza @ Node PDX 2016</p></a></li>
+                    <!-- End of Recommended product Item-->
+                    <!-- Recommended product Item-->
+                    <li class="widget-recommended-product"><img src="/img/photos/IMG_1812.jpg" alt="Liz Abinante" class="widget-recommended-product-img"><a href="http://photos.adron.me/Software/Meetups-N-Conferences/Conferences/Node-PDX-2016/i-g2m2hgP" class="widget-recommended-product-link">
+                        <h5 class="widget-recommended-product-link-title">Node PDX 2016<i class="fa fa-angle-right"></i></h5>
+                        <p class="widget-recommended-product-link-description">Liz Abinante @ Node PDX 2016</p></a></li>
+                    <!-- End of Recommended product Item-->
+                    <!-- Recommended product Item-->
+                    <li class="widget-recommended-product"><img src="/img/photos/IMG_5709.jpg" alt="Praha hlavní nádraží" class="widget-recommended-product-img"><a href="http://photos.adron.me/Travels-N-Traversings/Across-the-Pond-2016-Travels/September-Krakow/Week-4-Prague/i-62ZPsPb" class="widget-recommended-product-link">
+                        <h5 class="widget-recommended-product-link-title">Prague (Praha)<i class="fa fa-angle-right"></i></h5>
+                        <p class="widget-recommended-product-link-description">Praha hlavní nádraží</p></a></li>
+                    <!-- End of photos row one-->
+                  </ul>
+                  <ul class="widget-recommended-products">
+                    <!-- Photos-->
+                    <li class="widget-recommended-product"><img src="/img/photos/IMG_4417.jpg" alt="St Mary's Basilica" class="widget-recommended-product-img"><a href="http://photos.adron.me/Travels-N-Traversings/Across-the-Pond-2016-Travels/September-Krakow/Krakow/i-KnZf6pK/A" class="widget-recommended-product-link">
+                        <h5 class="widget-recommended-product-link-title">St Mary's Basilica<i class="fa fa-angle-right"></i></h5>
+                        <p class="widget-recommended-product-link-description">Bazylika Mariacka in Rynek Główny.</p></a></li>
+                    <!-- End of Recommended product Item-->
+                    <!-- Recommended product Item-->
+                    <li class="widget-recommended-product"><img src="/img/photos/VSC_03.png" alt="Visual Studio Code" class="widget-recommended-product-img"><a href="http://photos.adron.me/Software/Software-Development/Visual-Studio-Things/i-LLW7WcD/A" class="widget-recommended-product-link">
+                        <h5 class="widget-recommended-product-link-title">Visual Studio Code<i class="fa fa-angle-right"></i></h5>
+                        <p class="widget-recommended-product-link-description">Images from a review of Visual Studio Code.</p></a></li>
+                    <!-- End of Recommended product Item-->
+                    <!-- Recommended product Item-->
+                    <li class="widget-recommended-product"><img src="/img/photos/-home-adronhall-Pictures-Selection_002.png - Shutter_003.png" alt="" class="widget-recommended-product-img"><a href="http://photos.adron.me/Software/Software-Development/Ubuntu/i-CQsQ4zj/A" class="widget-recommended-product-link">
+                        <h5 class="widget-recommended-product-link-title">Mono Develop & WebStorm<i class="fa fa-angle-right"></i></h5>
+                        <p class="widget-recommended-product-link-description">Working through Mono Develop & WebStorm.</p></a>
+                      <!-- End of photos row two-->
+                    </li>
+                  </ul>
+                  <!-- End Photos-->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="nav"><a href="/">« Home</a></div>
+      </div>
+    </div>
+    <script src="/js/all.js"></script>
+    <script src="/js/custom.js"></script>
+    <!-- Google Tag Manager-->
+    <noscript>
+      <iframe src="//www.googletagmanager.com/ns.html?id=GTM-KMMZX2" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <script>
+      console.log(document.getElementById("search-google"));
+      console.log(document.getElementById("search-google").innerText);
+      
+      var searchBox = document.getElementById("search-google");
+      
+      function googleSearch(search_string) {
+        alert(search_string);
+      }
+      
+      document.getElementById("search-google").addEventListener("onClick", function () {
+        alert(document.getElementById("search-google").innerHTML);
+      });
+      
+      document.getElementById("search-google").addEventListener("onClick", function () {
+        googleSearch(document.getElementById("search-google").innerHTML)
+      });
+      
+    </script>
+    <script>
+      (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+                  (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+      })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+      ga('create', 'UA-39158070-6', 'auto');
+      ga('send', 'pageview');
+    </script>
+  </body>
+</html>

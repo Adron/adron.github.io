@@ -1,7 +1,7 @@
 ---
 title: Docker Tips n' Tricks - Using Vmware Fusion
 author: Adron Hall
-date: 2016-12-1
+date: 2016-1-2
 template: article.jade
 ---
 In this article I'm going to cover a few steps in getting started with VMware and Docker instead of the default VirtualBox and Docker. The basic prerequisites for this are:
@@ -10,6 +10,8 @@ In this article I'm going to cover a few steps in getting started with VMware an
 
 * Docker Toolbox w/ Docker```shell-script$ docker --version
 Docker version 1.9.0, build 76d6bc9```
+
+<span class="more"></span>
 
 To start with, one of the things I didn't find super intuitive was finding out where boot2docker's URL is. I then attempted to create the virtual machine several times with what I thought it would be and then realized, to my dismay, that it defaulted to what it generally would need to be. A serious case of <a href="https://en.wikipedia.org/wiki/RTFM" target="_blank">RTFM</a>.
 

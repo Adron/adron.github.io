@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Adron's Composite Code</title>
+    <meta name="description" content="">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="alternate" href="/feed.xml" type="application/rss+xml" title="Coder, Messenger, Recon, Infrastructure, Ops">
+    <link rel="icon" type="image/png" href="/img/favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/img/favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/img/favicons/favicon-96x96.png" sizes="96x96">
+    <link rel="apple-touch-icon" sizes="57x57" href="/img/favicons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/img/favicons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/img/favicons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/img/favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/img/favicons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/img/favicons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/img/favicons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/img/favicons/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/favicons/apple-touch-icon-180x180.png">
+    <link rel="stylesheet" href="/css/custom.css">
+    <link rel="stylesheet" href="/css/style.min.css">
+    <script src="/js/modernizr.js"></script>
+  </head>
+  <body class="article-detail">
+    <!--[if lt IE 8]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <div class="header header-over large">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 col-sm-6 col-xs-6">
+            <!-- Logo Image--><a href="/index.html" class="logo-image logo-animated"><img src="/img/logos/logo.png" alt="logo"></a>
+            <!-- End of Logo Image-->
+          </div>
+          <div class="col-md-9 col-sm-6 col-xs-6">
+            <!-- Menu-->
+            <nav class="right helper">
+              <ul class="menu sf-menu js-menu">
+                <li><a href="/docs/thrashing-code-news/">Thrashing Code News</a></li>
+                <li><a href="#">Conf - Meetup - Events</a>
+                  <ul>
+                    <li><a href="/docs/Speaking-Presentations-Workshops/">Speaking - Presentations - Workshops</a></li>
+                    <li><a href="/docs/calendar">Calendar of Engagements</a></li>
+                  </ul>
+                </li>
+                <li><a href="/docs/documentation/">Docs</a></li>
+                <li><a href="#">Contact</a>
+                  <ul>
+                    <li><a href="/docs/contact">Message</a></li>
+                    <li><a href="/docs/job-talk/">Hire</a></li>
+                  </ul>
+                </li>
+                <li><a href="/docs/about/">About</a></li>
+              </ul>
+            </nav>
+            <!-- End of Menu-->
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="header-back header-back-simple header-back-small">
+      <div class="header-back-container">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <!-- Page Info-->
+              <div class="page-info page-info-simple">
+                <h1>I Want a Go CLI</h1>
+                <p class="author">Written by <span class="author">Adron Hall</span> and published on <span>October, 25 of 2016.</span>
+                </p>
+                <div class="nav"><a href="/">« Home</a></div>
+              </div>
+              <!-- End Page Info-->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="content">
+      <div class="container">
+        <div class="layout with-right-sidebar js-layout">
+          <div class="row">
+            <div class="col-md-9">
+              <div class="main-content">
+                <!-- Blog Page-->
+                <article class="article">
+                  <section class="content"><div class="image float-left">
+    <img src="/articles/want-a-golang-cli/united-airlines-boeing-777.jpg" alt="United Airlines Boeing 777">
+</div>
+
+<p>I sat in seat 20B on United Airlines Flight <span class="caps">UA</span> 949, enjoying the roominess of the Boeing 777 in service on this route between London (LHR) and San Francisco (SFO). At this time I decided it was time to hack together a <a href="https://golang.org/">Go</a> <a href="https://en.wikipedia.org/wiki/Command-line_interface"><span class="caps">CLI</span></a>&nbsp;Project.</p>
+<p><strong>Mission:</strong> Create a Command Line Interface (<span class="caps">CLI</span>) that takes some flags, basic user input, and prints out&nbsp;something.</p>
+<p><span class="more"></span></p>
+<div class="image float-right">
+    <img src="/articles/want-a-golang-cli/golang-mascot.png" alt="Go Language Mascot">
+</div>
+
+<p>I quickly threw together just a simple “hi” <span class="caps">CLI</span>&nbsp;App.</p>
+<pre><code class="lang-javascript">package main
+
+<span class="keyword">import</span> <span class="string">"fmt"</span>
+
+func main() {
+    fmt.Println(<span class="string">"Hi"</span>)
+}
+</code></pre>
+<p>Then I ran that just to make sure I had Go installed properly and all&nbsp;that.</p>
+<pre><code class="lang-shell-script">go run hi-cli.go
+</code></pre>
+<p>That’s super boring, so first things first, let’s take some input from the command line and print it back out to the screen. I’ll start by passing a few parameters along with the hi-cli&nbsp;call.</p>
+<pre><code class="lang-javascript">package main
+
+<span class="keyword">import</span> (
+    <span class="string">"bufio"</span>
+    <span class="string">"fmt"</span>
+    <span class="string">"os"</span>
+)
+
+func main() {
+    <span class="attr">reader</span> := bufio.NewReader(os.Stdin)
+    fmt.Print(<span class="string">"Enter text: "</span>)
+    text, <span class="attr">_</span> := reader.ReadString(<span class="string">'\n'</span>)
+    fmt.Println(text)
+}
+</code></pre>
+<p>What this bit of code gives me looks like this when I execute it&nbsp;now.</p>
+<p><img src="/articles/want-a-golang-cli/hi-cli-01.png" alt="Running hi-cli.go"></p>
+<p>A quick few notes if you’re not familiar with Go. The := is a reassignment (or assignment) and declaration operator. It’s actually equivalent to the following&nbsp;statement.</p>
+<pre><code class="lang-javascript"><span class="keyword">var</span> reader = bufio.NewReader(os.Stdin)
+</code></pre>
+<p>So that’s the notion behind the :=&nbsp;syntax.</p>
+<p>Ok, so now I wanted some other features to the cli. The first is the ability to pass in some flags. There is a library for that, simply called <em>flag</em> which I’ll add. I added that to the import&nbsp;list.</p>
+<p>One of the really cool features of the flag library is that it will auto-generate flag help documentation. To display the flag documentation pass the -h flag. For instance, to see the flag documentation type in <code>go run hi-cli.go -h</code>. However, I need to actually add some flags with their appropriate descriptions and actually use them somewhere. So I’ve edited my go code file as&nbsp;shown.</p>
+<pre><code class="lang-javascript">func main() {
+  <span class="attr">wordFlag</span> := flag.String(<span class="string">"wordly"</span>, <span class="string">"the-word"</span>, <span class="string">"A string value."</span>)
+  numberFlag := flag.Int(<span class="string">"numeraly"</span>, <span class="number">42012</span>, <span class="string">"An integer value."</span>)
+  booleanFlag := flag.Bool(<span class="string">"booly"</span>, <span class="literal">true</span>, <span class="string">"A boolean value."</span>)
+  nameFlag := flag.String(<span class="string">"yourname"</span>, <span class="string">"Person With No Name"</span>, <span class="string">"Put your name here."</span>)
+
+  flag.Parse()
+
+  <span class="keyword">var</span> reader = bufio.NewReader(os.Stdin)
+  fmt.Print(<span class="string">"Hello, "</span> + *nameFlag + <span class="string">", please enter some text: "</span>)
+  text, <span class="attr">_</span> := reader.ReadString(<span class="string">'\n'</span>)
+  fmt.Println(text)
+
+  fmt.Println(<span class="string">"word: "</span>, *wordFlag)
+  fmt.Println(<span class="string">"numb: "</span>, *numberFlag)
+  fmt.Println(<span class="string">"fork: "</span>, *booleanFlag)
+}
+</code></pre>
+<p>Now I can ask for help with the <code>go run hi-cli.go -h</code> and I get the&nbsp;following.</p>
+<p><img src="/articles/want-a-golang-cli/hi-cli-02.png" alt="Running hi-cli.go"></p>
+<p>That’s what I expected, so now I’m going to test out the different flags I set. So I go ahead and set each of the flags just to see. My command reads nice and long as <code>go run hi-cli.go -booly=false -wordly=testing -numeraly=909 -yourname=&quot;Adron Hall&quot;</code>.</p>
+<p><img src="/articles/want-a-golang-cli/hi-cli-03.png" alt="Running hi-cli.go"></p>
+<p>Again, everything I expected. Based on the mission I set out at the beginning of this entry, mission is accomplished. So until next time, happy&nbsp;hacking.</p>
+<p><strong>References:</strong></p>
+<ul>
+<li><a href="https://github.com/Adron/golang-cli">Github&nbsp;Repo</a></li>
+<li><a href="https://golang.org/">Go language&nbsp;site</a></li>
+</ul>
+</section>
+                </article>
+                <!-- End of Blog Page-->
+              </div>
+            </div>
+            <div class="col-md-3 hidden-sm hidden-xs">
+              <div class="sidebar js-sidebar-fixed">
+                <!-- Vertical Menu-->
+                <div class="widget">
+                  <!-- Search-->
+                  <div class="search">
+                    <form action="https://google.com/search" method="get">
+                      <input type="hidden" name="sitesearch" value="http://blog.adron.me">
+                      <input type="text" name="q" placeholder="search" class="search-input form-control"><i class="fa fa-search search-icon"></i>
+                    </form>
+                  </div>
+                  <!-- End of Search-->
+                </div>
+                <div class="widget">
+                  <h3 class="widget-title">Keyword Search</h3>
+                  <!-- Tags-->
+                  <ul class="tags">
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=html">html</a></li>
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=javascript">javascript</a></li>
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=ubuntu">ubuntu</a></li>
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=node pdx">node pdx</a></li>
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=.NET fringe">.net fringe</a></li>
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=videos">videos</a></li>
+                  </ul>
+                  <!-- End of Tags-->
+                </div>
+                <nav class="menu-vertical-wrapper">
+                  <ul data-prepend-to=".js-layout" data-select="Menu" class="menu-vertical js-menu-vertical">
+                    <li><a href="#">About</a>
+                      <ul>
+                        <li><a href="/docs/about/">Me, Adron</a></li>
+                        <li><a href="#">My Hobbies</a>
+                          <ul>
+                            <li><a href="http://photos.adron.me">My Photos</a></li>
+                          </ul>
+                        </li>
+                        <li><a href="/docs/Speaking-Presentations-Workshops">My Presentations</a></li>
+                        <li><a href="/docs/documentation/">Collection of Docs & Notes</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </nav>
+                <div class="widget">
+                  <h3 class="widget-title">Photos</h3>
+                  <!-- Photos-->
+                  <ul class="widget-recommended-products">
+                    <!-- Photos-->
+                    <li class="widget-recommended-product"><img src="/img/photos/IMG_1836.jpg" alt="Jon Oropeza" class="widget-recommended-product-img"><a href="http://photos.adron.me/Software/Meetups-N-Conferences/Conferences/Node-PDX-2016/i-D9qFQ6m" class="widget-recommended-product-link">
+                        <h5 class="widget-recommended-product-link-title">Node PDX 2016<i class="fa fa-angle-right"></i></h5>
+                        <p class="widget-recommended-product-link-description">Jon Oropeza @ Node PDX 2016</p></a></li>
+                    <!-- End of Recommended product Item-->
+                    <!-- Recommended product Item-->
+                    <li class="widget-recommended-product"><img src="/img/photos/IMG_1812.jpg" alt="Liz Abinante" class="widget-recommended-product-img"><a href="http://photos.adron.me/Software/Meetups-N-Conferences/Conferences/Node-PDX-2016/i-g2m2hgP" class="widget-recommended-product-link">
+                        <h5 class="widget-recommended-product-link-title">Node PDX 2016<i class="fa fa-angle-right"></i></h5>
+                        <p class="widget-recommended-product-link-description">Liz Abinante @ Node PDX 2016</p></a></li>
+                    <!-- End of Recommended product Item-->
+                    <!-- Recommended product Item-->
+                    <li class="widget-recommended-product"><img src="/img/photos/IMG_5709.jpg" alt="Praha hlavní nádraží" class="widget-recommended-product-img"><a href="http://photos.adron.me/Travels-N-Traversings/Across-the-Pond-2016-Travels/September-Krakow/Week-4-Prague/i-62ZPsPb" class="widget-recommended-product-link">
+                        <h5 class="widget-recommended-product-link-title">Prague (Praha)<i class="fa fa-angle-right"></i></h5>
+                        <p class="widget-recommended-product-link-description">Praha hlavní nádraží</p></a></li>
+                    <!-- End of photos row one-->
+                  </ul>
+                  <ul class="widget-recommended-products">
+                    <!-- Photos-->
+                    <li class="widget-recommended-product"><img src="/img/photos/IMG_4417.jpg" alt="St Mary's Basilica" class="widget-recommended-product-img"><a href="http://photos.adron.me/Travels-N-Traversings/Across-the-Pond-2016-Travels/September-Krakow/Krakow/i-KnZf6pK/A" class="widget-recommended-product-link">
+                        <h5 class="widget-recommended-product-link-title">St Mary's Basilica<i class="fa fa-angle-right"></i></h5>
+                        <p class="widget-recommended-product-link-description">Bazylika Mariacka in Rynek Główny.</p></a></li>
+                    <!-- End of Recommended product Item-->
+                    <!-- Recommended product Item-->
+                    <li class="widget-recommended-product"><img src="/img/photos/VSC_03.png" alt="Visual Studio Code" class="widget-recommended-product-img"><a href="http://photos.adron.me/Software/Software-Development/Visual-Studio-Things/i-LLW7WcD/A" class="widget-recommended-product-link">
+                        <h5 class="widget-recommended-product-link-title">Visual Studio Code<i class="fa fa-angle-right"></i></h5>
+                        <p class="widget-recommended-product-link-description">Images from a review of Visual Studio Code.</p></a></li>
+                    <!-- End of Recommended product Item-->
+                    <!-- Recommended product Item-->
+                    <li class="widget-recommended-product"><img src="/img/photos/-home-adronhall-Pictures-Selection_002.png - Shutter_003.png" alt="" class="widget-recommended-product-img"><a href="http://photos.adron.me/Software/Software-Development/Ubuntu/i-CQsQ4zj/A" class="widget-recommended-product-link">
+                        <h5 class="widget-recommended-product-link-title">Mono Develop & WebStorm<i class="fa fa-angle-right"></i></h5>
+                        <p class="widget-recommended-product-link-description">Working through Mono Develop & WebStorm.</p></a>
+                      <!-- End of photos row two-->
+                    </li>
+                  </ul>
+                  <!-- End Photos-->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="nav"><a href="/">« Home</a></div>
+      </div>
+    </div>
+    <script src="/js/all.js"></script>
+    <script src="/js/custom.js"></script>
+    <!-- Google Tag Manager-->
+    <noscript>
+      <iframe src="//www.googletagmanager.com/ns.html?id=GTM-KMMZX2" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <script>
+      console.log(document.getElementById("search-google"));
+      console.log(document.getElementById("search-google").innerText);
+      
+      var searchBox = document.getElementById("search-google");
+      
+      function googleSearch(search_string) {
+        alert(search_string);
+      }
+      
+      document.getElementById("search-google").addEventListener("onClick", function () {
+        alert(document.getElementById("search-google").innerHTML);
+      });
+      
+      document.getElementById("search-google").addEventListener("onClick", function () {
+        googleSearch(document.getElementById("search-google").innerHTML)
+      });
+      
+    </script>
+    <script>
+      (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+                  (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+      })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+      ga('create', 'UA-39158070-6', 'auto');
+      ga('send', 'pageview');
+    </script>
+  </body>
+</html>

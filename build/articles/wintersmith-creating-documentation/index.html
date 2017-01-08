@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Adron's Composite Code</title>
+    <meta name="description" content="">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="alternate" href="/feed.xml" type="application/rss+xml" title="Coder, Messenger, Recon, Infrastructure, Ops">
+    <link rel="icon" type="image/png" href="/img/favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/img/favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/img/favicons/favicon-96x96.png" sizes="96x96">
+    <link rel="apple-touch-icon" sizes="57x57" href="/img/favicons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/img/favicons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/img/favicons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/img/favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/img/favicons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/img/favicons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/img/favicons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/img/favicons/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/favicons/apple-touch-icon-180x180.png">
+    <link rel="stylesheet" href="/css/custom.css">
+    <link rel="stylesheet" href="/css/style.min.css">
+    <script src="/js/modernizr.js"></script>
+  </head>
+  <body class="article-detail">
+    <!--[if lt IE 8]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <div class="header header-over large">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 col-sm-6 col-xs-6">
+            <!-- Logo Image--><a href="/index.html" class="logo-image logo-animated"><img src="/img/logos/logo.png" alt="logo"></a>
+            <!-- End of Logo Image-->
+          </div>
+          <div class="col-md-9 col-sm-6 col-xs-6">
+            <!-- Menu-->
+            <nav class="right helper">
+              <ul class="menu sf-menu js-menu">
+                <li><a href="/docs/thrashing-code-news/">Thrashing Code News</a></li>
+                <li><a href="#">Conf - Meetup - Events</a>
+                  <ul>
+                    <li><a href="/docs/Speaking-Presentations-Workshops/">Speaking - Presentations - Workshops</a></li>
+                    <li><a href="/docs/calendar">Calendar of Engagements</a></li>
+                  </ul>
+                </li>
+                <li><a href="/docs/documentation/">Docs</a></li>
+                <li><a href="#">Contact</a>
+                  <ul>
+                    <li><a href="/docs/contact">Message</a></li>
+                    <li><a href="/docs/job-talk/">Hire</a></li>
+                  </ul>
+                </li>
+                <li><a href="/docs/about/">About</a></li>
+              </ul>
+            </nav>
+            <!-- End of Menu-->
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="header-back header-back-simple header-back-small">
+      <div class="header-back-container">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <!-- Page Info-->
+              <div class="page-info page-info-simple">
+                <h1>Wintersmith Creating Documentation</h1>
+                <p class="author">Written by <span class="author">Adron Hall</span> and published on <span>February, 17 of 2014.</span>
+                </p>
+                <div class="nav"><a href="/">« Home</a></div>
+              </div>
+              <!-- End Page Info-->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="content">
+      <div class="container">
+        <div class="layout with-right-sidebar js-layout">
+          <div class="row">
+            <div class="col-md-9">
+              <div class="main-content">
+                <!-- Blog Page-->
+                <article class="article">
+                  <section class="content"><p>I set out a few days ago to put together a documentation site. I had a few criteria for this&nbsp;site:</p>
+<ol>
+<li><p>A static site that I could push to Github to use with their github pages&nbsp;feature.</p>
+</li>
+<li><p>The static site is generated from&nbsp;markdown.</p>
+</li>
+<li><p>It just works. It’s easy to get it into a workflow without breaking the tool or breaking a solid&nbsp;workflow.</p>
+</li>
+</ol>
+<p>That was it, what I’d consider some pretty straight forward criteria. However it wasn’t that easy, until it was. Here’s a few of the issues I ran through on the way to getting a solid tool with a solid workflow working together. Beware however if you have fickle reading eyes, the following is a rant about what does and does not&nbsp;work.</p>
+<p><span class="more"></span></p>
+<p><h2>[rant&nbsp;on]</h2>
+<strong>Middleman Broken Ruby and Broken&nbsp;Gems</strong></p>
+<p>I have a Mac Book Pro Retina 15”. The machine runs <span class="caps">OS</span>-X Mavericks. I’ve had zero issue with this OS. It comes with Ruby 2 and some version of gems. My first attempt was to take a stab with <a href="http://middlemanapp.com/" target="_blank">middleman</a>, the same static site builder used by many companies including Basho. Even though I ran into problems which I detailed in “<a href="http://compositecode.com/2012/12/09/basho-first-week-coding-research-adventures/" target="_blank">Basho – First Week Coding <span class="amp">&amp;</span> Research Adventures…</a>“ and “<a href="http://compositecode.com/2012/12/14/un-breaking-mountain-lion-os-x/" target="_blank">Un-breaking <span class="caps">OS</span>-X Mountain Lion</a>“ eventually middleman <em>mostly</em>&nbsp;worked.</p>
+<p>Well, I didn’t get to a working app very fast. Immediately Ruby 2 had issues and gemsets puked middleman everywhere. I then ran into some confusing permissions errors. About 15 minutes into this process of troubleshooting middleman I had flashbacks of the first few days at Basho and thought, “<em>this is bullshit, something has to work better than this catastrofuck of software version conflicts</em>“. So I dropped middleman&nbsp;dead.</p>
+<p><strong>Assemble, Assemble, Assemble…    ??!?#@$%!&nbsp;<span class="caps">WTF</span>!</strong></p>
+<p>I attempted <a href="http://assemble.io/" target="_blank">assemble</a> next for the node.js stack. It <em>looked</em> to have a lot of promise. It uses grunt.js and a bunch of other tools to manage a static site generating, bootstrap using stack. The more I looked at it however it seemed busy. Busy as in “<em>I’m going to do more than three things so I’ll maybe do none of them right</em>“.</p>
+<p>Reading about assemble I turned to another hacker slinging some code at the bar I sat at. She looked at the project and asked, “<em>what’s it supposed to do exactly? I get that it’s a framework of tools but it doesn’t’ exactly lay out what it is supposed to be doing besides arbitrarily managing some parts of the stack.</em>“ That seemed reasonable to&nbsp;me.</p>
+<p>Before I just tossed assemble.io to the trash heap of options I wanted to ask at least one more person. So the next day I asked my good friend and super genius Troy Howard. It was a short verdict, “drop that&nbsp;shit”.</p>
+<p>That was enough for me, assemble was officially dead for this&nbsp;project.</p>
+<p><strong>Slate, This Seems Slick&nbsp;But…</strong></p>
+<p>I then took a stab at <a href="http://tripit.github.io/slate/" target="_blank">Slate</a>. <a href="http://tripit.github.io/slate/" target="_blank">Orchestrate.io just created some excellent documentation</a> using the Slate solution. So I dove into this, getting a test site up and running rapidly. It seemed like a mostly viable solution until I started running into issues with how and where I wanted things displayed for the code samples and other material. It appeared, if I were going to use Slate, I’d be using it almost exactly as is. I might borrow pieces of it in the future, even the layout to some degree, but for now I wanted something else that I could incorporate my themes as needed. Alas, I was super happy with Slate, it just wasn’t a great fit for&nbsp;now.</p>
+<p><strong>Where The Hell Are My Options,&nbsp;Jekyll?</strong></p>
+<p>At this point I was getting a little frustrated. I then went to a tried and true solution in <a href="http://jekyllrb.com/" target="_blank">jekyll</a>. Jekyll is a pretty solid solution, with some bugs and oddball issues but nothing major. I started working with it and even transitioning a jekyll project into my theme. Hacking a jekyll blog into a reasonable documentation solution this seemed like the way to&nbsp;go.</p>
+<p>But then I got a wild urge to see if there was anything else in Node.js land that I was missing. I really didn’t want to sling a Ruby project if I didn’t have to. I’d rather keep all the stacks around JavaScript for this particular set of projects. No reason to diverge when I’m just dealing with such simple straight forward web projects. I’ll diverge when something truly validate diverging, like doing some real math with a real functional language or something. Trading Node.js for one single project to go with a pseudo Ruby project for static site generation just didn’t seem appealing. So I started looking around one more&nbsp;time.</p>
+<p><strong>Made in&nbsp;-34°C</strong></p>
+<div class="image float-right">
+    <img src="/articles/wintersmith-creating-documentation/temp.png" alt="-34° Celsius">
+    Yup, -34 Celsius. That’s about as cold as it gets. Click for the full size chart!
+</div>
+
+<p>The next solution I tried was <a href="http://wintersmith.io/" target="_blank">Wintersmith</a>. This solution appeared to have everything that I’d been looking for feature wise. It was a node.js project, it generated static content, could generate blogs but other things too, was simple, had plugins, was straight forward and more. I was a little paranoid after the solutions I’d fought my way through earlier so I went to the only place that would insure that I’d have a solution I could be confident in. I went straight to the <a href="https://github.com/jnordberg/wintersmith" target="_blank">source</a>!</p>
+<p>I’ll admit I took a peak at the package.json file before going head long into the source. A quick perusal of the dependencies list looked&nbsp;ok.</p>
+<pre><code>  dependencies: {
+    marked: ~0.3.0,
+    coffee-script: ~1.6.3,
+    async: ~0.2.9,
+    highlight.js: ~8.0.0,
+    jade: ~1.1.5,
+    ncp: ~0.5.0,
+    rimraf: ~2.2.6,
+    winston: ~0.7.2,
+    colors: ~0.6.2,
+    optimist: ~0.6.0,
+    minimatch: ~0.2.14,
+    mime: ~1.2.11,
+    js-yaml: ~3.0.1,
+    mkdirp: ~0.3.5,
+    chokidar: ~0.8.1,
+    server-destroy: ~1.0.0,
+    npm: ~1.3.24,
+    slugg: ~0.1.2
+  },
+  devDependencies: {
+    shelljs: 0.1.x
+  }
+</code></pre><p>I immediately took note of a few things. The first was that there was actually a breakout of dev dependencies versus actual project dependencies. That’s a good first sign. The second thing I just went through the list and checked the various library dependencies, there were a few that I’ve played around with before that I trusted; highlight.js, coffee-script, async, js-yaml and npm were all cool by me. It didn’t seem to crazy out of whack. With that I went forth into the code with zero&nbsp;expectations…</p>
+<p>The first files I dug into were the <a href="https://github.com/jnordberg/wintersmith/blob/master/src/core/config.coffee" target="_blank">config.coffee file</a>, which pointed out a few things I’d want to possibly tweak a little later such as the port number and other things the wintersmith server would use when running the preview&nbsp;server.</p>
+<pre><code>class Config
+  ### The configuration object ###
+
+  @defaults =
+    # path to the directory containing content&#39;s to be scanned
+    contents: &#39;./contents&#39;
+    # list of glob patterns to ignore
+    ignore: []
+    # context variables, passed to views/templates
+    locals: {}
+    # list of modules/files to load as plugins
+    plugins: []
+    # modules/files loaded and added to locals, name: module
+    require: {}
+    # path to the directory containing the templates
+    templates: &#39;./templates&#39;
+    # directory to load custom views from
+    views: null
+    # built product goes here
+    output: &#39;./build&#39;
+    # base url that site lives on, e.g. &#39;/blog/&#39;
+    baseUrl: &#39;/&#39;
+    # preview server settings
+    hostname: null # INADDR_ANY
+    port: 8080
+    # options prefixed with _ are undocumented and should generally not be modified
+    _fileLimit: 40 # max files to keep open at once
+    _restartOnConfChange: true # restart preview server on config change
+</code></pre><p>Second code file that looked interesting, the <a href="https://github.com/jnordberg/wintersmith/blob/master/src/core/renderer.coffee" target="_blank">renderer.coffee</a> code&nbsp;file.</p>
+<pre><code>fs = require &#39;fs&#39;
+util = require &#39;util&#39;
+async = require &#39;async&#39;
+path = require &#39;path&#39;
+mkdirp = require &#39;mkdirp&#39;
+{Stream} = require &#39;stream&#39;
+
+{ContentTree} = require &#39;./content&#39;
+{pump, extend} = require &#39;./utils&#39;
+
+if not setImmediate?
+  setImmediate = process.nextTick
+
+renderView = (env, content, locals, contents, templates, callback) -&amp;gt;
+  setImmediate -&amp;gt;
+    # add env and contents to view locals
+    _locals = {env, contents}
+    extend _locals, locals
+
+    # lookup view function if needed
+    view = content.view
+    if typeof view is &#39;string&#39;
+      name = view
+      view = env.views[view]
+      if not view?
+        callback new Error &amp;quot;content &#39;#{ content.filename }&#39; specifies unknown view &#39;#{ name }&#39;&amp;quot;
+        return
+
+    # run view
+    view.call content, env, _locals, contents, templates, (error, result) -&amp;gt;
+      error.message = &amp;quot;#{ content.filename }: #{ error.message }&amp;quot; if error?
+      callback error, result
+
+render = (env, outputDir, contents, templates, locals, callback) -&amp;gt;
+  ### Render *contents* and *templates* using environment *env* to *outputDir*.
+      The output directory will be created if it does not exist. ###
+
+  env.logger.info &amp;quot;rendering tree:\n#{ ContentTree.inspect(contents, 1) }\n&amp;quot;
+  env.logger.verbose &amp;quot;render output directory: #{ outputDir }&amp;quot;
+
+  renderPlugin = (content, callback) -&amp;gt;
+    ### render *content* plugin, calls *callback* with true if a file is written; otherwise false. ###
+    renderView env, content, locals, contents, templates, (error, result) -&amp;gt;
+      if error
+        callback error
+      else if result instanceof Stream or result instanceof Buffer
+        destination = path.join outputDir, content.filename
+        env.logger.verbose &amp;quot;writing content #{ content.url } to #{ destination }&amp;quot;
+        mkdirp.sync path.dirname destination
+        writeStream = fs.createWriteStream destination
+        if result instanceof Stream
+          pump result, writeStream, callback
+        else
+          writeStream.end result, callback
+      else
+        env.logger.verbose &amp;quot;skipping #{ content.url }&amp;quot;
+        callback()
+
+  items = ContentTree.flatten contents
+  async.forEachLimit items, env.config._fileLimit, renderPlugin, callback
+
+module.exports = {render, renderView}
+</code></pre><p>Fairly straight forward code. Puts together the rendered content and I noted a few key things. There was a solid process order that was repeated; env, content, locals, contents, templates, callback. Because of this it looked like local variables were set to statically set certain things based on configuration instead of dynamic location. This could bite me, but with this quick glance, at least I knew where and what was happening with the order of&nbsp;generation.</p>
+<p>I then did a scan of the <a href="https://github.com/jnordberg/wintersmith/blob/master/src/core/templates.coffee" target="_blank">templates.coffee</a> and a few other code files. Having gotten a fair idea of where and what was being done, I went looking for a quick start. Things looked pretty good, so I crossed my fingers and my rant ends&nbsp;here…</p>
+<p><h2>[/rant&nbsp;off]</h2>
+So now that the rant mode was over, here’s what I did to make wintersmith my documentation solution. Most of this is in a state of flux as I automate and put more into the project to simplify the&nbsp;workflow.</p>
+<p>Here’s how I got started super&nbsp;fast.</p>
+<div class="image float-right">
+    <a href="http://wintersmith.io/"><img src="/articles/wintersmith-creating-documentation/wintersmith-04.png" alt="Wintersmith Icon 4"></a>
+</div>
+
+<p>First step is get <a href="http://wintersmith.io/" target="_blank">Wintersmith</a>&nbsp;running.</p>
+<pre><code>npm install wintersmith -g
+</code></pre><p>Note that you’ll need to install it globally (thus the -g) and may need to install Wintersmith with sudo prepended to that&nbsp;command.</p>
+<p>The next thing that I did was create a directory that I’d use to build the static generated contents. This material I’d put into a git repository on github (namely the <a href="https://github.com/Deconstructed/deconstructed/tree/gh-pages" target="_blank">deconstructed gh-pages repo</a>). I’ll call this generically the root&nbsp;directory.</p>
+<pre><code>mkdir rootDirectory
+</code></pre><p>After that I navigated into the rootDirectory and created a new Wintersmith&nbsp;Application.</p>
+<pre><code>wintersmith new myAppName
+</code></pre><p>That now gives me a directory structure like&nbsp;this</p>
+<ul>
+<li>rootDirectory</li>
+<li>myAppName</li>
+</ul>
+<p>Now that I have this, the app content, markdown, views and related templates are in myAppName. To view the app, I changed directories into myAppName and ran wintersmith preview like&nbsp;this</p>
+<pre><code>wintersmith preview
+</code></pre><p>Opening up a browser I can navigate to <a href="http://localhost:8080" target="_blank">http://localhost:8080</a> and see the fully rendered site. To publish the site however one needs to run wintersmith build, however there’s one problem. I want the site to publish to the rootDirectory where the application content currently sites. To do this I have to edit the <em>config.json</em> file. Just above the locals code settings shown&nbsp;below…</p>
+<pre><code>{
+  locals: {
+    url: http://localhost:8080,
+    name: The Wintersmith&#39;s blog,
+    owner: Someone,
+    description: Ramblings of an immor(t)al demigod
+}
+[/sourcecode]
+
+I added an output key value property to the file as shown. It merely takes the results and shifts them back a directory so they end up in the rootDirectory.
+
+[sourcecode language=&quot;javascript&quot;]
+{
+  output:../,
+  locals: {
+    url: http://docs.deconstructed.io,
+    name: Deconstructed Docs,
+    owner: Adron Hall,
+    description: This site provides the documentation around the Deconstructed API Services.
+  },
+  plugins: [
+    ./plugins/paginator.coffee
+  ],
+  require: {
+    moment: moment,
+    _: underscore,
+    typogr: typogr
+  },
+  jade: {
+    pretty: true
+  },
+  markdown: {
+    smartLists: true,
+    smartypants: true
+  },
+  paginator: {
+    perPage: 6
+  }
+}
+</code></pre><p>I also changed the perPage setting to 6, just so I could get a little more content on the main page eventually. There is also the change for the domain name and a few other parameters that I’ll catch up on with the next blog&nbsp;entry.</p>
+<h2 id="summary">Summary</h2>
+<p>In my next blog entry I’ll cover a quick how-to on how to setup the <span class="caps">CNAME</span> in github pages to get the static wintersmith site up at a subdomain/domain name. I’ll also dive into setup with AWS Route 53, which generically applies to setting a gh-pages site up with any DNS provider. So subscribe and I’ll have that post in the next 1-2&nbsp;days.</p>
+</section>
+                </article>
+                <!-- End of Blog Page-->
+              </div>
+            </div>
+            <div class="col-md-3 hidden-sm hidden-xs">
+              <div class="sidebar js-sidebar-fixed">
+                <!-- Vertical Menu-->
+                <div class="widget">
+                  <!-- Search-->
+                  <div class="search">
+                    <form action="https://google.com/search" method="get">
+                      <input type="hidden" name="sitesearch" value="http://blog.adron.me">
+                      <input type="text" name="q" placeholder="search" class="search-input form-control"><i class="fa fa-search search-icon"></i>
+                    </form>
+                  </div>
+                  <!-- End of Search-->
+                </div>
+                <div class="widget">
+                  <h3 class="widget-title">Keyword Search</h3>
+                  <!-- Tags-->
+                  <ul class="tags">
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=html">html</a></li>
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=javascript">javascript</a></li>
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=ubuntu">ubuntu</a></li>
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=node pdx">node pdx</a></li>
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=.NET fringe">.net fringe</a></li>
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=videos">videos</a></li>
+                  </ul>
+                  <!-- End of Tags-->
+                </div>
+                <nav class="menu-vertical-wrapper">
+                  <ul data-prepend-to=".js-layout" data-select="Menu" class="menu-vertical js-menu-vertical">
+                    <li><a href="#">About</a>
+                      <ul>
+                        <li><a href="/docs/about/">Me, Adron</a></li>
+                        <li><a href="#">My Hobbies</a>
+                          <ul>
+                            <li><a href="http://photos.adron.me">My Photos</a></li>
+                          </ul>
+                        </li>
+                        <li><a href="/docs/Speaking-Presentations-Workshops">My Presentations</a></li>
+                        <li><a href="/docs/documentation/">Collection of Docs & Notes</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </nav>
+                <div class="widget">
+                  <h3 class="widget-title">Photos</h3>
+                  <!-- Photos-->
+                  <ul class="widget-recommended-products">
+                    <!-- Photos-->
+                    <li class="widget-recommended-product"><img src="/img/photos/IMG_1836.jpg" alt="Jon Oropeza" class="widget-recommended-product-img"><a href="http://photos.adron.me/Software/Meetups-N-Conferences/Conferences/Node-PDX-2016/i-D9qFQ6m" class="widget-recommended-product-link">
+                        <h5 class="widget-recommended-product-link-title">Node PDX 2016<i class="fa fa-angle-right"></i></h5>
+                        <p class="widget-recommended-product-link-description">Jon Oropeza @ Node PDX 2016</p></a></li>
+                    <!-- End of Recommended product Item-->
+                    <!-- Recommended product Item-->
+                    <li class="widget-recommended-product"><img src="/img/photos/IMG_1812.jpg" alt="Liz Abinante" class="widget-recommended-product-img"><a href="http://photos.adron.me/Software/Meetups-N-Conferences/Conferences/Node-PDX-2016/i-g2m2hgP" class="widget-recommended-product-link">
+                        <h5 class="widget-recommended-product-link-title">Node PDX 2016<i class="fa fa-angle-right"></i></h5>
+                        <p class="widget-recommended-product-link-description">Liz Abinante @ Node PDX 2016</p></a></li>
+                    <!-- End of Recommended product Item-->
+                    <!-- Recommended product Item-->
+                    <li class="widget-recommended-product"><img src="/img/photos/IMG_5709.jpg" alt="Praha hlavní nádraží" class="widget-recommended-product-img"><a href="http://photos.adron.me/Travels-N-Traversings/Across-the-Pond-2016-Travels/September-Krakow/Week-4-Prague/i-62ZPsPb" class="widget-recommended-product-link">
+                        <h5 class="widget-recommended-product-link-title">Prague (Praha)<i class="fa fa-angle-right"></i></h5>
+                        <p class="widget-recommended-product-link-description">Praha hlavní nádraží</p></a></li>
+                    <!-- End of photos row one-->
+                  </ul>
+                  <ul class="widget-recommended-products">
+                    <!-- Photos-->
+                    <li class="widget-recommended-product"><img src="/img/photos/IMG_4417.jpg" alt="St Mary's Basilica" class="widget-recommended-product-img"><a href="http://photos.adron.me/Travels-N-Traversings/Across-the-Pond-2016-Travels/September-Krakow/Krakow/i-KnZf6pK/A" class="widget-recommended-product-link">
+                        <h5 class="widget-recommended-product-link-title">St Mary's Basilica<i class="fa fa-angle-right"></i></h5>
+                        <p class="widget-recommended-product-link-description">Bazylika Mariacka in Rynek Główny.</p></a></li>
+                    <!-- End of Recommended product Item-->
+                    <!-- Recommended product Item-->
+                    <li class="widget-recommended-product"><img src="/img/photos/VSC_03.png" alt="Visual Studio Code" class="widget-recommended-product-img"><a href="http://photos.adron.me/Software/Software-Development/Visual-Studio-Things/i-LLW7WcD/A" class="widget-recommended-product-link">
+                        <h5 class="widget-recommended-product-link-title">Visual Studio Code<i class="fa fa-angle-right"></i></h5>
+                        <p class="widget-recommended-product-link-description">Images from a review of Visual Studio Code.</p></a></li>
+                    <!-- End of Recommended product Item-->
+                    <!-- Recommended product Item-->
+                    <li class="widget-recommended-product"><img src="/img/photos/-home-adronhall-Pictures-Selection_002.png - Shutter_003.png" alt="" class="widget-recommended-product-img"><a href="http://photos.adron.me/Software/Software-Development/Ubuntu/i-CQsQ4zj/A" class="widget-recommended-product-link">
+                        <h5 class="widget-recommended-product-link-title">Mono Develop & WebStorm<i class="fa fa-angle-right"></i></h5>
+                        <p class="widget-recommended-product-link-description">Working through Mono Develop & WebStorm.</p></a>
+                      <!-- End of photos row two-->
+                    </li>
+                  </ul>
+                  <!-- End Photos-->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="nav"><a href="/">« Home</a></div>
+      </div>
+    </div>
+    <script src="/js/all.js"></script>
+    <script src="/js/custom.js"></script>
+    <!-- Google Tag Manager-->
+    <noscript>
+      <iframe src="//www.googletagmanager.com/ns.html?id=GTM-KMMZX2" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <script>
+      console.log(document.getElementById("search-google"));
+      console.log(document.getElementById("search-google").innerText);
+      
+      var searchBox = document.getElementById("search-google");
+      
+      function googleSearch(search_string) {
+        alert(search_string);
+      }
+      
+      document.getElementById("search-google").addEventListener("onClick", function () {
+        alert(document.getElementById("search-google").innerHTML);
+      });
+      
+      document.getElementById("search-google").addEventListener("onClick", function () {
+        googleSearch(document.getElementById("search-google").innerHTML)
+      });
+      
+    </script>
+    <script>
+      (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+                  (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+      })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+      ga('create', 'UA-39158070-6', 'auto');
+      ga('send', 'pageview');
+    </script>
+  </body>
+</html>
