@@ -1,5 +1,5 @@
 ---
-title: not totally done with 2015
+title: Not Totally Done with 2015, But...
 author: Adron Hall
 date: 2015-12-16
 template: article.jade
