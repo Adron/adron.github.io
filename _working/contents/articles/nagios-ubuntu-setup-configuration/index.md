@@ -1,5 +1,5 @@
 ---
-title: nagios ubuntu setup configuration
+title: Nagios on Ubuntu 14.04 LTS Setup and Configuration
 author: Adron Hall
 date: 2015-11-25
 template: article.jade
