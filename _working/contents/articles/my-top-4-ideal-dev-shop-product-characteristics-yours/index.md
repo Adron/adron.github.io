@@ -1,5 +1,5 @@
 ---
-title: my top 4 ideal dev shop product characteristics yours
+title: My Top 4 Ideal Dev Shop Product Characteristics and Yours?
 author: Adron Hall
 date: 2011-10-22
 template: article.jade
