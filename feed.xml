@@ -2755,6 +2755,23 @@ key concepts of SAM and walk the audience through some node.js code samples (inc
 </description>
     </item>
     <item>
+      <title>WebSockets Bring Light at the End of the Tunnel by Joel Lord</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</link>
+      <pubDate>Fri, 03 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-left&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/joel-lord.jpg&quot; alt=&quot;Joel Lord&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;As a Development Manager, Joel’s motivation and proven technical prowess makes him a key member of Spiria’s software development team. With a degree in computational astrophysics, his interests eventually made their way to software and Web design. Today, his knowledge of JavaScript lets him to support a variety of projects on both the front end and back end. As we move into the age of the Internet of Things, Joel is ready with his passion for programming node bots and experimenting with gadgets.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Joel is going to speak on Web Sockets and tunnels of light… or to describe it more specifically more and more, people seem to be obsessed with real-time data.  But what does real-time mean in the world of REST servers and one-way communication?  Most modern web applications are now either displaying a snapshot of data at a given time or use a polling mechanism to update series of data at a given interval.
+In this talk, you will learn about the power of WebSockets and how they can (and should!) be used in your modern web applications. In these 30 minutes, I will go through the process of building a Node server that can push data to multiple clients in real-time.  You will see how this can be easy using the socket.io library.&lt;/p&gt;
+</description>
+    </item>
+    <item>
       <title>MMOWAM - Build Server-less Games with a DSN by Josh Marinacci</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-josh-marinacci/</link>
       <pubDate>Fri, 03 Jun 2016 17:00:00 -0700</pubDate>
@@ -2789,23 +2806,6 @@ it can be.&lt;/p&gt;
 &lt;li&gt;show number of players&lt;/li&gt;
 &lt;li&gt;start when 4 players in? one player hit’s start? let all player see total count as well and status of the other players&lt;/li&gt;
 &lt;/ul&gt;
-</description>
-    </item>
-    <item>
-      <title>WebSockets Bring Light at the End of the Tunnel by Joel Lord</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</link>
-      <pubDate>Fri, 03 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</guid>
-      <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-left&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/joel-lord.jpg&quot; alt=&quot;Joel Lord&quot;&gt;
-&lt;/div&gt;
-
-&lt;p&gt;As a Development Manager, Joel’s motivation and proven technical prowess makes him a key member of Spiria’s software development team. With a degree in computational astrophysics, his interests eventually made their way to software and Web design. Today, his knowledge of JavaScript lets him to support a variety of projects on both the front end and back end. As we move into the age of the Internet of Things, Joel is ready with his passion for programming node bots and experimenting with gadgets.&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Joel is going to speak on Web Sockets and tunnels of light… or to describe it more specifically more and more, people seem to be obsessed with real-time data.  But what does real-time mean in the world of REST servers and one-way communication?  Most modern web applications are now either displaying a snapshot of data at a given time or use a polling mechanism to update series of data at a given interval.
-In this talk, you will learn about the power of WebSockets and how they can (and should!) be used in your modern web applications. In these 30 minutes, I will go through the process of building a Node server that can push data to multiple clients in real-time.  You will see how this can be easy using the socket.io library.&lt;/p&gt;
 </description>
     </item>
     <item>
@@ -3830,6 +3830,109 @@ sudo service apache2 restart
 &lt;p&gt;Now navigate to the server and you’ll be prompted to login to the web user interface.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;/articles/nagios-ubuntu-setup-configuration/nagioslogin.png&quot; alt=&quot;Nagios Login&quot;&gt;&lt;/p&gt;
 &lt;p&gt;Now begins the process of setting up servers you want to monitor… stay tuned, more to come.&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>Using the File System fs.* with Node.js</title>
+      <link>http://adron.github.io/articles/using-the-file-system-fs-w-nodejs/</link>
+      <pubDate>Sun, 22 Nov 2015 16:00:00 -0800</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/using-the-file-system-fs-w-nodejs/</guid>
+      <author></author>
+      <description>&lt;p&gt;I have a few basic tasks that I need to perform on the file system with Node.js. I’m going to clone a repository into a directory, but before that, if the directory that the clone action will put the repository in exists, I’d like to do something with that directory first. To check for the existence of the directory I quickly found two functions that work well for this purpose.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;First there is the asynchronously executing “exists” function.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; fs = &lt;span class=&quot;built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;'fs'&lt;/span&gt;);
+
+fs.exists(&lt;span class=&quot;string&quot;&gt;'/etc/passwd'&lt;/span&gt;, &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;exists&lt;/span&gt;) &lt;/span&gt;{
+  &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(exists ? &lt;span class=&quot;string&quot;&gt;&quot;it's there&quot;&lt;/span&gt; : &lt;span class=&quot;string&quot;&gt;'no passwd!'&lt;/span&gt;);
+});
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This function takes the path, passed in, then has a callback that can then react to the result which is true or false. A similar function for a synchronous call is available too, called “existsSync”.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; fs = &lt;span class=&quot;built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;'fs'&lt;/span&gt;);
+
+&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; result = fs.existsSync(path)
+
+&lt;span class=&quot;comment&quot;&gt;// result will be true or false.&lt;/span&gt;
+&lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(result);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now there is one major problem with these two functions. Currently, they’re marked as “deprecated” with a stability expectation of 0. This means simply, that they’re likely to go away in the near future. Now, I hate the idea of using these functions with the idea that I upgrade to a new version one day and my application is nuked. That just isn’t really acceptable.&lt;/p&gt;
+&lt;p&gt;So I go digging around at the other functions that the documentation states to use instead. For the asynchronous fs.exists(path, callback) function it states to use “fs.stat” or “fs.access” instead. Let’s take a look at these two first.&lt;/p&gt;
+&lt;p&gt;The “fs.stat” function is very similar to “fs.exists” in calling signature, it takes a path and a callback to execute. I created the short snippet below to show what this function looks like.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; fs = &lt;span class=&quot;built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;'fs'&lt;/span&gt;);
+
+&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; path2 = &lt;span class=&quot;string&quot;&gt;'thisShouldntExist'&lt;/span&gt;;
+&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; path1 = &lt;span class=&quot;string&quot;&gt;'newdirectory'&lt;/span&gt;;
+
+&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;myDirectoryExistsCheck&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;path&lt;/span&gt;) &lt;/span&gt;{
+  fs.stat(path2, &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;err, stat&lt;/span&gt;) &lt;/span&gt;{
+    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (err.code === &lt;span class=&quot;string&quot;&gt;'ENOENT'&lt;/span&gt;) {
+      &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;string&quot;&gt;'No file asynchronously found.'&lt;/span&gt;)
+    } &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (err) {
+      &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(err)
+    } &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; {
+      &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;string&quot;&gt;'File found asynchronously - Mode: '&lt;/span&gt; + stat.mode + &lt;span class=&quot;string&quot;&gt;' Size: '&lt;/span&gt; + stat.size);
+    }
+  });
+}
+
+myDirectoryExistsCheck(path1);
+myDirectoryExistsCheck(path2);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Based on the first call finding a directory and the second call not finding a directory, here’s the results I got from this code snippet.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;File found asynchronously - Mode: 16877 Size: 102
+No file asynchronously found.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Based on the first functions, which are now deprecated, the amount of code has ballooned up pretty dramatically over making a standard function call with a true or false result, to something where I have to confirm based off of the data returned in a fs.stats object. I wrote a little console.log code just to show what this object looks like when it is printed out. This…&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;fs.stat(path1, &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;err, stat&lt;/span&gt;) &lt;/span&gt;{
+  &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(stat);
+});
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;…prints out this.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;{ dev: 16777220,
+  mode: 16877,
+  nlink: 3,
+  uid: 501,
+  gid: 20,
+  rdev: 0,
+  blksize: 4096,
+  ino: 10692619,
+  size: 102,
+  blocks: 0,
+  atime: Mon Nov 23 2015 11:23:55 GMT-0800 (PST),
+  mtime: Mon Nov 23 2015 11:20:14 GMT-0800 (PST),
+  ctime: Mon Nov 23 2015 11:20:14 GMT-0800 (PST),
+  birthtime: Mon Nov 23 2015 11:19:40 GMT-0800 (PST) }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;It’s kind of nice to have an object come back with data that one can use to derive a result from, but it’s kind of a bummer when all I want to do is write code that checks for existence and returns true or false. Now, in either case, if an error occurs, such as what happens when a file or directory is not found with the “fs.stat” function, the result looks like this.  This…&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;fs.stat(path2, &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;err, stat&lt;/span&gt;) &lt;/span&gt;{
+  &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(err);
+});
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;…prints out this.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;{ [Error: ENOENT: no such file or directory, stat &amp;#39;thisShouldntExist&amp;#39;]
+  errno: -2,
+  code: &amp;#39;ENOENT&amp;#39;,
+  syscall: &amp;#39;stat&amp;#39;,
+  path: &amp;#39;thisShouldntExist&amp;#39; }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Another thing I added, to show two useful functions when there is a file or directory present is shown below.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;fs.stat(path, &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;err, stat&lt;/span&gt;) &lt;/span&gt;{
+  &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (err) {
+    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (err.code === &lt;span class=&quot;string&quot;&gt;'ENOENT'&lt;/span&gt;) {
+      &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;string&quot;&gt;'No file asynchronously found.'&lt;/span&gt;);
+    } &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; {
+      &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;string&quot;&gt;'Some other error occurred.'&lt;/span&gt;);
+    }
+  } &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; {
+    &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;string&quot;&gt;'File found asynchronously - Mode: '&lt;/span&gt; + stat.mode + &lt;span class=&quot;string&quot;&gt;' Size: '&lt;/span&gt; + stat.size);
+    &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;string&quot;&gt;'Other things to checks:'&lt;/span&gt;);
+    &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;string&quot;&gt;'  - '&lt;/span&gt; + stat.isFile());
+    &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;string&quot;&gt;'  - '&lt;/span&gt; + stat.isDirectory());
+  }
+});
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This of course checks for errors, which will be thrown if there is not a file or directory to find. But if there is, the stat object that is returned asynchronously via the callback has several functions attached, the two that are immediately useful for me are the “isFile()” and “isDirectory()” functions. They’re pretty self explanatory.&lt;/p&gt;
+&lt;p&gt;Now, of course this still means you’re writing code to deal with errors instead of what the “fs.exists” functions would do. So really, what needs to be done is a wrapper needs to be written to handle the somewhat basic and crude handling of the file system. But since this is such a common need for many applications, I thought, “hey, time to check and see if there’s some npm library bagic that’s available!” …and oddly enough I wasn’t impressed by anything I could dig up. Maybe search-fu wasn’t so hot. But it looks like I’ll be building up this stuff from scratch. With that, happy hacking and I’ll be back later with more…&lt;/p&gt;
 </description>
     </item>
     <item>

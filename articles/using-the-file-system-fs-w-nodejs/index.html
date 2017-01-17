@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="/css/style.min.css">
     <script src="/js/modernizr.js"></script>
   </head>
-  <body>
+  <body class="article-detail">
     <!--[if lt IE 8]>
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -67,8 +67,10 @@
             <div class="col-md-12">
               <!-- Page Info-->
               <div class="page-info page-info-simple">
-                <h1>Adron's Composite Code</h1>
-                <h2 class="description">Coder, Messenger, Recon, Infrastructure, Ops</h2>
+                <h1>Using the File System fs.* with Node.js</h1>
+                <p class="author">Written by <span class="author">Adron Hall</span> and published on <span>November, 23 of 2015.</span>
+                </p>
+                <div class="nav"><a href="/">« Home</a></div>
               </div>
               <!-- End Page Info-->
             </div>
@@ -83,70 +85,104 @@
             <div class="col-md-9">
               <div class="main-content">
                 <!-- Blog Page-->
-                <div class="blog">
-                  <div class="row"></div>
-                </div>
-                <div class="col-md-12 col-sm-12">
-                  <!-- Blog List-->
-                  <div class="blog-grid">
-                    <div class="row">
-                      <div class="col-md-12 col-sm-12">
-                        <h3 class="blog-grid-title"><a href="/articles/setting-up-an-aws-sqs-queue-for-use-with-node-js-beanstalk-worker-instances/">Setting up an AWS SQS Queue for Use With Node.js Beanstalk Worker Instances</a></h3>
-                        <p class="blog-grid-excerpt"><div class="image float-right">
-    <img src="/articles/setting-up-an-aws-sqs-queue-for-use-with-node-js-beanstalk-worker-instances/Amazon-SQS_200x200.png" alt="Amazon SQS">
-</div>
+                <article class="article">
+                  <section class="content"><p>I have a few basic tasks that I need to perform on the file system with Node.js. I’m going to clone a repository into a directory, but before that, if the directory that the clone action will put the repository in exists, I’d like to do something with that directory first. To check for the existence of the directory I quickly found two functions that work well for this&nbsp;purpose.</p>
+<p><span class="more"></span></p>
+<p>First there is the asynchronously executing “exists”&nbsp;function.</p>
+<pre><code class="lang-javascript"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);
 
-<ul>
-<li><em>Part 1</em> – <a href="/articles/setting-up-an-aws-sqs-queue-for-use-with-node-js-beanstalk-worker-instances">Setting up an <span class="caps">AWS</span> SQS Queue for Use With Node.js Beanstalk Worker Instances</a> (This is the current article you’re reading&nbsp;now)</li>
-<li><em>Part 2</em> – <a href="/articles/hapijs-aws-worker-publish/">Setting up a Hapi.js App that sends work to a Node.js <span class="caps">AWS</span> Worker via&nbsp;SQS</a></li>
-<li><em>Part 3</em> – <a href="/articles/aws-beanstalk-worker-with-node-js-and-sqs/"><span class="caps">AWS</span> Beanstalk Worker with Node.js and&nbsp;SQS</a></li>
-</ul>
-<p>Before diving straight in, I’m going to outline the specific goals and what I am using to accomplish these goals. The goal is to have a simple web application, that will get some element of data posted to a queue. The queue will then have data that a worker service needs to then process. As I step through each of these requirements I’ll determine the actual push and pull mechanisms that will get the job&nbsp;done.</p>
-<p>
-                          <p class="more"><a href="/articles/setting-up-an-aws-sqs-queue-for-use-with-node-js-beanstalk-worker-instances/">more</a></p>
-                        </p>
-                        <div class="blog-grid-meta"><span class="blog-grid-date">06. November 2014</span></div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End of Blog List-->
-                </div>
-                <div class="col-md-12 col-sm-12">
-                  <!-- Blog List-->
-                  <div class="blog-grid">
-                    <div class="row">
-                      <div class="col-md-12 col-sm-12">
-                        <h3 class="blog-grid-title"><a href="/articles/bashit/">Bashit... Just a Custom Bash Prompt Setup for Git</a></h3>
-                        <p class="blog-grid-excerpt"><p>I use git. I’m honestly shocked when someone doesn’t use git (<em>or at least some <span class="caps">DVCS</span></em>) these days. It just seems somewhat draconian to use any of the legacy source control systems (<em>albeit there are some rare exceptions, like game development graphics collateral</em>). I was reminded of something by the great hands on session that Pamela Ocampo <a href="https://twitter.com/pmocampo">@pmocampo</a> and Rachel <a href="https://twitter.com/raychatter" target="_blank">@raychatter</a> gave at <a href="http://opensourcebridge.org/" target="_blank"><span class="caps">OS</span> Bridge</a> titled “<a href="http://opensourcebridge.org/sessions/1378" target="_blank">NerdCred++; How to Customize your Bash Prompt</a>“.</p>
-<p>
-                          <p class="more"><a href="/articles/bashit/">more</a></p>
-                        </p>
-                        <div class="blog-grid-meta"><span class="blog-grid-date">09. October 2014</span></div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End of Blog List-->
-                </div>
-                <div class="col-md-12 col-sm-12">
-                  <!-- Blog List-->
-                  <div class="blog-grid">
-                    <div class="row">
-                      <div class="col-md-12 col-sm-12">
-                        <h3 class="blog-grid-title"><a href="/articles/working-in-34c-wintersmith-customization-and-github-hosting/">Working in -34c Wintersmith Customization and Github Hosting</a></h3>
-                        <p class="blog-grid-excerpt"><p>Getting Wintersmith customized, building and deployed to Github and a domain name pointed takes a few extra steps. So let’s&nbsp;roll…</p>
-<div class="image float-right">
-    <a href="http://wintersmith.io/"><img src="/articles/working-in-34c-wintersmith-customization-and-github-hosting/wintersmith-01.png" alt="Wintersmith Icon 1"></a>
-</div>
+fs.exists(<span class="string">'/etc/passwd'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">exists</span>) </span>{
+  <span class="built_in">console</span>.log(exists ? <span class="string">"it's there"</span> : <span class="string">'no passwd!'</span>);
+});
+</code></pre>
+<p>This function takes the path, passed in, then has a callback that can then react to the result which is true or false. A similar function for a synchronous call is available too, called&nbsp;“existsSync”.</p>
+<pre><code class="lang-javascript"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);
 
-<p>
-                          <p class="more"><a href="/articles/working-in-34c-wintersmith-customization-and-github-hosting/">more</a></p>
-                        </p>
-                        <div class="blog-grid-meta"><span class="blog-grid-date">19. February 2014</span></div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End of Blog List-->
-                </div>
+<span class="keyword">var</span> result = fs.existsSync(path)
+
+<span class="comment">// result will be true or false.</span>
+<span class="built_in">console</span>.log(result);
+</code></pre>
+<p>Now there is one major problem with these two functions. Currently, they’re marked as “deprecated” with a stability expectation of 0. This means simply, that they’re likely to go away in the near future. Now, I hate the idea of using these functions with the idea that I upgrade to a new version one day and my application is nuked. That just isn’t really&nbsp;acceptable.</p>
+<p>So I go digging around at the other functions that the documentation states to use instead. For the asynchronous fs.exists(path, callback) function it states to use “fs.stat” or “fs.access” instead. Let’s take a look at these two&nbsp;first.</p>
+<p>The “fs.stat” function is very similar to “fs.exists” in calling signature, it takes a path and a callback to execute. I created the short snippet below to show what this function looks&nbsp;like.</p>
+<pre><code class="lang-javascript"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);
+
+<span class="keyword">var</span> path2 = <span class="string">'thisShouldntExist'</span>;
+<span class="keyword">var</span> path1 = <span class="string">'newdirectory'</span>;
+
+<span class="function"><span class="keyword">function</span> <span class="title">myDirectoryExistsCheck</span> (<span class="params">path</span>) </span>{
+  fs.stat(path2, <span class="function"><span class="keyword">function</span> (<span class="params">err, stat</span>) </span>{
+    <span class="keyword">if</span> (err.code === <span class="string">'<span class="caps">ENOENT</span>'</span>) {
+      <span class="built_in">console</span>.log(<span class="string">'No file asynchronously found.'</span>)
+    } <span class="keyword">else</span> <span class="keyword">if</span> (err) {
+      <span class="built_in">console</span>.log(err)
+    } <span class="keyword">else</span> {
+      <span class="built_in">console</span>.log(<span class="string">'File found asynchronously - Mode: '</span> + stat.mode + <span class="string">' Size: '</span> + stat.size);
+    }
+  });
+}
+
+myDirectoryExistsCheck(path1);
+myDirectoryExistsCheck(path2);
+</code></pre>
+<p>Based on the first call finding a directory and the second call not finding a directory, here’s the results I got from this code&nbsp;snippet.</p>
+<pre><code class="lang-shell-script">File found asynchronously - Mode: 16877 Size: 102
+No file asynchronously found.
+</code></pre>
+<p>Based on the first functions, which are now deprecated, the amount of code has ballooned up pretty dramatically over making a standard function call with a true or false result, to something where I have to confirm based off of the data returned in a fs.stats object. I wrote a little console.log code just to show what this object looks like when it is printed out.&nbsp;This…</p>
+<pre><code class="lang-javascript">fs.stat(path1, <span class="function"><span class="keyword">function</span> (<span class="params">err, stat</span>) </span>{
+  <span class="built_in">console</span>.log(stat);
+});
+</code></pre>
+<p>…prints out&nbsp;this.</p>
+<pre><code class="lang-shell-script">{ dev: 16777220,
+  mode: 16877,
+  nlink: 3,
+  uid: 501,
+  gid: 20,
+  rdev: 0,
+  blksize: 4096,
+  ino: 10692619,
+  size: 102,
+  blocks: 0,
+  atime: Mon Nov 23 2015 11:23:55 GMT-0800 (PST),
+  mtime: Mon Nov 23 2015 11:20:14 GMT-0800 (PST),
+  ctime: Mon Nov 23 2015 11:20:14 GMT-0800 (PST),
+  birthtime: Mon Nov 23 2015 11:19:40 GMT-0800 (PST) }
+</code></pre>
+<p>It’s kind of nice to have an object come back with data that one can use to derive a result from, but it’s kind of a bummer when all I want to do is write code that checks for existence and returns true or false. Now, in either case, if an error occurs, such as what happens when a file or directory is not found with the “fs.stat” function, the result looks like this.&nbsp;This…</p>
+<pre><code class="lang-javascript">fs.stat(path2, <span class="function"><span class="keyword">function</span> (<span class="params">err, stat</span>) </span>{
+  <span class="built_in">console</span>.log(err);
+});
+</code></pre>
+<p>…prints out&nbsp;this.</p>
+<pre><code class="lang-shell-script">{ [Error: ENOENT: no such file or directory, stat &#39;thisShouldntExist&#39;]
+  errno: -2,
+  code: &#39;ENOENT&#39;,
+  syscall: &#39;stat&#39;,
+  path: &#39;thisShouldntExist&#39; }
+</code></pre>
+<p>Another thing I added, to show two useful functions when there is a file or directory present is shown&nbsp;below.</p>
+<pre><code class="lang-javascript">fs.stat(path, <span class="function"><span class="keyword">function</span> (<span class="params">err, stat</span>) </span>{
+  <span class="keyword">if</span> (err) {
+    <span class="keyword">if</span> (err.code === <span class="string">'<span class="caps">ENOENT</span>'</span>) {
+      <span class="built_in">console</span>.log(<span class="string">'No file asynchronously found.'</span>);
+    } <span class="keyword">else</span> {
+      <span class="built_in">console</span>.log(<span class="string">'Some other error occurred.'</span>);
+    }
+  } <span class="keyword">else</span> {
+    <span class="built_in">console</span>.log(<span class="string">'File found asynchronously - Mode: '</span> + stat.mode + <span class="string">' Size: '</span> + stat.size);
+    <span class="built_in">console</span>.log(<span class="string">'Other things to checks:'</span>);
+    <span class="built_in">console</span>.log(<span class="string">'  - '</span> + stat.isFile());
+    <span class="built_in">console</span>.log(<span class="string">'  - '</span> + stat.isDirectory());
+  }
+});
+</code></pre>
+<p>This of course checks for errors, which will be thrown if there is not a file or directory to find. But if there is, the stat object that is returned asynchronously via the callback has several functions attached, the two that are immediately useful for me are the “isFile()” and “isDirectory()” functions. They’re pretty self&nbsp;explanatory.</p>
+<p>Now, of course this still means you’re writing code to deal with errors instead of what the “fs.exists” functions would do. So really, what needs to be done is a wrapper needs to be written to handle the somewhat basic and crude handling of the file system. But since this is such a common need for many applications, I thought, “hey, time to check and see if there’s some npm library bagic that’s available!” …and oddly enough I wasn’t impressed by anything I could dig up. Maybe search-fu wasn’t so hot. But it looks like I’ll be building up this stuff from scratch. With that, happy hacking and I’ll be back later with&nbsp;more…</p>
+</section>
+                </article>
                 <!-- End of Blog Page-->
               </div>
             </div>
@@ -236,8 +272,7 @@
             </div>
           </div>
         </div>
-        <div class="nav"><a href="/page/24/">« Newer</a>&nbsp;<a href="/page/26/">Previous »</a>
-        </div>
+        <div class="nav"><a href="/">« Home</a></div>
       </div>
     </div>
     <script src="/js/all.js"></script>
