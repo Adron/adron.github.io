@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="/css/style.min.css">
     <script src="/js/modernizr.js"></script>
   </head>
-  <body>
+  <body class="article-detail">
     <!--[if lt IE 8]>
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -67,8 +67,10 @@
             <div class="col-md-12">
               <!-- Page Info-->
               <div class="page-info page-info-simple">
-                <h1>Adron's Composite Code</h1>
-                <h2 class="description">Coder, Messenger, Recon, Infrastructure, Ops</h2>
+                <h1>Bashit... Just a Custom Bash Prompt Setup for Git</h1>
+                <p class="author">Written by <span class="author">Adron Hall</span> and published on <span>October, 09 of 2014.</span>
+                </p>
+                <div class="nav"><a href="/">« Home</a></div>
               </div>
               <!-- End Page Info-->
             </div>
@@ -83,76 +85,48 @@
             <div class="col-md-9">
               <div class="main-content">
                 <!-- Blog Page-->
-                <div class="blog">
-                  <div class="row"></div>
-                </div>
-                <div class="col-md-12 col-sm-12">
-                  <!-- Blog List-->
-                  <div class="blog-grid">
-                    <div class="row">
-                      <div class="col-md-12 col-sm-12">
-                        <h3 class="blog-grid-title"><a href="/articles/node-pdx-2016-speaker-josh-marinacci/">MMOWAM - Build Server-less Games with a DSN by Josh Marinacci</a></h3>
-                        <p class="blog-grid-excerpt"><p><a href="http://nodepdx.org"><img src="/articles/node-pdx-2016-speaker-josh-marinacci/nodepdx-2016-logo.png" alt="Node PDX 2016"></a></p>
-<div class="image float-left">
-    <img src="/articles/node-pdx-2016-speaker-josh-marinacci/josh-marinacci.jpg" alt="Josh Marinacci">
-</div>
+                <article class="article">
+                  <section class="content"><p>I use git. I’m honestly shocked when someone doesn’t use git (<em>or at least some <span class="caps">DVCS</span></em>) these days. It just seems somewhat draconian to use any of the legacy source control systems (<em>albeit there are some rare exceptions, like game development graphics collateral</em>). I was reminded of something by the great hands on session that Pamela Ocampo <a href="https://twitter.com/pmocampo">@pmocampo</a> and Rachel <a href="https://twitter.com/raychatter" target="_blank">@raychatter</a> gave at <a href="http://opensourcebridge.org/" target="_blank"><span class="caps">OS</span> Bridge</a> titled “<a href="http://opensourcebridge.org/sessions/1378" target="_blank">NerdCred++; How to Customize your Bash Prompt</a>“.</p>
+<p><span class="more"></span></p>
+<p>After the session I dug into customizing my bash prompt. After doing a lot of manual editing I ended up just forking and implementing Michael Gonderman’s (<a href="https://twitter.com/magicmonty" target="_blank">@magicmonty</a>) <a href="https://github.com/Adron/bash-git-prompt" target="_blank">bash-git-prompt</a>. The way to get this installed is pretty simple, albeit it does include a few steps (<em>and yes, the <a href="https://github.com/Adron/bash-git-prompt/blob/master/README.md" target="_blank"><span class="caps">README</span>.md</a> basically has the instructions, but I’ve copied them here just to discuss and for ease of readability). </em>Another key points of reference include Sebastian Celis’s (<a href="https://twitter.com/scelis" target="_blank">@scelis</a>) “<a href="http://sebastiancelis.com/2009/11/16/zsh-prompt-git-users/" target="_blank">A zsh prompt for git users</a>“ on his <a href="http://sebastiancelis.com/" target="_blank">blog</a>.</p>
+<p><!--more-->First clone the repo (even though I’ve forked it I still pulled directly&nbsp;from</p>
+<pre><code class="lang-shell-script">$ cd ~
+$ git clone https://github.com/magicmonty/bash-git-prompt.git .bash-git-prompt
+</code></pre>
+<p>To verify that it is cloned ok, source the gitprompt.sh file from bash. It should immediately dive into a new prompt with a check mark and current directory, with the time immediately under that. Sweet, that&nbsp;worked!</p>
+<pre><code class="lang-shell-script">$ source ~/.bash-git-prompt/gitprompt.sh
+✔ ~
+10:48 $
+</code></pre>
+<p>Where the check mark is where git changes will display when navigating into a directory path that is a git repository and making changes. The format will look something like (<branch> <branch tracking>|<local status>). The symbols on the prompt, when working with git are as&nbsp;follows:</p>
+<p>✔: repository clean
+●n: there are n staged files
+✖n: there are n unmerged files
+✚n: there are n changed but unstaged files
+…n: there are n untracked files
+⚑n: there are n stash entries
+↑n: ahead of remote by n commits
+↓n: behind remote by n commits
+↓m↑n: branches diverged, other by m commits, yours by n&nbsp;commits</p>
+<p>The next step is to make this permanent. Open up your ~/.bashrc file (or whichever you use, in my case I’m using ~./bash_profile, so be sure to figure out which one your system is using to actually load your bash). In the bash file add a single line to source the gitprompt.sh&nbsp;file.</p>
+<pre><code class="lang-shell-script"># a bunch of other stuff in the file, whatever it might be... etc., etc.
 
-<p>Josh is an O’Reilly author, developer advocate, and recovering engineer. He is
-currently head of the developer evangelism team at PubNub. Previously he worked
-as a <span class="caps">UI</span> researcher at Nokia, and a developer advocate at Palm and Sun. He is
-passionate about user interfaces and education. Josh lives in sunny Eugene,&nbsp;Oregon.</p>
-<p>
-                          <p class="more"><a href="/articles/node-pdx-2016-speaker-josh-marinacci/">more</a></p>
-                        </p>
-                        <div class="blog-grid-meta"><span class="blog-grid-date">04. June 2016</span></div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End of Blog List-->
-                </div>
-                <div class="col-md-12 col-sm-12">
-                  <!-- Blog List-->
-                  <div class="blog-grid">
-                    <div class="row">
-                      <div class="col-md-12 col-sm-12">
-                        <h3 class="blog-grid-title"><a href="/articles/node-pdx-2016-speaker-joel-lord/">WebSockets Bring Light at the End of the Tunnel by Joel Lord</a></h3>
-                        <p class="blog-grid-excerpt"><p><a href="http://nodepdx.org"><img src="/articles/node-pdx-2016-speaker-joel-lord/nodepdx-2016-logo.png" alt="Node PDX 2016"></a></p>
-<div class="image float-left">
-    <img src="/articles/node-pdx-2016-speaker-joel-lord/joel-lord.jpg" alt="Joel Lord">
-</div>
-
-<p>As a Development Manager, Joel’s motivation and proven technical prowess makes him a key member of Spiria’s software development team. With a degree in computational astrophysics, his interests eventually made their way to software and Web design. Today, his knowledge of JavaScript lets him to support a variety of projects on both the front end and back end. As we move into the age of the Internet of Things, Joel is ready with his passion for programming node bots and experimenting with&nbsp;gadgets.</p>
-<p>
-                          <p class="more"><a href="/articles/node-pdx-2016-speaker-joel-lord/">more</a></p>
-                        </p>
-                        <div class="blog-grid-meta"><span class="blog-grid-date">04. June 2016</span></div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End of Blog List-->
-                </div>
-                <div class="col-md-12 col-sm-12">
-                  <!-- Blog List-->
-                  <div class="blog-grid">
-                    <div class="row">
-                      <div class="col-md-12 col-sm-12">
-                        <h3 class="blog-grid-title"><a href="/articles/node-pdx-2016-speaker-ben-michel/">The Web Platform is the Universal Instrument by Ben Michel</a></h3>
-                        <p class="blog-grid-excerpt"><p><a href="http://nodepdx.org"><img src="/articles/node-pdx-2016-speaker-ben-michel/nodepdx-2016-logo.png" alt="Node PDX 2016"></a></p>
-<div class="image float-right">
-    <img src="/articles/node-pdx-2016-speaker-ben-michel/benmichel.jpg" alt="Ben Michel">
-</div>
-
-<p>Ben Michel has a pretty epic talk scheduled for Node <span class="caps">PDX</span>… if you don’t know Ben he’s a Musician–Developer. He composes <span class="amp">&amp;</span> performs live soundtracks and cares a lot about community&nbsp;music.</p>
-<p>The talk he has planned for you all is described as, “Music as an idea, expression, commercial endeavor, and communal art is in its most volatile state since the European Renaissance. We’ve moved from the public adoption of recording technology, through the massive rise and fall of the recording industry, to a new age that was first seeded at Bell Labs during the Computer Science&nbsp;era.</p>
-<p>
-                          <p class="more"><a href="/articles/node-pdx-2016-speaker-ben-michel/">more</a></p>
-                        </p>
-                        <div class="blog-grid-meta"><span class="blog-grid-date">03. June 2016</span></div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End of Blog List-->
-                </div>
+source ~/.bash-git-prompt/gitprompt.sh
+</code></pre>
+<p>I’ve added some links below that add additional options to customize your bash prompt (thank Pamela <span class="amp">&amp;</span> Rachel). Even though all of this might seem like such a small little thing, having that extra information readily displayed on the prompt can be a huge time saver. Especially if you’re regularly in the code, committing from <span class="caps">TDD</span> or BDD practices or even just paired with somebody going through doing a refactor. It can be HUGE time saver, it definitely has for&nbsp;me.</p>
+<p>…and thanks to <span class="caps">ALL</span> that gave me the motivation <span class="amp">&amp;</span> for putting together the presentation and code for the prompt. Props to <a href="https://twitter.com/scelis" target="_blank">@scelis</a>, <a href="https://twitter.com/pmocampo" target="_blank">@pmocampo</a>, <a href="https://twitter.com/raychatter" target="_blank">@raychatter</a> <span class="amp">&amp;</span> the others that have contributed to making bad ass bash&nbsp;prompts!</p>
+<p>Enjoy!</p>
+<h2 id="resources-">Resources:</h2>
+<p>Pamela <span class="amp">&amp;</span> Rachel’s Slide Deck <span class="amp">&amp;</span> Additional&nbsp;Information:</p>
+<ul>
+<li><a href="http://pamo.github.io/nerdcred/slides/#/" target="_blank">Slide&nbsp;Deck</a></li></li>
+<li><a href="http://pamo.github.io/nerdcred/" target="_blank">Additional Info from Pamela <span class="amp">&amp;</span>&nbsp;Rachel</a></li></li>
+<li><a href="https://www.kirsle.net/wizards/ps1.html" target="_blank">Bash $<span class="caps">PS1</span> Generator&nbsp;2.0</a></li></li>
+<li><a href="http://andrewray.me/bash-prompt-builder/" target="_blank">Bash Prompt&nbsp;Builder</a></li></li>
+<li><a href="http://ezprompt.net/" target="_blank">Ez&nbsp;Prompt</a></li></li>
+</ul>
+</section>
+                </article>
                 <!-- End of Blog Page-->
               </div>
             </div>
@@ -242,8 +216,7 @@ passionate about user interfaces and education. Josh lives in sunny Eugene,&nbsp
             </div>
           </div>
         </div>
-        <div class="nav"><a href="/page/14/">« Newer</a>&nbsp;<a href="/page/16/">Previous »</a>
-        </div>
+        <div class="nav"><a href="/">« Home</a></div>
       </div>
     </div>
     <script src="/js/all.js"></script>
