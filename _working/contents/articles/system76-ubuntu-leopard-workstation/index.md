@@ -1,5 +1,5 @@
 ---
-title: system76 ubuntu leopard workstation
+title: Buying a Leopard!
 author: Adron Hall
 date: 2017-1-18
 template: article.jade
@@ -27,6 +27,87 @@ I started digging into hardware specifications and looking into form factors, ca
 * [Emperor Linux](http://emperorlinux.com/) is another company I found specializing in Linux machines.
 * [Zareason](http://zareason.com/) was another, that specialized in Linux machines.
 
-<div class="image float-right">
-    ![Streamsets](streamset2.jpg)
+## First Decision > Build or Buy?
+
+I wrangled hardware specifications and the idea of building my own machine for some time. I came to the conclusion that the time versus money investment for me was on the side of buying a built machine. This first decision was pretty easy, but educating myself on the latest hardware was eye opening and a lot of fun. In the end however, better to let a builder get it done right instead of me creating a catastrophe for myself and nuking a whole weekend!
+
+> **Decision** Buy!
+
+## Second Decision > Who should I buy from?
+
+I dug through each of the computer builders previously mentioned. I scouted out where they were located, what the general process was they used to build the machines, what testing, what involvement in the community they have, and finally a cost and parts review.
+
+Each of the builders has a lot of positives in regards to Linux, the only one that I was hesitant about at first in regards to Linux was Puget Computing. Because by default the machines come with Windows 10. However after asking around and reviewing other reviews online, I came to find they do have Linux and a solid skill set around Linux. Puget remained a leader in the selection process.
+
+![Puget Systems](pugetsystems.png)
+
+I went through Los Alamos Computers, which I realized are now LAC Portland (Win for Portland!), then Penguin, Think Penguin, and Emperor Linux. All had great skills and ethos around Linux. LAC definitely had the preeminently preferable choice in physical location (I mean, I do love Portland!), but each were short in either their customer facing desktop options. Albeit for a company or other reason, I'd likely buy a Thinkpad or other computing platform running Linux from them. But for this scenario each were disqualified for my personal workstation.
+
+The last two I started checking out were Zareason and System76. I had been following what System76 for a while and a few things had caught my eye on their site. It led me to realize that they're located out of Denver. Being a transit nerd, one of their website video photo coffee shop scenes had the RTD Light Rail passing in the background. But all things aside I started checking out cases and hardware that each builder puts in a box.
+
+<hr />
+
+### Zareason
+
+[Zareason](http://zareason.com) had several cases as shown below. With each of these I checked out the hardware options.
+
+<div class="image float-left">
+  ![Zareason Zeto](zareason1.jpg)
+  [Zeto](http://zareason.com/shop/Zeto.html)
 </div>
+
+<div class="image float-left">
+  ![Zareason Limbo 560](zareason2.jpg)
+  [Limbo 560](http://zareason.com/shop/Limbo-560.html)
+</div>
+
+<div class="image float-left">
+  ![Zareason Valta X99i](zareason3.jpg)
+  [Valta X99i](http://zareason.com/shop/Valta-X99i.html)
+</div>
+
+One of the other side notes of the Zareason site is that you can navigate directly to it at the http address.
+
+<hr />
+
+### Puget Systems
+
+Next up I checked out a number of [Puget Systems](https://www.pugetsystems.com). The religious reference names were a bit strange. But whatever, to each their own.
+
+<div class="image float-left">
+    ![Puget Systems](puget3.jpg)
+    [Deluge](https://www.pugetsystems.com/deluge.php)
+</div>
+
+<div class="image float-left">
+    ![Puget Systems](puget2.jpg)
+    [Spirit](https://www.pugetsystems.com/spirit.php)
+</div>
+
+<div class="image float-left">
+    ![Puget Systems](puget1.jpg)
+    [Genensis II](https://www.pugetsystems.com/genesis.php)
+</div>
+
+<hr />
+
+### System76
+
+Next I started looking at [System76](https://www.pugetsystems.com) machines.
+
+<div class="image float-left">
+    ![Puget Systems](puget2.jpg)
+    [Spirit](https://www.pugetsystems.com/spirit.php)
+</div>
+
+<div class="image float-left">
+    ![Puget Systems](puget1.jpg)
+    [Genensis II](https://www.pugetsystems.com/genesis.php)
+</div>
+
+
+
+
+
+
+http://photos.adron.me/Software/System76/
