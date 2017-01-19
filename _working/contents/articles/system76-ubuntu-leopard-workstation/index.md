@@ -47,57 +47,61 @@ The last two I started checking out were Zareason and System76. I had been follo
 
 ### Zareason
 
-[Zareason](http://zareason.com) had several cases as shown below. With each of these I checked out the hardware options.
-
-<div class="image float-left">
-  ![Zareason Zeto](zareason1.jpg)
-  [Zeto](http://zareason.com/shop/Zeto.html)
-</div>
-
-<div class="image float-left">
-  ![Zareason Limbo 560](zareason2.jpg)
-  [Limbo 560](http://zareason.com/shop/Limbo-560.html)
-</div>
-
-<div class="image float-left">
-  ![Zareason Valta X99i](zareason3.jpg)
-  [Valta X99i](http://zareason.com/shop/Valta-X99i.html)
-</div>
-
-One of the other side notes of the Zareason site is that you can navigate directly to it at the http address.
-
-### Puget Systems
-
-Next up I checked out a number of [Puget Systems](https://www.pugetsystems.com). The religious reference names were a bit strange. But whatever, to each their own.
-
-<div class="image float-left">
-    ![Puget Systems](puget3.jpg)
-    [Deluge](https://www.pugetsystems.com/deluge.php)
-</div>
-
-<div class="image float-left">
-    ![Puget Systems](puget2.jpg)
-    [Spirit](https://www.pugetsystems.com/spirit.php)
-</div>
-
-<div class="image float-left">
-    ![Puget Systems](puget1.jpg)
-    [Genensis II](https://www.pugetsystems.com/genesis.php)
-</div>
-
-### System76
-
-Next I started looking at [System76](https://www.pugetsystems.com) machines.
-
-<div class="image float-left">
-    ![Leopard WS](leopardws.jpg)
-    [Leopard Workstation](https://system76.com/desktops/leopard)
-</div>
-
-<div class="image float-left">
-    ![Silverback WS](silverback.jpg)
-    [Silverback Workstation](https://system76.com/desktops/silverback)
-</div>
+<ul class="faq js-faq" id="my-faq">
+  <li class="faq-item">
+    <h4 class="faq-question">[Zareason](http://zareason.com) had several cases as shown below. With each of these I checked out the hardware options. (open for details)</h4>
+    <div class="faq-answer">
+      One of the other side notes of the Zareason site is that you can navigate directly to it at the http address, and they don't for https. I just found this a bit odd. But here's the machines that I reviewed.
+      <table>
+        <tr>
+        </tr>
+      </table>
+      <div class="image float-left">
+        ![Zareason Zeto](zareason1.jpg)
+        [Zeto](http://zareason.com/shop/Zeto.html)
+      </div>
+      <div class="image float-left">
+        ![Zareason Limbo 560](zareason2.jpg)
+        [Limbo 560](http://zareason.com/shop/Limbo-560.html)
+      </div>
+      <div class="image float-left">
+        ![Zareason Valta X99i](zareason3.jpg)
+        [Valta X99i](http://zareason.com/shop/Valta-X99i.html)
+      </div>
+    </div>
+  </li>
+  <li class="faq-item">
+    <h4 class="faq-question">Next up I checked out a number of [Puget Systems](https://www.pugetsystems.com). (open for details)</h4>
+    <div class="faq-answer">
+      The religious reference names were a bit strange. But whatever, to each their own.
+      <div class="image float-left">
+          ![Puget Systems](puget3.jpg)
+          [Deluge](https://www.pugetsystems.com/deluge.php)
+      </div>
+      <div class="image float-left">
+          ![Puget Systems](puget2.jpg)
+          [Spirit](https://www.pugetsystems.com/spirit.php)
+      </div>
+      <div class="image float-left">
+          ![Puget Systems](puget1.jpg)
+          [Genensis II](https://www.pugetsystems.com/genesis.php)
+      </div>
+    </div>
+  </li>
+  <li class="faq-item">
+    <h4 class="faq-question">Next I started looking at [System76](https://www.pugetsystems.com) machines. (open for details)</h4>
+    <div class="faq-answer">
+      <div class="image float-left">
+          ![Leopard WS](leopardws.jpg)
+          [Leopard Workstation](https://system76.com/desktops/leopard)
+      </div>
+      <div class="image float-left">
+          ![Silverback WS](silverback.jpg)
+          [Silverback Workstation](https://system76.com/desktops/silverback)
+      </div>
+    </div>
+  </li>
+</ul>
 
 After working through and reviewing prices, features, hardware, and options things were close. I started reviewing location and what I could derive about each company's community involvement in Linux, how they're involved locally, and what the word is about those companies in their respective communities. Out of the three, I ended up not finding any customers to talk to about Zareason. For Puget, I found one friend that had a box purchased from a few years ago, and for System76 I actually found 2 different feedback bits from users within an hour or so of diffing around.
 
