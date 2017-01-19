@@ -107,7 +107,7 @@ Dev Shop X - A group of individuals I reached out to I had met 3 years ago at th
 
 With the reviews from trusted sources, seeing the involvement and related culture of System76 I decided that they would be the builder of choice.
 
-> **Decision** [System76](https://system76.com)!
+> **Decision** [System76](https://system76.com) [Leopard WS](https://system76.com/desktops/leopard)!
 
 
 
