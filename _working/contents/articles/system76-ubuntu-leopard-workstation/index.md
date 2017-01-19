@@ -45,8 +45,6 @@ I went through Los Alamos Computers, which I realized are now LAC Portland (Win 
 
 The last two I started checking out were Zareason and System76. I had been following what System76 for a while and a few things had caught my eye on their site. It led me to realize that they're located out of Denver. Being a transit nerd, one of their website video photo coffee shop scenes had the RTD Light Rail passing in the background. But all things aside I started checking out cases and hardware that each builder puts in a box.
 
-<hr />
-
 ### Zareason
 
 [Zareason](http://zareason.com) had several cases as shown below. With each of these I checked out the hardware options.
@@ -68,8 +66,6 @@ The last two I started checking out were Zareason and System76. I had been follo
 
 One of the other side notes of the Zareason site is that you can navigate directly to it at the http address.
 
-<hr />
-
 ### Puget Systems
 
 Next up I checked out a number of [Puget Systems](https://www.pugetsystems.com). The religious reference names were a bit strange. But whatever, to each their own.
@@ -89,24 +85,29 @@ Next up I checked out a number of [Puget Systems](https://www.pugetsystems.com).
     [Genensis II](https://www.pugetsystems.com/genesis.php)
 </div>
 
-<hr />
-
 ### System76
 
 Next I started looking at [System76](https://www.pugetsystems.com) machines.
 
 <div class="image float-left">
-    ![Puget Systems](puget2.jpg)
-    [Spirit](https://www.pugetsystems.com/spirit.php)
+    ![Leopard WS](leopardws.jpg)
+    [Leopard Workstation](https://system76.com/desktops/leopard)
 </div>
 
 <div class="image float-left">
-    ![Puget Systems](puget1.jpg)
-    [Genensis II](https://www.pugetsystems.com/genesis.php)
+    ![Silverback WS](silverback.jpg)
+    [Silverback Workstation](https://system76.com/desktops/silverback)
 </div>
 
+After working through and reviewing prices, features, hardware, and options things were close. I started reviewing location and what I could derive about each company's community involvement in Linux, how they're involved locally, and what the word is about those companies in their respective communities. Out of the three, I ended up not finding any customers to talk to about Zareason. For Puget, I found one friend that had a box purchased from a few years ago, and for System76 I actually found 2 different feedback bits from users within an hour or so of diffing around.
 
+Kenny Spence [@tekjava](https://twitter.com/tekjava) - Kenny and I have known each other for more years than I'm going to count. We got to meetup here in Seattle recently and he showed me his System76 laptop. The build quality was good and the overall review he gave me was a *+1*. Before this he'd mentioned in Twitter DM convo that this was the case, and I'd taken his word for it back then.
 
+Dev Shop X - A group of individuals I reached out to I had met 3 years ago at the Portland [@OSBridge](https://twitter.com/osbridge) Conference. I spoke to them again and found they were still using the System76 machines with no real complaints. They'd also bought the XPS 13 laptops well before the model I did and had a few complaints. With a short conversation we ended with them offering a *+1* for System76.
+
+With the reviews from trusted sources, seeing the involvement and related culture of System76 I decided that they would be the builder of choice.
+
+> **Decision** [System76](https://system76.com)!
 
 
 
