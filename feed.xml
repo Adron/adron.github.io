@@ -5,9 +5,197 @@
     <atom:link href="http://adron.github.io/feed.xml" rel="self" type="application/rss+xml"></atom:link>
     <link>http://adron.github.io</link>
     <description>Coder, Messenger, Recon, Infrastructure, Ops</description>
-    <pubDate>Fri, 06 Jan 2017 10:17:00 -0800</pubDate>
+    <pubDate>Thu, 19 Jan 2017 00:00:00 -0800</pubDate>
     <generator>Wintersmith - https://github.com/jnordberg/wintersmith</generator>
     <language>en</language>
+    <item>
+      <title>Buying a Leopard!</title>
+      <link>http://adron.github.io/articles/system76-ubuntu-leopard-workstation/</link>
+      <pubDate>Thu, 19 Jan 2017 00:00:00 -0800</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/system76-ubuntu-leopard-workstation/</guid>
+      <author></author>
+      <description>&lt;p&gt;In the trailing days of 2016, after having moved to Redmond, Washington I sat working at my desktop workstation. This workstation, which still exists, is a iMac with an i7, 16GB RAM, 256 GB SSD, and a 1GB Video Card with a 1TB secondary drive. The machine is a 27” all in one style design, and the screen is rather beautiful. But as I did a build and tried to run Transport Tycoon at the same time in the background the machine sputtered a bit. It was definitely maxed out doing this Go code build, putting together a Docker image build, and spinning it up for go live at the same time my game ran in the background. I thought, this machine has served me extremely well, at over 5 years old it had surpassed the standard 5 year lifespan of peak Apple oomf. At the moment, I thought, maybe it’s time to dig into a serious machine with some premium hardware again.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;In that moment I thought about the last dedicated, custom built, super powerful workstation machine I had. It was a powerful machine, nice form factor, and easily drove two giant 27” screens. However this machine had lived and finished it’s useful life over 6 years before 2016 had even started. But it was a sweet machine, that offered a lot of productive gaming and code writing efficiencies. It was thus, time to get in gear and get a machine again.&lt;/p&gt;
+&lt;p&gt;Immediately I thought through a few of the key features I wanted and other prerequisites of purchase.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Enough RAM and processor power to drive my aforementioned gaming, docker, and code building scenario with ease.&lt;/li&gt;
+&lt;li&gt;SSD drive of at least 1TB with at least a beefy 8GB Video Card.&lt;/li&gt;
+&lt;li&gt;It needed to run, with full support, not-Windows. Ubuntu would be fine, but if any Linux was installed from factory or at least fully supported on the hardware I put together, that would suffice.&lt;/li&gt;
+&lt;li&gt;If I were to buy it from a company, it had to be a company that wasn’t some myopic afterthought of 50s era suburbia (i.e. I didn’t really want to deal with Dell or Alienware again after the XPS 13 situation). This definitely narrowed down the options.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;I started digging into hardware specifications and looking into form factors, cases, and all the various parts I’d need for a solid machine. In parallel I started checking out several companies.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://system76.com/&quot;&gt;System76&lt;/a&gt; - Located in Denver, I was curious about this company and had been following them for some time. I had seen a few of the laptops over the years but had never seen or used any of their desktops.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://lacpdx.com&quot;&gt;Los Alamos Computers&lt;/a&gt; which is now &lt;a href=&quot;https://lacpdx.com&quot;&gt;LAC Portland&lt;/a&gt;! - Holy smokes, I had not realized this company moved. They definitely meet the 4th criteria above.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.pugetsystems.com/&quot;&gt;Puget Systems&lt;/a&gt; is a company located somewhere in the Puget Sound area and used to be called Puget Sound Systems. After digging I found they are located in a suburb of Seattle, in a town called Auburn. I didn’t want to rule them out so I kept them on the list and started researching.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.penguincomputing.com/&quot;&gt;Penguin Computing&lt;/a&gt; is another one of the companies, and kidn of a mainstay of Linux machines. They were a must have in the run up.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.thinkpenguin.com/&quot;&gt;Think Penguin&lt;/a&gt; is another I dove into.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://emperorlinux.com/&quot;&gt;Emperor Linux&lt;/a&gt; is another company I found specializing in Linux machines.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://zareason.com/&quot;&gt;Zareason&lt;/a&gt; was another, that specialized in Linux machines.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;first-decision-build-or-buy-&quot;&gt;First Decision &amp;gt; Build or Buy?&lt;/h2&gt;
+&lt;p&gt;I wrangled hardware specifications and the idea of building my own machine for some time. I came to the conclusion that the time versus money investment for me was on the side of buying a built machine. This first decision was pretty easy, but educating myself on the latest hardware was eye opening and a lot of fun. In the end however, better to let a builder get it done right instead of me creating a catastrophe for myself and nuking a whole weekend!&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Decision&lt;/strong&gt; Buy!&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;second-decision-who-should-i-buy-from-&quot;&gt;Second Decision &amp;gt; Who should I buy from?&lt;/h2&gt;
+&lt;p&gt;I dug through each of the computer builders previously mentioned. I scouted out where they were located, what the general process was they used to build the machines, what testing, what involvement in the community they have, and finally a cost and parts review.&lt;/p&gt;
+&lt;p&gt;Each of the builders has a lot of positives in regards to Linux, the only one that I was hesitant about at first in regards to Linux was Puget Computing. Because by default the machines come with Windows 10. However after asking around and reviewing other reviews online, I came to find they do have Linux and a solid skill set around Linux. Puget remained a leader in the selection process.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/system76-ubuntu-leopard-workstation/pugetsystems.png&quot; alt=&quot;Puget Systems&quot;&gt;&lt;/p&gt;
+&lt;p&gt;I went through Los Alamos Computers, which I realized are now LAC Portland (Win for Portland!), then Penguin, Think Penguin, and Emperor Linux. All had great skills and ethos around Linux. LAC definitely had the preeminently preferable choice in physical location (I mean, I do love Portland!), but each were short in either their customer facing desktop options. Albeit for a company or other reason, I’d likely buy a Thinkpad or other computing platform running Linux from them. But for this scenario each were disqualified for my personal workstation.&lt;/p&gt;
+&lt;p&gt;The last two I started checking out were Zareason and System76. I had been following what System76 for a while and a few things had caught my eye on their site. It led me to realize that they’re located out of Denver. Being a transit nerd, one of their website video photo coffee shop scenes had the RTD Light Rail passing in the background. But all things aside I started checking out cases and hardware that each builder puts in a box.&lt;/p&gt;
+&lt;ul class=&quot;faq js-faq&quot; id=&quot;my-faq&quot;&gt;
+  &lt;li class=&quot;faq-item&quot;&gt;
+    &lt;h4 class=&quot;faq-question&quot;&gt;&lt;img src=&quot;/articles/system76-ubuntu-leopard-workstation/berkely-bart.jpg&quot; alt=&quot;Berkely BART&quot;&gt;&lt;a href=&quot;http://zareason.com&quot;&gt;Zareason&lt;/a&gt; had several cases as shown below. With each of these I checked out the hardware options. (open for details)&lt;/h4&gt;
+    &lt;div class=&quot;faq-answer&quot;&gt;
+      One of the other side notes of the Zareason site is that you can navigate directly to it at the http address, and they don’t for https. I just found this a bit odd. But here’s the machines that I reviewed.
+      &lt;table&gt;
+        &lt;tr&gt;
+        &lt;/tr&gt;
+      &lt;/table&gt;
+      &lt;div class=&quot;image float-left&quot;&gt;
+        &lt;img src=&quot;/articles/system76-ubuntu-leopard-workstation/zareason1.jpg&quot; alt=&quot;Zareason Zeto&quot;&gt;
+        &lt;a href=&quot;http://zareason.com/shop/Zeto.html&quot;&gt;Zeto&lt;/a&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;image float-left&quot;&gt;
+        &lt;img src=&quot;/articles/system76-ubuntu-leopard-workstation/zareason2.jpg&quot; alt=&quot;Zareason Limbo 560&quot;&gt;
+        &lt;a href=&quot;http://zareason.com/shop/Limbo-560.html&quot;&gt;Limbo 560&lt;/a&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;image float-left&quot;&gt;
+        &lt;img src=&quot;/articles/system76-ubuntu-leopard-workstation/zareason3.jpg&quot; alt=&quot;Zareason Valta X99i&quot;&gt;
+        &lt;a href=&quot;http://zareason.com/shop/Valta-X99i.html&quot;&gt;Valta X99i&lt;/a&gt;
+      &lt;/div&gt;
+      &lt;!-- ![Berkely BART](berkely-bart-.jpg) --&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;faq-item&quot;&gt;
+    &lt;h4 class=&quot;faq-question&quot;&gt;&lt;img src=&quot;/articles/system76-ubuntu-leopard-workstation/sounder.jpg&quot; alt=&quot;Sounder&quot;&gt;Next up I checked out a number of &lt;a href=&quot;https://www.pugetsystems.com&quot;&gt;Puget Systems&lt;/a&gt;. (open for details)&lt;/h4&gt;
+    &lt;div class=&quot;faq-answer&quot;&gt;
+      The religious reference names were a bit strange. But whatever, to each their own.
+      &lt;div class=&quot;image float-left&quot;&gt;
+          &lt;img src=&quot;/articles/system76-ubuntu-leopard-workstation/puget3.jpg&quot; alt=&quot;Puget Systems&quot;&gt;
+          &lt;a href=&quot;https://www.pugetsystems.com/deluge.php&quot;&gt;Deluge&lt;/a&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;image float-left&quot;&gt;
+          &lt;img src=&quot;/articles/system76-ubuntu-leopard-workstation/puget2.jpg&quot; alt=&quot;Puget Systems&quot;&gt;
+          &lt;a href=&quot;https://www.pugetsystems.com/spirit.php&quot;&gt;Spirit&lt;/a&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;image float-left&quot;&gt;
+          &lt;img src=&quot;/articles/system76-ubuntu-leopard-workstation/puget1.jpg&quot; alt=&quot;Puget Systems&quot;&gt;
+          &lt;a href=&quot;https://www.pugetsystems.com/genesis.php&quot;&gt;Genensis II&lt;/a&gt;
+      &lt;/div&gt;
+      &lt;!-- ![Sounder](sounder-.jpg) --&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;faq-item&quot;&gt;
+    &lt;h4 class=&quot;faq-question&quot;&gt;&lt;img src=&quot;/articles/system76-ubuntu-leopard-workstation/rtd1.jpg&quot; alt=&quot;RTD Light Rail&quot;&gt;Next I started looking at &lt;a href=&quot;https://www.pugetsystems.com&quot;&gt;System76&lt;/a&gt; machines. (open for details)&lt;/h4&gt;
+    &lt;div class=&quot;faq-answer&quot;&gt;
+      &lt;div class=&quot;image float-left&quot;&gt;
+          &lt;img src=&quot;/articles/system76-ubuntu-leopard-workstation/leopardws.jpg&quot; alt=&quot;Leopard WS&quot;&gt;
+          &lt;a href=&quot;https://system76.com/desktops/leopard&quot;&gt;Leopard Workstation&lt;/a&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;image float-left&quot;&gt;
+          &lt;img src=&quot;/articles/system76-ubuntu-leopard-workstation/silverback.jpg&quot; alt=&quot;Silverback WS&quot;&gt;
+          &lt;a href=&quot;https://system76.com/desktops/silverback&quot;&gt;Silverback Workstation&lt;/a&gt;
+      &lt;/div&gt;
+      &lt;!-- ![RTD Light Rail](rtd1-.jpg) --&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;After working through and reviewing prices, features, hardware, and options things were close. I started reviewing location and what I could derive about each company’s community involvement in Linux, how they’re involved locally, and what the word is about those companies in their respective communities. Out of the three, I ended up not finding any customers to talk to about Zareason. For Puget, I found one friend that had a box purchased from a few years ago, and for System76 I actually found 2 different feedback bits from users within an hour or so of diffing around.&lt;/p&gt;
+&lt;p&gt;Kenny Spence &lt;a href=&quot;https://twitter.com/tekjava&quot;&gt;@tekjava&lt;/a&gt; - Kenny and I have known each other for more years than I’m going to count. We got to meetup here in Seattle recently and he showed me his System76 laptop. The build quality was good and the overall review he gave me was a &lt;em&gt;+1&lt;/em&gt;. Before this he’d mentioned in Twitter DM convo that this was the case, and I’d taken his word for it back then.&lt;/p&gt;
+&lt;p&gt;Dev Shop X - A group of individuals I reached out to I had met 3 years ago at the Portland &lt;a href=&quot;https://twitter.com/osbridge&quot;&gt;@OSBridge&lt;/a&gt; Conference. I spoke to them again and found they were still using the System76 machines with no real complaints. They’d also bought the XPS 13 laptops well before the model I did and had a few complaints. With a short conversation we ended with them offering a &lt;em&gt;+1&lt;/em&gt; for System76.&lt;/p&gt;
+&lt;p&gt;With the reviews from trusted sources, seeing the involvement and related culture of System76 I decided that they would be the builder of choice.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Decision&lt;/strong&gt; &lt;a href=&quot;https://system76.com&quot;&gt;System76&lt;/a&gt; &lt;a href=&quot;https://system76.com/desktops/leopard&quot;&gt;Leopard WS&lt;/a&gt;!&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;leopard-workstation&quot;&gt;Leopard Workstation&lt;/h2&gt;
+&lt;p&gt;With the decision made, I pulled the trigger on the purchase. In spite of the holiday season, I still received the machine in short order. It arrived at my door via UPS in a box, ya know, like a computer does when its shipped somewhere.  ;-)&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/system76-ubuntu-leopard-workstation/system76-leopard-01.jpg&quot; alt=&quot;System 76 Leopard&quot;&gt;&lt;/p&gt;
+&lt;p&gt;I cleared off the desk next, and dug into the box.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/system76-ubuntu-leopard-workstation/system76-leopard-02.jpg&quot; alt=&quot;System 76 Leopard&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/system76-ubuntu-leopard-workstation/system76-leopard-03.jpg&quot; alt=&quot;System 76 Leopard&quot;&gt;&lt;/p&gt;
+&lt;p&gt;The computer was packaged cleanly and neatly with minimal waste compared to some I’ve seen. So far so good. I pulled pieces gently from the box. The first thing I extracted was the static bag which had all of the extra cords and respective attachments that had come with various parts of the computer hardware that were unnecessary. Another plus in my opinion, as many would likely not notice this having not built computers themselves, nor even cared, but I’m glad to have the extra pieces for this or other things I might need them for.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/system76-ubuntu-leopard-workstation/system76-leopard-04.jpg&quot; alt=&quot;System 76 Leopard&quot;&gt;&lt;/p&gt;
+&lt;p&gt;The next thing I pulled out of the box was a thank you letter envelope with cool sticker and related swag.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/system76-ubuntu-leopard-workstation/system76-leopard-05.jpg&quot; alt=&quot;System 76 Leopard&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Stickers!&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/system76-ubuntu-leopard-workstation/system76-leopard-07.jpg&quot; alt=&quot;System 76 Leopard&quot;&gt;&lt;/p&gt;
+&lt;p&gt;That was it for peripheral things just floating around in the box. Next, out came the computer itself.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/system76-ubuntu-leopard-workstation/system76-leopard-06.jpg&quot; alt=&quot;System 76 Leopard&quot;&gt;&lt;/p&gt;
+&lt;p&gt;It was wrapped in a static free bag itself. As it should be. I did notice a strange ink like bit of dusted debris in and around the box. I’m not really sure, and still am not sure today what exactly it was. I cleaned it up immediately. It wasn’t excessive, but was leaving slight marks on the white table which required a little scrubbing to remove.&lt;/p&gt;
+&lt;p&gt;After all things were removed from the box I removed them from envelopes and static free bags and placed them on the desk for a simple shot of all the parts in the box.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/system76-ubuntu-leopard-workstation/system76-leopard-08.jpg&quot; alt=&quot;System 76 Leopard&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Next I went through the steps of desk cleanup again and then connected my 28 port USB Hub, Razor Mouse, and a keyboard to the machine. It was finally time to boot this machine up!&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/system76-ubuntu-leopard-workstation/system76-leopard-09.jpg&quot; alt=&quot;System 76 Leopard&quot;&gt;&lt;/p&gt;
+&lt;p&gt;As for the screen which you see, it’s an LG 34” Extra Wide Screen monitor with slight curved view to it. Yes, it’s awesome, and yes it actually makes it relatively easy to not need dual monitors.&lt;/p&gt;
+&lt;p&gt;BOOTING!&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/system76-ubuntu-leopard-workstation/system76-leopard-10.jpg&quot; alt=&quot;System 76 Leopard&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Ubuntu started, monitor fussing.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/system76-ubuntu-leopard-workstation/system76-leopard-11.jpg&quot; alt=&quot;System 76 Leopard&quot;&gt;&lt;/p&gt;
+&lt;p&gt;I toyed around and had for whatever reason plugged in the HDMI, when I should have used the other monitor connection. It immediately provided more resolution options when I changed the connection and the monitor and related elements detected appropriately!&lt;/p&gt;
+&lt;p&gt;On the side of the machine is a clear window cut through the case to view the internals. The cords were managed well and overall build was very clean. Upon boot up the graphics card immediately lit up too. The nice blue tone provided a nice light within the room.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/system76-ubuntu-leopard-workstation/system76-leopard-12.jpg&quot; alt=&quot;System 76 Leopard&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Ubuntu booted up cleanly, and I might crazy bloody fast.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/system76-ubuntu-leopard-workstation/system76-leopard-13.jpg&quot; alt=&quot;System 76 Leopard&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Here’s a non-flash shot of the machine and monitor side by side.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/system76-ubuntu-leopard-workstation/system76-leopard-14.jpg&quot; alt=&quot;System 76 Leopard&quot;&gt;&lt;/p&gt;
+&lt;p&gt;I then changed the respective positioning and the lighting, as you can see actually changed dramatically just by repositioning the hardware and the rear light I was shooting with.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/system76-ubuntu-leopard-workstation/system76-leopard-15.jpg&quot; alt=&quot;System 76 Leopard&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Lights off shot. The widow is beautiful!&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/system76-ubuntu-leopard-workstation/system76-leopard-16.jpg&quot; alt=&quot;System 76 Leopard&quot;&gt;&lt;/p&gt;
+&lt;p&gt;A slightly closer shot of the GTX 1080 humming away inside.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/system76-ubuntu-leopard-workstation/system76-leopard-17.jpg&quot; alt=&quot;System 76 Leopard&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;the-ubuntu-on-leopard-ws-review&quot;&gt;The Ubuntu on Leopard WS Review&lt;/h3&gt;
+&lt;p&gt;So far I’ve done a ton of coding &amp;amp; game playing on the machine. Here’s a break down of some specifics and some respective comments with a full read on the specifications of the machine.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Ubuntu 16.10 (64-bit)&lt;/li&gt;
+&lt;li&gt;4.0 GHz i7-6850K (3.6 up to 4.0 GHz – 15 MB Cache – 6 Cores – 12 threads)&lt;/li&gt;
+&lt;li&gt;High Performance Self-Contained Liquid Cooler&lt;/li&gt;
+&lt;li&gt;32 GB Quad Channel DDR4 at 2400MHz (2× 16 GB)&lt;/li&gt;
+&lt;li&gt;8 GB GTX 1080 with 2560 CUDA Cores&lt;/li&gt;
+&lt;li&gt;Chipset Intel® X99&lt;/li&gt;
+&lt;li&gt;Front: 2× USB 3.0 Type-A, 1× USB 2.0 Type-A, 1× eSATA&lt;/li&gt;
+&lt;li&gt;Rear: 3× USB 3.0 Type-A, 1× USB 3.1 Type-A, 1× USB 3.1 Type-C, 4× USB 2.0, Type-A, 1× PS/2&lt;/li&gt;
+&lt;li&gt;Gigabit Ethernet, optional Intel® Wireless-AC (a/b/g/n/ac)&lt;/li&gt;
+&lt;li&gt;GTX 1080: DVI-D, HDMI, 3× Display Port&lt;/li&gt;
+&lt;li&gt;Audio Front: Headphone Jack, Mic Jack&lt;/li&gt;
+&lt;li&gt;Audio Rear: 8 channel (HDMI, S/PDIF), Mic Jack, Line In, Line Out&lt;/li&gt;
+&lt;li&gt;Power Supply 750 W 80+ Certified (80% or greater power efficiency)&lt;/li&gt;
+&lt;li&gt;Dimensions 15.8″ × 8.3″ × 19.5″ (40.13 × 21.08 × 49.53cm)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;gaming&quot;&gt;Gaming&lt;/h4&gt;
+&lt;p&gt;Using Steam I downloaded several games including my latest addiction Transport Tycoon. The others included Warhammer 40k: Dawn of War, Stronghold 3, Stellaris, Sid Meier’s Civ V, Master of Orion, and Cities: Skylines. Each of these games I loaded up and played for at least 20-30 minutes, with every graphics detail maxed out and full audio feature enabled. Where the option existed to run it at full resolution of     3440x1440 I ran the game at that resolution.&lt;/p&gt;
+&lt;p&gt;Not a blip, stir, or flake out of any sort. The color was solid (which obviously is also largely the monitor) and being able to move around these games in their respective 3d worlds was exception. All the while the speed of elapsed time in games like Transport Tycoon and Cities: Skylines barely slowed at all no matter how massive the city or layout was.&lt;/p&gt;
+&lt;p&gt;At this point I’ve also added about 16 hours of Transport Tycoon play to this, and I’ve built absurdly extensive layouts (100s of trains plus massively grown cities) and this processor and video card handles it. The aforementioned previous desktop easily choked to 1/10th the speed of this beast while running the game.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;More on the gaming elements of this machine in the coming days.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&quot;coding&quot;&gt;Coding&lt;/h4&gt;
+&lt;p&gt;I used &lt;a href=&quot;https://www.jetbrains.com/toolbox/&quot;&gt;Jetbrains Toolbox&lt;/a&gt; to download &lt;a href=&quot;https://www.jetbrains.com/idea/&quot;&gt;IntelliJ&lt;/a&gt;, &lt;a href=&quot;https://www.jetbrains.com/webstorm/&quot;&gt;Webstorm&lt;/a&gt;, &lt;a href=&quot;https://www.jetbrains.com/clion/&quot;&gt;CLion&lt;/a&gt;, &lt;a href=&quot;https://www.jetbrains.com/datagrip/&quot;&gt;DataGrip&lt;/a&gt;, &lt;a href=&quot;https://www.jetbrains.com/rider/&quot;&gt;Project Rider&lt;/a&gt;, and &lt;a href=&quot;https://www.jetbrains.com/ruby/&quot;&gt;RubyMine&lt;/a&gt;. I dug around for some sample projects and slung together some basic “hello world!” apps to build with each of the IDEs. All built at absurd rates, but nothing real specific as I didn’t load any large projects just yet.&lt;/p&gt;
+&lt;p&gt;One of the things I did do was load Go so that I could continue work on the &lt;a href=&quot;http://datadiluvium.com/&quot;&gt;Data Diluvium&lt;/a&gt; Project that I’ve started (&lt;a href=&quot;https://github.com/Adron/datadiluvium&quot;&gt;Repo on Github&lt;/a&gt;). To hack around with Go I also installed &lt;a href=&quot;https://atom.io/&quot;&gt;Atom&lt;/a&gt; and &lt;a href=&quot;https://code.visualstudio.com/&quot;&gt;Visual Studio Code&lt;/a&gt;. Both editors on this particular machine were screaming fast and with the 34” display, I could easily have both to test out features side by side. Albeit, that makes shortcut combos a nightmare! DON’T DO THIS AT HOME!&lt;/p&gt;
+&lt;p&gt;Build time for the C, Go, and C# Projects I tried out were all crazy fast, but I’m holding off posting any results as I want to get some more apples to apples comparisons put together before posting. I’m also aiming to post versus some other hardware just so there are some baselines in which to compare the build times against.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;More on the coding and related projects in the coming days too.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&quot;important-software&quot;&gt;Important Software&lt;/h4&gt;
+&lt;p&gt;You may think, if you’re not an Ubuntu or Linux user, what about all the other stuff like office software and … &lt;em&gt;big long list goes here&lt;/em&gt;. Well, &lt;strong&gt;&lt;em&gt;most&lt;/em&gt;&lt;/strong&gt; of the software that we use is either available or a comparable product is available on Linux these days. There’s really not many things that keep me - or would keep anybody tied to - OS-X/MacOS or Windows. Here are a few that I’ve tried out and am using regularly that are 1 to 1 across Windows, OS-X, and Linux.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Jetbrains - as mentioned before these work across all the platforms. They’re excellent developer tools.&lt;/li&gt;
+&lt;li&gt;Spotify - even though it states that there hasn’t been support or what not for the app for many months, it still works seemlessly on Linux. That’s what you get when you build an app for a solid platform - one doesn’t have to &lt;em&gt;fix&lt;/em&gt; shit every week like on OS-X or Windows.&lt;/li&gt;
+&lt;li&gt;Slack - Slack is available on Linux too. After all the native app (or pseudo native) is built on Electron, which at its core runs on Node.js. So thus, feature parity is pretty much 100%. If you’re going to use slack, it’s not an excuse to be stuck on Windows or OS-X. The choice of platform is yours.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&quot;summary&quot;&gt;Summary&lt;/h1&gt;
+&lt;div class=&quot;image float-right&quot;&gt;
+    &lt;img src=&quot;/articles/system76-ubuntu-leopard-workstation/me-horns-up.jpg&quot; alt=&quot;Me, Adron&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;NOTE: Nobody paid me a damned penny to write any of this btw, I reviewed all of these things because I love writing about my nerd adventures. No shill shit here. With that stated…&lt;/p&gt;
+&lt;p&gt;I have more things to review across all of these platforms and much more to write about this mean machine from System76. However, this review has gotten long enough. The TLDR; of this is, if you’re looking for a machine then System76 definitely gets the horns from me! Highly recommended!&lt;/p&gt;
+</description>
+    </item>
     <item>
       <title>Microsoft's Scorched Earth History and The Current Crossroads</title>
       <link>http://adron.github.io/articles/microsoft-at-the-crossroads/</link>
@@ -2809,6 +2997,23 @@ it can be.&lt;/p&gt;
 </description>
     </item>
     <item>
+      <title>I Play the JavaScript by Matt McKegg</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</link>
+      <pubDate>Thu, 02 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-left&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/mattmckegg.jpg&quot; alt=&quot;Matt McKegg&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;A JavaScript hacker and backyard musician and from Wellington, New Zealand. Lover of all things open and modular. I spend most of my time pressing buttons of various shapes, sizes and colours. Sometimes these buttons make sounds.&lt;/p&gt;
+&lt;p&gt;Matt has been making music with computers for about 10 years, but once he tried to move from bedroom composing to live performance, he got incredibly frustrated at how hard it was to play computer music live. He decided to start working on his own live electronic performance software written in JavaScript that would let me play the way he wanted to play. 3 years later, it’s finally starting to become a reality.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Here is one of the Matt’s recent performances, for your viewing pleasure. &lt;/p&gt;
+&lt;iframe width=&quot;1280&quot; height=&quot;720&quot; src=&quot;https://www.youtube.com/embed/L2BVDJWHdy0?rel=0&amp;amp;showinfo=0&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;</description>
+    </item>
+    <item>
       <title>The Web Platform is the Universal Instrument by Ben Michel</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-ben-michel/</link>
       <pubDate>Thu, 02 Jun 2016 17:00:00 -0700</pubDate>
@@ -2836,40 +3041,6 @@ it can be.&lt;/p&gt;
 </description>
     </item>
     <item>
-      <title>I Play the JavaScript by Matt McKegg</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</link>
-      <pubDate>Thu, 02 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</guid>
-      <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-left&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/mattmckegg.jpg&quot; alt=&quot;Matt McKegg&quot;&gt;
-&lt;/div&gt;
-
-&lt;p&gt;A JavaScript hacker and backyard musician and from Wellington, New Zealand. Lover of all things open and modular. I spend most of my time pressing buttons of various shapes, sizes and colours. Sometimes these buttons make sounds.&lt;/p&gt;
-&lt;p&gt;Matt has been making music with computers for about 10 years, but once he tried to move from bedroom composing to live performance, he got incredibly frustrated at how hard it was to play computer music live. He decided to start working on his own live electronic performance software written in JavaScript that would let me play the way he wanted to play. 3 years later, it’s finally starting to become a reality.&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Here is one of the Matt’s recent performances, for your viewing pleasure. &lt;/p&gt;
-&lt;iframe width=&quot;1280&quot; height=&quot;720&quot; src=&quot;https://www.youtube.com/embed/L2BVDJWHdy0?rel=0&amp;amp;showinfo=0&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;</description>
-    </item>
-    <item>
-      <title>The House Is Not On Fire - Building a home automation robot with Arduino, Raspberry Pi and Node.js by Artur Paikin</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</link>
-      <pubDate>Wed, 01 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</guid>
-      <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-right&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/art-stida.jpg&quot; alt=&quot;Artur Paikin&quot;&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Artur describes himself as, “I’m a web developer and traveler. I write stories about my adventures in Russian and English on my site: &lt;a href=&quot;http://arturpaikin.com&quot;&gt;http://arturpaikin.com&lt;/a&gt; and run a small technology cooperative called &lt;a href=&quot;http://unebaguette.com&quot;&gt;Baguette&lt;/a&gt;, where I work on cool projects, currently building an ambitious next generation file uploader with &lt;a href=&quot;https://transloadit.com/&quot;&gt;Transloadit&lt;/a&gt;. I ride a &lt;a href=&quot;https://www.instagram.com/p/xC0qC2SSYb&quot;&gt;foldable bicycle&lt;/a&gt;, &lt;a href=&quot;http://unebaguette.com/web-course/&quot;&gt;teach&lt;/a&gt; web development and sometimes &lt;a href=&quot;https://www.instagram.com/p/4_6LO8ySVL/&quot;&gt;garden&lt;/a&gt; on the balcony.”&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Artur has built an open source home automation system called &lt;a href=&quot;https://github.com/arturi/kotihome&quot;&gt;Koti Home&lt;/a&gt; (Koti means home in Finnish language). It’s powered by an Arduino connected to Raspberry Pi, MQTT protocol for messaging, Node.js on the client and server, web sockets. You can interact with Koti robot via a React (like the cool kids do) control panel, Telegram Chat Bot and even your own voice.&lt;/p&gt;
-&lt;p&gt;Arthur will talk about how he’s turned this project into reality — the tech he used and the challenges he faced. From a blinking LED to a voice controlled home automation robot.&lt;/p&gt;
-</description>
-    </item>
-    <item>
       <title>Code First Docs How we Threw Out The Book &amp; Put Code First With Twilio Documentation by Jarod Reyes</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-jarod-reyes/</link>
       <pubDate>Wed, 01 Jun 2016 17:00:00 -0700</pubDate>
@@ -2891,6 +3062,23 @@ it can be.&lt;/p&gt;
 &lt;li&gt;Twitter: &lt;a href=&quot;https://twitter.com/jreyesdev&quot;&gt;@jreyesdev&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Github: &lt;a href=&quot;https://github.com/jarodreyes&quot;&gt;github.com/jarodreyes&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+</description>
+    </item>
+    <item>
+      <title>The House Is Not On Fire - Building a home automation robot with Arduino, Raspberry Pi and Node.js by Artur Paikin</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</link>
+      <pubDate>Wed, 01 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-right&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/art-stida.jpg&quot; alt=&quot;Artur Paikin&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Artur describes himself as, “I’m a web developer and traveler. I write stories about my adventures in Russian and English on my site: &lt;a href=&quot;http://arturpaikin.com&quot;&gt;http://arturpaikin.com&lt;/a&gt; and run a small technology cooperative called &lt;a href=&quot;http://unebaguette.com&quot;&gt;Baguette&lt;/a&gt;, where I work on cool projects, currently building an ambitious next generation file uploader with &lt;a href=&quot;https://transloadit.com/&quot;&gt;Transloadit&lt;/a&gt;. I ride a &lt;a href=&quot;https://www.instagram.com/p/xC0qC2SSYb&quot;&gt;foldable bicycle&lt;/a&gt;, &lt;a href=&quot;http://unebaguette.com/web-course/&quot;&gt;teach&lt;/a&gt; web development and sometimes &lt;a href=&quot;https://www.instagram.com/p/4_6LO8ySVL/&quot;&gt;garden&lt;/a&gt; on the balcony.”&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Artur has built an open source home automation system called &lt;a href=&quot;https://github.com/arturi/kotihome&quot;&gt;Koti Home&lt;/a&gt; (Koti means home in Finnish language). It’s powered by an Arduino connected to Raspberry Pi, MQTT protocol for messaging, Node.js on the client and server, web sockets. You can interact with Koti robot via a React (like the cool kids do) control panel, Telegram Chat Bot and even your own voice.&lt;/p&gt;
+&lt;p&gt;Arthur will talk about how he’s turned this project into reality — the tech he used and the challenges he faced. From a blinking LED to a voice controlled home automation robot.&lt;/p&gt;
 </description>
     </item>
     <item>
@@ -3451,6 +3639,27 @@ docker run -it elasticsearch
 &lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;root@257e98847bbb:/#
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;I’m in. At this point I could work with the container however I’d need to.&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>The Data Diluvium</title>
+      <link>http://adron.github.io/articles/data-diluvium-introduction/</link>
+      <pubDate>Fri, 01 Jan 2016 17:09:16 -0800</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/data-diluvium-introduction/</guid>
+      <author></author>
+      <description>&lt;p&gt;Welcome to the first of more than a few blog entries on Data Diluvium. Data Diluvium is a project I’ve started focused around generating data for the purposes of testing, capacity, or whatever other needs might arise.&lt;/p&gt;
+&lt;p&gt;Definition of &lt;strong&gt;&lt;em&gt;data&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;:  factual information (as measurements or statistics) used as a basis for reasoning, discussion, or calculation &lt;the data is plentiful and easily available — H. A. Gleason, Jr.&gt; &lt;comprehensive data on economic growth have been published — N. H. Jacoby&gt;&lt;/li&gt;
+&lt;li&gt;:  information output by a sensing device or organ that includes both useful and irrelevant or redundant information and must be processed to be meaningful&lt;/li&gt;
+&lt;li&gt;:  information in numerical form that can be digitally transmitted or processed&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Definition of &lt;strong&gt;&lt;em&gt;deluge&lt;/em&gt;&lt;/strong&gt; which is the English version of the latin &lt;strong&gt;&lt;em&gt;diluvium&lt;/em&gt;&lt;/strong&gt;.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;a :  an overflowing of the land by water. b :  a drenching rain “a deluge causing mudslides in the area”.&lt;/li&gt;
+&lt;li&gt;:  an overwhelming amount or number &lt;received a deluge of angry phone calls&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
 </description>
     </item>
     <item>
