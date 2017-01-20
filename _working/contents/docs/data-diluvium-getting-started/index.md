@@ -1,10 +1,25 @@
 ---
-title: codeship series 01 getting golang going
+title: The Data Diluvium
 author: Adron Hall
-date: 2016-12-19:09:14:25
+date: 2016-1-17:09:16:17
 template: doc.jade
 ---
-I sat down recently to put a project together. The idea is to build a data generation service. Something that will generate random data in usable chunks; name generation, addresses, and related data. To get a wide range of use out of this capability I needed to build a web service application and a respective CLI (Command Line Interface) to go along with the web application.
+Welcome to the first of more than a few blog entries on Data Diluvium. Data Diluvium is a project I've started focused around generating data for the purposes of testing, capacity, or whatever other needs might arise.
+
+Definition of ***data***
+
+1. :  factual information (as measurements or statistics) used as a basis for reasoning, discussion, or calculation <the data is plentiful and easily available — H. A. Gleason, Jr.> <comprehensive data on economic growth have been published — N. H. Jacoby>
+2. :  information output by a sensing device or organ that includes both useful and irrelevant or redundant information and must be processed to be meaningful
+3. :  information in numerical form that can be digitally transmitted or processed
+
+Definition of ***deluge*** which is the English version of the latin ***diluvium***.
+
+1. a :  an overflowing of the land by water. b :  a drenching rain "a deluge causing mudslides in the area".
+2. :  an overwhelming amount or number <received a deluge of angry phone calls>
+
+<span class="more"></span>
+
+The idea is to build a data generation service. Something that will generate random data in usable chunks; name generation, addresses, and related data. To get a wide range of use out of this capability I needed to build a web service application and a respective CLI (Command Line Interface) to go along with the web application.
 
 ## A Microservice is Born!
 
@@ -30,7 +45,7 @@ The frame of each included the following:
 
 * I created a folder titled *.github* and placed the following files: *CONTRIBUTING.md*, *ISSUE_TEMPLATE.md*, and *PULL_REQUEST.md*.
 
-* Next the standard .gitignore file with the following contents. This is the basic file Github starts a Go project with if selected during the creation of the repository. It has the minor addition of *.DS_Store* to keep that OS-X file out of the repository and the *.idea* director to keep out the IntelliJ or WebStorm IDE settings directory.
+* Next the standard .gitignore file with the following contents. This is the basic file Github starts a Go project with if selected during the creation of the repository. It has the minor addition of *.DS_Store* to keep that OS-X file out of the repository and the *.idea* director to keep out the IntelliJ, WebStorm, or Goland IDE (or any Jetbrains IDE) settings directory.
 
 ```
 # Compiled Object files, Static and Dynamic libs (Shared Objects)
