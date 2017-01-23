@@ -364,7 +364,19 @@ However there is a brew cask that can be used to install jet with too. It's a on
 brew cask install jet
 ```
 
+Ok, that should get those following along with a running build too. There is of course the prereq of having git and docker installed too, I'll admit I keep making the mistake of assuming those things are installed everywhere. So if you hit a hiccup at this point, it may be because those two things need installed - which likely will have caused errors far before this.
 
+With `jet steps` running the build locally, I can now navigate to Codeship and check out the build when I commit all of this work.
+
+```shell-script
+git add -A
+git commit -m 'First code all wrapped up.'
+git push origin master
+```
+
+...and that's it for this entry. Hope that's useful for getting your own Go project started. If you're interested, definitely ping me if you'd like to work on Data Diluvium some too. I'm looking for help.
+
+Cheers!  -Adron
 
 #### Declarations & References
 
