@@ -17,13 +17,16 @@ Definition of ***deluge*** which is the English version of the latin ***diluvium
 1. a :  an overflowing of the land by water. b :  a drenching rain "a deluge causing mudslides in the area".
 2. :  an overwhelming amount or number <received a deluge of angry phone calls>
 
+...thus ***Data Diluvium***.
+
 <span class="more"></span>
 
 The idea is to build a data generation service. Something that will generate random data in usable chunks; name generation, addresses, and related data. To get a wide range of use out of this capability I needed to build a web service application and a respective CLI (Command Line Interface) to go along with the web application.
 
 ## A Microservice is Born!
 
-The web service is going to generate pseudo-random data around name, addresses, phone numbers, and location. Over the course of this series I'll add more data generation types and implement a schema for the actual data generation. This web service will be created based on microservice architectural and design ideas. However in the early stages of this effort I'll keep it simple and will stick to implementing a minimally viable product (MVP). From here on out I'll refer to this project as the *deluge* project.
+The web service is going to generate pseudo-random data around name, addresses, phone numbers, and location. Over the course of this series I'll add more data generation types and implement a schema for the actual data generation. This web service will be created based on microservice architectural and design ideas. However in the early stages of this effort I'll keep it simple and will stick to implementing a minimally viable product (MVP). From here on out I'll refer to this project as the *Data
+Diluvium* project.
 
 ## Microservice Client CLI
 
@@ -37,7 +40,8 @@ Why Go you might ask? For the CLI, I'd want a cleanly built, fast, and responsiv
 
 ## Kick Off
 
-First things first, I need the projects themselves. Here are the steps I took to get some basic parts building together for the two projects. The first step was simply to create two directories for each of these projects, one I named *deluge* and one *deluge-cli*. Inside both of those directories I put together a basic structure for each of these folders.
+First things first, I need the projects themselves. Here are the steps I took to get some basic parts building together for the two projects. The first step was simply to create two directories for each of these projects, one I named *Data
+Diluvium* and one *Colligere*. Inside both of those directories I put together a basic structure for each of these folders.
 
 ### Basic Project Files
 
