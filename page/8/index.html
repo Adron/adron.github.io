@@ -91,6 +91,78 @@
                   <div class="blog-grid">
                     <div class="row">
                       <div class="col-md-12 col-sm-12">
+                        <h3 class="blog-grid-title"><a href="/articles/hashiconf-trip-day-1/">HashiConf Trip Day 1 - Coast Starlight and Terraform</a></h3>
+                        <p class="blog-grid-excerpt"><p>This week, my trip to <a href="https://hashiconf.com">HashiConf</a> kicked off officially at 2:25pm, when the Amtrak Coast Starlight departed&nbsp;Portland.</p>
+<p>I had more than a few goals for the trip down to Napa Valley for HashiConf. By priority, the top 5&nbsp;goals:</p>
+<div class="image float-right">
+    <img src="/articles/hashiconf-trip-day-1/gate-5.jpg" alt="Gate 5">
+</div>
+
+<ol>
+<li>Give a talk with Evan and respectively get a conversation started around organizing immutable infrastructure projects along the lines of 12-factor apps and the autopilot&nbsp;pattern.</li>
+<li>Meet as many of the HashiConf Team as I&nbsp;can.</li>
+<li>Make something like a documentary video short of the trip, the conference, and whatever else might be pertinent. It’s an experiment, it’ll work or it&nbsp;won’t.</li>
+<li>Blog the event. Maybe just a couple entries, or three, or&nbsp;more.</li>
+<li>Have a relaxing, chill, introspective, educational, and laid back trip while enjoying some wine at the <a href="http://meritagecollection.com/meritageresort/">Meritage</a> (this is where the conference is being&nbsp;held).</li>
+</ol>
+<p>
+                          <p class="more"><a href="/articles/hashiconf-trip-day-1/">more</a></p>
+                        </p>
+                        <div class="blog-grid-meta"><span class="blog-grid-date">05. September 2016</span></div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- End of Blog List-->
+                </div>
+                <div class="col-md-12 col-sm-12">
+                  <!-- Blog List-->
+                  <div class="blog-grid">
+                    <div class="row">
+                      <div class="col-md-12 col-sm-12">
+                        <h3 class="blog-grid-title"><a href="/articles/how-ya-linux-0001-generate-regenerate-ssh-key/">Generate or Regenerate gcloud ssh Keys - How Ya Linux Series - 0001</a></h3>
+                        <p class="blog-grid-excerpt"><p>Sometimes while working with the various ssh keys you have you might need to regenerate them. Specifically I ran into this need while working with some Google Cloud Platform (<span class="caps">GCP</span>) instances with Terraform and GCP’s <em>gcloud</em> <span class="caps">CLI</span> tool. Generally, when you start working with the <em>gcloud</em> <span class="caps">CLI</span> it will, upon need if it doesn’t exist, create a key for you. When it does so it sticks the key it generates in the <code>~/.ssh/</code> directory and names the key <code>google_compute_engine</code>. To create a new ssh key pair here, navigate to the <code>~/.ssh/</code> directory and issue the following&nbsp;command.</p>
+<pre><code class="lang-shell-script">sudo ssh-keygen -t rsa -f ~/.ssh/google_compute_engine -C you_fancy_username@whatever.com
+</code></pre>
+<p>Once that is command is executed, a few moments later and a few prompts later you’ll have a new&nbsp;key.</p>
+<pre><code class="lang-shell-script">13:16 $ sudo ssh-keygen -t rsa -f ~/.ssh/google_compute_engine -C adron_hall@homedepot.comPassword:
+Generating public/private rsa key pair.
+/Users/axh6454/.ssh/google_compute_engine already exists.
+Overwrite (y/n)? y
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /Users/axh6454/.ssh/google_compute_engine.
+Your public key has been saved in /Users/axh6454/.ssh/google_compute_engine.pub.
+The key fingerprint is:
+SHA256:8xHVr19EdgPxLr2nWAkuZa8exMdEqbHNzoBxlHhFkZM adron_hall@ataplace.com
+The key&#39;s randomart image is:
++---[RSA 2048]----+
+|           ooBB= |
+|          o.=.E.+|
+|          .= *.*o|
+|          .o+o= o|
+|        S . *=o= |
+|         o * +=.o|
+|          o o +oo|
+|           . = .o|
+|           .+ .  |
++----[SHA256]-----+
+✔ ~/.ssh
+13:16 $
+</code></pre>
+<p>That’s it. Sort of. For <span class="caps">GCP</span> be sure to check out the docs on managing ssh keys. There are docs on <a href="https://cloud.google.com/sdk/gcloud/reference/compute/config-ssh"><code>gcloud compute config-ssh</code></a> and <a href="https://cloud.google.com/compute/docs/instances/adding-removing-ssh-keys">Adding and Removing <span class="caps">SSH</span> keys</a>.</p>
+
+                        </p>
+                        <div class="blog-grid-meta"><span class="blog-grid-date">26. August 2016</span></div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- End of Blog List-->
+                </div>
+                <div class="col-md-12 col-sm-12">
+                  <!-- Blog List-->
+                  <div class="blog-grid">
+                    <div class="row">
+                      <div class="col-md-12 col-sm-12">
                         <h3 class="blog-grid-title"><a href="/articles/visual-studio-code-and-hcl/">Visual Studio Code (an intro with snark!) and Hashicorp Configuration Language</a></h3>
                         <p class="blog-grid-excerpt"><p>I sat down to setup Visual Studio Code for some Go coding. That is, #golang or “golang” on Google, because heaven forbid a language is named something that isn’t ubiquitous like the word “go”. But anyway, I digress, because this blog entry isn’t even about golang. It’s about <span class="caps">HCL</span>. You see, I sat down to toy about with golang but then I had to knock out a few tasks with Terraform, Packer, and such. To do that I needed the HCL support that Visual Studio Code has. I knew there was a plugin for Hashicorp Configuration Language (i.e. HCL). So I decided to do that work in Visual Studio Code and try out the HCL Plugin. Maybe next blog entry I’ll get around to writing some golang in Visual Studio&nbsp;Code?</p>
 <p><img src="/articles/visual-studio-code-and-hcl/code-go-00.png" alt="The Site"></p>
@@ -98,48 +170,6 @@
                           <p class="more"><a href="/articles/visual-studio-code-and-hcl/">more</a></p>
                         </p>
                         <div class="blog-grid-meta"><span class="blog-grid-date">23. August 2016</span></div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End of Blog List-->
-                </div>
-                <div class="col-md-12 col-sm-12">
-                  <!-- Blog List-->
-                  <div class="blog-grid">
-                    <div class="row">
-                      <div class="col-md-12 col-sm-12">
-                        <h3 class="blog-grid-title"><a href="/articles/devops-thoughts/">DevOps Thoughts, Fixing Culture Roadblocks, and Cultural Anti-Pattern Practices</a></h3>
-                        <p class="blog-grid-excerpt"><div class="image float-right">
-    <img src="/articles/devops-thoughts/artisanal.jpg" alt="Artisanal">
-</div>
-
-<p>DevOps Days <span class="caps">PDX</span> just wrapped up and I’m at home, working remotely today, digging into some deployment work around building Elasticsearch Clusters for monitoring with Beats. It’s a tricky beast at this point but I’m getting all the nuances figured&nbsp;out.</p>
-<p>I have a host of tools at my disposal that help tremendously with this endeavor. There is Packer, to help build the base images I need that have Elasticsearch, Beats, or whatever else needs to be on an image. There is Terraform that helps me to get the images deployed and start the final configuration process. Then there is the configuration process, which is a mix of bash, go, and other things to insure that the configuration of and services around Elasticsearch are started&nbsp;appropriately.</p>
-<p>
-                          <p class="more"><a href="/articles/devops-thoughts/">more</a></p>
-                        </p>
-                        <div class="blog-grid-meta"><span class="blog-grid-date">11. August 2016</span></div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End of Blog List-->
-                </div>
-                <div class="col-md-12 col-sm-12">
-                  <!-- Blog List-->
-                  <div class="blog-grid">
-                    <div class="row">
-                      <div class="col-md-12 col-sm-12">
-                        <h3 class="blog-grid-title"><a href="/articles/nginx-notes-from-the-url-redirect-part-two/">NGinx Notes from URL Redirect Project on Google Cloud with Terraform &amp; Packer - Part 2</a></h3>
-                        <p class="blog-grid-excerpt"><div class="image float-right">
-    <img src="/articles/nginx-notes-from-the-url-redirect-part-two/google-cloud-platform.png" alt="Google Cloud Platform">
-</div>
-
-<p>In the <a href="http://blog.adron.me/articles/nginx-notes-from-the-url-redirect/">first blog entry, “NGinx Notes from <span class="caps">URL</span> Redirect Project on Google Cloud with Terraform <span class="amp">&amp;</span> Packer - Part 1”</a> I covered getting a basic Nginx <span class="caps">URL</span> Redirector setup and running. Now it’s time to dig into some of the next&nbsp;steps.</p>
-<p>Since we have an operative server running that we want to automate, I’ll actually just wipe out the server we built in the first part of this series. Albeit I will refer back to it when I get to the process of recreating this server with Packer and Terraform. So first things first, let’s actually setup the networking elements needed to put the server into&nbsp;action.</p>
-<p>
-                          <p class="more"><a href="/articles/nginx-notes-from-the-url-redirect-part-two/">more</a></p>
-                        </p>
-                        <div class="blog-grid-meta"><span class="blog-grid-date">01. August 2016</span></div>
                       </div>
                     </div>
                   </div>

@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Adron's Composite Code</title>
+    <meta name="description" content="">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="alternate" href="/feed.xml" type="application/rss+xml" title="Coder, Messenger, Recon, Infrastructure, Ops">
+    <link rel="icon" type="image/png" href="/img/favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/img/favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/img/favicons/favicon-96x96.png" sizes="96x96">
+    <link rel="apple-touch-icon" sizes="57x57" href="/img/favicons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/img/favicons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/img/favicons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/img/favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/img/favicons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/img/favicons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/img/favicons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/img/favicons/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/favicons/apple-touch-icon-180x180.png">
+    <link rel="stylesheet" href="/css/custom.css">
+    <link rel="stylesheet" href="/css/style.min.css">
+    <script src="/js/modernizr.js"></script>
+  </head>
+  <body class="article-detail">
+    <!--[if lt IE 8]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <div class="header header-over large">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 col-sm-6 col-xs-6">
+            <!-- Logo Image--><a href="/index.html" class="logo-image logo-animated"><img src="/img/logos/logo.png" alt="logo"></a>
+            <!-- End of Logo Image-->
+          </div>
+          <div class="col-md-9 col-sm-6 col-xs-6">
+            <!-- Menu-->
+            <nav class="right helper">
+              <ul class="menu sf-menu js-menu">
+                <li><a href="/docs/thrashing-code-news/">Thrashing Code News</a></li>
+                <li><a href="#">Conf - Meetup - Events</a>
+                  <ul>
+                    <li><a href="/docs/Speaking-Presentations-Workshops/">Speaking - Presentations - Workshops</a></li>
+                    <li><a href="/docs/calendar">Calendar of Engagements</a></li>
+                  </ul>
+                </li>
+                <li><a href="/docs/documentation/">Docs</a></li>
+                <li><a href="#">Contact</a>
+                  <ul>
+                    <li><a href="/docs/contact">Message</a></li>
+                    <li><a href="/docs/job-talk/">Hire</a></li>
+                  </ul>
+                </li>
+                <li><a href="/docs/about/">About</a></li>
+              </ul>
+            </nav>
+            <!-- End of Menu-->
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="header-back header-back-simple header-back-small">
+      <div class="header-back-container">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <!-- Page Info-->
+              <div class="page-info page-info-simple">
+                <h1>The Data Diluvium, Getting Started</h1>
+                <p class="author">Written by <span class="author">Adron Hall</span> and published on <span>January, 23 of 2017.</span>
+                </p>
+                <div class="nav"><a href="/">« Home</a></div>
+              </div>
+              <!-- End Page Info-->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="content">
+      <div class="container">
+        <div class="layout with-right-sidebar js-layout">
+          <div class="row">
+            <div class="col-md-9">
+              <div class="main-content">
+                <!-- Blog Page-->
+                <article class="article">
+                  <section class="content"><p>Welcome to the first of more than a few blog entries on Data Diluvium. Data Diluvium is a project I’ve started focused around generating data for the purposes of testing, capacity, or whatever other needs might&nbsp;arise.</p>
+<p>Definition of <strong><em>data</em></strong></p>
+<ol>
+<li>:  factual information (as measurements or statistics) used as a basis for reasoning, discussion, or calculation <the data is plentiful and easily available — H. A. Gleason, Jr.> <comprehensive data on economic growth have been published — N. H. Jacoby></li>
+<li>:  information output by a sensing device or organ that includes both useful and irrelevant or redundant information and must be processed to be&nbsp;meaningful</li>
+<li>:  information in numerical form that can be digitally transmitted or&nbsp;processed</li>
+</ol>
+<p>Definition of <strong><em>deluge</em></strong> which is the English version of the latin <strong><em>diluvium</em></strong>.</p>
+<ol>
+<li>a :  an overflowing of the land by water. b :  a drenching rain “a deluge causing mudslides in the&nbsp;area”.</li>
+<li>:  an overwhelming amount or number <received a deluge of angry phone calls></li>
+</ol>
+<p>…thus <strong><em>Data Diluvium</em></strong>.</p>
+<p><span class="more"></span></p>
+<p>The idea is to build a data generation service. Something that will generate random data in usable chunks; name generation, addresses, and related data. To get a wide range of use out of this capability I needed to build a web service application and a respective <span class="caps">CLI</span> (Command Line Interface) to go along with the web&nbsp;application.</p>
+<h2 id="a-microservice-is-born-">A Microservice is&nbsp;Born!</h2>
+<p>The web service is going to generate pseudo-random data around name, addresses, phone numbers, and location. Over the course of this series I’ll add more data generation types and implement a schema for the actual data generation. This web service will be created based on microservice architectural and design ideas. However in the early stages of this effort I’ll keep it simple and will stick to implementing a minimally viable product (<span class="caps">MVP</span>). From here on out I’ll refer to this project as the <em>Data
+Diluvium</em>&nbsp;project.</p>
+<h2 id="microservice-client-cli">Microservice Client&nbsp;<span class="caps">CLI</span></h2>
+<p>For the client side, I want to provide a <span class="caps">CLI</span> in which to interface with the microservice itself. With this CLI I want to be able to provide basic configuration or passed parameters that will allow me to take the generated data and pass it directly into terminal output, out to a file, or prospectively as things develop directly into databases of various kinds&nbsp;themselves.</p>
+<h2 id="the-tooling-language">The Tooling <span class="amp">&amp;</span>&nbsp;Language</h2>
+<p>Overall this could be built in a number of technology stacks. I could use Node.js, .<span class="caps">NET</span>, Java, Erlang, or Go to build both the CLI and the microservice. With the multitude of choices it can be somewhat difficult picking the right stack to get things done as quickly, efficiently, well organized, and cleanly as possible. For this particular effort I’m going to go with Go to implement the microservice and the&nbsp;CLI.</p>
+<p>Why Go you might ask? For the <span class="caps">CLI</span>, I’d want a cleanly built, fast, and responsive CLI that I can setup on any machine with minimal fuss. For Node.js for instance, one doesn’t get a built executable, but instead a kind of morass of tooling, and preinstallation software required. For Java and .NET one ends up with a great array of tooling to build a microservice and CLI, but the knowledge and time just to setup the initial development environments leads me away from those. With Erlang, maybe a day in the future, since it is indeed hugely and almost mystically powerful (yes, I just wrote mystically, it sounds&nbsp;appropriate).</p>
+<h2 id="kick-off">Kick&nbsp;Off</h2>
+<p>First things first, I need the projects themselves. Here are the steps I took to get some basic parts building together for the two projects. The first step was simply to create two directories for each of these projects, one I named <em>Data
+Diluvium</em> and one <em>Colligere</em>. Inside both of those directories I put together a basic structure for each of these&nbsp;folders.</p>
+<h3 id="basic-project-files">Basic Project&nbsp;Files</h3>
+<p>The frame of each included the&nbsp;following:</p>
+<ul>
+<li><p>I created a folder titled <em><a href="https://github.com/Adron/datadiluvium/tree/master/.github">.github</a></em> and placed the following files: <em><a href="https://github.com/Adron/datadiluvium/blob/master/.github/CONTRIBUTING.md"><span class="caps">CONTRIBUTING</span>.md</a></em>, <em><a href="https://github.com/Adron/datadiluvium/blob/master/.github/ISSUE_TEMPLATE.md">ISSUE_TEMPLATE.md</a></em>, and <em><a href="https://github.com/Adron/datadiluvium/blob/master/.github/PULL_REQUEST_TEMPLATE.md">PULL_REQUEST.md</a></em>.</p>
+</li>
+<li><p>Next the standard <a href="https://github.com/Adron/datadiluvium/blob/master/.gitignore">.gitignore</a> file with the following contents. This is the basic file Github starts a Go project with if selected during the creation of the repository. It has the minor addition of <em>.DS_Store</em> to keep that <span class="caps">OS</span>-X file out of the repository and the <em>.idea</em> director to keep out the IntelliJ, WebStorm, or Goland <span class="caps">IDE</span> (or any Jetbrains IDE) settings&nbsp;directory.</p>
+</li>
+</ul>
+<pre><code># Compiled Object files, Static and Dynamic libs (Shared Objects)
+*.o
+*.a
+*.so
+
+# Folders
+_obj
+_test
+
+# Architecture specific extensions/prefixes
+*.[568vq]
+[568vq].out
+
+*.cgo1.go
+*.cgo2.c
+_cgo_defun.c
+_cgo_gotypes.go
+_cgo_export.*
+
+_testmain.go
+
+*.exe
+*.test
+*.prof
+
+.DS_Store
+.idea
+</code></pre><ul>
+<li><p>I added the <em><a href="https://github.com/Adron/datadiluvium/blob/master/LICENSE"><span class="caps">LICENSE</span></a></em> file with the standard Apache 2.0 license&nbsp;legalese.</p>
+</li>
+<li><p>Finally the <em><a href="https://github.com/Adron/datadiluvium/blob/master/README.md"><span class="caps">README</span>.md</a></em>.</p>
+</li>
+</ul>
+<h3 id="build-files">Build&nbsp;Files</h3>
+<p>It is important at this stage to create a build and get that build passing with some basic element of code. At this point I need some basic executing code and the respective build configuration files. For this I’ll create three files and name them respectively: <em><a href="https://github.com/Adron/datadiluvium/blob/master/main.go">main.go</a></em>, <em><a href="https://github.com/Adron/datadiluvium/blob/master/codeship-steps.yml">codeship-steps.yml</a></em>, and <em><a href="https://github.com/Adron/datadiluvium/blob/master/codeship-services.yml">codeship-services.yml</a></em>. In addition to the code, since I was going to be pulling in dependencies I’d need something to handle that, which I went ahead and chose <a href="https://github.com/Masterminds/glide">glide</a>.</p>
+<p>I installed glide with the following commands on my <span class="caps">OS</span>-X machine, but since I am doing a lot of development on my new <a href="/articles/data-diluvium-getting-started/">Leopard <span class="caps">WS</span></a> machine I installed glide with the curl command&nbsp;below.</p>
+<p>Install with&nbsp;brew.</p>
+<pre><code class="lang-shell-script">brew update
+brew install glide
+</code></pre>
+<p>The curl installation&nbsp;step.</p>
+<pre><code class="lang-shell-script">curl https://glide.sh/get | sh
+</code></pre>
+<p>With glide installed I ran the default initialization command <code>glide create</code> to get a <code>glide.yaml</code> and <code>glide.lock</code> file setup. Running this command will display the following via the&nbsp;<span class="caps">CLI</span>.</p>
+<pre><code class="lang-shell-script">$ glide create
+[INFO]  Generating a YAML configuration file and guessing the dependencies
+[INFO]  Attempting to import from other package managers (use --skip-import to skip)
+[INFO]  Scanning code to look for dependencies
+[INFO]  --&gt; Found reference to github.com/Masterminds/semver
+[INFO]  --&gt; Found reference to github.com/Masterminds/vcs
+[INFO]  --&gt; Found reference to github.com/codegangsta/cli
+[INFO]  --&gt; Found reference to gopkg.in/yaml.v2
+[INFO]  Writing configuration file (glide.yaml)
+[INFO]  Would you like Glide to help you find ways to improve your glide.yaml configuration?
+[INFO]  If you want to revisit this step you can use the config-wizard command at any time.
+[INFO]  Yes (Y) or No (N)?
+n
+[INFO]  You can now edit the glide.yaml file. Consider:
+[INFO]  --&gt; Using versions and ranges. See https://glide.sh/docs/versions/
+[INFO]  --&gt; Adding additional metadata. See https://glide.sh/docs/glide.yaml/
+[INFO]  --&gt; Running the config-wizard command to improve the versions in your configuration
+</code></pre>
+<p>I then ran <code>glide get github.com/icrowley/fake</code> to get the fake library I would need. The <code>glide.yaml</code> and <code>glide.lock</code> looked like this after I pulled in this&nbsp;library.</p>
+<p>glide.yaml</p>
+<pre><code class="lang-yaml"><span class="attr">package:</span> github.com/adron/datadiluvium
+<span class="attr">import:</span>
+<span class="attr">- package:</span> github.com/icrowley/fake
+</code></pre>
+<p>glide.lock</p>
+<pre><code class="lang-yaml"><span class="attr">hash:</span> <span class="number">2</span>fd78ca8369405d5998e65ea4cfce94c6599e878c36fec39b85fd385552392d7
+<span class="attr">updated:</span> <span class="number">2017</span><span class="bullet">-01</span><span class="bullet">-09</span>T01:<span class="number">04</span>:<span class="number">18.134993358</span><span class="bullet">-08</span>:<span class="number">00</span>
+<span class="attr">imports:</span>
+<span class="attr">- name:</span> github.com/icrowley/fake
+<span class="attr">  version:</span> <span class="number">84</span>bff6d01560fb0b5a396ba29534e93fd00d09c6
+<span class="attr">testImports:</span> []
+</code></pre>
+<p>If you’re curious about the hash, and related properties of this file check out the glide <a href="https://github.com/Masterminds/glide/blob/master/README.md"><span class="caps">README</span>.md</a>, it’s useful in understanding what’s stored&nbsp;here.</p>
+<p>At this point, it was time to actually sling some Go code! At this point, I do indeed mean sling some too.&nbsp;Splat!</p>
+<h3 id="some-go-code">Some Go&nbsp;Code</h3>
+<p>In the main.go file I wrote some basic Go code just to have something to build. I wanted a little bit more than just a <em>Hello World!</em> code sample so I added a little bit more. I did some research and found the <a href="https://github.com/icrowley/fake">Fake</a> library written by Dmitry Afanasyev from Ulyanovsk, Russia. I used <code>Go get</code> to pull that into the project and then added an <code>import</code> after <code>package main</code> with the various bits of code I’d want for my getting started&nbsp;code.</p>
+<pre><code class="lang-javascript">package main
+
+<span class="keyword">import</span> (
+    <span class="string">"encoding/json"</span>
+    <span class="string">"fmt"</span>
+    <span class="string">"io/ioutil"</span>
+    <span class="string">"os"</span>
+    <span class="string">"github.com/icrowley/fake"</span>
+    <span class="string">"time"</span>
+)
+</code></pre>
+<p>The other libraries I knew I would need for various other output, date stamps, and other library features I’d want. Then I went to coding, my first sample of working code to prove out key functionality of the libraries looked like&nbsp;this.</p>
+<pre><code class="lang-javascript">type Page struct {
+    Title string <span class="string">`json:"title"`</span>
+    Schema   string <span class="string">`json:"schema"`</span>
+}
+
+func (p Page) toString() string {
+    <span class="keyword">return</span> toJson(p)
+}
+
+func toJson(p interface{}) string {
+    bytes, <span class="attr">err</span> := json.Marshal(p)
+    <span class="keyword">if</span> err != nil {
+        fmt.Println(err.Error())
+        os.Exit(<span class="number">1</span>)
+    }
+    <span class="keyword">return</span> string(bytes)
+}
+
+func main() {
+    <span class="attr">pages</span> := getPages()
+    <span class="keyword">for</span> _, <span class="attr">p</span> := range pages {
+        fmt.Println(p.toString())
+    }
+
+    fmt.Println(toJson(pages))
+
+    fmt.Println(<span class="string">"\nSome Russian Random Data"</span>)
+    fake.SetLang(<span class="string">"ru"</span>)
+    fmt.Println(fake.FirstName())
+    fmt.Println(fake.FullName())
+
+    fmt.Println(<span class="string">"\n\n\nSome English Random Data"</span>)
+    fake.SetLang(<span class="string">"en"</span>)
+    fmt.Println(fake.FirstName())
+    fmt.Println(fake.FullName())
+
+    thisMany := <span class="number">10</span>
+    counter := <span class="number">1</span>
+    t := time.Now().Format(time.<span class="caps">RFC850</span>)
+
+    fmt.Println(<span class="string">"\n\n\nPrinting"</span>, thisMany)
+
+      <span class="keyword">for</span> i := <span class="number">0</span>; i &lt; thisMany; i++ {
+      fmt.Println(counter, fake.FirstName())
+      counter += <span class="number">1</span>
+      fake.FirstName()
+      }
+
+    fmt.Println(<span class="string">"Start Time: "</span>, t)
+    t = time.Now().Format(time.<span class="caps">RFC850</span>)
+    fmt.Println(<span class="string">"End Time: "</span>, t)
+}
+
+func getPages() []Page {
+    raw, <span class="attr">err</span> := ioutil.ReadFile(<span class="string">"./deluge.json"</span>)
+    <span class="keyword">if</span> err != nil {
+        fmt.Println(err.Error())
+        os.Exit(<span class="number">1</span>)
+    }
+
+    <span class="keyword">var</span> c []Page
+    json.Unmarshal(raw, &amp;c)
+    <span class="keyword">return</span> c
+}
+</code></pre>
+<p>Now, this all was a small mess at this point. I know I needed to get it cleaned up. However the <em>priority</em> at this point is to get a build working that will provide a trusted basis to continue work from. Since I intend to use this to teach, for everyday testing, and hopefully to gain contributors (want to help?) it needs to have a good build, end of&nbsp;story.</p>
+<h2 id="continuous-integration-build">Continuous Integration&nbsp;Build</h2>
+<p>At this point I have the main.go file executing with some Go code that pulls together some functionality on random data generation, file I/O (at least reading) with a <span class="caps">JSON</span> file for config, and displaying this out the console. So far, so&nbsp;good.</p>
+<p>I’ve decided to use <a href="https://codeship.com">Codeship</a> for this particular project. They’re a service provider the specializes in continuous integration and delivery services, and I might add that they’re good at it (* Also note declarations, etc at the bottom of this blog&nbsp;entry).</p>
+<p>Two significant reasons I like to use Codeship are: remote builds <span class="amp">&amp;</span> deploys with Docker and local builds with Docker. Having that combination is very effective, providing the capability to effectively to builds that include systemic deployments to my own local machine in addition to combining efforts with a prospective team together via the remote&nbsp;build.</p>
+<h3 id="ci-service-setup-at-codeship"><span class="caps">CI</span> Service Setup at&nbsp;Codeship</h3>
+<p>To setup the repository on Codeship for <em>Docker</em> support I went through these&nbsp;steps.</p>
+<p>First select create new project. This is up on the Select Project bar or if you’ve just signed up it is available as the default screen when navigating to builds. Codeship just added <a href="https://about.gitlab.com/">Gitlab</a> as a repository option recently, which I opted for the Data Diluvium Client, <a href="https://gitlab.com/adron/colligere">Colligere</a>, using Gitlab just to test it out. At this time I really like my experience with Gitlab, but that’s for another blog entry, for now,&nbsp;onward!</p>
+<p><img src="/articles/data-diluvium-getting-started/codeship01.png" alt="Codeship Docker Setup"></p>
+<p>Next enter the path for the git&nbsp;repo.</p>
+<p><img src="/articles/data-diluvium-getting-started/codeship02.png" alt="Codeship Docker Setup"></p>
+<p>Select pro infrastructure. This will provide Docker&nbsp;capabilities.</p>
+<p><img src="/articles/data-diluvium-getting-started/codeship03.png" alt="Codeship Docker Setup"></p>
+<p>Then it is time to setup the Docker configuration and yaml files for the build. The page at this point on Codeship has some links and such, for the two yaml files needed, but I’ll describe them here in detail a bit. In the image below a quick review of each element of the page: (1), the project settings, which will navigate to an area to setup notification, configure and add team members, repository details or reconnecting to a different repository, and general settings, which can be navigated to via (2), and (3) lists the current project the settings are displaying and available for&nbsp;changing.</p>
+<p><img src="/articles/data-diluvium-getting-started/codeship.png" alt="Codeship Docker Setup"></p>
+<p>Once the build project is setup in Codeship there are two files that are needed in the repository itself. Both of these files are simple yaml files. Each are given a default name of <code>codeship-steps.yaml</code> and <code>codeship-services.yaml</code>.</p>
+<p>The <code>codeship-steps.yaml</code> file has the following steps listed for this project. I’ve associated these to a service called <em>deluge_svc</em> which will be defined in the <code>codeship-services.yaml</code> file. Then the commands, in order, are <code>go clean</code>, <code>go test ./...</code>, and <code>go build</code>.</p>
+<pre><code class="lang-shell-script">- name: deluge
+  service: deluge_svc
+  command: go clean
+- name: deluge_tests
+  service: deluge_svc
+  command: go test ./...
+- name: deluge_build
+  service: deluge_svc
+  command: go build
+</code></pre>
+<p>The next file is <code>codeship-services.yaml</code> and has the following&nbsp;contents.</p>
+<pre><code class="lang-shell-script">deluge_svc:
+  build:
+    image: deluge
+    dockerfile_path: Dockerfile
+</code></pre>
+<p>This simply gives the service a name, which in this case is <code>deluge_svc</code> and then points to which Docker image will be used and which Dockerfile will build that image. Here I’ve just placed Dockerfile as the file, and next will put together the&nbsp;Dockerfile.</p>
+<h3 id="dockerfile">Dockerfile</h3>
+<p>The Dockerfile I put together is based off of the official golang image, with the tag specific for the 1.7.4-alpine build. The Alpine build is basically a Linux image that is about ~<span class="caps">10MB</span>, maybe a little more or a little less depending on what needs to be added to the image to run the&nbsp;service.</p>
+<p>In the case of the Data Diluvium App I’ve added a few things that will be needed in order to get the build working. The complete Dockerfile is below, but below that I’ll break out what is going on and what I needed to do to implement this Docker image to run as a container for the build (and by proxy any production use of the same&nbsp;image).</p>
+<pre><code class="lang-docker"><span class="keyword"><span class="caps">FROM</span></span> golang:<span class="number">1.7</span>.<span class="number">4</span>-alpine
+
+<span class="keyword"><span class="caps">ENV</span></span> <span class="caps">GOPATH</span> /go
+
+<span class="keyword"><span class="caps">RUN</span></span><span class="bash"> mkdir /app &amp;&amp; \
+    apk add --update curl &amp;&amp; \
+    rm -rf /var/cache/apk/*
+</span>
+<span class="keyword"><span class="caps">ADD</span></span><span class="bash"> . /app/
+</span><span class="keyword"><span class="caps">WORKDIR</span></span><span class="bash"> /app
+</span><span class="keyword"><span class="caps">RUN</span></span><span class="bash"> apk update &amp;&amp; apk upgrade &amp;&amp; \
+  apk add --no-cache git &amp;&amp; \
+  curl https://glide.sh/get | sh
+</span>
+<span class="keyword"><span class="caps">RUN</span></span><span class="bash"> glide up &amp;&amp; go get github.com/icrowley/fake &amp;&amp; \
+  go build
+</span><span class="keyword"><span class="caps">CMD</span></span><span class="bash"> [<span class="string">"/app/datadiluvium"</span>]</span>
+</code></pre>
+<p>The first part of the file sets the official golang image and immediately after that I set the actual $<span class="caps">GOPATH</span> environment variable on the&nbsp;image.</p>
+<pre><code class="lang-docker"><span class="keyword"><span class="caps">FROM</span></span> golang:<span class="number">1.7</span>.<span class="number">4</span>-alpine
+
+<span class="keyword"><span class="caps">ENV</span></span> <span class="caps">GOPATH</span> /go
+</code></pre>
+<p>Next, I install curl with Alpine’s apk and clear out the apk&nbsp;cache.</p>
+<pre><code class="lang-docker"><span class="keyword"><span class="caps">RUN</span></span><span class="bash"> mkdir /app &amp;&amp; \
+    apk add --update curl &amp;&amp; \
+    rm -rf /var/cache/apk/*</span>
+</code></pre>
+<p>Next are some very specific steps, which I’m not sure really meet a good practice, but it’s what I needed to do in the moment to get things working. The first steps here is simply adding the app directory, then setting it as the <span class="caps">WORKDIR</span>. Next I update apk again and upgrade the cache before installing glide. I’m not sure if this is absolutely necessary but I was running into errors and things not executing until I broke apart this section from the aforementioned&nbsp;section.</p>
+<pre><code class="lang-docker"><span class="keyword"><span class="caps">ADD</span></span><span class="bash"> . /app/
+</span><span class="keyword"><span class="caps">WORKDIR</span></span><span class="bash"> /app
+</span><span class="keyword"><span class="caps">RUN</span></span><span class="bash"> apk update &amp;&amp; apk upgrade &amp;&amp; \
+  apk add --no-cache git &amp;&amp; \
+  curl https://glide.sh/get | sh</span>
+</code></pre>
+<p>With glide installed it was time to grab the dependencies for the Docker image with <code>glide up</code> and for some reason, even though it’s in the glide yaml file I still had to specifically call out the <code>go get github.com/icrowley/fake</code> library before executing the <code>go build</code> step.</p>
+<pre><code class="lang-docker">UN glide up &amp;&amp; go get github.com/icrowley/fake &amp;&amp; \
+  go build
+<span class="keyword"><span class="caps">CMD</span></span><span class="bash"> [<span class="string">"/app/datadiluvium"</span>]</span>
+</code></pre>
+<p>With that done, I could then finally run a build that encompassed all elements of what I’ve built so far. I did this simple with a <code>jet steps</code> command and realized I’d missed the steps needed to actually <a href="https://documentation.codeship.com/pro/getting-started/installation/#jet">install the jet <span class="caps">CLI</span></a>. Since this first build I was working on, was actually on Ubuntu Linux, I followed these steps for getting the Jet <span class="caps">CLI</span>&nbsp;installed.</p>
+<pre><code class="lang-shell-script">curl -SLO &quot;https://s3.amazonaws.com/codeship-jet-releases/1.15.4/jet-linux_amd64_1.15.4.tar.gz&quot;
+sudo tar -xaC /usr/local/bin -f jet-linux_amd64_1.15.4.tar.gz
+sudo chmod +x /usr/local/bin/jet
+</code></pre>
+<p>However there is a brew cask that can be used to install jet with too. It’s a one line&nbsp;command.</p>
+<pre><code>brew cask install jet
+</code></pre><p>Ok, that should get those following along with a running build too. There is of course the prereq of having git and docker installed too, I’ll admit I keep making the mistake of assuming those things are installed everywhere. So if you hit a hiccup at this point, it may be because those two things need installed - which likely will have caused errors far before&nbsp;this.</p>
+<p>With <code>jet steps</code> running the build locally, I can now navigate to Codeship and check out the build when I commit all of this&nbsp;work.</p>
+<pre><code class="lang-shell-script">git add -A
+git commit -m &#39;First code all wrapped up.&#39;
+git push origin master
+</code></pre>
+<p>…and that’s it for this entry. Hope that’s useful for getting your own Go project started. If you’re interested, definitely ping me if you’d like to work on Data Diluvium some too. I’m looking for&nbsp;help.</p>
+<p>Cheers!&nbsp;-Adron</p>
+<h4 id="declarations-references">Declarations <span class="amp">&amp;</span>&nbsp;References</h4>
+<ul>
+<li>Codeship - I’ve worked for Codeship providing technical writing and good coding fun with the crew there. They’re not currently paying me, but I will likely do more work for them, so take that into account when judging my judgement of their products. As always, I’m not into any shill work and wanted you dear reader, to have full clarity into my use of the tech.&nbsp;Cheerio!</li>
+<li>Collected Links - <a href="https://codeship.com/">Codeship</a>, <a href="http://datadiluvium.com/">Data Diluvium</a>, <a href="https://github.com/Adron/datadiluvium">Data Diluvium Github Project</a>, <a href="https://gitlab.com/adron/colligere">Colligere</a>.</li>
+</ul>
+</section>
+                </article>
+                <!-- End of Blog Page-->
+              </div>
+            </div>
+            <div class="col-md-3 hidden-sm hidden-xs">
+              <div class="sidebar js-sidebar-fixed">
+                <!-- Vertical Menu-->
+                <div class="widget">
+                  <!-- Search-->
+                  <div class="search">
+                    <form action="https://google.com/search" method="get">
+                      <input type="hidden" name="sitesearch" value="http://blog.adron.me">
+                      <input type="text" name="q" placeholder="search" class="search-input form-control"><i class="fa fa-search search-icon"></i>
+                    </form>
+                  </div>
+                  <!-- End of Search-->
+                </div>
+                <div class="widget">
+                  <h3 class="widget-title">Keyword Search</h3>
+                  <!-- Tags-->
+                  <ul class="tags">
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=html">html</a></li>
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=javascript">javascript</a></li>
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=ubuntu">ubuntu</a></li>
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=node pdx">node pdx</a></li>
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=.NET fringe">.net fringe</a></li>
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=videos">videos</a></li>
+                  </ul>
+                  <!-- End of Tags-->
+                </div>
+                <nav class="menu-vertical-wrapper">
+                  <ul data-prepend-to=".js-layout" data-select="Menu" class="menu-vertical js-menu-vertical">
+                    <li><a href="#">About</a>
+                      <ul>
+                        <li><a href="/docs/about/">Me, Adron</a></li>
+                        <li><a href="#">My Hobbies</a>
+                          <ul>
+                            <li><a href="http://photos.adron.me">My Photos</a></li>
+                          </ul>
+                        </li>
+                        <li><a href="/docs/Speaking-Presentations-Workshops">My Presentations</a></li>
+                        <li><a href="/docs/documentation/">Collection of Docs & Notes</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </nav>
+                <div class="widget">
+                  <h3 class="widget-title">Photos</h3>
+                  <!-- Photos-->
+                  <ul class="widget-recommended-products">
+                    <!-- Photos-->
+                    <li class="widget-recommended-product"><img src="/img/photos/IMG_1836.jpg" alt="Jon Oropeza" class="widget-recommended-product-img"><a href="http://photos.adron.me/Software/Meetups-N-Conferences/Conferences/Node-PDX-2016/i-D9qFQ6m" class="widget-recommended-product-link">
+                        <h5 class="widget-recommended-product-link-title">Node PDX 2016<i class="fa fa-angle-right"></i></h5>
+                        <p class="widget-recommended-product-link-description">Jon Oropeza @ Node PDX 2016</p></a></li>
+                    <!-- End of Recommended product Item-->
+                    <!-- Recommended product Item-->
+                    <li class="widget-recommended-product"><img src="/img/photos/IMG_1812.jpg" alt="Liz Abinante" class="widget-recommended-product-img"><a href="http://photos.adron.me/Software/Meetups-N-Conferences/Conferences/Node-PDX-2016/i-g2m2hgP" class="widget-recommended-product-link">
+                        <h5 class="widget-recommended-product-link-title">Node PDX 2016<i class="fa fa-angle-right"></i></h5>
+                        <p class="widget-recommended-product-link-description">Liz Abinante @ Node PDX 2016</p></a></li>
+                    <!-- End of Recommended product Item-->
+                    <!-- Recommended product Item-->
+                    <li class="widget-recommended-product"><img src="/img/photos/IMG_5709.jpg" alt="Praha hlavní nádraží" class="widget-recommended-product-img"><a href="http://photos.adron.me/Travels-N-Traversings/Across-the-Pond-2016-Travels/September-Krakow/Week-4-Prague/i-62ZPsPb" class="widget-recommended-product-link">
+                        <h5 class="widget-recommended-product-link-title">Prague (Praha)<i class="fa fa-angle-right"></i></h5>
+                        <p class="widget-recommended-product-link-description">Praha hlavní nádraží</p></a></li>
+                    <!-- End of photos row one-->
+                  </ul>
+                  <ul class="widget-recommended-products">
+                    <!-- Photos-->
+                    <li class="widget-recommended-product"><img src="/img/photos/IMG_4417.jpg" alt="St Mary's Basilica" class="widget-recommended-product-img"><a href="http://photos.adron.me/Travels-N-Traversings/Across-the-Pond-2016-Travels/September-Krakow/Krakow/i-KnZf6pK/A" class="widget-recommended-product-link">
+                        <h5 class="widget-recommended-product-link-title">St Mary's Basilica<i class="fa fa-angle-right"></i></h5>
+                        <p class="widget-recommended-product-link-description">Bazylika Mariacka in Rynek Główny.</p></a></li>
+                    <!-- End of Recommended product Item-->
+                    <!-- Recommended product Item-->
+                    <li class="widget-recommended-product"><img src="/img/photos/VSC_03.png" alt="Visual Studio Code" class="widget-recommended-product-img"><a href="http://photos.adron.me/Software/Software-Development/Visual-Studio-Things/i-LLW7WcD/A" class="widget-recommended-product-link">
+                        <h5 class="widget-recommended-product-link-title">Visual Studio Code<i class="fa fa-angle-right"></i></h5>
+                        <p class="widget-recommended-product-link-description">Images from a review of Visual Studio Code.</p></a></li>
+                    <!-- End of Recommended product Item-->
+                    <!-- Recommended product Item-->
+                    <li class="widget-recommended-product"><img src="/img/photos/-home-adronhall-Pictures-Selection_002.png - Shutter_003.png" alt="" class="widget-recommended-product-img"><a href="http://photos.adron.me/Software/Software-Development/Ubuntu/i-CQsQ4zj/A" class="widget-recommended-product-link">
+                        <h5 class="widget-recommended-product-link-title">Mono Develop & WebStorm<i class="fa fa-angle-right"></i></h5>
+                        <p class="widget-recommended-product-link-description">Working through Mono Develop & WebStorm.</p></a>
+                      <!-- End of photos row two-->
+                    </li>
+                  </ul>
+                  <!-- End Photos-->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="nav"><a href="/">« Home</a></div>
+      </div>
+    </div>
+    <script src="/js/all.js"></script>
+    <script src="/js/custom.js"></script>
+    <!-- Google Tag Manager-->
+    <noscript>
+      <iframe src="//www.googletagmanager.com/ns.html?id=GTM-KMMZX2" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <script>
+      console.log(document.getElementById("search-google"));
+      console.log(document.getElementById("search-google").innerText);
+      
+      var searchBox = document.getElementById("search-google");
+      
+      function googleSearch(search_string) {
+        alert(search_string);
+      }
+      
+      document.getElementById("search-google").addEventListener("onClick", function () {
+        alert(document.getElementById("search-google").innerHTML);
+      });
+      
+      document.getElementById("search-google").addEventListener("onClick", function () {
+        googleSearch(document.getElementById("search-google").innerHTML)
+      });
+      
+    </script>
+    <script>
+      (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+                  (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+      })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+      ga('create', 'UA-39158070-6', 'auto');
+      ga('send', 'pageview');
+    </script>
+  </body>
+</html>

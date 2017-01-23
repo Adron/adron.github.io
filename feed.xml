@@ -5,16 +5,366 @@
     <atom:link href="http://adron.github.io/feed.xml" rel="self" type="application/rss+xml"></atom:link>
     <link>http://adron.github.io</link>
     <description>Coder, Messenger, Recon, Infrastructure, Ops</description>
-    <pubDate>Thu, 19 Jan 2017 00:00:00 -0800</pubDate>
+    <pubDate>Mon, 23 Jan 2017 00:00:00 -0800</pubDate>
     <generator>Wintersmith - https://github.com/jnordberg/wintersmith</generator>
     <language>en</language>
+    <item>
+      <title>The Data Diluvium, Getting Started</title>
+      <link>http://adron.github.io/articles/data-diluvium-getting-started/</link>
+      <pubDate>Mon, 23 Jan 2017 00:00:00 -0800</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/data-diluvium-getting-started/</guid>
+      <author></author>
+      <description>&lt;p&gt;Welcome to the first of more than a few blog entries on Data Diluvium. Data Diluvium is a project I’ve started focused around generating data for the purposes of testing, capacity, or whatever other needs might arise.&lt;/p&gt;
+&lt;p&gt;Definition of &lt;strong&gt;&lt;em&gt;data&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;:  factual information (as measurements or statistics) used as a basis for reasoning, discussion, or calculation &lt;the data is plentiful and easily available — H. A. Gleason, Jr.&gt; &lt;comprehensive data on economic growth have been published — N. H. Jacoby&gt;&lt;/li&gt;
+&lt;li&gt;:  information output by a sensing device or organ that includes both useful and irrelevant or redundant information and must be processed to be meaningful&lt;/li&gt;
+&lt;li&gt;:  information in numerical form that can be digitally transmitted or processed&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Definition of &lt;strong&gt;&lt;em&gt;deluge&lt;/em&gt;&lt;/strong&gt; which is the English version of the latin &lt;strong&gt;&lt;em&gt;diluvium&lt;/em&gt;&lt;/strong&gt;.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;a :  an overflowing of the land by water. b :  a drenching rain “a deluge causing mudslides in the area”.&lt;/li&gt;
+&lt;li&gt;:  an overwhelming amount or number &lt;received a deluge of angry phone calls&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;…thus &lt;strong&gt;&lt;em&gt;Data Diluvium&lt;/em&gt;&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;The idea is to build a data generation service. Something that will generate random data in usable chunks; name generation, addresses, and related data. To get a wide range of use out of this capability I needed to build a web service application and a respective CLI (Command Line Interface) to go along with the web application.&lt;/p&gt;
+&lt;h2 id=&quot;a-microservice-is-born-&quot;&gt;A Microservice is Born!&lt;/h2&gt;
+&lt;p&gt;The web service is going to generate pseudo-random data around name, addresses, phone numbers, and location. Over the course of this series I’ll add more data generation types and implement a schema for the actual data generation. This web service will be created based on microservice architectural and design ideas. However in the early stages of this effort I’ll keep it simple and will stick to implementing a minimally viable product (MVP). From here on out I’ll refer to this project as the &lt;em&gt;Data
+Diluvium&lt;/em&gt; project.&lt;/p&gt;
+&lt;h2 id=&quot;microservice-client-cli&quot;&gt;Microservice Client CLI&lt;/h2&gt;
+&lt;p&gt;For the client side, I want to provide a CLI in which to interface with the microservice itself. With this CLI I want to be able to provide basic configuration or passed parameters that will allow me to take the generated data and pass it directly into terminal output, out to a file, or prospectively as things develop directly into databases of various kinds themselves.&lt;/p&gt;
+&lt;h2 id=&quot;the-tooling-language&quot;&gt;The Tooling &amp;amp; Language&lt;/h2&gt;
+&lt;p&gt;Overall this could be built in a number of technology stacks. I could use Node.js, .NET, Java, Erlang, or Go to build both the CLI and the microservice. With the multitude of choices it can be somewhat difficult picking the right stack to get things done as quickly, efficiently, well organized, and cleanly as possible. For this particular effort I’m going to go with Go to implement the microservice and the CLI.&lt;/p&gt;
+&lt;p&gt;Why Go you might ask? For the CLI, I’d want a cleanly built, fast, and responsive CLI that I can setup on any machine with minimal fuss. For Node.js for instance, one doesn’t get a built executable, but instead a kind of morass of tooling, and preinstallation software required. For Java and .NET one ends up with a great array of tooling to build a microservice and CLI, but the knowledge and time just to setup the initial development environments leads me away from those. With Erlang, maybe a day in the future, since it is indeed hugely and almost mystically powerful (yes, I just wrote mystically, it sounds appropriate).&lt;/p&gt;
+&lt;h2 id=&quot;kick-off&quot;&gt;Kick Off&lt;/h2&gt;
+&lt;p&gt;First things first, I need the projects themselves. Here are the steps I took to get some basic parts building together for the two projects. The first step was simply to create two directories for each of these projects, one I named &lt;em&gt;Data
+Diluvium&lt;/em&gt; and one &lt;em&gt;Colligere&lt;/em&gt;. Inside both of those directories I put together a basic structure for each of these folders.&lt;/p&gt;
+&lt;h3 id=&quot;basic-project-files&quot;&gt;Basic Project Files&lt;/h3&gt;
+&lt;p&gt;The frame of each included the following:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;I created a folder titled &lt;em&gt;&lt;a href=&quot;https://github.com/Adron/datadiluvium/tree/master/.github&quot;&gt;.github&lt;/a&gt;&lt;/em&gt; and placed the following files: &lt;em&gt;&lt;a href=&quot;https://github.com/Adron/datadiluvium/blob/master/.github/CONTRIBUTING.md&quot;&gt;CONTRIBUTING.md&lt;/a&gt;&lt;/em&gt;, &lt;em&gt;&lt;a href=&quot;https://github.com/Adron/datadiluvium/blob/master/.github/ISSUE_TEMPLATE.md&quot;&gt;ISSUE_TEMPLATE.md&lt;/a&gt;&lt;/em&gt;, and &lt;em&gt;&lt;a href=&quot;https://github.com/Adron/datadiluvium/blob/master/.github/PULL_REQUEST_TEMPLATE.md&quot;&gt;PULL_REQUEST.md&lt;/a&gt;&lt;/em&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Next the standard &lt;a href=&quot;https://github.com/Adron/datadiluvium/blob/master/.gitignore&quot;&gt;.gitignore&lt;/a&gt; file with the following contents. This is the basic file Github starts a Go project with if selected during the creation of the repository. It has the minor addition of &lt;em&gt;.DS_Store&lt;/em&gt; to keep that OS-X file out of the repository and the &lt;em&gt;.idea&lt;/em&gt; director to keep out the IntelliJ, WebStorm, or Goland IDE (or any Jetbrains IDE) settings directory.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;# Compiled Object files, Static and Dynamic libs (Shared Objects)
+*.o
+*.a
+*.so
+
+# Folders
+_obj
+_test
+
+# Architecture specific extensions/prefixes
+*.[568vq]
+[568vq].out
+
+*.cgo1.go
+*.cgo2.c
+_cgo_defun.c
+_cgo_gotypes.go
+_cgo_export.*
+
+_testmain.go
+
+*.exe
+*.test
+*.prof
+
+.DS_Store
+.idea
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;I added the &lt;em&gt;&lt;a href=&quot;https://github.com/Adron/datadiluvium/blob/master/LICENSE&quot;&gt;LICENSE&lt;/a&gt;&lt;/em&gt; file with the standard Apache 2.0 license legalese.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Finally the &lt;em&gt;&lt;a href=&quot;https://github.com/Adron/datadiluvium/blob/master/README.md&quot;&gt;README.md&lt;/a&gt;&lt;/em&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;build-files&quot;&gt;Build Files&lt;/h3&gt;
+&lt;p&gt;It is important at this stage to create a build and get that build passing with some basic element of code. At this point I need some basic executing code and the respective build configuration files. For this I’ll create three files and name them respectively: &lt;em&gt;&lt;a href=&quot;https://github.com/Adron/datadiluvium/blob/master/main.go&quot;&gt;main.go&lt;/a&gt;&lt;/em&gt;, &lt;em&gt;&lt;a href=&quot;https://github.com/Adron/datadiluvium/blob/master/codeship-steps.yml&quot;&gt;codeship-steps.yml&lt;/a&gt;&lt;/em&gt;, and &lt;em&gt;&lt;a href=&quot;https://github.com/Adron/datadiluvium/blob/master/codeship-services.yml&quot;&gt;codeship-services.yml&lt;/a&gt;&lt;/em&gt;. In addition to the code, since I was going to be pulling in dependencies I’d need something to handle that, which I went ahead and chose &lt;a href=&quot;https://github.com/Masterminds/glide&quot;&gt;glide&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I installed glide with the following commands on my OS-X machine, but since I am doing a lot of development on my new &lt;a href=&quot;http://adron.github.io/articles/data-diluvium-getting-started/&quot;&gt;Leopard WS&lt;/a&gt; machine I installed glide with the curl command below.&lt;/p&gt;
+&lt;p&gt;Install with brew.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;brew update
+brew install glide
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The curl installation step.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;curl https://glide.sh/get | sh
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;With glide installed I ran the default initialization command &lt;code&gt;glide create&lt;/code&gt; to get a &lt;code&gt;glide.yaml&lt;/code&gt; and &lt;code&gt;glide.lock&lt;/code&gt; file setup. Running this command will display the following via the CLI.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;$ glide create
+[INFO]  Generating a YAML configuration file and guessing the dependencies
+[INFO]  Attempting to import from other package managers (use --skip-import to skip)
+[INFO]  Scanning code to look for dependencies
+[INFO]  --&amp;gt; Found reference to github.com/Masterminds/semver
+[INFO]  --&amp;gt; Found reference to github.com/Masterminds/vcs
+[INFO]  --&amp;gt; Found reference to github.com/codegangsta/cli
+[INFO]  --&amp;gt; Found reference to gopkg.in/yaml.v2
+[INFO]  Writing configuration file (glide.yaml)
+[INFO]  Would you like Glide to help you find ways to improve your glide.yaml configuration?
+[INFO]  If you want to revisit this step you can use the config-wizard command at any time.
+[INFO]  Yes (Y) or No (N)?
+n
+[INFO]  You can now edit the glide.yaml file. Consider:
+[INFO]  --&amp;gt; Using versions and ranges. See https://glide.sh/docs/versions/
+[INFO]  --&amp;gt; Adding additional metadata. See https://glide.sh/docs/glide.yaml/
+[INFO]  --&amp;gt; Running the config-wizard command to improve the versions in your configuration
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;I then ran &lt;code&gt;glide get github.com/icrowley/fake&lt;/code&gt; to get the fake library I would need. The &lt;code&gt;glide.yaml&lt;/code&gt; and &lt;code&gt;glide.lock&lt;/code&gt; looked like this after I pulled in this library.&lt;/p&gt;
+&lt;p&gt;glide.yaml&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-yaml&quot;&gt;&lt;span class=&quot;attr&quot;&gt;package:&lt;/span&gt; github.com/adron/datadiluvium
+&lt;span class=&quot;attr&quot;&gt;import:&lt;/span&gt;
+&lt;span class=&quot;attr&quot;&gt;- package:&lt;/span&gt; github.com/icrowley/fake
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;glide.lock&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-yaml&quot;&gt;&lt;span class=&quot;attr&quot;&gt;hash:&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;fd78ca8369405d5998e65ea4cfce94c6599e878c36fec39b85fd385552392d7
+&lt;span class=&quot;attr&quot;&gt;updated:&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;2017&lt;/span&gt;&lt;span class=&quot;bullet&quot;&gt;-01&lt;/span&gt;&lt;span class=&quot;bullet&quot;&gt;-09&lt;/span&gt;T01:&lt;span class=&quot;number&quot;&gt;04&lt;/span&gt;:&lt;span class=&quot;number&quot;&gt;18.134993358&lt;/span&gt;&lt;span class=&quot;bullet&quot;&gt;-08&lt;/span&gt;:&lt;span class=&quot;number&quot;&gt;00&lt;/span&gt;
+&lt;span class=&quot;attr&quot;&gt;imports:&lt;/span&gt;
+&lt;span class=&quot;attr&quot;&gt;- name:&lt;/span&gt; github.com/icrowley/fake
+&lt;span class=&quot;attr&quot;&gt;  version:&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;84&lt;/span&gt;bff6d01560fb0b5a396ba29534e93fd00d09c6
+&lt;span class=&quot;attr&quot;&gt;testImports:&lt;/span&gt; []
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;If you’re curious about the hash, and related properties of this file check out the glide &lt;a href=&quot;https://github.com/Masterminds/glide/blob/master/README.md&quot;&gt;README.md&lt;/a&gt;, it’s useful in understanding what’s stored here.&lt;/p&gt;
+&lt;p&gt;At this point, it was time to actually sling some Go code! At this point, I do indeed mean sling some too. Splat!&lt;/p&gt;
+&lt;h3 id=&quot;some-go-code&quot;&gt;Some Go Code&lt;/h3&gt;
+&lt;p&gt;In the main.go file I wrote some basic Go code just to have something to build. I wanted a little bit more than just a &lt;em&gt;Hello World!&lt;/em&gt; code sample so I added a little bit more. I did some research and found the &lt;a href=&quot;https://github.com/icrowley/fake&quot;&gt;Fake&lt;/a&gt; library written by Dmitry Afanasyev from Ulyanovsk, Russia. I used &lt;code&gt;Go get&lt;/code&gt; to pull that into the project and then added an &lt;code&gt;import&lt;/code&gt; after &lt;code&gt;package main&lt;/code&gt; with the various bits of code I’d want for my getting started code.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;package main
+
+&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; (
+    &lt;span class=&quot;string&quot;&gt;&quot;encoding/json&quot;&lt;/span&gt;
+    &lt;span class=&quot;string&quot;&gt;&quot;fmt&quot;&lt;/span&gt;
+    &lt;span class=&quot;string&quot;&gt;&quot;io/ioutil&quot;&lt;/span&gt;
+    &lt;span class=&quot;string&quot;&gt;&quot;os&quot;&lt;/span&gt;
+    &lt;span class=&quot;string&quot;&gt;&quot;github.com/icrowley/fake&quot;&lt;/span&gt;
+    &lt;span class=&quot;string&quot;&gt;&quot;time&quot;&lt;/span&gt;
+)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The other libraries I knew I would need for various other output, date stamps, and other library features I’d want. Then I went to coding, my first sample of working code to prove out key functionality of the libraries looked like this.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;type Page struct {
+    Title string &lt;span class=&quot;string&quot;&gt;`json:&quot;title&quot;`&lt;/span&gt;
+    Schema   string &lt;span class=&quot;string&quot;&gt;`json:&quot;schema&quot;`&lt;/span&gt;
+}
+
+func (p Page) toString() string {
+    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; toJson(p)
+}
+
+func toJson(p interface{}) string {
+    bytes, &lt;span class=&quot;attr&quot;&gt;err&lt;/span&gt; := json.Marshal(p)
+    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; err != nil {
+        fmt.Println(err.Error())
+        os.Exit(&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;)
+    }
+    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; string(bytes)
+}
+
+func main() {
+    &lt;span class=&quot;attr&quot;&gt;pages&lt;/span&gt; := getPages()
+    &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; _, &lt;span class=&quot;attr&quot;&gt;p&lt;/span&gt; := range pages {
+        fmt.Println(p.toString())
+    }
+
+    fmt.Println(toJson(pages))
+
+    fmt.Println(&lt;span class=&quot;string&quot;&gt;&quot;\nSome Russian Random Data&quot;&lt;/span&gt;)
+    fake.SetLang(&lt;span class=&quot;string&quot;&gt;&quot;ru&quot;&lt;/span&gt;)
+    fmt.Println(fake.FirstName())
+    fmt.Println(fake.FullName())
+
+    fmt.Println(&lt;span class=&quot;string&quot;&gt;&quot;\n\n\nSome English Random Data&quot;&lt;/span&gt;)
+    fake.SetLang(&lt;span class=&quot;string&quot;&gt;&quot;en&quot;&lt;/span&gt;)
+    fmt.Println(fake.FirstName())
+    fmt.Println(fake.FullName())
+
+    thisMany := &lt;span class=&quot;number&quot;&gt;10&lt;/span&gt;
+    counter := &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;
+    t := time.Now().Format(time.RFC850)
+
+    fmt.Println(&lt;span class=&quot;string&quot;&gt;&quot;\n\n\nPrinting&quot;&lt;/span&gt;, thisMany)
+
+      &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; i := &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;; i &amp;lt; thisMany; i++ {
+      fmt.Println(counter, fake.FirstName())
+      counter += &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;
+      fake.FirstName()
+      }
+
+    fmt.Println(&lt;span class=&quot;string&quot;&gt;&quot;Start Time: &quot;&lt;/span&gt;, t)
+    t = time.Now().Format(time.RFC850)
+    fmt.Println(&lt;span class=&quot;string&quot;&gt;&quot;End Time: &quot;&lt;/span&gt;, t)
+}
+
+func getPages() []Page {
+    raw, &lt;span class=&quot;attr&quot;&gt;err&lt;/span&gt; := ioutil.ReadFile(&lt;span class=&quot;string&quot;&gt;&quot;./deluge.json&quot;&lt;/span&gt;)
+    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; err != nil {
+        fmt.Println(err.Error())
+        os.Exit(&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;)
+    }
+
+    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; c []Page
+    json.Unmarshal(raw, &amp;amp;c)
+    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; c
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now, this all was a small mess at this point. I know I needed to get it cleaned up. However the &lt;em&gt;priority&lt;/em&gt; at this point is to get a build working that will provide a trusted basis to continue work from. Since I intend to use this to teach, for everyday testing, and hopefully to gain contributors (want to help?) it needs to have a good build, end of story.&lt;/p&gt;
+&lt;h2 id=&quot;continuous-integration-build&quot;&gt;Continuous Integration Build&lt;/h2&gt;
+&lt;p&gt;At this point I have the main.go file executing with some Go code that pulls together some functionality on random data generation, file I/O (at least reading) with a JSON file for config, and displaying this out the console. So far, so good.&lt;/p&gt;
+&lt;p&gt;I’ve decided to use &lt;a href=&quot;https://codeship.com&quot;&gt;Codeship&lt;/a&gt; for this particular project. They’re a service provider the specializes in continuous integration and delivery services, and I might add that they’re good at it (* Also note declarations, etc at the bottom of this blog entry).&lt;/p&gt;
+&lt;p&gt;Two significant reasons I like to use Codeship are: remote builds &amp;amp; deploys with Docker and local builds with Docker. Having that combination is very effective, providing the capability to effectively to builds that include systemic deployments to my own local machine in addition to combining efforts with a prospective team together via the remote build.&lt;/p&gt;
+&lt;h3 id=&quot;ci-service-setup-at-codeship&quot;&gt;CI Service Setup at Codeship&lt;/h3&gt;
+&lt;p&gt;To setup the repository on Codeship for &lt;em&gt;Docker&lt;/em&gt; support I went through these steps.&lt;/p&gt;
+&lt;p&gt;First select create new project. This is up on the Select Project bar or if you’ve just signed up it is available as the default screen when navigating to builds. Codeship just added &lt;a href=&quot;https://about.gitlab.com/&quot;&gt;Gitlab&lt;/a&gt; as a repository option recently, which I opted for the Data Diluvium Client, &lt;a href=&quot;https://gitlab.com/adron/colligere&quot;&gt;Colligere&lt;/a&gt;, using Gitlab just to test it out. At this time I really like my experience with Gitlab, but that’s for another blog entry, for now, onward!&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/data-diluvium-getting-started/codeship01.png&quot; alt=&quot;Codeship Docker Setup&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Next enter the path for the git repo.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/data-diluvium-getting-started/codeship02.png&quot; alt=&quot;Codeship Docker Setup&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Select pro infrastructure. This will provide Docker capabilities.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/data-diluvium-getting-started/codeship03.png&quot; alt=&quot;Codeship Docker Setup&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Then it is time to setup the Docker configuration and yaml files for the build. The page at this point on Codeship has some links and such, for the two yaml files needed, but I’ll describe them here in detail a bit. In the image below a quick review of each element of the page: (1), the project settings, which will navigate to an area to setup notification, configure and add team members, repository details or reconnecting to a different repository, and general settings, which can be navigated to via (2), and (3) lists the current project the settings are displaying and available for changing.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/data-diluvium-getting-started/codeship.png&quot; alt=&quot;Codeship Docker Setup&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Once the build project is setup in Codeship there are two files that are needed in the repository itself. Both of these files are simple yaml files. Each are given a default name of &lt;code&gt;codeship-steps.yaml&lt;/code&gt; and &lt;code&gt;codeship-services.yaml&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;codeship-steps.yaml&lt;/code&gt; file has the following steps listed for this project. I’ve associated these to a service called &lt;em&gt;deluge_svc&lt;/em&gt; which will be defined in the &lt;code&gt;codeship-services.yaml&lt;/code&gt; file. Then the commands, in order, are &lt;code&gt;go clean&lt;/code&gt;, &lt;code&gt;go test ./...&lt;/code&gt;, and &lt;code&gt;go build&lt;/code&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;- name: deluge
+  service: deluge_svc
+  command: go clean
+- name: deluge_tests
+  service: deluge_svc
+  command: go test ./...
+- name: deluge_build
+  service: deluge_svc
+  command: go build
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The next file is &lt;code&gt;codeship-services.yaml&lt;/code&gt; and has the following contents.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;deluge_svc:
+  build:
+    image: deluge
+    dockerfile_path: Dockerfile
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This simply gives the service a name, which in this case is &lt;code&gt;deluge_svc&lt;/code&gt; and then points to which Docker image will be used and which Dockerfile will build that image. Here I’ve just placed Dockerfile as the file, and next will put together the Dockerfile.&lt;/p&gt;
+&lt;h3 id=&quot;dockerfile&quot;&gt;Dockerfile&lt;/h3&gt;
+&lt;p&gt;The Dockerfile I put together is based off of the official golang image, with the tag specific for the 1.7.4-alpine build. The Alpine build is basically a Linux image that is about ~10MB, maybe a little more or a little less depending on what needs to be added to the image to run the service.&lt;/p&gt;
+&lt;p&gt;In the case of the Data Diluvium App I’ve added a few things that will be needed in order to get the build working. The complete Dockerfile is below, but below that I’ll break out what is going on and what I needed to do to implement this Docker image to run as a container for the build (and by proxy any production use of the same image).&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-docker&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;FROM&lt;/span&gt; golang:&lt;span class=&quot;number&quot;&gt;1.7&lt;/span&gt;.&lt;span class=&quot;number&quot;&gt;4&lt;/span&gt;-alpine
+
+&lt;span class=&quot;keyword&quot;&gt;ENV&lt;/span&gt; GOPATH /go
+
+&lt;span class=&quot;keyword&quot;&gt;RUN&lt;/span&gt;&lt;span class=&quot;bash&quot;&gt; mkdir /app &amp;amp;&amp;amp; \
+    apk add --update curl &amp;amp;&amp;amp; \
+    rm -rf /var/cache/apk/*
+&lt;/span&gt;
+&lt;span class=&quot;keyword&quot;&gt;ADD&lt;/span&gt;&lt;span class=&quot;bash&quot;&gt; . /app/
+&lt;/span&gt;&lt;span class=&quot;keyword&quot;&gt;WORKDIR&lt;/span&gt;&lt;span class=&quot;bash&quot;&gt; /app
+&lt;/span&gt;&lt;span class=&quot;keyword&quot;&gt;RUN&lt;/span&gt;&lt;span class=&quot;bash&quot;&gt; apk update &amp;amp;&amp;amp; apk upgrade &amp;amp;&amp;amp; \
+  apk add --no-cache git &amp;amp;&amp;amp; \
+  curl https://glide.sh/get | sh
+&lt;/span&gt;
+&lt;span class=&quot;keyword&quot;&gt;RUN&lt;/span&gt;&lt;span class=&quot;bash&quot;&gt; glide up &amp;amp;&amp;amp; go get github.com/icrowley/fake &amp;amp;&amp;amp; \
+  go build
+&lt;/span&gt;&lt;span class=&quot;keyword&quot;&gt;CMD&lt;/span&gt;&lt;span class=&quot;bash&quot;&gt; [&lt;span class=&quot;string&quot;&gt;&quot;/app/datadiluvium&quot;&lt;/span&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The first part of the file sets the official golang image and immediately after that I set the actual $GOPATH environment variable on the image.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-docker&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;FROM&lt;/span&gt; golang:&lt;span class=&quot;number&quot;&gt;1.7&lt;/span&gt;.&lt;span class=&quot;number&quot;&gt;4&lt;/span&gt;-alpine
+
+&lt;span class=&quot;keyword&quot;&gt;ENV&lt;/span&gt; GOPATH /go
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Next, I install curl with Alpine’s apk and clear out the apk cache.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-docker&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;RUN&lt;/span&gt;&lt;span class=&quot;bash&quot;&gt; mkdir /app &amp;amp;&amp;amp; \
+    apk add --update curl &amp;amp;&amp;amp; \
+    rm -rf /var/cache/apk/*&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Next are some very specific steps, which I’m not sure really meet a good practice, but it’s what I needed to do in the moment to get things working. The first steps here is simply adding the app directory, then setting it as the WORKDIR. Next I update apk again and upgrade the cache before installing glide. I’m not sure if this is absolutely necessary but I was running into errors and things not executing until I broke apart this section from the aforementioned section.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-docker&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;ADD&lt;/span&gt;&lt;span class=&quot;bash&quot;&gt; . /app/
+&lt;/span&gt;&lt;span class=&quot;keyword&quot;&gt;WORKDIR&lt;/span&gt;&lt;span class=&quot;bash&quot;&gt; /app
+&lt;/span&gt;&lt;span class=&quot;keyword&quot;&gt;RUN&lt;/span&gt;&lt;span class=&quot;bash&quot;&gt; apk update &amp;amp;&amp;amp; apk upgrade &amp;amp;&amp;amp; \
+  apk add --no-cache git &amp;amp;&amp;amp; \
+  curl https://glide.sh/get | sh&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;With glide installed it was time to grab the dependencies for the Docker image with &lt;code&gt;glide up&lt;/code&gt; and for some reason, even though it’s in the glide yaml file I still had to specifically call out the &lt;code&gt;go get github.com/icrowley/fake&lt;/code&gt; library before executing the &lt;code&gt;go build&lt;/code&gt; step.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-docker&quot;&gt;UN glide up &amp;amp;&amp;amp; go get github.com/icrowley/fake &amp;amp;&amp;amp; \
+  go build
+&lt;span class=&quot;keyword&quot;&gt;CMD&lt;/span&gt;&lt;span class=&quot;bash&quot;&gt; [&lt;span class=&quot;string&quot;&gt;&quot;/app/datadiluvium&quot;&lt;/span&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;With that done, I could then finally run a build that encompassed all elements of what I’ve built so far. I did this simple with a &lt;code&gt;jet steps&lt;/code&gt; command and realized I’d missed the steps needed to actually &lt;a href=&quot;https://documentation.codeship.com/pro/getting-started/installation/#jet&quot;&gt;install the jet CLI&lt;/a&gt;. Since this first build I was working on, was actually on Ubuntu Linux, I followed these steps for getting the Jet CLI installed.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;curl -SLO &amp;quot;https://s3.amazonaws.com/codeship-jet-releases/1.15.4/jet-linux_amd64_1.15.4.tar.gz&amp;quot;
+sudo tar -xaC /usr/local/bin -f jet-linux_amd64_1.15.4.tar.gz
+sudo chmod +x /usr/local/bin/jet
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;However there is a brew cask that can be used to install jet with too. It’s a one line command.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;brew cask install jet
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Ok, that should get those following along with a running build too. There is of course the prereq of having git and docker installed too, I’ll admit I keep making the mistake of assuming those things are installed everywhere. So if you hit a hiccup at this point, it may be because those two things need installed - which likely will have caused errors far before this.&lt;/p&gt;
+&lt;p&gt;With &lt;code&gt;jet steps&lt;/code&gt; running the build locally, I can now navigate to Codeship and check out the build when I commit all of this work.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;git add -A
+git commit -m &amp;#39;First code all wrapped up.&amp;#39;
+git push origin master
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;…and that’s it for this entry. Hope that’s useful for getting your own Go project started. If you’re interested, definitely ping me if you’d like to work on Data Diluvium some too. I’m looking for help.&lt;/p&gt;
+&lt;p&gt;Cheers!  -Adron&lt;/p&gt;
+&lt;h4 id=&quot;declarations-references&quot;&gt;Declarations &amp;amp; References&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Codeship - I’ve worked for Codeship providing technical writing and good coding fun with the crew there. They’re not currently paying me, but I will likely do more work for them, so take that into account when judging my judgement of their products. As always, I’m not into any shill work and wanted you dear reader, to have full clarity into my use of the tech. Cheerio!&lt;/li&gt;
+&lt;li&gt;Collected Links - &lt;a href=&quot;https://codeship.com/&quot;&gt;Codeship&lt;/a&gt;, &lt;a href=&quot;http://datadiluvium.com/&quot;&gt;Data Diluvium&lt;/a&gt;, &lt;a href=&quot;https://github.com/Adron/datadiluvium&quot;&gt;Data Diluvium Github Project&lt;/a&gt;, &lt;a href=&quot;https://gitlab.com/adron/colligere&quot;&gt;Colligere&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    <item>
+      <title>Autodidact Learning, For the Hacker at Heart</title>
+      <link>http://adron.github.io/articles/autodidact-learning/</link>
+      <pubDate>Sun, 22 Jan 2017 00:00:00 -0800</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/autodidact-learning/</guid>
+      <author></author>
+      <description>&lt;p&gt;I always aim to be a good a student and teacher. To be a proficient and effective student and teacher, I’ve realized long ago I must strive to be good at both. Without this effort, I’d never truly understand or gain proficiency in either position.&lt;/p&gt;
+&lt;p&gt;In addition to striving to improve myself as a student or teacher, I always finds myself continuously learning. There is never a known end, as I’m always searching for a new best, a new level of proficiency, or even a new definition of what these things are. As such, I work diligently to take mental notes during my own efforts to become a better teacher or to improve my study as a student. It’s hard work, as most things that are worthwhile in life are. This hard work however, is definitely one of the top things I enjoy in life. Learning to me is something I cherish in the extreme!&lt;/p&gt;
+&lt;p&gt;On that note, here’s a few of the things that I’ve found that have helped me to learn effectively. I offer them as is, and everybody’s use may vary in effectiveness. If you’ve got any suggestions or practices of your own, please email, tweet (&lt;a href=&quot;https://twitter.com/adron&quot;&gt;@Adron&lt;/a&gt;), or message me with them. I’m always happy to discuss new ways two to better my learning and teaching.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;h2 id=&quot;1-notes-note-taking-in-projects&quot;&gt;1. Notes / Note Taking in Projects&lt;/h2&gt;
+&lt;p&gt;One thing I’ve found very useful in software projects is to find a way to take parallel notes. These could be perceived as &lt;em&gt;comments&lt;/em&gt; except I’ve made a few slight modifications. Instead of adding these in code files, they’re more project or project folder specific comments, so I don’t place the files in comments in actual code files. The following is a list of characteristics of where I put these notes and the practices I follow to create them.&lt;/p&gt;
+&lt;div class=&quot;image float-right&quot;&gt;
+    &lt;a href=&quot;https://github.com/adron/datadiluvium&quot;&gt;&lt;img src=&quot;/articles/autodidact-learning/notesmd-files.png&quot; alt=&quot;NOTES.md&quot;&gt;&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;em&gt;Where&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;I’ve found, when working through a project I like to have two specific spaces where notes go. One is in the root and any directories of the project where there are additional snippets of information needed. I usually just title these files &lt;em&gt;NOTES.md&lt;/em&gt; and encourage anybody involved in the project to add their own personal notes for anybody to read. This adds context of what is going on and helps provide insight for anybody working in a project.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;How&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;I tend to write notes as quick blurbs of what is in the directory or project, notes that wouldn’t particularly be in a README.md file. They’re more of a &lt;em&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Stream_of_consciousness_(narrative_mode&quot;&gt;stream of consciousness&lt;/a&gt;)&lt;/em&gt; style. The primary focus is to write them concise, but quicly, for future reference. Helping to prevent one from forgetting what and why certain things are in a directory, specifically a directory in which is manually created for documentation or something somewhat outside of the normal application code flow, similar to &lt;a href=&quot;https://github.com/Adron/datadiluvium/blob/master/docs/hugo/NOTES.md&quot;&gt;this&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;In a Go, C#, Java, C, C++, or related compilable language these files don’t get built into the final binary. However in something like JavaScript the files may get included when zipped up to be deployed or may increase the likelihood of secrets or other information that should not be public becoming public. By association be sure that these files won’t cause an actual problem later on in the project. Generally there’s a small chance compared to the advantage of actually having some relevant project notes inside the actual project. But one has to keep these responsibilities in mind.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Take notes in projects (even trash projects, as I write about below). Write from a &lt;em&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Stream_of_consciousness_(narrative_mode&quot;&gt;stream of consciousness&lt;/a&gt;)&lt;/em&gt; style and it will work to reinforce what you’re observing and learning in the projects as well as working to provide a path to understanding for prospective maintainers in ongoing projects!&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;2-trash-projects&quot;&gt;2. Trash Projects&lt;/h2&gt;
+&lt;p&gt;When learning, one of the best ways to get used to how parts of a language and respective technology stack perform and behave is to actually build things with the language and respective tech stack. For instance, when learning JavaScript I wrote a lot of completely garbage code just to try out the language. Sure, I had read things like &lt;em&gt;&lt;a href=&quot;http://shop.oreilly.com/product/9780596517748.do&quot;&gt;JavaScript: The Good Parts&lt;/a&gt;&lt;/em&gt; and even the gargantuan &lt;em&gt;&lt;a href=&quot;http://shop.oreilly.com/product/9780596805531.do&quot;&gt;JavaScript: The Definitive Guide&lt;/a&gt;&lt;/em&gt;, but I really had not set certain things into memory until I started writing code.&lt;/p&gt;
+&lt;p&gt;One example, if I check for the type of NaN (Not a Number) I get ‘number’. That does’t really make logical sense based on what NaN stands for. But alright, what about NaN equaling NaN? That’s false, even though it clearly appears as if it is the same thing.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;&amp;gt; &lt;span class=&quot;keyword&quot;&gt;typeof&lt;/span&gt; &lt;span class=&quot;literal&quot;&gt;NaN&lt;/span&gt;
+&lt;span class=&quot;string&quot;&gt;'number'&lt;/span&gt;
+&amp;gt; &lt;span class=&quot;literal&quot;&gt;NaN&lt;/span&gt;==&lt;span class=&quot;literal&quot;&gt;NaN&lt;/span&gt;
+&lt;span class=&quot;literal&quot;&gt;false&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;These are side effects, while reading the guides and good parts books I wouldn’t have realized without actually testing the code and realizing these oddities exist. Of course when I stop and think, having read the material in the books, I realize that NaN does not equal NaN because these are two different actual objects, part of the crux of mutable imperative object creation eh!&lt;/p&gt;
+&lt;p&gt;So building tons of throwaway trash projects is hugely important. I have to fight against the urge to “build a cool working project that does X and open source it” syndrome and just focus on testing out bits of code a time until I can effectively and proficiently write are large degree of functionality using the features and concepts inherent to a language and the underlying technology stack. The best and quickest way isn’t to fight building a larger projet but instead build many small &lt;em&gt;trash projects&lt;/em&gt;.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Build lots and lots of trash projects to focus in on the behavior and features of a language or technology.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;3-when-beginning-skip-videos&quot;&gt;3. When Beginning, Skip Videos&lt;/h2&gt;
+&lt;p&gt;I suppose it depends on what one’s learning style really is and it is also odd coming from me that I’d say skip videos (because of &lt;a href=&quot;https://www.pluralsight.com/authors/adron-hall&quot;&gt;this&lt;/a&gt; and &lt;a href=&quot;https://vimeo.com/channels/thrashingcode&quot;&gt;this&lt;/a&gt;). Even though I produce Videos and find they can be used to learn things, there’s a catch. Video content is generally horrible at providing large amounts of information with specific detail in the time it takes to watch a video. There are certain nuances that video is good at, but overall they just don’t work for effective, quick, and intensive deep dives into particular technology.&lt;/p&gt;
+&lt;p&gt;In that vein, videos are horrible as stand alone learning mediums, skip them. Focus on written material, with details about things and going back to &lt;em&gt;trash projects&lt;/em&gt; create and work with hands on implementation of code and technologies. If a video is a small complement or has lots of written collateral, testing, and other mediums used in conjunction with the video it might work out ok, but otherwise focus on other things and skip the videos when starting in on a new language or tech.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Skip videos when starting out and gain some proficiency around actual implementation first, this has worked excellently for me and I’ve found it tends to work well for gaining productiveness quickly with a language or technology.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;4-mixing-theory-implementation&quot;&gt;4. Mixing Theory &amp;amp; Implementation&lt;/h2&gt;
+&lt;p&gt;As above I mentioned focusing on implementation of code, referring to it as &lt;em&gt;trash projects&lt;/em&gt;, which is a great way to really dig into the nuances of things. However at a certain point the theory of particular design practices and languages must be understood or a solid proficiency just isn’t going to be attained. That’s where mixing theory and implementation becomes fundamental. I’ve found that I need to do more reading on the why and what for of a language or technology once I’ve gotten fairly fluent in implementing things with a language or technology.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;When learning, once proficient with a language, be sure to dive deep into why and how the language actually works to gain even more proficiency with the language.&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+    </item>
     <item>
       <title>Buying a Leopard!</title>
       <link>http://adron.github.io/articles/system76-ubuntu-leopard-workstation/</link>
       <pubDate>Thu, 19 Jan 2017 00:00:00 -0800</pubDate>
       <guid isPermaLink="true">http://adron.github.io/articles/system76-ubuntu-leopard-workstation/</guid>
       <author></author>
-      <description>&lt;p&gt;In the trailing days of 2016, after having moved to Redmond, Washington I sat working at my desktop workstation. This workstation, which still exists, is a iMac with an i7, 16GB RAM, 256 GB SSD, and a 1GB Video Card with a 1TB secondary drive. The machine is a 27” all in one style design, and the screen is rather beautiful. But as I did a build and tried to run Transport Tycoon at the same time in the background the machine sputtered a bit. It was definitely maxed out doing this Go code build, putting together a Docker image build, and spinning it up for go live at the same time my game ran in the background. I thought, this machine has served me extremely well, at over 5 years old it had surpassed the standard 5 year lifespan of peak Apple oomf. At the moment, I thought, maybe it’s time to dig into a serious machine with some premium hardware again.&lt;/p&gt;
+      <description>&lt;div class=&quot;image float-right&quot;&gt;
+    &lt;img src=&quot;http://adron.github.io/articles/system76-ubuntu-leopard-workstation/system76-small.jpg&quot; alt=&quot;System76&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;In the trailing days of 2016, after having moved to Redmond, Washington I sat working at my desktop workstation. This workstation, which still exists, is a iMac with an i7, 16GB RAM, 256 GB SSD, and a 1GB Video Card with a 1TB secondary drive. The machine is a 27” all in one style design, and the screen is rather beautiful. But as I did a build and tried to run Transport Tycoon at the same time in the background the machine sputtered a bit. It was definitely maxed out doing this Go code build, putting together a Docker image build, and spinning it up for go live at the same time my game ran in the background. I thought, this machine has served me extremely well, at over 5 years old it had surpassed the standard 5 year lifespan of peak Apple oomf. At the moment, I thought, maybe it’s time to dig into a serious machine with some premium hardware again.&lt;/p&gt;
 &lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;In that moment I thought about the last dedicated, custom built, super powerful workstation machine I had. It was a powerful machine, nice form factor, and easily drove two giant 27” screens. However this machine had lived and finished it’s useful life over 6 years before 2016 had even started. But it was a sweet machine, that offered a lot of productive gaming and code writing efficiencies. It was thus, time to get in gear and get a machine again.&lt;/p&gt;
 &lt;p&gt;Immediately I thought through a few of the key features I wanted and other prerequisites of purchase.&lt;/p&gt;
@@ -2943,23 +3293,6 @@ key concepts of SAM and walk the audience through some node.js code samples (inc
 </description>
     </item>
     <item>
-      <title>WebSockets Bring Light at the End of the Tunnel by Joel Lord</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</link>
-      <pubDate>Fri, 03 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</guid>
-      <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-left&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/joel-lord.jpg&quot; alt=&quot;Joel Lord&quot;&gt;
-&lt;/div&gt;
-
-&lt;p&gt;As a Development Manager, Joel’s motivation and proven technical prowess makes him a key member of Spiria’s software development team. With a degree in computational astrophysics, his interests eventually made their way to software and Web design. Today, his knowledge of JavaScript lets him to support a variety of projects on both the front end and back end. As we move into the age of the Internet of Things, Joel is ready with his passion for programming node bots and experimenting with gadgets.&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Joel is going to speak on Web Sockets and tunnels of light… or to describe it more specifically more and more, people seem to be obsessed with real-time data.  But what does real-time mean in the world of REST servers and one-way communication?  Most modern web applications are now either displaying a snapshot of data at a given time or use a polling mechanism to update series of data at a given interval.
-In this talk, you will learn about the power of WebSockets and how they can (and should!) be used in your modern web applications. In these 30 minutes, I will go through the process of building a Node server that can push data to multiple clients in real-time.  You will see how this can be easy using the socket.io library.&lt;/p&gt;
-</description>
-    </item>
-    <item>
       <title>MMOWAM - Build Server-less Games with a DSN by Josh Marinacci</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-josh-marinacci/</link>
       <pubDate>Fri, 03 Jun 2016 17:00:00 -0700</pubDate>
@@ -2994,6 +3327,23 @@ it can be.&lt;/p&gt;
 &lt;li&gt;show number of players&lt;/li&gt;
 &lt;li&gt;start when 4 players in? one player hit’s start? let all player see total count as well and status of the other players&lt;/li&gt;
 &lt;/ul&gt;
+</description>
+    </item>
+    <item>
+      <title>WebSockets Bring Light at the End of the Tunnel by Joel Lord</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</link>
+      <pubDate>Fri, 03 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-left&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/joel-lord.jpg&quot; alt=&quot;Joel Lord&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;As a Development Manager, Joel’s motivation and proven technical prowess makes him a key member of Spiria’s software development team. With a degree in computational astrophysics, his interests eventually made their way to software and Web design. Today, his knowledge of JavaScript lets him to support a variety of projects on both the front end and back end. As we move into the age of the Internet of Things, Joel is ready with his passion for programming node bots and experimenting with gadgets.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Joel is going to speak on Web Sockets and tunnels of light… or to describe it more specifically more and more, people seem to be obsessed with real-time data.  But what does real-time mean in the world of REST servers and one-way communication?  Most modern web applications are now either displaying a snapshot of data at a given time or use a polling mechanism to update series of data at a given interval.
+In this talk, you will learn about the power of WebSockets and how they can (and should!) be used in your modern web applications. In these 30 minutes, I will go through the process of building a Node server that can push data to multiple clients in real-time.  You will see how this can be easy using the socket.io library.&lt;/p&gt;
 </description>
     </item>
     <item>

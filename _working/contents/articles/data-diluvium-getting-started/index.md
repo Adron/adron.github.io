@@ -1,7 +1,7 @@
 ---
 title: The Data Diluvium, Getting Started
 author: Adron Hall
-date: 2017-1-22
+date: 2017-1-23
 template: article.jade
 ---
 Welcome to the first of more than a few blog entries on Data Diluvium. Data Diluvium is a project I've started focused around generating data for the purposes of testing, capacity, or whatever other needs might arise.

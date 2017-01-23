@@ -1,7 +1,7 @@
 ---
 title: Autodidact Learning, For the Hacker at Heart
 author: Adron Hall
-date: 2017-1-23
+date: 2017-1-22
 template: article.jade
 ---
 I always aim to be a good a student and teacher. To be a proficient and effective student and teacher, I've realized long ago I must strive to be good at both. Without this effort, I'd never truly understand or gain proficiency in either position.
