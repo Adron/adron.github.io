@@ -8,6 +8,8 @@ template: article.jade
     ![System76](system76-small.png)
 </div>
 
+January 24th, 2017 UPDATE: After I wrote this, I spoke with the System 76 team and I'm getting the chance to go out and tour their Denver Headquarters. This happened well after I made my purchase, which all of the following was written after. But just for full transparency, I've added this note. Also, I'm aiming to get a full write up of my System76 trip put together with Denver tidbits and more! Until then, here's the review...
+
 In the trailing days of 2016, after having moved to Redmond, Washington I sat working at my desktop workstation. This workstation, which still exists, is a iMac with an i7, 16GB RAM, 256 GB SSD, and a 1GB Video Card with a 1TB secondary drive. The machine is a 27" all in one style design, and the screen is rather beautiful. But as I did a build and tried to run Transport Tycoon at the same time in the background the machine sputtered a bit. It was definitely maxed out doing this Go code build, putting together a Docker image build, and spinning it up for go live at the same time my game ran in the background. I thought, this machine has served me extremely well, at over 5 years old it had surpassed the standard 5 year lifespan of peak Apple oomf. At the moment, I thought, maybe it's time to dig into a serious machine with some premium hardware again.
 
 <span class="more"></span>
