@@ -336,3 +336,5 @@ Alright. So that actually gave me something useful. From this point I opened up 
 There were the running instances. I clicked on the link for the UI on the server and immediately it served up my request.
 
 ![Welcome Drone!](welcome_drone.png)
+
+At this point I'm ready to get going on some builds. More on that in a coming article, for now I'm gonna go enjoy good talk on machine learning and a beer with the [#SEASCALE](https://twitter.com/search?q=%23seascale) crew. Cheers!
