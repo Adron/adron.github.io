@@ -6,12 +6,11 @@ echo "Moved into articles path."
 
 # Just a title
 blogtitle=$1
-# Format 2013-04-30
-blogdate=$2
+blogdate=$(date "+%Y-%m-%d-%H:%M:%S")
 
-if [ ! $# == 2 ]
-    then
-    echo "There should be two arguments."
+if [ ! $# == 1 ]
+  then
+    echo "Needs a blog entry title."
     exit 1
 fi
 
