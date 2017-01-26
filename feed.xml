@@ -5,9 +5,277 @@
     <atom:link href="http://adron.github.io/feed.xml" rel="self" type="application/rss+xml"></atom:link>
     <link>http://adron.github.io</link>
     <description>Coder, Messenger, Recon, Infrastructure, Ops</description>
-    <pubDate>Mon, 23 Jan 2017 00:00:00 -0800</pubDate>
+    <pubDate>Wed, 25 Jan 2017 00:00:00 -0800</pubDate>
     <generator>Wintersmith - https://github.com/jnordberg/wintersmith</generator>
     <language>en</language>
+    <item>
+      <title>Introduction to Drone.io</title>
+      <link>http://adron.github.io/articles/drone-io/</link>
+      <pubDate>Wed, 25 Jan 2017 00:00:00 -0800</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/drone-io/</guid>
+      <author></author>
+      <description>&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Research &amp;amp; Learn&lt;/strong&gt;: &lt;a href=&quot;https://github.com/drone/drone&quot;&gt;Drone.io Github Repo&lt;/a&gt;, &lt;a href=&quot;http://try.drone.io/&quot;&gt;Trying Drone.io&lt;/a&gt;, and &lt;a href=&quot;http://readme.drone.io/&quot;&gt;Drone.io Docs&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Objective&lt;/strong&gt;: What Drone.io is and getting started.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I’ve dived into a new effort to figure out &lt;a href=&quot;http://try.drone.io/&quot;&gt;Drone.io&lt;/a&gt;, get it running, and if plausible contribute in some way to the project. This was kick started yesterday while I was speaking with Joachim (T &lt;a href=&quot;https://twitter.com/lindyhop&quot;&gt;@lindyhop&lt;/a&gt; &amp;amp;&amp;amp; G &lt;a href=&quot;https://github.com/josmo&quot;&gt;@josmo&lt;/a&gt;) about some projects we’re working on. We discussed the design of Drone.io, how we’re using it on some projects internally here &lt;a href=&quot;https://twitter.com/PelotonTechio&quot;&gt;@PelotonTechio&lt;/a&gt;. I will, and others will be posting more on what we’re doing with Drone.io later, but for now, I’ve put together this introduction to what Drone.io is, and getting started with it.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;h2 id=&quot;my-first-steps&quot;&gt;My First Steps&lt;/h2&gt;
+&lt;p&gt;I was fortunate to join Joachim a few weeks ago for a Share-out &lt;a href=&quot;https://twitter.com/PelotonTechio&quot;&gt;@PelotonTechio&lt;/a&gt; where someone from the team shares information they’ve recently gained while working on a project, toying around with a personal project, or other research they’ve been doing. From this, I had a little head start of what Drone.io is about, but still dug in from the very start. Which in my case, that meant grabbing the code and looking directly into things.&lt;/p&gt;
+&lt;h2 id=&quot;what-is-drone-io-&quot;&gt;What is Drone.io?&lt;/h2&gt;
+&lt;p&gt;In simple terms, Drone is a continuous integration platform using containers, primarily Docker based containers. These containers provide complete control over each build environment with the obvious isolation that containers provide. The goal of Drone is to help ship code similar to the way Github does, as per the stated objective in the README.md. Check out more on that specific &lt;a href=&quot;https://github.com/blog/1241-deploying-at-github#always-be-shipping&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If you’re curious about what Github does, and it’s TLDR; and you don’t want to click through, here’s the synopsis in one graph:&lt;/p&gt;
+&lt;p&gt;Always be shipping:
+&lt;a href=&quot;https://github.com/blog/1241-deploying-at-github#always-be-shipping&quot;&gt;&lt;img src=&quot;/articles/drone-io/abs-graph.png&quot; alt=&quot;Always Be Shipping&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;A secondary goal is to replace Jenkins as an industry wide integration tool. We’ll all get to see how that goes as time rolls onward.&lt;/p&gt;
+&lt;h2 id=&quot;getting-a-build-started&quot;&gt;Getting a Build Started&lt;/h2&gt;
+&lt;p&gt;The first step, if you’ve got a build environment already, is simply to create a .drone.yml file. This file is a subset of the &lt;a href=&quot;https://docs.docker.com/compose/&quot;&gt;docker-compose&lt;/a&gt; style format. This yaml file describes the services and the container image that will be used. For instance, here’s an example from the docs.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;pipeline:
+  build:
+    image: golang
+    commands:
+      - go get
+      - go build
+      - go test
+
+services:
+  postgres:
+    image: postgres:9.4.5
+    environment:
+      - POSTGRES_USER=myapp
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This is a simple service running postgres using the postgres 9.4.5 docker image and the pipeline is based on the golang image. The first pipeline step is to build using the commands &lt;code&gt;go get&lt;/code&gt;, &lt;code&gt;go build&lt;/code&gt;, and &lt;code&gt;go test&lt;/code&gt;. The service in this situation would likely be available for that build to use for integration tests with the database server.&lt;/p&gt;
+&lt;p&gt;This also points to how the architecture works for this particular process. Drone starts these containers up based on the specified images. That image acts as the starting point for the container point which will be used to put code on that will eventually be built, tested, or otherwise used for this processing.&lt;/p&gt;
+&lt;p&gt;Once the image is pulled, Drone automatically clones the repository you specify onto a locally mounted volume, called a workspace, on the running container. The clone process is parallel to executing a command similar to the following (from the docs &lt;a href=&quot;http://readme.drone.io/usage/getting-started/&quot;&gt;here&lt;/a&gt;):&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;git clone --depth=50 --recusive=true \
+    https://github.com/octocat/hello-world.git \
+    /drone/src/github.com/octocat/hello-world
+git checkout 7fd1a60
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;That the basic steps and idea for getting a build setup. It’s one seriously clean, smooth, and seamless way to setup a build. In the coming weeks I’ll have more information about builds for specific stacks, but for now, let’s take a look at some other elements beyond setting up a simple build.&lt;/p&gt;
+&lt;h2 id=&quot;setting-up-some-drone-s-&quot;&gt;Setting up Some Drone(s)&lt;/h2&gt;
+&lt;p&gt;Alright, so after digging through a bit I realized I just needed to dig in and get a Drone service running for myself. So this was my first attempt at getting Drone up and running. I saw the “&lt;em&gt;click this one cool button to make it work on Azure&lt;/em&gt;“ button but I have two issues with this: 1. I’m not actually learning anything about what is being done, and if it breaks I’m up the proverbial creek without a paddle 2. I currently, among all clients and people I cohack with, have zero need to know how it works on Azure. But hey, maybe in the future. For now, I just want to get something working locally, as it seems like this would be reasonable.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Prerequisite Knowledge&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Digging through the documentation it is immediately clear that it behooves the admin of Drone to know a thing or three about Docker Compose, in addition to merely Docker. The first sample file that is in the docs &lt;a href=&quot;http://readme.drone.io/admin/installation-guide/&quot;&gt;here&lt;/a&gt; in the &lt;a href=&quot;http://readme.drone.io/admin/installation-guide/&quot;&gt;installation guide&lt;/a&gt; is simply a Docker Compose yaml file.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;version: &amp;#39;2&amp;#39;
+
+services:
+  drone-server:
+    image: drone/drone:0.5
+    ports:
+      - 80:8000
+    volumes:
+      - ./drone:/var/lib/drone/
+    restart: always
+    environment:
+      - DRONE_OPEN=true
+      - DRONE_GITHUB=true
+      - DRONE_GITHUB_CLIENT=${DRONE_GITHUB_CLIENT}
+      - DRONE_GITHUB_SECRET=${DRONE_GITHUB_SECRET}
+      - DRONE_SECRET=${DRONE_SECRET}
+
+  drone-agent:
+    image: drone/drone:0.5
+    command: agent
+    restart: always
+    depends_on: [ drone-server ]
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      - DRONE_SERVER=ws://drone-server:8000/ws/broker
+      - DRONE_SECRET=${DRONE_SECRET}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The installation guide generally follows the setup with the assumption of hosting it with a public access URI so that Github OAUTH can be setup. I simply wanted to get some basic elements tested out so I just thought I’d give it a go without any of that setup. Just run the basic service and get the UI setup first.&lt;/p&gt;
+&lt;p&gt;With that, I thought I’d just try to copy and paste the Docker Compose file into a &lt;em&gt;docker-compose.yaml&lt;/em&gt; and just &lt;code&gt;docker-compose up&lt;/code&gt; the thing. Theoretically it &lt;em&gt;shouldn’t&lt;/em&gt; hurt anything right? Well, without even setting the environment variables I kicked off the command.&lt;/p&gt;
+&lt;p&gt;Well, that was kind of useless. But you know, I immediately learned a few things just from observation of this attempt. Obviously it would, it should fail considering. So for attempt two I set the environment variables. It was a bit LOLz…&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ docker-compose up
+WARNING: The DRONE_SECRET variable is not set. Defaulting to a blank string.
+WARNING: The DRONE_GITHUB_CLIENT variable is not set. Defaulting to a blank string.
+WARNING: The DRONE_GITHUB_SECRET variable is not set. Defaulting to a blank string.
+Creating network &amp;quot;drone_default&amp;quot; with the default driver
+Pulling drone-server (drone/drone:0.5)...
+0.5: Pulling from drone/drone
+a3ed95caeb02: Pull complete
+802d894958a2: Pull complete
+f294f54a4453: Pull complete
+Digest: sha256:f04adc8fd1097671af6d74dd809eefea6e5062a881912322d3d908e167253a97
+Status: Downloaded newer image for drone/drone:0.5
+Creating drone_drone-server_1
+Creating drone_drone-agent_1
+Attaching to drone_drone-server_1, drone_drone-agent_1
+drone-server_1  | time=&amp;quot;2017-01-25T18:59:14Z&amp;quot; level=fatal msg=&amp;quot;failed to generate token from DRONE_AGENT_SECRET&amp;quot;
+drone-agent_1   | 1:M 25 Jan 18:59:15.243 * connecting to server ws://drone-server:8000/ws/broker
+drone-agent_1   | 1:M 25 Jan 18:59:15.283 # connection failed, retry in 15s. websocket.Dial ws://drone-server:8000/ws/broker: dial tcp: lookup drone-server on 127.0.0.11:53: no such host
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;So even without the environment variables set it attempted to go about launching a &lt;em&gt;drone-server_1&lt;/em&gt; and go through various steps. I quickly killed the efforts of the executing Docker Compose with Ctrl+C and then a quick call to &lt;code&gt;docker-compose down&lt;/code&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ docker-compose down
+WARNING: The DRONE_SECRET variable is not set. Defaulting to a blank string.
+WARNING: The DRONE_GITHUB_CLIENT variable is not set. Defaulting to a blank string.
+WARNING: The DRONE_GITHUB_SECRET variable is not set. Defaulting to a blank string.
+Removing drone_drone-agent_1 ... done
+Removing drone_drone-server_1 ... done
+Removing network drone_default
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;It appears at this point that it stopped and cleaned up appropriately. Also I wanted to see if I could get things going without the Github integration. I removed those environment variables form the list. That included deleting these lines.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;- DRONE_GITHUB=true
+- DRONE_GITHUB_CLIENT=${DRONE_GITHUB_CLIENT}
+- DRONE_GITHUB_SECRET=${DRONE_GITHUB_SECRET}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;I also made a change for the DRONE_SERVER, set the variables remaining. My yaml looked like this when completed.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;version: &amp;#39;2&amp;#39;
+
+services:
+  drone-server:
+    image: drone/drone:0.5
+    ports:
+      - 80:8000
+    volumes:
+      - ./drone:/var/lib/drone/
+    restart: always
+    environment:
+      - DRONE_OPEN=true
+      - DRONE_SECRET=${DRONE_SECRET}
+
+  drone-agent:
+    image: drone/drone:0.5
+    command: agent
+    restart: always
+    depends_on: [ drone-server ]
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      - DRONE_SERVER=ws://localhost:8000/ws/broker
+      - DRONE_SECRET=${DRONE_SECRET}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;To run this I setup a .env file, which can be used beside a docker-compose.yaml file to store environment variables. Since I didn’t want to clutter up my actual environment variables on my machine while testing this out, this seemed a better route. The initial .env file had the following content.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;DRONE_SECRET=&amp;#39;thesecret&amp;#39;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;After running &lt;code&gt;docker-compose&lt;/code&gt; this time, I got the following.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ docker-compose up
+Creating network &amp;quot;drone_default&amp;quot; with the default driver
+Creating drone_drone-server_1
+Creating drone_drone-agent_1
+Attaching to drone_drone-server_1, drone_drone-agent_1
+drone-server_1  | time=&amp;quot;2017-01-25T19:11:53Z&amp;quot; level=fatal msg=&amp;quot;version control system not configured&amp;quot;
+drone-agent_1   | 1:M 25 Jan 19:11:53.770 * connecting to server ws://localhost:8000/ws/broker
+drone-agent_1   | 1:M 25 Jan 19:11:53.772 # connection failed, retry in 15s. websocket.Dial ws://localhost:8000/ws/broker: dial tcp [::1]:8000: getsockopt: connection refused
+drone_drone-server_1 exited with code 1
+drone-server_1  | time=&amp;quot;2017-01-25T19:11:53Z&amp;quot; level=fatal msg=&amp;quot;version control system not configured&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Well that escalated quickly to hostility! Egads! No version control system configured! Ugh. Ok, I guess I’ve got to have that as a default. I was hoping that it would present some type of default setup for this and just let me get running, especially since I want to host this locally, not out in internet land where I’d have a valid URI to use. With a quick change I added a few things back to the file with the following changes.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;version: &amp;#39;2&amp;#39;
+
+services:
+  drone-server:
+    image: drone/drone:0.5
+    ports:
+      - 80:8000
+    volumes:
+      - ./drone:/var/lib/drone/
+    restart: always
+    environment:
+      - DRONE_OPEN=true
+      - DRONE_GITHUB=true
+      - DRONE_GITHUB_CLIENT=${DRONE_GITHUB_CLIENT}
+      - DRONE_GITHUB_SECRET=${DRONE_GITHUB_SECRET}
+      - DRONE_SECRET=${DRONE_SECRET}
+
+  drone-agent:
+    image: drone/drone:0.5
+    command: agent
+    restart: always
+    depends_on: [ drone-server ]
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      - DRONE_SERVER=ws://drone-server:8000/ws/broker
+      - DRONE_SECRET=${DRONE_SECRET}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Then I navigated out to &lt;em&gt;&lt;a href=&quot;https://github.com/settings/applications/new&quot;&gt;https://github.com/settings/applications/new&lt;/a&gt;&lt;/em&gt; and created an application for my &lt;em&gt;localhost&lt;/em&gt;, guessing what it would prospectively be.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/drone-io/New_OAuth_Application.png&quot; alt=&quot;New OAuth Application&quot;&gt;&lt;/p&gt;
+&lt;p&gt;(Made a screenshot, then realized I had to take off the port numbers. No need for those)&lt;/p&gt;
+&lt;p&gt;Next accepted the permissions.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/drone-io/Authorize_Adron_s_Drone_io.png&quot; alt=&quot;Authorized Adron&amp;#39;s Drone.io Application&quot;&gt;&lt;/p&gt;
+&lt;p&gt;The screen upon confirmation has the appropriate secret and client info for the application.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/drone-io/github-oauth.png&quot; alt=&quot;OAuth Application Information&quot;&gt;&lt;/p&gt;
+&lt;p&gt;The &lt;em&gt;.env&lt;/em&gt; file then included the following changes.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;DRONE_SECRET=&amp;#39;thesecret&amp;#39;
+DRONE_GITHUB_CLIENT=30clientbclient8d
+DRONE_GITHUB_SECRET=8csecret09fesecret3be1a2427b80easecretcf
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;I then spooled up with &lt;code&gt;docker-compose up&lt;/code&gt; again and progress was made!&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ docker-compose up
+Recreating drone_drone-server_1
+Recreating drone_drone-agent_1
+Attaching to drone_drone-server_1, drone_drone-agent_1
+drone-server_1  | time=&amp;quot;2017-01-25T21:03:20Z&amp;quot; level=warning msg=&amp;quot;agents can connect with token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0ZXh0IjoiJ3RoZXNlY3JldCciLCJ0eXBlIjoiYWdlbnQifQ.q8qhOlPLQePSxKfnTe-uURfMOKSQznA2iaLQZnuOYgE&amp;quot;
+drone-server_1  | [GIN-debug] [WARNING] Running in &amp;quot;debug&amp;quot; mode. Switch to &amp;quot;release&amp;quot; mode in production.
+drone-agent_1   | 1:M 25 Jan 21:03:21.763 * connecting to server ws://drone-server:8000/ws/broker
+drone-server_1  |  - using env:    export GIN_MODE=release
+drone-server_1  |  - using code:    gin.SetMode(gin.ReleaseMode)
+drone-server_1  |
+drone-server_1  | [GIN-debug] GET    /static/*filepath         --&amp;gt; github.com/drone/drone/router.Load.func1 (2 handlers)
+drone-server_1  | [GIN-debug] GET    /login                    --&amp;gt; github.com/drone/drone/server.ShowLogin (15 handlers)
+drone-server_1  | [GIN-debug] GET    /login/form               --&amp;gt; github.com/drone/drone/server.ShowLoginForm (15 handlers)
+drone-server_1  | [GIN-debug] GET    /logout                   --&amp;gt; github.com/drone/drone/server.GetLogout (15 handlers)
+drone-server_1  | [GIN-debug] GET    /api/user                 --&amp;gt; github.com/drone/drone/server.GetSelf (16 handlers)
+drone-server_1  | [GIN-debug] GET    /api/user/feed            --&amp;gt; github.com/drone/drone/server.GetFeed (16 handlers)
+drone-server_1  | [GIN-debug] GET    /api/user/repos           --&amp;gt; github.com/drone/drone/server.GetRepos (16 handlers)
+drone-server_1  | [GIN-debug] GET    /api/user/repos/remote    --&amp;gt; github.com/drone/drone/server.GetRemoteRepos (16 handlers)
+drone-server_1  | [GIN-debug] POST   /api/user/token           --&amp;gt; github.com/drone/drone/server.PostToken (16 handlers)
+drone-server_1  | [GIN-debug] DELETE /api/user/token           --&amp;gt; github.com/drone/drone/server.DeleteToken (16 handlers)
+drone-server_1  | [GIN-debug] GET    /api/users                --&amp;gt; github.com/drone/drone/server.GetUsers (16 handlers)
+drone-server_1  | [GIN-debug] POST   /api/users                --&amp;gt; github.com/drone/drone/server.PostUser (16 handlers)
+drone-server_1  | [GIN-debug] GET    /api/users/:login         --&amp;gt; github.com/drone/drone/server.GetUser (16 handlers)
+drone-server_1  | [GIN-debug] PATCH  /api/users/:login         --&amp;gt; github.com/drone/drone/server.PatchUser (16 handlers)
+drone-server_1  | [GIN-debug] DELETE /api/users/:login         --&amp;gt; github.com/drone/drone/server.DeleteUser (16 handlers)
+drone-server_1  | [GIN-debug] GET    /api/teams/:team/secrets  --&amp;gt; github.com/drone/drone/server.GetTeamSecrets (16 handlers)
+drone-server_1  | [GIN-debug] POST   /api/teams/:team/secrets  --&amp;gt; github.com/drone/drone/server.PostTeamSecret (16 handlers)
+drone-server_1  | [GIN-debug] DELETE /api/teams/:team/secrets/:secret --&amp;gt; github.com/drone/drone/server.DeleteTeamSecret (16 handlers)
+drone-server_1  | [GIN-debug] GET    /api/global/secrets       --&amp;gt; github.com/drone/drone/server.GetGlobalSecrets (16 handlers)
+drone-server_1  | [GIN-debug] POST   /api/global/secrets       --&amp;gt; github.com/drone/drone/server.PostGlobalSecret (16 handlers)
+drone-server_1  | [GIN-debug] DELETE /api/global/secrets/:secret --&amp;gt; github.com/drone/drone/server.DeleteGlobalSecret (16 handlers)
+drone-server_1  | [GIN-debug] POST   /api/repos/:owner/:name   --&amp;gt; github.com/drone/drone/server.PostRepo (15 handlers)
+drone-server_1  | [GIN-debug] GET    /api/repos/:owner/:name   --&amp;gt; github.com/drone/drone/server.GetRepo (18 handlers)
+drone-server_1  | [GIN-debug] GET    /api/repos/:owner/:name/builds --&amp;gt; github.com/drone/drone/server.GetBuilds (18 handlers)
+drone-server_1  | [GIN-debug] GET    /api/repos/:owner/:name/builds/:number --&amp;gt; github.com/drone/drone/server.GetBuild (18 handlers)
+drone-server_1  | [GIN-debug] GET    /api/repos/:owner/:name/logs/:number/:job --&amp;gt; github.com/drone/drone/server.GetBuildLogs (18 handlers)
+drone-server_1  | [GIN-debug] POST   /api/repos/:owner/:name/sign --&amp;gt; github.com/drone/drone/server.Sign (19 handlers)
+drone-server_1  | [GIN-debug] GET    /api/repos/:owner/:name/secrets --&amp;gt; github.com/drone/drone/server.GetSecrets (19 handlers)
+drone-server_1  | [GIN-debug] POST   /api/repos/:owner/:name/secrets --&amp;gt; github.com/drone/drone/server.PostSecret (19 handlers)
+drone-server_1  | [GIN-debug] DELETE /api/repos/:owner/:name/secrets/:secret --&amp;gt; github.com/drone/drone/server.DeleteSecret (19 handlers)
+drone-server_1  | [GIN-debug] PATCH  /api/repos/:owner/:name   --&amp;gt; github.com/drone/drone/server.PatchRepo (19 handlers)
+drone-server_1  | [GIN-debug] DELETE /api/repos/:owner/:name   --&amp;gt; github.com/drone/drone/server.DeleteRepo (19 handlers)
+drone-server_1  | [GIN-debug] POST   /api/repos/:owner/:name/chown --&amp;gt; github.com/drone/drone/server.ChownRepo (19 handlers)
+drone-server_1  | [GIN-debug] POST   /api/repos/:owner/:name/builds/:number --&amp;gt; github.com/drone/drone/server.PostBuild (19 handlers)
+drone-server_1  | [GIN-debug] DELETE /api/repos/:owner/:name/builds/:number/:job --&amp;gt; github.com/drone/drone/server.DeleteBuild (19 handlers)
+drone-server_1  | [GIN-debug] GET    /api/badges/:owner/:name/status.svg --&amp;gt; github.com/drone/drone/server.GetBadge (15 handlers)
+drone-server_1  | [GIN-debug] GET    /api/badges/:owner/:name/cc.xml --&amp;gt; github.com/drone/drone/server.GetCC (15 handlers)
+drone-server_1  | [GIN-debug] POST   /hook                     --&amp;gt; github.com/drone/drone/server.PostHook (15 handlers)
+drone-server_1  | [GIN-debug] POST   /api/hook                 --&amp;gt; github.com/drone/drone/server.PostHook (15 handlers)
+drone-server_1  | [GIN-debug] GET    /ws/broker                --&amp;gt; github.com/drone/drone/server.Broker (15 handlers)
+drone-server_1  | [GIN-debug] GET    /ws/feed                  --&amp;gt; github.com/drone/drone/server.EventStream (15 handlers)
+drone-server_1  | [GIN-debug] GET    /ws/logs/:owner/:name/:build/:number --&amp;gt; github.com/drone/drone/server.LogStream (18 handlers)
+drone-server_1  | [GIN-debug] GET    /authorize                --&amp;gt; github.com/drone/drone/server.GetLogin (15 handlers)
+drone-server_1  | [GIN-debug] POST   /authorize                --&amp;gt; github.com/drone/drone/server.GetLogin (15 handlers)
+drone-server_1  | [GIN-debug] POST   /authorize/token          --&amp;gt; github.com/drone/drone/server.GetLoginToken (15 handlers)
+drone-server_1  | [GIN-debug] GET    /api/builds               --&amp;gt; github.com/drone/drone/server.GetBuildQueue (16 handlers)
+drone-server_1  | [GIN-debug] GET    /api/agents               --&amp;gt; github.com/drone/drone/server.GetAgents (16 handlers)
+drone-server_1  | [GIN-debug] GET    /api/debug/pprof/         --&amp;gt; github.com/drone/drone/server.IndexHandler.func1 (16 handlers)
+drone-server_1  | [GIN-debug] GET    /api/debug/pprof/heap     --&amp;gt; github.com/drone/drone/server.HeapHandler.func1 (16 handlers)
+drone-server_1  | [GIN-debug] GET    /api/debug/pprof/goroutine --&amp;gt; github.com/drone/drone/server.GoroutineHandler.func1 (16 handlers)
+drone-server_1  | [GIN-debug] GET    /api/debug/pprof/block    --&amp;gt; github.com/drone/drone/server.BlockHandler.func1 (16 handlers)
+drone-server_1  | [GIN-debug] GET    /api/debug/pprof/threadcreate --&amp;gt; github.com/drone/drone/server.ThreadCreateHandler.func1 (16 handlers)
+drone-server_1  | [GIN-debug] GET    /api/debug/pprof/cmdline  --&amp;gt; github.com/drone/drone/server.CmdlineHandler.func1 (16 handlers)
+drone-server_1  | [GIN-debug] GET    /api/debug/pprof/profile  --&amp;gt; github.com/drone/drone/server.ProfileHandler.func1 (16 handlers)
+drone-server_1  | [GIN-debug] GET    /api/debug/pprof/symbol   --&amp;gt; github.com/drone/drone/server.SymbolHandler.func1 (16 handlers)
+drone-server_1  | [GIN-debug] POST   /api/debug/pprof/symbol   --&amp;gt; github.com/drone/drone/server.SymbolHandler.func1 (16 handlers)
+drone-server_1  | [GIN-debug] GET    /api/debug/pprof/trace    --&amp;gt; github.com/drone/drone/server.TraceHandler.func1 (16 handlers)
+drone-agent_1   | 1:M 25 Jan 21:03:21.966 * connection established, ready to process builds.
+drone-agent_1   | 1:M 25 Jan 21:03:51.766 - stomp: send heart-beat.
+drone-agent_1   | 1:M 25 Jan 21:03:51.866 - stomp: received heart-beat
+drone-agent_1   | 1:M 25 Jan 21:04:21.770 - stomp: send heart-beat.
+drone-agent_1   | 1:M 25 Jan 21:04:21.870 - stomp: received heart-beat
+drone-agent_1   | 1:M 25 Jan 21:04:51.765 - stomp: send heart-beat.
+drone-agent_1   | 1:M 25 Jan 21:04:51.867 - stomp: received heart-beat
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Alright. So that actually gave me something useful. From this point I opened up Kitematic, just to see the instances and have an easy to navigate to the UI.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/drone-io/kitematic.png&quot; alt=&quot;Kitematic Display&quot;&gt;&lt;/p&gt;
+&lt;p&gt;There were the running instances. I clicked on the link for the UI on the server and immediately it served up my request.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/drone-io/welcome_drone.png&quot; alt=&quot;Welcome Drone!&quot;&gt;&lt;/p&gt;
+&lt;p&gt;At this point I’m ready to get going on some builds. More on that in a coming article, for now I’m gonna go enjoy good talk on machine learning and a beer with the &lt;a href=&quot;https://twitter.com/search?q=%23seascale&quot;&gt;#SEASCALE&lt;/a&gt; crew. Cheers!&lt;/p&gt;
+</description>
+    </item>
     <item>
       <title>The Data Diluvium, Getting Started</title>
       <link>http://adron.github.io/articles/data-diluvium-getting-started/</link>
@@ -364,7 +632,7 @@ git push origin master
     &lt;img src=&quot;/articles/system76-ubuntu-leopard-workstation/system76-small.png&quot; alt=&quot;System76&quot;&gt;
 &lt;/div&gt;
 
-&lt;p&gt;January 24th, 2017 UPDATE: After I wrote this, I spoke with the System 76 team and I’m getting the chance to go out and tour their Denver Headquarters. This happened well after I made my purchase, which all of the following was written after. But just for full transparency, I’ve added this note. Also, I’m aiming to get a full write up of my System76 trip put together with Denver tidbits and more! Until then, here’s the review…&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;January 24th, 2017 UPDATE: After I wrote this, I spoke with the System 76 team and I’m getting the chance to go out and tour their Denver Headquarters. This happened well after I made my purchase, which all of the following was written after. But just for full transparency, I’ve added this note. Also, I’m aiming to get a full write up of my System76 trip put together with Denver tidbits and more! Until then, here’s the review…&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;In the trailing days of 2016, after having moved to Redmond, Washington I sat working at my desktop workstation. This workstation, which still exists, is a iMac with an i7, 16GB RAM, 256 GB SSD, and a 1GB Video Card with a 1TB secondary drive. The machine is a 27” all in one style design, and the screen is rather beautiful. But as I did a build and tried to run Transport Tycoon at the same time in the background the machine sputtered a bit. It was definitely maxed out doing this Go code build, putting together a Docker image build, and spinning it up for go live at the same time my game ran in the background. I thought, this machine has served me extremely well, at over 5 years old it had surpassed the standard 5 year lifespan of peak Apple oomf. At the moment, I thought, maybe it’s time to dig into a serious machine with some premium hardware again.&lt;/p&gt;
 &lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;In that moment I thought about the last dedicated, custom built, super powerful workstation machine I had. It was a powerful machine, nice form factor, and easily drove two giant 27” screens. However this machine had lived and finished it’s useful life over 6 years before 2016 had even started. But it was a sweet machine, that offered a lot of productive gaming and code writing efficiencies. It was thus, time to get in gear and get a machine again.&lt;/p&gt;
@@ -3234,6 +3502,36 @@ export TF_VAR_password=&amp;quot;someSecretPassword&amp;quot;
 </description>
     </item>
     <item>
+      <title>Modern Javascript Frameworks - Introduction to Ember.JS and Ember-CLI by Suchita Doshi</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-suchita-doshi/</link>
+      <pubDate>Sat, 04 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-suchita-doshi/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-suchita-doshi/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-right&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-suchita-doshi/suchita-doshi.jpg&quot; alt=&quot;Suchita Doshi&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Suchita is UI Lead for the analytics module of Yahoo Admanager Plus team and Core member of Emberjs group @Yahoo, Speaker at Women Who code organization (Introduction To Emberjs/Ember CLI), Conducted Webinar for the TenXList members on EmberJS. She’s passionate about improving developers ergonomics and a hardcore “cricket” fan.&lt;/p&gt;
+&lt;p&gt;In other Suchita news, she’s opening bats-woman for the Bay Area Cricket Association team! 😀&lt;/p&gt;
+&lt;p&gt;Suchita describes her talk as “There will never be a “one size fits all” approach to web development. If you want your application to be minimally interactive, then server side rendered HTML would be the way to go, else, if it were a more interactive application, then client side framework would benefit you.
+Why not use just JQuery instead of adopting these Modern Javascript Frameworks? Think about it! If your application has interactivity on the lighter side, then JQuery would work well, but as soon as you introduce more states in your application, it would then become messier and heavier on the DOM. You would need to use the ‘data-‘ attributes to store the data in your DOM and also remember how to map them with the triggered events.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Here is where client side frameworks come to the rescue. I have worked on several client side frameworks like Backbone.js, Ember.js. Few of the many features I love about Ember.js are the two-way data binding, Computed Properties, the run loop, convention over configuration nature, ease of handling routing and many more.
+In this talk I would be covering the following:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Introduction to Emberjs and why Ember&lt;/li&gt;
+&lt;li&gt;How Ember js makes a difference&lt;/li&gt;
+&lt;li&gt;Ember convention over configuration nature&lt;/li&gt;
+&lt;li&gt;Introduction to Ember routes, components and templates&lt;/li&gt;
+&lt;li&gt;Introduction to Ember CLI&lt;/li&gt;
+&lt;li&gt;Computed Properties&lt;/li&gt;
+&lt;li&gt;Live Demo on how it’s really intuitive in a couple of non-trivial scenarios.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;So basically my goal is to attract more developers to adapt modern javascript frameworks and make a difference in the way complex apps are built.”&lt;/p&gt;
+</description>
+    </item>
+    <item>
       <title>The SAM Pattern - a distributed system view of Front-End architectures by Jean-Jacques Dubray</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-jean-jacques-dubray/</link>
       <pubDate>Sat, 04 Jun 2016 17:00:00 -0700</pubDate>
@@ -3264,33 +3562,20 @@ key concepts of SAM and walk the audience through some node.js code samples (inc
 </description>
     </item>
     <item>
-      <title>Modern Javascript Frameworks - Introduction to Ember.JS and Ember-CLI by Suchita Doshi</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-suchita-doshi/</link>
-      <pubDate>Sat, 04 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-suchita-doshi/</guid>
+      <title>WebSockets Bring Light at the End of the Tunnel by Joel Lord</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</link>
+      <pubDate>Fri, 03 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</guid>
       <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-suchita-doshi/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-right&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-suchita-doshi/suchita-doshi.jpg&quot; alt=&quot;Suchita Doshi&quot;&gt;
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-left&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/joel-lord.jpg&quot; alt=&quot;Joel Lord&quot;&gt;
 &lt;/div&gt;
 
-&lt;p&gt;Suchita is UI Lead for the analytics module of Yahoo Admanager Plus team and Core member of Emberjs group @Yahoo, Speaker at Women Who code organization (Introduction To Emberjs/Ember CLI), Conducted Webinar for the TenXList members on EmberJS. She’s passionate about improving developers ergonomics and a hardcore “cricket” fan.&lt;/p&gt;
-&lt;p&gt;In other Suchita news, she’s opening bats-woman for the Bay Area Cricket Association team! 😀&lt;/p&gt;
-&lt;p&gt;Suchita describes her talk as “There will never be a “one size fits all” approach to web development. If you want your application to be minimally interactive, then server side rendered HTML would be the way to go, else, if it were a more interactive application, then client side framework would benefit you.
-Why not use just JQuery instead of adopting these Modern Javascript Frameworks? Think about it! If your application has interactivity on the lighter side, then JQuery would work well, but as soon as you introduce more states in your application, it would then become messier and heavier on the DOM. You would need to use the ‘data-‘ attributes to store the data in your DOM and also remember how to map them with the triggered events.&lt;/p&gt;
+&lt;p&gt;As a Development Manager, Joel’s motivation and proven technical prowess makes him a key member of Spiria’s software development team. With a degree in computational astrophysics, his interests eventually made their way to software and Web design. Today, his knowledge of JavaScript lets him to support a variety of projects on both the front end and back end. As we move into the age of the Internet of Things, Joel is ready with his passion for programming node bots and experimenting with gadgets.&lt;/p&gt;
 &lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Here is where client side frameworks come to the rescue. I have worked on several client side frameworks like Backbone.js, Ember.js. Few of the many features I love about Ember.js are the two-way data binding, Computed Properties, the run loop, convention over configuration nature, ease of handling routing and many more.
-In this talk I would be covering the following:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Introduction to Emberjs and why Ember&lt;/li&gt;
-&lt;li&gt;How Ember js makes a difference&lt;/li&gt;
-&lt;li&gt;Ember convention over configuration nature&lt;/li&gt;
-&lt;li&gt;Introduction to Ember routes, components and templates&lt;/li&gt;
-&lt;li&gt;Introduction to Ember CLI&lt;/li&gt;
-&lt;li&gt;Computed Properties&lt;/li&gt;
-&lt;li&gt;Live Demo on how it’s really intuitive in a couple of non-trivial scenarios.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;So basically my goal is to attract more developers to adapt modern javascript frameworks and make a difference in the way complex apps are built.”&lt;/p&gt;
+&lt;p&gt;Joel is going to speak on Web Sockets and tunnels of light… or to describe it more specifically more and more, people seem to be obsessed with real-time data.  But what does real-time mean in the world of REST servers and one-way communication?  Most modern web applications are now either displaying a snapshot of data at a given time or use a polling mechanism to update series of data at a given interval.
+In this talk, you will learn about the power of WebSockets and how they can (and should!) be used in your modern web applications. In these 30 minutes, I will go through the process of building a Node server that can push data to multiple clients in real-time.  You will see how this can be easy using the socket.io library.&lt;/p&gt;
 </description>
     </item>
     <item>
@@ -3328,23 +3613,6 @@ it can be.&lt;/p&gt;
 &lt;li&gt;show number of players&lt;/li&gt;
 &lt;li&gt;start when 4 players in? one player hit’s start? let all player see total count as well and status of the other players&lt;/li&gt;
 &lt;/ul&gt;
-</description>
-    </item>
-    <item>
-      <title>WebSockets Bring Light at the End of the Tunnel by Joel Lord</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</link>
-      <pubDate>Fri, 03 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</guid>
-      <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-left&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/joel-lord.jpg&quot; alt=&quot;Joel Lord&quot;&gt;
-&lt;/div&gt;
-
-&lt;p&gt;As a Development Manager, Joel’s motivation and proven technical prowess makes him a key member of Spiria’s software development team. With a degree in computational astrophysics, his interests eventually made their way to software and Web design. Today, his knowledge of JavaScript lets him to support a variety of projects on both the front end and back end. As we move into the age of the Internet of Things, Joel is ready with his passion for programming node bots and experimenting with gadgets.&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Joel is going to speak on Web Sockets and tunnels of light… or to describe it more specifically more and more, people seem to be obsessed with real-time data.  But what does real-time mean in the world of REST servers and one-way communication?  Most modern web applications are now either displaying a snapshot of data at a given time or use a polling mechanism to update series of data at a given interval.
-In this talk, you will learn about the power of WebSockets and how they can (and should!) be used in your modern web applications. In these 30 minutes, I will go through the process of building a Node server that can push data to multiple clients in real-time.  You will see how this can be easy using the socket.io library.&lt;/p&gt;
 </description>
     </item>
     <item>
