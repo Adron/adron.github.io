@@ -6,7 +6,7 @@ echo "Moved into articles path."
 
 # Just a title
 blogtitle=$1
-blogdate=$(date "+%Y-%m-%d-%H:%M:%S")
+blogdate=$(date "+%Y-%m-%d %H:%M:%S")
 
 if [ ! $# == 1 ]
   then
