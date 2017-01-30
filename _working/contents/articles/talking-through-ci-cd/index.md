@@ -1,10 +1,10 @@
 ---
-title: Talking Through Continuous Integration (CI) and Delivery (CD)
+title: Talking Through Managed or Baked In House Continuous Integration (CI) and Delivery (CD)
 author: Adron Hall
 date: 2017-01-26 14:45:46
 template: article.jade
 ---
-Ok, we have several different scenarios and you're the boss. Here are the scenarios for the projects you're working on:
+Ok, we have several different scenarios and let's say you're the boss. In each of these scenarios we can assume that CI & CD are going to be mandatory to achieve the team's greatest potential to deliver. So the question I'll be attacking is, do we roll our own with Drone.io, TeamCity, continuous integration and delivery or do we get more advantage from utilizing a managed solution like CircleCI, Codeship, or related offerings. The following are the scenarios in relation to team size and project that you're heading up:
 
 ## Scenarios
 
@@ -30,22 +30,29 @@ Each of these scenarios has a clear and present need for continuous integration 
 
 Also an excellent resource is available [here](https://continuousdelivery.com/).
 
-## Solutions Discussion for
+## Solutions & Discussion for
 
-* *Scenario 1:*
+* *Scenario 1:* Considering there are 4 people, prospectively 8 at the most over the next 6 months, the team really should not spend time on putting together, automating, and building out systems they don't absolutely need to. The emphasis with a small team needs to be lean, mean, and focused on the mission at hand. Continuous integration and delivery will help delivery that, but putting it together isn't directly related to business value.
 
-* *Scenario 2:*
+    What to do? Well, the quickest and simplest way to get started and enable a core focus on the mission is to use a managed continuous integration and delivery provider. This is a great case to use Codeship, CircleCI, AppVeyor, or a host of providers.
 
-* *Scenario 3:*
+* *Scenario 2:* This is an interesting scenario in that there are people tasked with automation and what would be the effort of continuous integration and delivery. However, there are questions to ask. There are three questions that immediately come to mind. These would likely have the most weight on a managed or self-hosted CI & CD solution would be:
+    * Would running our own CI and CD save the company money?
+    * Does the team need specific features or capabilities inherent in self-hosted CI and CD solutions?
+    * Would the self-hosted capabilities versus the managed enable the team to deliver more effectively?
+        
+    Let's dig through each question.
+    
+    The first, is the cost question. If the team had enough demand for builds or other integration and delivery automation it is feasible that costs could be fairly huge. I myself have seen price tags in the $40-50k a month range, which more than validates self-hosting build and delivery solutions to more finely manage or even decrease costs. However, I'll add that $40-50k does only pay for work equating to a part time effort on this work. That doesn't go that far either. By proxy, the cost is a valid question, but it isn't all that it's cracked up to be. I tend to lean heavily toward using a hosted solution even if it costs 10-40% more as that cost is usually worth it to refocus efforts on business value instead of CI and CD management. Let's say, for this 33+ person team in scenario 2, that CI and CD costs will be around $40k per month via hosted offerings and about $25k if it's self-hosted. 
+     
+     The second is likely the most important that would be asked of the three. Case in point the market has provided very few .NET build solutions that are managed. This has limited the ability to gain CI and CD advantages for startups that choose .NET. This has likely been one of many reasons .NET has taken a massive nose dive in popularity over the last decade among startups. Even among the more popular build service one can use, there are certain limitations that can stop a project cold. In these cases, a team can be forced into a self-hosted option. Let's say, for scenario 2 however there isn't a legitimate need for self-hosted control, but some of the team think it would be a nice to have.
+     
+     The third question, is more inclusive of the aforementioned other two questions plus other criteria. But just as I mentioned the team thinks it would be a *nice to have* that begs another question. If the team had the extra control would that give them a boost or assistance with certain CI or CD automation, or will they get into situations where someone will end up with managing or spending significant time toying about with capabilities? Would that time be worth it in the end, or be lost time sunk into something that could work without the investment? Let's say that having full control in this situation, as if we were so fortunate to get a % of productivity increase, would give the team a 5% speed to delivery boost and 2% less bugs.
+     
+     Alright, I've conjured up those few thougths about each of those questions. Based on the posed end statements of each questions what would you do as the boss? What would I do? Since this is a team that is largely maintaining existing software and building some features, I'd also ponder what would keep them happier. Maintaining a CI and CD system in hours or gettinga  self-hosted service, then I'd look at the over under of $40k cost per month hosted or $25k self-hosted, then *nice to have* thought behind self-hosted, and the upside of 5% speed to deliver and 2% bugs boost. In the end here, it would come down to developer happiness, and anything, I may even mix usage. For instance a bit of Codeship and Drone.io together. Both have a similar usage style so the learning curve would be huge, but similar giving the team a conjoined experience. I'll leave this solution in the democratic vote of the developer team.
+     
+* *Scenario 3:* This scenario is easy for me. If someone is spending more than 30 minutes a week dealing with Drone.io management, I'd push a shift to a managed provider. However since the Drone.io solution is already in place, if the only thing people are doing is committing code, getting builds, and have their code delivered then I'm a happy camper. Drone.io would stay as the CI and CD tooling for the team.
 
-* *Scenario 4:*
-
-## Solutions
-
-* *Scenario 1:*
-
-* *Scenario 2:*
-
-* *Scenario 3:*
-
-* *Scenario 4:*
+* *Scenario 4:* Ok, wow, this is a big team to implement for. My immediate reaction is everything will be dependent on individual teams within the big team vote. There's no reason to force a large team of this size to use a single solution, but there's also many downsides to using to many different technologies to implement CI and CD. Let's say the code this 200+ person team is working on is a single language, single stack, and singular deployment path, with just a few builds occurring per hour. If that's the case then that would change my response toward a managed and hosted solution. But with this size, it's likely that costs are much higher, build demand is dramatically higher, and the various internal security, admin, and related management of users, individual features, and the like lend to a self-hosted internal solution to give more control over customization specific to needs.
+  
+  Summary: These are just a few of the thoughts, notions, and issues that need reflected upon to make a useful and effective decision about CI and CD tooling. These scenarios I posed are merely from the perspective of team size, organization, costs, and these higher level notions are CI and CD. In a future article I'll dive into the specifics of how CI and CD are implemented on various platforms, and we can dig even deeper into why, what, who, where, and when to implement CI and CD for your team(s). Whatever the case, CI and CD are a fundamentally and vitally important first step or ongoing step of any project. If you'd like to discuss more, feel free to reach out to me on Twitter [@Adron](https://twitter.com/Adron) or [contact me](http://blog.adron.me/docs/contact/).
