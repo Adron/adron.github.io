@@ -5,9 +5,66 @@
     <atom:link href="http://adron.github.io/feed.xml" rel="self" type="application/rss+xml"></atom:link>
     <link>http://adron.github.io</link>
     <description>Coder, Messenger, Recon, Infrastructure, Ops</description>
-    <pubDate>Wed, 25 Jan 2017 00:00:00 -0800</pubDate>
+    <pubDate>Thu, 26 Jan 2017 06:45:46 -0800</pubDate>
     <generator>Wintersmith - https://github.com/jnordberg/wintersmith</generator>
     <language>en</language>
+    <item>
+      <title>Talking Through Managed or Baked In House Continuous Integration (CI) and Delivery (CD)</title>
+      <link>http://adron.github.io/articles/talking-through-ci-cd/</link>
+      <pubDate>Thu, 26 Jan 2017 06:45:46 -0800</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/talking-through-ci-cd/</guid>
+      <author></author>
+      <description>&lt;p&gt;Ok, we have several different scenarios and let’s say you’re the boss. In each of these scenarios we can assume that CI &amp;amp; CD are going to be mandatory to achieve the team’s greatest potential to deliver. So the question I’ll be attacking is, do we roll our own with Drone.io, TeamCity, continuous integration and delivery or do we get more advantage from utilizing a managed solution like CircleCI, Codeship, or related offerings. The following are the scenarios in relation to team size and project that you’re heading up:&lt;/p&gt;
+&lt;h2 id=&quot;scenarios&quot;&gt;Scenarios&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;&lt;em&gt;Scenario 1:&lt;/em&gt;&lt;/strong&gt; You have team of 4 people. All developers by trade and experienced. The team may, about 20% chance in the coming 3-6 months, grow to ~8 people, with 1-2 of those being automation experts that could prospectively manage CI/CD systems. Currently the project is just starting, and the decision on what language and tech stack has been determined and initial coding will be starting in the coming week. Currently, there is no CI/CD setup for this project.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;&lt;em&gt;Scenario 2:&lt;/em&gt;&lt;/strong&gt; Another team has 33 developers, 4 are site reliability with 2 more working with them frequently on systems automation. No real growth for the team in the next 2-3 years. The application these developers work on has new feature development and maintenance, lot’s of ongoing maintenance. Currently there is also a fair amount of technical debt associated with the code base that needs paid off for each new feature implemented, or any significant changes during maintenance of the software. This team currently has no CI or CD of the application setup.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;&lt;em&gt;Scenario 3:&lt;/em&gt;&lt;/strong&gt; The third team is 4 people, pairing, and they have the highest output and quality of the rest of the teams. Largely because they work well together but also they have minimal technical debt and can move quickly. The application has been under development for about 3 months and they currently have a CI process setup with Drone.io. No deployment is setup yet nor is any infrastructure or other tooling setup beyond what they’ve already setup with the Drone.io solution.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;&lt;em&gt;Scenario 4:&lt;/em&gt;&lt;/strong&gt; Fourth scenario is a large team of 232 people. There are 9 organizations with multiple people in each of those organizations, split out to developers, project management, product development leads, and a core architecture team. Among the 232 there are also 17 people dedicated to automation and infrastructure management. This team manages one huge monolithic application that currently is built with manual build processes that are partially scripted. Of these build processes there are 11 of them, which then must be combined via some more scripts and more manual processes that are then pushed to a &lt;em&gt;test development&lt;/em&gt; environment, where a subsequent 4 people work full time testing the &lt;em&gt;test development&lt;/em&gt; environment.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Each of these scenarios has a clear and present need for continuous integration and delivery setup. Just for context, when I write continuous integration or continuous delivery I define these like this:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Continuous Integration&lt;/strong&gt; - &lt;a href=&quot;https://en.wikipedia.org/wiki/Continuous_integration&quot;&gt;Wikipedia&lt;/a&gt; - &lt;a href=&quot;https://www.thoughtworks.com/continuous-integration&quot;&gt;Thoughtworks&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;…is the process of bringing together the assets of an application or service project to compile that code into a binary. In the case of JavaScript or other non-compiled language this process would include any transpiling or gathering of assets that are needed in order to execute the code via the integration process. In most cases I include unit testing, and sometimes certain types of or styles of behavior tests in a project to be included under the process of continuous integration.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Continuous Delivery&lt;/strong&gt; -  &lt;a href=&quot;https://en.wikipedia.org/wiki/Continuous_delivery&quot;&gt;Wikipedia&lt;/a&gt; - &lt;a href=&quot;https://www.thoughtworks.com/continuous-delivery&quot;&gt;Thoughtworks&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;…is the process of events that must be completed, in an automated fashion, after the continuous integration process to take code or a binary from the transpiled or binary state into a production environment in which it will be used or executed. This is fairly easy to outline with a services or web application, since there is an obvious way in which this code needs to be called (via http/https in a browser) but some other applications, like a CLI or desktop application are slightly more diverse in the way they may be delivered. These later applications we can safely assume have a continuous delivery process that would vary widely but be something like being packaged into an installer (in the case of OS-X a .pkg file or in the case of Windows into a .exe or .msi file.)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Also an excellent resource is available &lt;a href=&quot;https://continuousdelivery.com/&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;solutions-discussion-for-scenarios&quot;&gt;Solutions &amp;amp; Discussion for Scenarios&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;&lt;em&gt;Scenario 1:&lt;/em&gt;&lt;/strong&gt; Considering there are 4 people, prospectively 8 at the most over the next 6 months, the team really should not spend time on putting together, automating, and building out systems they don’t absolutely need to. The emphasis with a small team needs to be lean, mean, and focused on the mission at hand. Continuous integration and delivery will help delivery that, but putting it together isn’t directly related to business value.&lt;/p&gt;
+&lt;p&gt;  What to do? Well, the quickest and simplest way to get started and enable a core focus on the mission is to use a managed continuous integration and delivery provider. This is a great case to use Codeship, CircleCI, AppVeyor, or a host of providers.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;&lt;em&gt;Scenario 2:&lt;/em&gt;&lt;/strong&gt; This is an interesting scenario in that there are people tasked with automation and what would be the effort of continuous integration and delivery. However, there are questions to ask. There are three questions that immediately come to mind. These would likely have the most weight on a managed or self-hosted CI &amp;amp; CD solution would be:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Would running our own CI and CD save the company money?&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Does the team need specific features or capabilities inherent in self-hosted CI and CD solutions?&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Would the self-hosted capabilities versus the managed enable the team to deliver more effectively?&lt;/p&gt;
+&lt;p&gt;Let’s dig through each question.&lt;/p&gt;
+&lt;p&gt;The first, is the cost question. If the team had enough demand for builds or other integration and delivery automation it is feasible that costs could be fairly huge. I myself have seen price tags in the $40-50k a month range, which more than validates self-hosting build and delivery solutions to more finely manage or even decrease costs. However, I’ll add that $40-50k does only pay for work equating to a part time effort on this work. That doesn’t go that far either. By proxy, the cost is a valid question, but it isn’t all that it’s cracked up to be. I tend to lean heavily toward using a hosted solution even if it costs 10-40% more as that cost is usually worth it to refocus efforts on business value instead of CI and CD management. Let’s say, for this 33+ person team in scenario 2, that CI and CD costs will be around $40k per month via hosted offerings and about $25k if it’s self-hosted.&lt;/p&gt;
+&lt;p&gt;The second is likely the most important that would be asked of the three. Case in point the market has provided very few .NET build solutions that are managed. This has limited the ability to gain CI and CD advantages for startups that choose .NET. This has likely been one of many reasons .NET has taken a massive nose dive in popularity over the last decade among startups. Even among the more popular build service one can use, there are certain limitations that can stop a project cold. In these cases, a team can be forced into a self-hosted option. Let’s say, for scenario 2 however there isn’t a legitimate need for self-hosted control, but some of the team think it would be a nice to have.&lt;/p&gt;
+&lt;p&gt;The third question, is more inclusive of the aforementioned other two questions plus other criteria. But just as I mentioned the team thinks it would be a &lt;em&gt;nice to have&lt;/em&gt; that begs another question. If the team had the extra control would that give them a boost or assistance with certain CI or CD automation, or will they get into situations where someone will end up with managing or spending significant time toying about with capabilities? Would that time be worth it in the end, or be lost time sunk into something that could work without the investment? Let’s say that having full control in this situation, as if we were so fortunate to get a % of productivity increase, would give the team a 5% speed to delivery boost and 2% less bugs.&lt;/p&gt;
+&lt;p&gt;Alright, I’ve conjured up those few thougths about each of those questions. Based on the posed end statements of each questions what would you do as the boss? What would I do? Since this is a team that is largely maintaining existing software and building some features, I’d also ponder what would keep them happier. Maintaining a CI and CD system in hours or gettinga  self-hosted service, then I’d look at the over under of $40k cost per month hosted or $25k self-hosted, then &lt;em&gt;nice to have&lt;/em&gt; thought behind self-hosted, and the upside of 5% speed to deliver and 2% bugs boost. In the end here, it would come down to developer happiness, and anything, I may even mix usage. For instance a bit of Codeship and Drone.io together. Both have a similar usage style so the learning curve would be huge, but similar giving the team a conjoined experience. I’ll leave this solution in the democratic vote of the developer team.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;&lt;em&gt;Scenario 3:&lt;/em&gt;&lt;/strong&gt; This scenario is easy for me. If someone is spending more than 30 minutes a week dealing with Drone.io management, I’d push a shift to a managed provider. However since the Drone.io solution is already in place, if the only thing people are doing is committing code, getting builds, and have their code delivered then I’m a happy camper. Drone.io would stay as the CI and CD tooling for the team.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;&lt;em&gt;Scenario 4:&lt;/em&gt;&lt;/strong&gt; Ok, wow, this is a big team to implement for. My immediate reaction is everything will be dependent on individual teams within the big team vote. There’s no reason to force a large team of this size to use a single solution, but there’s also many downsides to using to many different technologies to implement CI and CD. Let’s say the code this 200+ person team is working on is a single language, single stack, and singular deployment path, with just a few builds occurring per hour. If that’s the case then that would change my response toward a managed and hosted solution. But with this size, it’s likely that costs are much higher, build demand is dramatically higher, and the various internal security, admin, and related management of users, individual features, and the like lend to a self-hosted internal solution to give more control over customization specific to needs.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Summary: These are just a few of the thoughts, notions, and issues that need reflected upon to make a useful and effective decision about CI and CD tooling. These scenarios I posed are merely from the perspective of team size, organization, costs, and these higher level notions are CI and CD. In a future article I’ll dive into the specifics of how CI and CD are implemented on various platforms, and we can dig even deeper into why, what, who, where, and when to implement CI and CD for your team(s). Whatever the case, CI and CD are a fundamentally and vitally important first step or ongoing step of any project. If you’d like to discuss more, feel free to reach out to me on Twitter &lt;a href=&quot;https://twitter.com/Adron&quot;&gt;@Adron&lt;/a&gt; or &lt;a href=&quot;http://blog.adron.me/docs/contact/&quot;&gt;contact me&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
     <item>
       <title>Introduction to Drone.io</title>
       <link>http://adron.github.io/articles/drone-io/</link>
@@ -3502,36 +3559,6 @@ export TF_VAR_password=&amp;quot;someSecretPassword&amp;quot;
 </description>
     </item>
     <item>
-      <title>Modern Javascript Frameworks - Introduction to Ember.JS and Ember-CLI by Suchita Doshi</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-suchita-doshi/</link>
-      <pubDate>Sat, 04 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-suchita-doshi/</guid>
-      <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-suchita-doshi/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-right&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-suchita-doshi/suchita-doshi.jpg&quot; alt=&quot;Suchita Doshi&quot;&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Suchita is UI Lead for the analytics module of Yahoo Admanager Plus team and Core member of Emberjs group @Yahoo, Speaker at Women Who code organization (Introduction To Emberjs/Ember CLI), Conducted Webinar for the TenXList members on EmberJS. She’s passionate about improving developers ergonomics and a hardcore “cricket” fan.&lt;/p&gt;
-&lt;p&gt;In other Suchita news, she’s opening bats-woman for the Bay Area Cricket Association team! 😀&lt;/p&gt;
-&lt;p&gt;Suchita describes her talk as “There will never be a “one size fits all” approach to web development. If you want your application to be minimally interactive, then server side rendered HTML would be the way to go, else, if it were a more interactive application, then client side framework would benefit you.
-Why not use just JQuery instead of adopting these Modern Javascript Frameworks? Think about it! If your application has interactivity on the lighter side, then JQuery would work well, but as soon as you introduce more states in your application, it would then become messier and heavier on the DOM. You would need to use the ‘data-‘ attributes to store the data in your DOM and also remember how to map them with the triggered events.&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Here is where client side frameworks come to the rescue. I have worked on several client side frameworks like Backbone.js, Ember.js. Few of the many features I love about Ember.js are the two-way data binding, Computed Properties, the run loop, convention over configuration nature, ease of handling routing and many more.
-In this talk I would be covering the following:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Introduction to Emberjs and why Ember&lt;/li&gt;
-&lt;li&gt;How Ember js makes a difference&lt;/li&gt;
-&lt;li&gt;Ember convention over configuration nature&lt;/li&gt;
-&lt;li&gt;Introduction to Ember routes, components and templates&lt;/li&gt;
-&lt;li&gt;Introduction to Ember CLI&lt;/li&gt;
-&lt;li&gt;Computed Properties&lt;/li&gt;
-&lt;li&gt;Live Demo on how it’s really intuitive in a couple of non-trivial scenarios.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;So basically my goal is to attract more developers to adapt modern javascript frameworks and make a difference in the way complex apps are built.”&lt;/p&gt;
-</description>
-    </item>
-    <item>
       <title>The SAM Pattern - a distributed system view of Front-End architectures by Jean-Jacques Dubray</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-jean-jacques-dubray/</link>
       <pubDate>Sat, 04 Jun 2016 17:00:00 -0700</pubDate>
@@ -3559,6 +3586,36 @@ and challenges the complexity of frameworks like Google’s Angular or Facebook�
 which suggest creating view-specific APIs, per platform, app, versions of an app…&lt;/p&gt;
 &lt;p&gt;We’ll start by reviewing some of the key challenges of modern UX and Front-End Architectures. We will then present the
 key concepts of SAM and walk the audience through some node.js code samples (including server-side TimeTravel).&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>Modern Javascript Frameworks - Introduction to Ember.JS and Ember-CLI by Suchita Doshi</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-suchita-doshi/</link>
+      <pubDate>Sat, 04 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-suchita-doshi/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-suchita-doshi/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-right&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-suchita-doshi/suchita-doshi.jpg&quot; alt=&quot;Suchita Doshi&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Suchita is UI Lead for the analytics module of Yahoo Admanager Plus team and Core member of Emberjs group @Yahoo, Speaker at Women Who code organization (Introduction To Emberjs/Ember CLI), Conducted Webinar for the TenXList members on EmberJS. She’s passionate about improving developers ergonomics and a hardcore “cricket” fan.&lt;/p&gt;
+&lt;p&gt;In other Suchita news, she’s opening bats-woman for the Bay Area Cricket Association team! 😀&lt;/p&gt;
+&lt;p&gt;Suchita describes her talk as “There will never be a “one size fits all” approach to web development. If you want your application to be minimally interactive, then server side rendered HTML would be the way to go, else, if it were a more interactive application, then client side framework would benefit you.
+Why not use just JQuery instead of adopting these Modern Javascript Frameworks? Think about it! If your application has interactivity on the lighter side, then JQuery would work well, but as soon as you introduce more states in your application, it would then become messier and heavier on the DOM. You would need to use the ‘data-‘ attributes to store the data in your DOM and also remember how to map them with the triggered events.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Here is where client side frameworks come to the rescue. I have worked on several client side frameworks like Backbone.js, Ember.js. Few of the many features I love about Ember.js are the two-way data binding, Computed Properties, the run loop, convention over configuration nature, ease of handling routing and many more.
+In this talk I would be covering the following:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Introduction to Emberjs and why Ember&lt;/li&gt;
+&lt;li&gt;How Ember js makes a difference&lt;/li&gt;
+&lt;li&gt;Ember convention over configuration nature&lt;/li&gt;
+&lt;li&gt;Introduction to Ember routes, components and templates&lt;/li&gt;
+&lt;li&gt;Introduction to Ember CLI&lt;/li&gt;
+&lt;li&gt;Computed Properties&lt;/li&gt;
+&lt;li&gt;Live Demo on how it’s really intuitive in a couple of non-trivial scenarios.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;So basically my goal is to attract more developers to adapt modern javascript frameworks and make a difference in the way complex apps are built.”&lt;/p&gt;
 </description>
     </item>
     <item>
@@ -3616,23 +3673,6 @@ it can be.&lt;/p&gt;
 </description>
     </item>
     <item>
-      <title>I Play the JavaScript by Matt McKegg</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</link>
-      <pubDate>Thu, 02 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</guid>
-      <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-left&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/mattmckegg.jpg&quot; alt=&quot;Matt McKegg&quot;&gt;
-&lt;/div&gt;
-
-&lt;p&gt;A JavaScript hacker and backyard musician and from Wellington, New Zealand. Lover of all things open and modular. I spend most of my time pressing buttons of various shapes, sizes and colours. Sometimes these buttons make sounds.&lt;/p&gt;
-&lt;p&gt;Matt has been making music with computers for about 10 years, but once he tried to move from bedroom composing to live performance, he got incredibly frustrated at how hard it was to play computer music live. He decided to start working on his own live electronic performance software written in JavaScript that would let me play the way he wanted to play. 3 years later, it’s finally starting to become a reality.&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Here is one of the Matt’s recent performances, for your viewing pleasure. &lt;/p&gt;
-&lt;iframe width=&quot;1280&quot; height=&quot;720&quot; src=&quot;https://www.youtube.com/embed/L2BVDJWHdy0?rel=0&amp;amp;showinfo=0&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;</description>
-    </item>
-    <item>
       <title>The Web Platform is the Universal Instrument by Ben Michel</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-ben-michel/</link>
       <pubDate>Thu, 02 Jun 2016 17:00:00 -0700</pubDate>
@@ -3660,6 +3700,40 @@ it can be.&lt;/p&gt;
 </description>
     </item>
     <item>
+      <title>I Play the JavaScript by Matt McKegg</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</link>
+      <pubDate>Thu, 02 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-left&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/mattmckegg.jpg&quot; alt=&quot;Matt McKegg&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;A JavaScript hacker and backyard musician and from Wellington, New Zealand. Lover of all things open and modular. I spend most of my time pressing buttons of various shapes, sizes and colours. Sometimes these buttons make sounds.&lt;/p&gt;
+&lt;p&gt;Matt has been making music with computers for about 10 years, but once he tried to move from bedroom composing to live performance, he got incredibly frustrated at how hard it was to play computer music live. He decided to start working on his own live electronic performance software written in JavaScript that would let me play the way he wanted to play. 3 years later, it’s finally starting to become a reality.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Here is one of the Matt’s recent performances, for your viewing pleasure. &lt;/p&gt;
+&lt;iframe width=&quot;1280&quot; height=&quot;720&quot; src=&quot;https://www.youtube.com/embed/L2BVDJWHdy0?rel=0&amp;amp;showinfo=0&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;</description>
+    </item>
+    <item>
+      <title>The House Is Not On Fire - Building a home automation robot with Arduino, Raspberry Pi and Node.js by Artur Paikin</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</link>
+      <pubDate>Wed, 01 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-right&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/art-stida.jpg&quot; alt=&quot;Artur Paikin&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Artur describes himself as, “I’m a web developer and traveler. I write stories about my adventures in Russian and English on my site: &lt;a href=&quot;http://arturpaikin.com&quot;&gt;http://arturpaikin.com&lt;/a&gt; and run a small technology cooperative called &lt;a href=&quot;http://unebaguette.com&quot;&gt;Baguette&lt;/a&gt;, where I work on cool projects, currently building an ambitious next generation file uploader with &lt;a href=&quot;https://transloadit.com/&quot;&gt;Transloadit&lt;/a&gt;. I ride a &lt;a href=&quot;https://www.instagram.com/p/xC0qC2SSYb&quot;&gt;foldable bicycle&lt;/a&gt;, &lt;a href=&quot;http://unebaguette.com/web-course/&quot;&gt;teach&lt;/a&gt; web development and sometimes &lt;a href=&quot;https://www.instagram.com/p/4_6LO8ySVL/&quot;&gt;garden&lt;/a&gt; on the balcony.”&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Artur has built an open source home automation system called &lt;a href=&quot;https://github.com/arturi/kotihome&quot;&gt;Koti Home&lt;/a&gt; (Koti means home in Finnish language). It’s powered by an Arduino connected to Raspberry Pi, MQTT protocol for messaging, Node.js on the client and server, web sockets. You can interact with Koti robot via a React (like the cool kids do) control panel, Telegram Chat Bot and even your own voice.&lt;/p&gt;
+&lt;p&gt;Arthur will talk about how he’s turned this project into reality — the tech he used and the challenges he faced. From a blinking LED to a voice controlled home automation robot.&lt;/p&gt;
+</description>
+    </item>
+    <item>
       <title>Code First Docs How we Threw Out The Book &amp; Put Code First With Twilio Documentation by Jarod Reyes</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-jarod-reyes/</link>
       <pubDate>Wed, 01 Jun 2016 17:00:00 -0700</pubDate>
@@ -3681,23 +3755,6 @@ it can be.&lt;/p&gt;
 &lt;li&gt;Twitter: &lt;a href=&quot;https://twitter.com/jreyesdev&quot;&gt;@jreyesdev&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Github: &lt;a href=&quot;https://github.com/jarodreyes&quot;&gt;github.com/jarodreyes&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-</description>
-    </item>
-    <item>
-      <title>The House Is Not On Fire - Building a home automation robot with Arduino, Raspberry Pi and Node.js by Artur Paikin</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</link>
-      <pubDate>Wed, 01 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</guid>
-      <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-right&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/art-stida.jpg&quot; alt=&quot;Artur Paikin&quot;&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Artur describes himself as, “I’m a web developer and traveler. I write stories about my adventures in Russian and English on my site: &lt;a href=&quot;http://arturpaikin.com&quot;&gt;http://arturpaikin.com&lt;/a&gt; and run a small technology cooperative called &lt;a href=&quot;http://unebaguette.com&quot;&gt;Baguette&lt;/a&gt;, where I work on cool projects, currently building an ambitious next generation file uploader with &lt;a href=&quot;https://transloadit.com/&quot;&gt;Transloadit&lt;/a&gt;. I ride a &lt;a href=&quot;https://www.instagram.com/p/xC0qC2SSYb&quot;&gt;foldable bicycle&lt;/a&gt;, &lt;a href=&quot;http://unebaguette.com/web-course/&quot;&gt;teach&lt;/a&gt; web development and sometimes &lt;a href=&quot;https://www.instagram.com/p/4_6LO8ySVL/&quot;&gt;garden&lt;/a&gt; on the balcony.”&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Artur has built an open source home automation system called &lt;a href=&quot;https://github.com/arturi/kotihome&quot;&gt;Koti Home&lt;/a&gt; (Koti means home in Finnish language). It’s powered by an Arduino connected to Raspberry Pi, MQTT protocol for messaging, Node.js on the client and server, web sockets. You can interact with Koti robot via a React (like the cool kids do) control panel, Telegram Chat Bot and even your own voice.&lt;/p&gt;
-&lt;p&gt;Arthur will talk about how he’s turned this project into reality — the tech he used and the challenges he faced. From a blinking LED to a voice controlled home automation robot.&lt;/p&gt;
 </description>
     </item>
     <item>

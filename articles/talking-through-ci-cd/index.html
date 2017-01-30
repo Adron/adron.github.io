@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Adron's Composite Code</title>
+    <meta name="description" content="">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="alternate" href="/feed.xml" type="application/rss+xml" title="Coder, Messenger, Recon, Infrastructure, Ops">
+    <link rel="icon" type="image/png" href="/img/favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/img/favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/img/favicons/favicon-96x96.png" sizes="96x96">
+    <link rel="apple-touch-icon" sizes="57x57" href="/img/favicons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/img/favicons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/img/favicons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/img/favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/img/favicons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/img/favicons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/img/favicons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/img/favicons/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/favicons/apple-touch-icon-180x180.png">
+    <link rel="stylesheet" href="/css/custom.css">
+    <link rel="stylesheet" href="/css/style.min.css">
+    <script src="/js/modernizr.js"></script>
+  </head>
+  <body class="article-detail">
+    <!--[if lt IE 8]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <div class="header header-over large">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 col-sm-6 col-xs-6">
+            <!-- Logo Image--><a href="/index.html" class="logo-image logo-animated"><img src="/img/logos/logo.png" alt="logo"></a>
+            <!-- End of Logo Image-->
+          </div>
+          <div class="col-md-9 col-sm-6 col-xs-6">
+            <!-- Menu-->
+            <nav class="right helper">
+              <ul class="menu sf-menu js-menu">
+                <li><a href="/docs/thrashing-code-news/">Thrashing Code News</a></li>
+                <li><a href="#">Conf - Meetup - Events</a>
+                  <ul>
+                    <li><a href="/docs/Speaking-Presentations-Workshops/">Speaking - Presentations - Workshops</a></li>
+                    <li><a href="/docs/calendar">Calendar of Engagements</a></li>
+                  </ul>
+                </li>
+                <li><a href="/docs/documentation/">Docs</a></li>
+                <li><a href="#">Contact</a>
+                  <ul>
+                    <li><a href="/docs/contact">Message</a></li>
+                    <li><a href="/docs/job-talk/">Hire</a></li>
+                  </ul>
+                </li>
+                <li><a href="/docs/about/">About</a></li>
+              </ul>
+            </nav>
+            <!-- End of Menu-->
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="header-back header-back-simple header-back-small">
+      <div class="header-back-container">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <!-- Page Info-->
+              <div class="page-info page-info-simple">
+                <h1>Talking Through Managed or Baked In House Continuous Integration (CI) and Delivery (CD)</h1>
+                <p class="author">Written by <span class="author">Adron Hall</span> and published on <span>January, 26 of 2017.</span>
+                </p>
+                <div class="nav"><a href="/">« Home</a></div>
+              </div>
+              <!-- End Page Info-->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="content">
+      <div class="container">
+        <div class="layout with-right-sidebar js-layout">
+          <div class="row">
+            <div class="col-md-9">
+              <div class="main-content">
+                <!-- Blog Page-->
+                <article class="article">
+                  <section class="content"><p>Ok, we have several different scenarios and let’s say you’re the boss. In each of these scenarios we can assume that <span class="caps">CI</span> <span class="amp">&amp;</span> <span class="caps">CD</span> are going to be mandatory to achieve the team’s greatest potential to deliver. So the question I’ll be attacking is, do we roll our own with Drone.io, TeamCity, continuous integration and delivery or do we get more advantage from utilizing a managed solution like CircleCI, Codeship, or related offerings. The following are the scenarios in relation to team size and project that you’re heading&nbsp;up:</p>
+<h2 id="scenarios">Scenarios</h2>
+<ul>
+<li><p><strong><em>Scenario 1:</em></strong> You have team of 4 people. All developers by trade and experienced. The team may, about 20% chance in the coming 3-6 months, grow to ~8 people, with 1-2 of those being automation experts that could prospectively manage <span class="caps">CI</span>/CD systems. Currently the project is just starting, and the decision on what language and tech stack has been determined and initial coding will be starting in the coming week. Currently, there is no CI/CD setup for this&nbsp;project.</p>
+</li>
+<li><p><strong><em>Scenario 2:</em></strong> Another team has 33 developers, 4 are site reliability with 2 more working with them frequently on systems automation. No real growth for the team in the next 2-3 years. The application these developers work on has new feature development and maintenance, lot’s of ongoing maintenance. Currently there is also a fair amount of technical debt associated with the code base that needs paid off for each new feature implemented, or any significant changes during maintenance of the software. This team currently has no <span class="caps">CI</span> or CD of the application&nbsp;setup.</p>
+</li>
+<li><p><strong><em>Scenario 3:</em></strong> The third team is 4 people, pairing, and they have the highest output and quality of the rest of the teams. Largely because they work well together but also they have minimal technical debt and can move quickly. The application has been under development for about 3 months and they currently have a <span class="caps">CI</span> process setup with Drone.io. No deployment is setup yet nor is any infrastructure or other tooling setup beyond what they’ve already setup with the Drone.io&nbsp;solution.</p>
+</li>
+<li><p><strong><em>Scenario 4:</em></strong> Fourth scenario is a large team of 232 people. There are 9 organizations with multiple people in each of those organizations, split out to developers, project management, product development leads, and a core architecture team. Among the 232 there are also 17 people dedicated to automation and infrastructure management. This team manages one huge monolithic application that currently is built with manual build processes that are partially scripted. Of these build processes there are 11 of them, which then must be combined via some more scripts and more manual processes that are then pushed to a <em>test development</em> environment, where a subsequent 4 people work full time testing the <em>test development</em>&nbsp;environment.</p>
+</li>
+</ul>
+<p><span class="more"></span></p>
+<p>Each of these scenarios has a clear and present need for continuous integration and delivery setup. Just for context, when I write continuous integration or continuous delivery I define these like&nbsp;this:</p>
+<p><strong>Continuous Integration</strong> - <a href="https://en.wikipedia.org/wiki/Continuous_integration">Wikipedia</a> - <a href="https://www.thoughtworks.com/continuous-integration">Thoughtworks</a></p>
+<blockquote>
+<p>…is the process of bringing together the assets of an application or service project to compile that code into a binary. In the case of JavaScript or other non-compiled language this process would include any transpiling or gathering of assets that are needed in order to execute the code via the integration process. In most cases I include unit testing, and sometimes certain types of or styles of behavior tests in a project to be included under the process of continuous&nbsp;integration.</p>
+</blockquote>
+<p><strong>Continuous Delivery</strong> -  <a href="https://en.wikipedia.org/wiki/Continuous_delivery">Wikipedia</a> - <a href="https://www.thoughtworks.com/continuous-delivery">Thoughtworks</a></p>
+<blockquote>
+<p>…is the process of events that must be completed, in an automated fashion, after the continuous integration process to take code or a binary from the transpiled or binary state into a production environment in which it will be used or executed. This is fairly easy to outline with a services or web application, since there is an obvious way in which this code needs to be called (via http/https in a browser) but some other applications, like a <span class="caps">CLI</span> or desktop application are slightly more diverse in the way they may be delivered. These later applications we can safely assume have a continuous delivery process that would vary widely but be something like being packaged into an installer (in the case of OS-X a .pkg file or in the case of Windows into a .exe or .msi&nbsp;file.)</p>
+</blockquote>
+<p>Also an excellent resource is available <a href="https://continuousdelivery.com/">here</a>.</p>
+<h2 id="solutions-discussion-for-scenarios">Solutions <span class="amp">&amp;</span> Discussion for&nbsp;Scenarios</h2>
+<ul>
+<li><p><strong><em>Scenario 1:</em></strong> Considering there are 4 people, prospectively 8 at the most over the next 6 months, the team really should not spend time on putting together, automating, and building out systems they don’t absolutely need to. The emphasis with a small team needs to be lean, mean, and focused on the mission at hand. Continuous integration and delivery will help delivery that, but putting it together isn’t directly related to business&nbsp;value.</p>
+<p>  What to do? Well, the quickest and simplest way to get started and enable a core focus on the mission is to use a managed continuous integration and delivery provider. This is a great case to use Codeship, CircleCI, AppVeyor, or a host of&nbsp;providers.</p>
+</li>
+<li><p><strong><em>Scenario 2:</em></strong> This is an interesting scenario in that there are people tasked with automation and what would be the effort of continuous integration and delivery. However, there are questions to ask. There are three questions that immediately come to mind. These would likely have the most weight on a managed or self-hosted <span class="caps">CI</span> <span class="amp">&amp;</span> <span class="caps">CD</span> solution would&nbsp;be:</p>
+<ul>
+<li><p>Would running our own <span class="caps">CI</span> and CD save the company&nbsp;money?</p>
+</li>
+<li><p>Does the team need specific features or capabilities inherent in self-hosted <span class="caps">CI</span> and CD&nbsp;solutions?</p>
+</li>
+<li><p>Would the self-hosted capabilities versus the managed enable the team to deliver more&nbsp;effectively?</p>
+<p>Let’s dig through each&nbsp;question.</p>
+<p>The first, is the cost question. If the team had enough demand for builds or other integration and delivery automation it is feasible that costs could be fairly huge. I myself have seen price tags in the $40-50k a month range, which more than validates self-hosting build and delivery solutions to more finely manage or even decrease costs. However, I’ll add that $40-50k does only pay for work equating to a part time effort on this work. That doesn’t go that far either. By proxy, the cost is a valid question, but it isn’t all that it’s cracked up to be. I tend to lean heavily toward using a hosted solution even if it costs 10-40% more as that cost is usually worth it to refocus efforts on business value instead of <span class="caps">CI</span> and CD management. Let’s say, for this 33+ person team in scenario 2, that CI and CD costs will be around $40k per month via hosted offerings and about $25k if it’s&nbsp;self-hosted.</p>
+<p>The second is likely the most important that would be asked of the three. Case in point the market has provided very few .<span class="caps">NET</span> build solutions that are managed. This has limited the ability to gain CI and CD advantages for startups that choose .NET. This has likely been one of many reasons .NET has taken a massive nose dive in popularity over the last decade among startups. Even among the more popular build service one can use, there are certain limitations that can stop a project cold. In these cases, a team can be forced into a self-hosted option. Let’s say, for scenario 2 however there isn’t a legitimate need for self-hosted control, but some of the team think it would be a nice to&nbsp;have.</p>
+<p>The third question, is more inclusive of the aforementioned other two questions plus other criteria. But just as I mentioned the team thinks it would be a <em>nice to have</em> that begs another question. If the team had the extra control would that give them a boost or assistance with certain <span class="caps">CI</span> or CD automation, or will they get into situations where someone will end up with managing or spending significant time toying about with capabilities? Would that time be worth it in the end, or be lost time sunk into something that could work without the investment? Let’s say that having full control in this situation, as if we were so fortunate to get a % of productivity increase, would give the team a 5% speed to delivery boost and 2% less&nbsp;bugs.</p>
+<p>Alright, I’ve conjured up those few thougths about each of those questions. Based on the posed end statements of each questions what would you do as the boss? What would I do? Since this is a team that is largely maintaining existing software and building some features, I’d also ponder what would keep them happier. Maintaining a <span class="caps">CI</span> and CD system in hours or gettinga  self-hosted service, then I’d look at the over under of $40k cost per month hosted or $25k self-hosted, then <em>nice to have</em> thought behind self-hosted, and the upside of 5% speed to deliver and 2% bugs boost. In the end here, it would come down to developer happiness, and anything, I may even mix usage. For instance a bit of Codeship and Drone.io together. Both have a similar usage style so the learning curve would be huge, but similar giving the team a conjoined experience. I’ll leave this solution in the democratic vote of the developer&nbsp;team.</p>
+</li>
+</ul>
+</li>
+<li><p><strong><em>Scenario 3:</em></strong> This scenario is easy for me. If someone is spending more than 30 minutes a week dealing with Drone.io management, I’d push a shift to a managed provider. However since the Drone.io solution is already in place, if the only thing people are doing is committing code, getting builds, and have their code delivered then I’m a happy camper. Drone.io would stay as the <span class="caps">CI</span> and CD tooling for the&nbsp;team.</p>
+</li>
+<li><p><strong><em>Scenario 4:</em></strong> Ok, wow, this is a big team to implement for. My immediate reaction is everything will be dependent on individual teams within the big team vote. There’s no reason to force a large team of this size to use a single solution, but there’s also many downsides to using to many different technologies to implement <span class="caps">CI</span> and CD. Let’s say the code this 200+ person team is working on is a single language, single stack, and singular deployment path, with just a few builds occurring per hour. If that’s the case then that would change my response toward a managed and hosted solution. But with this size, it’s likely that costs are much higher, build demand is dramatically higher, and the various internal security, admin, and related management of users, individual features, and the like lend to a self-hosted internal solution to give more control over customization specific to&nbsp;needs.</p>
+</li>
+</ul>
+<p>Summary: These are just a few of the thoughts, notions, and issues that need reflected upon to make a useful and effective decision about <span class="caps">CI</span> and CD tooling. These scenarios I posed are merely from the perspective of team size, organization, costs, and these higher level notions are CI and CD. In a future article I’ll dive into the specifics of how CI and CD are implemented on various platforms, and we can dig even deeper into why, what, who, where, and when to implement CI and CD for your team(s). Whatever the case, CI and CD are a fundamentally and vitally important first step or ongoing step of any project. If you’d like to discuss more, feel free to reach out to me on Twitter <a href="https://twitter.com/Adron">@Adron</a> or <a href="http://blog.adron.me/docs/contact/">contact me</a>.</p>
+</section>
+                </article>
+                <!-- End of Blog Page-->
+              </div>
+            </div>
+            <div class="col-md-3 hidden-sm hidden-xs">
+              <div class="sidebar js-sidebar-fixed">
+                <!-- Vertical Menu-->
+                <div class="widget">
+                  <!-- Search-->
+                  <div class="search">
+                    <form action="https://google.com/search" method="get">
+                      <input type="hidden" name="sitesearch" value="http://blog.adron.me">
+                      <input type="text" name="q" placeholder="search" class="search-input form-control"><i class="fa fa-search search-icon"></i>
+                    </form>
+                  </div>
+                  <!-- End of Search-->
+                </div>
+                <div class="widget">
+                  <h3 class="widget-title">Keyword Search</h3>
+                  <!-- Tags-->
+                  <ul class="tags">
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=html">html</a></li>
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=javascript">javascript</a></li>
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=ubuntu">ubuntu</a></li>
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=node pdx">node pdx</a></li>
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=.NET fringe">.net fringe</a></li>
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=videos">videos</a></li>
+                  </ul>
+                  <!-- End of Tags-->
+                </div>
+                <nav class="menu-vertical-wrapper">
+                  <ul data-prepend-to=".js-layout" data-select="Menu" class="menu-vertical js-menu-vertical">
+                    <li><a href="#">About</a>
+                      <ul>
+                        <li><a href="/docs/about/">Me, Adron</a></li>
+                        <li><a href="#">My Hobbies</a>
+                          <ul>
+                            <li><a href="http://photos.adron.me">My Photos</a></li>
+                          </ul>
+                        </li>
+                        <li><a href="/docs/Speaking-Presentations-Workshops">My Presentations</a></li>
+                        <li><a href="/docs/documentation/">Collection of Docs & Notes</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </nav>
+                <div class="widget">
+                  <h3 class="widget-title">Photos</h3>
+                  <!-- Photos-->
+                  <ul class="widget-recommended-products">
+                    <!-- Photos-->
+                    <li class="widget-recommended-product"><img src="/img/photos/IMG_1836.jpg" alt="Jon Oropeza" class="widget-recommended-product-img"><a href="http://photos.adron.me/Software/Meetups-N-Conferences/Conferences/Node-PDX-2016/i-D9qFQ6m" class="widget-recommended-product-link">
+                        <h5 class="widget-recommended-product-link-title">Node PDX 2016<i class="fa fa-angle-right"></i></h5>
+                        <p class="widget-recommended-product-link-description">Jon Oropeza @ Node PDX 2016</p></a></li>
+                    <!-- End of Recommended product Item-->
+                    <!-- Recommended product Item-->
+                    <li class="widget-recommended-product"><img src="/img/photos/IMG_1812.jpg" alt="Liz Abinante" class="widget-recommended-product-img"><a href="http://photos.adron.me/Software/Meetups-N-Conferences/Conferences/Node-PDX-2016/i-g2m2hgP" class="widget-recommended-product-link">
+                        <h5 class="widget-recommended-product-link-title">Node PDX 2016<i class="fa fa-angle-right"></i></h5>
+                        <p class="widget-recommended-product-link-description">Liz Abinante @ Node PDX 2016</p></a></li>
+                    <!-- End of Recommended product Item-->
+                    <!-- Recommended product Item-->
+                    <li class="widget-recommended-product"><img src="/img/photos/IMG_5709.jpg" alt="Praha hlavní nádraží" class="widget-recommended-product-img"><a href="http://photos.adron.me/Travels-N-Traversings/Across-the-Pond-2016-Travels/September-Krakow/Week-4-Prague/i-62ZPsPb" class="widget-recommended-product-link">
+                        <h5 class="widget-recommended-product-link-title">Prague (Praha)<i class="fa fa-angle-right"></i></h5>
+                        <p class="widget-recommended-product-link-description">Praha hlavní nádraží</p></a></li>
+                    <!-- End of photos row one-->
+                  </ul>
+                  <ul class="widget-recommended-products">
+                    <!-- Photos-->
+                    <li class="widget-recommended-product"><img src="/img/photos/IMG_4417.jpg" alt="St Mary's Basilica" class="widget-recommended-product-img"><a href="http://photos.adron.me/Travels-N-Traversings/Across-the-Pond-2016-Travels/September-Krakow/Krakow/i-KnZf6pK/A" class="widget-recommended-product-link">
+                        <h5 class="widget-recommended-product-link-title">St Mary's Basilica<i class="fa fa-angle-right"></i></h5>
+                        <p class="widget-recommended-product-link-description">Bazylika Mariacka in Rynek Główny.</p></a></li>
+                    <!-- End of Recommended product Item-->
+                    <!-- Recommended product Item-->
+                    <li class="widget-recommended-product"><img src="/img/photos/VSC_03.png" alt="Visual Studio Code" class="widget-recommended-product-img"><a href="http://photos.adron.me/Software/Software-Development/Visual-Studio-Things/i-LLW7WcD/A" class="widget-recommended-product-link">
+                        <h5 class="widget-recommended-product-link-title">Visual Studio Code<i class="fa fa-angle-right"></i></h5>
+                        <p class="widget-recommended-product-link-description">Images from a review of Visual Studio Code.</p></a></li>
+                    <!-- End of Recommended product Item-->
+                    <!-- Recommended product Item-->
+                    <li class="widget-recommended-product"><img src="/img/photos/-home-adronhall-Pictures-Selection_002.png - Shutter_003.png" alt="" class="widget-recommended-product-img"><a href="http://photos.adron.me/Software/Software-Development/Ubuntu/i-CQsQ4zj/A" class="widget-recommended-product-link">
+                        <h5 class="widget-recommended-product-link-title">Mono Develop & WebStorm<i class="fa fa-angle-right"></i></h5>
+                        <p class="widget-recommended-product-link-description">Working through Mono Develop & WebStorm.</p></a>
+                      <!-- End of photos row two-->
+                    </li>
+                  </ul>
+                  <!-- End Photos-->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="nav"><a href="/">« Home</a></div>
+      </div>
+    </div>
+    <script src="/js/all.js"></script>
+    <script src="/js/custom.js"></script>
+    <!-- Google Tag Manager-->
+    <noscript>
+      <iframe src="//www.googletagmanager.com/ns.html?id=GTM-KMMZX2" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <script>
+      console.log(document.getElementById("search-google"));
+      console.log(document.getElementById("search-google").innerText);
+      
+      var searchBox = document.getElementById("search-google");
+      
+      function googleSearch(search_string) {
+        alert(search_string);
+      }
+      
+      document.getElementById("search-google").addEventListener("onClick", function () {
+        alert(document.getElementById("search-google").innerHTML);
+      });
+      
+      document.getElementById("search-google").addEventListener("onClick", function () {
+        googleSearch(document.getElementById("search-google").innerHTML)
+      });
+      
+    </script>
+    <script>
+      (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+                  (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+      })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+      ga('create', 'UA-39158070-6', 'auto');
+      ga('send', 'pageview');
+    </script>
+  </body>
+</html>
