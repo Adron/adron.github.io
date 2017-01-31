@@ -8,7 +8,7 @@ This page links to my history of speaking via presentations, workshops, or other
 
 **Upcoming Presentations**
 
-* Presenting [Building Immutably to Continuous Delivery with Minimal Inputs](/talks/Building-Immutably-Continuous-Delivery-Minimal-Inputs-San-Francisco/) at [O'Reilly Architecture Conference](http://conferences.oreilly.com/software-architecture/engineering-business-ca).
+None at this time.
 
 **Past Presentations**
 
