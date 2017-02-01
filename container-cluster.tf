@@ -4,9 +4,7 @@ resource "google_container_cluster" "development" {
   initial_node_count = 3
 
   network = "developer-space"
-  subnetwork = "developer-space"
-
-
+  subnetwork = "developer-space-west1"
 
   master_auth {
     username = "firsttry"
@@ -21,5 +19,8 @@ resource "google_container_cluster" "development" {
       "https://www.googleapis.com/auth/monitoring"
     ]
     machine_type = "f1-micro"
+    // machine_type = "g1-small"
+    // machine_type = "n1-standard-2"
+    // machine_type = "n1-standard-16"
   }
 }
