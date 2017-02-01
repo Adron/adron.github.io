@@ -8,7 +8,7 @@ resource "google_compute_instance" "redirector" {
   zone = "us-central1-b"
 
   disk {
-    image = "redirector-1471307522"
+    image = "redirector-1485899054"
   }
 
   network_interface {
