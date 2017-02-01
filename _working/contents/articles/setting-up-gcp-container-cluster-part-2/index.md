@@ -4,11 +4,13 @@ author: Adron Hall
 date: 2017-02-01 11:06:11
 template: article.jade
 ---
-<span class="more"></span>
-
 <div class="image float-right">
-    ![Streamsets](streamset2.jpg)
+    ![Google Compute & Container Engines together with Kubernetes](gce-kube-gce.png)
 </div>
+
+Yesterday I wrote up the experience around getting a Google Container Cluster up and running and adding a Terraform config to automate the process. Today my plan is to dig into getting containers into the Google Container Repository and then using those containers to launch various things within the Google Container Cluster. With my end goal being to get a Drone.io setup for production use.
+
+<span class="more"></span>
 
 
 
