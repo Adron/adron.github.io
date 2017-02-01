@@ -3,6 +3,11 @@ resource "google_container_cluster" "development" {
   zone = "us-west1-b"
   initial_node_count = 3
 
+  network = "developer-space"
+  subnetwork = "developer-space"
+
+
+
   master_auth {
     username = "firsttry"
     password = "willchange"
@@ -15,5 +20,6 @@ resource "google_container_cluster" "development" {
       "https://www.googleapis.com/auth/logging.write",
       "https://www.googleapis.com/auth/monitoring"
     ]
+    machine_type = "f1-micro"
   }
 }
