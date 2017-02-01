@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="/css/style.min.css">
     <script src="/js/modernizr.js"></script>
   </head>
-  <body>
+  <body class="article-detail">
     <!--[if lt IE 8]>
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -67,8 +67,10 @@
             <div class="col-md-12">
               <!-- Page Info-->
               <div class="page-info page-info-simple">
-                <h1>Adron's Composite Code</h1>
-                <h2 class="description">Coder, Messenger, Recon, Infrastructure, Ops</h2>
+                <h1>Setting up a GCP Container Cluster - Part I</h1>
+                <p class="author">Written by <span class="author">Adron Hall</span> and published on <span>January, 31 of 2017.</span>
+                </p>
+                <div class="nav"><a href="/">« Home</a></div>
               </div>
               <!-- End Page Info-->
             </div>
@@ -83,16 +85,8 @@
             <div class="col-md-9">
               <div class="main-content">
                 <!-- Blog Page-->
-                <div class="blog">
-                  <div class="row"></div>
-                </div>
-                <div class="col-md-12 col-sm-12">
-                  <!-- Blog List-->
-                  <div class="blog-grid">
-                    <div class="row">
-                      <div class="col-md-12 col-sm-12">
-                        <h3 class="blog-grid-title"><a href="/articles/setting-up-gcp-container-cluster/">Setting up a GCP Container Cluster - Part I</a></h3>
-                        <p class="blog-grid-excerpt"><div class="image float-right">
+                <article class="article">
+                  <section class="content"><div class="image float-right">
     <img src="/articles/setting-up-gcp-container-cluster/streamset2.jpg" alt="Streamsets">
 </div>
 
@@ -101,51 +95,111 @@
 <pre><code>gcloud container clusters create working-space \
   --zone us-central1-a \
   --additional-zones us-central1-b,us-central1-c
-</code></pre><p>
-                          <p class="more"><a href="/articles/setting-up-gcp-container-cluster/">more</a></p>
-                        </p>
-                        <div class="blog-grid-meta"><span class="blog-grid-date">31. January 2017</span></div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End of Blog List-->
-                </div>
-                <div class="col-md-12 col-sm-12">
-                  <!-- Blog List-->
-                  <div class="blog-grid">
-                    <div class="row">
-                      <div class="col-md-12 col-sm-12">
-                        <h3 class="blog-grid-title"><a href="/articles/talking-through-ci-cd/">Talking Through Managed or Baked In House Continuous Integration (CI) and Delivery (CD)</a></h3>
-                        <p class="blog-grid-excerpt"><p>Ok, we have several different scenarios and let’s say you’re the boss. In each of these scenarios we can assume that <span class="caps">CI</span> <span class="amp">&amp;</span> <span class="caps">CD</span> are going to be mandatory to achieve the team’s greatest potential to deliver. So the question I’ll be attacking is, do we roll our own with Drone.io, TeamCity, continuous integration and delivery or do we get more advantage from utilizing a managed solution like CircleCI, Codeship, or related offerings. The following are the scenarios in relation to team size and project that you’re heading&nbsp;up:</p>
-
-                          <p class="more"><a href="/articles/talking-through-ci-cd/">more</a></p>
-                        </p>
-                        <div class="blog-grid-meta"><span class="blog-grid-date">26. January 2017</span></div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End of Blog List-->
-                </div>
-                <div class="col-md-12 col-sm-12">
-                  <!-- Blog List-->
-                  <div class="blog-grid">
-                    <div class="row">
-                      <div class="col-md-12 col-sm-12">
-                        <h3 class="blog-grid-title"><a href="/articles/drone-io/">Introduction to Drone.io</a></h3>
-                        <p class="blog-grid-excerpt"><ul>
-<li><strong>Research <span class="amp">&amp;</span> Learn</strong>: <a href="https://github.com/drone/drone">Drone.io Github Repo</a>, <a href="http://try.drone.io/">Trying Drone.io</a>, and <a href="http://readme.drone.io/">Drone.io Docs</a>.</li>
-<li><strong>Objective</strong>: What Drone.io is and getting&nbsp;started.</li>
+</code></pre><p><span class="more"></span></p>
+<p>I deleted that after I confirmed it did what I expected. Which was mostly&nbsp;true.</p>
+<p>Observations:</p>
+<ul>
+<li>This command did execute and launch 9 instances. This I assumed is what it would do since I had selected a default <code>--zone</code> but also selected two additional with <code>--additional-zones</code>. This spooled up 3 instances in each zone for us within the&nbsp;cluster.</li>
+<li>In the container clusters listing in the Google Cloud Console, there’s a button now that prompts with the gcloud container cluster get-credentials command and the kubectl command to connect. This is helpful, as the last time I was testing out this one had to go and dig&nbsp;into.</li>
 </ul>
-<p>I’ve dived into a new effort to figure out <a href="http://try.drone.io/">Drone.io</a>, get it running, and if plausible contribute in some way to the project. This was kick started yesterday while I was speaking with Joachim (T <a href="https://twitter.com/lindyhop">@lindyhop</a> &amp;&amp; G <a href="https://github.com/josmo">@josmo</a>) about some projects we’re working on. We discussed the design of Drone.io, how we’re using it on some projects internally here <a href="https://twitter.com/PelotonTechio">@PelotonTechio</a>. I will, and others will be posting more on what we’re doing with Drone.io later, but for now, I’ve put together this introduction to what Drone.io is, and getting started with&nbsp;it.</p>
-<p>
-                          <p class="more"><a href="/articles/drone-io/">more</a></p>
-                        </p>
-                        <div class="blog-grid-meta"><span class="blog-grid-date">25. January 2017</span></div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End of Blog List-->
-                </div>
+<p>I went ahead and deleted that cluster via the Google Cloud Console. The next command I tried out was as&nbsp;shown.</p>
+<pre><code>gcloud container clusters create secondary-delete \
+  --network worker-space
+</code></pre><p>Since this was done on a freshly installed gcloud install on a new machine, I’d missed that I had not installed kubectl. However gcloud kindly informed&nbsp;me.</p>
+<pre><code>$ gcloud container clusters create secondary-delete \
+&gt;   --network worker-space
+WARNING: Accessing a Container Engine cluster requires the kubernetes commandline
+client [kubectl]. To install, run
+  $ gcloud components install kubectl
+
+ERROR: (gcloud.container.clusters.create) ResponseError: code=400, message=Subnetwork must be provided for manual-subnet Network &quot;worker-space&quot;.
+</code></pre><p>A quick <code>gcloud components install kubectl</code> fixed that. I ran the command again and oops, I needed to designate the subnetwork, not particularly the&nbsp;network.</p>
+<p>I wanted to bake this into a Terraform config, so the next thing I wired together was exactly that. A quick change and reran the&nbsp;command.</p>
+<pre><code>$ gcloud container clusters create secondary-delete   --network worker-space --subnetwork worker-space-default
+ERROR: (gcloud.container.clusters.create) ResponseError: code=400, message=Subnetwork &quot;projects/that-big-universe/regions/us-west1/subnetworks/worker-space-default&quot; is not valid for Network &quot;worker-space&quot;.
+</code></pre><p>Dammit, error central. I went and did some RTFMing at this point. The section for network and subnetwork read as&nbsp;follows:</p>
+<blockquote>
+<p>–network=<span class="caps">NETWORK</span>
+The Compute Engine Network that the cluster will connect to. Google Container Engine will use this network when creating routes and firewalls for the clusters. Defaults to the ‘default’&nbsp;network.</p>
+<p>–subnetwork=<span class="caps">SUBNETWORK</span>
+The name of the Google Compute Engine subnetwork (<a href="https://cloud.google.com/compute/docs/subnetworks">https://cloud.google.com/compute/docs/subnetworks</a>) to which the cluster is connected. If specified, the cluster’s network must be a “custom subnet”&nbsp;network.</p>
+</blockquote>
+<p>Ok, seems like <code>gcloud container clusters create secondary-delete --network worker-space --subnetwork worker-space-default</code> should have worked. I tried out a few more ideas to see what the issue could actually&nbsp;be.</p>
+<pre><code>$ gcloud compute networks subnets list
+NAME                      REGION           NETWORK       RANGE
+...default networks were listed here...
+worker-space-default      us-central1      worker-space  10.128.0.0/20
+</code></pre><p>So even <code>gcloud</code> finds that the network name is <em>worker-space-default</em> and the network is <em>worker-space</em>? Is that right? That’s actually a little confusing. In the interface it looks like&nbsp;this.</p>
+<p><img src="/articles/setting-up-gcp-container-cluster/3.png" alt="Google Cloud Console"></p>
+<p>Ah, I try&nbsp;this.</p>
+<pre><code>$ gcloud container clusters create secondary-delete --network worker-space --subnetwork us-central1
+ERROR: (gcloud.container.clusters.create) ResponseError: code=400, message=Subnetwork &quot;projects/that-big-universe/regions/us-west1/subnetworks/us-central1&quot; is not valid for Network &quot;worker-space&quot;.
+</code></pre><p>Then I realize that it’s injecting <em>us-west1</em> into that string for the subnetwork. But that’s not true. My worker-space and its subnetwork is in central1 not in west1. So a quick <span class="caps">RTFM</span> again and realized that maybe adding the zone back, with these network and subnetwork parameters set, I might get a successful cluster creation. I tried&nbsp;this.</p>
+<pre><code>$ gcloud container clusters create secondary-delete --network worker-space --subnetwork worker-space-default --zone us-central1
+</code></pre><p>This also didn’t work, so I went with a zone of <code>us-central1a</code>.</p>
+<pre><code>$ gcloud container clusters create secondary-delete --network worker-space --subnetwork worker-space-default --zone us-central1b
+ERROR: (gcloud.container.clusters.create) ResponseError: code=400, message=zone &quot;us-central1b&quot; does not exist.
+</code></pre><p>Ok, <span class="caps">WTF</span>?! RTFMing doesn’t really help at this point either. Now I’m just getting frustrated. I’m doubtfully going to use <code>gcloud</code> to build this in production anyway, so I’ll go ahead and try to get Terraform building&nbsp;it.</p>
+<h2 id="terraform-for-google-cloud-container-cluster">Terraform for Google Cloud Container&nbsp;Cluster</h2>
+<p>I added this to the script in the <em>adron-infrastructure</em> branch of my repo <a href="https://github.com/Adron/adron.github.io/tree/adron-infrastructure">here</a>.</p>
+<pre><code>resource &quot;google_container_cluster&quot; &quot;development&quot; {
+  name = &quot;development-systems&quot;
+  zone = &quot;us-west1-b&quot;
+  initial_node_count = 3
+
+  master_auth {
+    username = &quot;someusername&quot;
+    password = &quot;willchange&quot;
+  }
+
+  node_config {
+    oauth_scopes = [
+      &quot;https://www.googleapis.com/auth/compute&quot;,
+      &quot;https://www.googleapis.com/auth/devstorage.read_only&quot;,
+      &quot;https://www.googleapis.com/auth/logging.write&quot;,
+      &quot;https://www.googleapis.com/auth/monitoring&quot;
+    ]
+  }
+}
+</code></pre><p>Alright, that worked beautifully. If anybody has any idea what the issue is with my aforementioned attempts to create a cluster using gcloud and the network and subnetwork please ping me via <a href="https://twitter.com/Adron">@Adron</a> and we’ll <span class="caps">DM</span> or email if you would. (Also, for more info on getting started with GCP with Terraform, check out my article “<a href="http://blog.adron.me/articles/working-with-google-compute-engine/">Working With Google Compute Engine (<span class="caps">GCE</span>) using Terraform (With a load of Bash Scripts too) </a>“)</p>
+<p>Next step I needed to connect kubectl to the cluster. This is one of the spaces where a lot of Google documentation is lacking since it also assumes you’ve followed some pre-baked route to gain credentials. For instance, int he interface the thing I pointed to earlier, just uses kubectl and gcloud does some crazy black magic in the background that require tertiary RTFMing in order to figure out what is actually going on, retrace those steps, and connect yourself. The first thing I tried was to set the&nbsp;cluster.</p>
+<pre><code>kubectl config set-cluster development-systems
+</code></pre><p>Then did a quick <code>kubectl config view</code> which showed that things were set correctly. Then I tried to run <code>kubectl cluster-info</code> just to see what’s&nbsp;up.</p>
+<pre><code>$ kubectl cluster-info
+error: google: could not find default credentials. See https://developers.google.com/accounts/docs/application-default-credentials for more information.
+</code></pre><p>So no go. Default credentials… another thing I’m not really sure. I tried to run <code>gcloud container clusters get-credentials development-systems  --zone us-west1-b --project that-big-universe</code> and it failed. Grumble grumble come on. I tried again however, because something seemed odd with the network before, and this time I got some results!&nbsp;Win!</p>
+<pre><code>$ gcloud container clusters get-credentials development-systems \
+&gt;     --zone us-west1-b --project that-big-universe
+Fetching cluster endpoint and auth data.
+kubeconfig entry generated for development-systems.
+</code></pre><p>I then try to get a <code>kubectl cluster-info</code>.</p>
+<pre><code>$ kubectl cluster-info
+error: google: could not find default credentials. See https://developers.google.com/accounts/docs/application-default-credentials for more information.
+</code></pre><p>Nope. Oh yeah, I gotta set kube’s&nbsp;proxy!</p>
+<pre><code>$ kubectl proxy
+error: google: could not find default credentials. See https://developers.google.com/accounts/docs/application-default-credentials for more information.
+</code></pre><p>No. Alright, what then? At this point I’m pretty frustrated, but whatevs, this is gonna work so I keep researching. A quick search for default credentials leads to <a href="https://developers.google.com/identity/protocols/application-default-credentials">this</a>. I read through it and this whole GOOGLE_APPLICATION_CREDENTIALS needs to be set. Ok, that’s cool. So I set it. It needs to be a credentials file for the service account used. Which actually makes sense but only because I’ve used Google Cloud before, but for somebody just diving into using the container service on Google this is kind of a whole derailment to go read up on a bunch of other topics. Albeit, it is necessary reading. Anyway…  back to setting the credentials file. For more info on how to set this up and working with <span class="caps">GCP</span>, check out my previous article “<a href="http://blog.adron.me/articles/working-with-google-compute-engine/">Working With Google Compute Engine (<span class="caps">GCE</span>) using Terraform (With a load of Bash Scripts too)</a>“.</p>
+<pre><code>export GOOGLE_APPLICATION_CREDENTIALS=~/thepathtosecrets/account.json
+</code></pre><p>I added this to my bash_profile and sourced that&nbsp;file.</p>
+<pre><code>source ~/.bash_profile
+</code></pre><p>Then I ran <code>kubectl cluster-info</code>.</p>
+<pre><code>$ kubectl cluster-info
+Kubernetes master is running at https://104.196.234.30
+GLBCDefaultBackend is running at https://104.196.234.30/api/v1/proxy/namespaces/kube-system/services/default-http-backend
+Heapster is running at https://104.196.234.30/api/v1/proxy/namespaces/kube-system/services/heapster
+KubeDNS is running at https://104.196.234.30/api/v1/proxy/namespaces/kube-system/services/kube-dns
+kubernetes-dashboard is running at https://104.196.234.30/api/v1/proxy/namespaces/kube-system/services/kubernetes-dashboard
+</code></pre><p>Ah, magic! It’s working! So a few other commands just to verify and determine what the state of things&nbsp;are.</p>
+<pre><code>$ kubectl top node
+NAME                                                 CPU(cores)   CPU%      MEMORY(bytes)   MEMORY%
+gke-development-systems-default-pool-f30f476e-gtnj   34m          3%        1529Mi          41%
+gke-development-systems-default-pool-f30f476e-ncln   47m          4%        1879Mi          50%
+gke-development-systems-default-pool-f30f476e-s5pc   38m          3%        1691Mi          45%
+</code></pre><p>That looks good. So on to getting some containers&nbsp;launched.</p>
+<h1 id="summary">Summary</h1>
+<p>At this point I’ve learned a number of things. One, is that using Terraform I lose a few of the other credentials that are auto-magically available if you setup the cluster via the <code>gcloud</code> commands. Using <code>gcloud</code> generally handles a lot of the management of ssh keys, credentials, and related security stuff so that you don’t have to. There are of course positives and negatives around this, for instance, if I go and created a cluster via Terraform my credentials are out of sync with what <code>gcloud</code> is actually using. At least in the scenario above I had to go set the credentials manually and add them to the ~/.bash_profile. Overall, once familiar with, I know this all will be super easy to dig through, but it definitely takes some exploration and lots of breaking things before getting it all figured out and mapped in one’s brain. For part <span class="caps">II</span> I’m digging into running containers in the cluster and also getting container images stored in Google’s image container registry. Hopefully I can get the network and subnetwork confusion sorted out too and get that&nbsp;implemented.</p>
+</section>
+                </article>
                 <!-- End of Blog Page-->
               </div>
             </div>
@@ -235,8 +289,7 @@
             </div>
           </div>
         </div>
-        <div class="nav"><a href="/archive.html">« Archives</a>&nbsp;<a href="/page/2/">Previous »</a>
-        </div>
+        <div class="nav"><a href="/">« Home</a></div>
       </div>
     </div>
     <script src="/js/all.js"></script>
