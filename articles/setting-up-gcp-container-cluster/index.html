@@ -86,16 +86,16 @@
               <div class="main-content">
                 <!-- Blog Page-->
                 <article class="article">
-                  <section class="content"><div class="image float-right">
-    <img src="/articles/setting-up-gcp-container-cluster/streamset2.jpg" alt="Streamsets">
-</div>
-
-<p>I set out to create a container cluster to work with in Google Cloud. These are the notes of that effort I undertook. On the heels of this article I’m putting together the notes also on getting Drone.io fully setup with an appropriate domain name and the like for use in full production grade work. For now, here’s the lowdown on the steps I took to get educated on and informed about setup and use of the Google Container&nbsp;Cluster.</p>
+                  <section class="content"><p>I set out to create a container cluster to work with in Google Cloud. These are the notes of that effort I undertook. On the heels of this article I’m putting together the notes also on getting Drone.io fully setup with an appropriate domain name and the like for use in full production grade work. For now, here’s the lowdown on the steps I took to get educated on and informed about setup and use of the Google Container&nbsp;Cluster.</p>
 <p>First exploratory script I ran based on instructions <a href="https://cloud.google.com/container-engine/docs/clusters/operations">here</a>.</p>
 <pre><code>gcloud container clusters create working-space \
   --zone us-central1-a \
   --additional-zones us-central1-b,us-central1-c
 </code></pre><p><span class="more"></span></p>
+<p>Here’s the container cluster&nbsp;listing.</p>
+<p><img src="/articles/setting-up-gcp-container-cluster/gcp-01.png" alt="Google Cloud"></p>
+<p>This is the list of instances running providing the nodes for the&nbsp;cluster.</p>
+<p><img src="/articles/setting-up-gcp-container-cluster/gcp-02.png" alt="Google Cloud"></p>
 <p>I deleted that after I confirmed it did what I expected. Which was mostly&nbsp;true.</p>
 <p>Observations:</p>
 <ul>
@@ -130,7 +130,7 @@ NAME                      REGION           NETWORK       RANGE
 ...default networks were listed here...
 worker-space-default      us-central1      worker-space  10.128.0.0/20
 </code></pre><p>So even <code>gcloud</code> finds that the network name is <em>worker-space-default</em> and the network is <em>worker-space</em>? Is that right? That’s actually a little confusing. In the interface it looks like&nbsp;this.</p>
-<p><img src="/articles/setting-up-gcp-container-cluster/3.png" alt="Google Cloud Console"></p>
+<p><img src="/articles/setting-up-gcp-container-cluster/gcp-03.png" alt="Google Cloud Console"></p>
 <p>Ah, I try&nbsp;this.</p>
 <pre><code>$ gcloud container clusters create secondary-delete --network worker-space --subnetwork us-central1
 ERROR: (gcloud.container.clusters.create) ResponseError: code=400, message=Subnetwork &quot;projects/that-big-universe/regions/us-west1/subnetworks/us-central1&quot; is not valid for Network &quot;worker-space&quot;.
@@ -161,7 +161,11 @@ ERROR: (gcloud.container.clusters.create) ResponseError: code=400, message=zone 
     ]
   }
 }
-</code></pre><p>Alright, that worked beautifully. If anybody has any idea what the issue is with my aforementioned attempts to create a cluster using gcloud and the network and subnetwork please ping me via <a href="https://twitter.com/Adron">@Adron</a> and we’ll <span class="caps">DM</span> or email if you would. (Also, for more info on getting started with GCP with Terraform, check out my article “<a href="http://blog.adron.me/articles/working-with-google-compute-engine/">Working With Google Compute Engine (<span class="caps">GCE</span>) using Terraform (With a load of Bash Scripts too) </a>“)</p>
+</code></pre><p>The console container cluster display once it&nbsp;completes.</p>
+<p><img src="/articles/setting-up-gcp-container-cluster/gcp-04.png" alt="Google Cloud Console"></p>
+<p>The console instances listed again. This time of course, just like the node count in the config above and the zone being only set to west1-b, I’ve got 3&nbsp;instances.</p>
+<p><img src="/articles/setting-up-gcp-container-cluster/gcp-04.png" alt="Google Cloud Console"></p>
+<p>Alright, that worked beautifully. If anybody has any idea what the issue is with my aforementioned attempts to create a cluster using gcloud and the network and subnetwork please ping me via <a href="https://twitter.com/Adron">@Adron</a> and we’ll <span class="caps">DM</span> or email if you would. (Also, for more info on getting started with GCP with Terraform, check out my article “<a href="http://blog.adron.me/articles/working-with-google-compute-engine/">Working With Google Compute Engine (<span class="caps">GCE</span>) using Terraform (With a load of Bash Scripts too) </a>“)</p>
 <p>Next step I needed to connect kubectl to the cluster. This is one of the spaces where a lot of Google documentation is lacking since it also assumes you’ve followed some pre-baked route to gain credentials. For instance, int he interface the thing I pointed to earlier, just uses kubectl and gcloud does some crazy black magic in the background that require tertiary RTFMing in order to figure out what is actually going on, retrace those steps, and connect yourself. The first thing I tried was to set the&nbsp;cluster.</p>
 <pre><code>kubectl config set-cluster development-systems
 </code></pre><p>Then did a quick <code>kubectl config view</code> which showed that things were set correctly. Then I tried to run <code>kubectl cluster-info</code> just to see what’s&nbsp;up.</p>

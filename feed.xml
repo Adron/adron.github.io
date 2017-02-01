@@ -14,16 +14,16 @@
       <pubDate>Tue, 31 Jan 2017 04:27:09 -0800</pubDate>
       <guid isPermaLink="true">http://adron.github.io/articles/setting-up-gcp-container-cluster/</guid>
       <author></author>
-      <description>&lt;div class=&quot;image float-right&quot;&gt;
-    &lt;img src=&quot;http://adron.github.io/articles/setting-up-gcp-container-cluster/streamset2.jpg&quot; alt=&quot;Streamsets&quot;&gt;
-&lt;/div&gt;
-
-&lt;p&gt;I set out to create a container cluster to work with in Google Cloud. These are the notes of that effort I undertook. On the heels of this article I’m putting together the notes also on getting Drone.io fully setup with an appropriate domain name and the like for use in full production grade work. For now, here’s the lowdown on the steps I took to get educated on and informed about setup and use of the Google Container Cluster.&lt;/p&gt;
+      <description>&lt;p&gt;I set out to create a container cluster to work with in Google Cloud. These are the notes of that effort I undertook. On the heels of this article I’m putting together the notes also on getting Drone.io fully setup with an appropriate domain name and the like for use in full production grade work. For now, here’s the lowdown on the steps I took to get educated on and informed about setup and use of the Google Container Cluster.&lt;/p&gt;
 &lt;p&gt;First exploratory script I ran based on instructions &lt;a href=&quot;https://cloud.google.com/container-engine/docs/clusters/operations&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;gcloud container clusters create working-space \
   --zone us-central1-a \
   --additional-zones us-central1-b,us-central1-c
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Here’s the container cluster listing.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/setting-up-gcp-container-cluster/gcp-01.png&quot; alt=&quot;Google Cloud&quot;&gt;&lt;/p&gt;
+&lt;p&gt;This is the list of instances running providing the nodes for the cluster.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/setting-up-gcp-container-cluster/gcp-02.png&quot; alt=&quot;Google Cloud&quot;&gt;&lt;/p&gt;
 &lt;p&gt;I deleted that after I confirmed it did what I expected. Which was mostly true.&lt;/p&gt;
 &lt;p&gt;Observations:&lt;/p&gt;
 &lt;ul&gt;
@@ -58,7 +58,7 @@ NAME                      REGION           NETWORK       RANGE
 ...default networks were listed here...
 worker-space-default      us-central1      worker-space  10.128.0.0/20
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;So even &lt;code&gt;gcloud&lt;/code&gt; finds that the network name is &lt;em&gt;worker-space-default&lt;/em&gt; and the network is &lt;em&gt;worker-space&lt;/em&gt;? Is that right? That’s actually a little confusing. In the interface it looks like this.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://adron.github.io/articles/setting-up-gcp-container-cluster/3.png&quot; alt=&quot;Google Cloud Console&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/setting-up-gcp-container-cluster/gcp-03.png&quot; alt=&quot;Google Cloud Console&quot;&gt;&lt;/p&gt;
 &lt;p&gt;Ah, I try this.&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;$ gcloud container clusters create secondary-delete --network worker-space --subnetwork us-central1
 ERROR: (gcloud.container.clusters.create) ResponseError: code=400, message=Subnetwork &amp;quot;projects/that-big-universe/regions/us-west1/subnetworks/us-central1&amp;quot; is not valid for Network &amp;quot;worker-space&amp;quot;.
@@ -89,7 +89,11 @@ ERROR: (gcloud.container.clusters.create) ResponseError: code=400, message=zone 
     ]
   }
 }
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Alright, that worked beautifully. If anybody has any idea what the issue is with my aforementioned attempts to create a cluster using gcloud and the network and subnetwork please ping me via &lt;a href=&quot;https://twitter.com/Adron&quot;&gt;@Adron&lt;/a&gt; and we’ll DM or email if you would. (Also, for more info on getting started with GCP with Terraform, check out my article “&lt;a href=&quot;http://blog.adron.me/articles/working-with-google-compute-engine/&quot;&gt;Working With Google Compute Engine (GCE) using Terraform (With a load of Bash Scripts too) &lt;/a&gt;“)&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The console container cluster display once it completes.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/setting-up-gcp-container-cluster/gcp-04.png&quot; alt=&quot;Google Cloud Console&quot;&gt;&lt;/p&gt;
+&lt;p&gt;The console instances listed again. This time of course, just like the node count in the config above and the zone being only set to west1-b, I’ve got 3 instances.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/setting-up-gcp-container-cluster/gcp-04.png&quot; alt=&quot;Google Cloud Console&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Alright, that worked beautifully. If anybody has any idea what the issue is with my aforementioned attempts to create a cluster using gcloud and the network and subnetwork please ping me via &lt;a href=&quot;https://twitter.com/Adron&quot;&gt;@Adron&lt;/a&gt; and we’ll DM or email if you would. (Also, for more info on getting started with GCP with Terraform, check out my article “&lt;a href=&quot;http://blog.adron.me/articles/working-with-google-compute-engine/&quot;&gt;Working With Google Compute Engine (GCE) using Terraform (With a load of Bash Scripts too) &lt;/a&gt;“)&lt;/p&gt;
 &lt;p&gt;Next step I needed to connect kubectl to the cluster. This is one of the spaces where a lot of Google documentation is lacking since it also assumes you’ve followed some pre-baked route to gain credentials. For instance, int he interface the thing I pointed to earlier, just uses kubectl and gcloud does some crazy black magic in the background that require tertiary RTFMing in order to figure out what is actually going on, retrace those steps, and connect yourself. The first thing I tried was to set the cluster.&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;kubectl config set-cluster development-systems
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Then did a quick &lt;code&gt;kubectl config view&lt;/code&gt; which showed that things were set correctly. Then I tried to run &lt;code&gt;kubectl cluster-info&lt;/code&gt; just to see what’s up.&lt;/p&gt;
@@ -3679,36 +3683,6 @@ export TF_VAR_password=&amp;quot;someSecretPassword&amp;quot;
 </description>
     </item>
     <item>
-      <title>The SAM Pattern - a distributed system view of Front-End architectures by Jean-Jacques Dubray</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-jean-jacques-dubray/</link>
-      <pubDate>Sat, 04 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-jean-jacques-dubray/</guid>
-      <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-jean-jacques-dubray/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-left&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-jean-jacques-dubray/jj-sized.png&quot; alt=&quot;Jean-Jacques Dubray&quot;&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Jean-Jacques Dubray is the founder of &lt;a href=&quot;http://xgen.io&quot;&gt;xgen.io&lt;/a&gt; and &lt;a href=&quot;http://www.gliiph.com&quot;&gt;gliiph&lt;/a&gt;. He has been building Service Oriented Architectures,
-and API platforms for the last 15 years. He is a former member of the research staff at HRL and earned his Ph.D. from
-the University of Provence (Luminy campus), home of the Prolog language. He is the inventor of the &lt;a href=&quot;http://www.xgenio.com/bolt-introduction.pdf&quot;&gt;BOLT methodology&lt;/a&gt; and the SAM pattern.&lt;/p&gt;
-&lt;p&gt;In his talk Jean-Jacques Dubray presents that Web Applications are rapidly becoming sophisticated distributed systems. When you look at a Facebook page or a Netflix catalog,
-the number of components interacting with each other requires complex synchronization and state management capabilities, reaching
-the limits of the MVC pattern.&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;In the last couple of years, several reactive architectures have started to get some interest (React, Cycle.js, ELM) without
-generating significant traction (compared to established frameworks like Angular), while struggling to position effects in their
-programming model. A new reactive, functional pattern, the State-Action-Model pattern (SAM) was introduced in early 2016 on the
-foundation of TLA+ semantics.&lt;/p&gt;
-&lt;p&gt;The pattern, which is unapologetically driven by simplicity, promotes a clear delineation between the business logic and the view
-and challenges the complexity of frameworks like Google’s Angular or Facebook’s React/Redux.&lt;/p&gt;
-&lt;p&gt;SAM’s unidirectional flow is also challenging interactive patterns like BFF (Back-End for Front-End) or the Vertical Slice Pattern
-which suggest creating view-specific APIs, per platform, app, versions of an app…&lt;/p&gt;
-&lt;p&gt;We’ll start by reviewing some of the key challenges of modern UX and Front-End Architectures. We will then present the
-key concepts of SAM and walk the audience through some node.js code samples (including server-side TimeTravel).&lt;/p&gt;
-</description>
-    </item>
-    <item>
       <title>Modern Javascript Frameworks - Introduction to Ember.JS and Ember-CLI by Suchita Doshi</title>
       <link>http://adron.github.io/articles/node-pdx-2016-suchita-doshi/</link>
       <pubDate>Sat, 04 Jun 2016 17:00:00 -0700</pubDate>
@@ -3736,6 +3710,36 @@ In this talk I would be covering the following:&lt;/p&gt;
 &lt;li&gt;Live Demo on how it’s really intuitive in a couple of non-trivial scenarios.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;So basically my goal is to attract more developers to adapt modern javascript frameworks and make a difference in the way complex apps are built.”&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>The SAM Pattern - a distributed system view of Front-End architectures by Jean-Jacques Dubray</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-jean-jacques-dubray/</link>
+      <pubDate>Sat, 04 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-jean-jacques-dubray/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-jean-jacques-dubray/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-left&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-jean-jacques-dubray/jj-sized.png&quot; alt=&quot;Jean-Jacques Dubray&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Jean-Jacques Dubray is the founder of &lt;a href=&quot;http://xgen.io&quot;&gt;xgen.io&lt;/a&gt; and &lt;a href=&quot;http://www.gliiph.com&quot;&gt;gliiph&lt;/a&gt;. He has been building Service Oriented Architectures,
+and API platforms for the last 15 years. He is a former member of the research staff at HRL and earned his Ph.D. from
+the University of Provence (Luminy campus), home of the Prolog language. He is the inventor of the &lt;a href=&quot;http://www.xgenio.com/bolt-introduction.pdf&quot;&gt;BOLT methodology&lt;/a&gt; and the SAM pattern.&lt;/p&gt;
+&lt;p&gt;In his talk Jean-Jacques Dubray presents that Web Applications are rapidly becoming sophisticated distributed systems. When you look at a Facebook page or a Netflix catalog,
+the number of components interacting with each other requires complex synchronization and state management capabilities, reaching
+the limits of the MVC pattern.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;In the last couple of years, several reactive architectures have started to get some interest (React, Cycle.js, ELM) without
+generating significant traction (compared to established frameworks like Angular), while struggling to position effects in their
+programming model. A new reactive, functional pattern, the State-Action-Model pattern (SAM) was introduced in early 2016 on the
+foundation of TLA+ semantics.&lt;/p&gt;
+&lt;p&gt;The pattern, which is unapologetically driven by simplicity, promotes a clear delineation between the business logic and the view
+and challenges the complexity of frameworks like Google’s Angular or Facebook’s React/Redux.&lt;/p&gt;
+&lt;p&gt;SAM’s unidirectional flow is also challenging interactive patterns like BFF (Back-End for Front-End) or the Vertical Slice Pattern
+which suggest creating view-specific APIs, per platform, app, versions of an app…&lt;/p&gt;
+&lt;p&gt;We’ll start by reviewing some of the key challenges of modern UX and Front-End Architectures. We will then present the
+key concepts of SAM and walk the audience through some node.js code samples (including server-side TimeTravel).&lt;/p&gt;
 </description>
     </item>
     <item>

@@ -4,11 +4,6 @@ author: Adron Hall
 date: 2017-01-31 12:27:09
 template: article.jade
 ---
-
-<div class="image float-right">
-    ![Streamsets](streamset2.jpg)
-</div>
-
 I set out to create a container cluster to work with in Google Cloud. These are the notes of that effort I undertook. On the heels of this article I'm putting together the notes also on getting Drone.io fully setup with an appropriate domain name and the like for use in full production grade work. For now, here's the lowdown on the steps I took to get educated on and informed about setup and use of the Google Container Cluster.
 
 First exploratory script I ran based on instructions [here](https://cloud.google.com/container-engine/docs/clusters/operations).
@@ -20,6 +15,14 @@ gcloud container clusters create working-space \
 ```
 
 <span class="more"></span>
+
+Here's the container cluster listing.
+
+![Google Cloud](gcp-01.png)
+
+This is the list of instances running providing the nodes for the cluster.
+
+![Google Cloud](gcp-02.png)
 
 I deleted that after I confirmed it did what I expected. Which was mostly true.
 
@@ -76,7 +79,7 @@ worker-space-default      us-central1      worker-space  10.128.0.0/20
 
 So even `gcloud` finds that the network name is *worker-space-default* and the network is *worker-space*? Is that right? That's actually a little confusing. In the interface it looks like this.
 
-![Google Cloud Console](3.png)
+![Google Cloud Console](gcp-03.png)
 
 Ah, I try this.
 
@@ -125,6 +128,14 @@ resource "google_container_cluster" "development" {
   }
 }
 ```
+
+The console container cluster display once it completes.
+
+![Google Cloud Console](gcp-04.png)
+
+The console instances listed again. This time of course, just like the node count in the config above and the zone being only set to west1-b, I've got 3 instances.
+
+![Google Cloud Console](gcp-04.png)
 
 Alright, that worked beautifully. If anybody has any idea what the issue is with my aforementioned attempts to create a cluster using gcloud and the network and subnetwork please ping me via [@Adron](https://twitter.com/Adron) and we'll DM or email if you would. (Also, for more info on getting started with GCP with Terraform, check out my article "[Working With Google Compute Engine (GCE) using Terraform (With a load of Bash Scripts too) ](http://blog.adron.me/articles/working-with-google-compute-engine/)")
 
