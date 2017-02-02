@@ -5,7 +5,7 @@ resource "google_compute_instance" "redirector" {
   tags = [
     "http-server",
     "https-server"]
-  zone = "us-central1-b"
+  zone = "us-west1-b"
 
   disk {
     image = "redirector-1485899054"

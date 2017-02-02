@@ -9,3 +9,6 @@ The `packer` directory has all files related to creating Packer images.
 * redirector.json - This is an image used for running Nginx for redirects and other related activities.
 * nginx.conf - This is the configuration file with the various redirects and other customizations added to the file.
 * install-nginx.sh - This includes the firewall installation, configuration, and setup along with other necessary steps for creating an Nginx server image.
+
+
+The datadiluvium.com domain Terraform files are located in the Data Diluvium Project repository under the [infrastructure directory](https://github.com/Adron/datadiluvium/tree/master/infrastructure).
