@@ -11,3 +11,11 @@ resource "google_dns_record_set" "compositecodecom" {
     ttl = 30
     rrdatas = ["192.30.252.154", "192.30.252.153"]
 }
+
+resource "google_dns_record_set" "dronecompositecodecom" {
+    managed_zone = "${google_dns_managed_zone.compositecodecom.name}"
+    name = "drone.${google_dns_managed_zone.compositecodecom.dns_name}"
+    type = "A"
+    ttl = 5
+    rrdatas = ["35.185.193.72"]
+}
