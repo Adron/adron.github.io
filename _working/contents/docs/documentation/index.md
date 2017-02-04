@@ -74,10 +74,10 @@ template: doc.jade
         <li class="is-folder">Coding -
             <span class="file-tree-description">Random Notes, Docs, and Other Bits</span>
             <ul>
-                <li class="is-file">Nginx -
-                    <span class="file-tree-description">[Python PIP](../../docs/Python-PIP-Etc/)</span>
+                <li class="is-file">Python -
+                    <span class="file-tree-description">[PIP](../../docs/Python-PIP-Etc/)</span>
                 </li>
-                <li class="is-file">Google Chrome -
+                <li class="is-file">Node.js Installation -
                     <span class="file-tree-description">[Best Practice Way to Install Node.js](../../docs/Best-Practice-Way-To-Install-Nodejs/)</span>
                 </li>
             </ul>

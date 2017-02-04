@@ -6,7 +6,7 @@ template: doc.jade
 ---
 The latest, quickest, and easiest way to insure a clean install of Node.js is to use nvm. The Node Version Manager harkens to the rvm or Ruby Version Manager, basically managing which version or versions you have on your computer. First install nvm using curl as shown.
 
-    curl https://raw.githubusercontent.com/creationix/nvm/v0.25.0/install.sh | bash
+    curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.0/install.sh | bash
 
 Then install node.js like this.
 
