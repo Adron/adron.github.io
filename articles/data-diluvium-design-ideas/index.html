@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="/css/style.min.css">
     <script src="/js/modernizr.js"></script>
   </head>
-  <body>
+  <body class="article-detail">
     <!--[if lt IE 8]>
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -67,8 +67,10 @@
             <div class="col-md-12">
               <!-- Page Info-->
               <div class="page-info page-info-simple">
-                <h1>Adron's Composite Code</h1>
-                <h2 class="description">Coder, Messenger, Recon, Infrastructure, Ops</h2>
+                <h1>Data Diluvium Design Ideas</h1>
+                <p class="author">Written by <span class="author">Adron Hall</span> and published on <span>February, 04 of 2017.</span>
+                </p>
+                <div class="nav"><a href="/">« Home</a></div>
               </div>
               <!-- End Page Info-->
             </div>
@@ -83,66 +85,94 @@
             <div class="col-md-9">
               <div class="main-content">
                 <!-- Blog Page-->
-                <div class="blog">
-                  <div class="row"></div>
-                </div>
-                <div class="col-md-12 col-sm-12">
-                  <!-- Blog List-->
-                  <div class="blog-grid">
-                    <div class="row">
-                      <div class="col-md-12 col-sm-12">
-                        <h3 class="blog-grid-title"><a href="/articles/want-a-golang-cli/">I Want a Go CLI</a></h3>
-                        <p class="blog-grid-excerpt"><div class="image float-left">
-    <img src="/articles/want-a-golang-cli/united-airlines-boeing-777.jpg" alt="United Airlines Boeing 777">
+                <article class="article">
+                  <section class="content"><div class="image float-right">
+    <img src="/articles/data-diluvium-design-ideas/dd-logo.jpg" alt="Data Diluvium">
 </div>
 
-<p>I sat in seat 20B on United Airlines Flight <span class="caps">UA</span> 949, enjoying the roominess of the Boeing 777 in service on this route between London (LHR) and San Francisco (SFO). At this time I decided it was time to hack together a <a href="https://golang.org/">Go</a> <a href="https://en.wikipedia.org/wiki/Command-line_interface"><span class="caps">CLI</span></a>&nbsp;Project.</p>
-<p><strong>Mission:</strong> Create a Command Line Interface (<span class="caps">CLI</span>) that takes some flags, basic user input, and prints out&nbsp;something.</p>
-<p>
-                          <p class="more"><a href="/articles/want-a-golang-cli/">more</a></p>
-                        </p>
-                        <div class="blog-grid-meta"><span class="blog-grid-date">25. October 2016</span></div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End of Blog List-->
-                </div>
-                <div class="col-md-12 col-sm-12">
-                  <!-- Blog List-->
-                  <div class="blog-grid">
-                    <div class="row">
-                      <div class="col-md-12 col-sm-12">
-                        <h3 class="blog-grid-title"><a href="/articles/devops-obliviousness-site-reliability-wtf/">Marketing Obliviousness of DevOps, WTF is Site Reliability</a></h3>
-                        <p class="blog-grid-excerpt"><p>Recently I started researching what people think DevOps means. What it was originally intended to mean and how ridiculous it is to actually see it in a job title. On the flip of that, since one of my titles was actually “Site Reliability Engineer” I started looking into what is perceived to be the roles of that job. This article is my findings, in full unconstrained wording, about the absurdity of one as a title and the specifics of the&nbsp;other.</p>
-<p><img src="/articles/devops-obliviousness-site-reliability-wtf/syntax%20error.gif" alt="Syntax Error Explosion"></p>
-<p>
-                          <p class="more"><a href="/articles/devops-obliviousness-site-reliability-wtf/">more</a></p>
-                        </p>
-                        <div class="blog-grid-meta"><span class="blog-grid-date">24. October 2016</span></div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End of Blog List-->
-                </div>
-                <div class="col-md-12 col-sm-12">
-                  <!-- Blog List-->
-                  <div class="blog-grid">
-                    <div class="row">
-                      <div class="col-md-12 col-sm-12">
-                        <h3 class="blog-grid-title"><a href="/articles/enterprise-open-source-anti-patterns/">Enterprise Open Source Anti-patterns</a></h3>
-                        <p class="blog-grid-excerpt"><p><a href="/articles/holy-shit-watch-out-for-that-enterprise-open-source/">Part I</a>, <a href="/articles/enterprise-open-source-tactical/">Part <span class="caps">II</span></a>, <a href="/articles/enterprise-cultural-characteristics/">Part <span class="caps">III</span></a>,
-<a href="/articles/enterprise-open-source-anti-patterns">Part <span class="caps">IV</span> (That’s this article)</a>.</p>
-<p>In the <a href="/articles/holy-shit-watch-out-for-that-enterprise-open-source/">first part</a> of this series I kicked off writing about how we created a manifesto at <a href="http://www.homedepot.com">Home Depot</a>. This is something I’d strongly urge anybody that is helping to lead an enterprise toward open source efforts. The <a href="/articles/enterprise-open-source-tactical/">second part</a> focused on tactical tools used with open source software development. I’ll be adding more to the tools conversation a bit later in this series. Then in <a href="/articles/enterprise-cultural-characteristics/">part three</a> I delved into some of the positive cultural characteristics of a team working on open source&nbsp;projects.</p>
-<p>In this part of the series I want to share a few thoughts on some of the anti-patterns that came up in the process. These are specific hurdles that continue to afflict the efforts, and range from a general disturbance or an outright conflict with&nbsp;efforts.</p>
-<p>
-                          <p class="more"><a href="/articles/enterprise-open-source-anti-patterns/">more</a></p>
-                        </p>
-                        <div class="blog-grid-meta"><span class="blog-grid-date">20. October 2016</span></div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End of Blog List-->
-                </div>
+<p>This post includes a collection of my thoughts on design and architecture of a data generation service project I’ve started called <a href="http://datadiluvium.com">Data Diluvium</a>. I’m very open to changes, new ideas, or completely different paradigms around these plans altogether. You can jump into the conversation <a href="https://github.com/Adron/datadiluvium/issues/9">thread</a>. What kind of data do you often need? What systems do you want it inserted&nbsp;into?</p>
+<p>Breakdown of Article&nbsp;Ideas:</p>
+<ul>
+<li><strong>Collected Systems <span class="caps">API</span></strong> - This <span class="caps">API</span> service idea revolves around a request that accepts a schema type for a particular database type, an export source for inserting the data into, and generating an amount of data per the requested amount. The response then initiates that data generation, while responding with a received message and confirmation based on what it has&nbsp;received.</li>
+<li><strong>Individual Request <span class="caps">API</span></strong> - This <span class="caps">API</span> service idea (thanks to Dave Curylo for this one, <a href="https://github.com/Adron/datadiluvium/issues/9#issuecomment-276117856">posted in the thread</a>) revolves around the generation of data, requested at end points for a particular type of random data&nbsp;generation.</li>
+</ul>
+<p>Alright, time to dive deeper into each of&nbsp;these.</p>
+<p><span class="more"></span></p>
+<h2 id="collected-systems-apis">Collected Systems&nbsp;APIs</h2>
+<ul>
+<li><p><em><a href="https://datadiluvium.com/schema/generate">https://datadiluvium.com/schema/generate</a></em> - This <span class="caps">API</span> end point would take a schema with the various properties needed. For any that aren’t set, a default would be set. The generation process would then randomize, generate, and insert this data into any destination source specified. Here are some prospective examples I’ve&nbsp;created:</p>
+<p><em>A very basic sample <span class="caps">JSON</span>&nbsp;schema</em></p>
+<pre><code class="lang-javascript">[
+  {
+    <span class="string">"schema"</span>: <span class="string">"relational"</span>,
+    <span class="string">"database"</span>: <span class="string">"text"</span>
+  }
+]
+</code></pre>
+<p>In this particular example, I’ve created the simplist schema that could be sent into the service. For this particular situation I’d have (currently not decided yet) defaults that would randomly create a table, with a single column, and generate one element of data in that table. Other properties could be set, which would give control over the structure created in which to insert the data into. An example would be the&nbsp;following.</p>
+<pre><code class="lang-javascript">[
+  {
+    <span class="string">"schema"</span>: <span class="string">"relational"</span>,
+    <span class="string">"database"</span>: <span class="string">"postgresql"</span>,
+    <span class="string">"structure"</span>: [
+      {
+        <span class="string">"table"</span>: <span class="string">"Users"</span>,
+        <span class="string">"columns"</span>: [
+          {<span class="string">"name"</span>: <span class="string">"id"</span>, <span class="string">"type"</span>: <span class="string">"uuid"</span>},
+          {<span class="string">"name"</span>: <span class="string">"firstname"</span>, <span class="string">"type"</span>: <span class="string">"firstname"</span>},
+          {<span class="string">"name"</span>: <span class="string">"lastname"</span>, <span class="string">"type"</span>: <span class="string">"lastname"</span>},
+          {<span class="string">"name"</span>: <span class="string">"email_address"</span>, <span class="string">"type"</span>: <span class="string">"email"</span>}
+        ]
+      },
+      {
+        <span class="string">"table"</span>: <span class="string">"Addresses"</span>,
+        <span class="string">"columns"</span>: [
+          {<span class="string">"name"</span>: <span class="string">"id"</span>, <span class="string">"type"</span>: <span class="string">"uuid"</span>},
+          {<span class="string">"name"</span>: <span class="string">"street"</span>, <span class="string">"type"</span>: <span class="string">"address"</span>},
+          {<span class="string">"name"</span>: <span class="string">"city"</span>, <span class="string">"type"</span>: <span class="string">"city"</span>},
+          {<span class="string">"name"</span>: <span class="string">"state"</span>, <span class="string">"type"</span>: <span class="string">"state"</span>},
+          {<span class="string">"name"</span>: <span class="string">"postalcode"</span>, <span class="string">"type"</span>: <span class="string">"zip"</span>}
+        ]
+      },
+      {
+        <span class="string">"table"</span>: <span class="string">"Transactions"</span>,
+        <span class="string">"columns"</span>: [
+          { <span class="string">"name"</span>: <span class="string">"id"</span>, <span class="string">"type"</span>: <span class="string">"uuid"</span> },
+          { <span class="string">"name"</span>: <span class="string">"transaction"</span>, <span class="string">"type"</span>: <span class="string">"money"</span> },
+          { <span class="string">"name"</span>: <span class="string">"stamp"</span>, <span class="string">"type"</span>: <span class="string">"date"</span> }
+        ]
+      }
+    ]
+  }
+]
+</code></pre>
+<p>In this example, the properties included are three tables; <em>Users</em>, <em>Addresses</em>, and <em>Transactions</em>. In the first table, <em>Users</em>, the columsn would be; <em>id</em>, <em>firstname</em>, <em>lastname</em>, and <em>email_address</em>. Each of these then have a <em>type</em> property which sets the type of data to be generated for the columns. The same type of set of properties is then included for the <em>Addresses</em> and <em>Transactions</em> tables and their respective&nbsp;columns.</p>
+<p>Some additional questions remain, such as if the tables exist in the database, would the insertion build <span class="caps">SQL</span> to create the tables? Should it be assumed that the tables exist already and have the appropriate settings set to insert the data into the tables? Again, a great thing to discuss on the <a href="https://github.com/Adron/datadiluvium/issues/9">thread here</a>.</p>
+</li>
+<li><p><em><a href="https://datadiluvium.com/schema/validate">https://datadiluvium.com/schema/validate</a></em> - This could be used to validate a schema request body. Simply submit a schema and a validation response would be returned with “Valid” or “Invalid”. In the case of an invalid response, a list of prospective and known errors would be&nbsp;returned.</p>
+</li>
+</ul>
+<p>These two <span class="caps">API</span> end points focus around building out large data to test systemic environments and the respective construction of those environments. The actual generation of the data is assumed for this API service and the individual generation of data is discussed below in the individual request&nbsp;APIs.</p>
+<h2 id="individual-request-apis">Individual Request&nbsp;APIs</h2>
+<p>The following <span class="caps">API</span> calls could be implemented with fairly straight forward random data generation. A number can easily be randomized and returned, a word can be chosen from a dictionary, and a city returned from a list of cities. The following are prospective API calls to return data of this&nbsp;type.</p>
+<ul>
+<li><em><a href="https://datadiluvium.com/random/number/">https://datadiluvium.com/random/number/</a></em></li>
+<li><em><a href="https://datadiluvium.com/random/word/">https://datadiluvium.com/random/word/</a></em></li>
+<li><em><a href="https://datadiluvium.com/random/city/">https://datadiluvium.com/random/city/</a></em></li>
+</ul>
+<p>The next level of complexity for data generation would be the slightly structured data generation. Instead of having an arbitrary list of addresses, we could or would prospectively generate one. But on the other hand, maybe we should just randomly create actual addresses that can be validated against an actual real address? That seems to have the possiblity of issues in the real world in spite of the fact all the addresses out there in the world are basically publicly accessible data. But questioning how or what the data would or could actually represent will be a great thing to discuss in the <a href="https://github.com/Adron/datadiluvium/issues/9">thread</a>.</p>
+<ul>
+<li><em><a href="https://datadiluvium.com/random/address/">https://datadiluvium.com/random/address/</a></em></li>
+<li><em><a href="https://datadiluvium.com/random/name/">https://datadiluvium.com/random/name/</a></em></li>
+</ul>
+<p>The next level of data generation complexity would be to generate sentences and other related data. This could be done a number of ways. If we wanted to have it generate intelligent sentences that made sense, it would take a little bit more work then for example generating lorum&nbsp;ipsum.</p>
+<ul>
+<li><em><a href="https://datadiluvium.com/random/sentence/">https://datadiluvium.com/random/sentence/</a></em></li>
+</ul>
+<h3 id="tldr-"><span class="caps">TLDR</span>;</h3>
+<p>This blog entry just details the starting point of features for the <a href="http://datadiluvium.com/">Data Diluvium Project</a>. If you’d like to jump into the project too, let me know. I’m generally working on the project during the weekends and a little during the week. There’s already a <a href="https://github.com/Adron/datadiluvium">building project base</a> that I’m starting with. If you’re interested in writing some F#, check out the work Dave Curylo has done <a href="/articles/data-diluvium-design-ideas/">here</a>. I’ve been pondering breaking it out to another project and sticking to the idea of microservice but with F# for the work he put in. Anyway if you’ve got ideas on how to generate data, how you’d like to use it in your applications, or other related ideas please dive into the conversation on the <a href="https://github.com/Adron/datadiluvium/issues/9">Github Thread here</a>.</p>
+</section>
+                </article>
                 <!-- End of Blog Page-->
               </div>
             </div>
@@ -232,8 +262,7 @@
             </div>
           </div>
         </div>
-        <div class="nav"><a href="/page/4/">« Newer</a>&nbsp;<a href="/page/6/">Previous »</a>
-        </div>
+        <div class="nav"><a href="/">« Home</a></div>
       </div>
     </div>
     <script src="/js/all.js"></script>

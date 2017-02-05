@@ -5,9 +5,102 @@
     <atom:link href="http://adron.github.io/feed.xml" rel="self" type="application/rss+xml"></atom:link>
     <link>http://adron.github.io</link>
     <description>Coder, Messenger, Recon, Infrastructure, Ops</description>
-    <pubDate>Tue, 31 Jan 2017 04:27:09 -0800</pubDate>
+    <pubDate>Sat, 04 Feb 2017 04:44:58 -0800</pubDate>
     <generator>Wintersmith - https://github.com/jnordberg/wintersmith</generator>
     <language>en</language>
+    <item>
+      <title>Data Diluvium Design Ideas</title>
+      <link>http://adron.github.io/articles/data-diluvium-design-ideas/</link>
+      <pubDate>Sat, 04 Feb 2017 04:44:58 -0800</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/data-diluvium-design-ideas/</guid>
+      <author></author>
+      <description>&lt;div class=&quot;image float-right&quot;&gt;
+    &lt;img src=&quot;/articles/data-diluvium-design-ideas/dd-logo.jpg&quot; alt=&quot;Data Diluvium&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;This post includes a collection of my thoughts on design and architecture of a data generation service project I’ve started called &lt;a href=&quot;http://datadiluvium.com&quot;&gt;Data Diluvium&lt;/a&gt;. I’m very open to changes, new ideas, or completely different paradigms around these plans altogether. You can jump into the conversation &lt;a href=&quot;https://github.com/Adron/datadiluvium/issues/9&quot;&gt;thread&lt;/a&gt;. What kind of data do you often need? What systems do you want it inserted into?&lt;/p&gt;
+&lt;p&gt;Breakdown of Article Ideas:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Collected Systems API&lt;/strong&gt; - This API service idea revolves around a request that accepts a schema type for a particular database type, an export source for inserting the data into, and generating an amount of data per the requested amount. The response then initiates that data generation, while responding with a received message and confirmation based on what it has received.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Individual Request API&lt;/strong&gt; - This API service idea (thanks to Dave Curylo for this one, &lt;a href=&quot;https://github.com/Adron/datadiluvium/issues/9#issuecomment-276117856&quot;&gt;posted in the thread&lt;/a&gt;) revolves around the generation of data, requested at end points for a particular type of random data generation.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Alright, time to dive deeper into each of these.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;h2 id=&quot;collected-systems-apis&quot;&gt;Collected Systems APIs&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;em&gt;&lt;a href=&quot;https://datadiluvium.com/schema/generate&quot;&gt;https://datadiluvium.com/schema/generate&lt;/a&gt;&lt;/em&gt; - This API end point would take a schema with the various properties needed. For any that aren’t set, a default would be set. The generation process would then randomize, generate, and insert this data into any destination source specified. Here are some prospective examples I’ve created:&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;A very basic sample JSON schema&lt;/em&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;[
+  {
+    &lt;span class=&quot;string&quot;&gt;&quot;schema&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;relational&quot;&lt;/span&gt;,
+    &lt;span class=&quot;string&quot;&gt;&quot;database&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;text&quot;&lt;/span&gt;
+  }
+]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;In this particular example, I’ve created the simplist schema that could be sent into the service. For this particular situation I’d have (currently not decided yet) defaults that would randomly create a table, with a single column, and generate one element of data in that table. Other properties could be set, which would give control over the structure created in which to insert the data into. An example would be the following.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;[
+  {
+    &lt;span class=&quot;string&quot;&gt;&quot;schema&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;relational&quot;&lt;/span&gt;,
+    &lt;span class=&quot;string&quot;&gt;&quot;database&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;postgresql&quot;&lt;/span&gt;,
+    &lt;span class=&quot;string&quot;&gt;&quot;structure&quot;&lt;/span&gt;: [
+      {
+        &lt;span class=&quot;string&quot;&gt;&quot;table&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;Users&quot;&lt;/span&gt;,
+        &lt;span class=&quot;string&quot;&gt;&quot;columns&quot;&lt;/span&gt;: [
+          {&lt;span class=&quot;string&quot;&gt;&quot;name&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;id&quot;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&quot;type&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;uuid&quot;&lt;/span&gt;},
+          {&lt;span class=&quot;string&quot;&gt;&quot;name&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;firstname&quot;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&quot;type&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;firstname&quot;&lt;/span&gt;},
+          {&lt;span class=&quot;string&quot;&gt;&quot;name&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;lastname&quot;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&quot;type&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;lastname&quot;&lt;/span&gt;},
+          {&lt;span class=&quot;string&quot;&gt;&quot;name&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;email_address&quot;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&quot;type&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;email&quot;&lt;/span&gt;}
+        ]
+      },
+      {
+        &lt;span class=&quot;string&quot;&gt;&quot;table&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;Addresses&quot;&lt;/span&gt;,
+        &lt;span class=&quot;string&quot;&gt;&quot;columns&quot;&lt;/span&gt;: [
+          {&lt;span class=&quot;string&quot;&gt;&quot;name&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;id&quot;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&quot;type&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;uuid&quot;&lt;/span&gt;},
+          {&lt;span class=&quot;string&quot;&gt;&quot;name&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;street&quot;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&quot;type&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;address&quot;&lt;/span&gt;},
+          {&lt;span class=&quot;string&quot;&gt;&quot;name&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;city&quot;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&quot;type&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;city&quot;&lt;/span&gt;},
+          {&lt;span class=&quot;string&quot;&gt;&quot;name&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;state&quot;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&quot;type&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;state&quot;&lt;/span&gt;},
+          {&lt;span class=&quot;string&quot;&gt;&quot;name&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;postalcode&quot;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&quot;type&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;zip&quot;&lt;/span&gt;}
+        ]
+      },
+      {
+        &lt;span class=&quot;string&quot;&gt;&quot;table&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;Transactions&quot;&lt;/span&gt;,
+        &lt;span class=&quot;string&quot;&gt;&quot;columns&quot;&lt;/span&gt;: [
+          { &lt;span class=&quot;string&quot;&gt;&quot;name&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;id&quot;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&quot;type&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;uuid&quot;&lt;/span&gt; },
+          { &lt;span class=&quot;string&quot;&gt;&quot;name&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;transaction&quot;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&quot;type&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;money&quot;&lt;/span&gt; },
+          { &lt;span class=&quot;string&quot;&gt;&quot;name&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;stamp&quot;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&quot;type&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;date&quot;&lt;/span&gt; }
+        ]
+      }
+    ]
+  }
+]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;In this example, the properties included are three tables; &lt;em&gt;Users&lt;/em&gt;, &lt;em&gt;Addresses&lt;/em&gt;, and &lt;em&gt;Transactions&lt;/em&gt;. In the first table, &lt;em&gt;Users&lt;/em&gt;, the columsn would be; &lt;em&gt;id&lt;/em&gt;, &lt;em&gt;firstname&lt;/em&gt;, &lt;em&gt;lastname&lt;/em&gt;, and &lt;em&gt;email_address&lt;/em&gt;. Each of these then have a &lt;em&gt;type&lt;/em&gt; property which sets the type of data to be generated for the columns. The same type of set of properties is then included for the &lt;em&gt;Addresses&lt;/em&gt; and &lt;em&gt;Transactions&lt;/em&gt; tables and their respective columns.&lt;/p&gt;
+&lt;p&gt;Some additional questions remain, such as if the tables exist in the database, would the insertion build SQL to create the tables? Should it be assumed that the tables exist already and have the appropriate settings set to insert the data into the tables? Again, a great thing to discuss on the &lt;a href=&quot;https://github.com/Adron/datadiluvium/issues/9&quot;&gt;thread here&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;em&gt;&lt;a href=&quot;https://datadiluvium.com/schema/validate&quot;&gt;https://datadiluvium.com/schema/validate&lt;/a&gt;&lt;/em&gt; - This could be used to validate a schema request body. Simply submit a schema and a validation response would be returned with “Valid” or “Invalid”. In the case of an invalid response, a list of prospective and known errors would be returned.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;These two API end points focus around building out large data to test systemic environments and the respective construction of those environments. The actual generation of the data is assumed for this API service and the individual generation of data is discussed below in the individual request APIs.&lt;/p&gt;
+&lt;h2 id=&quot;individual-request-apis&quot;&gt;Individual Request APIs&lt;/h2&gt;
+&lt;p&gt;The following API calls could be implemented with fairly straight forward random data generation. A number can easily be randomized and returned, a word can be chosen from a dictionary, and a city returned from a list of cities. The following are prospective API calls to return data of this type.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;&lt;a href=&quot;https://datadiluvium.com/random/number/&quot;&gt;https://datadiluvium.com/random/number/&lt;/a&gt;&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;&lt;a href=&quot;https://datadiluvium.com/random/word/&quot;&gt;https://datadiluvium.com/random/word/&lt;/a&gt;&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;&lt;a href=&quot;https://datadiluvium.com/random/city/&quot;&gt;https://datadiluvium.com/random/city/&lt;/a&gt;&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The next level of complexity for data generation would be the slightly structured data generation. Instead of having an arbitrary list of addresses, we could or would prospectively generate one. But on the other hand, maybe we should just randomly create actual addresses that can be validated against an actual real address? That seems to have the possiblity of issues in the real world in spite of the fact all the addresses out there in the world are basically publicly accessible data. But questioning how or what the data would or could actually represent will be a great thing to discuss in the &lt;a href=&quot;https://github.com/Adron/datadiluvium/issues/9&quot;&gt;thread&lt;/a&gt;.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;&lt;a href=&quot;https://datadiluvium.com/random/address/&quot;&gt;https://datadiluvium.com/random/address/&lt;/a&gt;&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;&lt;a href=&quot;https://datadiluvium.com/random/name/&quot;&gt;https://datadiluvium.com/random/name/&lt;/a&gt;&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The next level of data generation complexity would be to generate sentences and other related data. This could be done a number of ways. If we wanted to have it generate intelligent sentences that made sense, it would take a little bit more work then for example generating lorum ipsum.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;&lt;a href=&quot;https://datadiluvium.com/random/sentence/&quot;&gt;https://datadiluvium.com/random/sentence/&lt;/a&gt;&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;tldr-&quot;&gt;TLDR;&lt;/h3&gt;
+&lt;p&gt;This blog entry just details the starting point of features for the &lt;a href=&quot;http://datadiluvium.com/&quot;&gt;Data Diluvium Project&lt;/a&gt;. If you’d like to jump into the project too, let me know. I’m generally working on the project during the weekends and a little during the week. There’s already a &lt;a href=&quot;https://github.com/Adron/datadiluvium&quot;&gt;building project base&lt;/a&gt; that I’m starting with. If you’re interested in writing some F#, check out the work Dave Curylo has done &lt;a href=&quot;http://adron.github.io/articles/data-diluvium-design-ideas/&quot;&gt;here&lt;/a&gt;. I’ve been pondering breaking it out to another project and sticking to the idea of microservice but with F# for the work he put in. Anyway if you’ve got ideas on how to generate data, how you’d like to use it in your applications, or other related ideas please dive into the conversation on the &lt;a href=&quot;https://github.com/Adron/datadiluvium/issues/9&quot;&gt;Github Thread here&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
     <item>
       <title>Setting up a GCP Container Cluster - Part I</title>
       <link>http://adron.github.io/articles/setting-up-gcp-container-cluster/</link>
@@ -3639,6 +3732,27 @@ export TF_VAR_password=&amp;quot;someSecretPassword&amp;quot;
 </description>
     </item>
     <item>
+      <title>How to Electron by Blaine Schmeisser</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-blaine-schmeisser/</link>
+      <pubDate>Sun, 05 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-blaine-schmeisser/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-blaine-schmeisser/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-left&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-blaine-schmeisser/blainesch.jpg&quot; alt=&quot;Blaine Schmeisser&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;I’m happy to introduce Blaine Schmeisser. He’s a recent Portland transplant currently working as a Senior Software Engineer at New Relic. He has a passion for building and shipping software and an advocate for pair programming. Outside of tech, Blaine spends his free time with his dog and maintains a simplistic, eco-friendly lifestyle.&lt;/p&gt;
+&lt;p&gt;Blaine’s “How to Electron” answers questions you have about building user interface applications with JavaScript. Have you ever wanted to build desktop apps with web technology you already know? If you’ve never heard of Electron or just want to learn more about it, this talk will cover what Electron is and how to utilize it to create powerful tools like Atom and Slack. You will learn the history of Electron, how to get started, the trade-offs of picking various boiler plates, and the unique Electron specific APIs that are vital to being a Electron developer.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;GitHub: &lt;a href=&quot;https://github.com/blainesch&quot;&gt;https://github.com/blainesch&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Twitter: &lt;a href=&quot;https://twitter.com/blainesch&quot;&gt;https://twitter.com/blainesch&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Website: &lt;a href=&quot;http://blainesch.com&quot;&gt;http://blainesch.com&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    <item>
       <title>Demystifying TypeScript Decorators by James Churchill</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-james-churchill/</link>
       <pubDate>Sun, 05 Jun 2016 17:00:00 -0700</pubDate>
@@ -3658,27 +3772,6 @@ export TF_VAR_password=&amp;quot;someSecretPassword&amp;quot;
 &lt;li&gt;Blog: &lt;a href=&quot;http://smashdev.com&quot;&gt;http://smashdev.com&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Github: &lt;a href=&quot;http://github.com/smashdevcode&quot;&gt;http://github.com/smashdevcode&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Twitter: &lt;a href=&quot;http://twitter.com/SmashDev&quot;&gt;http://twitter.com/SmashDev&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-    </item>
-    <item>
-      <title>How to Electron by Blaine Schmeisser</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-blaine-schmeisser/</link>
-      <pubDate>Sun, 05 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-blaine-schmeisser/</guid>
-      <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-blaine-schmeisser/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-left&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-blaine-schmeisser/blainesch.jpg&quot; alt=&quot;Blaine Schmeisser&quot;&gt;
-&lt;/div&gt;
-
-&lt;p&gt;I’m happy to introduce Blaine Schmeisser. He’s a recent Portland transplant currently working as a Senior Software Engineer at New Relic. He has a passion for building and shipping software and an advocate for pair programming. Outside of tech, Blaine spends his free time with his dog and maintains a simplistic, eco-friendly lifestyle.&lt;/p&gt;
-&lt;p&gt;Blaine’s “How to Electron” answers questions you have about building user interface applications with JavaScript. Have you ever wanted to build desktop apps with web technology you already know? If you’ve never heard of Electron or just want to learn more about it, this talk will cover what Electron is and how to utilize it to create powerful tools like Atom and Slack. You will learn the history of Electron, how to get started, the trade-offs of picking various boiler plates, and the unique Electron specific APIs that are vital to being a Electron developer.&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;GitHub: &lt;a href=&quot;https://github.com/blainesch&quot;&gt;https://github.com/blainesch&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Twitter: &lt;a href=&quot;https://twitter.com/blainesch&quot;&gt;https://twitter.com/blainesch&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Website: &lt;a href=&quot;http://blainesch.com&quot;&gt;http://blainesch.com&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>
@@ -3743,23 +3836,6 @@ In this talk I would be covering the following:&lt;/p&gt;
 </description>
     </item>
     <item>
-      <title>WebSockets Bring Light at the End of the Tunnel by Joel Lord</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</link>
-      <pubDate>Fri, 03 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</guid>
-      <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-left&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/joel-lord.jpg&quot; alt=&quot;Joel Lord&quot;&gt;
-&lt;/div&gt;
-
-&lt;p&gt;As a Development Manager, Joel’s motivation and proven technical prowess makes him a key member of Spiria’s software development team. With a degree in computational astrophysics, his interests eventually made their way to software and Web design. Today, his knowledge of JavaScript lets him to support a variety of projects on both the front end and back end. As we move into the age of the Internet of Things, Joel is ready with his passion for programming node bots and experimenting with gadgets.&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Joel is going to speak on Web Sockets and tunnels of light… or to describe it more specifically more and more, people seem to be obsessed with real-time data.  But what does real-time mean in the world of REST servers and one-way communication?  Most modern web applications are now either displaying a snapshot of data at a given time or use a polling mechanism to update series of data at a given interval.
-In this talk, you will learn about the power of WebSockets and how they can (and should!) be used in your modern web applications. In these 30 minutes, I will go through the process of building a Node server that can push data to multiple clients in real-time.  You will see how this can be easy using the socket.io library.&lt;/p&gt;
-</description>
-    </item>
-    <item>
       <title>MMOWAM - Build Server-less Games with a DSN by Josh Marinacci</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-josh-marinacci/</link>
       <pubDate>Fri, 03 Jun 2016 17:00:00 -0700</pubDate>
@@ -3797,21 +3873,21 @@ it can be.&lt;/p&gt;
 </description>
     </item>
     <item>
-      <title>I Play the JavaScript by Matt McKegg</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</link>
-      <pubDate>Thu, 02 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</guid>
+      <title>WebSockets Bring Light at the End of the Tunnel by Joel Lord</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</link>
+      <pubDate>Fri, 03 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</guid>
       <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;div class=&quot;image float-left&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/mattmckegg.jpg&quot; alt=&quot;Matt McKegg&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/joel-lord.jpg&quot; alt=&quot;Joel Lord&quot;&gt;
 &lt;/div&gt;
 
-&lt;p&gt;A JavaScript hacker and backyard musician and from Wellington, New Zealand. Lover of all things open and modular. I spend most of my time pressing buttons of various shapes, sizes and colours. Sometimes these buttons make sounds.&lt;/p&gt;
-&lt;p&gt;Matt has been making music with computers for about 10 years, but once he tried to move from bedroom composing to live performance, he got incredibly frustrated at how hard it was to play computer music live. He decided to start working on his own live electronic performance software written in JavaScript that would let me play the way he wanted to play. 3 years later, it’s finally starting to become a reality.&lt;/p&gt;
+&lt;p&gt;As a Development Manager, Joel’s motivation and proven technical prowess makes him a key member of Spiria’s software development team. With a degree in computational astrophysics, his interests eventually made their way to software and Web design. Today, his knowledge of JavaScript lets him to support a variety of projects on both the front end and back end. As we move into the age of the Internet of Things, Joel is ready with his passion for programming node bots and experimenting with gadgets.&lt;/p&gt;
 &lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Here is one of the Matt’s recent performances, for your viewing pleasure. &lt;/p&gt;
-&lt;iframe width=&quot;1280&quot; height=&quot;720&quot; src=&quot;https://www.youtube.com/embed/L2BVDJWHdy0?rel=0&amp;amp;showinfo=0&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;</description>
+&lt;p&gt;Joel is going to speak on Web Sockets and tunnels of light… or to describe it more specifically more and more, people seem to be obsessed with real-time data.  But what does real-time mean in the world of REST servers and one-way communication?  Most modern web applications are now either displaying a snapshot of data at a given time or use a polling mechanism to update series of data at a given interval.
+In this talk, you will learn about the power of WebSockets and how they can (and should!) be used in your modern web applications. In these 30 minutes, I will go through the process of building a Node server that can push data to multiple clients in real-time.  You will see how this can be easy using the socket.io library.&lt;/p&gt;
+</description>
     </item>
     <item>
       <title>The Web Platform is the Universal Instrument by Ben Michel</title>
@@ -3839,6 +3915,23 @@ it can be.&lt;/p&gt;
 &lt;li&gt;Audience interaction with the exposed parameters of a live band’s instrumentation–via broadcast methods and microcontroller installations.”&lt;/li&gt;
 &lt;/ul&gt;
 </description>
+    </item>
+    <item>
+      <title>I Play the JavaScript by Matt McKegg</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</link>
+      <pubDate>Thu, 02 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-left&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/mattmckegg.jpg&quot; alt=&quot;Matt McKegg&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;A JavaScript hacker and backyard musician and from Wellington, New Zealand. Lover of all things open and modular. I spend most of my time pressing buttons of various shapes, sizes and colours. Sometimes these buttons make sounds.&lt;/p&gt;
+&lt;p&gt;Matt has been making music with computers for about 10 years, but once he tried to move from bedroom composing to live performance, he got incredibly frustrated at how hard it was to play computer music live. He decided to start working on his own live electronic performance software written in JavaScript that would let me play the way he wanted to play. 3 years later, it’s finally starting to become a reality.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Here is one of the Matt’s recent performances, for your viewing pleasure. &lt;/p&gt;
+&lt;iframe width=&quot;1280&quot; height=&quot;720&quot; src=&quot;https://www.youtube.com/embed/L2BVDJWHdy0?rel=0&amp;amp;showinfo=0&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;</description>
     </item>
     <item>
       <title>Code First Docs How we Threw Out The Book &amp; Put Code First With Twilio Documentation by Jarod Reyes</title>
@@ -4439,27 +4532,6 @@ docker run -it elasticsearch
 &lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;root@257e98847bbb:/#
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;I’m in. At this point I could work with the container however I’d need to.&lt;/p&gt;
-</description>
-    </item>
-    <item>
-      <title>The Data Diluvium</title>
-      <link>http://adron.github.io/articles/data-diluvium-introduction/</link>
-      <pubDate>Fri, 01 Jan 2016 17:09:16 -0800</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/data-diluvium-introduction/</guid>
-      <author></author>
-      <description>&lt;p&gt;Welcome to the first of more than a few blog entries on Data Diluvium. Data Diluvium is a project I’ve started focused around generating data for the purposes of testing, capacity, or whatever other needs might arise.&lt;/p&gt;
-&lt;p&gt;Definition of &lt;strong&gt;&lt;em&gt;data&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;:  factual information (as measurements or statistics) used as a basis for reasoning, discussion, or calculation &lt;the data is plentiful and easily available — H. A. Gleason, Jr.&gt; &lt;comprehensive data on economic growth have been published — N. H. Jacoby&gt;&lt;/li&gt;
-&lt;li&gt;:  information output by a sensing device or organ that includes both useful and irrelevant or redundant information and must be processed to be meaningful&lt;/li&gt;
-&lt;li&gt;:  information in numerical form that can be digitally transmitted or processed&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;Definition of &lt;strong&gt;&lt;em&gt;deluge&lt;/em&gt;&lt;/strong&gt; which is the English version of the latin &lt;strong&gt;&lt;em&gt;diluvium&lt;/em&gt;&lt;/strong&gt;.&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;a :  an overflowing of the land by water. b :  a drenching rain “a deluge causing mudslides in the area”.&lt;/li&gt;
-&lt;li&gt;:  an overwhelming amount or number &lt;received a deluge of angry phone calls&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
 </description>
     </item>
     <item>
