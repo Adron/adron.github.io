@@ -21,14 +21,64 @@ Alright, time to dive deeper into each of these.
 
 ## Collected Systems APIs
 
-* *https://datadiluvium.com/schema/generate* - This API end point would take a schema with the various elements needed, and using the custom data from the schema and convention based defaults for any that isn't selected begin the generation process. The generation process would then randomize, generate, and insert this data into any destination source specified. Here are some prospective examples I've created:
+*   *https://datadiluvium.com/schema/generate* - This API end point would take a schema with the various properties needed. For any that aren't set, a default would be set. The generation process would then randomize, generate, and insert this data into any destination source specified. Here are some prospective examples I've created:
 
-*A very basic sample JSON schema*
-```
+    *A very basic sample JSON schema*
 
-```
+    ```javascript
+    [
+      {
+        "schema": "relational",
+        "database": "text"
+      }
+    ]
+    ```
+    
+    In this particular example, I've created the simplist schema that could be sent into the service. For this particular situation I'd have (currently not decided yet) defaults that would randomly create a table, with a single column, and generate one element of data in that table. Other properties could be set, which would give control over the structure created in which to insert the data into. An example would be the following.
+    
+    ```javascript
+    [
+      {
+        "schema": "relational",
+        "database": "postgresql",
+        "structure": [
+          {
+            "table": "Users",
+            "columns": [
+              {"name": "id", "type": "uuid"},
+              {"name": "firstname", "type": "firstname"},
+              {"name": "lastname", "type": "lastname"},
+              {"name": "email_address", "type": "email"}
+            ]
+          },
+          {
+            "table": "Addresses",
+            "columns": [
+              {"name": "id", "type": "uuid"},
+              {"name": "street", "type": "address"},
+              {"name": "city", "type": "city"},
+              {"name": "state", "type": "state"},
+              {"name": "postalcode", "type": "zip"}
+            ]
+          },
+          {
+            "table": "Transactions",
+            "columns": [
+              { "name": "id", "type": "uuid" },
+              { "name": "transaction", "type": "money" },
+              { "name": "stamp", "type": "date" }
+            ]
+          }
+        ]
+      }
+    ]
+    ```
+    
+    In this example, the properties included are three tables; *Users*, *Addresses*, and *Transactions*. In the first table, *Users*, the columsn would be; *id*, *firstname*, *lastname*, and *email_address*. Each of these then have a *type* property which sets the type of data to be generated for the columns. The same type of set of properties is then included for the *Addresses* and *Transactions* tables and their respective columns.
+    
+    Some additional questions remain, such as if the tables exist in the database, would the insertion build SQL to create the tables? Should it be assumed that the tables exist already and have the appropriate settings set to insert the data into the tables? Again, a great thing to discuss on the [thread here](https://github.com/Adron/datadiluvium/issues/9).
 
-* *https://datadiluvium.com/schema/validate* - This could be used to validate a schema request body. Simply submit a schema and a validation response would be returned with "Valid" or "Invalid". In the case of and invalid response, a list of prospective and known errors would be returned.
+* *https://datadiluvium.com/schema/validate* - This could be used to validate a schema request body. Simply submit a schema and a validation response would be returned with "Valid" or "Invalid". In the case of an invalid response, a list of prospective and known errors would be returned.
 
 These two API end points focus around building out large data to test systemic environments and the respective construction of those environments. The actual generation of the data is assumed for this API service and the individual generation of data is discussed below in the individual request APIs.
 
@@ -45,11 +95,10 @@ The next level of complexity for data generation would be the slightly structure
 * *https://datadiluvium.com/random/address/*
 * *https://datadiluvium.com/random/name/*
 
-The next level of data generation complexity would be to generate sentences.
+The next level of data generation complexity would be to generate sentences and other related data. This could be done a number of ways. If we wanted to have it generate intelligent sentences that made sense, it would take a little bit more work then for example generating lorum ipsum.
 
 * *https://datadiluvium.com/random/sentence/*
 
-* *https://datadiluvium.com/random/*
-* *https://datadiluvium.com/random/*
+### TLDR;
 
-If you've got ideas on how to generate data, how you'd like to use it in your applications, or other related ideas please dive into the conversation on the [Github Thread here](https://github.com/Adron/datadiluvium/issues/9).
+This blog entry just details the starting point of features for the [Data Diluvium Project](http://datadiluvium.com/). If you'd like to jump into the project too, let me know. I'm generally working on the project during the weekends and a little during the week. There's already a [building project base](https://github.com/Adron/datadiluvium) that I'm starting with. If you're interested in writing some F#, check out the work Dave Curylo has done [here](). I've been pondering breaking it out to another project and sticking to the idea of microservice but with F# for the work he put in. Anyway if you've got ideas on how to generate data, how you'd like to use it in your applications, or other related ideas please dive into the conversation on the [Github Thread here](https://github.com/Adron/datadiluvium/issues/9).
