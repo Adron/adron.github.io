@@ -12,7 +12,12 @@ npm install
 cd ~/Codez/adron.github.io/_working/
 wintersmith build
 
-cp -r build/ ../../adron.github.io/
+# For OS-X
+#cp -r build/ ../../adron.github.io/
+
+# For Linux
+cp -a build/. ../../adron.github.io/
+
 rm -rf build
 
 cd ~/Codez/adron.github.io/
@@ -20,4 +25,3 @@ cd ~/Codez/adron.github.io/
 git add -A
 git commit -m "$commitMessage"
 git push origin master
-
