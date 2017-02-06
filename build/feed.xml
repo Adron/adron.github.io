@@ -5,9 +5,1114 @@
     <atom:link href="http://adron.github.io/feed.xml" rel="self" type="application/rss+xml"></atom:link>
     <link>http://adron.github.io</link>
     <description>Coder, Messenger, Recon, Infrastructure, Ops</description>
-    <pubDate>Fri, 06 Jan 2017 10:17:00 -0800</pubDate>
+    <pubDate>Mon, 06 Feb 2017 02:33:50 -0800</pubDate>
     <generator>Wintersmith - https://github.com/jnordberg/wintersmith</generator>
     <language>en</language>
+    <item>
+      <title>Thrashing Code Metal Monday for Week of February 6th, 2017</title>
+      <link>http://adron.github.io/articles/thrashing-code-metal-monday-02-06-2017/</link>
+      <pubDate>Mon, 06 Feb 2017 02:33:50 -0800</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/thrashing-code-metal-monday-02-06-2017/</guid>
+      <author></author>
+      <description>&lt;p&gt;This is the first of many of a series that is starting today. Thrashing Code Metal Monday’s picks for heavy tunes to code to. Ya know, if you can handle it.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/thrashing-code-metal-monday-02-06-2017/ep-1.gif&quot; alt=&quot;The Fire of Metal!&quot;&gt;&lt;/p&gt;
+&lt;p&gt;With that introduction, may the thrashing code begin!&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Top 3 for Spotify&lt;/p&gt;
+&lt;iframe width=&quot;300&quot; height=&quot;56&quot; src=&quot;https://embed.spotify.com/follow/1/?uri=spotify%3Aartist%3A5ctFffJBdJe8PZL7W7NeML&amp;amp;size=detail&amp;amp;theme=dark&quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; style=&quot;border:none; overflow:hidden;&quot; allowtransparency=&quot;true&quot;&gt;&lt;/iframe&gt;
+
+&lt;iframe width=&quot;300&quot; height=&quot;56&quot; src=&quot;https://embed.spotify.com/follow/1/?uri=spotify%3Aartist%3A67ZMMtA88DDO0gTuRrzGjn&amp;amp;size=detail&amp;amp;theme=dark&quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; style=&quot;border:none; overflow:hidden;&quot; allowtransparency=&quot;true&quot;&gt;&lt;/iframe&gt;
+
+&lt;iframe width=&quot;300&quot; height=&quot;56&quot; src=&quot;https://embed.spotify.com/follow/1/?uri=spotify%3Aartist%3A3dnH7fdVm2X07MK6Fkbhbt&amp;amp;size=detail&amp;amp;theme=dark&quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; style=&quot;border:none; overflow:hidden;&quot; allowtransparency=&quot;true&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;Top 3 Videos for Youtube&lt;/p&gt;
+&lt;iframe width=&quot;853&quot; height=&quot;480&quot; src=&quot;https://www.youtube.com/embed/9VHA0H8peZ0&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;iframe width=&quot;853&quot; height=&quot;480&quot; src=&quot;https://www.youtube.com/embed/CpAcxbtXUgQ&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;iframe width=&quot;853&quot; height=&quot;480&quot; src=&quot;https://www.youtube.com/embed/c-vhrv-1Ctg&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;</description>
+    </item>
+    <item>
+      <title>Data Diluvium Design Ideas</title>
+      <link>http://adron.github.io/articles/data-diluvium-design-ideas/</link>
+      <pubDate>Sat, 04 Feb 2017 04:44:58 -0800</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/data-diluvium-design-ideas/</guid>
+      <author></author>
+      <description>&lt;div class=&quot;image float-right&quot;&gt;
+    &lt;img src=&quot;/articles/data-diluvium-design-ideas/dd-logo.jpg&quot; alt=&quot;Data Diluvium&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;This post includes a collection of my thoughts on design and architecture of a data generation service project I’ve started called &lt;a href=&quot;http://datadiluvium.com&quot;&gt;Data Diluvium&lt;/a&gt;. I’m very open to changes, new ideas, or completely different paradigms around these plans altogether. You can jump into the conversation &lt;a href=&quot;https://github.com/Adron/datadiluvium/issues/9&quot;&gt;thread&lt;/a&gt;. What kind of data do you often need? What systems do you want it inserted into?&lt;/p&gt;
+&lt;p&gt;Breakdown of Article Ideas:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Collected Systems API&lt;/strong&gt; - This API service idea revolves around a request that accepts a schema type for a particular database type, an export source for inserting the data into, and generating an amount of data per the requested amount. The response then initiates that data generation, while responding with a received message and confirmation based on what it has received.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Individual Request API&lt;/strong&gt; - This API service idea (thanks to Dave Curylo for this one, &lt;a href=&quot;https://github.com/Adron/datadiluvium/issues/9#issuecomment-276117856&quot;&gt;posted in the thread&lt;/a&gt;) revolves around the generation of data, requested at end points for a particular type of random data generation.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Alright, time to dive deeper into each of these.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;h2 id=&quot;collected-systems-apis&quot;&gt;Collected Systems APIs&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;em&gt;&lt;a href=&quot;https://datadiluvium.com/schema/generate&quot;&gt;https://datadiluvium.com/schema/generate&lt;/a&gt;&lt;/em&gt; - This API end point would take a schema with the various properties needed. For any that aren’t set, a default would be set. The generation process would then randomize, generate, and insert this data into any destination source specified. Here are some prospective examples I’ve created:&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;A very basic sample JSON schema&lt;/em&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;[
+  {
+    &lt;span class=&quot;string&quot;&gt;&quot;schema&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;relational&quot;&lt;/span&gt;,
+    &lt;span class=&quot;string&quot;&gt;&quot;database&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;text&quot;&lt;/span&gt;
+  }
+]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;In this particular example, I’ve created the simplist schema that could be sent into the service. For this particular situation I’d have (currently not decided yet) defaults that would randomly create a table, with a single column, and generate one element of data in that table. Other properties could be set, which would give control over the structure created in which to insert the data into. An example would be the following.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;[
+  {
+    &lt;span class=&quot;string&quot;&gt;&quot;schema&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;relational&quot;&lt;/span&gt;,
+    &lt;span class=&quot;string&quot;&gt;&quot;database&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;postgresql&quot;&lt;/span&gt;,
+    &lt;span class=&quot;string&quot;&gt;&quot;structure&quot;&lt;/span&gt;: [
+      {
+        &lt;span class=&quot;string&quot;&gt;&quot;table&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;Users&quot;&lt;/span&gt;,
+        &lt;span class=&quot;string&quot;&gt;&quot;columns&quot;&lt;/span&gt;: [
+          {&lt;span class=&quot;string&quot;&gt;&quot;name&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;id&quot;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&quot;type&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;uuid&quot;&lt;/span&gt;},
+          {&lt;span class=&quot;string&quot;&gt;&quot;name&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;firstname&quot;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&quot;type&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;firstname&quot;&lt;/span&gt;},
+          {&lt;span class=&quot;string&quot;&gt;&quot;name&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;lastname&quot;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&quot;type&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;lastname&quot;&lt;/span&gt;},
+          {&lt;span class=&quot;string&quot;&gt;&quot;name&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;email_address&quot;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&quot;type&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;email&quot;&lt;/span&gt;}
+        ]
+      },
+      {
+        &lt;span class=&quot;string&quot;&gt;&quot;table&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;Addresses&quot;&lt;/span&gt;,
+        &lt;span class=&quot;string&quot;&gt;&quot;columns&quot;&lt;/span&gt;: [
+          {&lt;span class=&quot;string&quot;&gt;&quot;name&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;id&quot;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&quot;type&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;uuid&quot;&lt;/span&gt;},
+          {&lt;span class=&quot;string&quot;&gt;&quot;name&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;street&quot;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&quot;type&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;address&quot;&lt;/span&gt;},
+          {&lt;span class=&quot;string&quot;&gt;&quot;name&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;city&quot;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&quot;type&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;city&quot;&lt;/span&gt;},
+          {&lt;span class=&quot;string&quot;&gt;&quot;name&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;state&quot;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&quot;type&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;state&quot;&lt;/span&gt;},
+          {&lt;span class=&quot;string&quot;&gt;&quot;name&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;postalcode&quot;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&quot;type&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;zip&quot;&lt;/span&gt;}
+        ]
+      },
+      {
+        &lt;span class=&quot;string&quot;&gt;&quot;table&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;Transactions&quot;&lt;/span&gt;,
+        &lt;span class=&quot;string&quot;&gt;&quot;columns&quot;&lt;/span&gt;: [
+          { &lt;span class=&quot;string&quot;&gt;&quot;name&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;id&quot;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&quot;type&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;uuid&quot;&lt;/span&gt; },
+          { &lt;span class=&quot;string&quot;&gt;&quot;name&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;transaction&quot;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&quot;type&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;money&quot;&lt;/span&gt; },
+          { &lt;span class=&quot;string&quot;&gt;&quot;name&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;stamp&quot;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&quot;type&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;date&quot;&lt;/span&gt; }
+        ]
+      }
+    ]
+  }
+]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;In this example, the properties included are three tables; &lt;em&gt;Users&lt;/em&gt;, &lt;em&gt;Addresses&lt;/em&gt;, and &lt;em&gt;Transactions&lt;/em&gt;. In the first table, &lt;em&gt;Users&lt;/em&gt;, the columsn would be; &lt;em&gt;id&lt;/em&gt;, &lt;em&gt;firstname&lt;/em&gt;, &lt;em&gt;lastname&lt;/em&gt;, and &lt;em&gt;email_address&lt;/em&gt;. Each of these then have a &lt;em&gt;type&lt;/em&gt; property which sets the type of data to be generated for the columns. The same type of set of properties is then included for the &lt;em&gt;Addresses&lt;/em&gt; and &lt;em&gt;Transactions&lt;/em&gt; tables and their respective columns.&lt;/p&gt;
+&lt;p&gt;Some additional questions remain, such as if the tables exist in the database, would the insertion build SQL to create the tables? Should it be assumed that the tables exist already and have the appropriate settings set to insert the data into the tables? Again, a great thing to discuss on the &lt;a href=&quot;https://github.com/Adron/datadiluvium/issues/9&quot;&gt;thread here&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;em&gt;&lt;a href=&quot;https://datadiluvium.com/schema/validate&quot;&gt;https://datadiluvium.com/schema/validate&lt;/a&gt;&lt;/em&gt; - This could be used to validate a schema request body. Simply submit a schema and a validation response would be returned with “Valid” or “Invalid”. In the case of an invalid response, a list of prospective and known errors would be returned.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;These two API end points focus around building out large data to test systemic environments and the respective construction of those environments. The actual generation of the data is assumed for this API service and the individual generation of data is discussed below in the individual request APIs.&lt;/p&gt;
+&lt;h2 id=&quot;individual-request-apis&quot;&gt;Individual Request APIs&lt;/h2&gt;
+&lt;p&gt;The following API calls could be implemented with fairly straight forward random data generation. A number can easily be randomized and returned, a word can be chosen from a dictionary, and a city returned from a list of cities. The following are prospective API calls to return data of this type.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;&lt;a href=&quot;https://datadiluvium.com/random/number/&quot;&gt;https://datadiluvium.com/random/number/&lt;/a&gt;&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;&lt;a href=&quot;https://datadiluvium.com/random/word/&quot;&gt;https://datadiluvium.com/random/word/&lt;/a&gt;&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;&lt;a href=&quot;https://datadiluvium.com/random/city/&quot;&gt;https://datadiluvium.com/random/city/&lt;/a&gt;&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The next level of complexity for data generation would be the slightly structured data generation. Instead of having an arbitrary list of addresses, we could or would prospectively generate one. But on the other hand, maybe we should just randomly create actual addresses that can be validated against an actual real address? That seems to have the possiblity of issues in the real world in spite of the fact all the addresses out there in the world are basically publicly accessible data. But questioning how or what the data would or could actually represent will be a great thing to discuss in the &lt;a href=&quot;https://github.com/Adron/datadiluvium/issues/9&quot;&gt;thread&lt;/a&gt;.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;&lt;a href=&quot;https://datadiluvium.com/random/address/&quot;&gt;https://datadiluvium.com/random/address/&lt;/a&gt;&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;&lt;a href=&quot;https://datadiluvium.com/random/name/&quot;&gt;https://datadiluvium.com/random/name/&lt;/a&gt;&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The next level of data generation complexity would be to generate sentences and other related data. This could be done a number of ways. If we wanted to have it generate intelligent sentences that made sense, it would take a little bit more work then for example generating lorum ipsum.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;&lt;a href=&quot;https://datadiluvium.com/random/sentence/&quot;&gt;https://datadiluvium.com/random/sentence/&lt;/a&gt;&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;tldr-&quot;&gt;TLDR;&lt;/h3&gt;
+&lt;p&gt;This blog entry just details the starting point of features for the &lt;a href=&quot;http://datadiluvium.com/&quot;&gt;Data Diluvium Project&lt;/a&gt;. If you’d like to jump into the project too, let me know. I’m generally working on the project during the weekends and a little during the week. There’s already a &lt;a href=&quot;https://github.com/Adron/datadiluvium&quot;&gt;building project base&lt;/a&gt; that I’m starting with. If you’re interested in writing some F#, check out the work Dave Curylo has done &lt;a href=&quot;http://adron.github.io/articles/data-diluvium-design-ideas/&quot;&gt;here&lt;/a&gt;. I’ve been pondering breaking it out to another project and sticking to the idea of microservice but with F# for the work he put in. Anyway if you’ve got ideas on how to generate data, how you’d like to use it in your applications, or other related ideas please dive into the conversation on the &lt;a href=&quot;https://github.com/Adron/datadiluvium/issues/9&quot;&gt;Github Thread here&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>Setting up a GCP Container Cluster - Part I</title>
+      <link>http://adron.github.io/articles/setting-up-gcp-container-cluster/</link>
+      <pubDate>Tue, 31 Jan 2017 04:27:09 -0800</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/setting-up-gcp-container-cluster/</guid>
+      <author></author>
+      <description>&lt;p&gt;I set out to create a container cluster to work with in Google Cloud. These are the notes of that effort I undertook. On the heels of this article I’m putting together the notes also on getting Drone.io fully setup with an appropriate domain name and the like for use in full production grade work. For now, here’s the lowdown on the steps I took to get educated on and informed about setup and use of the Google Container Cluster.&lt;/p&gt;
+&lt;p&gt;First exploratory script I ran based on instructions &lt;a href=&quot;https://cloud.google.com/container-engine/docs/clusters/operations&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;gcloud container clusters create working-space \
+  --zone us-central1-a \
+  --additional-zones us-central1-b,us-central1-c
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Here’s the container cluster listing.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/setting-up-gcp-container-cluster/gcp-01.png&quot; alt=&quot;Google Cloud&quot;&gt;&lt;/p&gt;
+&lt;p&gt;This is the list of instances running providing the nodes for the cluster.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/setting-up-gcp-container-cluster/gcp-02.png&quot; alt=&quot;Google Cloud&quot;&gt;&lt;/p&gt;
+&lt;p&gt;I deleted that after I confirmed it did what I expected. Which was mostly true.&lt;/p&gt;
+&lt;p&gt;Observations:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;This command did execute and launch 9 instances. This I assumed is what it would do since I had selected a default &lt;code&gt;--zone&lt;/code&gt; but also selected two additional with &lt;code&gt;--additional-zones&lt;/code&gt;. This spooled up 3 instances in each zone for us within the cluster.&lt;/li&gt;
+&lt;li&gt;In the container clusters listing in the Google Cloud Console, there’s a button now that prompts with the gcloud container cluster get-credentials command and the kubectl command to connect. This is helpful, as the last time I was testing out this one had to go and dig into.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I went ahead and deleted that cluster via the Google Cloud Console. The next command I tried out was as shown.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;gcloud container clusters create secondary-delete \
+  --network worker-space
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Since this was done on a freshly installed gcloud install on a new machine, I’d missed that I had not installed kubectl. However gcloud kindly informed me.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ gcloud container clusters create secondary-delete \
+&amp;gt;   --network worker-space
+WARNING: Accessing a Container Engine cluster requires the kubernetes commandline
+client [kubectl]. To install, run
+  $ gcloud components install kubectl
+
+ERROR: (gcloud.container.clusters.create) ResponseError: code=400, message=Subnetwork must be provided for manual-subnet Network &amp;quot;worker-space&amp;quot;.
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;A quick &lt;code&gt;gcloud components install kubectl&lt;/code&gt; fixed that. I ran the command again and oops, I needed to designate the subnetwork, not particularly the network.&lt;/p&gt;
+&lt;p&gt;I wanted to bake this into a Terraform config, so the next thing I wired together was exactly that. A quick change and reran the command.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ gcloud container clusters create secondary-delete   --network worker-space --subnetwork worker-space-default
+ERROR: (gcloud.container.clusters.create) ResponseError: code=400, message=Subnetwork &amp;quot;projects/that-big-universe/regions/us-west1/subnetworks/worker-space-default&amp;quot; is not valid for Network &amp;quot;worker-space&amp;quot;.
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Dammit, error central. I went and did some RTFMing at this point. The section for network and subnetwork read as follows:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;–network=NETWORK
+The Compute Engine Network that the cluster will connect to. Google Container Engine will use this network when creating routes and firewalls for the clusters. Defaults to the ‘default’ network.&lt;/p&gt;
+&lt;p&gt;–subnetwork=SUBNETWORK
+The name of the Google Compute Engine subnetwork (&lt;a href=&quot;https://cloud.google.com/compute/docs/subnetworks&quot;&gt;https://cloud.google.com/compute/docs/subnetworks&lt;/a&gt;) to which the cluster is connected. If specified, the cluster’s network must be a “custom subnet” network.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Ok, seems like &lt;code&gt;gcloud container clusters create secondary-delete --network worker-space --subnetwork worker-space-default&lt;/code&gt; should have worked. I tried out a few more ideas to see what the issue could actually be.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ gcloud compute networks subnets list
+NAME                      REGION           NETWORK       RANGE
+...default networks were listed here...
+worker-space-default      us-central1      worker-space  10.128.0.0/20
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;So even &lt;code&gt;gcloud&lt;/code&gt; finds that the network name is &lt;em&gt;worker-space-default&lt;/em&gt; and the network is &lt;em&gt;worker-space&lt;/em&gt;? Is that right? That’s actually a little confusing. In the interface it looks like this.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/setting-up-gcp-container-cluster/gcp-03.png&quot; alt=&quot;Google Cloud Console&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Ah, I try this.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ gcloud container clusters create secondary-delete --network worker-space --subnetwork us-central1
+ERROR: (gcloud.container.clusters.create) ResponseError: code=400, message=Subnetwork &amp;quot;projects/that-big-universe/regions/us-west1/subnetworks/us-central1&amp;quot; is not valid for Network &amp;quot;worker-space&amp;quot;.
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Then I realize that it’s injecting &lt;em&gt;us-west1&lt;/em&gt; into that string for the subnetwork. But that’s not true. My worker-space and its subnetwork is in central1 not in west1. So a quick RTFM again and realized that maybe adding the zone back, with these network and subnetwork parameters set, I might get a successful cluster creation. I tried this.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ gcloud container clusters create secondary-delete --network worker-space --subnetwork worker-space-default --zone us-central1
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;This also didn’t work, so I went with a zone of &lt;code&gt;us-central1a&lt;/code&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ gcloud container clusters create secondary-delete --network worker-space --subnetwork worker-space-default --zone us-central1b
+ERROR: (gcloud.container.clusters.create) ResponseError: code=400, message=zone &amp;quot;us-central1b&amp;quot; does not exist.
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Ok, WTF?! RTFMing doesn’t really help at this point either. Now I’m just getting frustrated. I’m doubtfully going to use &lt;code&gt;gcloud&lt;/code&gt; to build this in production anyway, so I’ll go ahead and try to get Terraform building it.&lt;/p&gt;
+&lt;h2 id=&quot;terraform-for-google-cloud-container-cluster&quot;&gt;Terraform for Google Cloud Container Cluster&lt;/h2&gt;
+&lt;p&gt;I added this to the script in the &lt;em&gt;adron-infrastructure&lt;/em&gt; branch of my repo &lt;a href=&quot;https://github.com/Adron/adron.github.io/tree/adron-infrastructure&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;resource &amp;quot;google_container_cluster&amp;quot; &amp;quot;development&amp;quot; {
+  name = &amp;quot;development-systems&amp;quot;
+  zone = &amp;quot;us-west1-b&amp;quot;
+  initial_node_count = 3
+
+  master_auth {
+    username = &amp;quot;someusername&amp;quot;
+    password = &amp;quot;willchange&amp;quot;
+  }
+
+  node_config {
+    oauth_scopes = [
+      &amp;quot;https://www.googleapis.com/auth/compute&amp;quot;,
+      &amp;quot;https://www.googleapis.com/auth/devstorage.read_only&amp;quot;,
+      &amp;quot;https://www.googleapis.com/auth/logging.write&amp;quot;,
+      &amp;quot;https://www.googleapis.com/auth/monitoring&amp;quot;
+    ]
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The console container cluster display once it completes.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/setting-up-gcp-container-cluster/gcp-04.png&quot; alt=&quot;Google Cloud Console&quot;&gt;&lt;/p&gt;
+&lt;p&gt;The console instances listed again. This time of course, just like the node count in the config above and the zone being only set to west1-b, I’ve got 3 instances.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/setting-up-gcp-container-cluster/gcp-04.png&quot; alt=&quot;Google Cloud Console&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Alright, that worked beautifully. If anybody has any idea what the issue is with my aforementioned attempts to create a cluster using gcloud and the network and subnetwork please ping me via &lt;a href=&quot;https://twitter.com/Adron&quot;&gt;@Adron&lt;/a&gt; and we’ll DM or email if you would. (Also, for more info on getting started with GCP with Terraform, check out my article “&lt;a href=&quot;http://blog.adron.me/articles/working-with-google-compute-engine/&quot;&gt;Working With Google Compute Engine (GCE) using Terraform (With a load of Bash Scripts too) &lt;/a&gt;“)&lt;/p&gt;
+&lt;p&gt;Next step I needed to connect kubectl to the cluster. This is one of the spaces where a lot of Google documentation is lacking since it also assumes you’ve followed some pre-baked route to gain credentials. For instance, int he interface the thing I pointed to earlier, just uses kubectl and gcloud does some crazy black magic in the background that require tertiary RTFMing in order to figure out what is actually going on, retrace those steps, and connect yourself. The first thing I tried was to set the cluster.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;kubectl config set-cluster development-systems
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Then did a quick &lt;code&gt;kubectl config view&lt;/code&gt; which showed that things were set correctly. Then I tried to run &lt;code&gt;kubectl cluster-info&lt;/code&gt; just to see what’s up.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ kubectl cluster-info
+error: google: could not find default credentials. See https://developers.google.com/accounts/docs/application-default-credentials for more information.
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;So no go. Default credentials… another thing I’m not really sure. I tried to run &lt;code&gt;gcloud container clusters get-credentials development-systems  --zone us-west1-b --project that-big-universe&lt;/code&gt; and it failed. Grumble grumble come on. I tried again however, because something seemed odd with the network before, and this time I got some results! Win!&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ gcloud container clusters get-credentials development-systems \
+&amp;gt;     --zone us-west1-b --project that-big-universe
+Fetching cluster endpoint and auth data.
+kubeconfig entry generated for development-systems.
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;I then try to get a &lt;code&gt;kubectl cluster-info&lt;/code&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ kubectl cluster-info
+error: google: could not find default credentials. See https://developers.google.com/accounts/docs/application-default-credentials for more information.
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Nope. Oh yeah, I gotta set kube’s proxy!&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ kubectl proxy
+error: google: could not find default credentials. See https://developers.google.com/accounts/docs/application-default-credentials for more information.
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;No. Alright, what then? At this point I’m pretty frustrated, but whatevs, this is gonna work so I keep researching. A quick search for default credentials leads to &lt;a href=&quot;https://developers.google.com/identity/protocols/application-default-credentials&quot;&gt;this&lt;/a&gt;. I read through it and this whole GOOGLE_APPLICATION_CREDENTIALS needs to be set. Ok, that’s cool. So I set it. It needs to be a credentials file for the service account used. Which actually makes sense but only because I’ve used Google Cloud before, but for somebody just diving into using the container service on Google this is kind of a whole derailment to go read up on a bunch of other topics. Albeit, it is necessary reading. Anyway…  back to setting the credentials file. For more info on how to set this up and working with GCP, check out my previous article “&lt;a href=&quot;http://blog.adron.me/articles/working-with-google-compute-engine/&quot;&gt;Working With Google Compute Engine (GCE) using Terraform (With a load of Bash Scripts too)&lt;/a&gt;“.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;export GOOGLE_APPLICATION_CREDENTIALS=~/thepathtosecrets/account.json
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;I added this to my bash_profile and sourced that file.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;source ~/.bash_profile
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Then I ran &lt;code&gt;kubectl cluster-info&lt;/code&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ kubectl cluster-info
+Kubernetes master is running at https://104.196.234.30
+GLBCDefaultBackend is running at https://104.196.234.30/api/v1/proxy/namespaces/kube-system/services/default-http-backend
+Heapster is running at https://104.196.234.30/api/v1/proxy/namespaces/kube-system/services/heapster
+KubeDNS is running at https://104.196.234.30/api/v1/proxy/namespaces/kube-system/services/kube-dns
+kubernetes-dashboard is running at https://104.196.234.30/api/v1/proxy/namespaces/kube-system/services/kubernetes-dashboard
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Ah, magic! It’s working! So a few other commands just to verify and determine what the state of things are.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ kubectl top node
+NAME                                                 CPU(cores)   CPU%      MEMORY(bytes)   MEMORY%
+gke-development-systems-default-pool-f30f476e-gtnj   34m          3%        1529Mi          41%
+gke-development-systems-default-pool-f30f476e-ncln   47m          4%        1879Mi          50%
+gke-development-systems-default-pool-f30f476e-s5pc   38m          3%        1691Mi          45%
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;That looks good. So on to getting some containers launched.&lt;/p&gt;
+&lt;h1 id=&quot;summary&quot;&gt;Summary&lt;/h1&gt;
+&lt;p&gt;At this point I’ve learned a number of things. One, is that using Terraform I lose a few of the other credentials that are auto-magically available if you setup the cluster via the &lt;code&gt;gcloud&lt;/code&gt; commands. Using &lt;code&gt;gcloud&lt;/code&gt; generally handles a lot of the management of ssh keys, credentials, and related security stuff so that you don’t have to. There are of course positives and negatives around this, for instance, if I go and created a cluster via Terraform my credentials are out of sync with what &lt;code&gt;gcloud&lt;/code&gt; is actually using. At least in the scenario above I had to go set the credentials manually and add them to the ~/.bash_profile. Overall, once familiar with, I know this all will be super easy to dig through, but it definitely takes some exploration and lots of breaking things before getting it all figured out and mapped in one’s brain. For part II I’m digging into running containers in the cluster and also getting container images stored in Google’s image container registry. Hopefully I can get the network and subnetwork confusion sorted out too and get that implemented.&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>Talking Through Managed or Baked In House Continuous Integration (CI) and Delivery (CD)</title>
+      <link>http://adron.github.io/articles/talking-through-ci-cd/</link>
+      <pubDate>Thu, 26 Jan 2017 06:45:46 -0800</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/talking-through-ci-cd/</guid>
+      <author></author>
+      <description>&lt;p&gt;Ok, we have several different scenarios and let’s say you’re the boss. In each of these scenarios we can assume that CI &amp;amp; CD are going to be mandatory to achieve the team’s greatest potential to deliver. So the question I’ll be attacking is, do we roll our own with Drone.io, TeamCity, continuous integration and delivery or do we get more advantage from utilizing a managed solution like CircleCI, Codeship, or related offerings. The following are the scenarios in relation to team size and project that you’re heading up:&lt;/p&gt;
+&lt;h2 id=&quot;scenarios&quot;&gt;Scenarios&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;&lt;em&gt;Scenario 1:&lt;/em&gt;&lt;/strong&gt; You have team of 4 people. All developers by trade and experienced. The team may, about 20% chance in the coming 3-6 months, grow to ~8 people, with 1-2 of those being automation experts that could prospectively manage CI/CD systems. Currently the project is just starting, and the decision on what language and tech stack has been determined and initial coding will be starting in the coming week. Currently, there is no CI/CD setup for this project.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;&lt;em&gt;Scenario 2:&lt;/em&gt;&lt;/strong&gt; Another team has 33 developers, 4 are site reliability with 2 more working with them frequently on systems automation. No real growth for the team in the next 2-3 years. The application these developers work on has new feature development and maintenance, lot’s of ongoing maintenance. Currently there is also a fair amount of technical debt associated with the code base that needs paid off for each new feature implemented, or any significant changes during maintenance of the software. This team currently has no CI or CD of the application setup.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;&lt;em&gt;Scenario 3:&lt;/em&gt;&lt;/strong&gt; The third team is 4 people, pairing, and they have the highest output and quality of the rest of the teams. Largely because they work well together but also they have minimal technical debt and can move quickly. The application has been under development for about 3 months and they currently have a CI process setup with Drone.io. No deployment is setup yet nor is any infrastructure or other tooling setup beyond what they’ve already setup with the Drone.io solution.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;&lt;em&gt;Scenario 4:&lt;/em&gt;&lt;/strong&gt; Fourth scenario is a large team of 232 people. There are 9 organizations with multiple people in each of those organizations, split out to developers, project management, product development leads, and a core architecture team. Among the 232 there are also 17 people dedicated to automation and infrastructure management. This team manages one huge monolithic application that currently is built with manual build processes that are partially scripted. Of these build processes there are 11 of them, which then must be combined via some more scripts and more manual processes that are then pushed to a &lt;em&gt;test development&lt;/em&gt; environment, where a subsequent 4 people work full time testing the &lt;em&gt;test development&lt;/em&gt; environment.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Each of these scenarios has a clear and present need for continuous integration and delivery setup. Just for context, when I write continuous integration or continuous delivery I define these like this:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Continuous Integration&lt;/strong&gt; - &lt;a href=&quot;https://en.wikipedia.org/wiki/Continuous_integration&quot;&gt;Wikipedia&lt;/a&gt; - &lt;a href=&quot;https://www.thoughtworks.com/continuous-integration&quot;&gt;Thoughtworks&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;…is the process of bringing together the assets of an application or service project to compile that code into a binary. In the case of JavaScript or other non-compiled language this process would include any transpiling or gathering of assets that are needed in order to execute the code via the integration process. In most cases I include unit testing, and sometimes certain types of or styles of behavior tests in a project to be included under the process of continuous integration.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Continuous Delivery&lt;/strong&gt; -  &lt;a href=&quot;https://en.wikipedia.org/wiki/Continuous_delivery&quot;&gt;Wikipedia&lt;/a&gt; - &lt;a href=&quot;https://www.thoughtworks.com/continuous-delivery&quot;&gt;Thoughtworks&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;…is the process of events that must be completed, in an automated fashion, after the continuous integration process to take code or a binary from the transpiled or binary state into a production environment in which it will be used or executed. This is fairly easy to outline with a services or web application, since there is an obvious way in which this code needs to be called (via http/https in a browser) but some other applications, like a CLI or desktop application are slightly more diverse in the way they may be delivered. These later applications we can safely assume have a continuous delivery process that would vary widely but be something like being packaged into an installer (in the case of OS-X a .pkg file or in the case of Windows into a .exe or .msi file.)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Also an excellent resource is available &lt;a href=&quot;https://continuousdelivery.com/&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;solutions-discussion-for-scenarios&quot;&gt;Solutions &amp;amp; Discussion for Scenarios&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;&lt;em&gt;Scenario 1:&lt;/em&gt;&lt;/strong&gt; Considering there are 4 people, prospectively 8 at the most over the next 6 months, the team really should not spend time on putting together, automating, and building out systems they don’t absolutely need to. The emphasis with a small team needs to be lean, mean, and focused on the mission at hand. Continuous integration and delivery will help delivery that, but putting it together isn’t directly related to business value.&lt;/p&gt;
+&lt;p&gt;  What to do? Well, the quickest and simplest way to get started and enable a core focus on the mission is to use a managed continuous integration and delivery provider. This is a great case to use Codeship, CircleCI, AppVeyor, or a host of providers.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;&lt;em&gt;Scenario 2:&lt;/em&gt;&lt;/strong&gt; This is an interesting scenario in that there are people tasked with automation and what would be the effort of continuous integration and delivery. However, there are questions to ask. There are three questions that immediately come to mind. These would likely have the most weight on a managed or self-hosted CI &amp;amp; CD solution would be:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Would running our own CI and CD save the company money?&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Does the team need specific features or capabilities inherent in self-hosted CI and CD solutions?&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Would the self-hosted capabilities versus the managed enable the team to deliver more effectively?&lt;/p&gt;
+&lt;p&gt;Let’s dig through each question.&lt;/p&gt;
+&lt;p&gt;The first, is the cost question. If the team had enough demand for builds or other integration and delivery automation it is feasible that costs could be fairly huge. I myself have seen price tags in the $40-50k a month range, which more than validates self-hosting build and delivery solutions to more finely manage or even decrease costs. However, I’ll add that $40-50k does only pay for work equating to a part time effort on this work. That doesn’t go that far either. By proxy, the cost is a valid question, but it isn’t all that it’s cracked up to be. I tend to lean heavily toward using a hosted solution even if it costs 10-40% more as that cost is usually worth it to refocus efforts on business value instead of CI and CD management. Let’s say, for this 33+ person team in scenario 2, that CI and CD costs will be around $40k per month via hosted offerings and about $25k if it’s self-hosted.&lt;/p&gt;
+&lt;p&gt;The second is likely the most important that would be asked of the three. Case in point the market has provided very few .NET build solutions that are managed. This has limited the ability to gain CI and CD advantages for startups that choose .NET. This has likely been one of many reasons .NET has taken a massive nose dive in popularity over the last decade among startups. Even among the more popular build service one can use, there are certain limitations that can stop a project cold. In these cases, a team can be forced into a self-hosted option. Let’s say, for scenario 2 however there isn’t a legitimate need for self-hosted control, but some of the team think it would be a nice to have.&lt;/p&gt;
+&lt;p&gt;The third question, is more inclusive of the aforementioned other two questions plus other criteria. But just as I mentioned the team thinks it would be a &lt;em&gt;nice to have&lt;/em&gt; that begs another question. If the team had the extra control would that give them a boost or assistance with certain CI or CD automation, or will they get into situations where someone will end up with managing or spending significant time toying about with capabilities? Would that time be worth it in the end, or be lost time sunk into something that could work without the investment? Let’s say that having full control in this situation, as if we were so fortunate to get a % of productivity increase, would give the team a 5% speed to delivery boost and 2% less bugs.&lt;/p&gt;
+&lt;p&gt;Alright, I’ve conjured up those few thougths about each of those questions. Based on the posed end statements of each questions what would you do as the boss? What would I do? Since this is a team that is largely maintaining existing software and building some features, I’d also ponder what would keep them happier. Maintaining a CI and CD system in hours or gettinga  self-hosted service, then I’d look at the over under of $40k cost per month hosted or $25k self-hosted, then &lt;em&gt;nice to have&lt;/em&gt; thought behind self-hosted, and the upside of 5% speed to deliver and 2% bugs boost. In the end here, it would come down to developer happiness, and anything, I may even mix usage. For instance a bit of Codeship and Drone.io together. Both have a similar usage style so the learning curve would be huge, but similar giving the team a conjoined experience. I’ll leave this solution in the democratic vote of the developer team.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;&lt;em&gt;Scenario 3:&lt;/em&gt;&lt;/strong&gt; This scenario is easy for me. If someone is spending more than 30 minutes a week dealing with Drone.io management, I’d push a shift to a managed provider. However since the Drone.io solution is already in place, if the only thing people are doing is committing code, getting builds, and have their code delivered then I’m a happy camper. Drone.io would stay as the CI and CD tooling for the team.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;&lt;em&gt;Scenario 4:&lt;/em&gt;&lt;/strong&gt; Ok, wow, this is a big team to implement for. My immediate reaction is everything will be dependent on individual teams within the big team vote. There’s no reason to force a large team of this size to use a single solution, but there’s also many downsides to using to many different technologies to implement CI and CD. Let’s say the code this 200+ person team is working on is a single language, single stack, and singular deployment path, with just a few builds occurring per hour. If that’s the case then that would change my response toward a managed and hosted solution. But with this size, it’s likely that costs are much higher, build demand is dramatically higher, and the various internal security, admin, and related management of users, individual features, and the like lend to a self-hosted internal solution to give more control over customization specific to needs.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Summary: These are just a few of the thoughts, notions, and issues that need reflected upon to make a useful and effective decision about CI and CD tooling. These scenarios I posed are merely from the perspective of team size, organization, costs, and these higher level notions are CI and CD. In a future article I’ll dive into the specifics of how CI and CD are implemented on various platforms, and we can dig even deeper into why, what, who, where, and when to implement CI and CD for your team(s). Whatever the case, CI and CD are a fundamentally and vitally important first step or ongoing step of any project. If you’d like to discuss more, feel free to reach out to me on Twitter &lt;a href=&quot;https://twitter.com/Adron&quot;&gt;@Adron&lt;/a&gt; or &lt;a href=&quot;http://blog.adron.me/docs/contact/&quot;&gt;contact me&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>Introduction to Drone.io</title>
+      <link>http://adron.github.io/articles/drone-io/</link>
+      <pubDate>Wed, 25 Jan 2017 00:00:00 -0800</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/drone-io/</guid>
+      <author></author>
+      <description>&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Research &amp;amp; Learn&lt;/strong&gt;: &lt;a href=&quot;https://github.com/drone/drone&quot;&gt;Drone.io Github Repo&lt;/a&gt;, &lt;a href=&quot;http://try.drone.io/&quot;&gt;Trying Drone.io&lt;/a&gt;, and &lt;a href=&quot;http://readme.drone.io/&quot;&gt;Drone.io Docs&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Objective&lt;/strong&gt;: What Drone.io is and getting started.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I’ve dived into a new effort to figure out &lt;a href=&quot;http://try.drone.io/&quot;&gt;Drone.io&lt;/a&gt;, get it running, and if plausible contribute in some way to the project. This was kick started yesterday while I was speaking with Joachim (T &lt;a href=&quot;https://twitter.com/lindyhop&quot;&gt;@lindyhop&lt;/a&gt; &amp;amp;&amp;amp; G &lt;a href=&quot;https://github.com/josmo&quot;&gt;@josmo&lt;/a&gt;) about some projects we’re working on. We discussed the design of Drone.io, how we’re using it on some projects internally here &lt;a href=&quot;https://twitter.com/PelotonTechio&quot;&gt;@PelotonTechio&lt;/a&gt;. I will, and others will be posting more on what we’re doing with Drone.io later, but for now, I’ve put together this introduction to what Drone.io is, and getting started with it.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;h2 id=&quot;my-first-steps&quot;&gt;My First Steps&lt;/h2&gt;
+&lt;p&gt;I was fortunate to join Joachim a few weeks ago for a Share-out &lt;a href=&quot;https://twitter.com/PelotonTechio&quot;&gt;@PelotonTechio&lt;/a&gt; where someone from the team shares information they’ve recently gained while working on a project, toying around with a personal project, or other research they’ve been doing. From this, I had a little head start of what Drone.io is about, but still dug in from the very start. Which in my case, that meant grabbing the code and looking directly into things.&lt;/p&gt;
+&lt;h2 id=&quot;what-is-drone-io-&quot;&gt;What is Drone.io?&lt;/h2&gt;
+&lt;p&gt;In simple terms, Drone is a continuous integration platform using containers, primarily Docker based containers. These containers provide complete control over each build environment with the obvious isolation that containers provide. The goal of Drone is to help ship code similar to the way Github does, as per the stated objective in the README.md. Check out more on that specific &lt;a href=&quot;https://github.com/blog/1241-deploying-at-github#always-be-shipping&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If you’re curious about what Github does, and it’s TLDR; and you don’t want to click through, here’s the synopsis in one graph:&lt;/p&gt;
+&lt;p&gt;Always be shipping:
+&lt;a href=&quot;https://github.com/blog/1241-deploying-at-github#always-be-shipping&quot;&gt;&lt;img src=&quot;/articles/drone-io/abs-graph.png&quot; alt=&quot;Always Be Shipping&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;A secondary goal is to replace Jenkins as an industry wide integration tool. We’ll all get to see how that goes as time rolls onward.&lt;/p&gt;
+&lt;h2 id=&quot;getting-a-build-started&quot;&gt;Getting a Build Started&lt;/h2&gt;
+&lt;p&gt;The first step, if you’ve got a build environment already, is simply to create a .drone.yml file. This file is a subset of the &lt;a href=&quot;https://docs.docker.com/compose/&quot;&gt;docker-compose&lt;/a&gt; style format. This yaml file describes the services and the container image that will be used. For instance, here’s an example from the docs.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;pipeline:
+  build:
+    image: golang
+    commands:
+      - go get
+      - go build
+      - go test
+
+services:
+  postgres:
+    image: postgres:9.4.5
+    environment:
+      - POSTGRES_USER=myapp
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This is a simple service running postgres using the postgres 9.4.5 docker image and the pipeline is based on the golang image. The first pipeline step is to build using the commands &lt;code&gt;go get&lt;/code&gt;, &lt;code&gt;go build&lt;/code&gt;, and &lt;code&gt;go test&lt;/code&gt;. The service in this situation would likely be available for that build to use for integration tests with the database server.&lt;/p&gt;
+&lt;p&gt;This also points to how the architecture works for this particular process. Drone starts these containers up based on the specified images. That image acts as the starting point for the container point which will be used to put code on that will eventually be built, tested, or otherwise used for this processing.&lt;/p&gt;
+&lt;p&gt;Once the image is pulled, Drone automatically clones the repository you specify onto a locally mounted volume, called a workspace, on the running container. The clone process is parallel to executing a command similar to the following (from the docs &lt;a href=&quot;http://readme.drone.io/usage/getting-started/&quot;&gt;here&lt;/a&gt;):&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;git clone --depth=50 --recusive=true \
+    https://github.com/octocat/hello-world.git \
+    /drone/src/github.com/octocat/hello-world
+git checkout 7fd1a60
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;That the basic steps and idea for getting a build setup. It’s one seriously clean, smooth, and seamless way to setup a build. In the coming weeks I’ll have more information about builds for specific stacks, but for now, let’s take a look at some other elements beyond setting up a simple build.&lt;/p&gt;
+&lt;h2 id=&quot;setting-up-some-drone-s-&quot;&gt;Setting up Some Drone(s)&lt;/h2&gt;
+&lt;p&gt;Alright, so after digging through a bit I realized I just needed to dig in and get a Drone service running for myself. So this was my first attempt at getting Drone up and running. I saw the “&lt;em&gt;click this one cool button to make it work on Azure&lt;/em&gt;“ button but I have two issues with this: 1. I’m not actually learning anything about what is being done, and if it breaks I’m up the proverbial creek without a paddle 2. I currently, among all clients and people I cohack with, have zero need to know how it works on Azure. But hey, maybe in the future. For now, I just want to get something working locally, as it seems like this would be reasonable.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Prerequisite Knowledge&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Digging through the documentation it is immediately clear that it behooves the admin of Drone to know a thing or three about Docker Compose, in addition to merely Docker. The first sample file that is in the docs &lt;a href=&quot;http://readme.drone.io/admin/installation-guide/&quot;&gt;here&lt;/a&gt; in the &lt;a href=&quot;http://readme.drone.io/admin/installation-guide/&quot;&gt;installation guide&lt;/a&gt; is simply a Docker Compose yaml file.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;version: &amp;#39;2&amp;#39;
+
+services:
+  drone-server:
+    image: drone/drone:0.5
+    ports:
+      - 80:8000
+    volumes:
+      - ./drone:/var/lib/drone/
+    restart: always
+    environment:
+      - DRONE_OPEN=true
+      - DRONE_GITHUB=true
+      - DRONE_GITHUB_CLIENT=${DRONE_GITHUB_CLIENT}
+      - DRONE_GITHUB_SECRET=${DRONE_GITHUB_SECRET}
+      - DRONE_SECRET=${DRONE_SECRET}
+
+  drone-agent:
+    image: drone/drone:0.5
+    command: agent
+    restart: always
+    depends_on: [ drone-server ]
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      - DRONE_SERVER=ws://drone-server:8000/ws/broker
+      - DRONE_SECRET=${DRONE_SECRET}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The installation guide generally follows the setup with the assumption of hosting it with a public access URI so that Github OAUTH can be setup. I simply wanted to get some basic elements tested out so I just thought I’d give it a go without any of that setup. Just run the basic service and get the UI setup first.&lt;/p&gt;
+&lt;p&gt;With that, I thought I’d just try to copy and paste the Docker Compose file into a &lt;em&gt;docker-compose.yaml&lt;/em&gt; and just &lt;code&gt;docker-compose up&lt;/code&gt; the thing. Theoretically it &lt;em&gt;shouldn’t&lt;/em&gt; hurt anything right? Well, without even setting the environment variables I kicked off the command.&lt;/p&gt;
+&lt;p&gt;Well, that was kind of useless. But you know, I immediately learned a few things just from observation of this attempt. Obviously it would, it should fail considering. So for attempt two I set the environment variables. It was a bit LOLz…&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ docker-compose up
+WARNING: The DRONE_SECRET variable is not set. Defaulting to a blank string.
+WARNING: The DRONE_GITHUB_CLIENT variable is not set. Defaulting to a blank string.
+WARNING: The DRONE_GITHUB_SECRET variable is not set. Defaulting to a blank string.
+Creating network &amp;quot;drone_default&amp;quot; with the default driver
+Pulling drone-server (drone/drone:0.5)...
+0.5: Pulling from drone/drone
+a3ed95caeb02: Pull complete
+802d894958a2: Pull complete
+f294f54a4453: Pull complete
+Digest: sha256:f04adc8fd1097671af6d74dd809eefea6e5062a881912322d3d908e167253a97
+Status: Downloaded newer image for drone/drone:0.5
+Creating drone_drone-server_1
+Creating drone_drone-agent_1
+Attaching to drone_drone-server_1, drone_drone-agent_1
+drone-server_1  | time=&amp;quot;2017-01-25T18:59:14Z&amp;quot; level=fatal msg=&amp;quot;failed to generate token from DRONE_AGENT_SECRET&amp;quot;
+drone-agent_1   | 1:M 25 Jan 18:59:15.243 * connecting to server ws://drone-server:8000/ws/broker
+drone-agent_1   | 1:M 25 Jan 18:59:15.283 # connection failed, retry in 15s. websocket.Dial ws://drone-server:8000/ws/broker: dial tcp: lookup drone-server on 127.0.0.11:53: no such host
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;So even without the environment variables set it attempted to go about launching a &lt;em&gt;drone-server_1&lt;/em&gt; and go through various steps. I quickly killed the efforts of the executing Docker Compose with Ctrl+C and then a quick call to &lt;code&gt;docker-compose down&lt;/code&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ docker-compose down
+WARNING: The DRONE_SECRET variable is not set. Defaulting to a blank string.
+WARNING: The DRONE_GITHUB_CLIENT variable is not set. Defaulting to a blank string.
+WARNING: The DRONE_GITHUB_SECRET variable is not set. Defaulting to a blank string.
+Removing drone_drone-agent_1 ... done
+Removing drone_drone-server_1 ... done
+Removing network drone_default
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;It appears at this point that it stopped and cleaned up appropriately. Also I wanted to see if I could get things going without the Github integration. I removed those environment variables form the list. That included deleting these lines.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;- DRONE_GITHUB=true
+- DRONE_GITHUB_CLIENT=${DRONE_GITHUB_CLIENT}
+- DRONE_GITHUB_SECRET=${DRONE_GITHUB_SECRET}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;I also made a change for the DRONE_SERVER, set the variables remaining. My yaml looked like this when completed.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;version: &amp;#39;2&amp;#39;
+
+services:
+  drone-server:
+    image: drone/drone:0.5
+    ports:
+      - 80:8000
+    volumes:
+      - ./drone:/var/lib/drone/
+    restart: always
+    environment:
+      - DRONE_OPEN=true
+      - DRONE_SECRET=${DRONE_SECRET}
+
+  drone-agent:
+    image: drone/drone:0.5
+    command: agent
+    restart: always
+    depends_on: [ drone-server ]
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      - DRONE_SERVER=ws://localhost:8000/ws/broker
+      - DRONE_SECRET=${DRONE_SECRET}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;To run this I setup a .env file, which can be used beside a docker-compose.yaml file to store environment variables. Since I didn’t want to clutter up my actual environment variables on my machine while testing this out, this seemed a better route. The initial .env file had the following content.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;DRONE_SECRET=&amp;#39;thesecret&amp;#39;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;After running &lt;code&gt;docker-compose&lt;/code&gt; this time, I got the following.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ docker-compose up
+Creating network &amp;quot;drone_default&amp;quot; with the default driver
+Creating drone_drone-server_1
+Creating drone_drone-agent_1
+Attaching to drone_drone-server_1, drone_drone-agent_1
+drone-server_1  | time=&amp;quot;2017-01-25T19:11:53Z&amp;quot; level=fatal msg=&amp;quot;version control system not configured&amp;quot;
+drone-agent_1   | 1:M 25 Jan 19:11:53.770 * connecting to server ws://localhost:8000/ws/broker
+drone-agent_1   | 1:M 25 Jan 19:11:53.772 # connection failed, retry in 15s. websocket.Dial ws://localhost:8000/ws/broker: dial tcp [::1]:8000: getsockopt: connection refused
+drone_drone-server_1 exited with code 1
+drone-server_1  | time=&amp;quot;2017-01-25T19:11:53Z&amp;quot; level=fatal msg=&amp;quot;version control system not configured&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Well that escalated quickly to hostility! Egads! No version control system configured! Ugh. Ok, I guess I’ve got to have that as a default. I was hoping that it would present some type of default setup for this and just let me get running, especially since I want to host this locally, not out in internet land where I’d have a valid URI to use. With a quick change I added a few things back to the file with the following changes.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;version: &amp;#39;2&amp;#39;
+
+services:
+  drone-server:
+    image: drone/drone:0.5
+    ports:
+      - 80:8000
+    volumes:
+      - ./drone:/var/lib/drone/
+    restart: always
+    environment:
+      - DRONE_OPEN=true
+      - DRONE_GITHUB=true
+      - DRONE_GITHUB_CLIENT=${DRONE_GITHUB_CLIENT}
+      - DRONE_GITHUB_SECRET=${DRONE_GITHUB_SECRET}
+      - DRONE_SECRET=${DRONE_SECRET}
+
+  drone-agent:
+    image: drone/drone:0.5
+    command: agent
+    restart: always
+    depends_on: [ drone-server ]
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      - DRONE_SERVER=ws://drone-server:8000/ws/broker
+      - DRONE_SECRET=${DRONE_SECRET}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Then I navigated out to &lt;em&gt;&lt;a href=&quot;https://github.com/settings/applications/new&quot;&gt;https://github.com/settings/applications/new&lt;/a&gt;&lt;/em&gt; and created an application for my &lt;em&gt;localhost&lt;/em&gt;, guessing what it would prospectively be.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/drone-io/New_OAuth_Application.png&quot; alt=&quot;New OAuth Application&quot;&gt;&lt;/p&gt;
+&lt;p&gt;(Made a screenshot, then realized I had to take off the port numbers. No need for those)&lt;/p&gt;
+&lt;p&gt;Next accepted the permissions.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/drone-io/Authorize_Adron_s_Drone_io.png&quot; alt=&quot;Authorized Adron&amp;#39;s Drone.io Application&quot;&gt;&lt;/p&gt;
+&lt;p&gt;The screen upon confirmation has the appropriate secret and client info for the application.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/drone-io/github-oauth.png&quot; alt=&quot;OAuth Application Information&quot;&gt;&lt;/p&gt;
+&lt;p&gt;The &lt;em&gt;.env&lt;/em&gt; file then included the following changes.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;DRONE_SECRET=&amp;#39;thesecret&amp;#39;
+DRONE_GITHUB_CLIENT=30clientbclient8d
+DRONE_GITHUB_SECRET=8csecret09fesecret3be1a2427b80easecretcf
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;I then spooled up with &lt;code&gt;docker-compose up&lt;/code&gt; again and progress was made!&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ docker-compose up
+Recreating drone_drone-server_1
+Recreating drone_drone-agent_1
+Attaching to drone_drone-server_1, drone_drone-agent_1
+drone-server_1  | time=&amp;quot;2017-01-25T21:03:20Z&amp;quot; level=warning msg=&amp;quot;agents can connect with token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0ZXh0IjoiJ3RoZXNlY3JldCciLCJ0eXBlIjoiYWdlbnQifQ.q8qhOlPLQePSxKfnTe-uURfMOKSQznA2iaLQZnuOYgE&amp;quot;
+drone-server_1  | [GIN-debug] [WARNING] Running in &amp;quot;debug&amp;quot; mode. Switch to &amp;quot;release&amp;quot; mode in production.
+drone-agent_1   | 1:M 25 Jan 21:03:21.763 * connecting to server ws://drone-server:8000/ws/broker
+drone-server_1  |  - using env:    export GIN_MODE=release
+drone-server_1  |  - using code:    gin.SetMode(gin.ReleaseMode)
+drone-server_1  |
+drone-server_1  | [GIN-debug] GET    /static/*filepath         --&amp;gt; github.com/drone/drone/router.Load.func1 (2 handlers)
+drone-server_1  | [GIN-debug] GET    /login                    --&amp;gt; github.com/drone/drone/server.ShowLogin (15 handlers)
+drone-server_1  | [GIN-debug] GET    /login/form               --&amp;gt; github.com/drone/drone/server.ShowLoginForm (15 handlers)
+drone-server_1  | [GIN-debug] GET    /logout                   --&amp;gt; github.com/drone/drone/server.GetLogout (15 handlers)
+drone-server_1  | [GIN-debug] GET    /api/user                 --&amp;gt; github.com/drone/drone/server.GetSelf (16 handlers)
+drone-server_1  | [GIN-debug] GET    /api/user/feed            --&amp;gt; github.com/drone/drone/server.GetFeed (16 handlers)
+drone-server_1  | [GIN-debug] GET    /api/user/repos           --&amp;gt; github.com/drone/drone/server.GetRepos (16 handlers)
+drone-server_1  | [GIN-debug] GET    /api/user/repos/remote    --&amp;gt; github.com/drone/drone/server.GetRemoteRepos (16 handlers)
+drone-server_1  | [GIN-debug] POST   /api/user/token           --&amp;gt; github.com/drone/drone/server.PostToken (16 handlers)
+drone-server_1  | [GIN-debug] DELETE /api/user/token           --&amp;gt; github.com/drone/drone/server.DeleteToken (16 handlers)
+drone-server_1  | [GIN-debug] GET    /api/users                --&amp;gt; github.com/drone/drone/server.GetUsers (16 handlers)
+drone-server_1  | [GIN-debug] POST   /api/users                --&amp;gt; github.com/drone/drone/server.PostUser (16 handlers)
+drone-server_1  | [GIN-debug] GET    /api/users/:login         --&amp;gt; github.com/drone/drone/server.GetUser (16 handlers)
+drone-server_1  | [GIN-debug] PATCH  /api/users/:login         --&amp;gt; github.com/drone/drone/server.PatchUser (16 handlers)
+drone-server_1  | [GIN-debug] DELETE /api/users/:login         --&amp;gt; github.com/drone/drone/server.DeleteUser (16 handlers)
+drone-server_1  | [GIN-debug] GET    /api/teams/:team/secrets  --&amp;gt; github.com/drone/drone/server.GetTeamSecrets (16 handlers)
+drone-server_1  | [GIN-debug] POST   /api/teams/:team/secrets  --&amp;gt; github.com/drone/drone/server.PostTeamSecret (16 handlers)
+drone-server_1  | [GIN-debug] DELETE /api/teams/:team/secrets/:secret --&amp;gt; github.com/drone/drone/server.DeleteTeamSecret (16 handlers)
+drone-server_1  | [GIN-debug] GET    /api/global/secrets       --&amp;gt; github.com/drone/drone/server.GetGlobalSecrets (16 handlers)
+drone-server_1  | [GIN-debug] POST   /api/global/secrets       --&amp;gt; github.com/drone/drone/server.PostGlobalSecret (16 handlers)
+drone-server_1  | [GIN-debug] DELETE /api/global/secrets/:secret --&amp;gt; github.com/drone/drone/server.DeleteGlobalSecret (16 handlers)
+drone-server_1  | [GIN-debug] POST   /api/repos/:owner/:name   --&amp;gt; github.com/drone/drone/server.PostRepo (15 handlers)
+drone-server_1  | [GIN-debug] GET    /api/repos/:owner/:name   --&amp;gt; github.com/drone/drone/server.GetRepo (18 handlers)
+drone-server_1  | [GIN-debug] GET    /api/repos/:owner/:name/builds --&amp;gt; github.com/drone/drone/server.GetBuilds (18 handlers)
+drone-server_1  | [GIN-debug] GET    /api/repos/:owner/:name/builds/:number --&amp;gt; github.com/drone/drone/server.GetBuild (18 handlers)
+drone-server_1  | [GIN-debug] GET    /api/repos/:owner/:name/logs/:number/:job --&amp;gt; github.com/drone/drone/server.GetBuildLogs (18 handlers)
+drone-server_1  | [GIN-debug] POST   /api/repos/:owner/:name/sign --&amp;gt; github.com/drone/drone/server.Sign (19 handlers)
+drone-server_1  | [GIN-debug] GET    /api/repos/:owner/:name/secrets --&amp;gt; github.com/drone/drone/server.GetSecrets (19 handlers)
+drone-server_1  | [GIN-debug] POST   /api/repos/:owner/:name/secrets --&amp;gt; github.com/drone/drone/server.PostSecret (19 handlers)
+drone-server_1  | [GIN-debug] DELETE /api/repos/:owner/:name/secrets/:secret --&amp;gt; github.com/drone/drone/server.DeleteSecret (19 handlers)
+drone-server_1  | [GIN-debug] PATCH  /api/repos/:owner/:name   --&amp;gt; github.com/drone/drone/server.PatchRepo (19 handlers)
+drone-server_1  | [GIN-debug] DELETE /api/repos/:owner/:name   --&amp;gt; github.com/drone/drone/server.DeleteRepo (19 handlers)
+drone-server_1  | [GIN-debug] POST   /api/repos/:owner/:name/chown --&amp;gt; github.com/drone/drone/server.ChownRepo (19 handlers)
+drone-server_1  | [GIN-debug] POST   /api/repos/:owner/:name/builds/:number --&amp;gt; github.com/drone/drone/server.PostBuild (19 handlers)
+drone-server_1  | [GIN-debug] DELETE /api/repos/:owner/:name/builds/:number/:job --&amp;gt; github.com/drone/drone/server.DeleteBuild (19 handlers)
+drone-server_1  | [GIN-debug] GET    /api/badges/:owner/:name/status.svg --&amp;gt; github.com/drone/drone/server.GetBadge (15 handlers)
+drone-server_1  | [GIN-debug] GET    /api/badges/:owner/:name/cc.xml --&amp;gt; github.com/drone/drone/server.GetCC (15 handlers)
+drone-server_1  | [GIN-debug] POST   /hook                     --&amp;gt; github.com/drone/drone/server.PostHook (15 handlers)
+drone-server_1  | [GIN-debug] POST   /api/hook                 --&amp;gt; github.com/drone/drone/server.PostHook (15 handlers)
+drone-server_1  | [GIN-debug] GET    /ws/broker                --&amp;gt; github.com/drone/drone/server.Broker (15 handlers)
+drone-server_1  | [GIN-debug] GET    /ws/feed                  --&amp;gt; github.com/drone/drone/server.EventStream (15 handlers)
+drone-server_1  | [GIN-debug] GET    /ws/logs/:owner/:name/:build/:number --&amp;gt; github.com/drone/drone/server.LogStream (18 handlers)
+drone-server_1  | [GIN-debug] GET    /authorize                --&amp;gt; github.com/drone/drone/server.GetLogin (15 handlers)
+drone-server_1  | [GIN-debug] POST   /authorize                --&amp;gt; github.com/drone/drone/server.GetLogin (15 handlers)
+drone-server_1  | [GIN-debug] POST   /authorize/token          --&amp;gt; github.com/drone/drone/server.GetLoginToken (15 handlers)
+drone-server_1  | [GIN-debug] GET    /api/builds               --&amp;gt; github.com/drone/drone/server.GetBuildQueue (16 handlers)
+drone-server_1  | [GIN-debug] GET    /api/agents               --&amp;gt; github.com/drone/drone/server.GetAgents (16 handlers)
+drone-server_1  | [GIN-debug] GET    /api/debug/pprof/         --&amp;gt; github.com/drone/drone/server.IndexHandler.func1 (16 handlers)
+drone-server_1  | [GIN-debug] GET    /api/debug/pprof/heap     --&amp;gt; github.com/drone/drone/server.HeapHandler.func1 (16 handlers)
+drone-server_1  | [GIN-debug] GET    /api/debug/pprof/goroutine --&amp;gt; github.com/drone/drone/server.GoroutineHandler.func1 (16 handlers)
+drone-server_1  | [GIN-debug] GET    /api/debug/pprof/block    --&amp;gt; github.com/drone/drone/server.BlockHandler.func1 (16 handlers)
+drone-server_1  | [GIN-debug] GET    /api/debug/pprof/threadcreate --&amp;gt; github.com/drone/drone/server.ThreadCreateHandler.func1 (16 handlers)
+drone-server_1  | [GIN-debug] GET    /api/debug/pprof/cmdline  --&amp;gt; github.com/drone/drone/server.CmdlineHandler.func1 (16 handlers)
+drone-server_1  | [GIN-debug] GET    /api/debug/pprof/profile  --&amp;gt; github.com/drone/drone/server.ProfileHandler.func1 (16 handlers)
+drone-server_1  | [GIN-debug] GET    /api/debug/pprof/symbol   --&amp;gt; github.com/drone/drone/server.SymbolHandler.func1 (16 handlers)
+drone-server_1  | [GIN-debug] POST   /api/debug/pprof/symbol   --&amp;gt; github.com/drone/drone/server.SymbolHandler.func1 (16 handlers)
+drone-server_1  | [GIN-debug] GET    /api/debug/pprof/trace    --&amp;gt; github.com/drone/drone/server.TraceHandler.func1 (16 handlers)
+drone-agent_1   | 1:M 25 Jan 21:03:21.966 * connection established, ready to process builds.
+drone-agent_1   | 1:M 25 Jan 21:03:51.766 - stomp: send heart-beat.
+drone-agent_1   | 1:M 25 Jan 21:03:51.866 - stomp: received heart-beat
+drone-agent_1   | 1:M 25 Jan 21:04:21.770 - stomp: send heart-beat.
+drone-agent_1   | 1:M 25 Jan 21:04:21.870 - stomp: received heart-beat
+drone-agent_1   | 1:M 25 Jan 21:04:51.765 - stomp: send heart-beat.
+drone-agent_1   | 1:M 25 Jan 21:04:51.867 - stomp: received heart-beat
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Alright. So that actually gave me something useful. From this point I opened up Kitematic, just to see the instances and have an easy to navigate to the UI.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/drone-io/kitematic.png&quot; alt=&quot;Kitematic Display&quot;&gt;&lt;/p&gt;
+&lt;p&gt;There were the running instances. I clicked on the link for the UI on the server and immediately it served up my request.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/drone-io/welcome_drone.png&quot; alt=&quot;Welcome Drone!&quot;&gt;&lt;/p&gt;
+&lt;p&gt;At this point I’m ready to get going on some builds. More on that in a coming article, for now I’m gonna go enjoy good talk on machine learning and a beer with the &lt;a href=&quot;https://twitter.com/search?q=%23seascale&quot;&gt;#SEASCALE&lt;/a&gt; crew. Cheers!&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>The Data Diluvium, Getting Started</title>
+      <link>http://adron.github.io/articles/data-diluvium-getting-started/</link>
+      <pubDate>Mon, 23 Jan 2017 00:00:00 -0800</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/data-diluvium-getting-started/</guid>
+      <author></author>
+      <description>&lt;p&gt;Welcome to the first of more than a few blog entries on Data Diluvium. Data Diluvium is a project I’ve started focused around generating data for the purposes of testing, capacity, or whatever other needs might arise.&lt;/p&gt;
+&lt;p&gt;Definition of &lt;strong&gt;&lt;em&gt;data&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;:  factual information (as measurements or statistics) used as a basis for reasoning, discussion, or calculation &lt;the data is plentiful and easily available — H. A. Gleason, Jr.&gt; &lt;comprehensive data on economic growth have been published — N. H. Jacoby&gt;&lt;/li&gt;
+&lt;li&gt;:  information output by a sensing device or organ that includes both useful and irrelevant or redundant information and must be processed to be meaningful&lt;/li&gt;
+&lt;li&gt;:  information in numerical form that can be digitally transmitted or processed&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Definition of &lt;strong&gt;&lt;em&gt;deluge&lt;/em&gt;&lt;/strong&gt; which is the English version of the latin &lt;strong&gt;&lt;em&gt;diluvium&lt;/em&gt;&lt;/strong&gt;.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;a :  an overflowing of the land by water. b :  a drenching rain “a deluge causing mudslides in the area”.&lt;/li&gt;
+&lt;li&gt;:  an overwhelming amount or number &lt;received a deluge of angry phone calls&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;…thus &lt;strong&gt;&lt;em&gt;Data Diluvium&lt;/em&gt;&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;The idea is to build a data generation service. Something that will generate random data in usable chunks; name generation, addresses, and related data. To get a wide range of use out of this capability I needed to build a web service application and a respective CLI (Command Line Interface) to go along with the web application.&lt;/p&gt;
+&lt;h2 id=&quot;a-microservice-is-born-&quot;&gt;A Microservice is Born!&lt;/h2&gt;
+&lt;p&gt;The web service is going to generate pseudo-random data around name, addresses, phone numbers, and location. Over the course of this series I’ll add more data generation types and implement a schema for the actual data generation. This web service will be created based on microservice architectural and design ideas. However in the early stages of this effort I’ll keep it simple and will stick to implementing a minimally viable product (MVP). From here on out I’ll refer to this project as the &lt;em&gt;Data
+Diluvium&lt;/em&gt; project.&lt;/p&gt;
+&lt;h2 id=&quot;microservice-client-cli&quot;&gt;Microservice Client CLI&lt;/h2&gt;
+&lt;p&gt;For the client side, I want to provide a CLI in which to interface with the microservice itself. With this CLI I want to be able to provide basic configuration or passed parameters that will allow me to take the generated data and pass it directly into terminal output, out to a file, or prospectively as things develop directly into databases of various kinds themselves.&lt;/p&gt;
+&lt;h2 id=&quot;the-tooling-language&quot;&gt;The Tooling &amp;amp; Language&lt;/h2&gt;
+&lt;p&gt;Overall this could be built in a number of technology stacks. I could use Node.js, .NET, Java, Erlang, or Go to build both the CLI and the microservice. With the multitude of choices it can be somewhat difficult picking the right stack to get things done as quickly, efficiently, well organized, and cleanly as possible. For this particular effort I’m going to go with Go to implement the microservice and the CLI.&lt;/p&gt;
+&lt;p&gt;Why Go you might ask? For the CLI, I’d want a cleanly built, fast, and responsive CLI that I can setup on any machine with minimal fuss. For Node.js for instance, one doesn’t get a built executable, but instead a kind of morass of tooling, and preinstallation software required. For Java and .NET one ends up with a great array of tooling to build a microservice and CLI, but the knowledge and time just to setup the initial development environments leads me away from those. With Erlang, maybe a day in the future, since it is indeed hugely and almost mystically powerful (yes, I just wrote mystically, it sounds appropriate).&lt;/p&gt;
+&lt;h2 id=&quot;kick-off&quot;&gt;Kick Off&lt;/h2&gt;
+&lt;p&gt;First things first, I need the projects themselves. Here are the steps I took to get some basic parts building together for the two projects. The first step was simply to create two directories for each of these projects, one I named &lt;em&gt;Data
+Diluvium&lt;/em&gt; and one &lt;em&gt;Colligere&lt;/em&gt;. Inside both of those directories I put together a basic structure for each of these folders.&lt;/p&gt;
+&lt;h3 id=&quot;basic-project-files&quot;&gt;Basic Project Files&lt;/h3&gt;
+&lt;p&gt;The frame of each included the following:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;I created a folder titled &lt;em&gt;&lt;a href=&quot;https://github.com/Adron/datadiluvium/tree/master/.github&quot;&gt;.github&lt;/a&gt;&lt;/em&gt; and placed the following files: &lt;em&gt;&lt;a href=&quot;https://github.com/Adron/datadiluvium/blob/master/.github/CONTRIBUTING.md&quot;&gt;CONTRIBUTING.md&lt;/a&gt;&lt;/em&gt;, &lt;em&gt;&lt;a href=&quot;https://github.com/Adron/datadiluvium/blob/master/.github/ISSUE_TEMPLATE.md&quot;&gt;ISSUE_TEMPLATE.md&lt;/a&gt;&lt;/em&gt;, and &lt;em&gt;&lt;a href=&quot;https://github.com/Adron/datadiluvium/blob/master/.github/PULL_REQUEST_TEMPLATE.md&quot;&gt;PULL_REQUEST.md&lt;/a&gt;&lt;/em&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Next the standard &lt;a href=&quot;https://github.com/Adron/datadiluvium/blob/master/.gitignore&quot;&gt;.gitignore&lt;/a&gt; file with the following contents. This is the basic file Github starts a Go project with if selected during the creation of the repository. It has the minor addition of &lt;em&gt;.DS_Store&lt;/em&gt; to keep that OS-X file out of the repository and the &lt;em&gt;.idea&lt;/em&gt; director to keep out the IntelliJ, WebStorm, or Goland IDE (or any Jetbrains IDE) settings directory.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;# Compiled Object files, Static and Dynamic libs (Shared Objects)
+*.o
+*.a
+*.so
+
+# Folders
+_obj
+_test
+
+# Architecture specific extensions/prefixes
+*.[568vq]
+[568vq].out
+
+*.cgo1.go
+*.cgo2.c
+_cgo_defun.c
+_cgo_gotypes.go
+_cgo_export.*
+
+_testmain.go
+
+*.exe
+*.test
+*.prof
+
+.DS_Store
+.idea
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;I added the &lt;em&gt;&lt;a href=&quot;https://github.com/Adron/datadiluvium/blob/master/LICENSE&quot;&gt;LICENSE&lt;/a&gt;&lt;/em&gt; file with the standard Apache 2.0 license legalese.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Finally the &lt;em&gt;&lt;a href=&quot;https://github.com/Adron/datadiluvium/blob/master/README.md&quot;&gt;README.md&lt;/a&gt;&lt;/em&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;build-files&quot;&gt;Build Files&lt;/h3&gt;
+&lt;p&gt;It is important at this stage to create a build and get that build passing with some basic element of code. At this point I need some basic executing code and the respective build configuration files. For this I’ll create three files and name them respectively: &lt;em&gt;&lt;a href=&quot;https://github.com/Adron/datadiluvium/blob/master/main.go&quot;&gt;main.go&lt;/a&gt;&lt;/em&gt;, &lt;em&gt;&lt;a href=&quot;https://github.com/Adron/datadiluvium/blob/master/codeship-steps.yml&quot;&gt;codeship-steps.yml&lt;/a&gt;&lt;/em&gt;, and &lt;em&gt;&lt;a href=&quot;https://github.com/Adron/datadiluvium/blob/master/codeship-services.yml&quot;&gt;codeship-services.yml&lt;/a&gt;&lt;/em&gt;. In addition to the code, since I was going to be pulling in dependencies I’d need something to handle that, which I went ahead and chose &lt;a href=&quot;https://github.com/Masterminds/glide&quot;&gt;glide&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I installed glide with the following commands on my OS-X machine, but since I am doing a lot of development on my new &lt;a href=&quot;http://adron.github.io/articles/data-diluvium-getting-started/&quot;&gt;Leopard WS&lt;/a&gt; machine I installed glide with the curl command below.&lt;/p&gt;
+&lt;p&gt;Install with brew.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;brew update
+brew install glide
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The curl installation step.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;curl https://glide.sh/get | sh
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;With glide installed I ran the default initialization command &lt;code&gt;glide create&lt;/code&gt; to get a &lt;code&gt;glide.yaml&lt;/code&gt; and &lt;code&gt;glide.lock&lt;/code&gt; file setup. Running this command will display the following via the CLI.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;$ glide create
+[INFO]  Generating a YAML configuration file and guessing the dependencies
+[INFO]  Attempting to import from other package managers (use --skip-import to skip)
+[INFO]  Scanning code to look for dependencies
+[INFO]  --&amp;gt; Found reference to github.com/Masterminds/semver
+[INFO]  --&amp;gt; Found reference to github.com/Masterminds/vcs
+[INFO]  --&amp;gt; Found reference to github.com/codegangsta/cli
+[INFO]  --&amp;gt; Found reference to gopkg.in/yaml.v2
+[INFO]  Writing configuration file (glide.yaml)
+[INFO]  Would you like Glide to help you find ways to improve your glide.yaml configuration?
+[INFO]  If you want to revisit this step you can use the config-wizard command at any time.
+[INFO]  Yes (Y) or No (N)?
+n
+[INFO]  You can now edit the glide.yaml file. Consider:
+[INFO]  --&amp;gt; Using versions and ranges. See https://glide.sh/docs/versions/
+[INFO]  --&amp;gt; Adding additional metadata. See https://glide.sh/docs/glide.yaml/
+[INFO]  --&amp;gt; Running the config-wizard command to improve the versions in your configuration
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;I then ran &lt;code&gt;glide get github.com/icrowley/fake&lt;/code&gt; to get the fake library I would need. The &lt;code&gt;glide.yaml&lt;/code&gt; and &lt;code&gt;glide.lock&lt;/code&gt; looked like this after I pulled in this library.&lt;/p&gt;
+&lt;p&gt;glide.yaml&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-yaml&quot;&gt;&lt;span class=&quot;attr&quot;&gt;package:&lt;/span&gt; github.com/adron/datadiluvium
+&lt;span class=&quot;attr&quot;&gt;import:&lt;/span&gt;
+&lt;span class=&quot;attr&quot;&gt;- package:&lt;/span&gt; github.com/icrowley/fake
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;glide.lock&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-yaml&quot;&gt;&lt;span class=&quot;attr&quot;&gt;hash:&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;fd78ca8369405d5998e65ea4cfce94c6599e878c36fec39b85fd385552392d7
+&lt;span class=&quot;attr&quot;&gt;updated:&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;2017&lt;/span&gt;&lt;span class=&quot;bullet&quot;&gt;-01&lt;/span&gt;&lt;span class=&quot;bullet&quot;&gt;-09&lt;/span&gt;T01:&lt;span class=&quot;number&quot;&gt;04&lt;/span&gt;:&lt;span class=&quot;number&quot;&gt;18.134993358&lt;/span&gt;&lt;span class=&quot;bullet&quot;&gt;-08&lt;/span&gt;:&lt;span class=&quot;number&quot;&gt;00&lt;/span&gt;
+&lt;span class=&quot;attr&quot;&gt;imports:&lt;/span&gt;
+&lt;span class=&quot;attr&quot;&gt;- name:&lt;/span&gt; github.com/icrowley/fake
+&lt;span class=&quot;attr&quot;&gt;  version:&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;84&lt;/span&gt;bff6d01560fb0b5a396ba29534e93fd00d09c6
+&lt;span class=&quot;attr&quot;&gt;testImports:&lt;/span&gt; []
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;If you’re curious about the hash, and related properties of this file check out the glide &lt;a href=&quot;https://github.com/Masterminds/glide/blob/master/README.md&quot;&gt;README.md&lt;/a&gt;, it’s useful in understanding what’s stored here.&lt;/p&gt;
+&lt;p&gt;At this point, it was time to actually sling some Go code! At this point, I do indeed mean sling some too. Splat!&lt;/p&gt;
+&lt;h3 id=&quot;some-go-code&quot;&gt;Some Go Code&lt;/h3&gt;
+&lt;p&gt;In the main.go file I wrote some basic Go code just to have something to build. I wanted a little bit more than just a &lt;em&gt;Hello World!&lt;/em&gt; code sample so I added a little bit more. I did some research and found the &lt;a href=&quot;https://github.com/icrowley/fake&quot;&gt;Fake&lt;/a&gt; library written by Dmitry Afanasyev from Ulyanovsk, Russia. I used &lt;code&gt;Go get&lt;/code&gt; to pull that into the project and then added an &lt;code&gt;import&lt;/code&gt; after &lt;code&gt;package main&lt;/code&gt; with the various bits of code I’d want for my getting started code.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;package main
+
+&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; (
+    &lt;span class=&quot;string&quot;&gt;&quot;encoding/json&quot;&lt;/span&gt;
+    &lt;span class=&quot;string&quot;&gt;&quot;fmt&quot;&lt;/span&gt;
+    &lt;span class=&quot;string&quot;&gt;&quot;io/ioutil&quot;&lt;/span&gt;
+    &lt;span class=&quot;string&quot;&gt;&quot;os&quot;&lt;/span&gt;
+    &lt;span class=&quot;string&quot;&gt;&quot;github.com/icrowley/fake&quot;&lt;/span&gt;
+    &lt;span class=&quot;string&quot;&gt;&quot;time&quot;&lt;/span&gt;
+)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The other libraries I knew I would need for various other output, date stamps, and other library features I’d want. Then I went to coding, my first sample of working code to prove out key functionality of the libraries looked like this.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;type Page struct {
+    Title string &lt;span class=&quot;string&quot;&gt;`json:&quot;title&quot;`&lt;/span&gt;
+    Schema   string &lt;span class=&quot;string&quot;&gt;`json:&quot;schema&quot;`&lt;/span&gt;
+}
+
+func (p Page) toString() string {
+    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; toJson(p)
+}
+
+func toJson(p interface{}) string {
+    bytes, &lt;span class=&quot;attr&quot;&gt;err&lt;/span&gt; := json.Marshal(p)
+    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; err != nil {
+        fmt.Println(err.Error())
+        os.Exit(&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;)
+    }
+    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; string(bytes)
+}
+
+func main() {
+    &lt;span class=&quot;attr&quot;&gt;pages&lt;/span&gt; := getPages()
+    &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; _, &lt;span class=&quot;attr&quot;&gt;p&lt;/span&gt; := range pages {
+        fmt.Println(p.toString())
+    }
+
+    fmt.Println(toJson(pages))
+
+    fmt.Println(&lt;span class=&quot;string&quot;&gt;&quot;\nSome Russian Random Data&quot;&lt;/span&gt;)
+    fake.SetLang(&lt;span class=&quot;string&quot;&gt;&quot;ru&quot;&lt;/span&gt;)
+    fmt.Println(fake.FirstName())
+    fmt.Println(fake.FullName())
+
+    fmt.Println(&lt;span class=&quot;string&quot;&gt;&quot;\n\n\nSome English Random Data&quot;&lt;/span&gt;)
+    fake.SetLang(&lt;span class=&quot;string&quot;&gt;&quot;en&quot;&lt;/span&gt;)
+    fmt.Println(fake.FirstName())
+    fmt.Println(fake.FullName())
+
+    thisMany := &lt;span class=&quot;number&quot;&gt;10&lt;/span&gt;
+    counter := &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;
+    t := time.Now().Format(time.RFC850)
+
+    fmt.Println(&lt;span class=&quot;string&quot;&gt;&quot;\n\n\nPrinting&quot;&lt;/span&gt;, thisMany)
+
+      &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; i := &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;; i &amp;lt; thisMany; i++ {
+      fmt.Println(counter, fake.FirstName())
+      counter += &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;
+      fake.FirstName()
+      }
+
+    fmt.Println(&lt;span class=&quot;string&quot;&gt;&quot;Start Time: &quot;&lt;/span&gt;, t)
+    t = time.Now().Format(time.RFC850)
+    fmt.Println(&lt;span class=&quot;string&quot;&gt;&quot;End Time: &quot;&lt;/span&gt;, t)
+}
+
+func getPages() []Page {
+    raw, &lt;span class=&quot;attr&quot;&gt;err&lt;/span&gt; := ioutil.ReadFile(&lt;span class=&quot;string&quot;&gt;&quot;./deluge.json&quot;&lt;/span&gt;)
+    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; err != nil {
+        fmt.Println(err.Error())
+        os.Exit(&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;)
+    }
+
+    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; c []Page
+    json.Unmarshal(raw, &amp;amp;c)
+    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; c
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now, this all was a small mess at this point. I know I needed to get it cleaned up. However the &lt;em&gt;priority&lt;/em&gt; at this point is to get a build working that will provide a trusted basis to continue work from. Since I intend to use this to teach, for everyday testing, and hopefully to gain contributors (want to help?) it needs to have a good build, end of story.&lt;/p&gt;
+&lt;h2 id=&quot;continuous-integration-build&quot;&gt;Continuous Integration Build&lt;/h2&gt;
+&lt;p&gt;At this point I have the main.go file executing with some Go code that pulls together some functionality on random data generation, file I/O (at least reading) with a JSON file for config, and displaying this out the console. So far, so good.&lt;/p&gt;
+&lt;p&gt;I’ve decided to use &lt;a href=&quot;https://codeship.com&quot;&gt;Codeship&lt;/a&gt; for this particular project. They’re a service provider the specializes in continuous integration and delivery services, and I might add that they’re good at it (* Also note declarations, etc at the bottom of this blog entry).&lt;/p&gt;
+&lt;p&gt;Two significant reasons I like to use Codeship are: remote builds &amp;amp; deploys with Docker and local builds with Docker. Having that combination is very effective, providing the capability to effectively to builds that include systemic deployments to my own local machine in addition to combining efforts with a prospective team together via the remote build.&lt;/p&gt;
+&lt;h3 id=&quot;ci-service-setup-at-codeship&quot;&gt;CI Service Setup at Codeship&lt;/h3&gt;
+&lt;p&gt;To setup the repository on Codeship for &lt;em&gt;Docker&lt;/em&gt; support I went through these steps.&lt;/p&gt;
+&lt;p&gt;First select create new project. This is up on the Select Project bar or if you’ve just signed up it is available as the default screen when navigating to builds. Codeship just added &lt;a href=&quot;https://about.gitlab.com/&quot;&gt;Gitlab&lt;/a&gt; as a repository option recently, which I opted for the Data Diluvium Client, &lt;a href=&quot;https://gitlab.com/adron/colligere&quot;&gt;Colligere&lt;/a&gt;, using Gitlab just to test it out. At this time I really like my experience with Gitlab, but that’s for another blog entry, for now, onward!&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/data-diluvium-getting-started/codeship01.png&quot; alt=&quot;Codeship Docker Setup&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Next enter the path for the git repo.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/data-diluvium-getting-started/codeship02.png&quot; alt=&quot;Codeship Docker Setup&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Select pro infrastructure. This will provide Docker capabilities.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/data-diluvium-getting-started/codeship03.png&quot; alt=&quot;Codeship Docker Setup&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Then it is time to setup the Docker configuration and yaml files for the build. The page at this point on Codeship has some links and such, for the two yaml files needed, but I’ll describe them here in detail a bit. In the image below a quick review of each element of the page: (1), the project settings, which will navigate to an area to setup notification, configure and add team members, repository details or reconnecting to a different repository, and general settings, which can be navigated to via (2), and (3) lists the current project the settings are displaying and available for changing.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/data-diluvium-getting-started/codeship.png&quot; alt=&quot;Codeship Docker Setup&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Once the build project is setup in Codeship there are two files that are needed in the repository itself. Both of these files are simple yaml files. Each are given a default name of &lt;code&gt;codeship-steps.yaml&lt;/code&gt; and &lt;code&gt;codeship-services.yaml&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;codeship-steps.yaml&lt;/code&gt; file has the following steps listed for this project. I’ve associated these to a service called &lt;em&gt;deluge_svc&lt;/em&gt; which will be defined in the &lt;code&gt;codeship-services.yaml&lt;/code&gt; file. Then the commands, in order, are &lt;code&gt;go clean&lt;/code&gt;, &lt;code&gt;go test ./...&lt;/code&gt;, and &lt;code&gt;go build&lt;/code&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;- name: deluge
+  service: deluge_svc
+  command: go clean
+- name: deluge_tests
+  service: deluge_svc
+  command: go test ./...
+- name: deluge_build
+  service: deluge_svc
+  command: go build
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The next file is &lt;code&gt;codeship-services.yaml&lt;/code&gt; and has the following contents.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;deluge_svc:
+  build:
+    image: deluge
+    dockerfile_path: Dockerfile
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This simply gives the service a name, which in this case is &lt;code&gt;deluge_svc&lt;/code&gt; and then points to which Docker image will be used and which Dockerfile will build that image. Here I’ve just placed Dockerfile as the file, and next will put together the Dockerfile.&lt;/p&gt;
+&lt;h3 id=&quot;dockerfile&quot;&gt;Dockerfile&lt;/h3&gt;
+&lt;p&gt;The Dockerfile I put together is based off of the official golang image, with the tag specific for the 1.7.4-alpine build. The Alpine build is basically a Linux image that is about ~10MB, maybe a little more or a little less depending on what needs to be added to the image to run the service.&lt;/p&gt;
+&lt;p&gt;In the case of the Data Diluvium App I’ve added a few things that will be needed in order to get the build working. The complete Dockerfile is below, but below that I’ll break out what is going on and what I needed to do to implement this Docker image to run as a container for the build (and by proxy any production use of the same image).&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-docker&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;FROM&lt;/span&gt; golang:&lt;span class=&quot;number&quot;&gt;1.7&lt;/span&gt;.&lt;span class=&quot;number&quot;&gt;4&lt;/span&gt;-alpine
+
+&lt;span class=&quot;keyword&quot;&gt;ENV&lt;/span&gt; GOPATH /go
+
+&lt;span class=&quot;keyword&quot;&gt;RUN&lt;/span&gt;&lt;span class=&quot;bash&quot;&gt; mkdir /app &amp;amp;&amp;amp; \
+    apk add --update curl &amp;amp;&amp;amp; \
+    rm -rf /var/cache/apk/*
+&lt;/span&gt;
+&lt;span class=&quot;keyword&quot;&gt;ADD&lt;/span&gt;&lt;span class=&quot;bash&quot;&gt; . /app/
+&lt;/span&gt;&lt;span class=&quot;keyword&quot;&gt;WORKDIR&lt;/span&gt;&lt;span class=&quot;bash&quot;&gt; /app
+&lt;/span&gt;&lt;span class=&quot;keyword&quot;&gt;RUN&lt;/span&gt;&lt;span class=&quot;bash&quot;&gt; apk update &amp;amp;&amp;amp; apk upgrade &amp;amp;&amp;amp; \
+  apk add --no-cache git &amp;amp;&amp;amp; \
+  curl https://glide.sh/get | sh
+&lt;/span&gt;
+&lt;span class=&quot;keyword&quot;&gt;RUN&lt;/span&gt;&lt;span class=&quot;bash&quot;&gt; glide up &amp;amp;&amp;amp; go get github.com/icrowley/fake &amp;amp;&amp;amp; \
+  go build
+&lt;/span&gt;&lt;span class=&quot;keyword&quot;&gt;CMD&lt;/span&gt;&lt;span class=&quot;bash&quot;&gt; [&lt;span class=&quot;string&quot;&gt;&quot;/app/datadiluvium&quot;&lt;/span&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The first part of the file sets the official golang image and immediately after that I set the actual $GOPATH environment variable on the image.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-docker&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;FROM&lt;/span&gt; golang:&lt;span class=&quot;number&quot;&gt;1.7&lt;/span&gt;.&lt;span class=&quot;number&quot;&gt;4&lt;/span&gt;-alpine
+
+&lt;span class=&quot;keyword&quot;&gt;ENV&lt;/span&gt; GOPATH /go
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Next, I install curl with Alpine’s apk and clear out the apk cache.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-docker&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;RUN&lt;/span&gt;&lt;span class=&quot;bash&quot;&gt; mkdir /app &amp;amp;&amp;amp; \
+    apk add --update curl &amp;amp;&amp;amp; \
+    rm -rf /var/cache/apk/*&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Next are some very specific steps, which I’m not sure really meet a good practice, but it’s what I needed to do in the moment to get things working. The first steps here is simply adding the app directory, then setting it as the WORKDIR. Next I update apk again and upgrade the cache before installing glide. I’m not sure if this is absolutely necessary but I was running into errors and things not executing until I broke apart this section from the aforementioned section.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-docker&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;ADD&lt;/span&gt;&lt;span class=&quot;bash&quot;&gt; . /app/
+&lt;/span&gt;&lt;span class=&quot;keyword&quot;&gt;WORKDIR&lt;/span&gt;&lt;span class=&quot;bash&quot;&gt; /app
+&lt;/span&gt;&lt;span class=&quot;keyword&quot;&gt;RUN&lt;/span&gt;&lt;span class=&quot;bash&quot;&gt; apk update &amp;amp;&amp;amp; apk upgrade &amp;amp;&amp;amp; \
+  apk add --no-cache git &amp;amp;&amp;amp; \
+  curl https://glide.sh/get | sh&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;With glide installed it was time to grab the dependencies for the Docker image with &lt;code&gt;glide up&lt;/code&gt; and for some reason, even though it’s in the glide yaml file I still had to specifically call out the &lt;code&gt;go get github.com/icrowley/fake&lt;/code&gt; library before executing the &lt;code&gt;go build&lt;/code&gt; step.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-docker&quot;&gt;UN glide up &amp;amp;&amp;amp; go get github.com/icrowley/fake &amp;amp;&amp;amp; \
+  go build
+&lt;span class=&quot;keyword&quot;&gt;CMD&lt;/span&gt;&lt;span class=&quot;bash&quot;&gt; [&lt;span class=&quot;string&quot;&gt;&quot;/app/datadiluvium&quot;&lt;/span&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;With that done, I could then finally run a build that encompassed all elements of what I’ve built so far. I did this simple with a &lt;code&gt;jet steps&lt;/code&gt; command and realized I’d missed the steps needed to actually &lt;a href=&quot;https://documentation.codeship.com/pro/getting-started/installation/#jet&quot;&gt;install the jet CLI&lt;/a&gt;. Since this first build I was working on, was actually on Ubuntu Linux, I followed these steps for getting the Jet CLI installed.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;curl -SLO &amp;quot;https://s3.amazonaws.com/codeship-jet-releases/1.15.4/jet-linux_amd64_1.15.4.tar.gz&amp;quot;
+sudo tar -xaC /usr/local/bin -f jet-linux_amd64_1.15.4.tar.gz
+sudo chmod +x /usr/local/bin/jet
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;However there is a brew cask that can be used to install jet with too. It’s a one line command.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;brew cask install jet
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Ok, that should get those following along with a running build too. There is of course the prereq of having git and docker installed too, I’ll admit I keep making the mistake of assuming those things are installed everywhere. So if you hit a hiccup at this point, it may be because those two things need installed - which likely will have caused errors far before this.&lt;/p&gt;
+&lt;p&gt;With &lt;code&gt;jet steps&lt;/code&gt; running the build locally, I can now navigate to Codeship and check out the build when I commit all of this work.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;git add -A
+git commit -m &amp;#39;First code all wrapped up.&amp;#39;
+git push origin master
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;…and that’s it for this entry. Hope that’s useful for getting your own Go project started. If you’re interested, definitely ping me if you’d like to work on Data Diluvium some too. I’m looking for help.&lt;/p&gt;
+&lt;p&gt;Cheers!  -Adron&lt;/p&gt;
+&lt;h4 id=&quot;declarations-references&quot;&gt;Declarations &amp;amp; References&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Codeship - I’ve worked for Codeship providing technical writing and good coding fun with the crew there. They’re not currently paying me, but I will likely do more work for them, so take that into account when judging my judgement of their products. As always, I’m not into any shill work and wanted you dear reader, to have full clarity into my use of the tech. Cheerio!&lt;/li&gt;
+&lt;li&gt;Collected Links - &lt;a href=&quot;https://codeship.com/&quot;&gt;Codeship&lt;/a&gt;, &lt;a href=&quot;http://datadiluvium.com/&quot;&gt;Data Diluvium&lt;/a&gt;, &lt;a href=&quot;https://github.com/Adron/datadiluvium&quot;&gt;Data Diluvium Github Project&lt;/a&gt;, &lt;a href=&quot;https://gitlab.com/adron/colligere&quot;&gt;Colligere&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    <item>
+      <title>Autodidact Learning, For the Hacker at Heart</title>
+      <link>http://adron.github.io/articles/autodidact-learning/</link>
+      <pubDate>Sun, 22 Jan 2017 00:00:00 -0800</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/autodidact-learning/</guid>
+      <author></author>
+      <description>&lt;p&gt;I always aim to be a good a student and teacher. To be a proficient and effective student and teacher, I’ve realized long ago I must strive to be good at both. Without this effort, I’d never truly understand or gain proficiency in either position.&lt;/p&gt;
+&lt;p&gt;In addition to striving to improve myself as a student or teacher, I always finds myself continuously learning. There is never a known end, as I’m always searching for a new best, a new level of proficiency, or even a new definition of what these things are. As such, I work diligently to take mental notes during my own efforts to become a better teacher or to improve my study as a student. It’s hard work, as most things that are worthwhile in life are. This hard work however, is definitely one of the top things I enjoy in life. Learning to me is something I cherish in the extreme!&lt;/p&gt;
+&lt;p&gt;On that note, here’s a few of the things that I’ve found that have helped me to learn effectively. I offer them as is, and everybody’s use may vary in effectiveness. If you’ve got any suggestions or practices of your own, please email, tweet (&lt;a href=&quot;https://twitter.com/adron&quot;&gt;@Adron&lt;/a&gt;), or message me with them. I’m always happy to discuss new ways two to better my learning and teaching.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;h2 id=&quot;1-notes-note-taking-in-projects&quot;&gt;1. Notes / Note Taking in Projects&lt;/h2&gt;
+&lt;p&gt;One thing I’ve found very useful in software projects is to find a way to take parallel notes. These could be perceived as &lt;em&gt;comments&lt;/em&gt; except I’ve made a few slight modifications. Instead of adding these in code files, they’re more project or project folder specific comments, so I don’t place the files in comments in actual code files. The following is a list of characteristics of where I put these notes and the practices I follow to create them.&lt;/p&gt;
+&lt;div class=&quot;image float-right&quot;&gt;
+    &lt;a href=&quot;https://github.com/adron/datadiluvium&quot;&gt;&lt;img src=&quot;/articles/autodidact-learning/notesmd-files.png&quot; alt=&quot;NOTES.md&quot;&gt;&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;em&gt;Where&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;I’ve found, when working through a project I like to have two specific spaces where notes go. One is in the root and any directories of the project where there are additional snippets of information needed. I usually just title these files &lt;em&gt;NOTES.md&lt;/em&gt; and encourage anybody involved in the project to add their own personal notes for anybody to read. This adds context of what is going on and helps provide insight for anybody working in a project.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;How&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;I tend to write notes as quick blurbs of what is in the directory or project, notes that wouldn’t particularly be in a README.md file. They’re more of a &lt;em&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Stream_of_consciousness_(narrative_mode&quot;&gt;stream of consciousness&lt;/a&gt;)&lt;/em&gt; style. The primary focus is to write them concise, but quicly, for future reference. Helping to prevent one from forgetting what and why certain things are in a directory, specifically a directory in which is manually created for documentation or something somewhat outside of the normal application code flow, similar to &lt;a href=&quot;https://github.com/Adron/datadiluvium/blob/master/docs/hugo/NOTES.md&quot;&gt;this&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;In a Go, C#, Java, C, C++, or related compilable language these files don’t get built into the final binary. However in something like JavaScript the files may get included when zipped up to be deployed or may increase the likelihood of secrets or other information that should not be public becoming public. By association be sure that these files won’t cause an actual problem later on in the project. Generally there’s a small chance compared to the advantage of actually having some relevant project notes inside the actual project. But one has to keep these responsibilities in mind.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Take notes in projects (even trash projects, as I write about below). Write from a &lt;em&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Stream_of_consciousness_(narrative_mode&quot;&gt;stream of consciousness&lt;/a&gt;)&lt;/em&gt; style and it will work to reinforce what you’re observing and learning in the projects as well as working to provide a path to understanding for prospective maintainers in ongoing projects!&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;2-trash-projects&quot;&gt;2. Trash Projects&lt;/h2&gt;
+&lt;p&gt;When learning, one of the best ways to get used to how parts of a language and respective technology stack perform and behave is to actually build things with the language and respective tech stack. For instance, when learning JavaScript I wrote a lot of completely garbage code just to try out the language. Sure, I had read things like &lt;em&gt;&lt;a href=&quot;http://shop.oreilly.com/product/9780596517748.do&quot;&gt;JavaScript: The Good Parts&lt;/a&gt;&lt;/em&gt; and even the gargantuan &lt;em&gt;&lt;a href=&quot;http://shop.oreilly.com/product/9780596805531.do&quot;&gt;JavaScript: The Definitive Guide&lt;/a&gt;&lt;/em&gt;, but I really had not set certain things into memory until I started writing code.&lt;/p&gt;
+&lt;p&gt;One example, if I check for the type of NaN (Not a Number) I get ‘number’. That does’t really make logical sense based on what NaN stands for. But alright, what about NaN equaling NaN? That’s false, even though it clearly appears as if it is the same thing.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;&amp;gt; &lt;span class=&quot;keyword&quot;&gt;typeof&lt;/span&gt; &lt;span class=&quot;literal&quot;&gt;NaN&lt;/span&gt;
+&lt;span class=&quot;string&quot;&gt;'number'&lt;/span&gt;
+&amp;gt; &lt;span class=&quot;literal&quot;&gt;NaN&lt;/span&gt;==&lt;span class=&quot;literal&quot;&gt;NaN&lt;/span&gt;
+&lt;span class=&quot;literal&quot;&gt;false&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;These are side effects, while reading the guides and good parts books I wouldn’t have realized without actually testing the code and realizing these oddities exist. Of course when I stop and think, having read the material in the books, I realize that NaN does not equal NaN because these are two different actual objects, part of the crux of mutable imperative object creation eh!&lt;/p&gt;
+&lt;p&gt;So building tons of throwaway trash projects is hugely important. I have to fight against the urge to “build a cool working project that does X and open source it” syndrome and just focus on testing out bits of code a time until I can effectively and proficiently write are large degree of functionality using the features and concepts inherent to a language and the underlying technology stack. The best and quickest way isn’t to fight building a larger projet but instead build many small &lt;em&gt;trash projects&lt;/em&gt;.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Build lots and lots of trash projects to focus in on the behavior and features of a language or technology.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;3-when-beginning-skip-videos&quot;&gt;3. When Beginning, Skip Videos&lt;/h2&gt;
+&lt;p&gt;I suppose it depends on what one’s learning style really is and it is also odd coming from me that I’d say skip videos (because of &lt;a href=&quot;https://www.pluralsight.com/authors/adron-hall&quot;&gt;this&lt;/a&gt; and &lt;a href=&quot;https://vimeo.com/channels/thrashingcode&quot;&gt;this&lt;/a&gt;). Even though I produce Videos and find they can be used to learn things, there’s a catch. Video content is generally horrible at providing large amounts of information with specific detail in the time it takes to watch a video. There are certain nuances that video is good at, but overall they just don’t work for effective, quick, and intensive deep dives into particular technology.&lt;/p&gt;
+&lt;p&gt;In that vein, videos are horrible as stand alone learning mediums, skip them. Focus on written material, with details about things and going back to &lt;em&gt;trash projects&lt;/em&gt; create and work with hands on implementation of code and technologies. If a video is a small complement or has lots of written collateral, testing, and other mediums used in conjunction with the video it might work out ok, but otherwise focus on other things and skip the videos when starting in on a new language or tech.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Skip videos when starting out and gain some proficiency around actual implementation first, this has worked excellently for me and I’ve found it tends to work well for gaining productiveness quickly with a language or technology.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;4-mixing-theory-implementation&quot;&gt;4. Mixing Theory &amp;amp; Implementation&lt;/h2&gt;
+&lt;p&gt;As above I mentioned focusing on implementation of code, referring to it as &lt;em&gt;trash projects&lt;/em&gt;, which is a great way to really dig into the nuances of things. However at a certain point the theory of particular design practices and languages must be understood or a solid proficiency just isn’t going to be attained. That’s where mixing theory and implementation becomes fundamental. I’ve found that I need to do more reading on the why and what for of a language or technology once I’ve gotten fairly fluent in implementing things with a language or technology.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;When learning, once proficient with a language, be sure to dive deep into why and how the language actually works to gain even more proficiency with the language.&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+    </item>
+    <item>
+      <title>Buying a Leopard!</title>
+      <link>http://adron.github.io/articles/system76-ubuntu-leopard-workstation/</link>
+      <pubDate>Thu, 19 Jan 2017 00:00:00 -0800</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/system76-ubuntu-leopard-workstation/</guid>
+      <author></author>
+      <description>&lt;div class=&quot;image float-right&quot;&gt;
+    &lt;img src=&quot;/articles/system76-ubuntu-leopard-workstation/system76-small.png&quot; alt=&quot;System76&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;em&gt;January 24th, 2017 UPDATE: After I wrote this, I spoke with the System 76 team and I’m getting the chance to go out and tour their Denver Headquarters. This happened well after I made my purchase, which all of the following was written after. But just for full transparency, I’ve added this note. Also, I’m aiming to get a full write up of my System76 trip put together with Denver tidbits and more! Until then, here’s the review…&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;In the trailing days of 2016, after having moved to Redmond, Washington I sat working at my desktop workstation. This workstation, which still exists, is a iMac with an i7, 16GB RAM, 256 GB SSD, and a 1GB Video Card with a 1TB secondary drive. The machine is a 27” all in one style design, and the screen is rather beautiful. But as I did a build and tried to run Transport Tycoon at the same time in the background the machine sputtered a bit. It was definitely maxed out doing this Go code build, putting together a Docker image build, and spinning it up for go live at the same time my game ran in the background. I thought, this machine has served me extremely well, at over 5 years old it had surpassed the standard 5 year lifespan of peak Apple oomf. At the moment, I thought, maybe it’s time to dig into a serious machine with some premium hardware again.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;In that moment I thought about the last dedicated, custom built, super powerful workstation machine I had. It was a powerful machine, nice form factor, and easily drove two giant 27” screens. However this machine had lived and finished it’s useful life over 6 years before 2016 had even started. But it was a sweet machine, that offered a lot of productive gaming and code writing efficiencies. It was thus, time to get in gear and get a machine again.&lt;/p&gt;
+&lt;p&gt;Immediately I thought through a few of the key features I wanted and other prerequisites of purchase.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Enough RAM and processor power to drive my aforementioned gaming, docker, and code building scenario with ease.&lt;/li&gt;
+&lt;li&gt;SSD drive of at least 1TB with at least a beefy 8GB Video Card.&lt;/li&gt;
+&lt;li&gt;It needed to run, with full support, not-Windows. Ubuntu would be fine, but if any Linux was installed from factory or at least fully supported on the hardware I put together, that would suffice.&lt;/li&gt;
+&lt;li&gt;If I were to buy it from a company, it had to be a company that wasn’t some myopic afterthought of 50s era suburbia (i.e. I didn’t really want to deal with Dell or Alienware again after the XPS 13 situation). This definitely narrowed down the options.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;I started digging into hardware specifications and looking into form factors, cases, and all the various parts I’d need for a solid machine. In parallel I started checking out several companies.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://system76.com/&quot;&gt;System76&lt;/a&gt; - Located in Denver, I was curious about this company and had been following them for some time. I had seen a few of the laptops over the years but had never seen or used any of their desktops.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://lacpdx.com&quot;&gt;Los Alamos Computers&lt;/a&gt; which is now &lt;a href=&quot;https://lacpdx.com&quot;&gt;LAC Portland&lt;/a&gt;! - Holy smokes, I had not realized this company moved. They definitely meet the 4th criteria above.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.pugetsystems.com/&quot;&gt;Puget Systems&lt;/a&gt; is a company located somewhere in the Puget Sound area and used to be called Puget Sound Systems. After digging I found they are located in a suburb of Seattle, in a town called Auburn. I didn’t want to rule them out so I kept them on the list and started researching.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.penguincomputing.com/&quot;&gt;Penguin Computing&lt;/a&gt; is another one of the companies, and kidn of a mainstay of Linux machines. They were a must have in the run up.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.thinkpenguin.com/&quot;&gt;Think Penguin&lt;/a&gt; is another I dove into.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://emperorlinux.com/&quot;&gt;Emperor Linux&lt;/a&gt; is another company I found specializing in Linux machines.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://zareason.com/&quot;&gt;Zareason&lt;/a&gt; was another, that specialized in Linux machines.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;first-decision-build-or-buy-&quot;&gt;First Decision &amp;gt; Build or Buy?&lt;/h2&gt;
+&lt;p&gt;I wrangled hardware specifications and the idea of building my own machine for some time. I came to the conclusion that the time versus money investment for me was on the side of buying a built machine. This first decision was pretty easy, but educating myself on the latest hardware was eye opening and a lot of fun. In the end however, better to let a builder get it done right instead of me creating a catastrophe for myself and nuking a whole weekend!&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Decision&lt;/strong&gt; Buy!&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;second-decision-who-should-i-buy-from-&quot;&gt;Second Decision &amp;gt; Who should I buy from?&lt;/h2&gt;
+&lt;p&gt;I dug through each of the computer builders previously mentioned. I scouted out where they were located, what the general process was they used to build the machines, what testing, what involvement in the community they have, and finally a cost and parts review.&lt;/p&gt;
+&lt;p&gt;Each of the builders has a lot of positives in regards to Linux, the only one that I was hesitant about at first in regards to Linux was Puget Computing. Because by default the machines come with Windows 10. However after asking around and reviewing other reviews online, I came to find they do have Linux and a solid skill set around Linux. Puget remained a leader in the selection process.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/system76-ubuntu-leopard-workstation/pugetsystems.png&quot; alt=&quot;Puget Systems&quot;&gt;&lt;/p&gt;
+&lt;p&gt;I went through Los Alamos Computers, which I realized are now LAC Portland (Win for Portland!), then Penguin, Think Penguin, and Emperor Linux. All had great skills and ethos around Linux. LAC definitely had the preeminently preferable choice in physical location (I mean, I do love Portland!), but each were short in either their customer facing desktop options. Albeit for a company or other reason, I’d likely buy a Thinkpad or other computing platform running Linux from them. But for this scenario each were disqualified for my personal workstation.&lt;/p&gt;
+&lt;p&gt;The last two I started checking out were Zareason and System76. I had been following what System76 for a while and a few things had caught my eye on their site. It led me to realize that they’re located out of Denver. Being a transit nerd, one of their website video photo coffee shop scenes had the RTD Light Rail passing in the background. But all things aside I started checking out cases and hardware that each builder puts in a box.&lt;/p&gt;
+&lt;ul class=&quot;faq js-faq&quot; id=&quot;my-faq&quot;&gt;
+  &lt;li class=&quot;faq-item&quot;&gt;
+    &lt;h4 class=&quot;faq-question&quot;&gt;&lt;img src=&quot;/articles/system76-ubuntu-leopard-workstation/berkely-bart.jpg&quot; alt=&quot;Berkely BART&quot;&gt;&lt;a href=&quot;http://zareason.com&quot;&gt;Zareason&lt;/a&gt; had several cases as shown below. With each of these I checked out the hardware options. (open for details)&lt;/h4&gt;
+    &lt;div class=&quot;faq-answer&quot;&gt;
+      One of the other side notes of the Zareason site is that you can navigate directly to it at the http address, and they don’t for https. I just found this a bit odd. But here’s the machines that I reviewed.
+      &lt;table&gt;
+        &lt;tr&gt;
+        &lt;/tr&gt;
+      &lt;/table&gt;
+      &lt;div class=&quot;image float-left&quot;&gt;
+        &lt;img src=&quot;/articles/system76-ubuntu-leopard-workstation/zareason1.jpg&quot; alt=&quot;Zareason Zeto&quot;&gt;
+        &lt;a href=&quot;http://zareason.com/shop/Zeto.html&quot;&gt;Zeto&lt;/a&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;image float-left&quot;&gt;
+        &lt;img src=&quot;/articles/system76-ubuntu-leopard-workstation/zareason2.jpg&quot; alt=&quot;Zareason Limbo 560&quot;&gt;
+        &lt;a href=&quot;http://zareason.com/shop/Limbo-560.html&quot;&gt;Limbo 560&lt;/a&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;image float-left&quot;&gt;
+        &lt;img src=&quot;/articles/system76-ubuntu-leopard-workstation/zareason3.jpg&quot; alt=&quot;Zareason Valta X99i&quot;&gt;
+        &lt;a href=&quot;http://zareason.com/shop/Valta-X99i.html&quot;&gt;Valta X99i&lt;/a&gt;
+      &lt;/div&gt;
+      &lt;!-- ![Berkely BART](berkely-bart-.jpg) --&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;faq-item&quot;&gt;
+    &lt;h4 class=&quot;faq-question&quot;&gt;&lt;img src=&quot;/articles/system76-ubuntu-leopard-workstation/sounder.jpg&quot; alt=&quot;Sounder&quot;&gt;Next up I checked out a number of &lt;a href=&quot;https://www.pugetsystems.com&quot;&gt;Puget Systems&lt;/a&gt;. (open for details)&lt;/h4&gt;
+    &lt;div class=&quot;faq-answer&quot;&gt;
+      The religious reference names were a bit strange. But whatever, to each their own.
+      &lt;div class=&quot;image float-left&quot;&gt;
+          &lt;img src=&quot;/articles/system76-ubuntu-leopard-workstation/puget3.jpg&quot; alt=&quot;Puget Systems&quot;&gt;
+          &lt;a href=&quot;https://www.pugetsystems.com/deluge.php&quot;&gt;Deluge&lt;/a&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;image float-left&quot;&gt;
+          &lt;img src=&quot;/articles/system76-ubuntu-leopard-workstation/puget2.jpg&quot; alt=&quot;Puget Systems&quot;&gt;
+          &lt;a href=&quot;https://www.pugetsystems.com/spirit.php&quot;&gt;Spirit&lt;/a&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;image float-left&quot;&gt;
+          &lt;img src=&quot;/articles/system76-ubuntu-leopard-workstation/puget1.jpg&quot; alt=&quot;Puget Systems&quot;&gt;
+          &lt;a href=&quot;https://www.pugetsystems.com/genesis.php&quot;&gt;Genensis II&lt;/a&gt;
+      &lt;/div&gt;
+      &lt;!-- ![Sounder](sounder-.jpg) --&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;faq-item&quot;&gt;
+    &lt;h4 class=&quot;faq-question&quot;&gt;&lt;img src=&quot;/articles/system76-ubuntu-leopard-workstation/rtd1.jpg&quot; alt=&quot;RTD Light Rail&quot;&gt;Next I started looking at &lt;a href=&quot;https://www.pugetsystems.com&quot;&gt;System76&lt;/a&gt; machines. (open for details)&lt;/h4&gt;
+    &lt;div class=&quot;faq-answer&quot;&gt;
+      &lt;div class=&quot;image float-left&quot;&gt;
+          &lt;img src=&quot;/articles/system76-ubuntu-leopard-workstation/leopardws.jpg&quot; alt=&quot;Leopard WS&quot;&gt;
+          &lt;a href=&quot;https://system76.com/desktops/leopard&quot;&gt;Leopard Workstation&lt;/a&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;image float-left&quot;&gt;
+          &lt;img src=&quot;/articles/system76-ubuntu-leopard-workstation/silverback.jpg&quot; alt=&quot;Silverback WS&quot;&gt;
+          &lt;a href=&quot;https://system76.com/desktops/silverback&quot;&gt;Silverback Workstation&lt;/a&gt;
+      &lt;/div&gt;
+      &lt;!-- ![RTD Light Rail](rtd1-.jpg) --&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;After working through and reviewing prices, features, hardware, and options things were close. I started reviewing location and what I could derive about each company’s community involvement in Linux, how they’re involved locally, and what the word is about those companies in their respective communities. Out of the three, I ended up not finding any customers to talk to about Zareason. For Puget, I found one friend that had a box purchased from a few years ago, and for System76 I actually found 2 different feedback bits from users within an hour or so of diffing around.&lt;/p&gt;
+&lt;p&gt;Kenny Spence &lt;a href=&quot;https://twitter.com/tekjava&quot;&gt;@tekjava&lt;/a&gt; - Kenny and I have known each other for more years than I’m going to count. We got to meetup here in Seattle recently and he showed me his System76 laptop. The build quality was good and the overall review he gave me was a &lt;em&gt;+1&lt;/em&gt;. Before this he’d mentioned in Twitter DM convo that this was the case, and I’d taken his word for it back then.&lt;/p&gt;
+&lt;p&gt;Dev Shop X - A group of individuals I reached out to I had met 3 years ago at the Portland &lt;a href=&quot;https://twitter.com/osbridge&quot;&gt;@OSBridge&lt;/a&gt; Conference. I spoke to them again and found they were still using the System76 machines with no real complaints. They’d also bought the XPS 13 laptops well before the model I did and had a few complaints. With a short conversation we ended with them offering a &lt;em&gt;+1&lt;/em&gt; for System76.&lt;/p&gt;
+&lt;p&gt;With the reviews from trusted sources, seeing the involvement and related culture of System76 I decided that they would be the builder of choice.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Decision&lt;/strong&gt; &lt;a href=&quot;https://system76.com&quot;&gt;System76&lt;/a&gt; &lt;a href=&quot;https://system76.com/desktops/leopard&quot;&gt;Leopard WS&lt;/a&gt;!&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;leopard-workstation&quot;&gt;Leopard Workstation&lt;/h2&gt;
+&lt;p&gt;With the decision made, I pulled the trigger on the purchase. In spite of the holiday season, I still received the machine in short order. It arrived at my door via UPS in a box, ya know, like a computer does when its shipped somewhere.  ;-)&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/system76-ubuntu-leopard-workstation/system76-leopard-01.jpg&quot; alt=&quot;System 76 Leopard&quot;&gt;&lt;/p&gt;
+&lt;p&gt;I cleared off the desk next, and dug into the box.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/system76-ubuntu-leopard-workstation/system76-leopard-02.jpg&quot; alt=&quot;System 76 Leopard&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/system76-ubuntu-leopard-workstation/system76-leopard-03.jpg&quot; alt=&quot;System 76 Leopard&quot;&gt;&lt;/p&gt;
+&lt;p&gt;The computer was packaged cleanly and neatly with minimal waste compared to some I’ve seen. So far so good. I pulled pieces gently from the box. The first thing I extracted was the static bag which had all of the extra cords and respective attachments that had come with various parts of the computer hardware that were unnecessary. Another plus in my opinion, as many would likely not notice this having not built computers themselves, nor even cared, but I’m glad to have the extra pieces for this or other things I might need them for.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/system76-ubuntu-leopard-workstation/system76-leopard-04.jpg&quot; alt=&quot;System 76 Leopard&quot;&gt;&lt;/p&gt;
+&lt;p&gt;The next thing I pulled out of the box was a thank you letter envelope with cool sticker and related swag.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/system76-ubuntu-leopard-workstation/system76-leopard-05.jpg&quot; alt=&quot;System 76 Leopard&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Stickers!&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/system76-ubuntu-leopard-workstation/system76-leopard-07.jpg&quot; alt=&quot;System 76 Leopard&quot;&gt;&lt;/p&gt;
+&lt;p&gt;That was it for peripheral things just floating around in the box. Next, out came the computer itself.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/system76-ubuntu-leopard-workstation/system76-leopard-06.jpg&quot; alt=&quot;System 76 Leopard&quot;&gt;&lt;/p&gt;
+&lt;p&gt;It was wrapped in a static free bag itself. As it should be. I did notice a strange ink like bit of dusted debris in and around the box. I’m not really sure, and still am not sure today what exactly it was. I cleaned it up immediately. It wasn’t excessive, but was leaving slight marks on the white table which required a little scrubbing to remove.&lt;/p&gt;
+&lt;p&gt;After all things were removed from the box I removed them from envelopes and static free bags and placed them on the desk for a simple shot of all the parts in the box.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/system76-ubuntu-leopard-workstation/system76-leopard-08.jpg&quot; alt=&quot;System 76 Leopard&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Next I went through the steps of desk cleanup again and then connected my 28 port USB Hub, Razor Mouse, and a keyboard to the machine. It was finally time to boot this machine up!&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/system76-ubuntu-leopard-workstation/system76-leopard-09.jpg&quot; alt=&quot;System 76 Leopard&quot;&gt;&lt;/p&gt;
+&lt;p&gt;As for the screen which you see, it’s an LG 34” Extra Wide Screen monitor with slight curved view to it. Yes, it’s awesome, and yes it actually makes it relatively easy to not need dual monitors.&lt;/p&gt;
+&lt;p&gt;BOOTING!&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/system76-ubuntu-leopard-workstation/system76-leopard-10.jpg&quot; alt=&quot;System 76 Leopard&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Ubuntu started, monitor fussing.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/system76-ubuntu-leopard-workstation/system76-leopard-11.jpg&quot; alt=&quot;System 76 Leopard&quot;&gt;&lt;/p&gt;
+&lt;p&gt;I toyed around and had for whatever reason plugged in the HDMI, when I should have used the other monitor connection. It immediately provided more resolution options when I changed the connection and the monitor and related elements detected appropriately!&lt;/p&gt;
+&lt;p&gt;On the side of the machine is a clear window cut through the case to view the internals. The cords were managed well and overall build was very clean. Upon boot up the graphics card immediately lit up too. The nice blue tone provided a nice light within the room.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/system76-ubuntu-leopard-workstation/system76-leopard-12.jpg&quot; alt=&quot;System 76 Leopard&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Ubuntu booted up cleanly, and I might crazy bloody fast.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/system76-ubuntu-leopard-workstation/system76-leopard-13.jpg&quot; alt=&quot;System 76 Leopard&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Here’s a non-flash shot of the machine and monitor side by side.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/system76-ubuntu-leopard-workstation/system76-leopard-14.jpg&quot; alt=&quot;System 76 Leopard&quot;&gt;&lt;/p&gt;
+&lt;p&gt;I then changed the respective positioning and the lighting, as you can see actually changed dramatically just by repositioning the hardware and the rear light I was shooting with.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/system76-ubuntu-leopard-workstation/system76-leopard-15.jpg&quot; alt=&quot;System 76 Leopard&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Lights off shot. The widow is beautiful!&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/system76-ubuntu-leopard-workstation/system76-leopard-16.jpg&quot; alt=&quot;System 76 Leopard&quot;&gt;&lt;/p&gt;
+&lt;p&gt;A slightly closer shot of the GTX 1080 humming away inside.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/system76-ubuntu-leopard-workstation/system76-leopard-17.jpg&quot; alt=&quot;System 76 Leopard&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;the-ubuntu-on-leopard-ws-review&quot;&gt;The Ubuntu on Leopard WS Review&lt;/h3&gt;
+&lt;p&gt;So far I’ve done a ton of coding &amp;amp; game playing on the machine. Here’s a break down of some specifics and some respective comments with a full read on the specifications of the machine.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Ubuntu 16.10 (64-bit)&lt;/li&gt;
+&lt;li&gt;4.0 GHz i7-6850K (3.6 up to 4.0 GHz – 15 MB Cache – 6 Cores – 12 threads)&lt;/li&gt;
+&lt;li&gt;High Performance Self-Contained Liquid Cooler&lt;/li&gt;
+&lt;li&gt;32 GB Quad Channel DDR4 at 2400MHz (2× 16 GB)&lt;/li&gt;
+&lt;li&gt;8 GB GTX 1080 with 2560 CUDA Cores&lt;/li&gt;
+&lt;li&gt;Chipset Intel® X99&lt;/li&gt;
+&lt;li&gt;Front: 2× USB 3.0 Type-A, 1× USB 2.0 Type-A, 1× eSATA&lt;/li&gt;
+&lt;li&gt;Rear: 3× USB 3.0 Type-A, 1× USB 3.1 Type-A, 1× USB 3.1 Type-C, 4× USB 2.0, Type-A, 1× PS/2&lt;/li&gt;
+&lt;li&gt;Gigabit Ethernet, optional Intel® Wireless-AC (a/b/g/n/ac)&lt;/li&gt;
+&lt;li&gt;GTX 1080: DVI-D, HDMI, 3× Display Port&lt;/li&gt;
+&lt;li&gt;Audio Front: Headphone Jack, Mic Jack&lt;/li&gt;
+&lt;li&gt;Audio Rear: 8 channel (HDMI, S/PDIF), Mic Jack, Line In, Line Out&lt;/li&gt;
+&lt;li&gt;Power Supply 750 W 80+ Certified (80% or greater power efficiency)&lt;/li&gt;
+&lt;li&gt;Dimensions 15.8″ × 8.3″ × 19.5″ (40.13 × 21.08 × 49.53cm)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;gaming&quot;&gt;Gaming&lt;/h4&gt;
+&lt;p&gt;Using Steam I downloaded several games including my latest addiction Transport Tycoon. The others included Warhammer 40k: Dawn of War, Stronghold 3, Stellaris, Sid Meier’s Civ V, Master of Orion, and Cities: Skylines. Each of these games I loaded up and played for at least 20-30 minutes, with every graphics detail maxed out and full audio feature enabled. Where the option existed to run it at full resolution of     3440x1440 I ran the game at that resolution.&lt;/p&gt;
+&lt;p&gt;Not a blip, stir, or flake out of any sort. The color was solid (which obviously is also largely the monitor) and being able to move around these games in their respective 3d worlds was exception. All the while the speed of elapsed time in games like Transport Tycoon and Cities: Skylines barely slowed at all no matter how massive the city or layout was.&lt;/p&gt;
+&lt;p&gt;At this point I’ve also added about 16 hours of Transport Tycoon play to this, and I’ve built absurdly extensive layouts (100s of trains plus massively grown cities) and this processor and video card handles it. The aforementioned previous desktop easily choked to 1/10th the speed of this beast while running the game.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;More on the gaming elements of this machine in the coming days.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&quot;coding&quot;&gt;Coding&lt;/h4&gt;
+&lt;p&gt;I used &lt;a href=&quot;https://www.jetbrains.com/toolbox/&quot;&gt;Jetbrains Toolbox&lt;/a&gt; to download &lt;a href=&quot;https://www.jetbrains.com/idea/&quot;&gt;IntelliJ&lt;/a&gt;, &lt;a href=&quot;https://www.jetbrains.com/webstorm/&quot;&gt;Webstorm&lt;/a&gt;, &lt;a href=&quot;https://www.jetbrains.com/clion/&quot;&gt;CLion&lt;/a&gt;, &lt;a href=&quot;https://www.jetbrains.com/datagrip/&quot;&gt;DataGrip&lt;/a&gt;, &lt;a href=&quot;https://www.jetbrains.com/rider/&quot;&gt;Project Rider&lt;/a&gt;, and &lt;a href=&quot;https://www.jetbrains.com/ruby/&quot;&gt;RubyMine&lt;/a&gt;. I dug around for some sample projects and slung together some basic “hello world!” apps to build with each of the IDEs. All built at absurd rates, but nothing real specific as I didn’t load any large projects just yet.&lt;/p&gt;
+&lt;p&gt;One of the things I did do was load Go so that I could continue work on the &lt;a href=&quot;http://datadiluvium.com/&quot;&gt;Data Diluvium&lt;/a&gt; Project that I’ve started (&lt;a href=&quot;https://github.com/Adron/datadiluvium&quot;&gt;Repo on Github&lt;/a&gt;). To hack around with Go I also installed &lt;a href=&quot;https://atom.io/&quot;&gt;Atom&lt;/a&gt; and &lt;a href=&quot;https://code.visualstudio.com/&quot;&gt;Visual Studio Code&lt;/a&gt;. Both editors on this particular machine were screaming fast and with the 34” display, I could easily have both to test out features side by side. Albeit, that makes shortcut combos a nightmare! DON’T DO THIS AT HOME!&lt;/p&gt;
+&lt;p&gt;Build time for the C, Go, and C# Projects I tried out were all crazy fast, but I’m holding off posting any results as I want to get some more apples to apples comparisons put together before posting. I’m also aiming to post versus some other hardware just so there are some baselines in which to compare the build times against.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;More on the coding and related projects in the coming days too.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&quot;important-software&quot;&gt;Important Software&lt;/h4&gt;
+&lt;p&gt;You may think, if you’re not an Ubuntu or Linux user, what about all the other stuff like office software and … &lt;em&gt;big long list goes here&lt;/em&gt;. Well, &lt;strong&gt;&lt;em&gt;most&lt;/em&gt;&lt;/strong&gt; of the software that we use is either available or a comparable product is available on Linux these days. There’s really not many things that keep me - or would keep anybody tied to - OS-X/MacOS or Windows. Here are a few that I’ve tried out and am using regularly that are 1 to 1 across Windows, OS-X, and Linux.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Jetbrains - as mentioned before these work across all the platforms. They’re excellent developer tools.&lt;/li&gt;
+&lt;li&gt;Spotify - even though it states that there hasn’t been support or what not for the app for many months, it still works seemlessly on Linux. That’s what you get when you build an app for a solid platform - one doesn’t have to &lt;em&gt;fix&lt;/em&gt; shit every week like on OS-X or Windows.&lt;/li&gt;
+&lt;li&gt;Slack - Slack is available on Linux too. After all the native app (or pseudo native) is built on Electron, which at its core runs on Node.js. So thus, feature parity is pretty much 100%. If you’re going to use slack, it’s not an excuse to be stuck on Windows or OS-X. The choice of platform is yours.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&quot;summary&quot;&gt;Summary&lt;/h1&gt;
+&lt;div class=&quot;image float-right&quot;&gt;
+    &lt;img src=&quot;/articles/system76-ubuntu-leopard-workstation/me-horns-up.jpg&quot; alt=&quot;Me, Adron&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;NOTE: Nobody paid me a damned penny to write any of this btw, I reviewed all of these things because I love writing about my nerd adventures. No shill shit here. With that stated…&lt;/p&gt;
+&lt;p&gt;I have more things to review across all of these platforms and much more to write about this mean machine from System76. However, this review has gotten long enough. The TLDR; of this is, if you’re looking for a machine then System76 definitely gets the horns from me! Highly recommended!&lt;/p&gt;
+</description>
+    </item>
     <item>
       <title>Microsoft's Scorched Earth History and The Current Crossroads</title>
       <link>http://adron.github.io/articles/microsoft-at-the-crossroads/</link>
@@ -2651,29 +3756,6 @@ export TF_VAR_password=&amp;quot;someSecretPassword&amp;quot;
 </description>
     </item>
     <item>
-      <title>Demystifying TypeScript Decorators by James Churchill</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-james-churchill/</link>
-      <pubDate>Sun, 05 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-james-churchill/</guid>
-      <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-james-churchill/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-right&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-james-churchill/james-churchill-nyc.jpg&quot; alt=&quot;James Churchill&quot;&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Portlander James has worked extensively with a variety of technologies, including ASP.NET MVC, SQL Server, JavaScript, TypeScript, Knockout.js, and AngularJS. James, a self-confessed geek, enjoys talking about programming and learning new technologies. He recently joined the Treehouse team as a teacher and is excited to have the opportunity to help beginners become developers.&lt;/p&gt;
-&lt;p&gt;James also enjoys participating in the greater Cascadian Developer Community, presenting talks in Portland, Seattle, Salt Lake City, Boise, Eugene, Salem, and Hood River. Last April, James started and co-organized the Portland TypeScript Meetup (&lt;a href=&quot;http://typescriptpdx.com/&quot;&gt;http://typescriptpdx.com/&lt;/a&gt; which is an awesome meetup, come check it out sometime!).&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;When he is not working, he can be found skiing with his wife and kids, remodeling the house, playing music with his band, or hanging out in the yard with his chickens.&lt;/p&gt;
-&lt;p&gt;In “Demystifying TypeScript Decorators” will show us TypeScript decorators, based on the ES2016 decorator proposal and introduced as part of TypeScript 1.5, provide developers with a way to modify a JavaScript class, property, method, or method parameter using a convenient declarative syntax. We’ll start this session by creating our own decorator, to see firsthand how they work. Then, we’ll take a look at how decorators can be used in a variety of settings.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Blog: &lt;a href=&quot;http://smashdev.com&quot;&gt;http://smashdev.com&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Github: &lt;a href=&quot;http://github.com/smashdevcode&quot;&gt;http://github.com/smashdevcode&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Twitter: &lt;a href=&quot;http://twitter.com/SmashDev&quot;&gt;http://twitter.com/SmashDev&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-    </item>
-    <item>
       <title>How to Electron by Blaine Schmeisser</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-blaine-schmeisser/</link>
       <pubDate>Sun, 05 Jun 2016 17:00:00 -0700</pubDate>
@@ -2695,33 +3777,26 @@ export TF_VAR_password=&amp;quot;someSecretPassword&amp;quot;
 </description>
     </item>
     <item>
-      <title>Modern Javascript Frameworks - Introduction to Ember.JS and Ember-CLI by Suchita Doshi</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-suchita-doshi/</link>
-      <pubDate>Sat, 04 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-suchita-doshi/</guid>
+      <title>Demystifying TypeScript Decorators by James Churchill</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-james-churchill/</link>
+      <pubDate>Sun, 05 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-james-churchill/</guid>
       <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-suchita-doshi/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-james-churchill/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;div class=&quot;image float-right&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-suchita-doshi/suchita-doshi.jpg&quot; alt=&quot;Suchita Doshi&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-james-churchill/james-churchill-nyc.jpg&quot; alt=&quot;James Churchill&quot;&gt;
 &lt;/div&gt;
 
-&lt;p&gt;Suchita is UI Lead for the analytics module of Yahoo Admanager Plus team and Core member of Emberjs group @Yahoo, Speaker at Women Who code organization (Introduction To Emberjs/Ember CLI), Conducted Webinar for the TenXList members on EmberJS. She’s passionate about improving developers ergonomics and a hardcore “cricket” fan.&lt;/p&gt;
-&lt;p&gt;In other Suchita news, she’s opening bats-woman for the Bay Area Cricket Association team! 😀&lt;/p&gt;
-&lt;p&gt;Suchita describes her talk as “There will never be a “one size fits all” approach to web development. If you want your application to be minimally interactive, then server side rendered HTML would be the way to go, else, if it were a more interactive application, then client side framework would benefit you.
-Why not use just JQuery instead of adopting these Modern Javascript Frameworks? Think about it! If your application has interactivity on the lighter side, then JQuery would work well, but as soon as you introduce more states in your application, it would then become messier and heavier on the DOM. You would need to use the ‘data-‘ attributes to store the data in your DOM and also remember how to map them with the triggered events.&lt;/p&gt;
+&lt;p&gt;Portlander James has worked extensively with a variety of technologies, including ASP.NET MVC, SQL Server, JavaScript, TypeScript, Knockout.js, and AngularJS. James, a self-confessed geek, enjoys talking about programming and learning new technologies. He recently joined the Treehouse team as a teacher and is excited to have the opportunity to help beginners become developers.&lt;/p&gt;
+&lt;p&gt;James also enjoys participating in the greater Cascadian Developer Community, presenting talks in Portland, Seattle, Salt Lake City, Boise, Eugene, Salem, and Hood River. Last April, James started and co-organized the Portland TypeScript Meetup (&lt;a href=&quot;http://typescriptpdx.com/&quot;&gt;http://typescriptpdx.com/&lt;/a&gt; which is an awesome meetup, come check it out sometime!).&lt;/p&gt;
 &lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Here is where client side frameworks come to the rescue. I have worked on several client side frameworks like Backbone.js, Ember.js. Few of the many features I love about Ember.js are the two-way data binding, Computed Properties, the run loop, convention over configuration nature, ease of handling routing and many more.
-In this talk I would be covering the following:&lt;/p&gt;
+&lt;p&gt;When he is not working, he can be found skiing with his wife and kids, remodeling the house, playing music with his band, or hanging out in the yard with his chickens.&lt;/p&gt;
+&lt;p&gt;In “Demystifying TypeScript Decorators” will show us TypeScript decorators, based on the ES2016 decorator proposal and introduced as part of TypeScript 1.5, provide developers with a way to modify a JavaScript class, property, method, or method parameter using a convenient declarative syntax. We’ll start this session by creating our own decorator, to see firsthand how they work. Then, we’ll take a look at how decorators can be used in a variety of settings.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Introduction to Emberjs and why Ember&lt;/li&gt;
-&lt;li&gt;How Ember js makes a difference&lt;/li&gt;
-&lt;li&gt;Ember convention over configuration nature&lt;/li&gt;
-&lt;li&gt;Introduction to Ember routes, components and templates&lt;/li&gt;
-&lt;li&gt;Introduction to Ember CLI&lt;/li&gt;
-&lt;li&gt;Computed Properties&lt;/li&gt;
-&lt;li&gt;Live Demo on how it’s really intuitive in a couple of non-trivial scenarios.&lt;/li&gt;
+&lt;li&gt;Blog: &lt;a href=&quot;http://smashdev.com&quot;&gt;http://smashdev.com&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Github: &lt;a href=&quot;http://github.com/smashdevcode&quot;&gt;http://github.com/smashdevcode&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Twitter: &lt;a href=&quot;http://twitter.com/SmashDev&quot;&gt;http://twitter.com/SmashDev&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;So basically my goal is to attract more developers to adapt modern javascript frameworks and make a difference in the way complex apps are built.”&lt;/p&gt;
 </description>
     </item>
     <item>
@@ -2752,6 +3827,36 @@ and challenges the complexity of frameworks like Google’s Angular or Facebook�
 which suggest creating view-specific APIs, per platform, app, versions of an app…&lt;/p&gt;
 &lt;p&gt;We’ll start by reviewing some of the key challenges of modern UX and Front-End Architectures. We will then present the
 key concepts of SAM and walk the audience through some node.js code samples (including server-side TimeTravel).&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>Modern Javascript Frameworks - Introduction to Ember.JS and Ember-CLI by Suchita Doshi</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-suchita-doshi/</link>
+      <pubDate>Sat, 04 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-suchita-doshi/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-suchita-doshi/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-right&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-suchita-doshi/suchita-doshi.jpg&quot; alt=&quot;Suchita Doshi&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Suchita is UI Lead for the analytics module of Yahoo Admanager Plus team and Core member of Emberjs group @Yahoo, Speaker at Women Who code organization (Introduction To Emberjs/Ember CLI), Conducted Webinar for the TenXList members on EmberJS. She’s passionate about improving developers ergonomics and a hardcore “cricket” fan.&lt;/p&gt;
+&lt;p&gt;In other Suchita news, she’s opening bats-woman for the Bay Area Cricket Association team! 😀&lt;/p&gt;
+&lt;p&gt;Suchita describes her talk as “There will never be a “one size fits all” approach to web development. If you want your application to be minimally interactive, then server side rendered HTML would be the way to go, else, if it were a more interactive application, then client side framework would benefit you.
+Why not use just JQuery instead of adopting these Modern Javascript Frameworks? Think about it! If your application has interactivity on the lighter side, then JQuery would work well, but as soon as you introduce more states in your application, it would then become messier and heavier on the DOM. You would need to use the ‘data-‘ attributes to store the data in your DOM and also remember how to map them with the triggered events.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Here is where client side frameworks come to the rescue. I have worked on several client side frameworks like Backbone.js, Ember.js. Few of the many features I love about Ember.js are the two-way data binding, Computed Properties, the run loop, convention over configuration nature, ease of handling routing and many more.
+In this talk I would be covering the following:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Introduction to Emberjs and why Ember&lt;/li&gt;
+&lt;li&gt;How Ember js makes a difference&lt;/li&gt;
+&lt;li&gt;Ember convention over configuration nature&lt;/li&gt;
+&lt;li&gt;Introduction to Ember routes, components and templates&lt;/li&gt;
+&lt;li&gt;Introduction to Ember CLI&lt;/li&gt;
+&lt;li&gt;Computed Properties&lt;/li&gt;
+&lt;li&gt;Live Demo on how it’s really intuitive in a couple of non-trivial scenarios.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;So basically my goal is to attract more developers to adapt modern javascript frameworks and make a difference in the way complex apps are built.”&lt;/p&gt;
 </description>
     </item>
     <item>
@@ -2809,6 +3914,23 @@ In this talk, you will learn about the power of WebSockets and how they can (and
 </description>
     </item>
     <item>
+      <title>I Play the JavaScript by Matt McKegg</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</link>
+      <pubDate>Thu, 02 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-left&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/mattmckegg.jpg&quot; alt=&quot;Matt McKegg&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;A JavaScript hacker and backyard musician and from Wellington, New Zealand. Lover of all things open and modular. I spend most of my time pressing buttons of various shapes, sizes and colours. Sometimes these buttons make sounds.&lt;/p&gt;
+&lt;p&gt;Matt has been making music with computers for about 10 years, but once he tried to move from bedroom composing to live performance, he got incredibly frustrated at how hard it was to play computer music live. He decided to start working on his own live electronic performance software written in JavaScript that would let me play the way he wanted to play. 3 years later, it’s finally starting to become a reality.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Here is one of the Matt’s recent performances, for your viewing pleasure. &lt;/p&gt;
+&lt;iframe width=&quot;1280&quot; height=&quot;720&quot; src=&quot;https://www.youtube.com/embed/L2BVDJWHdy0?rel=0&amp;amp;showinfo=0&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;</description>
+    </item>
+    <item>
       <title>The Web Platform is the Universal Instrument by Ben Michel</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-ben-michel/</link>
       <pubDate>Thu, 02 Jun 2016 17:00:00 -0700</pubDate>
@@ -2836,40 +3958,6 @@ In this talk, you will learn about the power of WebSockets and how they can (and
 </description>
     </item>
     <item>
-      <title>I Play the JavaScript by Matt McKegg</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</link>
-      <pubDate>Thu, 02 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</guid>
-      <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-left&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/mattmckegg.jpg&quot; alt=&quot;Matt McKegg&quot;&gt;
-&lt;/div&gt;
-
-&lt;p&gt;A JavaScript hacker and backyard musician and from Wellington, New Zealand. Lover of all things open and modular. I spend most of my time pressing buttons of various shapes, sizes and colours. Sometimes these buttons make sounds.&lt;/p&gt;
-&lt;p&gt;Matt has been making music with computers for about 10 years, but once he tried to move from bedroom composing to live performance, he got incredibly frustrated at how hard it was to play computer music live. He decided to start working on his own live electronic performance software written in JavaScript that would let me play the way he wanted to play. 3 years later, it’s finally starting to become a reality.&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Here is one of the Matt’s recent performances, for your viewing pleasure. &lt;/p&gt;
-&lt;iframe width=&quot;1280&quot; height=&quot;720&quot; src=&quot;https://www.youtube.com/embed/L2BVDJWHdy0?rel=0&amp;amp;showinfo=0&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;</description>
-    </item>
-    <item>
-      <title>The House Is Not On Fire - Building a home automation robot with Arduino, Raspberry Pi and Node.js by Artur Paikin</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</link>
-      <pubDate>Wed, 01 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</guid>
-      <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-right&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/art-stida.jpg&quot; alt=&quot;Artur Paikin&quot;&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Artur describes himself as, “I’m a web developer and traveler. I write stories about my adventures in Russian and English on my site: &lt;a href=&quot;http://arturpaikin.com&quot;&gt;http://arturpaikin.com&lt;/a&gt; and run a small technology cooperative called &lt;a href=&quot;http://unebaguette.com&quot;&gt;Baguette&lt;/a&gt;, where I work on cool projects, currently building an ambitious next generation file uploader with &lt;a href=&quot;https://transloadit.com/&quot;&gt;Transloadit&lt;/a&gt;. I ride a &lt;a href=&quot;https://www.instagram.com/p/xC0qC2SSYb&quot;&gt;foldable bicycle&lt;/a&gt;, &lt;a href=&quot;http://unebaguette.com/web-course/&quot;&gt;teach&lt;/a&gt; web development and sometimes &lt;a href=&quot;https://www.instagram.com/p/4_6LO8ySVL/&quot;&gt;garden&lt;/a&gt; on the balcony.”&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Artur has built an open source home automation system called &lt;a href=&quot;https://github.com/arturi/kotihome&quot;&gt;Koti Home&lt;/a&gt; (Koti means home in Finnish language). It’s powered by an Arduino connected to Raspberry Pi, MQTT protocol for messaging, Node.js on the client and server, web sockets. You can interact with Koti robot via a React (like the cool kids do) control panel, Telegram Chat Bot and even your own voice.&lt;/p&gt;
-&lt;p&gt;Arthur will talk about how he’s turned this project into reality — the tech he used and the challenges he faced. From a blinking LED to a voice controlled home automation robot.&lt;/p&gt;
-</description>
-    </item>
-    <item>
       <title>Code First Docs How we Threw Out The Book &amp; Put Code First With Twilio Documentation by Jarod Reyes</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-jarod-reyes/</link>
       <pubDate>Wed, 01 Jun 2016 17:00:00 -0700</pubDate>
@@ -2891,6 +3979,23 @@ In this talk, you will learn about the power of WebSockets and how they can (and
 &lt;li&gt;Twitter: &lt;a href=&quot;https://twitter.com/jreyesdev&quot;&gt;@jreyesdev&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Github: &lt;a href=&quot;https://github.com/jarodreyes&quot;&gt;github.com/jarodreyes&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+</description>
+    </item>
+    <item>
+      <title>The House Is Not On Fire - Building a home automation robot with Arduino, Raspberry Pi and Node.js by Artur Paikin</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</link>
+      <pubDate>Wed, 01 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-right&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/art-stida.jpg&quot; alt=&quot;Artur Paikin&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Artur describes himself as, “I’m a web developer and traveler. I write stories about my adventures in Russian and English on my site: &lt;a href=&quot;http://arturpaikin.com&quot;&gt;http://arturpaikin.com&lt;/a&gt; and run a small technology cooperative called &lt;a href=&quot;http://unebaguette.com&quot;&gt;Baguette&lt;/a&gt;, where I work on cool projects, currently building an ambitious next generation file uploader with &lt;a href=&quot;https://transloadit.com/&quot;&gt;Transloadit&lt;/a&gt;. I ride a &lt;a href=&quot;https://www.instagram.com/p/xC0qC2SSYb&quot;&gt;foldable bicycle&lt;/a&gt;, &lt;a href=&quot;http://unebaguette.com/web-course/&quot;&gt;teach&lt;/a&gt; web development and sometimes &lt;a href=&quot;https://www.instagram.com/p/4_6LO8ySVL/&quot;&gt;garden&lt;/a&gt; on the balcony.”&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Artur has built an open source home automation system called &lt;a href=&quot;https://github.com/arturi/kotihome&quot;&gt;Koti Home&lt;/a&gt; (Koti means home in Finnish language). It’s powered by an Arduino connected to Raspberry Pi, MQTT protocol for messaging, Node.js on the client and server, web sockets. You can interact with Koti robot via a React (like the cool kids do) control panel, Telegram Chat Bot and even your own voice.&lt;/p&gt;
+&lt;p&gt;Arthur will talk about how he’s turned this project into reality — the tech he used and the challenges he faced. From a blinking LED to a voice controlled home automation robot.&lt;/p&gt;
 </description>
     </item>
     <item>
@@ -3833,6 +4938,109 @@ sudo service apache2 restart
 </description>
     </item>
     <item>
+      <title>Using the File System fs.* with Node.js</title>
+      <link>http://adron.github.io/articles/using-the-file-system-fs-w-nodejs/</link>
+      <pubDate>Sun, 22 Nov 2015 16:00:00 -0800</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/using-the-file-system-fs-w-nodejs/</guid>
+      <author></author>
+      <description>&lt;p&gt;I have a few basic tasks that I need to perform on the file system with Node.js. I’m going to clone a repository into a directory, but before that, if the directory that the clone action will put the repository in exists, I’d like to do something with that directory first. To check for the existence of the directory I quickly found two functions that work well for this purpose.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;First there is the asynchronously executing “exists” function.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; fs = &lt;span class=&quot;built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;'fs'&lt;/span&gt;);
+
+fs.exists(&lt;span class=&quot;string&quot;&gt;'/etc/passwd'&lt;/span&gt;, &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;exists&lt;/span&gt;) &lt;/span&gt;{
+  &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(exists ? &lt;span class=&quot;string&quot;&gt;&quot;it's there&quot;&lt;/span&gt; : &lt;span class=&quot;string&quot;&gt;'no passwd!'&lt;/span&gt;);
+});
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This function takes the path, passed in, then has a callback that can then react to the result which is true or false. A similar function for a synchronous call is available too, called “existsSync”.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; fs = &lt;span class=&quot;built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;'fs'&lt;/span&gt;);
+
+&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; result = fs.existsSync(path)
+
+&lt;span class=&quot;comment&quot;&gt;// result will be true or false.&lt;/span&gt;
+&lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(result);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now there is one major problem with these two functions. Currently, they’re marked as “deprecated” with a stability expectation of 0. This means simply, that they’re likely to go away in the near future. Now, I hate the idea of using these functions with the idea that I upgrade to a new version one day and my application is nuked. That just isn’t really acceptable.&lt;/p&gt;
+&lt;p&gt;So I go digging around at the other functions that the documentation states to use instead. For the asynchronous fs.exists(path, callback) function it states to use “fs.stat” or “fs.access” instead. Let’s take a look at these two first.&lt;/p&gt;
+&lt;p&gt;The “fs.stat” function is very similar to “fs.exists” in calling signature, it takes a path and a callback to execute. I created the short snippet below to show what this function looks like.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; fs = &lt;span class=&quot;built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;'fs'&lt;/span&gt;);
+
+&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; path2 = &lt;span class=&quot;string&quot;&gt;'thisShouldntExist'&lt;/span&gt;;
+&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; path1 = &lt;span class=&quot;string&quot;&gt;'newdirectory'&lt;/span&gt;;
+
+&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;myDirectoryExistsCheck&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;path&lt;/span&gt;) &lt;/span&gt;{
+  fs.stat(path2, &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;err, stat&lt;/span&gt;) &lt;/span&gt;{
+    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (err.code === &lt;span class=&quot;string&quot;&gt;'ENOENT'&lt;/span&gt;) {
+      &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;string&quot;&gt;'No file asynchronously found.'&lt;/span&gt;)
+    } &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (err) {
+      &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(err)
+    } &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; {
+      &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;string&quot;&gt;'File found asynchronously - Mode: '&lt;/span&gt; + stat.mode + &lt;span class=&quot;string&quot;&gt;' Size: '&lt;/span&gt; + stat.size);
+    }
+  });
+}
+
+myDirectoryExistsCheck(path1);
+myDirectoryExistsCheck(path2);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Based on the first call finding a directory and the second call not finding a directory, here’s the results I got from this code snippet.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;File found asynchronously - Mode: 16877 Size: 102
+No file asynchronously found.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Based on the first functions, which are now deprecated, the amount of code has ballooned up pretty dramatically over making a standard function call with a true or false result, to something where I have to confirm based off of the data returned in a fs.stats object. I wrote a little console.log code just to show what this object looks like when it is printed out. This…&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;fs.stat(path1, &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;err, stat&lt;/span&gt;) &lt;/span&gt;{
+  &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(stat);
+});
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;…prints out this.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;{ dev: 16777220,
+  mode: 16877,
+  nlink: 3,
+  uid: 501,
+  gid: 20,
+  rdev: 0,
+  blksize: 4096,
+  ino: 10692619,
+  size: 102,
+  blocks: 0,
+  atime: Mon Nov 23 2015 11:23:55 GMT-0800 (PST),
+  mtime: Mon Nov 23 2015 11:20:14 GMT-0800 (PST),
+  ctime: Mon Nov 23 2015 11:20:14 GMT-0800 (PST),
+  birthtime: Mon Nov 23 2015 11:19:40 GMT-0800 (PST) }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;It’s kind of nice to have an object come back with data that one can use to derive a result from, but it’s kind of a bummer when all I want to do is write code that checks for existence and returns true or false. Now, in either case, if an error occurs, such as what happens when a file or directory is not found with the “fs.stat” function, the result looks like this.  This…&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;fs.stat(path2, &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;err, stat&lt;/span&gt;) &lt;/span&gt;{
+  &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(err);
+});
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;…prints out this.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;{ [Error: ENOENT: no such file or directory, stat &amp;#39;thisShouldntExist&amp;#39;]
+  errno: -2,
+  code: &amp;#39;ENOENT&amp;#39;,
+  syscall: &amp;#39;stat&amp;#39;,
+  path: &amp;#39;thisShouldntExist&amp;#39; }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Another thing I added, to show two useful functions when there is a file or directory present is shown below.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;fs.stat(path, &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;err, stat&lt;/span&gt;) &lt;/span&gt;{
+  &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (err) {
+    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (err.code === &lt;span class=&quot;string&quot;&gt;'ENOENT'&lt;/span&gt;) {
+      &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;string&quot;&gt;'No file asynchronously found.'&lt;/span&gt;);
+    } &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; {
+      &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;string&quot;&gt;'Some other error occurred.'&lt;/span&gt;);
+    }
+  } &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; {
+    &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;string&quot;&gt;'File found asynchronously - Mode: '&lt;/span&gt; + stat.mode + &lt;span class=&quot;string&quot;&gt;' Size: '&lt;/span&gt; + stat.size);
+    &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;string&quot;&gt;'Other things to checks:'&lt;/span&gt;);
+    &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;string&quot;&gt;'  - '&lt;/span&gt; + stat.isFile());
+    &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;string&quot;&gt;'  - '&lt;/span&gt; + stat.isDirectory());
+  }
+});
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This of course checks for errors, which will be thrown if there is not a file or directory to find. But if there is, the stat object that is returned asynchronously via the callback has several functions attached, the two that are immediately useful for me are the “isFile()” and “isDirectory()” functions. They’re pretty self explanatory.&lt;/p&gt;
+&lt;p&gt;Now, of course this still means you’re writing code to deal with errors instead of what the “fs.exists” functions would do. So really, what needs to be done is a wrapper needs to be written to handle the somewhat basic and crude handling of the file system. But since this is such a common need for many applications, I thought, “hey, time to check and see if there’s some npm library bagic that’s available!” …and oddly enough I wasn’t impressed by anything I could dig up. Maybe search-fu wasn’t so hot. But it looks like I’ll be building up this stuff from scratch. With that, happy hacking and I’ll be back later with more…&lt;/p&gt;
+</description>
+    </item>
+    <item>
       <title>Docker Tips n' Tricks - Delete All The Images &amp; Containers</title>
       <link>http://adron.github.io/articles/docker-tips-n-tricks-delete-all-the-images-containers/</link>
       <pubDate>Sun, 01 Nov 2015 16:00:00 -0800</pubDate>
@@ -4509,6 +5717,53 @@ server.pack.register(Good, &lt;span class=&quot;function&quot;&gt;&lt;span class
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https://github.com/Adron/testing-aws-sqs-worker&quot;&gt;Testing AWS SQS Web Worker Github Repo&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://github.com/Adron/testing-aws-sqs-site&quot;&gt;Testing AWS SQS Web App Github Repo&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    <item>
+      <title>Bashit... Just a Custom Bash Prompt Setup for Git</title>
+      <link>http://adron.github.io/articles/bashit/</link>
+      <pubDate>Thu, 09 Oct 2014 00:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/bashit/</guid>
+      <author></author>
+      <description>&lt;p&gt;I use git. I’m honestly shocked when someone doesn’t use git (&lt;em&gt;or at least some DVCS&lt;/em&gt;) these days. It just seems somewhat draconian to use any of the legacy source control systems (&lt;em&gt;albeit there are some rare exceptions, like game development graphics collateral&lt;/em&gt;). I was reminded of something by the great hands on session that Pamela Ocampo &lt;a href=&quot;https://twitter.com/pmocampo&quot;&gt;@pmocampo&lt;/a&gt; and Rachel &lt;a href=&quot;https://twitter.com/raychatter&quot; target=&quot;_blank&quot;&gt;@raychatter&lt;/a&gt; gave at &lt;a href=&quot;http://opensourcebridge.org/&quot; target=&quot;_blank&quot;&gt;OS Bridge&lt;/a&gt; titled “&lt;a href=&quot;http://opensourcebridge.org/sessions/1378&quot; target=&quot;_blank&quot;&gt;NerdCred++; How to Customize your Bash Prompt&lt;/a&gt;“.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;After the session I dug into customizing my bash prompt. After doing a lot of manual editing I ended up just forking and implementing Michael Gonderman’s (&lt;a href=&quot;https://twitter.com/magicmonty&quot; target=&quot;_blank&quot;&gt;@magicmonty&lt;/a&gt;) &lt;a href=&quot;https://github.com/Adron/bash-git-prompt&quot; target=&quot;_blank&quot;&gt;bash-git-prompt&lt;/a&gt;. The way to get this installed is pretty simple, albeit it does include a few steps (&lt;em&gt;and yes, the &lt;a href=&quot;https://github.com/Adron/bash-git-prompt/blob/master/README.md&quot; target=&quot;_blank&quot;&gt;README.md&lt;/a&gt; basically has the instructions, but I’ve copied them here just to discuss and for ease of readability). &lt;/em&gt;Another key points of reference include Sebastian Celis’s (&lt;a href=&quot;https://twitter.com/scelis&quot; target=&quot;_blank&quot;&gt;@scelis&lt;/a&gt;) “&lt;a href=&quot;http://sebastiancelis.com/2009/11/16/zsh-prompt-git-users/&quot; target=&quot;_blank&quot;&gt;A zsh prompt for git users&lt;/a&gt;“ on his &lt;a href=&quot;http://sebastiancelis.com/&quot; target=&quot;_blank&quot;&gt;blog&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;!--more--&gt;First clone the repo (even though I’ve forked it I still pulled directly from&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;$ cd ~
+$ git clone https://github.com/magicmonty/bash-git-prompt.git .bash-git-prompt
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;To verify that it is cloned ok, source the gitprompt.sh file from bash. It should immediately dive into a new prompt with a check mark and current directory, with the time immediately under that. Sweet, that worked!&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;$ source ~/.bash-git-prompt/gitprompt.sh
+✔ ~
+10:48 $
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Where the check mark is where git changes will display when navigating into a directory path that is a git repository and making changes. The format will look something like (&lt;branch&gt; &lt;branch tracking&gt;|&lt;local status&gt;). The symbols on the prompt, when working with git are as follows:&lt;/p&gt;
+&lt;p&gt;✔: repository clean
+●n: there are n staged files
+✖n: there are n unmerged files
+✚n: there are n changed but unstaged files
+…n: there are n untracked files
+⚑n: there are n stash entries
+↑n: ahead of remote by n commits
+↓n: behind remote by n commits
+↓m↑n: branches diverged, other by m commits, yours by n commits&lt;/p&gt;
+&lt;p&gt;The next step is to make this permanent. Open up your ~/.bashrc file (or whichever you use, in my case I’m using ~./bash_profile, so be sure to figure out which one your system is using to actually load your bash). In the bash file add a single line to source the gitprompt.sh file.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;# a bunch of other stuff in the file, whatever it might be... etc., etc.
+
+source ~/.bash-git-prompt/gitprompt.sh
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;I’ve added some links below that add additional options to customize your bash prompt (thank Pamela &amp;amp; Rachel). Even though all of this might seem like such a small little thing, having that extra information readily displayed on the prompt can be a huge time saver. Especially if you’re regularly in the code, committing from TDD or BDD practices or even just paired with somebody going through doing a refactor. It can be HUGE time saver, it definitely has for me.&lt;/p&gt;
+&lt;p&gt;…and thanks to ALL that gave me the motivation &amp;amp; for putting together the presentation and code for the prompt. Props to &lt;a href=&quot;https://twitter.com/scelis&quot; target=&quot;_blank&quot;&gt;@scelis&lt;/a&gt;, &lt;a href=&quot;https://twitter.com/pmocampo&quot; target=&quot;_blank&quot;&gt;@pmocampo&lt;/a&gt;, &lt;a href=&quot;https://twitter.com/raychatter&quot; target=&quot;_blank&quot;&gt;@raychatter&lt;/a&gt; &amp;amp; the others that have contributed to making bad ass bash prompts!&lt;/p&gt;
+&lt;p&gt;Enjoy!&lt;/p&gt;
+&lt;h2 id=&quot;resources-&quot;&gt;Resources:&lt;/h2&gt;
+&lt;p&gt;Pamela &amp;amp; Rachel’s Slide Deck &amp;amp; Additional Information:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://pamo.github.io/nerdcred/slides/#/&quot; target=&quot;_blank&quot;&gt;Slide Deck&lt;/a&gt;&lt;/li&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://pamo.github.io/nerdcred/&quot; target=&quot;_blank&quot;&gt;Additional Info from Pamela &amp;amp; Rachel&lt;/a&gt;&lt;/li&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.kirsle.net/wizards/ps1.html&quot; target=&quot;_blank&quot;&gt;Bash $PS1 Generator 2.0&lt;/a&gt;&lt;/li&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://andrewray.me/bash-prompt-builder/&quot; target=&quot;_blank&quot;&gt;Bash Prompt Builder&lt;/a&gt;&lt;/li&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://ezprompt.net/&quot; target=&quot;_blank&quot;&gt;Ez Prompt&lt;/a&gt;&lt;/li&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>

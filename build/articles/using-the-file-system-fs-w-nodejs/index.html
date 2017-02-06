@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Adron's Composite Code</title>
+    <meta name="description" content="">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="alternate" href="/feed.xml" type="application/rss+xml" title="Coder, Messenger, Recon, Infrastructure, Ops">
+    <link rel="icon" type="image/png" href="/img/favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/img/favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/img/favicons/favicon-96x96.png" sizes="96x96">
+    <link rel="apple-touch-icon" sizes="57x57" href="/img/favicons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/img/favicons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/img/favicons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/img/favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/img/favicons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/img/favicons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/img/favicons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/img/favicons/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/favicons/apple-touch-icon-180x180.png">
+    <link rel="stylesheet" href="/css/custom.css">
+    <link rel="stylesheet" href="/css/style.min.css">
+    <script src="/js/modernizr.js"></script>
+  </head>
+  <body class="article-detail">
+    <!--[if lt IE 8]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <div class="header header-over large">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 col-sm-6 col-xs-6">
+            <!-- Logo Image--><a href="/index.html" class="logo-image logo-animated"><img src="/img/logos/logo.png" alt="logo"></a>
+            <!-- End of Logo Image-->
+          </div>
+          <div class="col-md-9 col-sm-6 col-xs-6">
+            <!-- Menu-->
+            <nav class="right helper">
+              <ul class="menu sf-menu js-menu">
+                <li><a href="/docs/thrashing-code-news/">Thrashing Code News</a></li>
+                <li><a href="#">Conf - Meetup - Events</a>
+                  <ul>
+                    <li><a href="/docs/Speaking-Presentations-Workshops/">Speaking - Presentations - Workshops</a></li>
+                    <li><a href="/docs/calendar">Calendar of Engagements</a></li>
+                  </ul>
+                </li>
+                <li><a href="/docs/documentation/">Docs</a></li>
+                <li><a href="#">Contact</a>
+                  <ul>
+                    <li><a href="/docs/contact">Message</a></li>
+                    <li><a href="/docs/job-talk/">Hire</a></li>
+                  </ul>
+                </li>
+                <li><a href="/docs/about/">About</a></li>
+              </ul>
+            </nav>
+            <!-- End of Menu-->
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="header-back header-back-simple header-back-small">
+      <div class="header-back-container">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <!-- Page Info-->
+              <div class="page-info page-info-simple">
+                <h1>Using the File System fs.* with Node.js</h1>
+                <p class="author">Written by <span class="author">Adron Hall</span> and published on <span>November, 23 of 2015.</span>
+                </p>
+                <div class="nav"><a href="/">« Home</a></div>
+              </div>
+              <!-- End Page Info-->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="content">
+      <div class="container">
+        <div class="layout with-right-sidebar js-layout">
+          <div class="row">
+            <div class="col-md-9">
+              <div class="main-content">
+                <!-- Blog Page-->
+                <article class="article">
+                  <section class="content"><p>I have a few basic tasks that I need to perform on the file system with Node.js. I’m going to clone a repository into a directory, but before that, if the directory that the clone action will put the repository in exists, I’d like to do something with that directory first. To check for the existence of the directory I quickly found two functions that work well for this&nbsp;purpose.</p>
+<p><span class="more"></span></p>
+<p>First there is the asynchronously executing “exists”&nbsp;function.</p>
+<pre><code class="lang-javascript"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);
+
+fs.exists(<span class="string">'/etc/passwd'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">exists</span>) </span>{
+  <span class="built_in">console</span>.log(exists ? <span class="string">"it's there"</span> : <span class="string">'no passwd!'</span>);
+});
+</code></pre>
+<p>This function takes the path, passed in, then has a callback that can then react to the result which is true or false. A similar function for a synchronous call is available too, called&nbsp;“existsSync”.</p>
+<pre><code class="lang-javascript"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);
+
+<span class="keyword">var</span> result = fs.existsSync(path)
+
+<span class="comment">// result will be true or false.</span>
+<span class="built_in">console</span>.log(result);
+</code></pre>
+<p>Now there is one major problem with these two functions. Currently, they’re marked as “deprecated” with a stability expectation of 0. This means simply, that they’re likely to go away in the near future. Now, I hate the idea of using these functions with the idea that I upgrade to a new version one day and my application is nuked. That just isn’t really&nbsp;acceptable.</p>
+<p>So I go digging around at the other functions that the documentation states to use instead. For the asynchronous fs.exists(path, callback) function it states to use “fs.stat” or “fs.access” instead. Let’s take a look at these two&nbsp;first.</p>
+<p>The “fs.stat” function is very similar to “fs.exists” in calling signature, it takes a path and a callback to execute. I created the short snippet below to show what this function looks&nbsp;like.</p>
+<pre><code class="lang-javascript"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);
+
+<span class="keyword">var</span> path2 = <span class="string">'thisShouldntExist'</span>;
+<span class="keyword">var</span> path1 = <span class="string">'newdirectory'</span>;
+
+<span class="function"><span class="keyword">function</span> <span class="title">myDirectoryExistsCheck</span> (<span class="params">path</span>) </span>{
+  fs.stat(path2, <span class="function"><span class="keyword">function</span> (<span class="params">err, stat</span>) </span>{
+    <span class="keyword">if</span> (err.code === <span class="string">'<span class="caps">ENOENT</span>'</span>) {
+      <span class="built_in">console</span>.log(<span class="string">'No file asynchronously found.'</span>)
+    } <span class="keyword">else</span> <span class="keyword">if</span> (err) {
+      <span class="built_in">console</span>.log(err)
+    } <span class="keyword">else</span> {
+      <span class="built_in">console</span>.log(<span class="string">'File found asynchronously - Mode: '</span> + stat.mode + <span class="string">' Size: '</span> + stat.size);
+    }
+  });
+}
+
+myDirectoryExistsCheck(path1);
+myDirectoryExistsCheck(path2);
+</code></pre>
+<p>Based on the first call finding a directory and the second call not finding a directory, here’s the results I got from this code&nbsp;snippet.</p>
+<pre><code class="lang-shell-script">File found asynchronously - Mode: 16877 Size: 102
+No file asynchronously found.
+</code></pre>
+<p>Based on the first functions, which are now deprecated, the amount of code has ballooned up pretty dramatically over making a standard function call with a true or false result, to something where I have to confirm based off of the data returned in a fs.stats object. I wrote a little console.log code just to show what this object looks like when it is printed out.&nbsp;This…</p>
+<pre><code class="lang-javascript">fs.stat(path1, <span class="function"><span class="keyword">function</span> (<span class="params">err, stat</span>) </span>{
+  <span class="built_in">console</span>.log(stat);
+});
+</code></pre>
+<p>…prints out&nbsp;this.</p>
+<pre><code class="lang-shell-script">{ dev: 16777220,
+  mode: 16877,
+  nlink: 3,
+  uid: 501,
+  gid: 20,
+  rdev: 0,
+  blksize: 4096,
+  ino: 10692619,
+  size: 102,
+  blocks: 0,
+  atime: Mon Nov 23 2015 11:23:55 GMT-0800 (PST),
+  mtime: Mon Nov 23 2015 11:20:14 GMT-0800 (PST),
+  ctime: Mon Nov 23 2015 11:20:14 GMT-0800 (PST),
+  birthtime: Mon Nov 23 2015 11:19:40 GMT-0800 (PST) }
+</code></pre>
+<p>It’s kind of nice to have an object come back with data that one can use to derive a result from, but it’s kind of a bummer when all I want to do is write code that checks for existence and returns true or false. Now, in either case, if an error occurs, such as what happens when a file or directory is not found with the “fs.stat” function, the result looks like this.&nbsp;This…</p>
+<pre><code class="lang-javascript">fs.stat(path2, <span class="function"><span class="keyword">function</span> (<span class="params">err, stat</span>) </span>{
+  <span class="built_in">console</span>.log(err);
+});
+</code></pre>
+<p>…prints out&nbsp;this.</p>
+<pre><code class="lang-shell-script">{ [Error: ENOENT: no such file or directory, stat &#39;thisShouldntExist&#39;]
+  errno: -2,
+  code: &#39;ENOENT&#39;,
+  syscall: &#39;stat&#39;,
+  path: &#39;thisShouldntExist&#39; }
+</code></pre>
+<p>Another thing I added, to show two useful functions when there is a file or directory present is shown&nbsp;below.</p>
+<pre><code class="lang-javascript">fs.stat(path, <span class="function"><span class="keyword">function</span> (<span class="params">err, stat</span>) </span>{
+  <span class="keyword">if</span> (err) {
+    <span class="keyword">if</span> (err.code === <span class="string">'<span class="caps">ENOENT</span>'</span>) {
+      <span class="built_in">console</span>.log(<span class="string">'No file asynchronously found.'</span>);
+    } <span class="keyword">else</span> {
+      <span class="built_in">console</span>.log(<span class="string">'Some other error occurred.'</span>);
+    }
+  } <span class="keyword">else</span> {
+    <span class="built_in">console</span>.log(<span class="string">'File found asynchronously - Mode: '</span> + stat.mode + <span class="string">' Size: '</span> + stat.size);
+    <span class="built_in">console</span>.log(<span class="string">'Other things to checks:'</span>);
+    <span class="built_in">console</span>.log(<span class="string">'  - '</span> + stat.isFile());
+    <span class="built_in">console</span>.log(<span class="string">'  - '</span> + stat.isDirectory());
+  }
+});
+</code></pre>
+<p>This of course checks for errors, which will be thrown if there is not a file or directory to find. But if there is, the stat object that is returned asynchronously via the callback has several functions attached, the two that are immediately useful for me are the “isFile()” and “isDirectory()” functions. They’re pretty self&nbsp;explanatory.</p>
+<p>Now, of course this still means you’re writing code to deal with errors instead of what the “fs.exists” functions would do. So really, what needs to be done is a wrapper needs to be written to handle the somewhat basic and crude handling of the file system. But since this is such a common need for many applications, I thought, “hey, time to check and see if there’s some npm library bagic that’s available!” …and oddly enough I wasn’t impressed by anything I could dig up. Maybe search-fu wasn’t so hot. But it looks like I’ll be building up this stuff from scratch. With that, happy hacking and I’ll be back later with&nbsp;more…</p>
+</section>
+                </article>
+                <!-- End of Blog Page-->
+              </div>
+            </div>
+            <div class="col-md-3 hidden-sm hidden-xs">
+              <div class="sidebar js-sidebar-fixed">
+                <!-- Vertical Menu-->
+                <div class="widget">
+                  <!-- Search-->
+                  <div class="search">
+                    <form action="https://google.com/search" method="get">
+                      <input type="hidden" name="sitesearch" value="http://blog.adron.me">
+                      <input type="text" name="q" placeholder="search" class="search-input form-control"><i class="fa fa-search search-icon"></i>
+                    </form>
+                  </div>
+                  <!-- End of Search-->
+                </div>
+                <div class="widget">
+                  <h3 class="widget-title">Keyword Search</h3>
+                  <!-- Tags-->
+                  <ul class="tags">
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=html">html</a></li>
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=javascript">javascript</a></li>
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=ubuntu">ubuntu</a></li>
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=node pdx">node pdx</a></li>
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=.NET fringe">.net fringe</a></li>
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=videos">videos</a></li>
+                  </ul>
+                  <!-- End of Tags-->
+                </div>
+                <nav class="menu-vertical-wrapper">
+                  <ul data-prepend-to=".js-layout" data-select="Menu" class="menu-vertical js-menu-vertical">
+                    <li><a href="#">About</a>
+                      <ul>
+                        <li><a href="/docs/about/">Me, Adron</a></li>
+                        <li><a href="#">My Hobbies</a>
+                          <ul>
+                            <li><a href="http://photos.adron.me">My Photos</a></li>
+                          </ul>
+                        </li>
+                        <li><a href="/docs/Speaking-Presentations-Workshops">My Presentations</a></li>
+                        <li><a href="/docs/documentation/">Collection of Docs & Notes</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </nav>
+                <div class="widget">
+                  <h3 class="widget-title">Photos</h3>
+                  <!-- Photos-->
+                  <ul class="widget-recommended-products">
+                    <!-- Photos-->
+                    <li class="widget-recommended-product"><img src="/img/photos/IMG_1836.jpg" alt="Jon Oropeza" class="widget-recommended-product-img"><a href="http://photos.adron.me/Software/Meetups-N-Conferences/Conferences/Node-PDX-2016/i-D9qFQ6m" class="widget-recommended-product-link">
+                        <h5 class="widget-recommended-product-link-title">Node PDX 2016<i class="fa fa-angle-right"></i></h5>
+                        <p class="widget-recommended-product-link-description">Jon Oropeza @ Node PDX 2016</p></a></li>
+                    <!-- End of Recommended product Item-->
+                    <!-- Recommended product Item-->
+                    <li class="widget-recommended-product"><img src="/img/photos/IMG_1812.jpg" alt="Liz Abinante" class="widget-recommended-product-img"><a href="http://photos.adron.me/Software/Meetups-N-Conferences/Conferences/Node-PDX-2016/i-g2m2hgP" class="widget-recommended-product-link">
+                        <h5 class="widget-recommended-product-link-title">Node PDX 2016<i class="fa fa-angle-right"></i></h5>
+                        <p class="widget-recommended-product-link-description">Liz Abinante @ Node PDX 2016</p></a></li>
+                    <!-- End of Recommended product Item-->
+                    <!-- Recommended product Item-->
+                    <li class="widget-recommended-product"><img src="/img/photos/IMG_5709.jpg" alt="Praha hlavní nádraží" class="widget-recommended-product-img"><a href="http://photos.adron.me/Travels-N-Traversings/Across-the-Pond-2016-Travels/September-Krakow/Week-4-Prague/i-62ZPsPb" class="widget-recommended-product-link">
+                        <h5 class="widget-recommended-product-link-title">Prague (Praha)<i class="fa fa-angle-right"></i></h5>
+                        <p class="widget-recommended-product-link-description">Praha hlavní nádraží</p></a></li>
+                    <!-- End of photos row one-->
+                  </ul>
+                  <ul class="widget-recommended-products">
+                    <!-- Photos-->
+                    <li class="widget-recommended-product"><img src="/img/photos/IMG_4417.jpg" alt="St Mary's Basilica" class="widget-recommended-product-img"><a href="http://photos.adron.me/Travels-N-Traversings/Across-the-Pond-2016-Travels/September-Krakow/Krakow/i-KnZf6pK/A" class="widget-recommended-product-link">
+                        <h5 class="widget-recommended-product-link-title">St Mary's Basilica<i class="fa fa-angle-right"></i></h5>
+                        <p class="widget-recommended-product-link-description">Bazylika Mariacka in Rynek Główny.</p></a></li>
+                    <!-- End of Recommended product Item-->
+                    <!-- Recommended product Item-->
+                    <li class="widget-recommended-product"><img src="/img/photos/VSC_03.png" alt="Visual Studio Code" class="widget-recommended-product-img"><a href="http://photos.adron.me/Software/Software-Development/Visual-Studio-Things/i-LLW7WcD/A" class="widget-recommended-product-link">
+                        <h5 class="widget-recommended-product-link-title">Visual Studio Code<i class="fa fa-angle-right"></i></h5>
+                        <p class="widget-recommended-product-link-description">Images from a review of Visual Studio Code.</p></a></li>
+                    <!-- End of Recommended product Item-->
+                    <!-- Recommended product Item-->
+                    <li class="widget-recommended-product"><img src="/img/photos/-home-adronhall-Pictures-Selection_002.png - Shutter_003.png" alt="" class="widget-recommended-product-img"><a href="http://photos.adron.me/Software/Software-Development/Ubuntu/i-CQsQ4zj/A" class="widget-recommended-product-link">
+                        <h5 class="widget-recommended-product-link-title">Mono Develop & WebStorm<i class="fa fa-angle-right"></i></h5>
+                        <p class="widget-recommended-product-link-description">Working through Mono Develop & WebStorm.</p></a>
+                      <!-- End of photos row two-->
+                    </li>
+                  </ul>
+                  <!-- End Photos-->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="nav"><a href="/">« Home</a></div>
+      </div>
+    </div>
+    <script src="/js/all.js"></script>
+    <script src="/js/custom.js"></script>
+    <!-- Google Tag Manager-->
+    <noscript>
+      <iframe src="//www.googletagmanager.com/ns.html?id=GTM-KMMZX2" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <script>
+      console.log(document.getElementById("search-google"));
+      console.log(document.getElementById("search-google").innerText);
+      
+      var searchBox = document.getElementById("search-google");
+      
+      function googleSearch(search_string) {
+        alert(search_string);
+      }
+      
+      document.getElementById("search-google").addEventListener("onClick", function () {
+        alert(document.getElementById("search-google").innerHTML);
+      });
+      
+      document.getElementById("search-google").addEventListener("onClick", function () {
+        googleSearch(document.getElementById("search-google").innerHTML)
+      });
+      
+    </script>
+    <script>
+      (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+                  (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+      })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+      ga('create', 'UA-39158070-6', 'auto');
+      ga('send', 'pageview');
+    </script>
+  </body>
+</html>

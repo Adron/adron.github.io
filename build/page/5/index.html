@@ -91,17 +91,17 @@
                   <div class="blog-grid">
                     <div class="row">
                       <div class="col-md-12 col-sm-12">
-                        <h3 class="blog-grid-title"><a href="/articles/sitrep-home-depot-wrap-up-next-talks-next-job/">Home Depot Wrap Up and Job Talk</a></h3>
-                        <p class="blog-grid-excerpt"><div class="image float-right">
-    <img src="/articles/sitrep-home-depot-wrap-up-next-talks-next-job/home-depot.png" alt="Home Depot">
+                        <h3 class="blog-grid-title"><a href="/articles/want-a-golang-service/">I Want a Go Service</a></h3>
+                        <p class="blog-grid-excerpt"><p>In the last post, I put together a quick Go <span class="caps">CLI</span> that took some flags and acted upon each of the flags. So today, instead of a Bowing 777 I’m aboard Amtrak Cascade’s service to Portland (from Seattle) aboard a <em>Tren Articulado Ligero Goicoechea Oriol</em>, or <em>Talgo</em>&nbsp;Train.</p>
+<div class="image float-right">
+    <img src="/articles/want-a-golang-service/american-talgo.jpg" alt="Amtrak Cascades Talgo">
 </div>
 
-<p>First, I will be available with a possible start date of November the 28<span class="ord">th</span>. I’m currently wrapping up some big projects and completing training for the Home Depot Team and the great progress we’ve made over the last year. If your company is looking for someone with my mixed array of technical skills and soft skills, you can <a href="/docs/about">check out my resume <span class="amp">&amp;</span> details</a> and initiate <a href="/docs/job-talk/">job talk with me here</a>!</p>
-<p>On to the rest of the news. If you’ve seen me speak lately I’ve mentioned the open source efforts we’ve had going on at <a href="http://www.homedepot.com/">Home Depot</a> and related efforts I was working on. Some I’m working dilligently to release via the <a href="https://github.com/homedepot/">Home Depot <span class="caps">OSS</span> Organization on Github</a> and I’ll still be releasing others soon via my Github account (<a href="https://github.com/Adron">@Adron</a>) and blogging about it here on <a href="http://blog.adron.me">Composite Code</a>.</p>
+<p>Traveling in comfort is an unbelievably great way to get some coding done. It’s easy to disconnect form interruptions (albeit there is internet access, but just enough, not to much) and just get some coding done. <strong>Mission:</strong> <em>Put together a service that has a basic response for a request, with some message. There needs to be a root response of the service, but also a response from one or more <span class="caps">URI</span> end&nbsp;points.</em></p>
 <p>
-                          <p class="more"><a href="/articles/sitrep-home-depot-wrap-up-next-talks-next-job/">more</a></p>
+                          <p class="more"><a href="/articles/want-a-golang-service/">more</a></p>
                         </p>
-                        <div class="blog-grid-meta"><span class="blog-grid-date">30. September 2016</span></div>
+                        <div class="blog-grid-meta"><span class="blog-grid-date">01. November 2016</span></div>
                       </div>
                     </div>
                   </div>
@@ -112,33 +112,34 @@
                   <div class="blog-grid">
                     <div class="row">
                       <div class="col-md-12 col-sm-12">
-                        <h3 class="blog-grid-title"><a href="/articles/hashiconf-trip-day-4/">HashiConf Trip Day 4 - Conference Day 2 - A Short Summary</a></h3>
-                        <p class="blog-grid-excerpt"><p>I’m working on getting back in the saddle after a great week at HashiConf and a weekend away at Seaside on the Oregon Coast. With that, I haven’t had a lot of time to write up day 4, which involved a lot of great talks and conversations. Those topics will come up in some subsequent articles, in the meantime please enjoy these videos I made of my HashiConf&nbsp;Adventures.</p>
-<p>
-                          <p class="more"><a href="/articles/hashiconf-trip-day-4/">more</a></p>
-                        </p>
-                        <div class="blog-grid-meta"><span class="blog-grid-date">12. September 2016</span></div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End of Blog List-->
-                </div>
-                <div class="col-md-12 col-sm-12">
-                  <!-- Blog List-->
-                  <div class="blog-grid">
-                    <div class="row">
-                      <div class="col-md-12 col-sm-12">
-                        <h3 class="blog-grid-title"><a href="/articles/autopilot-pattern-application-organization/">Autopilot Pattern Application Organization</a></h3>
-                        <p class="blog-grid-excerpt"><p>Context: What is the <a href="http://autopilotpattern.io/#how-do-we-do-it">Autopilot Pattern</a>?</p>
-<blockquote>
-<p>The autopilot pattern automates the lifecycle of each component of the application. Whether we architect our application as a single container, in tiers, or as microservices, each container that makes up the application has its own lifecycle, and its own set of actions that are necessary during that lifecycle. Each of these application components are often applications in themselves, like a database server, in-memory cache, or the reverse proxy that fronts our application, in addition to the Node.js, Python, Ruby, or other code that makes the set of components a complete&nbsp;application.</p>
-</blockquote>
-<p>The only caveat I would add here is that <em>containers</em> are largely irrelevant as long as your infrastructure virtualization is programmatic controlled. Of course, hyper-visor based virtualization can be more troublesome or simplify things when building out infrastructure programmatically or from a configuration based perspective. Whatever the case, use what works for your situation. The larger point of all this is to automate things for consistency, reliability, and&nbsp;repeatability.</p>
-<p>The way I have started to break out applications into the autopilot pattern is based on what I’ve dubbed three&nbsp;eras:</p>
+                        <h3 class="blog-grid-title"><a href="/articles/want-a-golang-cli/">I Want a Go CLI</a></h3>
+                        <p class="blog-grid-excerpt"><div class="image float-left">
+    <img src="/articles/want-a-golang-cli/united-airlines-boeing-777.jpg" alt="United Airlines Boeing 777">
+</div>
 
-                          <p class="more"><a href="/articles/autopilot-pattern-application-organization/">more</a></p>
+<p>I sat in seat 20B on United Airlines Flight <span class="caps">UA</span> 949, enjoying the roominess of the Boeing 777 in service on this route between London (LHR) and San Francisco (SFO). At this time I decided it was time to hack together a <a href="https://golang.org/">Go</a> <a href="https://en.wikipedia.org/wiki/Command-line_interface"><span class="caps">CLI</span></a>&nbsp;Project.</p>
+<p><strong>Mission:</strong> Create a Command Line Interface (<span class="caps">CLI</span>) that takes some flags, basic user input, and prints out&nbsp;something.</p>
+<p>
+                          <p class="more"><a href="/articles/want-a-golang-cli/">more</a></p>
                         </p>
-                        <div class="blog-grid-meta"><span class="blog-grid-date">09. September 2016</span></div>
+                        <div class="blog-grid-meta"><span class="blog-grid-date">25. October 2016</span></div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- End of Blog List-->
+                </div>
+                <div class="col-md-12 col-sm-12">
+                  <!-- Blog List-->
+                  <div class="blog-grid">
+                    <div class="row">
+                      <div class="col-md-12 col-sm-12">
+                        <h3 class="blog-grid-title"><a href="/articles/devops-obliviousness-site-reliability-wtf/">Marketing Obliviousness of DevOps, WTF is Site Reliability</a></h3>
+                        <p class="blog-grid-excerpt"><p>Recently I started researching what people think DevOps means. What it was originally intended to mean and how ridiculous it is to actually see it in a job title. On the flip of that, since one of my titles was actually “Site Reliability Engineer” I started looking into what is perceived to be the roles of that job. This article is my findings, in full unconstrained wording, about the absurdity of one as a title and the specifics of the&nbsp;other.</p>
+<p><img src="/articles/devops-obliviousness-site-reliability-wtf/syntax%20error.gif" alt="Syntax Error Explosion"></p>
+<p>
+                          <p class="more"><a href="/articles/devops-obliviousness-site-reliability-wtf/">more</a></p>
+                        </p>
+                        <div class="blog-grid-meta"><span class="blog-grid-date">24. October 2016</span></div>
                       </div>
                     </div>
                   </div>

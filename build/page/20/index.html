@@ -91,56 +91,53 @@
                   <div class="blog-grid">
                     <div class="row">
                       <div class="col-md-12 col-sm-12">
-                        <h3 class="blog-grid-title"><a href="/articles/today-using-a-mac/">Today I'm Using a Mac</a></h3>
-                        <p class="blog-grid-excerpt"><p>Today I’m using a Mac (since 2011, but inspired to write this today in 2016) not because I have some profound love for Apple (I don’t really) or miss Steve Jobs (he was a dick, but I bet I’d have gotten along with him) only because I don’t want to spend excess time messing with Windows headaches and the games I generally play over the last 7-8 years have been things like SimCity, Civ 5, and Cities: Skylines. All run perfectly fine on Mac w/ Steam. If I played 1<span class="ord">st</span> Person shooters I’d probably still have a Windows machine stashed in the corner for&nbsp;that…</p>
-<p>…and…</p>
-<p>…as for Macs, I converted solely because of what I saw a few key coders acheive in seconds over a Windows machine. I’ve not seen a single person come close to what these people could accomplish on a *nix based platform vs Windows. I switched, my headaches went away blagh blagh blagh (you know the ads, I sound like that) and then between <span class="caps">OS</span>-X <span class="amp">&amp;</span> VMware Fusion I found I had a machine I could do everything from a coding perspective on (I initially bought an <span class="caps">MBA</span>). Then when I got the Retina Pro 15” I realized not only did I have every programming platform in existence available to me (even .NET!) I also realized it was the only machine of it’s size, weight, and horsepower that would let me edit in screen full frame 1080p or even 4k video without choking on itself. Windows didn’t even have a viable option on the market at the time (and really, it still&nbsp;doesn’t).</p>
-<p>At this point I’ve given up trying to even use Windows to do work, primarily cuz it’s bad at video, bad at building code (most comparable machines just don’t build 1 to 1 code bases as fast), has weak <span class="caps">POSIX</span> compliance, Powershell is just a pain in the ass, it has poor SSH support (load 3<span class="ord">rd</span> party software? does it even internet) and security in general is completely bonkers, and Windows can never seem to find or maintain security integrity around any non-WINS/AD identified network (ok, in Windows defense, this is a Windows Server concern not Windows&nbsp;Desktop).</p>
-<p>Beyond that even the <span class="caps">OS</span>-X UI is preferable to the sluggish, strange multi-tasking awkwardness of Windows 2010 (and it’s dramatically improved over 8/8.1, 7, Vista, XP, <span class="amp">&amp;</span> 2000). The fact I can launch a program and it doesn’t kill process <span class="amp">&amp;</span> memory resources while I’m doing something has always fascinated me vs. Windows, which seems to hand over every available resource to whatever is attempting to launch. What is that nonsense even? Let it launch on a lower priority thread or something. I could go&nbsp;on…</p>
-<p>I’ve got plenty of complaints about <span class="caps">OS</span>-X, but it stays out of the way when I need to build code, automate infrastructure, sling dynamic code (re: Ruby, JavaScript, etc) and generally tears through Core CLR code <span class="amp">&amp;</span> .<span class="caps">NET</span> Mono code dramatically better than suggish old VS on a box with more resources then this MBP. Honestly, it’s kind of sad how it seems to magically do better then Windows hardware. There aren’t a whole lot of specific reasons except that Macs are usually just integrated (motherboard/RAM/Proc/Video) better than most of the other junk that gets released to market. Of course if someone wants pure horsepower, yeah, got buy a desktop and get 4x-20x what comes in the best Mac, then run Linux. You’ll get stupid amounts of performance to build and process stuff with that. But in the consumer based world, if you want the maximum options with the minimal amount of bullshit in your life, you go and buy a MBP and get on with life. I could go&nbsp;on…</p>
-<p>I’m sure there’s a million other things where X device for Y niche is more perfect or perfectly acceptable, and I doubt I’d disagree, so go on, get yourself one of those. But again, for “the maximum options with the minimal amount of bullshit in your life, you go and buy a <span class="caps">MBP</span> and get on with life”. On that note, I’m off to sling some Core CLR code against a prospective Scala solution and test a micro-services idea of mine - using Docker and jazz on my OS-X box. I’ll be done in 20 minutes and will move on to probably a relaxing round of Cities: Skyline.&nbsp;;)</p>
-<p>Thanks for reading my partial rant /<em>slash</em>/ exploration of why I’ve ended up on Apple&nbsp;Hardware.</p>
-
-                        </p>
-                        <div class="blog-grid-meta"><span class="blog-grid-date">12. March 2016</span></div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End of Blog List-->
-                </div>
-                <div class="col-md-12 col-sm-12">
-                  <!-- Blog List-->
-                  <div class="blog-grid">
-                    <div class="row">
-                      <div class="col-md-12 col-sm-12">
-                        <h3 class="blog-grid-title"><a href="/articles/docker-tips-n-tricks-bash-things-with-docker/">Docker Tips n' Tricks - Bash Things With Docker</a></h3>
-                        <p class="blog-grid-excerpt"><p>If you use Docker frequently, you’ve likely memorized a few repetitive&nbsp;commands…</p>
-<pre><code>docker-machine start XyZvirtualMachine
-</code></pre><p>Then you&nbsp;run…</p>
-<pre><code>docker-machine env XyZvirtualMachine
-</code></pre><p>…and then you&nbsp;type…</p>
-<pre><code>eval $(docker-machine env XyZvirtualMachine)
-</code></pre><p>
-                          <p class="more"><a href="/articles/docker-tips-n-tricks-bash-things-with-docker/">more</a></p>
-                        </p>
-                        <div class="blog-grid-meta"><span class="blog-grid-date">10. March 2016</span></div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End of Blog List-->
-                </div>
-                <div class="col-md-12 col-sm-12">
-                  <!-- Blog List-->
-                  <div class="blog-grid">
-                    <div class="row">
-                      <div class="col-md-12 col-sm-12">
-                        <h3 class="blog-grid-title"><a href="/articles/research-learning-about-zookeeper/">Researching &amp; Learning About Zookeeper - A Guide</a></h3>
-                        <p class="blog-grid-excerpt"><p>I’ve started working with Zookeeper. Since I’ve started doing that I’ve put together this blog post. It’s aim is to provide a structured approach to learning Zookeeper and researching the elements that make its features tick. Along the way I have a few call outs to people that have also provided excellent talks, material, or contributions to learning about Zookeeper along the way. With that, let’s get&nbsp;started.</p>
-<p>Zookeeper is a consensus system written based on ideas presented via consensus algorithms. The idea is key value stores that keep all of their data in memory for read heavy workloads. The qualities in this context present a system that is highly consistent, with intent for access from distributed systems to data that won’t be&nbsp;lost.</p>
+                        <h3 class="blog-grid-title"><a href="/articles/speakers-and-more-for-node-pdx-2016/">Speakers and More For Node PDX 2016</a></h3>
+                        <p class="blog-grid-excerpt"><p>Spock and I are excited to announce our first set of speakers for <a href="http://nodepdx.org/" target="_blank">Node <span class="caps">PDX</span> 2016</a>, which you’ve seen slowly coming out each day! I hope you’re ready and have your <a href="http://nodepdx.org/#tickets" target="_blank">tickets</a> bought already. So far I’ve introduced <a href="http://blog.adron.me/articles/node-pdx-2016-speaker-tomomi-imura/">Tomomi</a>, <a href="http://blog.adron.me/articles/node-pdx-2016-speaker-jonny-oropeza/">Jon</a>, and <a href="http://blog.adron.me/articles/node-pdx-2016-speaker-liz-abinante/">Liz</a>. Today I’ll introduce Adam Ulvi a bit&nbsp;later.</p>
+<p>We’ve also announced the <a href="http://nodepdx.org/lagniappe.html#geektrain" target="_blank">Geek Train for Node <span class="caps">PDX</span></a> and the <a href="http://nodepdx.org/lagniappe.html#bikes" target="_blank">Node <span class="caps">PDX</span> Bike Ride</a>. A little <a href="http://www.merriam-webster.com/dictionary/lagniappe" target="_blank">lagniappe</a> if you will.&nbsp;;)</p>
+<p><a href="http://blog.adron.me/articles/node-pdx-2016-speaker-tomomi-imura/">Tomomi</a>, <a href="http://blog.adron.me/articles/node-pdx-2016-speaker-jonny-oropeza/">Jon</a>, and <a href="/articles/speakers-and-more-for-node-pdx-2016/">Liz</a> </p>
+<p><img src="/articles/speakers-and-more-for-node-pdx-2016/spock-horns.jpg" alt="Spock"></p>
 <p>
-                          <p class="more"><a href="/articles/research-learning-about-zookeeper/">more</a></p>
+                          <p class="more"><a href="/articles/speakers-and-more-for-node-pdx-2016/">more</a></p>
                         </p>
-                        <div class="blog-grid-meta"><span class="blog-grid-date">02. February 2016</span></div>
+                        <div class="blog-grid-meta"><span class="blog-grid-date">25. May 2016</span></div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- End of Blog List-->
+                </div>
+                <div class="col-md-12 col-sm-12">
+                  <!-- Blog List-->
+                  <div class="blog-grid">
+                    <div class="row">
+                      <div class="col-md-12 col-sm-12">
+                        <h3 class="blog-grid-title"><a href="/articles/node-pdx-2016-speaker-liz-abinante/">A Foolish Quest Creating Knitting Patterns Using JavaScript by Liz Abinante</a></h3>
+                        <p class="blog-grid-excerpt"><p><a href="http://nodepdx.org"><img src="/articles/node-pdx-2016-speaker-liz-abinante/nodepdx-2016-logo.png" alt="Node PDX 2016"></a></p>
+<p><img src="http://blog.adron.me/articles/node-pdx-2016-speaker-liz-abinante/knitting.png" class="image float-left" />Liz Abinante lives in Portland, Oregon and works as a Senior Software Engineer at <a href="https://newrelic.com/">New Relic</a>. She is infectiously enthusiastic about web development, teaching, learning, and feminism. She used to write JavaScript, then walked up to the wrong desk one day and now she writes some Java too. She enjoys speaking at conferences, knitting, sewing, and a hacking away on interesting problems. She swears she’s a lot more interesting than this bio makes her sound. She’s often been compared to cartoon characters due to her enormous personality and penchant for singing and/or dancing her way through&nbsp;life.</p>
+<p>
+                          <p class="more"><a href="/articles/node-pdx-2016-speaker-liz-abinante/">more</a></p>
+                        </p>
+                        <div class="blog-grid-meta"><span class="blog-grid-date">24. May 2016</span></div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- End of Blog List-->
+                </div>
+                <div class="col-md-12 col-sm-12">
+                  <!-- Blog List-->
+                  <div class="blog-grid">
+                    <div class="row">
+                      <div class="col-md-12 col-sm-12">
+                        <h3 class="blog-grid-title"><a href="/articles/node-pdx-2016-speaker-jonny-oropeza/">Isomorphic Business Logic (Or How to convince even the most die-hard C#/Java/Rails-on-the-Backend boss that you need to run a node server) Jonny Oropeza</a></h3>
+                        <p class="blog-grid-excerpt"><p><a href="http://nodepdx.org"><img src="/articles/node-pdx-2016-speaker-jonny-oropeza/nodepdx-2016-logo.png" alt="Node PDX 2016"></a></p>
+<div class="image float-right">
+    <img src="/articles/node-pdx-2016-speaker-jonny-oropeza/jon.jpg" alt="Jon Oropeza">
+</div>
+
+<p>Jon Oropeza is a full-stack engineer at <span class="caps">HD</span> Quote Center, a post-aquisition startup solving tricky ecommerce problems for their parent company, The Home Depot. Prior to that, he designed and developed software for the insurance industry with his partners at LifePro Financial Services, and also co-founded a deep learning / computer vision oriented startup called Tilt&nbsp;Video.</p>
+<p>
+                          <p class="more"><a href="/articles/node-pdx-2016-speaker-jonny-oropeza/">more</a></p>
+                        </p>
+                        <div class="blog-grid-meta"><span class="blog-grid-date">19. May 2016</span></div>
                       </div>
                     </div>
                   </div>

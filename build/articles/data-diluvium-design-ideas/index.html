@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Adron's Composite Code</title>
+    <meta name="description" content="">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="alternate" href="/feed.xml" type="application/rss+xml" title="Coder, Messenger, Recon, Infrastructure, Ops">
+    <link rel="icon" type="image/png" href="/img/favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/img/favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/img/favicons/favicon-96x96.png" sizes="96x96">
+    <link rel="apple-touch-icon" sizes="57x57" href="/img/favicons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/img/favicons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/img/favicons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/img/favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/img/favicons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/img/favicons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/img/favicons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/img/favicons/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/favicons/apple-touch-icon-180x180.png">
+    <link rel="stylesheet" href="/css/custom.css">
+    <link rel="stylesheet" href="/css/style.min.css">
+    <script src="/js/modernizr.js"></script>
+  </head>
+  <body class="article-detail">
+    <!--[if lt IE 8]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <div class="header header-over large">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 col-sm-6 col-xs-6">
+            <!-- Logo Image--><a href="/index.html" class="logo-image logo-animated"><img src="/img/logos/logo.png" alt="logo"></a>
+            <!-- End of Logo Image-->
+          </div>
+          <div class="col-md-9 col-sm-6 col-xs-6">
+            <!-- Menu-->
+            <nav class="right helper">
+              <ul class="menu sf-menu js-menu">
+                <li><a href="/docs/thrashing-code-news/">Thrashing Code News</a></li>
+                <li><a href="#">Conf - Meetup - Events</a>
+                  <ul>
+                    <li><a href="/docs/Speaking-Presentations-Workshops/">Speaking - Presentations - Workshops</a></li>
+                    <li><a href="/docs/calendar">Calendar of Engagements</a></li>
+                  </ul>
+                </li>
+                <li><a href="/docs/documentation/">Docs</a></li>
+                <li><a href="#">Contact</a>
+                  <ul>
+                    <li><a href="/docs/contact">Message</a></li>
+                    <li><a href="/docs/job-talk/">Hire</a></li>
+                  </ul>
+                </li>
+                <li><a href="/docs/about/">About</a></li>
+              </ul>
+            </nav>
+            <!-- End of Menu-->
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="header-back header-back-simple header-back-small">
+      <div class="header-back-container">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <!-- Page Info-->
+              <div class="page-info page-info-simple">
+                <h1>Data Diluvium Design Ideas</h1>
+                <p class="author">Written by <span class="author">Adron Hall</span> and published on <span>February, 04 of 2017.</span>
+                </p>
+                <div class="nav"><a href="/">« Home</a></div>
+              </div>
+              <!-- End Page Info-->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="content">
+      <div class="container">
+        <div class="layout with-right-sidebar js-layout">
+          <div class="row">
+            <div class="col-md-9">
+              <div class="main-content">
+                <!-- Blog Page-->
+                <article class="article">
+                  <section class="content"><div class="image float-right">
+    <img src="/articles/data-diluvium-design-ideas/dd-logo.jpg" alt="Data Diluvium">
+</div>
+
+<p>This post includes a collection of my thoughts on design and architecture of a data generation service project I’ve started called <a href="http://datadiluvium.com">Data Diluvium</a>. I’m very open to changes, new ideas, or completely different paradigms around these plans altogether. You can jump into the conversation <a href="https://github.com/Adron/datadiluvium/issues/9">thread</a>. What kind of data do you often need? What systems do you want it inserted&nbsp;into?</p>
+<p>Breakdown of Article&nbsp;Ideas:</p>
+<ul>
+<li><strong>Collected Systems <span class="caps">API</span></strong> - This <span class="caps">API</span> service idea revolves around a request that accepts a schema type for a particular database type, an export source for inserting the data into, and generating an amount of data per the requested amount. The response then initiates that data generation, while responding with a received message and confirmation based on what it has&nbsp;received.</li>
+<li><strong>Individual Request <span class="caps">API</span></strong> - This <span class="caps">API</span> service idea (thanks to Dave Curylo for this one, <a href="https://github.com/Adron/datadiluvium/issues/9#issuecomment-276117856">posted in the thread</a>) revolves around the generation of data, requested at end points for a particular type of random data&nbsp;generation.</li>
+</ul>
+<p>Alright, time to dive deeper into each of&nbsp;these.</p>
+<p><span class="more"></span></p>
+<h2 id="collected-systems-apis">Collected Systems&nbsp;APIs</h2>
+<ul>
+<li><p><em><a href="https://datadiluvium.com/schema/generate">https://datadiluvium.com/schema/generate</a></em> - This <span class="caps">API</span> end point would take a schema with the various properties needed. For any that aren’t set, a default would be set. The generation process would then randomize, generate, and insert this data into any destination source specified. Here are some prospective examples I’ve&nbsp;created:</p>
+<p><em>A very basic sample <span class="caps">JSON</span>&nbsp;schema</em></p>
+<pre><code class="lang-javascript">[
+  {
+    <span class="string">"schema"</span>: <span class="string">"relational"</span>,
+    <span class="string">"database"</span>: <span class="string">"text"</span>
+  }
+]
+</code></pre>
+<p>In this particular example, I’ve created the simplist schema that could be sent into the service. For this particular situation I’d have (currently not decided yet) defaults that would randomly create a table, with a single column, and generate one element of data in that table. Other properties could be set, which would give control over the structure created in which to insert the data into. An example would be the&nbsp;following.</p>
+<pre><code class="lang-javascript">[
+  {
+    <span class="string">"schema"</span>: <span class="string">"relational"</span>,
+    <span class="string">"database"</span>: <span class="string">"postgresql"</span>,
+    <span class="string">"structure"</span>: [
+      {
+        <span class="string">"table"</span>: <span class="string">"Users"</span>,
+        <span class="string">"columns"</span>: [
+          {<span class="string">"name"</span>: <span class="string">"id"</span>, <span class="string">"type"</span>: <span class="string">"uuid"</span>},
+          {<span class="string">"name"</span>: <span class="string">"firstname"</span>, <span class="string">"type"</span>: <span class="string">"firstname"</span>},
+          {<span class="string">"name"</span>: <span class="string">"lastname"</span>, <span class="string">"type"</span>: <span class="string">"lastname"</span>},
+          {<span class="string">"name"</span>: <span class="string">"email_address"</span>, <span class="string">"type"</span>: <span class="string">"email"</span>}
+        ]
+      },
+      {
+        <span class="string">"table"</span>: <span class="string">"Addresses"</span>,
+        <span class="string">"columns"</span>: [
+          {<span class="string">"name"</span>: <span class="string">"id"</span>, <span class="string">"type"</span>: <span class="string">"uuid"</span>},
+          {<span class="string">"name"</span>: <span class="string">"street"</span>, <span class="string">"type"</span>: <span class="string">"address"</span>},
+          {<span class="string">"name"</span>: <span class="string">"city"</span>, <span class="string">"type"</span>: <span class="string">"city"</span>},
+          {<span class="string">"name"</span>: <span class="string">"state"</span>, <span class="string">"type"</span>: <span class="string">"state"</span>},
+          {<span class="string">"name"</span>: <span class="string">"postalcode"</span>, <span class="string">"type"</span>: <span class="string">"zip"</span>}
+        ]
+      },
+      {
+        <span class="string">"table"</span>: <span class="string">"Transactions"</span>,
+        <span class="string">"columns"</span>: [
+          { <span class="string">"name"</span>: <span class="string">"id"</span>, <span class="string">"type"</span>: <span class="string">"uuid"</span> },
+          { <span class="string">"name"</span>: <span class="string">"transaction"</span>, <span class="string">"type"</span>: <span class="string">"money"</span> },
+          { <span class="string">"name"</span>: <span class="string">"stamp"</span>, <span class="string">"type"</span>: <span class="string">"date"</span> }
+        ]
+      }
+    ]
+  }
+]
+</code></pre>
+<p>In this example, the properties included are three tables; <em>Users</em>, <em>Addresses</em>, and <em>Transactions</em>. In the first table, <em>Users</em>, the columsn would be; <em>id</em>, <em>firstname</em>, <em>lastname</em>, and <em>email_address</em>. Each of these then have a <em>type</em> property which sets the type of data to be generated for the columns. The same type of set of properties is then included for the <em>Addresses</em> and <em>Transactions</em> tables and their respective&nbsp;columns.</p>
+<p>Some additional questions remain, such as if the tables exist in the database, would the insertion build <span class="caps">SQL</span> to create the tables? Should it be assumed that the tables exist already and have the appropriate settings set to insert the data into the tables? Again, a great thing to discuss on the <a href="https://github.com/Adron/datadiluvium/issues/9">thread here</a>.</p>
+</li>
+<li><p><em><a href="https://datadiluvium.com/schema/validate">https://datadiluvium.com/schema/validate</a></em> - This could be used to validate a schema request body. Simply submit a schema and a validation response would be returned with “Valid” or “Invalid”. In the case of an invalid response, a list of prospective and known errors would be&nbsp;returned.</p>
+</li>
+</ul>
+<p>These two <span class="caps">API</span> end points focus around building out large data to test systemic environments and the respective construction of those environments. The actual generation of the data is assumed for this API service and the individual generation of data is discussed below in the individual request&nbsp;APIs.</p>
+<h2 id="individual-request-apis">Individual Request&nbsp;APIs</h2>
+<p>The following <span class="caps">API</span> calls could be implemented with fairly straight forward random data generation. A number can easily be randomized and returned, a word can be chosen from a dictionary, and a city returned from a list of cities. The following are prospective API calls to return data of this&nbsp;type.</p>
+<ul>
+<li><em><a href="https://datadiluvium.com/random/number/">https://datadiluvium.com/random/number/</a></em></li>
+<li><em><a href="https://datadiluvium.com/random/word/">https://datadiluvium.com/random/word/</a></em></li>
+<li><em><a href="https://datadiluvium.com/random/city/">https://datadiluvium.com/random/city/</a></em></li>
+</ul>
+<p>The next level of complexity for data generation would be the slightly structured data generation. Instead of having an arbitrary list of addresses, we could or would prospectively generate one. But on the other hand, maybe we should just randomly create actual addresses that can be validated against an actual real address? That seems to have the possiblity of issues in the real world in spite of the fact all the addresses out there in the world are basically publicly accessible data. But questioning how or what the data would or could actually represent will be a great thing to discuss in the <a href="https://github.com/Adron/datadiluvium/issues/9">thread</a>.</p>
+<ul>
+<li><em><a href="https://datadiluvium.com/random/address/">https://datadiluvium.com/random/address/</a></em></li>
+<li><em><a href="https://datadiluvium.com/random/name/">https://datadiluvium.com/random/name/</a></em></li>
+</ul>
+<p>The next level of data generation complexity would be to generate sentences and other related data. This could be done a number of ways. If we wanted to have it generate intelligent sentences that made sense, it would take a little bit more work then for example generating lorum&nbsp;ipsum.</p>
+<ul>
+<li><em><a href="https://datadiluvium.com/random/sentence/">https://datadiluvium.com/random/sentence/</a></em></li>
+</ul>
+<h3 id="tldr-"><span class="caps">TLDR</span>;</h3>
+<p>This blog entry just details the starting point of features for the <a href="http://datadiluvium.com/">Data Diluvium Project</a>. If you’d like to jump into the project too, let me know. I’m generally working on the project during the weekends and a little during the week. There’s already a <a href="https://github.com/Adron/datadiluvium">building project base</a> that I’m starting with. If you’re interested in writing some F#, check out the work Dave Curylo has done <a href="/articles/data-diluvium-design-ideas/">here</a>. I’ve been pondering breaking it out to another project and sticking to the idea of microservice but with F# for the work he put in. Anyway if you’ve got ideas on how to generate data, how you’d like to use it in your applications, or other related ideas please dive into the conversation on the <a href="https://github.com/Adron/datadiluvium/issues/9">Github Thread here</a>.</p>
+</section>
+                </article>
+                <!-- End of Blog Page-->
+              </div>
+            </div>
+            <div class="col-md-3 hidden-sm hidden-xs">
+              <div class="sidebar js-sidebar-fixed">
+                <!-- Vertical Menu-->
+                <div class="widget">
+                  <!-- Search-->
+                  <div class="search">
+                    <form action="https://google.com/search" method="get">
+                      <input type="hidden" name="sitesearch" value="http://blog.adron.me">
+                      <input type="text" name="q" placeholder="search" class="search-input form-control"><i class="fa fa-search search-icon"></i>
+                    </form>
+                  </div>
+                  <!-- End of Search-->
+                </div>
+                <div class="widget">
+                  <h3 class="widget-title">Keyword Search</h3>
+                  <!-- Tags-->
+                  <ul class="tags">
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=html">html</a></li>
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=javascript">javascript</a></li>
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=ubuntu">ubuntu</a></li>
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=node pdx">node pdx</a></li>
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=.NET fringe">.net fringe</a></li>
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=videos">videos</a></li>
+                  </ul>
+                  <!-- End of Tags-->
+                </div>
+                <nav class="menu-vertical-wrapper">
+                  <ul data-prepend-to=".js-layout" data-select="Menu" class="menu-vertical js-menu-vertical">
+                    <li><a href="#">About</a>
+                      <ul>
+                        <li><a href="/docs/about/">Me, Adron</a></li>
+                        <li><a href="#">My Hobbies</a>
+                          <ul>
+                            <li><a href="http://photos.adron.me">My Photos</a></li>
+                          </ul>
+                        </li>
+                        <li><a href="/docs/Speaking-Presentations-Workshops">My Presentations</a></li>
+                        <li><a href="/docs/documentation/">Collection of Docs & Notes</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </nav>
+                <div class="widget">
+                  <h3 class="widget-title">Photos</h3>
+                  <!-- Photos-->
+                  <ul class="widget-recommended-products">
+                    <!-- Photos-->
+                    <li class="widget-recommended-product"><img src="/img/photos/IMG_1836.jpg" alt="Jon Oropeza" class="widget-recommended-product-img"><a href="http://photos.adron.me/Software/Meetups-N-Conferences/Conferences/Node-PDX-2016/i-D9qFQ6m" class="widget-recommended-product-link">
+                        <h5 class="widget-recommended-product-link-title">Node PDX 2016<i class="fa fa-angle-right"></i></h5>
+                        <p class="widget-recommended-product-link-description">Jon Oropeza @ Node PDX 2016</p></a></li>
+                    <!-- End of Recommended product Item-->
+                    <!-- Recommended product Item-->
+                    <li class="widget-recommended-product"><img src="/img/photos/IMG_1812.jpg" alt="Liz Abinante" class="widget-recommended-product-img"><a href="http://photos.adron.me/Software/Meetups-N-Conferences/Conferences/Node-PDX-2016/i-g2m2hgP" class="widget-recommended-product-link">
+                        <h5 class="widget-recommended-product-link-title">Node PDX 2016<i class="fa fa-angle-right"></i></h5>
+                        <p class="widget-recommended-product-link-description">Liz Abinante @ Node PDX 2016</p></a></li>
+                    <!-- End of Recommended product Item-->
+                    <!-- Recommended product Item-->
+                    <li class="widget-recommended-product"><img src="/img/photos/IMG_5709.jpg" alt="Praha hlavní nádraží" class="widget-recommended-product-img"><a href="http://photos.adron.me/Travels-N-Traversings/Across-the-Pond-2016-Travels/September-Krakow/Week-4-Prague/i-62ZPsPb" class="widget-recommended-product-link">
+                        <h5 class="widget-recommended-product-link-title">Prague (Praha)<i class="fa fa-angle-right"></i></h5>
+                        <p class="widget-recommended-product-link-description">Praha hlavní nádraží</p></a></li>
+                    <!-- End of photos row one-->
+                  </ul>
+                  <ul class="widget-recommended-products">
+                    <!-- Photos-->
+                    <li class="widget-recommended-product"><img src="/img/photos/IMG_4417.jpg" alt="St Mary's Basilica" class="widget-recommended-product-img"><a href="http://photos.adron.me/Travels-N-Traversings/Across-the-Pond-2016-Travels/September-Krakow/Krakow/i-KnZf6pK/A" class="widget-recommended-product-link">
+                        <h5 class="widget-recommended-product-link-title">St Mary's Basilica<i class="fa fa-angle-right"></i></h5>
+                        <p class="widget-recommended-product-link-description">Bazylika Mariacka in Rynek Główny.</p></a></li>
+                    <!-- End of Recommended product Item-->
+                    <!-- Recommended product Item-->
+                    <li class="widget-recommended-product"><img src="/img/photos/VSC_03.png" alt="Visual Studio Code" class="widget-recommended-product-img"><a href="http://photos.adron.me/Software/Software-Development/Visual-Studio-Things/i-LLW7WcD/A" class="widget-recommended-product-link">
+                        <h5 class="widget-recommended-product-link-title">Visual Studio Code<i class="fa fa-angle-right"></i></h5>
+                        <p class="widget-recommended-product-link-description">Images from a review of Visual Studio Code.</p></a></li>
+                    <!-- End of Recommended product Item-->
+                    <!-- Recommended product Item-->
+                    <li class="widget-recommended-product"><img src="/img/photos/-home-adronhall-Pictures-Selection_002.png - Shutter_003.png" alt="" class="widget-recommended-product-img"><a href="http://photos.adron.me/Software/Software-Development/Ubuntu/i-CQsQ4zj/A" class="widget-recommended-product-link">
+                        <h5 class="widget-recommended-product-link-title">Mono Develop & WebStorm<i class="fa fa-angle-right"></i></h5>
+                        <p class="widget-recommended-product-link-description">Working through Mono Develop & WebStorm.</p></a>
+                      <!-- End of photos row two-->
+                    </li>
+                  </ul>
+                  <!-- End Photos-->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="nav"><a href="/">« Home</a></div>
+      </div>
+    </div>
+    <script src="/js/all.js"></script>
+    <script src="/js/custom.js"></script>
+    <!-- Google Tag Manager-->
+    <noscript>
+      <iframe src="//www.googletagmanager.com/ns.html?id=GTM-KMMZX2" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <script>
+      console.log(document.getElementById("search-google"));
+      console.log(document.getElementById("search-google").innerText);
+      
+      var searchBox = document.getElementById("search-google");
+      
+      function googleSearch(search_string) {
+        alert(search_string);
+      }
+      
+      document.getElementById("search-google").addEventListener("onClick", function () {
+        alert(document.getElementById("search-google").innerHTML);
+      });
+      
+      document.getElementById("search-google").addEventListener("onClick", function () {
+        googleSearch(document.getElementById("search-google").innerHTML)
+      });
+      
+    </script>
+    <script>
+      (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+                  (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+      })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+      ga('create', 'UA-39158070-6', 'auto');
+      ga('send', 'pageview');
+    </script>
+  </body>
+</html>

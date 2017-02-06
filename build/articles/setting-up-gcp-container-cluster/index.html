@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Adron's Composite Code</title>
+    <meta name="description" content="">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="alternate" href="/feed.xml" type="application/rss+xml" title="Coder, Messenger, Recon, Infrastructure, Ops">
+    <link rel="icon" type="image/png" href="/img/favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/img/favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/img/favicons/favicon-96x96.png" sizes="96x96">
+    <link rel="apple-touch-icon" sizes="57x57" href="/img/favicons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/img/favicons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/img/favicons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/img/favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/img/favicons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/img/favicons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/img/favicons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/img/favicons/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/favicons/apple-touch-icon-180x180.png">
+    <link rel="stylesheet" href="/css/custom.css">
+    <link rel="stylesheet" href="/css/style.min.css">
+    <script src="/js/modernizr.js"></script>
+  </head>
+  <body class="article-detail">
+    <!--[if lt IE 8]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <div class="header header-over large">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 col-sm-6 col-xs-6">
+            <!-- Logo Image--><a href="/index.html" class="logo-image logo-animated"><img src="/img/logos/logo.png" alt="logo"></a>
+            <!-- End of Logo Image-->
+          </div>
+          <div class="col-md-9 col-sm-6 col-xs-6">
+            <!-- Menu-->
+            <nav class="right helper">
+              <ul class="menu sf-menu js-menu">
+                <li><a href="/docs/thrashing-code-news/">Thrashing Code News</a></li>
+                <li><a href="#">Conf - Meetup - Events</a>
+                  <ul>
+                    <li><a href="/docs/Speaking-Presentations-Workshops/">Speaking - Presentations - Workshops</a></li>
+                    <li><a href="/docs/calendar">Calendar of Engagements</a></li>
+                  </ul>
+                </li>
+                <li><a href="/docs/documentation/">Docs</a></li>
+                <li><a href="#">Contact</a>
+                  <ul>
+                    <li><a href="/docs/contact">Message</a></li>
+                    <li><a href="/docs/job-talk/">Hire</a></li>
+                  </ul>
+                </li>
+                <li><a href="/docs/about/">About</a></li>
+              </ul>
+            </nav>
+            <!-- End of Menu-->
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="header-back header-back-simple header-back-small">
+      <div class="header-back-container">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <!-- Page Info-->
+              <div class="page-info page-info-simple">
+                <h1>Setting up a GCP Container Cluster - Part I</h1>
+                <p class="author">Written by <span class="author">Adron Hall</span> and published on <span>January, 31 of 2017.</span>
+                </p>
+                <div class="nav"><a href="/">« Home</a></div>
+              </div>
+              <!-- End Page Info-->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="content">
+      <div class="container">
+        <div class="layout with-right-sidebar js-layout">
+          <div class="row">
+            <div class="col-md-9">
+              <div class="main-content">
+                <!-- Blog Page-->
+                <article class="article">
+                  <section class="content"><p>I set out to create a container cluster to work with in Google Cloud. These are the notes of that effort I undertook. On the heels of this article I’m putting together the notes also on getting Drone.io fully setup with an appropriate domain name and the like for use in full production grade work. For now, here’s the lowdown on the steps I took to get educated on and informed about setup and use of the Google Container&nbsp;Cluster.</p>
+<p>First exploratory script I ran based on instructions <a href="https://cloud.google.com/container-engine/docs/clusters/operations">here</a>.</p>
+<pre><code>gcloud container clusters create working-space \
+  --zone us-central1-a \
+  --additional-zones us-central1-b,us-central1-c
+</code></pre><p><span class="more"></span></p>
+<p>Here’s the container cluster&nbsp;listing.</p>
+<p><img src="/articles/setting-up-gcp-container-cluster/gcp-01.png" alt="Google Cloud"></p>
+<p>This is the list of instances running providing the nodes for the&nbsp;cluster.</p>
+<p><img src="/articles/setting-up-gcp-container-cluster/gcp-02.png" alt="Google Cloud"></p>
+<p>I deleted that after I confirmed it did what I expected. Which was mostly&nbsp;true.</p>
+<p>Observations:</p>
+<ul>
+<li>This command did execute and launch 9 instances. This I assumed is what it would do since I had selected a default <code>--zone</code> but also selected two additional with <code>--additional-zones</code>. This spooled up 3 instances in each zone for us within the&nbsp;cluster.</li>
+<li>In the container clusters listing in the Google Cloud Console, there’s a button now that prompts with the gcloud container cluster get-credentials command and the kubectl command to connect. This is helpful, as the last time I was testing out this one had to go and dig&nbsp;into.</li>
+</ul>
+<p>I went ahead and deleted that cluster via the Google Cloud Console. The next command I tried out was as&nbsp;shown.</p>
+<pre><code>gcloud container clusters create secondary-delete \
+  --network worker-space
+</code></pre><p>Since this was done on a freshly installed gcloud install on a new machine, I’d missed that I had not installed kubectl. However gcloud kindly informed&nbsp;me.</p>
+<pre><code>$ gcloud container clusters create secondary-delete \
+&gt;   --network worker-space
+WARNING: Accessing a Container Engine cluster requires the kubernetes commandline
+client [kubectl]. To install, run
+  $ gcloud components install kubectl
+
+ERROR: (gcloud.container.clusters.create) ResponseError: code=400, message=Subnetwork must be provided for manual-subnet Network &quot;worker-space&quot;.
+</code></pre><p>A quick <code>gcloud components install kubectl</code> fixed that. I ran the command again and oops, I needed to designate the subnetwork, not particularly the&nbsp;network.</p>
+<p>I wanted to bake this into a Terraform config, so the next thing I wired together was exactly that. A quick change and reran the&nbsp;command.</p>
+<pre><code>$ gcloud container clusters create secondary-delete   --network worker-space --subnetwork worker-space-default
+ERROR: (gcloud.container.clusters.create) ResponseError: code=400, message=Subnetwork &quot;projects/that-big-universe/regions/us-west1/subnetworks/worker-space-default&quot; is not valid for Network &quot;worker-space&quot;.
+</code></pre><p>Dammit, error central. I went and did some RTFMing at this point. The section for network and subnetwork read as&nbsp;follows:</p>
+<blockquote>
+<p>–network=<span class="caps">NETWORK</span>
+The Compute Engine Network that the cluster will connect to. Google Container Engine will use this network when creating routes and firewalls for the clusters. Defaults to the ‘default’&nbsp;network.</p>
+<p>–subnetwork=<span class="caps">SUBNETWORK</span>
+The name of the Google Compute Engine subnetwork (<a href="https://cloud.google.com/compute/docs/subnetworks">https://cloud.google.com/compute/docs/subnetworks</a>) to which the cluster is connected. If specified, the cluster’s network must be a “custom subnet”&nbsp;network.</p>
+</blockquote>
+<p>Ok, seems like <code>gcloud container clusters create secondary-delete --network worker-space --subnetwork worker-space-default</code> should have worked. I tried out a few more ideas to see what the issue could actually&nbsp;be.</p>
+<pre><code>$ gcloud compute networks subnets list
+NAME                      REGION           NETWORK       RANGE
+...default networks were listed here...
+worker-space-default      us-central1      worker-space  10.128.0.0/20
+</code></pre><p>So even <code>gcloud</code> finds that the network name is <em>worker-space-default</em> and the network is <em>worker-space</em>? Is that right? That’s actually a little confusing. In the interface it looks like&nbsp;this.</p>
+<p><img src="/articles/setting-up-gcp-container-cluster/gcp-03.png" alt="Google Cloud Console"></p>
+<p>Ah, I try&nbsp;this.</p>
+<pre><code>$ gcloud container clusters create secondary-delete --network worker-space --subnetwork us-central1
+ERROR: (gcloud.container.clusters.create) ResponseError: code=400, message=Subnetwork &quot;projects/that-big-universe/regions/us-west1/subnetworks/us-central1&quot; is not valid for Network &quot;worker-space&quot;.
+</code></pre><p>Then I realize that it’s injecting <em>us-west1</em> into that string for the subnetwork. But that’s not true. My worker-space and its subnetwork is in central1 not in west1. So a quick <span class="caps">RTFM</span> again and realized that maybe adding the zone back, with these network and subnetwork parameters set, I might get a successful cluster creation. I tried&nbsp;this.</p>
+<pre><code>$ gcloud container clusters create secondary-delete --network worker-space --subnetwork worker-space-default --zone us-central1
+</code></pre><p>This also didn’t work, so I went with a zone of <code>us-central1a</code>.</p>
+<pre><code>$ gcloud container clusters create secondary-delete --network worker-space --subnetwork worker-space-default --zone us-central1b
+ERROR: (gcloud.container.clusters.create) ResponseError: code=400, message=zone &quot;us-central1b&quot; does not exist.
+</code></pre><p>Ok, <span class="caps">WTF</span>?! RTFMing doesn’t really help at this point either. Now I’m just getting frustrated. I’m doubtfully going to use <code>gcloud</code> to build this in production anyway, so I’ll go ahead and try to get Terraform building&nbsp;it.</p>
+<h2 id="terraform-for-google-cloud-container-cluster">Terraform for Google Cloud Container&nbsp;Cluster</h2>
+<p>I added this to the script in the <em>adron-infrastructure</em> branch of my repo <a href="https://github.com/Adron/adron.github.io/tree/adron-infrastructure">here</a>.</p>
+<pre><code>resource &quot;google_container_cluster&quot; &quot;development&quot; {
+  name = &quot;development-systems&quot;
+  zone = &quot;us-west1-b&quot;
+  initial_node_count = 3
+
+  master_auth {
+    username = &quot;someusername&quot;
+    password = &quot;willchange&quot;
+  }
+
+  node_config {
+    oauth_scopes = [
+      &quot;https://www.googleapis.com/auth/compute&quot;,
+      &quot;https://www.googleapis.com/auth/devstorage.read_only&quot;,
+      &quot;https://www.googleapis.com/auth/logging.write&quot;,
+      &quot;https://www.googleapis.com/auth/monitoring&quot;
+    ]
+  }
+}
+</code></pre><p>The console container cluster display once it&nbsp;completes.</p>
+<p><img src="/articles/setting-up-gcp-container-cluster/gcp-04.png" alt="Google Cloud Console"></p>
+<p>The console instances listed again. This time of course, just like the node count in the config above and the zone being only set to west1-b, I’ve got 3&nbsp;instances.</p>
+<p><img src="/articles/setting-up-gcp-container-cluster/gcp-04.png" alt="Google Cloud Console"></p>
+<p>Alright, that worked beautifully. If anybody has any idea what the issue is with my aforementioned attempts to create a cluster using gcloud and the network and subnetwork please ping me via <a href="https://twitter.com/Adron">@Adron</a> and we’ll <span class="caps">DM</span> or email if you would. (Also, for more info on getting started with GCP with Terraform, check out my article “<a href="http://blog.adron.me/articles/working-with-google-compute-engine/">Working With Google Compute Engine (<span class="caps">GCE</span>) using Terraform (With a load of Bash Scripts too) </a>“)</p>
+<p>Next step I needed to connect kubectl to the cluster. This is one of the spaces where a lot of Google documentation is lacking since it also assumes you’ve followed some pre-baked route to gain credentials. For instance, int he interface the thing I pointed to earlier, just uses kubectl and gcloud does some crazy black magic in the background that require tertiary RTFMing in order to figure out what is actually going on, retrace those steps, and connect yourself. The first thing I tried was to set the&nbsp;cluster.</p>
+<pre><code>kubectl config set-cluster development-systems
+</code></pre><p>Then did a quick <code>kubectl config view</code> which showed that things were set correctly. Then I tried to run <code>kubectl cluster-info</code> just to see what’s&nbsp;up.</p>
+<pre><code>$ kubectl cluster-info
+error: google: could not find default credentials. See https://developers.google.com/accounts/docs/application-default-credentials for more information.
+</code></pre><p>So no go. Default credentials… another thing I’m not really sure. I tried to run <code>gcloud container clusters get-credentials development-systems  --zone us-west1-b --project that-big-universe</code> and it failed. Grumble grumble come on. I tried again however, because something seemed odd with the network before, and this time I got some results!&nbsp;Win!</p>
+<pre><code>$ gcloud container clusters get-credentials development-systems \
+&gt;     --zone us-west1-b --project that-big-universe
+Fetching cluster endpoint and auth data.
+kubeconfig entry generated for development-systems.
+</code></pre><p>I then try to get a <code>kubectl cluster-info</code>.</p>
+<pre><code>$ kubectl cluster-info
+error: google: could not find default credentials. See https://developers.google.com/accounts/docs/application-default-credentials for more information.
+</code></pre><p>Nope. Oh yeah, I gotta set kube’s&nbsp;proxy!</p>
+<pre><code>$ kubectl proxy
+error: google: could not find default credentials. See https://developers.google.com/accounts/docs/application-default-credentials for more information.
+</code></pre><p>No. Alright, what then? At this point I’m pretty frustrated, but whatevs, this is gonna work so I keep researching. A quick search for default credentials leads to <a href="https://developers.google.com/identity/protocols/application-default-credentials">this</a>. I read through it and this whole GOOGLE_APPLICATION_CREDENTIALS needs to be set. Ok, that’s cool. So I set it. It needs to be a credentials file for the service account used. Which actually makes sense but only because I’ve used Google Cloud before, but for somebody just diving into using the container service on Google this is kind of a whole derailment to go read up on a bunch of other topics. Albeit, it is necessary reading. Anyway…  back to setting the credentials file. For more info on how to set this up and working with <span class="caps">GCP</span>, check out my previous article “<a href="http://blog.adron.me/articles/working-with-google-compute-engine/">Working With Google Compute Engine (<span class="caps">GCE</span>) using Terraform (With a load of Bash Scripts too)</a>“.</p>
+<pre><code>export GOOGLE_APPLICATION_CREDENTIALS=~/thepathtosecrets/account.json
+</code></pre><p>I added this to my bash_profile and sourced that&nbsp;file.</p>
+<pre><code>source ~/.bash_profile
+</code></pre><p>Then I ran <code>kubectl cluster-info</code>.</p>
+<pre><code>$ kubectl cluster-info
+Kubernetes master is running at https://104.196.234.30
+GLBCDefaultBackend is running at https://104.196.234.30/api/v1/proxy/namespaces/kube-system/services/default-http-backend
+Heapster is running at https://104.196.234.30/api/v1/proxy/namespaces/kube-system/services/heapster
+KubeDNS is running at https://104.196.234.30/api/v1/proxy/namespaces/kube-system/services/kube-dns
+kubernetes-dashboard is running at https://104.196.234.30/api/v1/proxy/namespaces/kube-system/services/kubernetes-dashboard
+</code></pre><p>Ah, magic! It’s working! So a few other commands just to verify and determine what the state of things&nbsp;are.</p>
+<pre><code>$ kubectl top node
+NAME                                                 CPU(cores)   CPU%      MEMORY(bytes)   MEMORY%
+gke-development-systems-default-pool-f30f476e-gtnj   34m          3%        1529Mi          41%
+gke-development-systems-default-pool-f30f476e-ncln   47m          4%        1879Mi          50%
+gke-development-systems-default-pool-f30f476e-s5pc   38m          3%        1691Mi          45%
+</code></pre><p>That looks good. So on to getting some containers&nbsp;launched.</p>
+<h1 id="summary">Summary</h1>
+<p>At this point I’ve learned a number of things. One, is that using Terraform I lose a few of the other credentials that are auto-magically available if you setup the cluster via the <code>gcloud</code> commands. Using <code>gcloud</code> generally handles a lot of the management of ssh keys, credentials, and related security stuff so that you don’t have to. There are of course positives and negatives around this, for instance, if I go and created a cluster via Terraform my credentials are out of sync with what <code>gcloud</code> is actually using. At least in the scenario above I had to go set the credentials manually and add them to the ~/.bash_profile. Overall, once familiar with, I know this all will be super easy to dig through, but it definitely takes some exploration and lots of breaking things before getting it all figured out and mapped in one’s brain. For part <span class="caps">II</span> I’m digging into running containers in the cluster and also getting container images stored in Google’s image container registry. Hopefully I can get the network and subnetwork confusion sorted out too and get that&nbsp;implemented.</p>
+</section>
+                </article>
+                <!-- End of Blog Page-->
+              </div>
+            </div>
+            <div class="col-md-3 hidden-sm hidden-xs">
+              <div class="sidebar js-sidebar-fixed">
+                <!-- Vertical Menu-->
+                <div class="widget">
+                  <!-- Search-->
+                  <div class="search">
+                    <form action="https://google.com/search" method="get">
+                      <input type="hidden" name="sitesearch" value="http://blog.adron.me">
+                      <input type="text" name="q" placeholder="search" class="search-input form-control"><i class="fa fa-search search-icon"></i>
+                    </form>
+                  </div>
+                  <!-- End of Search-->
+                </div>
+                <div class="widget">
+                  <h3 class="widget-title">Keyword Search</h3>
+                  <!-- Tags-->
+                  <ul class="tags">
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=html">html</a></li>
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=javascript">javascript</a></li>
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=ubuntu">ubuntu</a></li>
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=node pdx">node pdx</a></li>
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=.NET fringe">.net fringe</a></li>
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=videos">videos</a></li>
+                  </ul>
+                  <!-- End of Tags-->
+                </div>
+                <nav class="menu-vertical-wrapper">
+                  <ul data-prepend-to=".js-layout" data-select="Menu" class="menu-vertical js-menu-vertical">
+                    <li><a href="#">About</a>
+                      <ul>
+                        <li><a href="/docs/about/">Me, Adron</a></li>
+                        <li><a href="#">My Hobbies</a>
+                          <ul>
+                            <li><a href="http://photos.adron.me">My Photos</a></li>
+                          </ul>
+                        </li>
+                        <li><a href="/docs/Speaking-Presentations-Workshops">My Presentations</a></li>
+                        <li><a href="/docs/documentation/">Collection of Docs & Notes</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </nav>
+                <div class="widget">
+                  <h3 class="widget-title">Photos</h3>
+                  <!-- Photos-->
+                  <ul class="widget-recommended-products">
+                    <!-- Photos-->
+                    <li class="widget-recommended-product"><img src="/img/photos/IMG_1836.jpg" alt="Jon Oropeza" class="widget-recommended-product-img"><a href="http://photos.adron.me/Software/Meetups-N-Conferences/Conferences/Node-PDX-2016/i-D9qFQ6m" class="widget-recommended-product-link">
+                        <h5 class="widget-recommended-product-link-title">Node PDX 2016<i class="fa fa-angle-right"></i></h5>
+                        <p class="widget-recommended-product-link-description">Jon Oropeza @ Node PDX 2016</p></a></li>
+                    <!-- End of Recommended product Item-->
+                    <!-- Recommended product Item-->
+                    <li class="widget-recommended-product"><img src="/img/photos/IMG_1812.jpg" alt="Liz Abinante" class="widget-recommended-product-img"><a href="http://photos.adron.me/Software/Meetups-N-Conferences/Conferences/Node-PDX-2016/i-g2m2hgP" class="widget-recommended-product-link">
+                        <h5 class="widget-recommended-product-link-title">Node PDX 2016<i class="fa fa-angle-right"></i></h5>
+                        <p class="widget-recommended-product-link-description">Liz Abinante @ Node PDX 2016</p></a></li>
+                    <!-- End of Recommended product Item-->
+                    <!-- Recommended product Item-->
+                    <li class="widget-recommended-product"><img src="/img/photos/IMG_5709.jpg" alt="Praha hlavní nádraží" class="widget-recommended-product-img"><a href="http://photos.adron.me/Travels-N-Traversings/Across-the-Pond-2016-Travels/September-Krakow/Week-4-Prague/i-62ZPsPb" class="widget-recommended-product-link">
+                        <h5 class="widget-recommended-product-link-title">Prague (Praha)<i class="fa fa-angle-right"></i></h5>
+                        <p class="widget-recommended-product-link-description">Praha hlavní nádraží</p></a></li>
+                    <!-- End of photos row one-->
+                  </ul>
+                  <ul class="widget-recommended-products">
+                    <!-- Photos-->
+                    <li class="widget-recommended-product"><img src="/img/photos/IMG_4417.jpg" alt="St Mary's Basilica" class="widget-recommended-product-img"><a href="http://photos.adron.me/Travels-N-Traversings/Across-the-Pond-2016-Travels/September-Krakow/Krakow/i-KnZf6pK/A" class="widget-recommended-product-link">
+                        <h5 class="widget-recommended-product-link-title">St Mary's Basilica<i class="fa fa-angle-right"></i></h5>
+                        <p class="widget-recommended-product-link-description">Bazylika Mariacka in Rynek Główny.</p></a></li>
+                    <!-- End of Recommended product Item-->
+                    <!-- Recommended product Item-->
+                    <li class="widget-recommended-product"><img src="/img/photos/VSC_03.png" alt="Visual Studio Code" class="widget-recommended-product-img"><a href="http://photos.adron.me/Software/Software-Development/Visual-Studio-Things/i-LLW7WcD/A" class="widget-recommended-product-link">
+                        <h5 class="widget-recommended-product-link-title">Visual Studio Code<i class="fa fa-angle-right"></i></h5>
+                        <p class="widget-recommended-product-link-description">Images from a review of Visual Studio Code.</p></a></li>
+                    <!-- End of Recommended product Item-->
+                    <!-- Recommended product Item-->
+                    <li class="widget-recommended-product"><img src="/img/photos/-home-adronhall-Pictures-Selection_002.png - Shutter_003.png" alt="" class="widget-recommended-product-img"><a href="http://photos.adron.me/Software/Software-Development/Ubuntu/i-CQsQ4zj/A" class="widget-recommended-product-link">
+                        <h5 class="widget-recommended-product-link-title">Mono Develop & WebStorm<i class="fa fa-angle-right"></i></h5>
+                        <p class="widget-recommended-product-link-description">Working through Mono Develop & WebStorm.</p></a>
+                      <!-- End of photos row two-->
+                    </li>
+                  </ul>
+                  <!-- End Photos-->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="nav"><a href="/">« Home</a></div>
+      </div>
+    </div>
+    <script src="/js/all.js"></script>
+    <script src="/js/custom.js"></script>
+    <!-- Google Tag Manager-->
+    <noscript>
+      <iframe src="//www.googletagmanager.com/ns.html?id=GTM-KMMZX2" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <script>
+      console.log(document.getElementById("search-google"));
+      console.log(document.getElementById("search-google").innerText);
+      
+      var searchBox = document.getElementById("search-google");
+      
+      function googleSearch(search_string) {
+        alert(search_string);
+      }
+      
+      document.getElementById("search-google").addEventListener("onClick", function () {
+        alert(document.getElementById("search-google").innerHTML);
+      });
+      
+      document.getElementById("search-google").addEventListener("onClick", function () {
+        googleSearch(document.getElementById("search-google").innerHTML)
+      });
+      
+    </script>
+    <script>
+      (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+                  (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+      })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+      ga('create', 'UA-39158070-6', 'auto');
+      ga('send', 'pageview');
+    </script>
+  </body>
+</html>
