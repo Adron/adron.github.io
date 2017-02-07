@@ -86,7 +86,12 @@
               <div class="main-content">
                 <!-- Blog Page-->
                 <article class="article">
-                  <section class="content"><p>I set out to create a container cluster to work with in Google Cloud. These are the notes of that effort I undertook. On the heels of this article I’m putting together the notes also on getting Drone.io fully setup with an appropriate domain name and the like for use in full production grade work. For now, here’s the lowdown on the steps I took to get educated on and informed about setup and use of the Google Container&nbsp;Cluster.</p>
+                  <section class="content"><ul>
+<li><a href="/articles/setting-up-gcp-container-cluster/">Part 1 - Setting up a <span class="caps">GCP</span> Container&nbsp;Cluster</a></li>
+<li><a href="/articles/setting-up-gcp-container-cluster-part-2/">Part 2 - Working with a <span class="caps">GCP</span> Container&nbsp;Cluster</a> </li>
+<li>Part 3 - Setup of Drone.io on a <span class="caps">GCP</span> Container Cluster - Currently being&nbsp;written</li>
+</ul>
+<p>I set out to create a container cluster to work with in Google Cloud. These are the notes of that effort I undertook. On the heels of this article I’m putting together the notes also on getting Drone.io fully setup with an appropriate domain name and the like for use in full production grade work. For now, here’s the lowdown on the steps I took to get educated on and informed about setup and use of the Google Container&nbsp;Cluster.</p>
 <p>First exploratory script I ran based on instructions <a href="https://cloud.google.com/container-engine/docs/clusters/operations">here</a>.</p>
 <pre><code>gcloud container clusters create working-space \
   --zone us-central1-a \
@@ -202,6 +207,11 @@ gke-development-systems-default-pool-f30f476e-s5pc   38m          3%        1691
 </code></pre><p>That looks good. So on to getting some containers&nbsp;launched.</p>
 <h1 id="summary">Summary</h1>
 <p>At this point I’ve learned a number of things. One, is that using Terraform I lose a few of the other credentials that are auto-magically available if you setup the cluster via the <code>gcloud</code> commands. Using <code>gcloud</code> generally handles a lot of the management of ssh keys, credentials, and related security stuff so that you don’t have to. There are of course positives and negatives around this, for instance, if I go and created a cluster via Terraform my credentials are out of sync with what <code>gcloud</code> is actually using. At least in the scenario above I had to go set the credentials manually and add them to the ~/.bash_profile. Overall, once familiar with, I know this all will be super easy to dig through, but it definitely takes some exploration and lots of breaking things before getting it all figured out and mapped in one’s brain. For part <span class="caps">II</span> I’m digging into running containers in the cluster and also getting container images stored in Google’s image container registry. Hopefully I can get the network and subnetwork confusion sorted out too and get that&nbsp;implemented.</p>
+<ul>
+<li><a href="/articles/setting-up-gcp-container-cluster/">Part 1 - Setting up a <span class="caps">GCP</span> Container&nbsp;Cluster</a></li>
+<li><a href="/articles/setting-up-gcp-container-cluster-part-2/">Part 2 - Working with a <span class="caps">GCP</span> Container&nbsp;Cluster</a> </li>
+<li>Part 3 - Setup of Drone.io on a <span class="caps">GCP</span> Container Cluster - Currently being&nbsp;written</li>
+</ul>
 </section>
                 </article>
                 <!-- End of Blog Page-->
