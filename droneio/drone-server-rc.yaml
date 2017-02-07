@@ -1,0 +1,135 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: drone-server
+  labels:
+    heritage: drone-demos
+spec:
+  replicas: 1
+  selector:
+    name: drone-server
+  template:
+    metadata:
+      labels:
+        name: drone-server
+    spec:
+      containers:
+        - image: gtaylor/nginx-for-drone:latest
+          imagePullPolicy: Always
+          name: nginx-proxy
+          env:
+            - name: DOMAIN
+              valueFrom:
+                configMapKeyRef:
+                  name: drone-config
+                  key: proxy.fqdn
+            - name: EMAIL
+              valueFrom:
+                configMapKeyRef:
+                  name: drone-config
+                  key: proxy.letsencrypt.email
+            - name: UPSTREAM
+              value: localhost:8000
+          ports:
+            - name: http
+              containerPort: 80
+              protocol: TCP
+            - name: https
+              containerPort: 443
+              protocol: TCP
+          resources:
+            requests:
+              cpu: 40m
+              memory: 12Mi
+
+        - image: drone/drone:0.5
+          imagePullPolicy: Always
+          name: drone-server
+          env:
+            - name: DRONE_SERVER_ADDR
+              value: ":8000"
+            - name: I_UNDERSTAND_I_AM_USING_AN_UNSTABLE_VERSION
+              value: "true"
+            - name: I_AGREE_TO_FIX_BUGS_AND_NOT_FILE_BUGS
+              value: "true"
+
+            - name: DRONE_DEBUG
+              valueFrom:
+                configMapKeyRef:
+                  name: drone-config
+                  key: server.debug.is.enabled
+            - name: DRONE_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: drone-secrets
+                  key: server.secret
+
+            - name: DRONE_DATABASE_DRIVER
+              valueFrom:
+                configMapKeyRef:
+                  name: drone-config
+                  key: server.database.driver
+            - name: DRONE_DATABASE_DATASOURCE
+              valueFrom:
+                configMapKeyRef:
+                  name: drone-config
+                  key: server.database.config
+
+            - name: DRONE_OPEN
+              valueFrom:
+                configMapKeyRef:
+                  name: drone-config
+                  key: server.is.open
+            - name: DRONE_ORGS
+              valueFrom:
+                configMapKeyRef:
+                  name: drone-config
+                  key: server.orgs.list
+            - name: DRONE_ADMIN
+              valueFrom:
+                configMapKeyRef:
+                  name: drone-config
+                  key: server.admin.list
+            - name: DRONE_ADMIN_ALL
+              valueFrom:
+                configMapKeyRef:
+                  name: drone-config
+                  key: server.admin.everyone.is.admin
+
+            - name: DRONE_GITHUB
+              valueFrom:
+                configMapKeyRef:
+                  name: drone-config
+                  key: server.remote.github.is.enabled
+            - name: DRONE_GITHUB_CLIENT
+              valueFrom:
+                configMapKeyRef:
+                  name: drone-config
+                  key: server.remote.github.client.id
+            - name: DRONE_GITHUB_SECRET
+              valueFrom:
+                configMapKeyRef:
+                  name: drone-config
+                  key: server.remote.github.secret
+          ports:
+            - containerPort: 8000
+              protocol: TCP
+          volumeMounts:
+            # Persist our configs in an SQLite DB in here
+            - mountPath: /var/lib/drone
+              name: drone-server-sqlite-db
+            # Enables Docker in Docker
+            - mountPath: /var/run/docker.sock
+              name: docker-socket
+          resources:
+            requests:
+              cpu: 40m
+              memory: 32Mi
+      volumes:
+        - name: drone-server-sqlite-db
+          gcePersistentDisk:
+            pdName: drone-server-sqlite-db
+            fsType: ext4
+        - name: docker-socket
+          hostPath:
+            path: /var/run/docker.sock
