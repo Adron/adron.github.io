@@ -4,6 +4,10 @@ author: Adron Hall
 date: 2017-01-31 12:27:09
 template: article.jade
 ---
+* [Part 1 - Setting up a GCP Container Cluster](/articles/setting-up-gcp-container-cluster/)
+* [Part 2 - Working with a GCP Container Cluster](/articles/setting-up-gcp-container-cluster-part-2/) 
+* Part 3 - Setup of Drone.io on a GCP Container Cluster - Currently being written
+
 I set out to create a container cluster to work with in Google Cloud. These are the notes of that effort I undertook. On the heels of this article I'm putting together the notes also on getting Drone.io fully setup with an appropriate domain name and the like for use in full production grade work. For now, here's the lowdown on the steps I took to get educated on and informed about setup and use of the Google Container Cluster.
 
 First exploratory script I ran based on instructions [here](https://cloud.google.com/container-engine/docs/clusters/operations).
@@ -213,3 +217,7 @@ That looks good. So on to getting some containers launched.
 # Summary
 
 At this point I've learned a number of things. One, is that using Terraform I lose a few of the other credentials that are auto-magically available if you setup the cluster via the `gcloud` commands. Using `gcloud` generally handles a lot of the management of ssh keys, credentials, and related security stuff so that you don't have to. There are of course positives and negatives around this, for instance, if I go and created a cluster via Terraform my credentials are out of sync with what `gcloud` is actually using. At least in the scenario above I had to go set the credentials manually and add them to the ~/.bash_profile. Overall, once familiar with, I know this all will be super easy to dig through, but it definitely takes some exploration and lots of breaking things before getting it all figured out and mapped in one's brain. For part II I'm digging into running containers in the cluster and also getting container images stored in Google's image container registry. Hopefully I can get the network and subnetwork confusion sorted out too and get that implemented.
+
+* [Part 1 - Setting up a GCP Container Cluster](/articles/setting-up-gcp-container-cluster/)
+* [Part 2 - Working with a GCP Container Cluster](/articles/setting-up-gcp-container-cluster-part-2/) 
+* Part 3 - Setup of Drone.io on a GCP Container Cluster - Currently being written
