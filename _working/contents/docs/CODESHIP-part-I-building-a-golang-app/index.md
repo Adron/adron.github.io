@@ -211,7 +211,33 @@ To get this plugin I navigated over to the [Shipscope](https://chrome.google.com
  
 ![Shipscope Chrome Plugin](shipscope-01.png)
  
-Once it is added, click on the Shipscope Icon To find this navigated over to the account settings page.
+Once it is added, click on the Shipscope Icon in the top right of the Chrome. To get the key navigate over to the account settings page. There the key, SSH key, and related security information is available. Copy it to the Shipscope Plugin.
 
 ![Shipscope KEy](shipscope-02a.png)
 
+Once that's done the plugin will start to display the build results for whatever is building under your account with Codeship.
+
+![Codeship Shipscope Build Results](shipscope-02.png)
+
+**Badge(s)**
+
+To get the initial Codeship Badge working, navigate to the notifications section.
+
+![Codeship Status Badge](codeship-badge-01.png)
+
+I scroll to the bottom of this page to get a list of badges to add in various formats.
+
+![Codeship Status Badge Formats](codeship-badge-02.png)
+
+Here I choose the *Copy Markdown Syntax* and paste that into the top of the *README.md* file for the project. Now the badge shows up on the project's README.md file when viewed in Github. That sets us up perfectly to have good visibility and insight into our project as we move forward.
+
+# Summary
+
+I have a number of things that are setup that will help the project immensely as I move forward.
+
+* Working and compilable code.
+* A working continuous integration build locally using the Jet CLI.
+* A working remote build that I or others working on the project can use with Codeship.
+* Notifications in my browser and also in the README.md file.
+
+Having these capabilities sets up the project so that I can move forward quickly and with high confidence that I'll be able to maintain a working build and bring others in with the same visilibity into the project at the same time.
