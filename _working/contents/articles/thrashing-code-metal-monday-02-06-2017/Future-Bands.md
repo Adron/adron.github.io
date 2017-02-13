@@ -4,6 +4,7 @@
 
 <iframe width="300" height="56" src="https://embed.spotify.com/follow/1/?uri=spotify%3Aartist%3A4DwtbMRUsK4JVU0Ts7pVwd&amp;size=detail&amp;theme=dark" scrolling="no" frameborder="0" style="border:none; overflow:hidden;" allowtransparency="true"></iframe>
 
+
 <iframe width="853" height="480" src="https://www.youtube.com/embed/-w2m-TeLi6I" frameborder="0" allowfullscreen></iframe>
 
 <iframe width="853" height="480" src="https://www.youtube.com/embed/G8oFIv9rXqU" frameborder="0" allowfullscreen></iframe>
@@ -16,11 +17,6 @@
 
 Going back to my roots with some love for my NOLA crews...
 
-<iframe width="853" height="480" src="https://www.youtube.com/embed/03nxraNjJuc" frameborder="0" allowfullscreen></iframe>
-
-<iframe width="853" height="480" src="https://www.youtube.com/embed/AxcaIKMAJ3Y" frameborder="0" allowfullscreen></iframe>
-
-<iframe width="853" height="480" src="https://www.youtube.com/embed/_u8rVrUDgRU" frameborder="0" allowfullscreen></iframe>
 
 Part II
 

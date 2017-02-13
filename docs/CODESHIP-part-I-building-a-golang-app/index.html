@@ -84,7 +84,179 @@
               <div class="main-content">
                 <!-- Blog Page-->
                 <docs class="article">
-                  <section class="content"><p>Welcome to what will be an ongoing&nbsp;series.</p>
+                  <section class="content"><p>Today Go enjoys a lot of popularity for a number of reasons. It’s a solid language that enjoys a lot of advantages. Some include its simple nature and how it works exceptionally well in the container based, cloud native, distributed world of&nbsp;today.</p>
+<p>With this post I’m kicking off a series focused around building out and implementing a services application, based on container tech and cloud native principles. There are a few prerequisites I’ve assumed listed&nbsp;below.</p>
+<p><strong>Prerequisites:</strong></p>
+<ul>
+<li><a href="https://golang.org/dl/">Go</a> version 1.6.3 is used and almost any current version can be&nbsp;used.</li>
+<li><a href="https://codeship.com/">Codeship&nbsp;Account</a></li>
+<li><a href="https://documentation.codeship.com/pro/getting-started/installation/">Jet&nbsp;<span class="caps">CLI</span></a></li>
+<li><a href="https://docs.docker.com/engine/installation/">Docker</a></li>
+</ul>
+<h2 id="tech-capabilities-implementation">Tech, Capabilities,&nbsp;Implementation</h2>
+<p>In this series there are several key ideas behind the technologies, capabilities, and implementation details that I’ll&nbsp;cover.</p>
+<ul>
+<li><p>Microservices - Building an application that will provide data&nbsp;generation.</p>
+</li>
+<li><p>Containers - Use, creation, and management of containers for the build and delivery&nbsp;process.</p>
+</li>
+</ul>
+<p>The project I’ll create is an example, but it is important to note the practices I’ll follow are just as valid to a full blown project getting&nbsp;started.</p>
+<h2 id="a-go-project">A Go&nbsp;Project</h2>
+<p>As a first step, I need a simple Go project. I’ll use this to start building the systems for continuous integration and delivery around it. Whenever starting a project it is most ideal to implement the systems around the project as early as&nbsp;possible.</p>
+<p>To accomplish this task I created a repository on Github. I could then use it to manage the tasks at hand and of course store my code in. When I created the project I used Github’s option to add a <span class="caps">README</span>.md, LICENSE, and Go based .gitignore&nbsp;file.</p>
+<p><img src="/docs/CODESHIP-part-I-building-a-golang-app/github-repo-creation.png" alt="Github Repository Creation"></p>
+<p>Once created I went ahead and added an <a href="https://github.com/Adron/datadiluvium-01/issues/1">issue “Create a minimal Go Service to work with for <span class="caps">CI</span>/CD.”</a>, just for a process flow and to ensure good visibility into the project&nbsp;flow.</p>
+<p>Next I cloned the&nbsp;repository.</p>
+<pre><code>git clone git@github.com:Adron/datadiluvium-01.git
+</code></pre><p>With the repository cloned I added a <em>main.go</em> file and went about creating the basic Go service to work&nbsp;with.</p>
+<pre><code class="lang-go"><span class="keyword">package</span> main
+
+<span class="keyword">import</span> (
+   <span class="string">"fmt"</span>
+   <span class="string">"log"</span>
+   <span class="string">"net/http"</span>
+)
+
+<span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> {
+    http.HandleFunc(<span class="string">"/"</span>, <span class="function"><span class="keyword">func</span><span class="params">(w http.ResponseWriter, r *http.Request)</span></span> {
+      fmt.Fprintf(w, <span class="string">"Hello!"</span>)
+    })
+
+    log.Println(<span class="string">"Listening on 8080..."</span>)
+    log.Fatal(http.ListenAndServe(<span class="string">":8080"</span>, <span class="literal">nil</span>))
+}
+</code></pre>
+<p>Just to test that out I run a quick <code>go run main.go</code>.</p>
+<p>Next I commit this code in commit <a href="https://github.com/Adron/datadiluvium-01/commit/fc7e9e3c2f7064833830a490fb77b17c2acd7675">fc7e9e3c2f7064833830a490fb77b17c2acd7675</a> that completes <a href="https://github.com/Adron/datadiluvium-01/issues/1">issue #1</a>.</p>
+<h2 id="continuous-integration-local-build">Continuous Integration Local&nbsp;Build</h2>
+<p>I can now execute a local build with the <a href="https://documentation.codeship.com/pro/">Codeship Pro <span class="caps">CLI</span></a> called <a href="https://documentation.codeship.com/pro/getting-started/installation/">Jet</a>. The <a href="https://documentation.codeship.com/">Codeship Documentation</a> has a great <a href="https://documentation.codeship.com/pro/getting-started/getting-started/">tutorial on getting started with Jet</a>, but I’m going to go over the specifics for getting started with Jet for this project&nbsp;here.</p>
+<p>The next steps are getting a local build and then getting a remote Codeship build working. To get the local build working first I’ll use the Jet <span class="caps">CLI</span> and create the two local yaml files to inform the Jet CLI on how to build the project. These two files are named as&nbsp;shown:</p>
+<ul>
+<li><p><em>codeship-services.yml</em> - This is the file that will list out any of the services that need built to run the build. I only need a single service for the Go service. I added the following configuration to the file for creation of the&nbsp;service.</p>
+<pre><code class="lang-yaml"><span class="attr">  datadiluvium:</span>
+<span class="attr">    build:</span>
+<span class="attr">      image:</span> golang
+<span class="attr">      dockerfile_path:</span> Dockerfile
+</code></pre>
+<p>  I don’t have a Dockerfile just yet, but I’ll add that shortly. I named the image <em>golang</em> to match the image used from Docker&nbsp;hub.</p>
+</li>
+<li><p><em>codeship-steps.yml</em> - This file lists out the steps that will be run for the build. At this point I want to have three steps run: <code>,</code>, and &#8220;. I added the following configuration to the codeship-steps.yml&nbsp;file.</p>
+<pre><code class="lang-yaml"><span class="attr">  - name:</span> sailing
+<span class="attr">    service:</span> datadiluvium
+<span class="attr">    command:</span> go clean
+<span class="attr">  - name:</span> sailing_tests
+<span class="attr">    service:</span> datadiluvium
+<span class="attr">    command:</span> go test .
+<span class="attr">  - name:</span> sailing_build
+<span class="attr">    service:</span> datadiluvium
+<span class="attr">    command:</span> go build
+</code></pre>
+</li>
+</ul>
+<p>These are the two files that are specific to the Jet <span class="caps">CLI</span> for the build, however I still need a Dockerfile to designate which image to retrieve to run the container, which will then in turn run the build. The Dockerfile also will include the working directory and run of anything else that needs installed on the container for the execution of the&nbsp;build.</p>
+<p><em>Dockerfile</em></p>
+<pre><code class="lang-dockerfile"><span class="keyword"><span class="caps">FROM</span></span> golang:<span class="number">1.7</span>.<span class="number">4</span>-alpine
+
+<span class="keyword"><span class="caps">ENV</span></span> <span class="caps">GOPATH</span> /go
+
+<span class="keyword"><span class="caps">RUN</span></span><span class="bash"> mkdir /app &amp;&amp; \
+    apk add --update curl &amp;&amp; \
+    rm -rf /var/cache/apk/*
+</span>
+<span class="keyword"><span class="caps">ADD</span></span><span class="bash"> . /app/
+</span><span class="keyword"><span class="caps">WORKDIR</span></span><span class="bash"> /app</span>
+</code></pre>
+<p>With those files in place, I can now run a local build with <code>jet steps</code>.</p>
+<pre><code class="lang-shell-script">$ jet steps
+***WARNING*** linux detected, --no-remove is recommended to be set to docker bug with linux [https://github.com/docker/docker/issues/9665](https://github.com/docker/docker/issues/9665)
+{StepStarted=step_name:&quot;sailing&quot;}
+{BuildImageStarted=image_name:&quot;golang&quot; service_name:&quot;datadiluvium&quot;}
+{BuildImageStdout=image_name:&quot;golang&quot; service_name:&quot;datadiluvium&quot;}: Step 1/5 : FROM golang:1.7.4-alpine
+{BuildImageStdout=image_name:&quot;golang&quot; service_name:&quot;datadiluvium&quot;}:  ---&gt; 00371bbb49d5
+{BuildImageStdout=image_name:&quot;golang&quot; service_name:&quot;datadiluvium&quot;}: Step 2/5 : ENV GOPATH /go
+{BuildImageStdout=image_name:&quot;golang&quot; service_name:&quot;datadiluvium&quot;}:  ---&gt; Using cache
+{BuildImageStdout=image_name:&quot;golang&quot; service_name:&quot;datadiluvium&quot;}:  ---&gt; 47d0bc36a3ac
+{BuildImageStdout=image_name:&quot;golang&quot; service_name:&quot;datadiluvium&quot;}: Step 3/5 : RUN mkdir /app &amp;&amp;     apk add --update curl &amp;&amp;     rm -rf /var/cache/apk/*
+{BuildImageStdout=image_name:&quot;golang&quot; service_name:&quot;datadiluvium&quot;}:  ---&gt; Using cache
+{BuildImageStdout=image_name:&quot;golang&quot; service_name:&quot;datadiluvium&quot;}:  ---&gt; 063d3df11384
+{BuildImageStdout=image_name:&quot;golang&quot; service_name:&quot;datadiluvium&quot;}: Step 4/5 : ADD . /app/
+{BuildImageStdout=image_name:&quot;golang&quot; service_name:&quot;datadiluvium&quot;}:  ---&gt; 4d7a7f79be33
+{BuildImageStdout=image_name:&quot;golang&quot; service_name:&quot;datadiluvium&quot;}: Removing intermediate container c303781ccc55
+{BuildImageStdout=image_name:&quot;golang&quot; service_name:&quot;datadiluvium&quot;}: Step 5/5 : WORKDIR /app
+{BuildImageStdout=image_name:&quot;golang&quot; service_name:&quot;datadiluvium&quot;}:  ---&gt; 59377d134135
+{BuildImageStdout=image_name:&quot;golang&quot; service_name:&quot;datadiluvium&quot;}: Removing intermediate container f4ff4edf13bf
+{BuildImageStdout=image_name:&quot;golang&quot; service_name:&quot;datadiluvium&quot;}: Successfully built 59377d134135
+{BuildImageFinished=image_name:&quot;golang&quot; service_name:&quot;datadiluvium&quot;}
+{StepFinished=step_name:&quot;sailing&quot; type:STEP_FINISHED_TYPE_SUCCESS}
+{StepStarted=step_name:&quot;sailing_tests&quot;}
+{ContainerRunStdout=step_name:&quot;sailing_tests&quot; service_name:&quot;datadiluvium&quot;}: ?       _/app    [no test files]
+{StepFinished=step_name:&quot;sailing_tests&quot; type:STEP_FINISHED_TYPE_SUCCESS}
+{StepStarted=step_name:&quot;sailing_build&quot;}
+{StepFinished=step_name:&quot;sailing_build&quot; type:STEP_FINISHED_TYPE_SUCCESS}
+</code></pre>
+<p>Everything finished successfully. At this time however there is a caveat around Linux as warned at the top of the results. If you run into issues while running this on Linux, you might want to check out the –no-remove solution for <a href="https://github.com/docker/docker/issues/9665">issue 9666</a>. However if you’re using <span class="caps">OS</span>-X/MacOS or Windows you’ll likely just see the steps build as&nbsp;shown.</p>
+<p>Now that I’ve got a successful build locally, I can move to getting the build setup on Codeship. One thing I always do just before this stage is add two more additions to the .gitignore file at this point. I usually forget, but the Jetbrains IDEs that I often use will remind me, or I’ll notice the files I need to keep out of the commit when I run a <code>git status</code> before I add files to the commit. At that time I always add the <code>.idea</code> directory and <code>.DS_Store</code> files to my .gitignore&nbsp;file.</p>
+<p>The .idea directory is simply the configuration and settings directory for Jetbrains IDEs and the .DS_Store file is a file that stores custom attributes of the containing folder. It has nothing to do with the actual code or project. It is similar to hidden files on Windows and Linux that sometimes end up in a commit. Keep an eye out and add those to the .gitignore so they don’t end up cluttering up your&nbsp;project.</p>
+<p>With a quick addition of the files to the commit, I pushed up all of the files with a <code>git push</code>. With the code safely in the Github repository I navigate to Codeship and login. Once logged in I select to <em>create a new project</em>.</p>
+<p><img src="/docs/CODESHIP-part-I-building-a-golang-app/codeship-01.png" alt="Starting a Project"></p>
+<p>This then brings up the dialog where a choice of Github, Gitlab, or Bitbucket can be chosen. I chose Github and the next dialog&nbsp;renders.</p>
+<p><img src="/docs/CODESHIP-part-I-building-a-golang-app/codeship-02.png" alt="Selecting Github"></p>
+<p>In this next dialog I’ve added the&nbsp;git@github.com:Adron/datadiluvium-01.git</p>
+<p><img src="/docs/CODESHIP-part-I-building-a-golang-app/codeship-03.png" alt="Connecting the Github Repo"></p>
+<p>Click on connect. The next step is to pick Codeship Basic or Codeship Pro. I click on <em>Select Pro project</em> and the next dialog&nbsp;renders.</p>
+<p><img src="/docs/CODESHIP-part-I-building-a-golang-app/codeship-04.png" alt="Connecting the Github Repo"></p>
+<p>This page isn’t immediately useful to us, but has a few interesting reminders. However I just click on the project in the upper left corner <em>Adron/datadiluvium-01</em>. This brings me to the build results&nbsp;screen.</p>
+<p><img src="/docs/CODESHIP-part-I-building-a-golang-app/codeship-05.png" alt="Connecting the Github Repo"></p>
+<p>Right now I don’t have a remote build since I haven’t pushed any new commits to the repository since setting up the build project in&nbsp;Codeship.</p>
+<p><img src="/docs/CODESHIP-part-I-building-a-golang-app/codeship-06.png" alt="Connecting the Github Repo"></p>
+<p>I changed my <em>main.go</em> file to repeat and build up a buffer, then print the buffer out to a string formatted for the page output as&nbsp;shown.</p>
+<pre><code class="lang-go"><span class="keyword">package</span> main
+
+<span class="keyword">import</span> (
+    <span class="string">"bytes"</span>
+    <span class="string">"fmt"</span>
+    <span class="string">"log"</span>
+    <span class="string">"net/http"</span>
+)
+
+<span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> {
+    http.HandleFunc(<span class="string">"/"</span>, <span class="function"><span class="keyword">func</span><span class="params">(w http.ResponseWriter, r *http.Request)</span></span> {
+        <span class="keyword">var</span> buffer bytes.Buffer
+        <span class="keyword">for</span> i := <span class="number">0</span>; i &lt; <span class="number">1000</span>; i++ {
+            buffer.WriteString(<span class="string">"a"</span>)
+        }
+        fmt.Fprintf(w, buffer.String()+<span class="string">"Hello!"</span>)
+    })
+
+    log.Println(<span class="string">"Listening on 8080..."</span>)
+    log.Fatal(http.ListenAndServe(<span class="string">":8080"</span>, <span class="literal">nil</span>))
+}
+</code></pre>
+<p>Adding this code with a commit gave me a good build. With that setup I now wanted to a put a finishing touch on the build. For that finishing touch, I’d include a build badge and get the <a href="https://chrome.google.com/webstore/detail/shipscope/jdedmgopefelimgjceagffkeeiknclhh?hl=en">Codeship Chrome Plugin “Shipscope”</a> working for local&nbsp;builds.</p>
+<h2 id="finishing-touches">Finishing&nbsp;Touches</h2>
+<p><strong>Shipscope</strong></p>
+<p>To get this plugin I navigated over to the <a href="https://chrome.google.com/webstore/detail/shipscope/jdedmgopefelimgjceagffkeeiknclhh?hl=en">Shipscope</a> plugin page and clicked to add it to&nbsp;Chrome.</p>
+<p><img src="/docs/CODESHIP-part-I-building-a-golang-app/shipscope-01.png" alt="Shipscope Chrome Plugin"></p>
+<p>Once it is added, click on the Shipscope Icon in the top right of the Chrome. To get the key navigate over to the account settings page. There the key, <span class="caps">SSH</span> key, and related security information is available. Copy it to the Shipscope&nbsp;Plugin.</p>
+<p><img src="/docs/CODESHIP-part-I-building-a-golang-app/shipscope-02a.png" alt="Shipscope KEy"></p>
+<p>Once that’s done the plugin will start to display the build results for whatever is building under your account with&nbsp;Codeship.</p>
+<p><img src="/docs/CODESHIP-part-I-building-a-golang-app/shipscope-02.png" alt="Codeship Shipscope Build Results"></p>
+<p><strong>Badge(s)</strong></p>
+<p>To get the initial Codeship Badge working, navigate to the notifications&nbsp;section.</p>
+<p><img src="/docs/CODESHIP-part-I-building-a-golang-app/codeship-badge-01.png" alt="Codeship Status Badge"></p>
+<p>I scroll to the bottom of this page to get a list of badges to add in various&nbsp;formats.</p>
+<p><img src="/docs/CODESHIP-part-I-building-a-golang-app/codeship-badge-02.png" alt="Codeship Status Badge Formats"></p>
+<p>Here I choose the <em>Copy Markdown Syntax</em> and paste that into the top of the <em><span class="caps">README</span>.md</em> file for the project. Now the badge shows up on the project’s <span class="caps">README</span>.md file when viewed in Github. That sets us up perfectly to have good visibility and insight into our project as we move&nbsp;forward.</p>
+<h1 id="summary">Summary</h1>
+<p>I have a number of things that are setup that will help the project immensely as I move&nbsp;forward.</p>
+<ul>
+<li>Working and compilable&nbsp;code.</li>
+<li>A working continuous integration build locally using the Jet&nbsp;<span class="caps">CLI</span>.</li>
+<li>A working remote build that I or others working on the project can use with&nbsp;Codeship.</li>
+<li>Notifications in my browser and also in the <span class="caps">README</span>.md&nbsp;file.</li>
+</ul>
+<p>Having these capabilities sets up the project so that I can move forward quickly and with high confidence that I’ll be able to maintain a working build and bring others in with the same visilibity into the project at the same&nbsp;time.</p>
 </section>
                 </docs>
                 <!-- End of Blog Page-->
