@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="/css/style.min.css">
     <script src="/js/modernizr.js"></script>
   </head>
-  <body>
+  <body class="article-detail">
     <!--[if lt IE 8]>
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -67,8 +67,10 @@
             <div class="col-md-12">
               <!-- Page Info-->
               <div class="page-info page-info-simple">
-                <h1>Adron's Composite Code</h1>
-                <h2 class="description">Coder, Messenger, Recon, Infrastructure, Ops</h2>
+                <h1>Industry Introspection</h1>
+                <p class="author">Written by <span class="author">Adron Hall</span> and published on <span>February, 15 of 2017.</span>
+                </p>
+                <div class="nav"><a href="/">« Home</a></div>
               </div>
               <!-- End Page Info-->
             </div>
@@ -83,71 +85,44 @@
             <div class="col-md-9">
               <div class="main-content">
                 <!-- Blog Page-->
-                <div class="blog">
-                  <div class="row"></div>
-                </div>
-                <div class="col-md-12 col-sm-12">
-                  <!-- Blog List-->
-                  <div class="blog-grid">
-                    <div class="row">
-                      <div class="col-md-12 col-sm-12">
-                        <h3 class="blog-grid-title"><a href="/articles/holy-shit-watch-out-for-that-enterprise-open-source/">Holy Shit Watch Out for That Enterprise Open Source!</a></h3>
-                        <p class="blog-grid-excerpt"><p><a href="/articles/holy-shit-watch-out-for-that-enterprise-open-source/">Part I (That’s this article)</a>, <a href="/articles/enterprise-open-source-tactical/">Part <span class="caps">II</span></a>, <a href="/articles/enterprise-cultural-characteristics/">Part <span class="caps">III</span></a>,
-<a href="/articles/enterprise-open-source-anti-patterns">Part <span class="caps">IV</span></a>.</p>
-<p>This blog entry is going to be the conjoined events of open source work at Home Depot, enterprise open source in general, and the ideas and punch lists for a talk I have coming up in London on open source enterprise practices. So this will be a hard drifting whirlwind, buckle&nbsp;up!</p>
-<p>
-                          <p class="more"><a href="/articles/holy-shit-watch-out-for-that-enterprise-open-source/">more</a></p>
-                        </p>
-                        <div class="blog-grid-meta"><span class="blog-grid-date">12. October 2016</span></div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End of Blog List-->
-                </div>
-                <div class="col-md-12 col-sm-12">
-                  <!-- Blog List-->
-                  <div class="blog-grid">
-                    <div class="row">
-                      <div class="col-md-12 col-sm-12">
-                        <h3 class="blog-grid-title"><a href="/articles/the-curse-of-windows-server-windows-server-2016-salvation/">The Curse of Windows Server &amp; Windows Server 2016 Salvation</a></h3>
-                        <p class="blog-grid-excerpt"><p>Over the last year I’ve worked with <a href="https://homedepot.com">Home Depot</a>, specifically the <a href="http://www.quotecenter.com/">Quote Center</a> Group, strive forward toward a better future. Yeah, that sounds a bit campy, but seriously. I started with <a href="http://blog.adron.me/articles/after-816-days-taking-a-job/">three core objectives, which I wrote about previously</a>.</p>
-<ul>
-<li>Community&nbsp;Contributions</li>
-<li>Site&nbsp;Reliability</li>
-<li>Talent&nbsp;Recon</li>
-</ul>
-<p>I’ve been able to help with each of those things over the last year, with more progress being made on some than others. Right now, I want to delve a bit into the adventure of <a href="https://landing.google.com/sre/interview/ben-treynor.html">site reliability</a> at Quote Center. First off, I had the honor of being first guard for Quote Center in the realm of site reliability. I had a lot to do just to set some groundwork on what that position really meant. In addition to the other two <em>roles</em>, err, <em>priorities</em>, it was like taking a job that would have three roles rolled into one. For this article though, I’m going to write about specifically the site reliability and what I did to get some practice and culture around the notion of site reliability at Quote&nbsp;Center.</p>
-<p>The first thing, was simply to write out some ideas about what this would involve. Here are a few of my original questions that I scribbled on the&nbsp;matter.</p>
-<p>
-                          <p class="more"><a href="/articles/the-curse-of-windows-server-windows-server-2016-salvation/">more</a></p>
-                        </p>
-                        <div class="blog-grid-meta"><span class="blog-grid-date">07. October 2016</span></div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End of Blog List-->
-                </div>
-                <div class="col-md-12 col-sm-12">
-                  <!-- Blog List-->
-                  <div class="blog-grid">
-                    <div class="row">
-                      <div class="col-md-12 col-sm-12">
-                        <h3 class="blog-grid-title"><a href="/articles/sitrep-home-depot-wrap-up-next-talks-next-job/">Home Depot Wrap Up and Job Talk</a></h3>
-                        <p class="blog-grid-excerpt"><div class="image float-right">
-    <img src="/articles/sitrep-home-depot-wrap-up-next-talks-next-job/home-depot.png" alt="Home Depot">
+                <article class="article">
+                  <section class="content"><div class="image float-right">
+    <img src="/articles/industry-introspection/farnsworth-in-chair.jpg" alt="Chillin&#39; like Farnsworth">
 </div>
 
-<p>First, I will be available with a possible start date of November the 28<span class="ord">th</span>. I’m currently wrapping up some big projects and completing training for the Home Depot Team and the great progress we’ve made over the last year. If your company is looking for someone with my mixed array of technical skills and soft skills, you can <a href="/docs/about">check out my resume <span class="amp">&amp;</span> details</a> and initiate <a href="/docs/job-talk/">job talk with me here</a>!</p>
-<p>On to the rest of the news. If you’ve seen me speak lately I’ve mentioned the open source efforts we’ve had going on at <a href="http://www.homedepot.com/">Home Depot</a> and related efforts I was working on. Some I’m working dilligently to release via the <a href="https://github.com/homedepot/">Home Depot <span class="caps">OSS</span> Organization on Github</a> and I’ll still be releasing others soon via my Github account (<a href="https://github.com/Adron">@Adron</a>) and blogging about it here on <a href="http://blog.adron.me">Composite Code</a>.</p>
-<p>
-                          <p class="more"><a href="/articles/sitrep-home-depot-wrap-up-next-talks-next-job/">more</a></p>
-                        </p>
-                        <div class="blog-grid-meta"><span class="blog-grid-date">30. September 2016</span></div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End of Blog List-->
-                </div>
+<p>Every few days I like to sit down like an old academic professor and just read and ponder what’s going on in the computer hardware and software industries. As of late it’s been interesting to dive into whatever Elon Musk is working on also; electric cars, solar energy, rockets, or even boring machines. Another thing I’ve had a curiosity in and continue to find interesting is machine learning, or as some call it in the mainstream movie media <em>artificial intelligence</em>.</p>
+<p><span class="more"></span></p>
+<p>I’ll tackle some of these technologies real quick so we all have a current situational report. Each of these topics seems to be a area of work that could use some extensive clarification. I’ll provide some of my own thoughts along with a few links of reference to dig in deeper, so that one doesn’t fall into the trap of uniformed oblivious media&nbsp;consumer.</p>
+<h2 id="rockets-i-e-space-">Rockets (i.e.&nbsp;Space)</h2>
+<p><strong><em>My History:</em></strong> I haven’t always paid attention to this space because I never had intention of working in the area, however who isn’t interested in rockets in some way. Well, considering my desire for other work, I was extremely fortunate where I grew up to be involved in rocketry. I grew up in Picayune, Mississippi which is a mere ~15-20 miles away from John C. Stennis Space&nbsp;Center.</p>
+<p>I had the joy of experiencing rocket tests at John C. Stennis and seeing research into rockets as a child, and on some of my first paid computer related gigs. As one might suspect, they use computers to do rocket research and help with launches. Shocker&nbsp;right!</p>
+<p><strong><em>My Thoughts:</em></strong> The space we’re in right now is impressive. The market is actually getting involved in launching it’s own rockets, which means we’re likely only years or maybe a decade or two of having an economically sustainable rocket program. Hopefully <span class="caps">NASA</span> can work on more focused deep space missions now while Musk’s Space-X and others refine and perfect orbital rockets for satellites and all that&nbsp;mess.</p>
+<p><strong><em><span class="caps">SITREP</span>:</em></strong></p>
+<ul>
+<li>India is currently pushing the envelope with <em><a href="https://www.nytimes.com/2017/02/15/world/asia/india-satellites-rocket.html">104 satellites with a rocket</a></em>, which is <a href="https://www.nytimes.com/2017/02/15/world/asia/india-satellites-rocket.html">fueling even more of a space race today</a>. The previous record was held by Russia with <a href="https://www.nasaspaceflight.com/2014/06/russian-dnepr-rocket-record-launch-37-satellites/">37 satellites in 2014</a>.</li>
+<li>Keep track of launches with the <a href="http://spaceflightnow.com/launch-schedule/">launch schedule</a>.</li>
+<li><a href="https://www.nasaspaceflight.com/">Nasa Space Flight</a> is also a great&nbsp;source.</li>
+<li>Related Nasa links; <a href="https://blogs.nasa.gov/">Nasa Blog</a>, <a href="https://www.nasa.gov/socialmedia">Nasa Social Media</a>, <a href="https://www.youtube.com/user/NASAtelevision">Nasa Youtube</a>. Also check out the forums <a href="https://forum.nasaspaceflight.com/index.php?board=55.0">here</a> per Peter Stephens <a href="https://twitter.com/peterastephens">@peterastephens</a>.</li>
+<li>For <a href="http://www.spacex.com/">Space-X</a> check out; <a href="http://www.spacex.com/news">Space-X News</a>, and the <a href="https://twitter.com/SpaceX">@SpaceX</a> Account for quick&nbsp;tweets.</li>
+</ul>
+<h2 id="machine-learning">Machine&nbsp;Learning</h2>
+<div class="image float-right">
+    <img src="/articles/industry-introspection/farnsworth-future-of-ai-ml.gif" alt="Farnsworth and the future of Artificial Intelligence">
+</div>
+
+<p><strong><em>My History:</em></strong> I’ve toyed with machine learning on and off again, working on pathing algorithms for objects to decide travel patterns to supervised learning algorithms. In the end I’ve generally ended up working on other things in my day to day work but I know this will be changing in the near future (next year or three). It’s an extremely interesting space of work and&nbsp;research.</p>
+<p><strong><em>My Thoughts:</em></strong> First, getting <span class="caps">AI</span> <span class="amp">&amp;</span> <span class="caps">ML</span> (That’s artificial integlligence and machine learning) conflated, especially in the media, is starting to reflect the popularity of said space in the software industry. However, for the most part these two things are effectively the same thing. It’s just different words describing the industry space where we’re trying to make machines make decisions we deem intelligent based on available&nbsp;data.</p>
+<p>That actually leads to many other discussions. What do we as humans deem intelligent and what happens when available data isn’t enough? But more words on that for another day. I know the questions are burning in the mind of every chief executive of something that wants this mythical <span class="caps">AI</span> they keep hearing about and paying voluminous amounts of money to their big data bad ass data science ninja architects to implement but rarely have answers for all of&nbsp;it.</p>
+<p><strong><em>The&nbsp;<span class="caps">SITREP</span>:</em></strong></p>
+<ul>
+<li>Even though I’m not a fan of the site, here’s a pretty straight forward no bullshit <a href="https://elitedatascience.com/learn-machine-learning#what">description of machine learning</a>.</li>
+<li>Here is a post that has some material on machine learning titled “<a href="https://medium.com/@mattfogel/master-the-basics-of-machine-learning-with-these-6-resources-63fea5a21c1c#.35nmxgrw4">Master the Basics of Machine Learning With These 6 Resources</a>“ by Matt Fogel <a href="https://twitter.com/mattfogel">@mattfogel</a>, it’s a good list to get started&nbsp;with.</li>
+</ul>
+<p>Overall there’s a ton of material ending up on the web related to <span class="caps">AI</span>/ML, and my top suggestion is to start googling so you can pick and choose which aspects you want to read about in this space. One could dive in via the super technical aspect of how systems work that are being used for processing, how the algorithms work, or even working with data to model good decision results from data sets (i.e. diving into training). But it’s really a space that is awash in resources. Dive&nbsp;in!</p>
+<h2 id="end-words">End&nbsp;Words</h2>
+<p>That’s it for my industry instrospections for now. If you’re interested in reading about this, programming material, and related topics of this nature follow <a href="https://twitter.com/PelotonTechio">@PelotonTechio</a> as I’ll be taking the site <span class="amp">&amp;</span> blog at Peloton live in the coming&nbsp;days!</p>
+</section>
+                </article>
                 <!-- End of Blog Page-->
               </div>
             </div>
@@ -237,8 +212,7 @@
             </div>
           </div>
         </div>
-        <div class="nav"><a href="/page/7/">« Newer</a>&nbsp;<a href="/page/9/">Previous »</a>
-        </div>
+        <div class="nav"><a href="/">« Home</a></div>
       </div>
     </div>
     <script src="/js/all.js"></script>
