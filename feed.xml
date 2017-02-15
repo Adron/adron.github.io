@@ -5,9 +5,52 @@
     <atom:link href="http://adron.github.io/feed.xml" rel="self" type="application/rss+xml"></atom:link>
     <link>http://adron.github.io</link>
     <description>Coder, Messenger, Recon, Infrastructure, Ops</description>
-    <pubDate>Mon, 13 Feb 2017 07:05:41 -0800</pubDate>
+    <pubDate>Wed, 15 Feb 2017 02:27:09 -0800</pubDate>
     <generator>Wintersmith - https://github.com/jnordberg/wintersmith</generator>
     <language>en</language>
+    <item>
+      <title>Industry Introspection</title>
+      <link>http://adron.github.io/articles/industry-introspection/</link>
+      <pubDate>Wed, 15 Feb 2017 02:27:09 -0800</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/industry-introspection/</guid>
+      <author></author>
+      <description>&lt;div class=&quot;image float-right&quot;&gt;
+    &lt;img src=&quot;/articles/industry-introspection/farnsworth-in-chair.jpg&quot; alt=&quot;Chillin&amp;#39; like Farnsworth&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Every few days I like to sit down like an old academic professor and just read and ponder what’s going on in the computer hardware and software industries. As of late it’s been interesting to dive into whatever Elon Musk is working on also; electric cars, solar energy, rockets, or even boring machines. Another thing I’ve had a curiosity in and continue to find interesting is machine learning, or as some call it in the mainstream movie media &lt;em&gt;artificial intelligence&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;I’ll tackle some of these technologies real quick so we all have a current situational report. Each of these topics seems to be a area of work that could use some extensive clarification. I’ll provide some of my own thoughts along with a few links of reference to dig in deeper, so that one doesn’t fall into the trap of uniformed oblivious media consumer.&lt;/p&gt;
+&lt;h2 id=&quot;rockets-i-e-space-&quot;&gt;Rockets (i.e. Space)&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;My History:&lt;/em&gt;&lt;/strong&gt; I haven’t always paid attention to this space because I never had intention of working in the area, however who isn’t interested in rockets in some way. Well, considering my desire for other work, I was extremely fortunate where I grew up to be involved in rocketry. I grew up in Picayune, Mississippi which is a mere ~15-20 miles away from John C. Stennis Space Center.&lt;/p&gt;
+&lt;p&gt;I had the joy of experiencing rocket tests at John C. Stennis and seeing research into rockets as a child, and on some of my first paid computer related gigs. As one might suspect, they use computers to do rocket research and help with launches. Shocker right!&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;My Thoughts:&lt;/em&gt;&lt;/strong&gt; The space we’re in right now is impressive. The market is actually getting involved in launching it’s own rockets, which means we’re likely only years or maybe a decade or two of having an economically sustainable rocket program. Hopefully NASA can work on more focused deep space missions now while Musk’s Space-X and others refine and perfect orbital rockets for satellites and all that mess.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;SITREP:&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;India is currently pushing the envelope with &lt;em&gt;&lt;a href=&quot;https://www.nytimes.com/2017/02/15/world/asia/india-satellites-rocket.html&quot;&gt;104 satellites with a rocket&lt;/a&gt;&lt;/em&gt;, which is &lt;a href=&quot;https://www.nytimes.com/2017/02/15/world/asia/india-satellites-rocket.html&quot;&gt;fueling even more of a space race today&lt;/a&gt;. The previous record was held by Russia with &lt;a href=&quot;https://www.nasaspaceflight.com/2014/06/russian-dnepr-rocket-record-launch-37-satellites/&quot;&gt;37 satellites in 2014&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Keep track of launches with the &lt;a href=&quot;http://spaceflightnow.com/launch-schedule/&quot;&gt;launch schedule&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.nasaspaceflight.com/&quot;&gt;Nasa Space Flight&lt;/a&gt; is also a great source.&lt;/li&gt;
+&lt;li&gt;Related Nasa links; &lt;a href=&quot;https://blogs.nasa.gov/&quot;&gt;Nasa Blog&lt;/a&gt;, &lt;a href=&quot;https://www.nasa.gov/socialmedia&quot;&gt;Nasa Social Media&lt;/a&gt;, &lt;a href=&quot;https://www.youtube.com/user/NASAtelevision&quot;&gt;Nasa Youtube&lt;/a&gt;. Also check out the forums &lt;a href=&quot;https://forum.nasaspaceflight.com/index.php?board=55.0&quot;&gt;here&lt;/a&gt; per Peter Stephens &lt;a href=&quot;https://twitter.com/peterastephens&quot;&gt;@peterastephens&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;For &lt;a href=&quot;http://www.spacex.com/&quot;&gt;Space-X&lt;/a&gt; check out; &lt;a href=&quot;http://www.spacex.com/news&quot;&gt;Space-X News&lt;/a&gt;, and the &lt;a href=&quot;https://twitter.com/SpaceX&quot;&gt;@SpaceX&lt;/a&gt; Account for quick tweets.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;machine-learning&quot;&gt;Machine Learning&lt;/h2&gt;
+&lt;div class=&quot;image float-right&quot;&gt;
+    &lt;img src=&quot;/articles/industry-introspection/farnsworth-future-of-ai-ml.gif&quot; alt=&quot;Farnsworth and the future of Artificial Intelligence&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;My History:&lt;/em&gt;&lt;/strong&gt; I’ve toyed with machine learning on and off again, working on pathing algorithms for objects to decide travel patterns to supervised learning algorithms. In the end I’ve generally ended up working on other things in my day to day work but I know this will be changing in the near future (next year or three). It’s an extremely interesting space of work and research.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;My Thoughts:&lt;/em&gt;&lt;/strong&gt; First, getting AI &amp;amp; ML (That’s artificial integlligence and machine learning) conflated, especially in the media, is starting to reflect the popularity of said space in the software industry. However, for the most part these two things are effectively the same thing. It’s just different words describing the industry space where we’re trying to make machines make decisions we deem intelligent based on available data.&lt;/p&gt;
+&lt;p&gt;That actually leads to many other discussions. What do we as humans deem intelligent and what happens when available data isn’t enough? But more words on that for another day. I know the questions are burning in the mind of every chief executive of something that wants this mythical AI they keep hearing about and paying voluminous amounts of money to their big data bad ass data science ninja architects to implement but rarely have answers for all of it.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;The SITREP:&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Even though I’m not a fan of the site, here’s a pretty straight forward no bullshit &lt;a href=&quot;https://elitedatascience.com/learn-machine-learning#what&quot;&gt;description of machine learning&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Here is a post that has some material on machine learning titled “&lt;a href=&quot;https://medium.com/@mattfogel/master-the-basics-of-machine-learning-with-these-6-resources-63fea5a21c1c#.35nmxgrw4&quot;&gt;Master the Basics of Machine Learning With These 6 Resources&lt;/a&gt;“ by Matt Fogel &lt;a href=&quot;https://twitter.com/mattfogel&quot;&gt;@mattfogel&lt;/a&gt;, it’s a good list to get started with.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Overall there’s a ton of material ending up on the web related to AI/ML, and my top suggestion is to start googling so you can pick and choose which aspects you want to read about in this space. One could dive in via the super technical aspect of how systems work that are being used for processing, how the algorithms work, or even working with data to model good decision results from data sets (i.e. diving into training). But it’s really a space that is awash in resources. Dive in!&lt;/p&gt;
+&lt;h2 id=&quot;end-words&quot;&gt;End Words&lt;/h2&gt;
+&lt;p&gt;That’s it for my industry instrospections for now. If you’re interested in reading about this, programming material, and related topics of this nature follow &lt;a href=&quot;https://twitter.com/PelotonTechio&quot;&gt;@PelotonTechio&lt;/a&gt; as I’ll be taking the site &amp;amp; blog at Peloton live in the coming days!&lt;/p&gt;
+</description>
+    </item>
     <item>
       <title>Thrashing Code Metal Monday for Week of February 13th, 2017</title>
       <link>http://adron.github.io/articles/thrashing-code-metal-monday-02-13-2017/</link>
@@ -4064,27 +4107,6 @@ export TF_VAR_password=&amp;quot;someSecretPassword&amp;quot;
 </description>
     </item>
     <item>
-      <title>How to Electron by Blaine Schmeisser</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-blaine-schmeisser/</link>
-      <pubDate>Sun, 05 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-blaine-schmeisser/</guid>
-      <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-blaine-schmeisser/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-left&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-blaine-schmeisser/blainesch.jpg&quot; alt=&quot;Blaine Schmeisser&quot;&gt;
-&lt;/div&gt;
-
-&lt;p&gt;I’m happy to introduce Blaine Schmeisser. He’s a recent Portland transplant currently working as a Senior Software Engineer at New Relic. He has a passion for building and shipping software and an advocate for pair programming. Outside of tech, Blaine spends his free time with his dog and maintains a simplistic, eco-friendly lifestyle.&lt;/p&gt;
-&lt;p&gt;Blaine’s “How to Electron” answers questions you have about building user interface applications with JavaScript. Have you ever wanted to build desktop apps with web technology you already know? If you’ve never heard of Electron or just want to learn more about it, this talk will cover what Electron is and how to utilize it to create powerful tools like Atom and Slack. You will learn the history of Electron, how to get started, the trade-offs of picking various boiler plates, and the unique Electron specific APIs that are vital to being a Electron developer.&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;GitHub: &lt;a href=&quot;https://github.com/blainesch&quot;&gt;https://github.com/blainesch&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Twitter: &lt;a href=&quot;https://twitter.com/blainesch&quot;&gt;https://twitter.com/blainesch&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Website: &lt;a href=&quot;http://blainesch.com&quot;&gt;http://blainesch.com&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-    </item>
-    <item>
       <title>Demystifying TypeScript Decorators by James Churchill</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-james-churchill/</link>
       <pubDate>Sun, 05 Jun 2016 17:00:00 -0700</pubDate>
@@ -4104,6 +4126,27 @@ export TF_VAR_password=&amp;quot;someSecretPassword&amp;quot;
 &lt;li&gt;Blog: &lt;a href=&quot;http://smashdev.com&quot;&gt;http://smashdev.com&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Github: &lt;a href=&quot;http://github.com/smashdevcode&quot;&gt;http://github.com/smashdevcode&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Twitter: &lt;a href=&quot;http://twitter.com/SmashDev&quot;&gt;http://twitter.com/SmashDev&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    <item>
+      <title>How to Electron by Blaine Schmeisser</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-blaine-schmeisser/</link>
+      <pubDate>Sun, 05 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-blaine-schmeisser/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-blaine-schmeisser/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-left&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-blaine-schmeisser/blainesch.jpg&quot; alt=&quot;Blaine Schmeisser&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;I’m happy to introduce Blaine Schmeisser. He’s a recent Portland transplant currently working as a Senior Software Engineer at New Relic. He has a passion for building and shipping software and an advocate for pair programming. Outside of tech, Blaine spends his free time with his dog and maintains a simplistic, eco-friendly lifestyle.&lt;/p&gt;
+&lt;p&gt;Blaine’s “How to Electron” answers questions you have about building user interface applications with JavaScript. Have you ever wanted to build desktop apps with web technology you already know? If you’ve never heard of Electron or just want to learn more about it, this talk will cover what Electron is and how to utilize it to create powerful tools like Atom and Slack. You will learn the history of Electron, how to get started, the trade-offs of picking various boiler plates, and the unique Electron specific APIs that are vital to being a Electron developer.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;GitHub: &lt;a href=&quot;https://github.com/blainesch&quot;&gt;https://github.com/blainesch&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Twitter: &lt;a href=&quot;https://twitter.com/blainesch&quot;&gt;https://twitter.com/blainesch&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Website: &lt;a href=&quot;http://blainesch.com&quot;&gt;http://blainesch.com&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>
@@ -4168,6 +4211,23 @@ In this talk I would be covering the following:&lt;/p&gt;
 </description>
     </item>
     <item>
+      <title>WebSockets Bring Light at the End of the Tunnel by Joel Lord</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</link>
+      <pubDate>Fri, 03 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-left&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/joel-lord.jpg&quot; alt=&quot;Joel Lord&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;As a Development Manager, Joel’s motivation and proven technical prowess makes him a key member of Spiria’s software development team. With a degree in computational astrophysics, his interests eventually made their way to software and Web design. Today, his knowledge of JavaScript lets him to support a variety of projects on both the front end and back end. As we move into the age of the Internet of Things, Joel is ready with his passion for programming node bots and experimenting with gadgets.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Joel is going to speak on Web Sockets and tunnels of light… or to describe it more specifically more and more, people seem to be obsessed with real-time data.  But what does real-time mean in the world of REST servers and one-way communication?  Most modern web applications are now either displaying a snapshot of data at a given time or use a polling mechanism to update series of data at a given interval.
+In this talk, you will learn about the power of WebSockets and how they can (and should!) be used in your modern web applications. In these 30 minutes, I will go through the process of building a Node server that can push data to multiple clients in real-time.  You will see how this can be easy using the socket.io library.&lt;/p&gt;
+</description>
+    </item>
+    <item>
       <title>MMOWAM - Build Server-less Games with a DSN by Josh Marinacci</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-josh-marinacci/</link>
       <pubDate>Fri, 03 Jun 2016 17:00:00 -0700</pubDate>
@@ -4205,40 +4265,6 @@ it can be.&lt;/p&gt;
 </description>
     </item>
     <item>
-      <title>WebSockets Bring Light at the End of the Tunnel by Joel Lord</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</link>
-      <pubDate>Fri, 03 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</guid>
-      <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-left&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/joel-lord.jpg&quot; alt=&quot;Joel Lord&quot;&gt;
-&lt;/div&gt;
-
-&lt;p&gt;As a Development Manager, Joel’s motivation and proven technical prowess makes him a key member of Spiria’s software development team. With a degree in computational astrophysics, his interests eventually made their way to software and Web design. Today, his knowledge of JavaScript lets him to support a variety of projects on both the front end and back end. As we move into the age of the Internet of Things, Joel is ready with his passion for programming node bots and experimenting with gadgets.&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Joel is going to speak on Web Sockets and tunnels of light… or to describe it more specifically more and more, people seem to be obsessed with real-time data.  But what does real-time mean in the world of REST servers and one-way communication?  Most modern web applications are now either displaying a snapshot of data at a given time or use a polling mechanism to update series of data at a given interval.
-In this talk, you will learn about the power of WebSockets and how they can (and should!) be used in your modern web applications. In these 30 minutes, I will go through the process of building a Node server that can push data to multiple clients in real-time.  You will see how this can be easy using the socket.io library.&lt;/p&gt;
-</description>
-    </item>
-    <item>
-      <title>I Play the JavaScript by Matt McKegg</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</link>
-      <pubDate>Thu, 02 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</guid>
-      <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-left&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/mattmckegg.jpg&quot; alt=&quot;Matt McKegg&quot;&gt;
-&lt;/div&gt;
-
-&lt;p&gt;A JavaScript hacker and backyard musician and from Wellington, New Zealand. Lover of all things open and modular. I spend most of my time pressing buttons of various shapes, sizes and colours. Sometimes these buttons make sounds.&lt;/p&gt;
-&lt;p&gt;Matt has been making music with computers for about 10 years, but once he tried to move from bedroom composing to live performance, he got incredibly frustrated at how hard it was to play computer music live. He decided to start working on his own live electronic performance software written in JavaScript that would let me play the way he wanted to play. 3 years later, it’s finally starting to become a reality.&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Here is one of the Matt’s recent performances, for your viewing pleasure. &lt;/p&gt;
-&lt;iframe width=&quot;1280&quot; height=&quot;720&quot; src=&quot;https://www.youtube.com/embed/L2BVDJWHdy0?rel=0&amp;amp;showinfo=0&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;</description>
-    </item>
-    <item>
       <title>The Web Platform is the Universal Instrument by Ben Michel</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-ben-michel/</link>
       <pubDate>Thu, 02 Jun 2016 17:00:00 -0700</pubDate>
@@ -4264,6 +4290,23 @@ In this talk, you will learn about the power of WebSockets and how they can (and
 &lt;li&gt;Audience interaction with the exposed parameters of a live band’s instrumentation–via broadcast methods and microcontroller installations.”&lt;/li&gt;
 &lt;/ul&gt;
 </description>
+    </item>
+    <item>
+      <title>I Play the JavaScript by Matt McKegg</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</link>
+      <pubDate>Thu, 02 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-left&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/mattmckegg.jpg&quot; alt=&quot;Matt McKegg&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;A JavaScript hacker and backyard musician and from Wellington, New Zealand. Lover of all things open and modular. I spend most of my time pressing buttons of various shapes, sizes and colours. Sometimes these buttons make sounds.&lt;/p&gt;
+&lt;p&gt;Matt has been making music with computers for about 10 years, but once he tried to move from bedroom composing to live performance, he got incredibly frustrated at how hard it was to play computer music live. He decided to start working on his own live electronic performance software written in JavaScript that would let me play the way he wanted to play. 3 years later, it’s finally starting to become a reality.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Here is one of the Matt’s recent performances, for your viewing pleasure. &lt;/p&gt;
+&lt;iframe width=&quot;1280&quot; height=&quot;720&quot; src=&quot;https://www.youtube.com/embed/L2BVDJWHdy0?rel=0&amp;amp;showinfo=0&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;</description>
     </item>
     <item>
       <title>The House Is Not On Fire - Building a home automation robot with Arduino, Raspberry Pi and Node.js by Artur Paikin</title>

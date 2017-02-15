@@ -17,6 +17,7 @@ cp -r build/ ../../adron.github.io/
 
 # For Linux
 #cp -a build/. ../../adron.github.io/
+
 rm -rf build
 
 cd ~/Codez/adron.github.io/
