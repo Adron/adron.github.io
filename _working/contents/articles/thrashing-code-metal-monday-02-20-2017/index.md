@@ -1,5 +1,5 @@
 ---
-title: thrashing code metal monday 02 20 2017
+title: Thrashing Code Metal Monday for Week of February 20th, 2017
 author: Adron Hall
 date: 2017-02-20 13:01:40
 template: article.jade
