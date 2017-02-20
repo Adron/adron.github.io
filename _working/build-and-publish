@@ -13,10 +13,10 @@ cd ~/Codez/adron.github.io/_working/
 wintersmith build
 
 # For OS-X
-cp -r build/ ../../adron.github.io/
+#cp -r build/ ../../adron.github.io/
 
 # For Linux
-#cp -a build/. ../../adron.github.io/
+cp -a build/. ../../adron.github.io/
 
 rm -rf build
 
