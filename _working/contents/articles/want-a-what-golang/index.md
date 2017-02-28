@@ -1,5 +1,5 @@
 ---
-title: want a what golang
+title: Golang Execution on OS-X vs. Linux
 author: Adron Hall
 date: 2017-02-26 12:57:24
 template: article.jade
