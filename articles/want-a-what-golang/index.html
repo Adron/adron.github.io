@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="/css/style.min.css">
     <script src="/js/modernizr.js"></script>
   </head>
-  <body>
+  <body class="article-detail">
     <!--[if lt IE 8]>
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -67,8 +67,10 @@
             <div class="col-md-12">
               <!-- Page Info-->
               <div class="page-info page-info-simple">
-                <h1>Adron's Composite Code</h1>
-                <h2 class="description">Coder, Messenger, Recon, Infrastructure, Ops</h2>
+                <h1>want a what golang</h1>
+                <p class="author">Written by <span class="author">Adron Hall</span> and published on <span>February, 26 of 2017.</span>
+                </p>
+                <div class="nav"><a href="/">« Home</a></div>
               </div>
               <!-- End Page Info-->
             </div>
@@ -83,69 +85,91 @@
             <div class="col-md-9">
               <div class="main-content">
                 <!-- Blog Page-->
-                <div class="blog">
-                  <div class="row"></div>
-                </div>
-                <div class="col-md-12 col-sm-12">
-                  <!-- Blog List-->
-                  <div class="blog-grid">
-                    <div class="row">
-                      <div class="col-md-12 col-sm-12">
-                        <h3 class="blog-grid-title"><a href="/articles/the-curse-of-windows-server-windows-server-2016-salvation/">The Curse of Windows Server &amp; Windows Server 2016 Salvation</a></h3>
-                        <p class="blog-grid-excerpt"><p>Over the last year I’ve worked with <a href="https://homedepot.com">Home Depot</a>, specifically the <a href="http://www.quotecenter.com/">Quote Center</a> Group, strive forward toward a better future. Yeah, that sounds a bit campy, but seriously. I started with <a href="http://blog.adron.me/articles/after-816-days-taking-a-job/">three core objectives, which I wrote about previously</a>.</p>
-<ul>
-<li>Community&nbsp;Contributions</li>
-<li>Site&nbsp;Reliability</li>
-<li>Talent&nbsp;Recon</li>
-</ul>
-<p>I’ve been able to help with each of those things over the last year, with more progress being made on some than others. Right now, I want to delve a bit into the adventure of <a href="https://landing.google.com/sre/interview/ben-treynor.html">site reliability</a> at Quote Center. First off, I had the honor of being first guard for Quote Center in the realm of site reliability. I had a lot to do just to set some groundwork on what that position really meant. In addition to the other two <em>roles</em>, err, <em>priorities</em>, it was like taking a job that would have three roles rolled into one. For this article though, I’m going to write about specifically the site reliability and what I did to get some practice and culture around the notion of site reliability at Quote&nbsp;Center.</p>
-<p>The first thing, was simply to write out some ideas about what this would involve. Here are a few of my original questions that I scribbled on the&nbsp;matter.</p>
-<p>
-                          <p class="more"><a href="/articles/the-curse-of-windows-server-windows-server-2016-salvation/">more</a></p>
-                        </p>
-                        <div class="blog-grid-meta"><span class="blog-grid-date">07. October 2016</span></div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End of Blog List-->
-                </div>
-                <div class="col-md-12 col-sm-12">
-                  <!-- Blog List-->
-                  <div class="blog-grid">
-                    <div class="row">
-                      <div class="col-md-12 col-sm-12">
-                        <h3 class="blog-grid-title"><a href="/articles/sitrep-home-depot-wrap-up-next-talks-next-job/">Home Depot Wrap Up and Job Talk</a></h3>
-                        <p class="blog-grid-excerpt"><div class="image float-right">
-    <img src="/articles/sitrep-home-depot-wrap-up-next-talks-next-job/home-depot.png" alt="Home Depot">
-</div>
+                <article class="article">
+                  <section class="content"><p>Recently I was dorking about with some Go code on <span class="caps">OS</span>-X. Just working with it via iTerm 2 and using some basic <code>go run whateverthefile.go</code> commands and displaying results out the the terminal. All was well, and then I dived into some code that used so Go Routines. The code looked something like&nbsp;this.</p>
+<pre><code class="lang-go"><span class="keyword">package</span> main
 
-<p>First, I will be available with a possible start date of November the 28<span class="ord">th</span>. I’m currently wrapping up some big projects and completing training for the Home Depot Team and the great progress we’ve made over the last year. If your company is looking for someone with my mixed array of technical skills and soft skills, you can <a href="/docs/about">check out my resume <span class="amp">&amp;</span> details</a> and initiate <a href="/docs/job-talk/">job talk with me here</a>!</p>
-<p>On to the rest of the news. If you’ve seen me speak lately I’ve mentioned the open source efforts we’ve had going on at <a href="http://www.homedepot.com/">Home Depot</a> and related efforts I was working on. Some I’m working dilligently to release via the <a href="https://github.com/homedepot/">Home Depot <span class="caps">OSS</span> Organization on Github</a> and I’ll still be releasing others soon via my Github account (<a href="https://github.com/Adron">@Adron</a>) and blogging about it here on <a href="http://blog.adron.me">Composite Code</a>.</p>
-<p>
-                          <p class="more"><a href="/articles/sitrep-home-depot-wrap-up-next-talks-next-job/">more</a></p>
-                        </p>
-                        <div class="blog-grid-meta"><span class="blog-grid-date">30. September 2016</span></div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End of Blog List-->
-                </div>
-                <div class="col-md-12 col-sm-12">
-                  <!-- Blog List-->
-                  <div class="blog-grid">
-                    <div class="row">
-                      <div class="col-md-12 col-sm-12">
-                        <h3 class="blog-grid-title"><a href="/articles/hashiconf-trip-day-4/">HashiConf Trip Day 4 - Conference Day 2 - A Short Summary</a></h3>
-                        <p class="blog-grid-excerpt"><p>I’m working on getting back in the saddle after a great week at HashiConf and a weekend away at Seaside on the Oregon Coast. With that, I haven’t had a lot of time to write up day 4, which involved a lot of great talks and conversations. Those topics will come up in some subsequent articles, in the meantime please enjoy these videos I made of my HashiConf&nbsp;Adventures.</p>
-<p>
-                          <p class="more"><a href="/articles/hashiconf-trip-day-4/">more</a></p>
-                        </p>
-                        <div class="blog-grid-meta"><span class="blog-grid-date">12. September 2016</span></div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End of Blog List-->
-                </div>
+<span class="keyword">import</span> (
+    <span class="string">"time"</span>
+    <span class="string">"fmt"</span>
+)
+
+<span class="function"><span class="keyword">func</span> <span class="title">say</span><span class="params">(s <span class="keyword">string</span>)</span></span> {
+    <span class="keyword">for</span> i := <span class="number">0</span>; i&lt;<span class="number">5</span>; i++ {
+        time.Sleep(<span class="number">2</span> * time.Second)
+        fmt.Println(s)
+    }
+}
+
+<span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> {
+    <span class="keyword">go</span> say(<span class="string">"1. First thread is running."</span>)
+    <span class="keyword">go</span> say(<span class="string">"  2. Second thread is running."</span>)
+    say(<span class="string">"    3. Thread is running in main."</span>)
+    fmt.Println(<span class="string">"Ended."</span>)
+}
+</code></pre>
+<p><span class="more"></span></p>
+<p>That was fine. I ran the code and the results were as&nbsp;expected.</p>
+<pre><code class="lang-shell-script">OSX$   2. Second thread is running.
+    3. Thread is running in main.
+1. First thread is running.
+1. First thread is running.
+  2. Second thread is running.
+    3. Thread is running in main.
+    3. Thread is running in main.
+1. First thread is running.
+  2. Second thread is running.
+  2. Second thread is running.
+    3. Thread is running in main.
+1. First thread is running.
+1. First thread is running.
+  2. Second thread is running.
+    3. Thread is running in main.
+Ended.
+</code></pre>
+<p>Then I ran it again. Also these results were&nbsp;expected.</p>
+<pre><code class="lang-shell-script">OSX$     3. Thread is running in main.
+  2. Second thread is running.
+1. First thread is running.
+    3. Thread is running in main.
+1. First thread is running.
+  2. Second thread is running.
+  2. Second thread is running.
+    3. Thread is running in main.
+1. First thread is running.
+1. First thread is running.
+    3. Thread is running in main.
+  2. Second thread is running.
+    3. Thread is running in main.
+Ended.
+1. First thread is running.
+</code></pre>
+<p>You’ll notice the slightly out of order response as each thread completes. With the first set of results the last response is “Ended.” and with the second set of results “Ended.” is second to last. This of course is expected as the threads are likely to be executing while the last line of code is executed. But, there’s a catch to this depending where you run this&nbsp;code.</p>
+<p>On the MacOS/<span class="caps">OS</span>-X platforms, when you run the terminal it runs certain things with an assumed “&amp;” after the command. Now, I’m not sure the specifics of what is going (I’m looking it up and will happily post a super detailed reference link if you’ve got one, lemme know <a href="https://twitter.com/adron">@Adron</a>.) The “&amp;” is however used on Linux/Unix systems to designate to the terminal, <em>run this command on the background so that the user remains in control of the terminal</em>. Specifically, from the <em>man</em>&nbsp;pages.</p>
+<blockquote>
+<p>If a command is terminated by the control operator &amp;, the shell executes the command in the background in a subshell. The shell does not wait for the command to finish, and the return status is&nbsp;0.</p>
+</blockquote>
+<p>The reason I bring this up, is if I run the same thing and those same results come back on Linux or Unix, you wouldn’t see anything after the “Ended.” runs, because the application terminates at that point and none of the background threads are actively connected to the terminal. In other words the result where “Ended.” occurs second to last would look like&nbsp;this.</p>
+<pre><code class="lang-shell-script">LINUX-SHELL$     3. Thread is running in main.
+  2. Second thread is running.
+1. First thread is running.
+    3. Thread is running in main.
+1. First thread is running.
+  2. Second thread is running.
+  2. Second thread is running.
+    3. Thread is running in main.
+1. First thread is running.
+1. First thread is running.
+    3. Thread is running in main.
+  2. Second thread is running.
+    3. Thread is running in main.
+Ended.
+</code></pre>
+<p>At first glance, it might seem like the application has run successfully, but look closely and count the number of responses from each thread. In this example, the terminal has lost priority when the “Ended.” message appears and there is only four messages that read “1. First thread is running.”. However, after the “Ended.” message there should have been another one, like the second example above that I ran on <span class="caps">OS</span>-X. On Linux, the solution to executing this example is actually to add the ampersand at the end of the&nbsp;command.</p>
+<p><code>go run whateverthefile.go &amp;</code> and then you’ll see the execution of the program with the correct&nbsp;results.</p>
+<p>Well that’s it for this often overlooked and confusing behavior on Linux versus <span class="caps">OS</span>-X. Happy hacking,&nbsp;cheers!</p>
+</section>
+                </article>
                 <!-- End of Blog Page-->
               </div>
             </div>
@@ -235,8 +259,7 @@
             </div>
           </div>
         </div>
-        <div class="nav"><a href="/page/8/">« Newer</a>&nbsp;<a href="/page/10/">Previous »</a>
-        </div>
+        <div class="nav"><a href="/">« Home</a></div>
       </div>
     </div>
     <script src="/js/all.js"></script>
