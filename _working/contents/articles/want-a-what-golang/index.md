@@ -6,7 +6,7 @@ template: article.jade
 ---
 Recently I was dorking about with some Go code on OS-X. Just working with it via iTerm 2 and using some basic `go run whateverthefile.go` commands and displaying results out the the terminal. All was well, and then I dived into some code that used so Go Routines. The code looked something like this.
 
-```go
+```javascript
 package main
 
 import (
