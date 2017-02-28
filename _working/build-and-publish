@@ -14,6 +14,7 @@ fi
 npm install
 
 cd ~/Codez/adron.github.io/_working/
+
 wintersmith build
 
 # For OS-X
