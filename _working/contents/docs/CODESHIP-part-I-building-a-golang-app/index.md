@@ -83,7 +83,7 @@ The next steps are getting a local build and then getting a remote Codeship buil
     
     I don't have a Dockerfile just yet, but I'll add that shortly. I named the image *golang* to match the image used from Docker hub.
 
-* *codeship-steps.yml* - This file lists out the steps that will be run for the build. At this point I want to have three steps run: ``, ``, and ``. I added the following configuration to the codeship-steps.yml file.
+* *codeship-steps.yml* - This file lists out the steps that will be run for the build. At this point I want to have three steps run: `go clean`, `go test .`, and `go build`. This in turn cleans the build, runs the tests, and then executes a new clean build. To have these steps execute during the build I added the following configuration to the codeship-steps.yml file.
 
     ```yaml
     - name: sailing
