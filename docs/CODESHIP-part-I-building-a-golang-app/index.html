@@ -141,7 +141,7 @@
 </code></pre>
 <p>  I don’t have a Dockerfile just yet, but I’ll add that shortly. I named the image <em>golang</em> to match the image used from Docker&nbsp;hub.</p>
 </li>
-<li><p><em>codeship-steps.yml</em> - This file lists out the steps that will be run for the build. At this point I want to have three steps run: <code>,</code>, and &#8220;. I added the following configuration to the codeship-steps.yml&nbsp;file.</p>
+<li><p><em>codeship-steps.yml</em> - This file lists out the steps that will be run for the build. At this point I want to have three steps run: <code>go clean</code>, <code>go test .</code>, and <code>go build</code>. This in turn cleans the build, runs the tests, and then executes a new clean build. To have these steps execute during the build I added the following configuration to the codeship-steps.yml&nbsp;file.</p>
 <pre><code class="lang-yaml"><span class="attr">  - name:</span> sailing
 <span class="attr">    service:</span> datadiluvium
 <span class="attr">    command:</span> go clean

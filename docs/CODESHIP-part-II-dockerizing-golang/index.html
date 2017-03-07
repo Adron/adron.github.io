@@ -84,7 +84,77 @@
               <div class="main-content">
                 <!-- Blog Page-->
                 <docs class="article">
-                  <section class="content"><p>dockerize that application for microservice&nbsp;use.</p>
+                  <section class="content"><p>Previously in this series I’ve put together all of the basic elements to insure I have a working build to develop from. This insures I have the ability to make changes rapidly, change direction when needed, insure the code base is always building, tested, and able to be deployed. If you want to catch up and follow along step through the previous article of the series <a href="#part1">here</a>.</p>
+<p>In this article I’m going to start stepping toward a working services product, and provide a description and details of what I intend to&nbsp;build.</p>
+<h2 id="application-description">Application&nbsp;Description</h2>
+<p>The idea behind this application is to generate data. However I don’t want to create just a simple data generator alone. Instead I want a system which can generate data and also place it into an appropriate location after generating the data. With this basic setup I would need 2 key pieces of information to pass along to the <span class="caps">API</span>, so that it can then generate the data and put the data into the location&nbsp;designated.</p>
+<h2 id="core-application-goals">Core Application&nbsp;Goals</h2>
+<ul>
+<li>Provide an <span class="caps">API</span> that accepts parameters, via a schema, that then will be used to generate and identify where to put the data after&nbsp;generation.</li>
+<li>In the schema, the basic data will describe the structure of the data store in which the generated data will be&nbsp;inserted.</li>
+<li>In the schema, I’ll also want to be able to designate the type, and how many of the specific piece of data to&nbsp;generate.</li>
+</ul>
+<p>I’ve created an example below, to provide an idea of what would be passed into the <span class="caps">API</span>. At this point I’m not trying to determine exactly how something would work, specific criteria, or the details of verifying the data, but just simply a workflow to achieve basic functionality around the core&nbsp;goals.</p>
+<pre><code class="lang-javascript">[
+  {
+    <span class="string">"schema"</span>: <span class="string">"relational"</span>,
+    <span class="string">"database"</span>: <span class="string">"postgresql"</span>,
+    <span class="string">"connection"</span>: [
+      {
+        <span class="string">"connectionData"</span>: <span class="string">"stringForConnectionEtc"</span>,
+        <span class="string">"username"</span>: <span class="string">"theUser"</span>,
+        <span class="string">"password"</span>: <span class="string">"thePassword"</span>,
+        <span class="string">"otherConnectionParam"</span>: <span class="string">"TheOtherValue"</span>
+      }
+    ],
+    <span class="string">"structure"</span>: [
+      {
+        <span class="string">"table"</span>: <span class="string">"Users"</span>,
+        <span class="string">"generate"</span>: <span class="string">"4234908"</span>,
+        <span class="string">"columns"</span>: [
+          {<span class="string">"name"</span>: <span class="string">"id"</span>, <span class="string">"type"</span>: <span class="string">"uuid"</span>},
+          {<span class="string">"name"</span>: <span class="string">"firstname"</span>, <span class="string">"type"</span>: <span class="string">"firstname"</span>},
+          {<span class="string">"name"</span>: <span class="string">"lastname"</span>, <span class="string">"type"</span>: <span class="string">"lastname"</span>},
+          {<span class="string">"name"</span>: <span class="string">"email_address"</span>, <span class="string">"type"</span>: <span class="string">"email"</span>}
+        ]
+      },
+      {
+        <span class="string">"table"</span>: <span class="string">"Addresses"</span>,
+        <span class="string">"generate"</span>: <span class="string">"2323498"</span>,
+        <span class="string">"columns"</span>: [
+          {<span class="string">"name"</span>: <span class="string">"id"</span>, <span class="string">"type"</span>: <span class="string">"uuid"</span>},
+          {<span class="string">"name"</span>: <span class="string">"userFkId"</span>, <span class="string">"type"</span>: <span class="string">"uuid"</span>, <span class="string">"keyParentTable"</span>: <span class="string">"Users"</span>, <span class="string">"keyParentColumn"</span>: <span class="string">"id"</span>},
+          {<span class="string">"name"</span>: <span class="string">"street"</span>, <span class="string">"type"</span>: <span class="string">"address"</span>},
+          {<span class="string">"name"</span>: <span class="string">"city"</span>, <span class="string">"type"</span>: <span class="string">"city"</span>},
+          {<span class="string">"name"</span>: <span class="string">"state"</span>, <span class="string">"type"</span>: <span class="string">"state"</span>},
+          {<span class="string">"name"</span>: <span class="string">"postalcode"</span>, <span class="string">"type"</span>: <span class="string">"zip"</span>}
+        ]
+      },
+      {
+        <span class="string">"table"</span>: <span class="string">"Transactions"</span>,
+        <span class="string">"generate"</span>: <span class="string">"1432434908"</span>,
+        <span class="string">"columns"</span>: [
+          { <span class="string">"name"</span>: <span class="string">"id"</span>, <span class="string">"type"</span>: <span class="string">"uuid"</span> },
+          {<span class="string">"name"</span>: <span class="string">"userFkId"</span>, <span class="string">"type"</span>: <span class="string">"uuid"</span>, <span class="string">"keyParentTable"</span>: <span class="string">"Users"</span>, <span class="string">"keyParentColumn"</span>: <span class="string">"id"</span>},
+          { <span class="string">"name"</span>: <span class="string">"transaction"</span>, <span class="string">"type"</span>: <span class="string">"money"</span> },
+          { <span class="string">"name"</span>: <span class="string">"stamp"</span>, <span class="string">"type"</span>: <span class="string">"date"</span> }
+        ]
+      }
+    ]
+  }
+]
+</code></pre>
+<p>This example covers the core features. I’ve setup a schema and database key value pair, which I’ve set here to a relational schema setup for a Postgresql relational database. The connection parameter would be an array of key value pairs that would have the necessary information for connecting to the database. Below that the structure is where the database, which will be filled with generated data, is&nbsp;described.</p>
+<p>At this point there are many other stories and feature requests I could come up with. At this point I know enough of the story to start building out some more of the systemic elements that are needed. I’ll get right into that and step back into describing features after getting more of a feel for building this <span class="caps">API</span>&nbsp;service.</p>
+<h2 id="next-step-dependencies">Next Step&nbsp;Dependencies</h2>
+<p>I really need to get into the services at this point. Get something working to actually work from. Similar to how I have already put together the actual build. At the end of the last article in this series I had written a <em>hello world</em> style service, but that won’t cut it. For this I want to use something that has features and capabilities focused around microservices. This could and should cut back on a lot of the standard work that is needed. For this I’ll use <a href="https://github.com/go-kit/kit">go-kit</a>.</p>
+<p>To get this library, I use the standard <a href="https://golang.org/cmd/go/">Go Get</a> command. This command will retrieve an available dependency. In this case I want to get the go-kit and start using&nbsp;it.</p>
+<p><code>go get github.com/go-kit/kit</code></p>
+<p>Go-kit focuses on a few key goals. The framework is designed to operate in a heterogenous environment, with the intent to communicate with any and all non go-kit services. <span class="caps">RPC</span> is the primary messaging pattern, it includes pluggable transport and serialization, and is designed to operate with existing&nbsp;infrastructures.</p>
+<pre><code class="lang-javascript">
+</code></pre>
+<pre><code class="lang-javascript">
+</code></pre>
 </section>
                 </docs>
                 <!-- End of Blog Page-->
