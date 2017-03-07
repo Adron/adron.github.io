@@ -1,9 +1,11 @@
 #!/usr/bin/env bash
 commitMessage=$1
 
-if [ "$(expr substr $(uname -s) 1 10)" == "MINGW32_NT" ]; then
-    echo "Come on now, you got fixins to do before you go screwing up everything using Windows."
-fi
+# Fix this sometime.
+# if [ "$(expr substr $(uname -s) 1 10)" == "MINGW32_NT" ]; then
+#     echo "Come on now, you got fixins to do before you go screwing up everything using Windows."
+# fi
+
 
 if [ ! $# == 1 ]
     then
