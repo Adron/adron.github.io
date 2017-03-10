@@ -4,10 +4,10 @@ author: Adron Hall
 date: 2016-09-23:10:13:15
 template: doc.jade
 ---
-![Let's talk about a job?](job.png)
+You've likely ended up on this page to send me a message about a prospective job.
 
-I've added this form to my blog, as I know a lot of people, and I myself am sometimes looking for work. But I only really speak to people about a job and am only really interested in jobs where I know about specific details. To help in these efforts and help get the right people connected to the right job, I've created this form. For more specifics about myself, and the type of work I do and am interested in doing - culturally and technically, [check out this blog entry](/articles/sitrep-home-depot-wrap-up-next-talks-next-job/)
+Well, I'm currently working with Peloton Tech.io to build and grow the company while bringing their efforts and team into the public. So stay tuned, I'll have information here about how we can help your team too. Until then, feel free to ping me via Twitter [@Adron](https://twitter.com/adron) or [message me](/docs/contact/) and let's chat.
 
-***If you're on mobile***, [click here](https://goo.gl/forms/SpzPr2U4V8gon8uh2) to fill out the form.
+Cheers!
 
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSc_ankvTcXRa5CyUEPi8L1vEzJnskSEVdRznJoZKrZ_ogpObg/viewform?embedded=true" width="1140" height="1900" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+Adron
