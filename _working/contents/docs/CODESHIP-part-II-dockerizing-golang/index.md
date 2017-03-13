@@ -77,9 +77,9 @@ At this point there are many other stories and feature requests I could come up 
 
 ## Next Step Dependencies
 
-I really need to get into the services at this point. Get something working to actually work from. Similar to how I have already put together the actual build. At the end of the last article in this series I had written a *hello world* style service, but that won't cut it. For this I want to use something that has features and capabilities focused around microservices. This could and should cut back on a lot of the standard work that is needed. For this I'll use [go-kit](https://github.com/go-kit/kit).
+I really need to get into the services at this point. Get something working to actually work from. Similar to how I have already put together the actual build with Codeship Pro. At the end of the last article in this series I had written a *hello world* style service, but that won't cut it. For this I want to use something that has features and capabilities focused around a service. This could and should cut back on a lot of the standard work that is needed. For this I'll use [go-kit](https://github.com/go-kit/kit).
 
-To get this library, I use the standard [Go Get](https://golang.org/cmd/go/) command. This command will retrieve an available dependency. In this case I want to get the go-kit and start using it.
+To get this library, I use the standard [Go Get](https://golang.org/cmd/go/) command. This command will retrieve an available library for use, creating a dependency within my project. In this case I want to get the go-kit and start using it.
 
 `go get github.com/go-kit/kit`
 
