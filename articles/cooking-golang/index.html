@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="/css/style.min.css">
     <script src="/js/modernizr.js"></script>
   </head>
-  <body>
+  <body class="article-detail">
     <!--[if lt IE 8]>
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -67,8 +67,10 @@
             <div class="col-md-12">
               <!-- Page Info-->
               <div class="page-info page-info-simple">
-                <h1>Adron's Composite Code</h1>
-                <h2 class="description">Coder, Messenger, Recon, Infrastructure, Ops</h2>
+                <h1>A Go UUID Solution - Cooking Go - Issue 001</h1>
+                <p class="author">Written by <span class="author">Adron Hall</span> and published on <span>March, 12 of 2017.</span>
+                </p>
+                <div class="nav"><a href="/">« Home</a></div>
               </div>
               <!-- End Page Info-->
             </div>
@@ -83,97 +85,54 @@
             <div class="col-md-9">
               <div class="main-content">
                 <!-- Blog Page-->
-                <div class="blog">
-                  <div class="row"></div>
-                </div>
-                <div class="col-md-12 col-sm-12">
-                  <!-- Blog List-->
-                  <div class="blog-grid">
-                    <div class="row">
-                      <div class="col-md-12 col-sm-12">
-                        <h3 class="blog-grid-title"><a href="/articles/hapijs-aws-worker-publish/">Setting up a Hapi.js App that sends work to a Node.js AWS Worker via SQS</a></h3>
-                        <p class="blog-grid-excerpt"><div class="image float-right">
-  <img src="/articles/hapijs-aws-worker-publish/SDKs-copy_nodeJS-200x2100.png" alt="Node.js SDK">
+                <article class="article">
+                  <section class="content"><div class="image float-right">
+    <img src="/articles/cooking-golang/golang-mascot.png" alt="Go Mascot">
 </div>
 
+<p>Want a <span class="caps">UUID</span> generator for your Go code? It’s likely you’ll need one sometime. Well here’s a short code snippet and a review of one of the available UUID libraries&nbsp;available.</p>
+<p>The library is avaliable at <a href="https://github.com/satori/go.uuid">https://github.com/satori/go.uuid</a>.</p>
+<p>With test coverage this library supports the following <span class="caps">UUID</span> types. I’ll elaborate on what each of these types are after a code snippet or&nbsp;two.</p>
 <ul>
-<li><em>Part 1</em> – <a href="/articles/setting-up-an-aws-sqs-queue-for-use-with-node-js-beanstalk-worker-instances">Setting up an <span class="caps">AWS</span> SQS Queue for Use With Node.js Beanstalk Worker&nbsp;Instances</a></li>
-<li><em>Part 2</em> – <a href="/articles/hapijs-aws-worker-publish/">Setting up a Hapi.js App that sends work to a Node.js <span class="caps">AWS</span> Worker via SQS</a> (This is the current article you’re reading&nbsp;now)</li>
-<li><em>Part 3</em> – <a href="/articles/aws-beanstalk-worker-with-node-js-and-sqs/"><span class="caps">AWS</span> Beanstalk Worker with Node.js and&nbsp;SQS</a></li>
+<li>Version 1, based on timestamp and <span class="caps">MAC</span> address (RFC&nbsp;4122)</li>
+<li>Version 2, based on timestamp, <span class="caps">MAC</span> address and POSIX UID/GID (DCE&nbsp;1.1)</li>
+<li>Version 3, based on <span class="caps">MD5</span> hashing (RFC&nbsp;4122)</li>
+<li>Version 4, based on random numbers (<span class="caps">RFC</span>&nbsp;4122)</li>
+<li>Version 5, based on <span class="caps">SHA</span>-1 hashing (RFC&nbsp;4122)</li>
 </ul>
-<p><a name="webapplication"></a></p>
-<p>First I created a project for the node.js web application. This just used the simple <code>npm init</code> command and I stepped through the prompts for name, version, description, entry point, and so&nbsp;on.</p>
-<pre><code class="lang-shell-script">$ npm init
-This utility will walk you through creating a package.json file.
-It only covers the most common items, and tries to guess sane defaults.
-
-See `npm help json` for definitive documentation on these fields
-and exactly what they do.
-
-Use `npm install &amp;pkg&amp; --save` afterwards to install a package and
-save it as a dependency in the package.json file.
-
-Press ^C at any time to quit.
-name: (testing-aws-sqs-site)
-version: (0.0.0) 0.0.1
-description: This project that will feed data to the queue for the AWS SQS sample.
-entry point: (index.js) server.js
-test command: mocha
-git repository: (https://github.com/Adron/testing-aws-sqs-site.git)
-keywords: aws, sqs, elastic, elastic beanstalk, queue, worker
-author: Adron Hall
-license: (ISC) Apache 2.0
+<p>First step. Get the&nbsp;library.</p>
+<pre><code class="lang-shell-script">go get github.com/satori/go.uuid
 </code></pre>
-<p>
-                          <p class="more"><a href="/articles/hapijs-aws-worker-publish/">more</a></p>
-                        </p>
-                        <div class="blog-grid-meta"><span class="blog-grid-date">07. November 2014</span></div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End of Blog List-->
-                </div>
-                <div class="col-md-12 col-sm-12">
-                  <!-- Blog List-->
-                  <div class="blog-grid">
-                    <div class="row">
-                      <div class="col-md-12 col-sm-12">
-                        <h3 class="blog-grid-title"><a href="/articles/setting-up-an-aws-sqs-queue-for-use-with-node-js-beanstalk-worker-instances/">Setting up an AWS SQS Queue for Use With Node.js Beanstalk Worker Instances</a></h3>
-                        <p class="blog-grid-excerpt"><div class="image float-right">
-    <img src="/articles/setting-up-an-aws-sqs-queue-for-use-with-node-js-beanstalk-worker-instances/Amazon-SQS_200x200.png" alt="Amazon SQS">
-</div>
+<p><span class="more"></span></p>
+<p>Next I whipped up a code file with the example code. I’ve called mine <em><a href="/articles/cooking-golang/">uuid_generation.go</a></em>.</p>
+<script src="https://gist.github.com/Adron/c7225ebc07058f443482925a4565afee.js"></script>
 
-<ul>
-<li><em>Part 1</em> – <a href="/articles/setting-up-an-aws-sqs-queue-for-use-with-node-js-beanstalk-worker-instances">Setting up an <span class="caps">AWS</span> SQS Queue for Use With Node.js Beanstalk Worker Instances</a> (This is the current article you’re reading&nbsp;now)</li>
-<li><em>Part 2</em> – <a href="/articles/hapijs-aws-worker-publish/">Setting up a Hapi.js App that sends work to a Node.js <span class="caps">AWS</span> Worker via&nbsp;SQS</a></li>
-<li><em>Part 3</em> – <a href="/articles/aws-beanstalk-worker-with-node-js-and-sqs/"><span class="caps">AWS</span> Beanstalk Worker with Node.js and&nbsp;SQS</a></li>
-</ul>
-<p>Before diving straight in, I’m going to outline the specific goals and what I am using to accomplish these goals. The goal is to have a simple web application, that will get some element of data posted to a queue. The queue will then have data that a worker service needs to then process. As I step through each of these requirements I’ll determine the actual push and pull mechanisms that will get the job&nbsp;done.</p>
-<p>
-                          <p class="more"><a href="/articles/setting-up-an-aws-sqs-queue-for-use-with-node-js-beanstalk-worker-instances/">more</a></p>
-                        </p>
-                        <div class="blog-grid-meta"><span class="blog-grid-date">06. November 2014</span></div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End of Blog List-->
-                </div>
-                <div class="col-md-12 col-sm-12">
-                  <!-- Blog List-->
-                  <div class="blog-grid">
-                    <div class="row">
-                      <div class="col-md-12 col-sm-12">
-                        <h3 class="blog-grid-title"><a href="/articles/bashit/">Bashit... Just a Custom Bash Prompt Setup for Git</a></h3>
-                        <p class="blog-grid-excerpt"><p>I use git. I’m honestly shocked when someone doesn’t use git (<em>or at least some <span class="caps">DVCS</span></em>) these days. It just seems somewhat draconian to use any of the legacy source control systems (<em>albeit there are some rare exceptions, like game development graphics collateral</em>). I was reminded of something by the great hands on session that Pamela Ocampo <a href="https://twitter.com/pmocampo">@pmocampo</a> and Rachel <a href="https://twitter.com/raychatter" target="_blank">@raychatter</a> gave at <a href="http://opensourcebridge.org/" target="_blank"><span class="caps">OS</span> Bridge</a> titled “<a href="http://opensourcebridge.org/sessions/1378" target="_blank">NerdCred++; How to Customize your Bash Prompt</a>“.</p>
-<p>
-                          <p class="more"><a href="/articles/bashit/">more</a></p>
-                        </p>
-                        <div class="blog-grid-meta"><span class="blog-grid-date">09. October 2014</span></div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End of Blog List-->
-                </div>
+
+<p>Stepping through the code, the import includes the library being&nbsp;used.</p>
+<pre><code>&quot;github.com/satori/go.uuid&quot;
+</code></pre><p>Then at the very beginning of the code a new <span class="caps">UUID</span> v4 is&nbsp;created.</p>
+<pre><code>u1 := uuid.NewV4()
+</code></pre><p>In the example, a few lines down, there is also code around parsing a&nbsp;<span class="caps">UUID</span>.</p>
+<pre><code>u2, err := uuid.FromString(&quot;6ba7b810-9dad-11d1-80b4-00c04fd430c8&quot;)
+</code></pre><p>I wanted to insure the other functions worked for the other versions so I added some code to create and print out each of them. At the same time, I’ve added what each of the versions are as I worked through creating&nbsp;them.</p>
+<p><strong>Version&nbsp;1</strong></p>
+<p>A version 1 <span class="caps">UUID</span> concatenates the 48-bit MAC address of the machine creating the UUID with a 60-bit timestamp. If the process clock does not advance fast enough, there is a 14-bit clock sequence that extends the timestamp to insure uniqueness. Based on these creation parameters there is a maximum of 18 sextrillion version 1 UUIDs that can be generated per node. So ya know, don’t get carried away or anything.&nbsp;:P</p>
+<p>It’s also important to note, albeit obviously, that this <span class="caps">UUID</span> can be tracked back to the MAC Address that was used to create&nbsp;it.</p>
+<p>The code for this <span class="caps">UUID</span> creation is shown above in the first&nbsp;example.</p>
+<p><strong>Version&nbsp;2</strong></p>
+<p>Version 2 is reserved for <span class="caps">DCE</span> Security UUIDs. It’s a bit light on details in the RFC (<a href="https://www.ietf.org/rfc/rfc4122.txt">4122</a>). Even though the <span class="caps">RFC</span> is light on details, the <a href="http://pubs.opengroup.org/onlinepubs/9696989899/chap5.htm#tagcjh_08_02_01_01"><span class="caps">DCE</span> 1.1 Authentication and Security Services</a> specification clarifies a bit more. Overall this <span class="caps">UUID</span> is generally similar to a version 1 UUID except the least significant 8 bits of the clock sequence (clock_seq_low) are replaced by local domain numbers. The least significant 32 bits of the timestamp replaced by an integer&nbsp;identifier.</p>
+<p>Updated code with a working example of the specific domains used to create a v2&nbsp;<span class="caps">UUID</span>.</p>
+<script src="https://gist.github.com/Adron/738b30ce93d5cd0efc02c0a4f43ce8a1.js"></script>
+
+<p><strong>Version 3 and&nbsp;5</strong></p>
+<p>Version 3 and 5 are similar UUIDs generated from hashing a namespace identifier and name. Version 5 uses <span class="caps">SHA1</span> and version 3 uses MD5 as the hashing algorithm. The namespace identifier itself is a UUID and is used to represent the namespaces for URLs, fully qualified domain names (FQDNs), object identifiers, and X.500 distinguished names. Other UUIDs could be used as namespace designators, but the aforementioned are usually&nbsp;used.</p>
+<p>To note, <span class="caps">RFC</span> 4122 refers version 5 (SHA1) over version 3 (MD5), and suggests against either as security&nbsp;credentials.</p>
+<p>Here’s the added examples of version 3 and&nbsp;5.</p>
+<script src="https://gist.github.com/Adron/b8864c5e0d652f8ca14eb154e806a3bd.js"></script>
+
+<p>Enjoy those UUIDs, happy&nbsp;coding!</p>
+</section>
+                </article>
                 <!-- End of Blog Page-->
               </div>
             </div>
@@ -263,8 +222,7 @@ license: (ISC) Apache 2.0
             </div>
           </div>
         </div>
-        <div class="nav"><a href="/page/29/">« Newer</a>&nbsp;<a href="/page/31/">Previous »</a>
-        </div>
+        <div class="nav"><a href="/">« Home</a></div>
       </div>
     </div>
     <script src="/js/all.js"></script>

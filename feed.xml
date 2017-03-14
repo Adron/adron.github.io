@@ -5,9 +5,86 @@
     <atom:link href="http://adron.github.io/feed.xml" rel="self" type="application/rss+xml"></atom:link>
     <link>http://adron.github.io</link>
     <description>Coder, Messenger, Recon, Infrastructure, Ops</description>
-    <pubDate>Tue, 07 Mar 2017 04:43:48 -0800</pubDate>
+    <pubDate>Mon, 13 Mar 2017 06:06:16 -0700</pubDate>
     <generator>Wintersmith - https://github.com/jnordberg/wintersmith</generator>
     <language>en</language>
+    <item>
+      <title>Thrashing Code Metal Monday for Week of March 13th 2017</title>
+      <link>http://adron.github.io/articles/thrashing-code-metal-monday-03-13-2017/</link>
+      <pubDate>Mon, 13 Mar 2017 06:06:16 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/thrashing-code-metal-monday-03-13-2017/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;img src=&quot;/articles/thrashing-code-metal-monday-03-13-2017/assemble-the-charriots-top.jpg&quot; alt=&quot;Assemble the Charriots&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Some completely new tunes I’ve been enjoying.&lt;/p&gt;
+&lt;iframe width=&quot;300&quot; height=&quot;56&quot; src=&quot;https://embed.spotify.com/follow/1/?uri=spotify%3Aartist%3A0dYCExAAfFpFvjYjgiEC0n&amp;amp;size=detail&amp;amp;theme=dark&quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; style=&quot;border:none; overflow:hidden;&quot; allowtransparency=&quot;true&quot;&gt;&lt;/iframe&gt;
+
+&lt;iframe width=&quot;300&quot; height=&quot;56&quot; src=&quot;https://embed.spotify.com/follow/1/?uri=spotify%3Aartist%3A6MWE8Xn602R4dRfbmJaNRJ&amp;amp;size=detail&amp;amp;theme=dark&quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; style=&quot;border:none; overflow:hidden;&quot; allowtransparency=&quot;true&quot;&gt;&lt;/iframe&gt;
+
+&lt;iframe width=&quot;300&quot; height=&quot;56&quot; src=&quot;https://embed.spotify.com/follow/1/?uri=spotify%3Aartist%3A1AdrYGYDz4oa9dvW2jfFrG&amp;amp;size=detail&amp;amp;theme=dark&quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; style=&quot;border:none; overflow:hidden;&quot; allowtransparency=&quot;true&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;iframe width=&quot;853&quot; height=&quot;480&quot; src=&quot;https://www.youtube.com/embed/3BiodeWYAV0&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;iframe width=&quot;853&quot; height=&quot;480&quot; src=&quot;https://www.youtube.com/embed/EpkuYxyYM2A&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;iframe width=&quot;853&quot; height=&quot;480&quot; src=&quot;https://www.youtube.com/embed/req-oDf2ZRc&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;p&gt;&lt;img src=&quot;/articles/thrashing-code-metal-monday-03-13-2017/assemble-the-charriots-bottom.jpg&quot; alt=&quot;Assemble the Charriots&quot;&gt;&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>A Go UUID Solution - Cooking Go - Issue 001</title>
+      <link>http://adron.github.io/articles/cooking-golang/</link>
+      <pubDate>Sun, 12 Mar 2017 15:16:24 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/cooking-golang/</guid>
+      <author></author>
+      <description>&lt;div class=&quot;image float-right&quot;&gt;
+    &lt;img src=&quot;/articles/cooking-golang/golang-mascot.png&quot; alt=&quot;Go Mascot&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Want a UUID generator for your Go code? It’s likely you’ll need one sometime. Well here’s a short code snippet and a review of one of the available UUID libraries available.&lt;/p&gt;
+&lt;p&gt;The library is avaliable at &lt;a href=&quot;https://github.com/satori/go.uuid&quot;&gt;https://github.com/satori/go.uuid&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;With test coverage this library supports the following UUID types. I’ll elaborate on what each of these types are after a code snippet or two.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Version 1, based on timestamp and MAC address (RFC 4122)&lt;/li&gt;
+&lt;li&gt;Version 2, based on timestamp, MAC address and POSIX UID/GID (DCE 1.1)&lt;/li&gt;
+&lt;li&gt;Version 3, based on MD5 hashing (RFC 4122)&lt;/li&gt;
+&lt;li&gt;Version 4, based on random numbers (RFC 4122)&lt;/li&gt;
+&lt;li&gt;Version 5, based on SHA-1 hashing (RFC 4122)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;First step. Get the library.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;go get github.com/satori/go.uuid
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Next I whipped up a code file with the example code. I’ve called mine &lt;em&gt;&lt;a href=&quot;http://adron.github.io/articles/cooking-golang/&quot;&gt;uuid_generation.go&lt;/a&gt;&lt;/em&gt;.&lt;/p&gt;
+&lt;script src=&quot;https://gist.github.com/Adron/c7225ebc07058f443482925a4565afee.js&quot;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;Stepping through the code, the import includes the library being used.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;quot;github.com/satori/go.uuid&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Then at the very beginning of the code a new UUID v4 is created.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;u1 := uuid.NewV4()
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;In the example, a few lines down, there is also code around parsing a UUID.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;u2, err := uuid.FromString(&amp;quot;6ba7b810-9dad-11d1-80b4-00c04fd430c8&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;I wanted to insure the other functions worked for the other versions so I added some code to create and print out each of them. At the same time, I’ve added what each of the versions are as I worked through creating them.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Version 1&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;A version 1 UUID concatenates the 48-bit MAC address of the machine creating the UUID with a 60-bit timestamp. If the process clock does not advance fast enough, there is a 14-bit clock sequence that extends the timestamp to insure uniqueness. Based on these creation parameters there is a maximum of 18 sextrillion version 1 UUIDs that can be generated per node. So ya know, don’t get carried away or anything.  :P&lt;/p&gt;
+&lt;p&gt;It’s also important to note, albeit obviously, that this UUID can be tracked back to the MAC Address that was used to create it.&lt;/p&gt;
+&lt;p&gt;The code for this UUID creation is shown above in the first example.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Version 2&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Version 2 is reserved for DCE Security UUIDs. It’s a bit light on details in the RFC (&lt;a href=&quot;https://www.ietf.org/rfc/rfc4122.txt&quot;&gt;4122&lt;/a&gt;). Even though the RFC is light on details, the &lt;a href=&quot;http://pubs.opengroup.org/onlinepubs/9696989899/chap5.htm#tagcjh_08_02_01_01&quot;&gt;DCE 1.1 Authentication and Security Services&lt;/a&gt; specification clarifies a bit more. Overall this UUID is generally similar to a version 1 UUID except the least significant 8 bits of the clock sequence (clock_seq_low) are replaced by local domain numbers. The least significant 32 bits of the timestamp replaced by an integer identifier.&lt;/p&gt;
+&lt;p&gt;Updated code with a working example of the specific domains used to create a v2 UUID.&lt;/p&gt;
+&lt;script src=&quot;https://gist.github.com/Adron/738b30ce93d5cd0efc02c0a4f43ce8a1.js&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;&lt;strong&gt;Version 3 and 5&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Version 3 and 5 are similar UUIDs generated from hashing a namespace identifier and name. Version 5 uses SHA1 and version 3 uses MD5 as the hashing algorithm. The namespace identifier itself is a UUID and is used to represent the namespaces for URLs, fully qualified domain names (FQDNs), object identifiers, and X.500 distinguished names. Other UUIDs could be used as namespace designators, but the aforementioned are usually used.&lt;/p&gt;
+&lt;p&gt;To note, RFC 4122 refers version 5 (SHA1) over version 3 (MD5), and suggests against either as security credentials.&lt;/p&gt;
+&lt;p&gt;Here’s the added examples of version 3 and 5.&lt;/p&gt;
+&lt;script src=&quot;https://gist.github.com/Adron/b8864c5e0d652f8ca14eb154e806a3bd.js&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;Enjoy those UUIDs, happy coding!&lt;/p&gt;
+</description>
+    </item>
     <item>
       <title>Thrashing Code Metal Monday for Week of March 6th 2017, on Tuesday the 7th!</title>
       <link>http://adron.github.io/articles/thrashing-code-metal-monday-03-07-2017/</link>
@@ -4243,6 +4320,27 @@ export TF_VAR_password=&amp;quot;someSecretPassword&amp;quot;
 </description>
     </item>
     <item>
+      <title>How to Electron by Blaine Schmeisser</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-blaine-schmeisser/</link>
+      <pubDate>Sun, 05 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-blaine-schmeisser/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-blaine-schmeisser/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-left&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-blaine-schmeisser/blainesch.jpg&quot; alt=&quot;Blaine Schmeisser&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;I’m happy to introduce Blaine Schmeisser. He’s a recent Portland transplant currently working as a Senior Software Engineer at New Relic. He has a passion for building and shipping software and an advocate for pair programming. Outside of tech, Blaine spends his free time with his dog and maintains a simplistic, eco-friendly lifestyle.&lt;/p&gt;
+&lt;p&gt;Blaine’s “How to Electron” answers questions you have about building user interface applications with JavaScript. Have you ever wanted to build desktop apps with web technology you already know? If you’ve never heard of Electron or just want to learn more about it, this talk will cover what Electron is and how to utilize it to create powerful tools like Atom and Slack. You will learn the history of Electron, how to get started, the trade-offs of picking various boiler plates, and the unique Electron specific APIs that are vital to being a Electron developer.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;GitHub: &lt;a href=&quot;https://github.com/blainesch&quot;&gt;https://github.com/blainesch&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Twitter: &lt;a href=&quot;https://twitter.com/blainesch&quot;&gt;https://twitter.com/blainesch&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Website: &lt;a href=&quot;http://blainesch.com&quot;&gt;http://blainesch.com&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    <item>
       <title>Demystifying TypeScript Decorators by James Churchill</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-james-churchill/</link>
       <pubDate>Sun, 05 Jun 2016 17:00:00 -0700</pubDate>
@@ -4262,27 +4360,6 @@ export TF_VAR_password=&amp;quot;someSecretPassword&amp;quot;
 &lt;li&gt;Blog: &lt;a href=&quot;http://smashdev.com&quot;&gt;http://smashdev.com&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Github: &lt;a href=&quot;http://github.com/smashdevcode&quot;&gt;http://github.com/smashdevcode&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Twitter: &lt;a href=&quot;http://twitter.com/SmashDev&quot;&gt;http://twitter.com/SmashDev&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-    </item>
-    <item>
-      <title>How to Electron by Blaine Schmeisser</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-blaine-schmeisser/</link>
-      <pubDate>Sun, 05 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-blaine-schmeisser/</guid>
-      <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-blaine-schmeisser/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-left&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-blaine-schmeisser/blainesch.jpg&quot; alt=&quot;Blaine Schmeisser&quot;&gt;
-&lt;/div&gt;
-
-&lt;p&gt;I’m happy to introduce Blaine Schmeisser. He’s a recent Portland transplant currently working as a Senior Software Engineer at New Relic. He has a passion for building and shipping software and an advocate for pair programming. Outside of tech, Blaine spends his free time with his dog and maintains a simplistic, eco-friendly lifestyle.&lt;/p&gt;
-&lt;p&gt;Blaine’s “How to Electron” answers questions you have about building user interface applications with JavaScript. Have you ever wanted to build desktop apps with web technology you already know? If you’ve never heard of Electron or just want to learn more about it, this talk will cover what Electron is and how to utilize it to create powerful tools like Atom and Slack. You will learn the history of Electron, how to get started, the trade-offs of picking various boiler plates, and the unique Electron specific APIs that are vital to being a Electron developer.&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;GitHub: &lt;a href=&quot;https://github.com/blainesch&quot;&gt;https://github.com/blainesch&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Twitter: &lt;a href=&quot;https://twitter.com/blainesch&quot;&gt;https://twitter.com/blainesch&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Website: &lt;a href=&quot;http://blainesch.com&quot;&gt;http://blainesch.com&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>
@@ -4347,23 +4424,6 @@ key concepts of SAM and walk the audience through some node.js code samples (inc
 </description>
     </item>
     <item>
-      <title>WebSockets Bring Light at the End of the Tunnel by Joel Lord</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</link>
-      <pubDate>Fri, 03 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</guid>
-      <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-left&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/joel-lord.jpg&quot; alt=&quot;Joel Lord&quot;&gt;
-&lt;/div&gt;
-
-&lt;p&gt;As a Development Manager, Joel’s motivation and proven technical prowess makes him a key member of Spiria’s software development team. With a degree in computational astrophysics, his interests eventually made their way to software and Web design. Today, his knowledge of JavaScript lets him to support a variety of projects on both the front end and back end. As we move into the age of the Internet of Things, Joel is ready with his passion for programming node bots and experimenting with gadgets.&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Joel is going to speak on Web Sockets and tunnels of light… or to describe it more specifically more and more, people seem to be obsessed with real-time data.  But what does real-time mean in the world of REST servers and one-way communication?  Most modern web applications are now either displaying a snapshot of data at a given time or use a polling mechanism to update series of data at a given interval.
-In this talk, you will learn about the power of WebSockets and how they can (and should!) be used in your modern web applications. In these 30 minutes, I will go through the process of building a Node server that can push data to multiple clients in real-time.  You will see how this can be easy using the socket.io library.&lt;/p&gt;
-</description>
-    </item>
-    <item>
       <title>MMOWAM - Build Server-less Games with a DSN by Josh Marinacci</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-josh-marinacci/</link>
       <pubDate>Fri, 03 Jun 2016 17:00:00 -0700</pubDate>
@@ -4398,6 +4458,23 @@ it can be.&lt;/p&gt;
 &lt;li&gt;show number of players&lt;/li&gt;
 &lt;li&gt;start when 4 players in? one player hit’s start? let all player see total count as well and status of the other players&lt;/li&gt;
 &lt;/ul&gt;
+</description>
+    </item>
+    <item>
+      <title>WebSockets Bring Light at the End of the Tunnel by Joel Lord</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</link>
+      <pubDate>Fri, 03 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-left&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/joel-lord.jpg&quot; alt=&quot;Joel Lord&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;As a Development Manager, Joel’s motivation and proven technical prowess makes him a key member of Spiria’s software development team. With a degree in computational astrophysics, his interests eventually made their way to software and Web design. Today, his knowledge of JavaScript lets him to support a variety of projects on both the front end and back end. As we move into the age of the Internet of Things, Joel is ready with his passion for programming node bots and experimenting with gadgets.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Joel is going to speak on Web Sockets and tunnels of light… or to describe it more specifically more and more, people seem to be obsessed with real-time data.  But what does real-time mean in the world of REST servers and one-way communication?  Most modern web applications are now either displaying a snapshot of data at a given time or use a polling mechanism to update series of data at a given interval.
+In this talk, you will learn about the power of WebSockets and how they can (and should!) be used in your modern web applications. In these 30 minutes, I will go through the process of building a Node server that can push data to multiple clients in real-time.  You will see how this can be easy using the socket.io library.&lt;/p&gt;
 </description>
     </item>
     <item>
@@ -4445,23 +4522,6 @@ it can be.&lt;/p&gt;
 &lt;iframe width=&quot;1280&quot; height=&quot;720&quot; src=&quot;https://www.youtube.com/embed/L2BVDJWHdy0?rel=0&amp;amp;showinfo=0&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;</description>
     </item>
     <item>
-      <title>The House Is Not On Fire - Building a home automation robot with Arduino, Raspberry Pi and Node.js by Artur Paikin</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</link>
-      <pubDate>Wed, 01 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</guid>
-      <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-right&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/art-stida.jpg&quot; alt=&quot;Artur Paikin&quot;&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Artur describes himself as, “I’m a web developer and traveler. I write stories about my adventures in Russian and English on my site: &lt;a href=&quot;http://arturpaikin.com&quot;&gt;http://arturpaikin.com&lt;/a&gt; and run a small technology cooperative called &lt;a href=&quot;http://unebaguette.com&quot;&gt;Baguette&lt;/a&gt;, where I work on cool projects, currently building an ambitious next generation file uploader with &lt;a href=&quot;https://transloadit.com/&quot;&gt;Transloadit&lt;/a&gt;. I ride a &lt;a href=&quot;https://www.instagram.com/p/xC0qC2SSYb&quot;&gt;foldable bicycle&lt;/a&gt;, &lt;a href=&quot;http://unebaguette.com/web-course/&quot;&gt;teach&lt;/a&gt; web development and sometimes &lt;a href=&quot;https://www.instagram.com/p/4_6LO8ySVL/&quot;&gt;garden&lt;/a&gt; on the balcony.”&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Artur has built an open source home automation system called &lt;a href=&quot;https://github.com/arturi/kotihome&quot;&gt;Koti Home&lt;/a&gt; (Koti means home in Finnish language). It’s powered by an Arduino connected to Raspberry Pi, MQTT protocol for messaging, Node.js on the client and server, web sockets. You can interact with Koti robot via a React (like the cool kids do) control panel, Telegram Chat Bot and even your own voice.&lt;/p&gt;
-&lt;p&gt;Arthur will talk about how he’s turned this project into reality — the tech he used and the challenges he faced. From a blinking LED to a voice controlled home automation robot.&lt;/p&gt;
-</description>
-    </item>
-    <item>
       <title>Code First Docs How we Threw Out The Book &amp; Put Code First With Twilio Documentation by Jarod Reyes</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-jarod-reyes/</link>
       <pubDate>Wed, 01 Jun 2016 17:00:00 -0700</pubDate>
@@ -4483,6 +4543,23 @@ it can be.&lt;/p&gt;
 &lt;li&gt;Twitter: &lt;a href=&quot;https://twitter.com/jreyesdev&quot;&gt;@jreyesdev&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Github: &lt;a href=&quot;https://github.com/jarodreyes&quot;&gt;github.com/jarodreyes&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+</description>
+    </item>
+    <item>
+      <title>The House Is Not On Fire - Building a home automation robot with Arduino, Raspberry Pi and Node.js by Artur Paikin</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</link>
+      <pubDate>Wed, 01 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-right&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/art-stida.jpg&quot; alt=&quot;Artur Paikin&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Artur describes himself as, “I’m a web developer and traveler. I write stories about my adventures in Russian and English on my site: &lt;a href=&quot;http://arturpaikin.com&quot;&gt;http://arturpaikin.com&lt;/a&gt; and run a small technology cooperative called &lt;a href=&quot;http://unebaguette.com&quot;&gt;Baguette&lt;/a&gt;, where I work on cool projects, currently building an ambitious next generation file uploader with &lt;a href=&quot;https://transloadit.com/&quot;&gt;Transloadit&lt;/a&gt;. I ride a &lt;a href=&quot;https://www.instagram.com/p/xC0qC2SSYb&quot;&gt;foldable bicycle&lt;/a&gt;, &lt;a href=&quot;http://unebaguette.com/web-course/&quot;&gt;teach&lt;/a&gt; web development and sometimes &lt;a href=&quot;https://www.instagram.com/p/4_6LO8ySVL/&quot;&gt;garden&lt;/a&gt; on the balcony.”&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Artur has built an open source home automation system called &lt;a href=&quot;https://github.com/arturi/kotihome&quot;&gt;Koti Home&lt;/a&gt; (Koti means home in Finnish language). It’s powered by an Arduino connected to Raspberry Pi, MQTT protocol for messaging, Node.js on the client and server, web sockets. You can interact with Koti robot via a React (like the cool kids do) control panel, Telegram Chat Bot and even your own voice.&lt;/p&gt;
+&lt;p&gt;Arthur will talk about how he’s turned this project into reality — the tech he used and the challenges he faced. From a blinking LED to a voice controlled home automation robot.&lt;/p&gt;
 </description>
     </item>
     <item>
