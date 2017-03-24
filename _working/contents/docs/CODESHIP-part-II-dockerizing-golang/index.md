@@ -85,10 +85,3 @@ To get this library, I use the standard [Go Get](https://golang.org/cmd/go/) com
 
 Go-kit focuses on a few key goals. The framework is designed to operate in a heterogenous environment, with the intent to communicate with any and all non go-kit services. RPC is the primary messaging pattern, it includes pluggable transport and serialization, and is designed to operate with existing infrastructures.
 
-```javascript
-
-```
-
-```javascript
-
-```
