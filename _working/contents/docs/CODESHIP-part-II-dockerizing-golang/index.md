@@ -292,3 +292,8 @@ import:
 ```
 
 The core package is go-kit or github.com/go-kit/kit while the two specific subpackages I'm using, are *endpoint* and *transport/http*.
+
+
+Next steps 1. add glide to the dockerfile so it is available on the image...
+step 2. update the steps yaml for the codeship file.
+step 3. 
