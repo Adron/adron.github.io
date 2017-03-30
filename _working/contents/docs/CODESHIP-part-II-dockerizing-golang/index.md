@@ -235,4 +235,60 @@ Trying that same sample against the count of elements, I get back the character 
 curl -XPOST -d'{"s":"A small sample of JSON data."}' localhost:8080/elements
 ```
 
-The result displays a simple `{"v":28}`. Now, the next step is to actually process some more legitimate JSON that looks more like the configuration example above.
+The result displays a simple `{"v":28}`. Now, the next step is to actually process some more legitimate JSON that looks more like the configuration example above. However, at this point I'm going to detour and talk about some other development continuous integration process.
+
+### The Build Has Broken!
+
+If I take a step away from this working code and take a look at the build process, I've broken the build with this latest addition of code.
+
+![Data Diluvium Broken Build](Datadiluvium01d.png)
+
+Looking at the second step here, where the tests attempt to execute, I've found my dependencies aren't available for the build. This error message allows me to reason and determine the issue:
+
+* The dependencies are available locally, because I ran the `go get github.com/etc...` command to retrieve them.
+* The build process has no step where the dependency is retrieved, and since every build is a brand new container derived from a base image that does not have these dependencies, they're not available.
+* I'll need a step or command to call `go get` to retrieve these dependencies for the build.
+* I may want to determine another dependency management solution for the project if I move beyond a single dependency like this.
+
+That last point, is important since any reasonably sized Go project will end up with dozens, sometimes many dozens of dependencies. Managing which dependencies are executed where; locally, for the build, in dev, or production environments, could become very cumbersome. This is where vendoring and a dependency management tool like Glide comes in handy!
+
+## Back to Dependencies, Implementing Glide
+
+Glide is described on its README.md as
+
+> "Are you used to tools such as Cargo, npm, Composer, Nuget, Pip, Maven, Bundler, or other modern package managers? If so, Glide is the comparable Go tool."
+
+Basically, it's a Go vendor and vendored package management tool. In Go, there is a feature around keeping dependencies in a directory, called *vendor* that stores the various dependencies for a project.
+
+Since the build has broken, and brought the issue of dependencies to the forefront of concern at the moment, I'm going to wrap up this installment of this series by installing Glide and adding the go-kit dependencies.
+
+### Installing Glide
+
+![Glide Logo](glide.png)
+
+The easiest way to install glide is to install it with brew on the Mac or with apt-get on Linux. The command for OS-X is simply `brew install glide`. With Linux, the repository needs added first, then glide can be installed.
+
+```
+sudo add-apt-repository ppa:masterminds/glide && sudo apt-get update
+sudo apt-get install glide
+```
+
+There are also binary packages if you would like to go that route, available [here](https://github.com/Masterminds/glide/releases). If you'd like to build your own binaries specifically for your system, that's also an option. I'll leave that path up to you to tackle via the Glide Project's [README.md](https://github.com/Masterminds/glide).
+
+Once installed just typing `glide` will print out the available commands in the terminal, showing it has been installed properly. The next step after installation is to setup the project with Glide. To do so, issue the command `glide create`. When issuing the command, glide will then prompt to setup the appropriate configuration for the project and any other questions it needs answered.
+
+![Glide Create](glide-create.png)
+
+Next I'll need to verify what the create process did, so I'll open up the newly created `glide.yaml` file. The contents, since the glide command scans through the project it is run within, looks like this.
+
+```
+package: github.com/adron/datadiluvium-02
+import:
+- package: github.com/go-kit/kit
+  version: ~0.4.0
+  subpackages:
+  - endpoint
+  - transport/http
+```
+
+The core package is go-kit or github.com/go-kit/kit while the two specific subpackages I'm using, are *endpoint* and *transport/http*.
