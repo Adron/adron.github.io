@@ -86,7 +86,7 @@
               <div class="main-content">
                 <!-- Blog Page-->
                 <article class="article">
-                  <section class="content"><p>Recently I was dorking about with some Go code on <span class="caps">OS</span>-X. Just working with it via iTerm 2 and using some basic <code>go run whateverthefile.go</code> commands and displaying results out the the terminal. All was well, and then I dived into some code that used so Go Routines. The code looked something like&nbsp;this.</p>
+                  <section class="content"><p>Recently I was dorking about with some Go code on <span class="caps">OS</span>-X. Just working with it via iTerm 2 and using some basic <code>go run whateverthefile.go</code> commands and displaying results out the the shell. All was well, and then I dived into some code that used so Go Routines. The code looked something like&nbsp;this.</p>
 <pre><code class="lang-javascript">package main
 
 <span class="keyword">import</span> (
@@ -145,11 +145,11 @@ Ended.
 1. First thread is running.
 </code></pre>
 <p>You’ll notice the slightly out of order response as each thread completes. With the first set of results the last response is “Ended.” and with the second set of results “Ended.” is second to last. This of course is expected as the threads are likely to be executing while the last line of code is executed. But, there’s a catch to this depending where you run this&nbsp;code.</p>
-<p>On the MacOS/<span class="caps">OS</span>-X platforms, when you run the terminal it runs certain things with an assumed “&amp;” after the command. Now, I’m not sure the specifics of what is going (I’m looking it up and will happily post a super detailed reference link if you’ve got one, lemme know <a href="https://twitter.com/adron">@Adron</a>.) The “&amp;” is however used on Linux/Unix systems to designate to the terminal, <em>run this command on the background so that the user remains in control of the terminal</em>. Specifically, from the <em>man</em>&nbsp;pages.</p>
+<p>On the MacOS/<span class="caps">OS</span>-X platforms, when you run the shell it runs certain things with an assumed “&amp;” after the command. Now, I’m not sure the specifics of what is happening (I’m looking it up and will happily post a super detailed reference link if you’ve got one, lemme know <a href="https://twitter.com/adron">@Adron</a>.) The “&amp;” is however used on Linux/Unix systems to designate to the shell, <em>run this command on the background so that the user remains in control of the shell</em>. Specifically, from the <em>man</em>&nbsp;pages.</p>
 <blockquote>
 <p>If a command is terminated by the control operator &amp;, the shell executes the command in the background in a subshell. The shell does not wait for the command to finish, and the return status is&nbsp;0.</p>
 </blockquote>
-<p>The reason I bring this up, is if I run the same thing and those same results come back on Linux or Unix, you wouldn’t see anything after the “Ended.” runs, because the application terminates at that point and none of the background threads are actively connected to the terminal. In other words the result where “Ended.” occurs second to last would look like&nbsp;this.</p>
+<p>The reason I bring this up, is if I run the same thing and those same results come back on Linux or Unix, you would not see anything after the “Ended.” runs, because the application terminates at that point and none of the background threads are actively connected to the shell. In other words the result where “Ended.” occurs second to last would look like&nbsp;this.</p>
 <pre><code class="lang-shell-script">LINUX-SHELL$     3. Thread is running in main.
   2. Second thread is running.
 1. First thread is running.
@@ -165,9 +165,10 @@ Ended.
     3. Thread is running in main.
 Ended.
 </code></pre>
-<p>At first glance, it might seem like the application has run successfully, but look closely and count the number of responses from each thread. In this example, the terminal has lost priority when the “Ended.” message appears and there is only four messages that read “1. First thread is running.”. However, after the “Ended.” message there should have been another one, like the second example above that I ran on <span class="caps">OS</span>-X. On Linux, the solution to executing this example is actually to add the ampersand at the end of the&nbsp;command.</p>
+<p>At first glance, it might seem like the application has run successfully, but look closely and count the number of responses from each thread. In this example, the shell has lost priority when the “Ended.” message appears and there is only four messages that read “1. First thread is running.”. However, after the “Ended.” message there should have been another one, like the second example above that I ran on <span class="caps">OS</span>-X. On Linux, the solution to executing this example is actually to add the ampersand at the end of the&nbsp;command.</p>
 <p><code>go run whateverthefile.go &amp;</code> and then you’ll see the execution of the program with the correct&nbsp;results.</p>
 <p>Well that’s it for this often overlooked and confusing behavior on Linux versus <span class="caps">OS</span>-X. Happy hacking,&nbsp;cheers!</p>
+<p><strong>Addition/Correction April 3<span class="ord">rd</span>, 2017:</strong> It was brought to my attention that this is very specifically the shell, not the operating system. This is an important thing to note, and sometimes is easily confused or mistaken outright. The effect can even be different behavior between shell use on the same operating system, regardless of <span class="caps">OS</span>-X, Linux, UNIX, or&nbsp;whatever.</p>
 </section>
                 </article>
                 <!-- End of Blog Page-->
