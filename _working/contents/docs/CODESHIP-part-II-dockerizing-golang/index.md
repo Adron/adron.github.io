@@ -308,14 +308,24 @@ WORKDIR /go/src/github.com/Adron/datadiluvium-02
 
 RUN cd /go/src/github.com/Adron/datadiluvium-02 && \
     glide install && \
-    go test $(glide novendor) && \
-    go build
+    go test $(glide novendor)
 ```
 
-I insured that the Alpine image I'm starting from uses the latest Go. Next I set the GOPATH to /go. It's very important to insure that the app folder, vendor, dependencies, and anything else needed to build the service for execution live within this path.
+I insured that the Alpine image I'm starting from uses the latest Go version. Next I set the GOPATH to `/go`. It's very important to insure that the app folder, vendor folder, the respective dependencies, and anything else needed to build the service all exist within this path.
 
+Then I add and create my work directory for the project, `glide install` the dependencies into the image, and finally run `go test $(glide novendor)`. I ended up running the tests here for now, as the finally build will occur after the image is built in the steps of the yaml file. That brings up the next change, within the codeship-steps.yml file. I changed it to correlate appropriately to the Dockerfile changes and it now looks like this.
 
+```
+    - name: datadiluvium_cleanup
+      service: datadiluvium
+      command: go clean
+    - name: datadiluvium_build
+      service: datadiluvium
+      command: go build
+```
 
-Next steps 1. add glide to the dockerfile so it is available on the image...
-step 2. update the steps yaml for the codeship file.
-step 3. 
+Notice I removed some previous steps and now just clean and then build the code. The build process service automatically build the container image itself, so I'm all set now for the build with full dependency support.
+
+## Summary
+
+In this post I’ve covered a fair amount of distance toward a fully functioning Data Diluvium Project. First coverage of what the key feature stories are for the Data Diluvium Project itself. I've covered coding up a working service, from first principles, into a working service that accepts JSON. This provides the ground work in which I can now start writing code toward processing the JSON the service would recieve. From that point, I took a break from coding to extend the capabilities of the project to handle dependency management with Glide. Finally wrapped up this part with some changes to insure a good build with the new dependency management in place.
