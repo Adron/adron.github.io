@@ -291,7 +291,29 @@ import:
   - transport/http
 ```
 
-The core package is go-kit or github.com/go-kit/kit while the two specific subpackages I'm using, are *endpoint* and *transport/http*.
+The core package is go-kit or github.com/go-kit/kit while the two specific subpackages I'm using, are *endpoint* and *transport/http*. There are of course some other dependencies in there, but these dependencies generally all come from the core libraries that come with Go.
+
+The next step is to tweak the Dockerfile so that it builds the container image appropriately, pulls glide, retrieves the dependencies, sets the GOPATH appropriately to where the project and dependencies are loaded, and builds the service. With changes, the complete Dockerfile I have now reads like this.
+
+```
+FROM golang:1.8-alpine
+
+ENV GOPATH /go
+
+RUN apk add --update git && rm -rf /var/cache/apk/* && \
+    go get github.com/Masterminds/glide
+
+ADD . /go/src/github.com/Adron/datadiluvium-02/
+WORKDIR /go/src/github.com/Adron/datadiluvium-02
+
+RUN cd /go/src/github.com/Adron/datadiluvium-02 && \
+    glide install && \
+    go test $(glide novendor) && \
+    go build
+```
+
+I insured that the Alpine image I'm starting from uses the latest Go. Next I set the GOPATH to /go. It's very important to insure that the app folder, vendor, dependencies, and anything else needed to build the service for execution live within this path.
+
 
 
 Next steps 1. add glide to the dockerfile so it is available on the image...
