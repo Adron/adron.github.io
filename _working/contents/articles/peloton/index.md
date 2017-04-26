@@ -8,8 +8,6 @@ template: article.jade
     [![Peloton Tech.IO](peloton.png)](http://pelotontech.io)
 </div>
 
-Riding in The Peloton!
-
 Over the past few months I've been working, somewhat on the down low, as I get settled into Seattle, the daily flow, and life slightly north of Portland. I've gotten a solid footing on things now and am ready to announce what exactly I'm up to. Nothing is hugely surprising to anyone I've shared a beer or bike ride with in the last half a year, but for those I haven't had the pleasure, here's the details.
 
 ## New Job, New Business
