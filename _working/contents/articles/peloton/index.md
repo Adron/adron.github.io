@@ -15,7 +15,7 @@ Over the past few months I've been working, somewhat on the down low, as I get s
 
 ## New Job, New Business
 
-I've joined [Peloton Tech.IO](http://www.pelotontech.io/), a crew of smart, driven, inspired people that know how to live, love hacking, coding, and helping people implement solutions to the problems we all face. This team is exceptional in a lot of ways. The saying "work hard, play hard", but really it's more accurate to say we "work smart, play smart, and relax hard". More on that in a moment however, I want to dive into some specifics of what I'll be doing.
+I've joined [Peloton Tech.IO](http://www.pelotontech.io/) (Follow us [@PelotonTechIO](https://twitter.com/PelotonTechIO)), a crew of smart, driven, inspired people that know how to live, love hacking, coding, and helping people implement solutions to the problems we all face. This team is exceptional in a lot of ways. The saying "work hard, play hard", but really it's more accurate to say we "work smart, play smart, and relax hard". More on that in a moment however, I want to dive into some specifics of what I'll be doing.
 
 <span class="more"></span>
 
