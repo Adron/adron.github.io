@@ -10,8 +10,6 @@ template: article.jade
 
 Today kicks off something I've not for a long while. That is, go adventuring about the countryside, while working remotely, and coding solutions while disconnected from the chains of the rat race. It's a tricky thing to balance between getting shit done and actually enjoying the adventure. But this is the chronicle of the adventure, and this is part one of the chaos among the rigid discipline of the trip.
 
-<span class="more"></span>
-
 Logistical Details:
 
 This trip will consist of the following logistical destinations, trip consists, and related measures.
