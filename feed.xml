@@ -5,9 +5,58 @@
     <atom:link href="http://adron.github.io/feed.xml" rel="self" type="application/rss+xml"></atom:link>
     <link>http://adron.github.io</link>
     <description>Coder, Messenger, Recon, Infrastructure, Ops</description>
-    <pubDate>Mon, 13 Mar 2017 06:06:16 -0700</pubDate>
+    <pubDate>Wed, 26 Apr 2017 07:48:05 -0700</pubDate>
     <generator>Wintersmith - https://github.com/jnordberg/wintersmith</generator>
     <language>en</language>
+    <item>
+      <title>Riding in the Peloton</title>
+      <link>http://adron.github.io/articles/peloton/</link>
+      <pubDate>Wed, 26 Apr 2017 07:48:05 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/peloton/</guid>
+      <author></author>
+      <description>&lt;div class=&quot;image float-right&quot;&gt;
+    &lt;a href=&quot;http://pelotontech.io&quot;&gt;&lt;img src=&quot;/articles/peloton/peloton.png&quot; alt=&quot;Peloton Tech.IO&quot;&gt;&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;riding-in-the-peloton-&quot;&gt;Riding in The Peloton!&lt;/h2&gt;
+&lt;p&gt;Over the past few months I’ve been working, somewhat on the down low, as I get settled into Seattle, the daily flow, and life slightly north of Portland. I’ve gotten a solid footing on things now and am ready to announce what exactly I’m up to. Nothing is hugely surprising to anyone I’ve shared a beer or bike ride with in the last half a year, but for those I haven’t had the pleasure, here’s the details.&lt;/p&gt;
+&lt;h2 id=&quot;new-job-new-business&quot;&gt;New Job, New Business&lt;/h2&gt;
+&lt;p&gt;I’ve joined &lt;a href=&quot;http://www.pelotontech.io/&quot;&gt;Peloton Tech.IO&lt;/a&gt; (Follow us &lt;a href=&quot;https://twitter.com/PelotonTechIO&quot;&gt;@PelotonTechIO&lt;/a&gt;), a crew of smart, driven, inspired people that know how to live, love hacking, coding, and helping people implement solutions to the problems we all face. This team is exceptional in a lot of ways. The saying “work hard, play hard”, but really it’s more accurate to say we “work smart, play smart, and relax hard”. More on that in a moment however, I want to dive into some specifics of what I’ll be doing.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Technologies&lt;/em&gt; Over the last few months ramping up and working with Peloton I’ve had the chance to dive into a number of new technologies. Some of the most important technologies we’re using right now include;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://rancher.com/rancher/&quot;&gt;Rancher &lt;/a&gt;(&lt;a href=&quot;http://rancher.com/&quot;&gt;Rancher Labs&lt;/a&gt;) - Rancher is a container management platform. It, I must admit, is super slip. It looks good, plays well, and offers some pretty extensive capabilities and a plugin ecosystem to envy.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/drone/drone&quot;&gt;Drone.io&lt;/a&gt; - Check out &lt;a href=&quot;https://twitter.com/droneio&quot;&gt;@droneio&lt;/a&gt; on Twitter, &lt;a href=&quot;https://github.com/drone&quot;&gt;@droneio Org on Github&lt;/a&gt;, and &lt;a href=&quot;http://readme.drone.io/&quot;&gt;Docs&lt;/a&gt; are great places to start. Drone.io is a continuous integration system built on containers (Docker) and written in Go. It is a truly slick system that is easily self-hosted or however you want or need to run it.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;There are, of course, many other technologies I’ll be blogging, writing, and working with in the coming weeks and months, but these are two of the key pieces of technology.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Business Development&lt;/em&gt; In the coming months I’ll be keeping an eye out for companies I and the team would like to work with. If you’d like to talk to us about what we do, what we can do for you, or you already know you’d like to work with us - &lt;a href=&quot;http://blog.adron.me/docs/contact/&quot;&gt;contact me here&lt;/a&gt; - we’ll get a conversation started!&lt;/p&gt;
+&lt;p&gt;Adding to the idea of business development, we at &lt;a href=&quot;http://www.pelotontech.io/&quot;&gt;Peloton&lt;/a&gt; have also kicked off a &lt;a href=&quot;https://www.meetup.com/Peloton-Technology-Share-Out/&quot;&gt;meetup group&lt;/a&gt; to elaborate, teach, learn, and explore more about the technologies we’re working with day in and day out.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Other things of note…&lt;/em&gt; Stay tuned, subscribe to my &lt;a href=&quot;http://blog.adron.me/feed.xml&quot;&gt;RSS feed&lt;/a&gt; (The full pipeline) or email newsletter, &lt;a href=&quot;http://blog.adron.me/docs/thrashing-code-news/&quot;&gt;Thrashing Code News&lt;/a&gt; (the easier lower volume method), or check out my &lt;a href=&quot;http://blog.adron.me/docs/Speaking-Presentations-Workshops/&quot;&gt;calendar of events&lt;/a&gt;, there are some goodies in there. Over time, I’ll elaborate on specific things we’re doing at Peloton, and fill you in on more ways we can work together, what we’ve got in the works, or you could even possibly join the peloton itself!&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>A Coding Ride About</title>
+      <link>http://adron.github.io/articles/coding-ride-about/</link>
+      <pubDate>Sat, 22 Apr 2017 14:48:01 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/coding-ride-about/</guid>
+      <author></author>
+      <description>&lt;div class=&quot;image float-right&quot;&gt;
+    &lt;img src=&quot;/articles/coding-ride-about/cascades-map.png&quot; alt=&quot;Amtrak Cascades&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Today kicks off something I’ve not for a long while. That is, go adventuring about the countryside, while working remotely, and coding solutions while disconnected from the chains of the rat race. It’s a tricky thing to balance between getting shit done and actually enjoying the adventure. But this is the chronicle of the adventure, and this is part one of the chaos among the rigid discipline of the trip.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Logistical Details:&lt;/p&gt;
+&lt;p&gt;This trip will consist of the following logistical destinations, trip consists, and related measures.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Leaving Redmond on Sound Transit Express #545 with Rocket Pop headed to King Street Station.&lt;/li&gt;
+&lt;li&gt;Next up is the 11:15am departure of &lt;a href=&quot;http://www.amtrakcascades.com/&quot;&gt;Amtrak Cascades&lt;/a&gt; #513 south bound to Portland.&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
     <item>
       <title>Thrashing Code Metal Monday for Week of March 13th 2017</title>
       <link>http://adron.github.io/articles/thrashing-code-metal-monday-03-13-2017/</link>
@@ -4377,36 +4426,6 @@ export TF_VAR_password=&amp;quot;someSecretPassword&amp;quot;
 </description>
     </item>
     <item>
-      <title>The SAM Pattern - a distributed system view of Front-End architectures by Jean-Jacques Dubray</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-jean-jacques-dubray/</link>
-      <pubDate>Sat, 04 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-jean-jacques-dubray/</guid>
-      <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-jean-jacques-dubray/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-left&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-jean-jacques-dubray/jj-sized.png&quot; alt=&quot;Jean-Jacques Dubray&quot;&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Jean-Jacques Dubray is the founder of &lt;a href=&quot;http://xgen.io&quot;&gt;xgen.io&lt;/a&gt; and &lt;a href=&quot;http://www.gliiph.com&quot;&gt;gliiph&lt;/a&gt;. He has been building Service Oriented Architectures,
-and API platforms for the last 15 years. He is a former member of the research staff at HRL and earned his Ph.D. from
-the University of Provence (Luminy campus), home of the Prolog language. He is the inventor of the &lt;a href=&quot;http://www.xgenio.com/bolt-introduction.pdf&quot;&gt;BOLT methodology&lt;/a&gt; and the SAM pattern.&lt;/p&gt;
-&lt;p&gt;In his talk Jean-Jacques Dubray presents that Web Applications are rapidly becoming sophisticated distributed systems. When you look at a Facebook page or a Netflix catalog,
-the number of components interacting with each other requires complex synchronization and state management capabilities, reaching
-the limits of the MVC pattern.&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;In the last couple of years, several reactive architectures have started to get some interest (React, Cycle.js, ELM) without
-generating significant traction (compared to established frameworks like Angular), while struggling to position effects in their
-programming model. A new reactive, functional pattern, the State-Action-Model pattern (SAM) was introduced in early 2016 on the
-foundation of TLA+ semantics.&lt;/p&gt;
-&lt;p&gt;The pattern, which is unapologetically driven by simplicity, promotes a clear delineation between the business logic and the view
-and challenges the complexity of frameworks like Google’s Angular or Facebook’s React/Redux.&lt;/p&gt;
-&lt;p&gt;SAM’s unidirectional flow is also challenging interactive patterns like BFF (Back-End for Front-End) or the Vertical Slice Pattern
-which suggest creating view-specific APIs, per platform, app, versions of an app…&lt;/p&gt;
-&lt;p&gt;We’ll start by reviewing some of the key challenges of modern UX and Front-End Architectures. We will then present the
-key concepts of SAM and walk the audience through some node.js code samples (including server-side TimeTravel).&lt;/p&gt;
-</description>
-    </item>
-    <item>
       <title>Modern Javascript Frameworks - Introduction to Ember.JS and Ember-CLI by Suchita Doshi</title>
       <link>http://adron.github.io/articles/node-pdx-2016-suchita-doshi/</link>
       <pubDate>Sat, 04 Jun 2016 17:00:00 -0700</pubDate>
@@ -4434,6 +4453,36 @@ In this talk I would be covering the following:&lt;/p&gt;
 &lt;li&gt;Live Demo on how it’s really intuitive in a couple of non-trivial scenarios.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;So basically my goal is to attract more developers to adapt modern javascript frameworks and make a difference in the way complex apps are built.”&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>The SAM Pattern - a distributed system view of Front-End architectures by Jean-Jacques Dubray</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-jean-jacques-dubray/</link>
+      <pubDate>Sat, 04 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-jean-jacques-dubray/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-jean-jacques-dubray/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-left&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-jean-jacques-dubray/jj-sized.png&quot; alt=&quot;Jean-Jacques Dubray&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Jean-Jacques Dubray is the founder of &lt;a href=&quot;http://xgen.io&quot;&gt;xgen.io&lt;/a&gt; and &lt;a href=&quot;http://www.gliiph.com&quot;&gt;gliiph&lt;/a&gt;. He has been building Service Oriented Architectures,
+and API platforms for the last 15 years. He is a former member of the research staff at HRL and earned his Ph.D. from
+the University of Provence (Luminy campus), home of the Prolog language. He is the inventor of the &lt;a href=&quot;http://www.xgenio.com/bolt-introduction.pdf&quot;&gt;BOLT methodology&lt;/a&gt; and the SAM pattern.&lt;/p&gt;
+&lt;p&gt;In his talk Jean-Jacques Dubray presents that Web Applications are rapidly becoming sophisticated distributed systems. When you look at a Facebook page or a Netflix catalog,
+the number of components interacting with each other requires complex synchronization and state management capabilities, reaching
+the limits of the MVC pattern.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;In the last couple of years, several reactive architectures have started to get some interest (React, Cycle.js, ELM) without
+generating significant traction (compared to established frameworks like Angular), while struggling to position effects in their
+programming model. A new reactive, functional pattern, the State-Action-Model pattern (SAM) was introduced in early 2016 on the
+foundation of TLA+ semantics.&lt;/p&gt;
+&lt;p&gt;The pattern, which is unapologetically driven by simplicity, promotes a clear delineation between the business logic and the view
+and challenges the complexity of frameworks like Google’s Angular or Facebook’s React/Redux.&lt;/p&gt;
+&lt;p&gt;SAM’s unidirectional flow is also challenging interactive patterns like BFF (Back-End for Front-End) or the Vertical Slice Pattern
+which suggest creating view-specific APIs, per platform, app, versions of an app…&lt;/p&gt;
+&lt;p&gt;We’ll start by reviewing some of the key challenges of modern UX and Front-End Architectures. We will then present the
+key concepts of SAM and walk the audience through some node.js code samples (including server-side TimeTravel).&lt;/p&gt;
 </description>
     </item>
     <item>

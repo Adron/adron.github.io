@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="/css/style.min.css">
     <script src="/js/modernizr.js"></script>
   </head>
-  <body>
+  <body class="article-detail">
     <!--[if lt IE 8]>
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -67,8 +67,10 @@
             <div class="col-md-12">
               <!-- Page Info-->
               <div class="page-info page-info-simple">
-                <h1>Adron's Composite Code</h1>
-                <h2 class="description">Coder, Messenger, Recon, Infrastructure, Ops</h2>
+                <h1>Riding in the Peloton</h1>
+                <p class="author">Written by <span class="author">Adron Hall</span> and published on <span>April, 26 of 2017.</span>
+                </p>
+                <div class="nav"><a href="/">« Home</a></div>
               </div>
               <!-- End Page Info-->
             </div>
@@ -83,69 +85,29 @@
             <div class="col-md-9">
               <div class="main-content">
                 <!-- Blog Page-->
-                <div class="blog">
-                  <div class="row"></div>
-                </div>
-                <div class="col-md-12 col-sm-12">
-                  <!-- Blog List-->
-                  <div class="blog-grid">
-                    <div class="row">
-                      <div class="col-md-12 col-sm-12">
-                        <h3 class="blog-grid-title"><a href="/articles/speaking-trips-tech-and-treks/">Speaking Trips, Tech, and Treks</a></h3>
-                        <p class="blog-grid-excerpt"><p>I’ll be off on some coding adventures in the coming months. I also hope to catch up with a lot of people and their respective projects, learn a few things, and if it’s possible maybe teach a few people a thing or three about immutable infrastructure, lessons I’ve learned, and how to avoid infrastructure catastrophes while building the next bad ass awesome application. This blog entry is about the details of my logistics, and I’ll follow up with more details of the coding adventure along the way. For now: details, details, and&nbsp;details.</p>
-<p>
-                          <p class="more"><a href="/articles/speaking-trips-tech-and-treks/">more</a></p>
-                        </p>
-                        <div class="blog-grid-meta"><span class="blog-grid-date">26. July 2016</span></div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End of Blog List-->
-                </div>
-                <div class="col-md-12 col-sm-12">
-                  <!-- Blog List-->
-                  <div class="blog-grid">
-                    <div class="row">
-                      <div class="col-md-12 col-sm-12">
-                        <h3 class="blog-grid-title"><a href="/articles/biketown-api/">Portland Biketown Launches - Check out the API</a></h3>
-                        <p class="blog-grid-excerpt"><p><a href="https://www.biketownpdx.com"><img src="/articles/biketown-api/logo.png" alt="Biketown Logo"></a></p>
-<p>Good morning Portland! After a few years of hiccups, the Portland Bike Share has finally gotten started! We can thank our corporate overlords over at Nike for kicking in that last chunk of millions to get a bike and station layout that is absolutely&nbsp;superb!</p>
-<p>For a little bit more about the opening day and metrics on uses check out <a href="http://bikeportland.org/">Bike Portland</a> has posted <a href="http://bikeportland.org/2016/07/20/over-2300-trips-taken-on-biketown-bike-share-in-first-24-hours-187922">Over 2,300 trips taken on Biketown bike share in first 24 hours</a>, <a href="http://bikeportland.org/2016/07/19/bike-share-is-alive-photos-and-recap-from-the-launch-event-187867">“This is awesome!” Photos and notes from the Biketown launch event</a>, and&nbsp;others.</p>
-<p>
-                          <p class="more"><a href="/articles/biketown-api/">more</a></p>
-                        </p>
-                        <div class="blog-grid-meta"><span class="blog-grid-date">21. July 2016</span></div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End of Blog List-->
-                </div>
-                <div class="col-md-12 col-sm-12">
-                  <!-- Blog List-->
-                  <div class="blog-grid">
-                    <div class="row">
-                      <div class="col-md-12 col-sm-12">
-                        <h3 class="blog-grid-title"><a href="/articles/nginx-notes-from-the-url-redirect/">NGinx Notes from URL Redirect Project on Google Cloud with Terraform &amp; Packer - Part 1</a></h3>
-                        <p class="blog-grid-excerpt"><p>I set out on a mission yesterday to put together a <span class="caps">URL</span> Redirect Server. Before I even get into the nitty gritty of how I got this to work via Nginx, I’ll add two&nbsp;caveats:</p>
+                <article class="article">
+                  <section class="content"><div class="image float-right">
+    <a href="http://pelotontech.io"><img src="/articles/peloton/peloton.png" alt="Peloton Tech.IO"></a>
+</div>
+
+<h2 id="riding-in-the-peloton-">Riding in The&nbsp;Peloton!</h2>
+<p>Over the past few months I’ve been working, somewhat on the down low, as I get settled into Seattle, the daily flow, and life slightly north of Portland. I’ve gotten a solid footing on things now and am ready to announce what exactly I’m up to. Nothing is hugely surprising to anyone I’ve shared a beer or bike ride with in the last half a year, but for those I haven’t had the pleasure, here’s the&nbsp;details.</p>
+<h2 id="new-job-new-business">New Job, New&nbsp;Business</h2>
+<p>I’ve joined <a href="http://www.pelotontech.io/">Peloton Tech.<span class="caps">IO</span></a> (Follow us <a href="https://twitter.com/PelotonTechIO">@PelotonTechIO</a>), a crew of smart, driven, inspired people that know how to live, love hacking, coding, and helping people implement solutions to the problems we all face. This team is exceptional in a lot of ways. The saying “work hard, play hard”, but really it’s more accurate to say we “work smart, play smart, and relax hard”. More on that in a moment however, I want to dive into some specifics of what I’ll be&nbsp;doing.</p>
+<p><span class="more"></span></p>
+<p><em>Technologies</em> Over the last few months ramping up and working with Peloton I’ve had the chance to dive into a number of new technologies. Some of the most important technologies we’re using right now&nbsp;include;</p>
 <ul>
-<li>I don’t really know much about Nginx at all. I’ve written up and configured one reverse proxy and handed that off to some ops team. Theoretically it worked (in their testing). But other than that, I’ve barely done anything myself with&nbsp;Nginx.</li>
-<li>I’ve no idea really if this is even a good practice. <span class="caps">URL</span> Redirects of this sort actually seem like a hack. They work, but it seems like there really ought to be a better less onion layer like way to do this type of&nbsp;redirection.</li>
+<li><p><a href="http://rancher.com/rancher/">Rancher </a>(<a href="http://rancher.com/">Rancher Labs</a>) - Rancher is a container management platform. It, I must admit, is super slip. It looks good, plays well, and offers some pretty extensive capabilities and a plugin ecosystem to&nbsp;envy.</p>
+</li>
+<li><p><a href="https://github.com/drone/drone">Drone.io</a> - Check out <a href="https://twitter.com/droneio">@droneio</a> on Twitter, <a href="https://github.com/drone">@droneio Org on Github</a>, and <a href="http://readme.drone.io/">Docs</a> are great places to start. Drone.io is a continuous integration system built on containers (Docker) and written in Go. It is a truly slick system that is easily self-hosted or however you want or need to run&nbsp;it.</p>
+</li>
 </ul>
-<p>With those two caveats I’ll add a few questions for you, dear&nbsp;reader.</p>
-<ol>
-<li>If you have any suggestions for an easier way than spinning up a whole Nginx Server to do <span class="caps">URL</span> Redirects I’d love to hear&nbsp;them!</li>
-<li>Is this a best practice way to do subdomain to <span class="caps">URL</span> Redirects? If not, I’d probably like to be doing whatever is best&nbsp;practice.</li>
-</ol>
-<p>Anyway, now that we’re past my caveats, questions, and requests for help, let’s roll on the how-to of all&nbsp;this.</p>
-<p>
-                          <p class="more"><a href="/articles/nginx-notes-from-the-url-redirect/">more</a></p>
-                        </p>
-                        <div class="blog-grid-meta"><span class="blog-grid-date">15. July 2016</span></div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End of Blog List-->
-                </div>
+<p>There are, of course, many other technologies I’ll be blogging, writing, and working with in the coming weeks and months, but these are two of the key pieces of&nbsp;technology.</p>
+<p><em>Business Development</em> In the coming months I’ll be keeping an eye out for companies I and the team would like to work with. If you’d like to talk to us about what we do, what we can do for you, or you already know you’d like to work with us - <a href="http://blog.adron.me/docs/contact/">contact me here</a> - we’ll get a conversation&nbsp;started!</p>
+<p>Adding to the idea of business development, we at <a href="http://www.pelotontech.io/">Peloton</a> have also kicked off a <a href="https://www.meetup.com/Peloton-Technology-Share-Out/">meetup group</a> to elaborate, teach, learn, and explore more about the technologies we’re working with day in and day&nbsp;out.</p>
+<p><em>Other things of note…</em> Stay tuned, subscribe to my <a href="http://blog.adron.me/feed.xml"><span class="caps">RSS</span> feed</a> (The full pipeline) or email newsletter, <a href="http://blog.adron.me/docs/thrashing-code-news/">Thrashing Code News</a> (the easier lower volume method), or check out my <a href="http://blog.adron.me/docs/Speaking-Presentations-Workshops/">calendar of events</a>, there are some goodies in there. Over time, I’ll elaborate on specific things we’re doing at Peloton, and fill you in on more ways we can work together, what we’ve got in the works, or you could even possibly join the peloton&nbsp;itself!</p>
+</section>
+                </article>
                 <!-- End of Blog Page-->
               </div>
             </div>
@@ -235,8 +197,7 @@
             </div>
           </div>
         </div>
-        <div class="nav"><a href="/page/14/">« Newer</a>&nbsp;<a href="/page/16/">Previous »</a>
-        </div>
+        <div class="nav"><a href="/">« Home</a></div>
       </div>
     </div>
     <script src="/js/all.js"></script>
