@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="/css/style.min.css">
     <script src="/js/modernizr.js"></script>
   </head>
-  <body>
+  <body class="article-detail">
     <!--[if lt IE 8]>
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -67,8 +67,10 @@
             <div class="col-md-12">
               <!-- Page Info-->
               <div class="page-info page-info-simple">
-                <h1>Adron's Composite Code</h1>
-                <h2 class="description">Coder, Messenger, Recon, Infrastructure, Ops</h2>
+                <h1>git editors</h1>
+                <p class="author">Written by <span class="author">Adron Hall</span> and published on <span>May, 03 of 2017.</span>
+                </p>
+                <div class="nav"><a href="/">« Home</a></div>
               </div>
               <!-- End Page Info-->
             </div>
@@ -83,69 +85,44 @@
             <div class="col-md-9">
               <div class="main-content">
                 <!-- Blog Page-->
-                <div class="blog">
-                  <div class="row"></div>
-                </div>
-                <div class="col-md-12 col-sm-12">
-                  <!-- Blog List-->
-                  <div class="blog-grid">
-                    <div class="row">
-                      <div class="col-md-12 col-sm-12">
-                        <h3 class="blog-grid-title"><a href="/articles/speaking-trips-tech-and-treks/">Speaking Trips, Tech, and Treks</a></h3>
-                        <p class="blog-grid-excerpt"><p>I’ll be off on some coding adventures in the coming months. I also hope to catch up with a lot of people and their respective projects, learn a few things, and if it’s possible maybe teach a few people a thing or three about immutable infrastructure, lessons I’ve learned, and how to avoid infrastructure catastrophes while building the next bad ass awesome application. This blog entry is about the details of my logistics, and I’ll follow up with more details of the coding adventure along the way. For now: details, details, and&nbsp;details.</p>
-<p>
-                          <p class="more"><a href="/articles/speaking-trips-tech-and-treks/">more</a></p>
-                        </p>
-                        <div class="blog-grid-meta"><span class="blog-grid-date">26. July 2016</span></div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End of Blog List-->
-                </div>
-                <div class="col-md-12 col-sm-12">
-                  <!-- Blog List-->
-                  <div class="blog-grid">
-                    <div class="row">
-                      <div class="col-md-12 col-sm-12">
-                        <h3 class="blog-grid-title"><a href="/articles/biketown-api/">Portland Biketown Launches - Check out the API</a></h3>
-                        <p class="blog-grid-excerpt"><p><a href="https://www.biketownpdx.com"><img src="/articles/biketown-api/logo.png" alt="Biketown Logo"></a></p>
-<p>Good morning Portland! After a few years of hiccups, the Portland Bike Share has finally gotten started! We can thank our corporate overlords over at Nike for kicking in that last chunk of millions to get a bike and station layout that is absolutely&nbsp;superb!</p>
-<p>For a little bit more about the opening day and metrics on uses check out <a href="http://bikeportland.org/">Bike Portland</a> has posted <a href="http://bikeportland.org/2016/07/20/over-2300-trips-taken-on-biketown-bike-share-in-first-24-hours-187922">Over 2,300 trips taken on Biketown bike share in first 24 hours</a>, <a href="http://bikeportland.org/2016/07/19/bike-share-is-alive-photos-and-recap-from-the-launch-event-187867">“This is awesome!” Photos and notes from the Biketown launch event</a>, and&nbsp;others.</p>
-<p>
-                          <p class="more"><a href="/articles/biketown-api/">more</a></p>
-                        </p>
-                        <div class="blog-grid-meta"><span class="blog-grid-date">21. July 2016</span></div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End of Blog List-->
-                </div>
-                <div class="col-md-12 col-sm-12">
-                  <!-- Blog List-->
-                  <div class="blog-grid">
-                    <div class="row">
-                      <div class="col-md-12 col-sm-12">
-                        <h3 class="blog-grid-title"><a href="/articles/nginx-notes-from-the-url-redirect/">NGinx Notes from URL Redirect Project on Google Cloud with Terraform &amp; Packer - Part 1</a></h3>
-                        <p class="blog-grid-excerpt"><p>I set out on a mission yesterday to put together a <span class="caps">URL</span> Redirect Server. Before I even get into the nitty gritty of how I got this to work via Nginx, I’ll add two&nbsp;caveats:</p>
-<ul>
-<li>I don’t really know much about Nginx at all. I’ve written up and configured one reverse proxy and handed that off to some ops team. Theoretically it worked (in their testing). But other than that, I’ve barely done anything myself with&nbsp;Nginx.</li>
-<li>I’ve no idea really if this is even a good practice. <span class="caps">URL</span> Redirects of this sort actually seem like a hack. They work, but it seems like there really ought to be a better less onion layer like way to do this type of&nbsp;redirection.</li>
-</ul>
-<p>With those two caveats I’ll add a few questions for you, dear&nbsp;reader.</p>
-<ol>
-<li>If you have any suggestions for an easier way than spinning up a whole Nginx Server to do <span class="caps">URL</span> Redirects I’d love to hear&nbsp;them!</li>
-<li>Is this a best practice way to do subdomain to <span class="caps">URL</span> Redirects? If not, I’d probably like to be doing whatever is best&nbsp;practice.</li>
-</ol>
-<p>Anyway, now that we’re past my caveats, questions, and requests for help, let’s roll on the how-to of all&nbsp;this.</p>
-<p>
-                          <p class="more"><a href="/articles/nginx-notes-from-the-url-redirect/">more</a></p>
-                        </p>
-                        <div class="blog-grid-meta"><span class="blog-grid-date">15. July 2016</span></div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End of Blog List-->
-                </div>
+                <article class="article">
+                  <section class="content"><p>Are you ever working in git, then all of a sudden you do a pull or push and boom, you’ve got a request to make a merge text file. Often this pops up as <span class="caps">VI</span> or Nano on Linux. But it can depend based on what editor is actually set. Did you know you could set the editor? Obviously you can right? Here’s the details on getting that done in&nbsp;git.</p>
+<p><span class="more"></span></p>
+<h2 id="1">1</h2>
+<p>Want Atom as your editor to make merge comments and errata&nbsp;in?</p>
+<pre><code>git config --global core.editor &quot;atom --wait&quot;
+</code></pre><p>How about&nbsp;Sublime?</p>
+<pre><code>git config --global core.editor &quot;subl -n -w&quot;
+</code></pre><p>You get the idea. Basically, whatever editor you want just issue the command to change the git config so it can launch that editor via a <span class="caps">CLI</span>&nbsp;call.</p>
+<h2 id="2">2</h2>
+<p>Moving beyond the mere merge editor, we can also set the merge <span class="caps">IDE</span> or editor. This can help dramatically if you’re digging through merge conflicts regularly or needing to run diffs on code. For instance, let’s set Intellij as the merge and diff tool. Open up the ~/.gitconfig file and add the respective&nbsp;snippets.</p>
+<pre><code>[merge]
+    tool = intellij
+[mergetool &quot;intellij&quot;]
+    cmd = /Applications/IntelliJ\ IDEA.app/Contents/MacOS/idea merge $(cd $(dirname &quot;$LOCAL&quot;) &amp;&amp; pwd)/$(basename &quot;$LOCAL&quot;) $(cd $(dirname &quot;$REMOTE&quot;) &amp;&amp; pwd)/$(basename &quot;$REMOTE&quot;) $(cd $(dirname &quot;$BASE&quot;) &amp;&amp; pwd)/$(basename &quot;$BASE&quot;) $(cd $(dirname &quot;$MERGED&quot;) &amp;&amp; pwd)/$(basename &quot;$MERGED&quot;)
+    trustExitCode = true
+[diff]
+    tool = intellij
+[difftool &quot;intellij&quot;]
+    cmd = /Applications/IntelliJ\ IDEA.app/Contents/MacOS/idea diff $(cd $(dirname &quot;$LOCAL&quot;) &amp;&amp; pwd)/$(basename &quot;$LOCAL&quot;) $(cd $(dirname &quot;$REMOTE&quot;) &amp;&amp; pwd)/$(basename &quot;$REMOTE&quot;)
+</code></pre><h2 id="3">3</h2>
+<p>Another git helper, is setting up autocomplete for your&nbsp;shell.</p>
+<pre><code>source `brew --prefix git`/etc/bash_completion.d/git-completion.bash
+</code></pre><p>Some of my crew uses zsh, so if you’re one of those users the steps involve a bit more. Add the following to your <code>~/.zshrc</code> file.</p>
+<pre><code>autoload bashcompinit
+bashcompinit
+
+source `brew prefix`/etc/git-completion.d
+</code></pre><h2 id="4">4</h2>
+<p>Gah, seriously, type less already. Alias git to the ‘g’ key. Add the following to your .bashrc or&nbsp;.zshrc:</p>
+<pre><code>alias g=&#39;git&#39;
+</code></pre><p>To enable Git Autocompletion as previously stated, complete this additional step. Add this to your <code>.bashrc</code> or <code>.zshrc</code>.</p>
+<pre><code>complete -o default -o nospace -F _git g
+</code></pre><p>That’s it for my quick tips list. I’d been wanting to put this short list together since these are things I always forgot how to do when setting up git on a new machine and am tired of looking them up. So now, I’ve got em’ all right&nbsp;here!</p>
+<p>Cheers,
+Happy git-ing and coding -&nbsp;Adron</p>
+</section>
+                </article>
                 <!-- End of Blog Page-->
               </div>
             </div>
@@ -235,8 +212,7 @@
             </div>
           </div>
         </div>
-        <div class="nav"><a href="/page/14/">« Newer</a>&nbsp;<a href="/page/16/">Previous »</a>
-        </div>
+        <div class="nav"><a href="/">« Home</a></div>
       </div>
     </div>
     <script src="/js/all.js"></script>

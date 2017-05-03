@@ -5,9 +5,52 @@
     <atom:link href="http://adron.github.io/feed.xml" rel="self" type="application/rss+xml"></atom:link>
     <link>http://adron.github.io</link>
     <description>Coder, Messenger, Recon, Infrastructure, Ops</description>
-    <pubDate>Wed, 26 Apr 2017 07:48:05 -0700</pubDate>
+    <pubDate>Wed, 03 May 2017 04:02:58 -0700</pubDate>
     <generator>Wintersmith - https://github.com/jnordberg/wintersmith</generator>
     <language>en</language>
+    <item>
+      <title>git editors</title>
+      <link>http://adron.github.io/articles/git-editors/</link>
+      <pubDate>Wed, 03 May 2017 04:02:58 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/git-editors/</guid>
+      <author></author>
+      <description>&lt;p&gt;Are you ever working in git, then all of a sudden you do a pull or push and boom, you’ve got a request to make a merge text file. Often this pops up as VI or Nano on Linux. But it can depend based on what editor is actually set. Did you know you could set the editor? Obviously you can right? Here’s the details on getting that done in git.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;h2 id=&quot;1&quot;&gt;1&lt;/h2&gt;
+&lt;p&gt;Want Atom as your editor to make merge comments and errata in?&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;git config --global core.editor &amp;quot;atom --wait&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;How about Sublime?&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;git config --global core.editor &amp;quot;subl -n -w&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;You get the idea. Basically, whatever editor you want just issue the command to change the git config so it can launch that editor via a CLI call.&lt;/p&gt;
+&lt;h2 id=&quot;2&quot;&gt;2&lt;/h2&gt;
+&lt;p&gt;Moving beyond the mere merge editor, we can also set the merge IDE or editor. This can help dramatically if you’re digging through merge conflicts regularly or needing to run diffs on code. For instance, let’s set Intellij as the merge and diff tool. Open up the ~/.gitconfig file and add the respective snippets.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[merge]
+    tool = intellij
+[mergetool &amp;quot;intellij&amp;quot;]
+    cmd = /Applications/IntelliJ\ IDEA.app/Contents/MacOS/idea merge $(cd $(dirname &amp;quot;$LOCAL&amp;quot;) &amp;amp;&amp;amp; pwd)/$(basename &amp;quot;$LOCAL&amp;quot;) $(cd $(dirname &amp;quot;$REMOTE&amp;quot;) &amp;amp;&amp;amp; pwd)/$(basename &amp;quot;$REMOTE&amp;quot;) $(cd $(dirname &amp;quot;$BASE&amp;quot;) &amp;amp;&amp;amp; pwd)/$(basename &amp;quot;$BASE&amp;quot;) $(cd $(dirname &amp;quot;$MERGED&amp;quot;) &amp;amp;&amp;amp; pwd)/$(basename &amp;quot;$MERGED&amp;quot;)
+    trustExitCode = true
+[diff]
+    tool = intellij
+[difftool &amp;quot;intellij&amp;quot;]
+    cmd = /Applications/IntelliJ\ IDEA.app/Contents/MacOS/idea diff $(cd $(dirname &amp;quot;$LOCAL&amp;quot;) &amp;amp;&amp;amp; pwd)/$(basename &amp;quot;$LOCAL&amp;quot;) $(cd $(dirname &amp;quot;$REMOTE&amp;quot;) &amp;amp;&amp;amp; pwd)/$(basename &amp;quot;$REMOTE&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;3&quot;&gt;3&lt;/h2&gt;
+&lt;p&gt;Another git helper, is setting up autocomplete for your shell.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;source `brew --prefix git`/etc/bash_completion.d/git-completion.bash
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Some of my crew uses zsh, so if you’re one of those users the steps involve a bit more. Add the following to your &lt;code&gt;~/.zshrc&lt;/code&gt; file.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;autoload bashcompinit
+bashcompinit
+
+source `brew prefix`/etc/git-completion.d
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;4&quot;&gt;4&lt;/h2&gt;
+&lt;p&gt;Gah, seriously, type less already. Alias git to the ‘g’ key. Add the following to your .bashrc or .zshrc:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;alias g=&amp;#39;git&amp;#39;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;To enable Git Autocompletion as previously stated, complete this additional step. Add this to your &lt;code&gt;.bashrc&lt;/code&gt; or &lt;code&gt;.zshrc&lt;/code&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;complete -o default -o nospace -F _git g
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;That’s it for my quick tips list. I’d been wanting to put this short list together since these are things I always forgot how to do when setting up git on a new machine and am tired of looking them up. So now, I’ve got em’ all right here!&lt;/p&gt;
+&lt;p&gt;Cheers,
+Happy git-ing and coding - Adron&lt;/p&gt;
+</description>
+    </item>
     <item>
       <title>Riding in the Peloton</title>
       <link>http://adron.github.io/articles/peloton/</link>
@@ -4360,6 +4403,27 @@ export TF_VAR_password=&amp;quot;someSecretPassword&amp;quot;
 </description>
     </item>
     <item>
+      <title>How to Electron by Blaine Schmeisser</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-blaine-schmeisser/</link>
+      <pubDate>Sun, 05 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-blaine-schmeisser/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-blaine-schmeisser/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-left&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-blaine-schmeisser/blainesch.jpg&quot; alt=&quot;Blaine Schmeisser&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;I’m happy to introduce Blaine Schmeisser. He’s a recent Portland transplant currently working as a Senior Software Engineer at New Relic. He has a passion for building and shipping software and an advocate for pair programming. Outside of tech, Blaine spends his free time with his dog and maintains a simplistic, eco-friendly lifestyle.&lt;/p&gt;
+&lt;p&gt;Blaine’s “How to Electron” answers questions you have about building user interface applications with JavaScript. Have you ever wanted to build desktop apps with web technology you already know? If you’ve never heard of Electron or just want to learn more about it, this talk will cover what Electron is and how to utilize it to create powerful tools like Atom and Slack. You will learn the history of Electron, how to get started, the trade-offs of picking various boiler plates, and the unique Electron specific APIs that are vital to being a Electron developer.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;GitHub: &lt;a href=&quot;https://github.com/blainesch&quot;&gt;https://github.com/blainesch&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Twitter: &lt;a href=&quot;https://twitter.com/blainesch&quot;&gt;https://twitter.com/blainesch&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Website: &lt;a href=&quot;http://blainesch.com&quot;&gt;http://blainesch.com&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    <item>
       <title>Demystifying TypeScript Decorators by James Churchill</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-james-churchill/</link>
       <pubDate>Sun, 05 Jun 2016 17:00:00 -0700</pubDate>
@@ -4379,27 +4443,6 @@ export TF_VAR_password=&amp;quot;someSecretPassword&amp;quot;
 &lt;li&gt;Blog: &lt;a href=&quot;http://smashdev.com&quot;&gt;http://smashdev.com&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Github: &lt;a href=&quot;http://github.com/smashdevcode&quot;&gt;http://github.com/smashdevcode&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Twitter: &lt;a href=&quot;http://twitter.com/SmashDev&quot;&gt;http://twitter.com/SmashDev&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-    </item>
-    <item>
-      <title>How to Electron by Blaine Schmeisser</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-blaine-schmeisser/</link>
-      <pubDate>Sun, 05 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-blaine-schmeisser/</guid>
-      <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-blaine-schmeisser/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-left&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-blaine-schmeisser/blainesch.jpg&quot; alt=&quot;Blaine Schmeisser&quot;&gt;
-&lt;/div&gt;
-
-&lt;p&gt;I’m happy to introduce Blaine Schmeisser. He’s a recent Portland transplant currently working as a Senior Software Engineer at New Relic. He has a passion for building and shipping software and an advocate for pair programming. Outside of tech, Blaine spends his free time with his dog and maintains a simplistic, eco-friendly lifestyle.&lt;/p&gt;
-&lt;p&gt;Blaine’s “How to Electron” answers questions you have about building user interface applications with JavaScript. Have you ever wanted to build desktop apps with web technology you already know? If you’ve never heard of Electron or just want to learn more about it, this talk will cover what Electron is and how to utilize it to create powerful tools like Atom and Slack. You will learn the history of Electron, how to get started, the trade-offs of picking various boiler plates, and the unique Electron specific APIs that are vital to being a Electron developer.&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;GitHub: &lt;a href=&quot;https://github.com/blainesch&quot;&gt;https://github.com/blainesch&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Twitter: &lt;a href=&quot;https://twitter.com/blainesch&quot;&gt;https://twitter.com/blainesch&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Website: &lt;a href=&quot;http://blainesch.com&quot;&gt;http://blainesch.com&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>
