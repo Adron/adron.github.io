@@ -1,5 +1,5 @@
 ---
-title: git editors
+title: Four Quick Git Tips (AKA Things I Always Forget and Have to Look Up)
 author: Adron Hall
 date: 2017-05-03 11:02:58
 template: article.jade
