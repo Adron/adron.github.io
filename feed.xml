@@ -18,35 +18,30 @@
 &lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;h2 id=&quot;1&quot;&gt;1&lt;/h2&gt;
 &lt;p&gt;Want Atom as your editor to make merge comments and errata in?&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;git config --global core.editor &amp;quot;atom --wait&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;How about Sublime?&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;git config --global core.editor &amp;quot;subl -n -w&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;You get the idea. Basically, whatever editor you want just issue the command to change the git config so it can launch that editor via a CLI call.&lt;/p&gt;
+&lt;script src=&quot;https://gist.github.com/Adron/d86eac58a61b726ea8f1e416a386a32b.js&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;How about Sublime?&lt;/p&gt;
+&lt;script src=&quot;https://gist.github.com/Adron/296050d3f6dde3e6f7245aa56324230a.js&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;You get the idea. Basically, whatever editor you want just issue the command to change the git config so it can launch that editor via a CLI call.&lt;/p&gt;
 &lt;h2 id=&quot;2&quot;&gt;2&lt;/h2&gt;
 &lt;p&gt;Moving beyond the mere merge editor, we can also set the merge IDE or editor. This can help dramatically if you’re digging through merge conflicts regularly or needing to run diffs on code. For instance, let’s set Intellij as the merge and diff tool. Open up the ~/.gitconfig file and add the respective snippets.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;[merge]
-    tool = intellij
-[mergetool &amp;quot;intellij&amp;quot;]
-    cmd = /Applications/IntelliJ\ IDEA.app/Contents/MacOS/idea merge $(cd $(dirname &amp;quot;$LOCAL&amp;quot;) &amp;amp;&amp;amp; pwd)/$(basename &amp;quot;$LOCAL&amp;quot;) $(cd $(dirname &amp;quot;$REMOTE&amp;quot;) &amp;amp;&amp;amp; pwd)/$(basename &amp;quot;$REMOTE&amp;quot;) $(cd $(dirname &amp;quot;$BASE&amp;quot;) &amp;amp;&amp;amp; pwd)/$(basename &amp;quot;$BASE&amp;quot;) $(cd $(dirname &amp;quot;$MERGED&amp;quot;) &amp;amp;&amp;amp; pwd)/$(basename &amp;quot;$MERGED&amp;quot;)
-    trustExitCode = true
-[diff]
-    tool = intellij
-[difftool &amp;quot;intellij&amp;quot;]
-    cmd = /Applications/IntelliJ\ IDEA.app/Contents/MacOS/idea diff $(cd $(dirname &amp;quot;$LOCAL&amp;quot;) &amp;amp;&amp;amp; pwd)/$(basename &amp;quot;$LOCAL&amp;quot;) $(cd $(dirname &amp;quot;$REMOTE&amp;quot;) &amp;amp;&amp;amp; pwd)/$(basename &amp;quot;$REMOTE&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;3&quot;&gt;3&lt;/h2&gt;
-&lt;p&gt;Another git helper, is setting up autocomplete for your shell.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;source `brew --prefix git`/etc/bash_completion.d/git-completion.bash
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Some of my crew uses zsh, so if you’re one of those users the steps involve a bit more. Add the following to your &lt;code&gt;~/.zshrc&lt;/code&gt; file.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;autoload bashcompinit
-bashcompinit
+&lt;script src=&quot;https://gist.github.com/Adron/b650ef841453ca676d247105eb684a3b.js&quot;&gt;&lt;/script&gt;
 
-source `brew prefix`/etc/git-completion.d
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;4&quot;&gt;4&lt;/h2&gt;
+&lt;h2 id=&quot;3&quot;&gt;3&lt;/h2&gt;
+&lt;p&gt;Another git helper, is setting up autocomplete for your shell.&lt;/p&gt;
+&lt;script src=&quot;https://gist.github.com/Adron/5fb1e87e7dd18cf3330ba24671d522f3.js&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;Some of my crew uses zsh, so if you’re one of those users the steps involve a bit more. Add the following to your &lt;code&gt;~/.zshrc&lt;/code&gt; file.&lt;/p&gt;
+&lt;script src=&quot;https://gist.github.com/Adron/30d8555ad25c12049e05d899aaea364e.js&quot;&gt;&lt;/script&gt;
+
+&lt;h2 id=&quot;4&quot;&gt;4&lt;/h2&gt;
 &lt;p&gt;Gah, seriously, type less already. Alias git to the ‘g’ key. Add the following to your .bashrc or .zshrc:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;alias g=&amp;#39;git&amp;#39;
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;To enable Git Autocompletion as previously stated, complete this additional step. Add this to your &lt;code&gt;.bashrc&lt;/code&gt; or &lt;code&gt;.zshrc&lt;/code&gt;.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;complete -o default -o nospace -F _git g
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;That’s it for my quick tips list. I’d been wanting to put this short list together since these are things I always forgot how to do when setting up git on a new machine and am tired of looking them up. So now, I’ve got em’ all right here!&lt;/p&gt;
+&lt;script src=&quot;https://gist.github.com/Adron/c2ccc9b27e165c7d282e4d776a03422f.js&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;That’s it for my quick tips list. I’d been wanting to put this short list together since these are things I always forgot how to do when setting up git on a new machine and am tired of looking them up. So now, I’ve got em’ all right here!&lt;/p&gt;
 &lt;p&gt;Cheers,
 Happy git-ing and coding - Adron&lt;/p&gt;
 </description>
@@ -4403,6 +4398,27 @@ export TF_VAR_password=&amp;quot;someSecretPassword&amp;quot;
 </description>
     </item>
     <item>
+      <title>How to Electron by Blaine Schmeisser</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-blaine-schmeisser/</link>
+      <pubDate>Sun, 05 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-blaine-schmeisser/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-blaine-schmeisser/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-left&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-blaine-schmeisser/blainesch.jpg&quot; alt=&quot;Blaine Schmeisser&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;I’m happy to introduce Blaine Schmeisser. He’s a recent Portland transplant currently working as a Senior Software Engineer at New Relic. He has a passion for building and shipping software and an advocate for pair programming. Outside of tech, Blaine spends his free time with his dog and maintains a simplistic, eco-friendly lifestyle.&lt;/p&gt;
+&lt;p&gt;Blaine’s “How to Electron” answers questions you have about building user interface applications with JavaScript. Have you ever wanted to build desktop apps with web technology you already know? If you’ve never heard of Electron or just want to learn more about it, this talk will cover what Electron is and how to utilize it to create powerful tools like Atom and Slack. You will learn the history of Electron, how to get started, the trade-offs of picking various boiler plates, and the unique Electron specific APIs that are vital to being a Electron developer.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;GitHub: &lt;a href=&quot;https://github.com/blainesch&quot;&gt;https://github.com/blainesch&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Twitter: &lt;a href=&quot;https://twitter.com/blainesch&quot;&gt;https://twitter.com/blainesch&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Website: &lt;a href=&quot;http://blainesch.com&quot;&gt;http://blainesch.com&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    <item>
       <title>Demystifying TypeScript Decorators by James Churchill</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-james-churchill/</link>
       <pubDate>Sun, 05 Jun 2016 17:00:00 -0700</pubDate>
@@ -4426,24 +4442,33 @@ export TF_VAR_password=&amp;quot;someSecretPassword&amp;quot;
 </description>
     </item>
     <item>
-      <title>How to Electron by Blaine Schmeisser</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-blaine-schmeisser/</link>
-      <pubDate>Sun, 05 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-blaine-schmeisser/</guid>
+      <title>The SAM Pattern - a distributed system view of Front-End architectures by Jean-Jacques Dubray</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-jean-jacques-dubray/</link>
+      <pubDate>Sat, 04 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-jean-jacques-dubray/</guid>
       <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-blaine-schmeisser/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-jean-jacques-dubray/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;div class=&quot;image float-left&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-blaine-schmeisser/blainesch.jpg&quot; alt=&quot;Blaine Schmeisser&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-jean-jacques-dubray/jj-sized.png&quot; alt=&quot;Jean-Jacques Dubray&quot;&gt;
 &lt;/div&gt;
 
-&lt;p&gt;I’m happy to introduce Blaine Schmeisser. He’s a recent Portland transplant currently working as a Senior Software Engineer at New Relic. He has a passion for building and shipping software and an advocate for pair programming. Outside of tech, Blaine spends his free time with his dog and maintains a simplistic, eco-friendly lifestyle.&lt;/p&gt;
-&lt;p&gt;Blaine’s “How to Electron” answers questions you have about building user interface applications with JavaScript. Have you ever wanted to build desktop apps with web technology you already know? If you’ve never heard of Electron or just want to learn more about it, this talk will cover what Electron is and how to utilize it to create powerful tools like Atom and Slack. You will learn the history of Electron, how to get started, the trade-offs of picking various boiler plates, and the unique Electron specific APIs that are vital to being a Electron developer.&lt;/p&gt;
+&lt;p&gt;Jean-Jacques Dubray is the founder of &lt;a href=&quot;http://xgen.io&quot;&gt;xgen.io&lt;/a&gt; and &lt;a href=&quot;http://www.gliiph.com&quot;&gt;gliiph&lt;/a&gt;. He has been building Service Oriented Architectures,
+and API platforms for the last 15 years. He is a former member of the research staff at HRL and earned his Ph.D. from
+the University of Provence (Luminy campus), home of the Prolog language. He is the inventor of the &lt;a href=&quot;http://www.xgenio.com/bolt-introduction.pdf&quot;&gt;BOLT methodology&lt;/a&gt; and the SAM pattern.&lt;/p&gt;
+&lt;p&gt;In his talk Jean-Jacques Dubray presents that Web Applications are rapidly becoming sophisticated distributed systems. When you look at a Facebook page or a Netflix catalog,
+the number of components interacting with each other requires complex synchronization and state management capabilities, reaching
+the limits of the MVC pattern.&lt;/p&gt;
 &lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;GitHub: &lt;a href=&quot;https://github.com/blainesch&quot;&gt;https://github.com/blainesch&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Twitter: &lt;a href=&quot;https://twitter.com/blainesch&quot;&gt;https://twitter.com/blainesch&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Website: &lt;a href=&quot;http://blainesch.com&quot;&gt;http://blainesch.com&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;In the last couple of years, several reactive architectures have started to get some interest (React, Cycle.js, ELM) without
+generating significant traction (compared to established frameworks like Angular), while struggling to position effects in their
+programming model. A new reactive, functional pattern, the State-Action-Model pattern (SAM) was introduced in early 2016 on the
+foundation of TLA+ semantics.&lt;/p&gt;
+&lt;p&gt;The pattern, which is unapologetically driven by simplicity, promotes a clear delineation between the business logic and the view
+and challenges the complexity of frameworks like Google’s Angular or Facebook’s React/Redux.&lt;/p&gt;
+&lt;p&gt;SAM’s unidirectional flow is also challenging interactive patterns like BFF (Back-End for Front-End) or the Vertical Slice Pattern
+which suggest creating view-specific APIs, per platform, app, versions of an app…&lt;/p&gt;
+&lt;p&gt;We’ll start by reviewing some of the key challenges of modern UX and Front-End Architectures. We will then present the
+key concepts of SAM and walk the audience through some node.js code samples (including server-side TimeTravel).&lt;/p&gt;
 </description>
     </item>
     <item>
@@ -4477,33 +4502,20 @@ In this talk I would be covering the following:&lt;/p&gt;
 </description>
     </item>
     <item>
-      <title>The SAM Pattern - a distributed system view of Front-End architectures by Jean-Jacques Dubray</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-jean-jacques-dubray/</link>
-      <pubDate>Sat, 04 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-jean-jacques-dubray/</guid>
+      <title>WebSockets Bring Light at the End of the Tunnel by Joel Lord</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</link>
+      <pubDate>Fri, 03 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</guid>
       <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-jean-jacques-dubray/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;div class=&quot;image float-left&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-jean-jacques-dubray/jj-sized.png&quot; alt=&quot;Jean-Jacques Dubray&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/joel-lord.jpg&quot; alt=&quot;Joel Lord&quot;&gt;
 &lt;/div&gt;
 
-&lt;p&gt;Jean-Jacques Dubray is the founder of &lt;a href=&quot;http://xgen.io&quot;&gt;xgen.io&lt;/a&gt; and &lt;a href=&quot;http://www.gliiph.com&quot;&gt;gliiph&lt;/a&gt;. He has been building Service Oriented Architectures,
-and API platforms for the last 15 years. He is a former member of the research staff at HRL and earned his Ph.D. from
-the University of Provence (Luminy campus), home of the Prolog language. He is the inventor of the &lt;a href=&quot;http://www.xgenio.com/bolt-introduction.pdf&quot;&gt;BOLT methodology&lt;/a&gt; and the SAM pattern.&lt;/p&gt;
-&lt;p&gt;In his talk Jean-Jacques Dubray presents that Web Applications are rapidly becoming sophisticated distributed systems. When you look at a Facebook page or a Netflix catalog,
-the number of components interacting with each other requires complex synchronization and state management capabilities, reaching
-the limits of the MVC pattern.&lt;/p&gt;
+&lt;p&gt;As a Development Manager, Joel’s motivation and proven technical prowess makes him a key member of Spiria’s software development team. With a degree in computational astrophysics, his interests eventually made their way to software and Web design. Today, his knowledge of JavaScript lets him to support a variety of projects on both the front end and back end. As we move into the age of the Internet of Things, Joel is ready with his passion for programming node bots and experimenting with gadgets.&lt;/p&gt;
 &lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;In the last couple of years, several reactive architectures have started to get some interest (React, Cycle.js, ELM) without
-generating significant traction (compared to established frameworks like Angular), while struggling to position effects in their
-programming model. A new reactive, functional pattern, the State-Action-Model pattern (SAM) was introduced in early 2016 on the
-foundation of TLA+ semantics.&lt;/p&gt;
-&lt;p&gt;The pattern, which is unapologetically driven by simplicity, promotes a clear delineation between the business logic and the view
-and challenges the complexity of frameworks like Google’s Angular or Facebook’s React/Redux.&lt;/p&gt;
-&lt;p&gt;SAM’s unidirectional flow is also challenging interactive patterns like BFF (Back-End for Front-End) or the Vertical Slice Pattern
-which suggest creating view-specific APIs, per platform, app, versions of an app…&lt;/p&gt;
-&lt;p&gt;We’ll start by reviewing some of the key challenges of modern UX and Front-End Architectures. We will then present the
-key concepts of SAM and walk the audience through some node.js code samples (including server-side TimeTravel).&lt;/p&gt;
+&lt;p&gt;Joel is going to speak on Web Sockets and tunnels of light… or to describe it more specifically more and more, people seem to be obsessed with real-time data.  But what does real-time mean in the world of REST servers and one-way communication?  Most modern web applications are now either displaying a snapshot of data at a given time or use a polling mechanism to update series of data at a given interval.
+In this talk, you will learn about the power of WebSockets and how they can (and should!) be used in your modern web applications. In these 30 minutes, I will go through the process of building a Node server that can push data to multiple clients in real-time.  You will see how this can be easy using the socket.io library.&lt;/p&gt;
 </description>
     </item>
     <item>
@@ -4544,40 +4556,6 @@ it can be.&lt;/p&gt;
 </description>
     </item>
     <item>
-      <title>WebSockets Bring Light at the End of the Tunnel by Joel Lord</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</link>
-      <pubDate>Fri, 03 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</guid>
-      <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-left&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/joel-lord.jpg&quot; alt=&quot;Joel Lord&quot;&gt;
-&lt;/div&gt;
-
-&lt;p&gt;As a Development Manager, Joel’s motivation and proven technical prowess makes him a key member of Spiria’s software development team. With a degree in computational astrophysics, his interests eventually made their way to software and Web design. Today, his knowledge of JavaScript lets him to support a variety of projects on both the front end and back end. As we move into the age of the Internet of Things, Joel is ready with his passion for programming node bots and experimenting with gadgets.&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Joel is going to speak on Web Sockets and tunnels of light… or to describe it more specifically more and more, people seem to be obsessed with real-time data.  But what does real-time mean in the world of REST servers and one-way communication?  Most modern web applications are now either displaying a snapshot of data at a given time or use a polling mechanism to update series of data at a given interval.
-In this talk, you will learn about the power of WebSockets and how they can (and should!) be used in your modern web applications. In these 30 minutes, I will go through the process of building a Node server that can push data to multiple clients in real-time.  You will see how this can be easy using the socket.io library.&lt;/p&gt;
-</description>
-    </item>
-    <item>
-      <title>I Play the JavaScript by Matt McKegg</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</link>
-      <pubDate>Thu, 02 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</guid>
-      <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-left&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/mattmckegg.jpg&quot; alt=&quot;Matt McKegg&quot;&gt;
-&lt;/div&gt;
-
-&lt;p&gt;A JavaScript hacker and backyard musician and from Wellington, New Zealand. Lover of all things open and modular. I spend most of my time pressing buttons of various shapes, sizes and colours. Sometimes these buttons make sounds.&lt;/p&gt;
-&lt;p&gt;Matt has been making music with computers for about 10 years, but once he tried to move from bedroom composing to live performance, he got incredibly frustrated at how hard it was to play computer music live. He decided to start working on his own live electronic performance software written in JavaScript that would let me play the way he wanted to play. 3 years later, it’s finally starting to become a reality.&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Here is one of the Matt’s recent performances, for your viewing pleasure. &lt;/p&gt;
-&lt;iframe width=&quot;1280&quot; height=&quot;720&quot; src=&quot;https://www.youtube.com/embed/L2BVDJWHdy0?rel=0&amp;amp;showinfo=0&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;</description>
-    </item>
-    <item>
       <title>The Web Platform is the Universal Instrument by Ben Michel</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-ben-michel/</link>
       <pubDate>Thu, 02 Jun 2016 17:00:00 -0700</pubDate>
@@ -4603,6 +4581,23 @@ In this talk, you will learn about the power of WebSockets and how they can (and
 &lt;li&gt;Audience interaction with the exposed parameters of a live band’s instrumentation–via broadcast methods and microcontroller installations.”&lt;/li&gt;
 &lt;/ul&gt;
 </description>
+    </item>
+    <item>
+      <title>I Play the JavaScript by Matt McKegg</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</link>
+      <pubDate>Thu, 02 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-left&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/mattmckegg.jpg&quot; alt=&quot;Matt McKegg&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;A JavaScript hacker and backyard musician and from Wellington, New Zealand. Lover of all things open and modular. I spend most of my time pressing buttons of various shapes, sizes and colours. Sometimes these buttons make sounds.&lt;/p&gt;
+&lt;p&gt;Matt has been making music with computers for about 10 years, but once he tried to move from bedroom composing to live performance, he got incredibly frustrated at how hard it was to play computer music live. He decided to start working on his own live electronic performance software written in JavaScript that would let me play the way he wanted to play. 3 years later, it’s finally starting to become a reality.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Here is one of the Matt’s recent performances, for your viewing pleasure. &lt;/p&gt;
+&lt;iframe width=&quot;1280&quot; height=&quot;720&quot; src=&quot;https://www.youtube.com/embed/L2BVDJWHdy0?rel=0&amp;amp;showinfo=0&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;</description>
     </item>
     <item>
       <title>Code First Docs How we Threw Out The Book &amp; Put Code First With Twilio Documentation by Jarod Reyes</title>

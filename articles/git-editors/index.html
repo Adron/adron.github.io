@@ -90,35 +90,30 @@
 <p><span class="more"></span></p>
 <h2 id="1">1</h2>
 <p>Want Atom as your editor to make merge comments and errata&nbsp;in?</p>
-<pre><code>git config --global core.editor &quot;atom --wait&quot;
-</code></pre><p>How about&nbsp;Sublime?</p>
-<pre><code>git config --global core.editor &quot;subl -n -w&quot;
-</code></pre><p>You get the idea. Basically, whatever editor you want just issue the command to change the git config so it can launch that editor via a <span class="caps">CLI</span>&nbsp;call.</p>
+<script src="https://gist.github.com/Adron/d86eac58a61b726ea8f1e416a386a32b.js"></script>
+
+<p>How about&nbsp;Sublime?</p>
+<script src="https://gist.github.com/Adron/296050d3f6dde3e6f7245aa56324230a.js"></script>
+
+<p>You get the idea. Basically, whatever editor you want just issue the command to change the git config so it can launch that editor via a <span class="caps">CLI</span>&nbsp;call.</p>
 <h2 id="2">2</h2>
 <p>Moving beyond the mere merge editor, we can also set the merge <span class="caps">IDE</span> or editor. This can help dramatically if you’re digging through merge conflicts regularly or needing to run diffs on code. For instance, let’s set Intellij as the merge and diff tool. Open up the ~/.gitconfig file and add the respective&nbsp;snippets.</p>
-<pre><code>[merge]
-    tool = intellij
-[mergetool &quot;intellij&quot;]
-    cmd = /Applications/IntelliJ\ IDEA.app/Contents/MacOS/idea merge $(cd $(dirname &quot;$LOCAL&quot;) &amp;&amp; pwd)/$(basename &quot;$LOCAL&quot;) $(cd $(dirname &quot;$REMOTE&quot;) &amp;&amp; pwd)/$(basename &quot;$REMOTE&quot;) $(cd $(dirname &quot;$BASE&quot;) &amp;&amp; pwd)/$(basename &quot;$BASE&quot;) $(cd $(dirname &quot;$MERGED&quot;) &amp;&amp; pwd)/$(basename &quot;$MERGED&quot;)
-    trustExitCode = true
-[diff]
-    tool = intellij
-[difftool &quot;intellij&quot;]
-    cmd = /Applications/IntelliJ\ IDEA.app/Contents/MacOS/idea diff $(cd $(dirname &quot;$LOCAL&quot;) &amp;&amp; pwd)/$(basename &quot;$LOCAL&quot;) $(cd $(dirname &quot;$REMOTE&quot;) &amp;&amp; pwd)/$(basename &quot;$REMOTE&quot;)
-</code></pre><h2 id="3">3</h2>
-<p>Another git helper, is setting up autocomplete for your&nbsp;shell.</p>
-<pre><code>source `brew --prefix git`/etc/bash_completion.d/git-completion.bash
-</code></pre><p>Some of my crew uses zsh, so if you’re one of those users the steps involve a bit more. Add the following to your <code>~/.zshrc</code> file.</p>
-<pre><code>autoload bashcompinit
-bashcompinit
+<script src="https://gist.github.com/Adron/b650ef841453ca676d247105eb684a3b.js"></script>
 
-source `brew prefix`/etc/git-completion.d
-</code></pre><h2 id="4">4</h2>
+<h2 id="3">3</h2>
+<p>Another git helper, is setting up autocomplete for your&nbsp;shell.</p>
+<script src="https://gist.github.com/Adron/5fb1e87e7dd18cf3330ba24671d522f3.js"></script>
+
+<p>Some of my crew uses zsh, so if you’re one of those users the steps involve a bit more. Add the following to your <code>~/.zshrc</code> file.</p>
+<script src="https://gist.github.com/Adron/30d8555ad25c12049e05d899aaea364e.js"></script>
+
+<h2 id="4">4</h2>
 <p>Gah, seriously, type less already. Alias git to the ‘g’ key. Add the following to your .bashrc or&nbsp;.zshrc:</p>
 <pre><code>alias g=&#39;git&#39;
 </code></pre><p>To enable Git Autocompletion as previously stated, complete this additional step. Add this to your <code>.bashrc</code> or <code>.zshrc</code>.</p>
-<pre><code>complete -o default -o nospace -F _git g
-</code></pre><p>That’s it for my quick tips list. I’d been wanting to put this short list together since these are things I always forgot how to do when setting up git on a new machine and am tired of looking them up. So now, I’ve got em’ all right&nbsp;here!</p>
+<script src="https://gist.github.com/Adron/c2ccc9b27e165c7d282e4d776a03422f.js"></script>
+
+<p>That’s it for my quick tips list. I’d been wanting to put this short list together since these are things I always forgot how to do when setting up git on a new machine and am tired of looking them up. So now, I’ve got em’ all right&nbsp;here!</p>
 <p>Cheers,
 Happy git-ing and coding -&nbsp;Adron</p>
 </section>
