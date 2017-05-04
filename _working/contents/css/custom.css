@@ -10,3 +10,13 @@ img {
     width: 100%;
     height: auto;
 }
+
+.freebirdFormviewerViewNavigationPasswordWarning {
+    visibility: hidden;
+    display: none;
+}
+
+.freebirdFormviewerViewFooterImageContainer {
+    visibility: hidden;
+    display: none;
+}
