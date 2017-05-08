@@ -8,7 +8,7 @@ This page links to my history of speaking via presentations, workshops, or other
 
 **Upcoming Presentations**
 
-None at this time.
+* [Terraform/Packer/Atlas @ The Orange Retailer](/talks/terraform-packer-atlas-at-big-orange) on May 24th, 2017 2 [Peloton Tech.IO Share Out](https://www.meetup.com/Peloton-Technology-Share-Out/events/239488795/) - Location TBD - A review of things accomplished with Terraform, Packer, and Atlas from HashiCorp.
 
 **Past Presentations**
 

@@ -27,4 +27,49 @@ https://facebook.github.io/react/tutorial/tutorial.html
 ***Currently Working Through...***
 
 * [Docs on Folder Structure Created...](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#folder-structure)
-* 
+* [Intro to React](https://facebook.github.io/react/tutorial/tutorial.html)
+
+# React Notes
+
+## Components Class / Type
+
+React Component Class / React Component Type - A component takes in parameters called props (properties?) and returns a hierarchy of views to display via the render method. Below is a React component.
+
+```
+class ShoppingList extends React.Component {
+  render() {
+    return (
+      <div className="shopping-list">
+        <h1>Shopping List for {this.props.name}</h1>
+        <ul>
+          <li>Instagram</li>
+          <li>WhatsApp</li>
+          <li>Oculus</li>
+        </ul>
+      </div>
+    );
+  }
+}
+```
+
+## The `createElement()` Function
+
+```
+React.createElement(
+  type,
+  [props],
+  [...children]
+)
+```
+
+This code creates a new React element of the given type, the type being either a tag name string such as a `div` or `span` or a React component type like the class or function as defined above.
+
+## The `cloneElement()` Function
+
+```
+React.cloneElement(
+  element,
+  [props],
+  [...children]
+)
+```
