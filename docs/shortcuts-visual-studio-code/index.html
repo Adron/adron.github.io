@@ -86,162 +86,176 @@
                 <docs class="article">
                   <section class="content"><p>For more on keyboard shortcuts and binding checkout the <a href="https://code.visualstudio.com/docs/customization/keybindings">Key Bindings for Visual Studio Code</a>.</p>
 <h2 id="basic-editing">Basic&nbsp;Editing</h2>
-<p>⌘X    Cut line (empty selection)    editor.action.clipboardCutAction
-⌘C    Copy line (empty selection)    editor.action.clipboardCopyAction
-⇧⌘K    Delete Line    editor.action.deleteLines
-⌘Enter    Insert Line Below    editor.action.insertLineAfter
-⇧⌘Enter    Insert Line Above    editor.action.insertLineBefore
-⌥↓    Move Line Down    editor.action.moveLinesDownAction
-⌥↑    Move Line Up    editor.action.moveLinesUpAction
-⇧⌥↓    Copy Line Down    editor.action.copyLinesDownAction
-⇧⌥↑    Copy Line Up    editor.action.copyLinesUpAction
-⌘D    Add Selection To Next Find Match    editor.action.addSelectionToNextFindMatch
-⌘K ⌘D    Move Last Selection To Next Find Match    editor.action.moveSelectionToNextFindMatch
-⌘U    Undo last cursor operation    cursorUndo
-⇧⌥I    Insert cursor at end of each line selected    editor.action.insertCursorAtEndOfEachLineSelected
-⇧⌘L    Select all occurrences of current selection    editor.action.selectHighlights
-⌘F2    Select all occurrences of current word    editor.action.changeAll
-⌘I    Select current line    expandLineSelection
-⌥⌘↓    Insert Cursor Below    editor.action.insertCursorBelow
-⌥⌘↑    Insert Cursor Above    editor.action.insertCursorAbove
-⇧⌘\    Jump to matching bracket    editor.action.jumpToBracket
-⌘]    Indent Line    editor.action.indentLines
-⌘[    Outdent Line    editor.action.outdentLines
-Home    Go to Beginning of Line    cursorHome
-End    Go to End of Line    cursorEnd
-⌘↓    Go to End of File    cursorBottom
-⌘↑    Go to Beginning of File    cursorTop
-⌃PageDown    Scroll Line Down    scrollLineDown
-⌃PageUp    Scroll Line Up    scrollLineUp
-⌘PageDown    Scroll Page Down    scrollPageDown
-⌘PageUp    Scroll Page Up    scrollPageUp
-⇧⌘[    Fold (collapse) region    editor.fold
-⇧⌘]    Unfold (uncollapse) region    editor.unfold
-⌘K ⌘[    Fold (collapse) all subregions    editor.foldRecursively
-⌘K ⌘]    Unfold (uncollapse) all subregions    editor.unfoldRecursively
-⌘K ⌘0    Fold (collapse) all regions    editor.foldAll
-⌘K ⌘J    Unfold (uncollapse) all regions    editor.unfoldAll
-⌘K ⌘C    Add Line Comment    editor.action.addCommentLine
-⌘K ⌘U    Remove Line Comment    editor.action.removeCommentLine
-⌘/    Toggle Line Comment    editor.action.commentLine
-⇧⌥A    Toggle Block Comment    editor.action.blockComment
-⌘F    Find    actions.find
-⌥⌘F    Replace    editor.action.startFindReplaceAction
-⌘G    Find Next    editor.action.nextMatchFindAction
-⇧⌘G    Find Previous    editor.action.previousMatchFindAction
-⌥Enter    Select All Occurences of Find Match    editor.action.selectAllMatches
-⌥⌘C    Toggle Find Case Sensitive    toggleFindCaseSensitive
-⌥⌘R    Toggle Find Regex    toggleFindRegex
-⌥⌘W    Toggle Find Whole Word    toggleFindWholeWord
-⌃⇧M    Toggle Use of Tab Key for Setting Focus    editor.action.toggleTabFocusMode
-unassigned    Toggle Render Whitespace&nbsp;toggleRenderWhitespace</p>
+<ul>
+<li>⌘X    Cut line (empty selection)&nbsp;editor.action.clipboardCutAction</li>
+<li>⌘C    Copy line (empty selection)&nbsp;editor.action.clipboardCopyAction</li>
+<li>⇧⌘K    Delete Line&nbsp;editor.action.deleteLines</li>
+<li>⌘Enter    Insert Line Below&nbsp;editor.action.insertLineAfter</li>
+<li>⇧⌘Enter    Insert Line Above&nbsp;editor.action.insertLineBefore</li>
+<li>⌥↓    Move Line Down&nbsp;editor.action.moveLinesDownAction</li>
+<li>⌥↑    Move Line Up&nbsp;editor.action.moveLinesUpAction</li>
+<li>⇧⌥↓    Copy Line Down&nbsp;editor.action.copyLinesDownAction</li>
+<li>⇧⌥↑    Copy Line Up&nbsp;editor.action.copyLinesUpAction</li>
+<li>⌘D    Add Selection To Next Find Match&nbsp;editor.action.addSelectionToNextFindMatch</li>
+<li>⌘K ⌘D    Move Last Selection To Next Find Match&nbsp;editor.action.moveSelectionToNextFindMatch</li>
+<li>⌘U    Undo last cursor operation&nbsp;cursorUndo</li>
+<li>⇧⌥I    Insert cursor at end of each line selected&nbsp;editor.action.insertCursorAtEndOfEachLineSelected</li>
+<li>⇧⌘L    Select all occurrences of current selection&nbsp;editor.action.selectHighlights</li>
+<li>⌘F2    Select all occurrences of current word&nbsp;editor.action.changeAll</li>
+<li>⌘I    Select current line&nbsp;expandLineSelection</li>
+<li>⌥⌘↓    Insert Cursor Below&nbsp;editor.action.insertCursorBelow</li>
+<li>⌥⌘↑    Insert Cursor Above&nbsp;editor.action.insertCursorAbove</li>
+<li>⇧⌘\    Jump to matching bracket&nbsp;editor.action.jumpToBracket</li>
+<li>⌘]    Indent Line&nbsp;editor.action.indentLines</li>
+<li>⌘[    Outdent Line&nbsp;editor.action.outdentLines</li>
+<li>Home    Go to Beginning of Line&nbsp;cursorHome</li>
+<li>End    Go to End of Line&nbsp;cursorEnd</li>
+<li>⌘↓    Go to End of File&nbsp;cursorBottom</li>
+<li>⌘↑    Go to Beginning of File&nbsp;cursorTop</li>
+<li>⌃PageDown    Scroll Line Down&nbsp;scrollLineDown</li>
+<li>⌃PageUp    Scroll Line Up&nbsp;scrollLineUp</li>
+<li>⌘PageDown    Scroll Page Down&nbsp;scrollPageDown</li>
+<li>⌘PageUp    Scroll Page Up&nbsp;scrollPageUp</li>
+<li>⇧⌘[    Fold (collapse) region&nbsp;editor.fold</li>
+<li>⇧⌘]    Unfold (uncollapse) region&nbsp;editor.unfold</li>
+<li>⌘K ⌘[    Fold (collapse) all subregions&nbsp;editor.foldRecursively</li>
+<li>⌘K ⌘]    Unfold (uncollapse) all subregions&nbsp;editor.unfoldRecursively</li>
+<li>⌘K ⌘0    Fold (collapse) all regions&nbsp;editor.foldAll</li>
+<li>⌘K ⌘J    Unfold (uncollapse) all regions&nbsp;editor.unfoldAll</li>
+<li>⌘K ⌘C    Add Line Comment&nbsp;editor.action.addCommentLine</li>
+<li>⌘K ⌘U    Remove Line Comment&nbsp;editor.action.removeCommentLine</li>
+<li>⌘/    Toggle Line Comment&nbsp;editor.action.commentLine</li>
+<li>⇧⌥A    Toggle Block Comment&nbsp;editor.action.blockComment</li>
+<li>⌘F    Find&nbsp;actions.find</li>
+<li>⌥⌘F    Replace&nbsp;editor.action.startFindReplaceAction</li>
+<li>⌘G    Find Next&nbsp;editor.action.nextMatchFindAction</li>
+<li>⇧⌘G    Find Previous&nbsp;editor.action.previousMatchFindAction</li>
+<li>⌥Enter    Select All Occurences of Find Match&nbsp;editor.action.selectAllMatches</li>
+<li>⌥⌘C    Toggle Find Case Sensitive&nbsp;toggleFindCaseSensitive</li>
+<li>⌥⌘R    Toggle Find Regex&nbsp;toggleFindRegex</li>
+<li>⌥⌘W    Toggle Find Whole Word&nbsp;toggleFindWholeWord</li>
+<li>⌃⇧M    Toggle Use of Tab Key for Setting Focus&nbsp;editor.action.toggleTabFocusMode</li>
+<li>unassigned    Toggle Render Whitespace&nbsp;toggleRenderWhitespace</li>
+</ul>
 <h2 id="rich-languages-editing">Rich Languages&nbsp;Editing</h2>
-<p>⌃Space    Trigger Suggest    editor.action.triggerSuggest
-⇧⌘Space    Trigger Parameter Hints    editor.action.triggerParameterHints
-⇧⌥F    Format Code    editor.action.format
-F12    Go to Definition    editor.action.goToDeclaration
-⌥F12    Peek Definition    editor.action.previewDeclaration
-⌘K F12    Open Definition to the Side    editor.action.openDeclarationToTheSide
-⌘.    Quick Fix    editor.action.quickFix
-⇧F12    Show References    editor.action.referenceSearch.trigger
-F2    Rename Symbol    editor.action.rename
-⇧⌘.    Replace with Next Value    editor.action.inPlaceReplace.down
-⇧⌘,    Replace with Previous Value    editor.action.inPlaceReplace.up
-⌃⇧⌘→    Expand <span class="caps">AST</span> Select    editor.action.smartSelect.grow
-⌃⇧⌘←    Shrink AST Select    editor.action.smartSelect.shrink
-⌘K ⌘X    Trim Trailing Whitespace    editor.action.trimTrailingWhitespace
-⌘K M    Change Language Mode&nbsp;workbench.action.editor.changeLanguageMode</p>
+<ul>
+<li>⌃Space    Trigger Suggest&nbsp;editor.action.triggerSuggest</li>
+<li>⇧⌘Space    Trigger Parameter Hints&nbsp;editor.action.triggerParameterHints</li>
+<li>⇧⌥F    Format Code&nbsp;editor.action.format</li>
+<li>F12    Go to Definition&nbsp;editor.action.goToDeclaration</li>
+<li>⌥F12    Peek Definition&nbsp;editor.action.previewDeclaration</li>
+<li>⌘K F12    Open Definition to the Side&nbsp;editor.action.openDeclarationToTheSide</li>
+<li>⌘.    Quick Fix&nbsp;editor.action.quickFix</li>
+<li>⇧F12    Show References&nbsp;editor.action.referenceSearch.trigger</li>
+<li>F2    Rename Symbol&nbsp;editor.action.rename</li>
+<li>⇧⌘.    Replace with Next Value&nbsp;editor.action.inPlaceReplace.down</li>
+<li>⇧⌘,    Replace with Previous Value&nbsp;editor.action.inPlaceReplace.up</li>
+<li>⌃⇧⌘→    Expand <span class="caps">AST</span> Select&nbsp;editor.action.smartSelect.grow</li>
+<li>⌃⇧⌘←    Shrink <span class="caps">AST</span> Select&nbsp;editor.action.smartSelect.shrink</li>
+<li>⌘K ⌘X    Trim Trailing Whitespace&nbsp;editor.action.trimTrailingWhitespace</li>
+<li>⌘K M    Change Language Mode&nbsp;workbench.action.editor.changeLanguageMode</li>
+</ul>
 <h2 id="navigation">Navigation</h2>
-<p>⌘T    Show All Symbols    workbench.action.showAllSymbols
-⌃G    Go to Line…    workbench.action.gotoLine
-⌘P    Go to File…, Quick Open    workbench.action.quickOpen
-⇧⌘O    Go to Symbol…    workbench.action.gotoSymbol
-⇧⌘M    Show Problems    workbench.actions.view.problems
-F8    Go to Next Error or Warning    editor.action.marker.next
-⇧F8    Go to Previous Error or Warning    editor.action.marker.prev
-⇧⌘P    Show All Commands    workbench.action.showCommands
-⌃⇧Tab    Navigate Editor Group History    workbench.action.openPreviousRecentlyUsedEditorInGroup
-⌃-    Go Back    workbench.action.navigateBack
-⌃⇧-    Go Forward&nbsp;workbench.action.navigateForward</p>
+<ul>
+<li>⌘T    Show All Symbols&nbsp;workbench.action.showAllSymbols</li>
+<li>⌃G    Go to Line…&nbsp;workbench.action.gotoLine</li>
+<li>⌘P    Go to File…, Quick Open&nbsp;workbench.action.quickOpen</li>
+<li>⇧⌘O    Go to Symbol…&nbsp;workbench.action.gotoSymbol</li>
+<li>⇧⌘M    Show Problems&nbsp;workbench.actions.view.problems</li>
+<li>F8    Go to Next Error or Warning&nbsp;editor.action.marker.next</li>
+<li>⇧F8    Go to Previous Error or Warning&nbsp;editor.action.marker.prev</li>
+<li>⇧⌘P    Show All Commands&nbsp;workbench.action.showCommands</li>
+<li>⌃⇧Tab    Navigate Editor Group History&nbsp;workbench.action.openPreviousRecentlyUsedEditorInGroup</li>
+<li>⌃-    Go Back&nbsp;workbench.action.navigateBack</li>
+<li>⌃⇧-    Go Forward&nbsp;workbench.action.navigateForward</li>
+</ul>
 <h2 id="editor-window-management">Editor/Window&nbsp;Management</h2>
-<p>⇧⌘N    New Window    workbench.action.newWindow
-⌘W    Close Window    workbench.action.closeWindow
-⌘W    Close Editor    workbench.action.closeActiveEditor
-⌘K F    Close Folder    workbench.action.closeFolder
-unassigned    Cycle Between Editor Groups    workbench.action.navigateEditorGroups
-⌘ (forward slash)    Split Editor    workbench.action.splitEditor
-⌘1    Focus into Left Editor Group    workbench.action.focusFirstEditorGroup
-⌘2    Focus into Side Editor Group    workbench.action.focusSecondEditorGroup
-⌘3    Focus into Right Editor Group    workbench.action.focusThirdEditorGroup
-⌘K ⌘←    Focus into Editor Group on the Left    workbench.action.focusPreviousGroup
-⌘K ⌘→    Focus into Editor Group on the Right    workbench.action.focusNextGroup
-⌘K ←    Move Active Editor Group Left    workbench.action.moveActiveEditorGroupLeft
-⌘K →    Move Active Editor Group Right&nbsp;workbench.action.moveActiveEditorGroupRight</p>
+<ul>
+<li>⇧⌘N    New Window&nbsp;workbench.action.newWindow</li>
+<li>⌘W    Close Window&nbsp;workbench.action.closeWindow</li>
+<li>⌘W    Close Editor&nbsp;workbench.action.closeActiveEditor</li>
+<li>⌘K F    Close Folder&nbsp;workbench.action.closeFolder</li>
+<li>unassigned    Cycle Between Editor Groups&nbsp;workbench.action.navigateEditorGroups</li>
+<li>⌘ (forward slash)    Split Editor&nbsp;workbench.action.splitEditor</li>
+<li>⌘1    Focus into Left Editor Group&nbsp;workbench.action.focusFirstEditorGroup</li>
+<li>⌘2    Focus into Side Editor Group&nbsp;workbench.action.focusSecondEditorGroup</li>
+<li>⌘3    Focus into Right Editor Group&nbsp;workbench.action.focusThirdEditorGroup</li>
+<li>⌘K ⌘←    Focus into Editor Group on the Left&nbsp;workbench.action.focusPreviousGroup</li>
+<li>⌘K ⌘→    Focus into Editor Group on the Right&nbsp;workbench.action.focusNextGroup</li>
+<li>⌘K ←    Move Active Editor Group Left&nbsp;workbench.action.moveActiveEditorGroupLeft</li>
+<li>⌘K →    Move Active Editor Group Right&nbsp;workbench.action.moveActiveEditorGroupRight</li>
+</ul>
 <h2 id="file-management">File&nbsp;Management</h2>
-<p>⌘N    New File    workbench.action.files.newUntitledFile
-unassigned    Open File…    workbench.action.files.openFile
-⌘S    Save    workbench.action.files.save
-unassigned    Save All    workbench.action.files.saveAll
-⇧⌘S    Save As…    workbench.action.files.saveAs
-⌘W    Close    workbench.action.closeActiveEditor
-⌥⌘T    Close Others    workbench.action.closeOtherEditors
-⌘K W    Close Group    workbench.action.closeEditorsInGroup
-unassigned    Close Other Groups    workbench.action.closeEditorsInOtherGroups
-unassigned    Close Group to Left    workbench.action.closeEditorsToTheLeft
-unassigned    Close Group to Right    workbench.action.closeEditorsToTheRight
-⌘K ⌘W    Close All    workbench.action.closeAllEditors
-⌘K Enter    Keep Open    workbench.action.keepEditor
-⌃Tab    Open Next    workbench.action.openNextRecentlyUsedEditorInGroup
-⌃⇧Tab    Open Previous    workbench.action.openPreviousRecentlyUsedEditorInGroup
-⌘K P    Copy Path of Active File    workbench.action.files.copyPathOfActiveFile
-⌘K R    Reveal Active File in Windows    workbench.action.files.revealActiveFileInWindows
-⌘K O    Show Opened File in New Window    workbench.action.files.showOpenedFileInNewWindow
-unassigned    Compare Opened File With&nbsp;workbench.files.action.compareFileWith</p>
+<ul>
+<li>⌘N    New File&nbsp;workbench.action.files.newUntitledFile</li>
+<li>unassigned    Open File…&nbsp;workbench.action.files.openFile</li>
+<li>⌘S    Save&nbsp;workbench.action.files.save</li>
+<li>unassigned    Save All&nbsp;workbench.action.files.saveAll</li>
+<li>⇧⌘S    Save As…&nbsp;workbench.action.files.saveAs</li>
+<li>⌘W    Close&nbsp;workbench.action.closeActiveEditor</li>
+<li>⌥⌘T    Close Others&nbsp;workbench.action.closeOtherEditors</li>
+<li>⌘K W    Close Group&nbsp;workbench.action.closeEditorsInGroup</li>
+<li>unassigned    Close Other Groups&nbsp;workbench.action.closeEditorsInOtherGroups</li>
+<li>unassigned    Close Group to Left&nbsp;workbench.action.closeEditorsToTheLeft</li>
+<li>unassigned    Close Group to Right&nbsp;workbench.action.closeEditorsToTheRight</li>
+<li>⌘K ⌘W    Close All&nbsp;workbench.action.closeAllEditors</li>
+<li>⌘K Enter    Keep Open&nbsp;workbench.action.keepEditor</li>
+<li>⌃Tab    Open Next&nbsp;workbench.action.openNextRecentlyUsedEditorInGroup</li>
+<li>⌃⇧Tab    Open Previous&nbsp;workbench.action.openPreviousRecentlyUsedEditorInGroup</li>
+<li>⌘K P    Copy Path of Active File&nbsp;workbench.action.files.copyPathOfActiveFile</li>
+<li>⌘K R    Reveal Active File in Windows&nbsp;workbench.action.files.revealActiveFileInWindows</li>
+<li>⌘K O    Show Opened File in New Window&nbsp;workbench.action.files.showOpenedFileInNewWindow</li>
+<li>unassigned    Compare Opened File With&nbsp;workbench.files.action.compareFileWith</li>
+</ul>
 <h2 id="display">Display</h2>
-<p>⌃⌘F    Toggle Full Screen    workbench.action.toggleFullScreen
-⌘=    Zoom in    workbench.action.zoomIn
-⌘-    Zoom out    workbench.action.zoomOut
-⌘B    Toggle Sidebar Visibility    workbench.action.toggleSidebarVisibility
-⇧⌘D    Show Debug    workbench.view.debug
-⇧⌘E    Show Explorer / Toggle Focus    workbench.view.explorer
-⌃⇧G    Show Git    workbench.view.git
-⇧⌘F    Show Search    workbench.view.search
-⇧⌘H    Replace in Files    workbench.action.replaceInFiles
-⇧⌘X    Show Extensions    workbench.view.extensions
-⇧⌘J    Toggle Search Details    workbench.action.search.toggleQueryDetails
-⇧⌘C    Open New Command Prompt    workbench.action.terminal.openNativeConsole
-⇧⌘U    Show Output    workbench.action.output.toggleOutput
-⇧⌘V    Toggle Markdown Preview    markdown.showPreview
-⌘K V    Open Preview to the Side    markdown.showPreviewToSide
-⌃ (tick)    Toggle Integrated Terminal&nbsp;workbench.action.terminal.toggleTerminal</p>
+<ul>
+<li>⌃⌘F    Toggle Full Screen&nbsp;workbench.action.toggleFullScreen</li>
+<li>⌘=    Zoom in&nbsp;workbench.action.zoomIn</li>
+<li>⌘-    Zoom out&nbsp;workbench.action.zoomOut</li>
+<li>⌘B    Toggle Sidebar Visibility&nbsp;workbench.action.toggleSidebarVisibility</li>
+<li>⇧⌘D    Show Debug&nbsp;workbench.view.debug</li>
+<li>⇧⌘E    Show Explorer / Toggle Focus&nbsp;workbench.view.explorer</li>
+<li>⌃⇧G    Show Git&nbsp;workbench.view.git</li>
+<li>⇧⌘F    Show Search&nbsp;workbench.view.search</li>
+<li>⇧⌘H    Replace in Files&nbsp;workbench.action.replaceInFiles</li>
+<li>⇧⌘X    Show Extensions&nbsp;workbench.view.extensions</li>
+<li>⇧⌘J    Toggle Search Details&nbsp;workbench.action.search.toggleQueryDetails</li>
+<li>⇧⌘C    Open New Command Prompt&nbsp;workbench.action.terminal.openNativeConsole</li>
+<li>⇧⌘U    Show Output&nbsp;workbench.action.output.toggleOutput</li>
+<li>⇧⌘V    Toggle Markdown Preview&nbsp;markdown.showPreview</li>
+<li>⌘K V    Open Preview to the Side&nbsp;markdown.showPreviewToSide</li>
+<li>⌃ (tick)    Toggle Integrated Terminal&nbsp;workbench.action.terminal.toggleTerminal</li>
+</ul>
 <h2 id="preferences">Preferences</h2>
-<p>⌘,    Open User Settings    workbench.action.openGlobalSettings
-unassigned    Open Workspace Settings    workbench.action.openWorkspaceSettings
-unassigned    Open Keyboard Shortcuts    workbench.action.openGlobalKeybindings
-unassigned    Open User Snippets    workbench.action.openSnippets
-unassigned    Select Color Theme    workbench.action.selectTheme
-unassigned    Configure Display Language    workbench.action.configureLocale
-Debug
-Key    Command    Command id
-F9    Toggle Breakpoint    editor.debug.action.toggleBreakpoint
-F5    Continue    workbench.action.debug.continue
-F5    Pause    workbench.action.debug.start
-F11    Step Into    workbench.action.debug.stepInto
-⇧F11    Step Out    workbench.action.debug.stepOut
-F10    Step Over    workbench.action.debug.stepOver
-⇧F5    Stop    workbench.action.debug.stop
-⌘K ⌘I    Show Hover    editor.action.showHover
-Tasks
-Key    Command    Command id
-⇧⌘B    Run Build Task    workbench.action.tasks.build
-unassigned    Run Test Task    workbench.action.tasks.test
-Extensions
-Key    Command    Command id
-unassigned    Install Extension    workbench.extensions.action.installExtension
-unassigned    Show Installed Extensions    workbench.extensions.action.showInstalledExtensions
-unassigned    Show Outdated Extensions    workbench.extensions.action.listOutdatedExtensions
-unassigned    Show Recommended Extensions    workbench.extensions.action.showRecommendedExtensions
-unassigned    Show Popular Extensions&nbsp;workbench.extensions.action.showPopularExtensions</p>
+<ul>
+<li>⌘,    Open User Settings&nbsp;workbench.action.openGlobalSettings</li>
+<li>unassigned    Open Workspace Settings&nbsp;workbench.action.openWorkspaceSettings</li>
+<li>unassigned    Open Keyboard Shortcuts&nbsp;workbench.action.openGlobalKeybindings</li>
+<li>unassigned    Open User Snippets&nbsp;workbench.action.openSnippets</li>
+<li>unassigned    Select Color Theme&nbsp;workbench.action.selectTheme</li>
+<li>unassigned    Configure Display Language&nbsp;workbench.action.configureLocale</li>
+<li>Debug</li>
+<li>Key    Command    Command&nbsp;id</li>
+<li>F9    Toggle Breakpoint&nbsp;editor.debug.action.toggleBreakpoint</li>
+<li>F5    Continue&nbsp;workbench.action.debug.continue</li>
+<li>F5    Pause&nbsp;workbench.action.debug.start</li>
+<li>F11    Step Into&nbsp;workbench.action.debug.stepInto</li>
+<li>⇧F11    Step Out&nbsp;workbench.action.debug.stepOut</li>
+<li>F10    Step Over&nbsp;workbench.action.debug.stepOver</li>
+<li>⇧F5    Stop&nbsp;workbench.action.debug.stop</li>
+<li>⌘K ⌘I    Show Hover&nbsp;editor.action.showHover</li>
+<li>Tasks</li>
+<li>Key    Command    Command&nbsp;id</li>
+<li>⇧⌘B    Run Build Task&nbsp;workbench.action.tasks.build</li>
+<li>unassigned    Run Test Task&nbsp;workbench.action.tasks.test</li>
+<li>Extensions</li>
+<li>Key    Command    Command&nbsp;id</li>
+<li>unassigned    Install Extension&nbsp;workbench.extensions.action.installExtension</li>
+<li>unassigned    Show Installed Extensions&nbsp;workbench.extensions.action.showInstalledExtensions</li>
+<li>unassigned    Show Outdated Extensions&nbsp;workbench.extensions.action.listOutdatedExtensions</li>
+<li>unassigned    Show Recommended Extensions&nbsp;workbench.extensions.action.showRecommendedExtensions</li>
+<li>unassigned    Show Popular Extensions&nbsp;workbench.extensions.action.showPopularExtensions</li>
+</ul>
 </section>
                 </docs>
                 <!-- End of Blog Page-->
