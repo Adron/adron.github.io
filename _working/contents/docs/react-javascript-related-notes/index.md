@@ -73,3 +73,33 @@ React.cloneElement(
   [...children]
 )
 ```
+
+# ES6 Arrow Functions, Classes, and `Super()`
+
+## The Classes Capabilities of ES6
+
+> [MDN Project](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes#Super_class_calls_with_super)
+
+The super keyword is used to call functions on an object's parent.
+
+```
+class Cat { 
+  constructor(name) {
+    this.name = name;
+  }
+  
+  speak() {
+    console.log(this.name + ' makes a noise.');
+  }
+}
+
+class Lion extends Cat {
+  speak() {
+    super.speak();
+    console.log(this.name + ' roars.');
+  }
+}
+
+var l = new Lion('Fuzzy');
+l.speak();
+```
