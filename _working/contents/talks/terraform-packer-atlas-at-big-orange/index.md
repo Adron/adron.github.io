@@ -9,4 +9,6 @@ template: talk.jade
 
 More information coming soon!
 
+<iframe src="https://docs.google.com/presentation/d/1wrYvwvQn8PUt-VQA1iH3J4vO0GnFZyKoNYq0DL2S79g/embed?start=true&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
 Eventually I'll have the video and related information posted her per the talk.
