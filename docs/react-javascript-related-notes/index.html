@@ -135,6 +135,31 @@
   [props],
   [...children]
 )
+</code></pre><h1 id="es6-arrow-functions-classes-and-super-"><span class="caps">ES6</span> Arrow Functions, Classes, and <code>Super()</code></h1>
+<h2 id="the-classes-capabilities-of-es6">The Classes Capabilities of&nbsp;<span class="caps">ES6</span></h2>
+<blockquote>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes#Super_class_calls_with_super"><span class="caps">MDN</span>&nbsp;Project</a></p>
+</blockquote>
+<p>The super keyword is used to call functions on an object’s&nbsp;parent.</p>
+<pre><code>class Cat { 
+  constructor(name) {
+    this.name = name;
+  }
+
+  speak() {
+    console.log(this.name + &#39; makes a noise.&#39;);
+  }
+}
+
+class Lion extends Cat {
+  speak() {
+    super.speak();
+    console.log(this.name + &#39; roars.&#39;);
+  }
+}
+
+var l = new Lion(&#39;Fuzzy&#39;);
+l.speak();
 </code></pre></section>
                 </docs>
                 <!-- End of Blog Page-->
