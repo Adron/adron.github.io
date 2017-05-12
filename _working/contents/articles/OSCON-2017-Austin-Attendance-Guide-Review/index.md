@@ -21,6 +21,8 @@ Microsoft did release and interesting new feature to augment their Bash on Windo
 
 Ok, I'll admit I shifted away from Windows back in 2011 and haven't had a single issue come up. I dropped all of that trash fire like the oddball hack it was back then. One of the big reasons I dropped it was because I wanted to have systems that more closely resembled the systems I was generally working with, or wanted to work with. Those, 99.9% of the time, were some * nix variant and Windows was definitely not anything remotely close to that. This makes me scratch my head in curiosity of what the long game is, still not entirely sold on switching back or even using Windows as another system within my stable of systems.
 
+Here's an article by [@richturn_ms](https://twitter.com/richturn_ms), ["New distro’s coming to Bash/WSL via Windows Store"](https://blogs.msdn.microsoft.com/commandline/2017/05/11/new-distros-coming-to-bashwsl-via-windows-store/) for more details on this whole release of distros on Windows.
+
 ## OSCON Bridging Gaps, A Suggestion
 
 One of the main benefits of OSCON, to me personally, is expanding my network and speaking personally with individuals working on the technology that I use everyday. If it is Kubernetes or Ubuntu or something else, it's always beneficial to catch up with other members of the community. This year in Austin was no exception. I was able to catch up with a number of coders, media people, and others pushing the industry forward.
