@@ -1,5 +1,5 @@
 ---
-title: OSCON 2017 Austin   An Attendance Guide and Review
+title: OSCON 2017 Austin - An Attendance Guide and Review
 author: Adron Hall
 date: 2017-05-12 11:21:13
 template: article.jade
