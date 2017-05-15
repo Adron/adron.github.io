@@ -4,7 +4,7 @@ author: Adron Hall
 date: 2017-05-13 11:26:33
 template: article.jade
 ---
-Alright, I'm gonna have some extremely blunt things stated in this email, that have the loaded context that I've done extensive studies, analysis, and related research into urban spaces, planning, roadway design, cycling as a mode of transportation, transit, etc. Some of you probably know me well enough to know that, so these comments won't come as a surprise. However this is all mixed in the tech however, and suggestions on how to get more out of a conference like OSCON.
+Alright, I'm gonna have some extremely blunt things in this article, with the loaded context that I've done extensive studies, analysis, and related research into urban spaces, planning, roadway design, cycling as a mode of transportation, transit, etc. Some of you probably know me well enough to know that, so these comments won't come as a surprise. It's all mixed in the tech topics however, and suggestions on how to get more out of a conference like OSCON.
 
 This blog entry should and could be used for informing decisions when traveling for tech events besides just OSCON, but it is the conference I'm using as a reference point. Some of the suggestions might be a no brainer, others might add to your notions of what to do and how to travel to these events. Toward the end of this blog entry I've broken down these suggestions into: Speaker Adventures, Attendee Adventures, and Staffing Adventures. Before that I'll cover the low down on things in Austin.
 
