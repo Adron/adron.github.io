@@ -50,12 +50,12 @@
       <guid isPermaLink="true">http://adron.github.io/articles/OSCON2017-austin-via-oscon/</guid>
       <author></author>
       <description>&lt;p&gt;Alright, I’m gonna have some extremely blunt things in this article, with the loaded context that I’ve done extensive studies, analysis, and related research into urban spaces, planning, roadway design, cycling as a mode of transportation, transit, etc. Some of you probably know me well enough to know that, so these comments won’t come as a surprise. It’s all mixed in the tech topics however, and suggestions on how to get more out of a conference like OSCON.&lt;/p&gt;
-&lt;p&gt;This blog entry should and could be used for informing decisions when traveling for tech events besides just OSCON, but it is the conference I’m using as a reference point. Some of the suggestions might be a no brainer, others might add to your notions of what to do and how to travel to these events. Toward the end of this blog entry I’ve broken down these suggestions into: Speaker Adventures, Attendee Adventures, and Staffing Adventures. Before that I’ll cover the low down on things in Austin.&lt;/p&gt;
+&lt;p&gt;This blog entry should and could be used for informing decisions when traveling for tech events besides just OSCON, but it’s the conference I’m using as a reference point. Some of the suggestions might be a no-brainer, others might add to your notions of what to do and how to travel to these events. Toward the end of this blog entry I’ve broken down these suggestions into: Speaker Adventures, Attendee Adventures, and Staffing Adventures. Before that I’ll cover the low down on things in Austin.&lt;/p&gt;
 &lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;h2 id=&quot;visiting-austin-learning-about-and-exploring&quot;&gt;Visiting Austin, Learning About, and Exploring&lt;/h2&gt;
-&lt;p&gt;Austin is one of the gems of the south. It’s up there with the extreme few walkable places of Atlanta, the core of Charlotte or Wilmington, North Carolina, and a few other places. I’ll add the caveat that all of these cities have heat, sun, and humidity that will make any non-residents of the south buckle at the knees and feel as thought they’ve been solid punched in the chest. I &lt;strong&gt;&lt;em&gt;do not say this lightly, if you’ve not been punched in the chest you may be very unprepared to deal with the climate difference versus the west coast, northwestern US, or other places&lt;/em&gt;&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;But I digress, moving beyond the climate, which will likely kick your ass Texas style. Let’s talk about the negatives real quick for people that might travel and like to enjoy things at a personal and human level, not locked behind the wheel of a cage (i.e. car) requiring endless wandering aimlessly through city streets while missing the vast majority of life as it exists. These are the rough parts I’m forewarning you about before you land at Austin-Bergstrom International Airport (or if you’re brave, arriving by Amtrak’s Texas Eagle).&lt;/p&gt;
-&lt;p&gt;Austin is distinctively subservient like in its auto-dependency. People generally can’t give you directions except based purely on driving directions. They’ll look at you funny if you suggest you might ride the bus or what not. Some people realize that everybody can ride mass transit, but there’s still a lot of the culturally discriminatory notions behind transit that has existed in the south. That is, it’s anybody riding it is poor and from the lower classes of American society (in a society supposedly classless, LOLz whoops).&lt;/p&gt;
+&lt;p&gt;Austin is one of the gems of the south. It’s up there with the few walkable places of Atlanta, the core of Charlotte or Wilmington, North Carolina, along with a few other places. I’ll add the caveat that all of these cities have heat, sun, and humidity that will make any non-residents of the south buckle at the knees. It’ll feel as though you’ve been solid punched in the chest. I &lt;strong&gt;&lt;em&gt;do not say this lightly, if you’ve not been punched in the chest you may be very unprepared to deal with the climate difference versus the west coast, northwestern US, or other places&lt;/em&gt;&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;But I digress, moving beyond the climate, which could kick your ass Texas style. Let’s talk about the negatives real quick for people that might travel and like to enjoy things at a personal and human level, not locked behind the wheel of a cage (i.e. car) requiring endless wandering aimlessly through city streets while missing the vast majority of life as it exists. These are the rough parts I’m forewarning you about before you land at Austin-Bergstrom International Airport (or if you’re brave, arriving by Amtrak’s Texas Eagle).&lt;/p&gt;
+&lt;p&gt;Austin is distinctively subservient like in its auto-dependency. People generally can’t give you directions except based purely on driving. They’re friendly about it, that’s for sure, it comes with the territory, but they likely can’t tell you how to travel unless you’re in a car. They’ll look at you funny if you suggest you might ride the bus or something else. Some people realize that everybody can ride mass transit and enjoy that freedom, but there’s still a lot of the culturally discriminatory notions behind transit use that has existed in the south. That is, if anybody is riding transit they’re assumed to be poor and from the lower classes of American society (in a society supposedly classless, LOLz whoops).&lt;/p&gt;
 &lt;p&gt;Why do I harp on auto-dependency in this way? It’s simple. The more auto-dependent an area the more plain, mediocre, ticky tacky, cerebrally regressive, and generally boring that place will be. One can draw a chart and basically draw the correlation that’s tightly coupled to this down to the street levels. Just look at Europe, there’s a reason those of historical and intellectual curiosity flood to the old world to explore. But I digress, this issue is a topic that is vast in study and intense in debate, I’ll leave this for future topics.&lt;/p&gt;
 &lt;h2 id=&quot;bike-friendly-what&quot;&gt;Bike Friendly What&lt;/h2&gt;
 &lt;p&gt;If you’re staying downtown or in the immediate neighborhoods it’s actually, shockingly, extremely easy to bike around. It’s even somewhat bike &lt;em&gt;friendly&lt;/em&gt;. The streets, even without bike lanes downtown, are huge. They’re so wide they’re often able to fit a regular southern mansion (that’s big for those that don’t know southern mansions) right smack in the center of the street and still have space to walk around.&lt;/p&gt;
@@ -4720,23 +4720,6 @@ it can be.&lt;/p&gt;
 &lt;iframe width=&quot;1280&quot; height=&quot;720&quot; src=&quot;https://www.youtube.com/embed/L2BVDJWHdy0?rel=0&amp;amp;showinfo=0&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;</description>
     </item>
     <item>
-      <title>The House Is Not On Fire - Building a home automation robot with Arduino, Raspberry Pi and Node.js by Artur Paikin</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</link>
-      <pubDate>Wed, 01 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</guid>
-      <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-right&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/art-stida.jpg&quot; alt=&quot;Artur Paikin&quot;&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Artur describes himself as, “I’m a web developer and traveler. I write stories about my adventures in Russian and English on my site: &lt;a href=&quot;http://arturpaikin.com&quot;&gt;http://arturpaikin.com&lt;/a&gt; and run a small technology cooperative called &lt;a href=&quot;http://unebaguette.com&quot;&gt;Baguette&lt;/a&gt;, where I work on cool projects, currently building an ambitious next generation file uploader with &lt;a href=&quot;https://transloadit.com/&quot;&gt;Transloadit&lt;/a&gt;. I ride a &lt;a href=&quot;https://www.instagram.com/p/xC0qC2SSYb&quot;&gt;foldable bicycle&lt;/a&gt;, &lt;a href=&quot;http://unebaguette.com/web-course/&quot;&gt;teach&lt;/a&gt; web development and sometimes &lt;a href=&quot;https://www.instagram.com/p/4_6LO8ySVL/&quot;&gt;garden&lt;/a&gt; on the balcony.”&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Artur has built an open source home automation system called &lt;a href=&quot;https://github.com/arturi/kotihome&quot;&gt;Koti Home&lt;/a&gt; (Koti means home in Finnish language). It’s powered by an Arduino connected to Raspberry Pi, MQTT protocol for messaging, Node.js on the client and server, web sockets. You can interact with Koti robot via a React (like the cool kids do) control panel, Telegram Chat Bot and even your own voice.&lt;/p&gt;
-&lt;p&gt;Arthur will talk about how he’s turned this project into reality — the tech he used and the challenges he faced. From a blinking LED to a voice controlled home automation robot.&lt;/p&gt;
-</description>
-    </item>
-    <item>
       <title>Code First Docs How we Threw Out The Book &amp; Put Code First With Twilio Documentation by Jarod Reyes</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-jarod-reyes/</link>
       <pubDate>Wed, 01 Jun 2016 17:00:00 -0700</pubDate>
@@ -4758,6 +4741,23 @@ it can be.&lt;/p&gt;
 &lt;li&gt;Twitter: &lt;a href=&quot;https://twitter.com/jreyesdev&quot;&gt;@jreyesdev&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Github: &lt;a href=&quot;https://github.com/jarodreyes&quot;&gt;github.com/jarodreyes&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+</description>
+    </item>
+    <item>
+      <title>The House Is Not On Fire - Building a home automation robot with Arduino, Raspberry Pi and Node.js by Artur Paikin</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</link>
+      <pubDate>Wed, 01 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-right&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/art-stida.jpg&quot; alt=&quot;Artur Paikin&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Artur describes himself as, “I’m a web developer and traveler. I write stories about my adventures in Russian and English on my site: &lt;a href=&quot;http://arturpaikin.com&quot;&gt;http://arturpaikin.com&lt;/a&gt; and run a small technology cooperative called &lt;a href=&quot;http://unebaguette.com&quot;&gt;Baguette&lt;/a&gt;, where I work on cool projects, currently building an ambitious next generation file uploader with &lt;a href=&quot;https://transloadit.com/&quot;&gt;Transloadit&lt;/a&gt;. I ride a &lt;a href=&quot;https://www.instagram.com/p/xC0qC2SSYb&quot;&gt;foldable bicycle&lt;/a&gt;, &lt;a href=&quot;http://unebaguette.com/web-course/&quot;&gt;teach&lt;/a&gt; web development and sometimes &lt;a href=&quot;https://www.instagram.com/p/4_6LO8ySVL/&quot;&gt;garden&lt;/a&gt; on the balcony.”&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Artur has built an open source home automation system called &lt;a href=&quot;https://github.com/arturi/kotihome&quot;&gt;Koti Home&lt;/a&gt; (Koti means home in Finnish language). It’s powered by an Arduino connected to Raspberry Pi, MQTT protocol for messaging, Node.js on the client and server, web sockets. You can interact with Koti robot via a React (like the cool kids do) control panel, Telegram Chat Bot and even your own voice.&lt;/p&gt;
+&lt;p&gt;Arthur will talk about how he’s turned this project into reality — the tech he used and the challenges he faced. From a blinking LED to a voice controlled home automation robot.&lt;/p&gt;
 </description>
     </item>
     <item>
