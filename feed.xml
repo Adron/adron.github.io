@@ -5,9 +5,71 @@
     <atom:link href="http://adron.github.io/feed.xml" rel="self" type="application/rss+xml"></atom:link>
     <link>http://adron.github.io</link>
     <description>Coder, Messenger, Recon, Infrastructure, Ops</description>
-    <pubDate>Sun, 14 May 2017 17:21:50 -0700</pubDate>
+    <pubDate>Mon, 15 May 2017 04:05:44 -0700</pubDate>
     <generator>Wintersmith - https://github.com/jnordberg/wintersmith</generator>
     <language>en</language>
+    <item>
+      <title>Collected React Starting Points Links and Notes</title>
+      <link>http://adron.github.io/articles/collected-react-starting-points/</link>
+      <pubDate>Mon, 15 May 2017 04:05:44 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/collected-react-starting-points/</guid>
+      <author></author>
+      <description>&lt;div class=&quot;image float-left&quot;&gt;
+    &lt;img src=&quot;/articles/collected-react-starting-points/react.png&quot; alt=&quot;React&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;The following is a collection of links and related things that I have used for learning React this last two weeks. I’ve attempted to sort them into a way that seems useful, at least to me, and hope that this can be useful to others. Where the link was given via Twitter, I’ve embedded to tweet so it gives reference to those that have helped me along the way. Others are just inline as I found them via google or via whatever method.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;These materials actually step through or explain in detail design and implementation concepts behind React or various parts of React.&lt;/p&gt;
+&lt;p&gt;From Joachim &lt;a href=&quot;https://twitter.com/pelotontechio&quot;&gt;@PelotonTechIO&lt;/a&gt; an article written by &lt;a href=&quot;https://medium.com/@wesharehoodies&quot;&gt;Indrek Lasn&lt;/a&gt; on &lt;a href=&quot;https://medium.com&quot;&gt;Medium&lt;/a&gt; @ &lt;a href=&quot;https://medium.com/@wesharehoodies/easy-guide-for-webpack-2-0-from-scratch-fe508a3ce44e&quot;&gt;https://medium.com/@wesharehoodies/easy-guide-for-webpack-2-0-from-scratch-fe508a3ce44e&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote style=&quot;width: 100%&quot; class=&quot;twitter-tweet&quot; data-lang=&quot;en&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;&lt;a href=&quot;https://twitter.com/Adron&quot;&gt;@Adron&lt;/a&gt; Is this what you&amp;#39;re looking for? &lt;a href=&quot;https://t.co/P2wqSrsjPC&quot;&gt;https://t.co/P2wqSrsjPC&lt;/a&gt; (and &lt;a href=&quot;https://t.co/c0foor14Z7&quot;&gt;https://t.co/c0foor14Z7&lt;/a&gt;)&lt;/p&gt;&amp;mdash; Christopher Biscardi (@chrisbiscardi) &lt;a href=&quot;https://twitter.com/chrisbiscardi/status/863137627368677376&quot;&gt;May 12, 2017&lt;/a&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;This tweet and links by Christopher Biscardi were super helpful. There is the &lt;a href=&quot;https://facebook.github.io/react/contributing/codebase-overview.html&quot;&gt;Codebase Overview&lt;/a&gt; and &lt;a href=&quot;https://facebook.github.io/react/contributing/implementation-notes.html&quot;&gt;Implementation Notes&lt;/a&gt; links. Both, super helpful and information that I wasn’t finding easy to get at.&lt;/p&gt;
+&lt;p&gt;&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;en&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;&lt;a href=&quot;https://twitter.com/Adron&quot;&gt;@Adron&lt;/a&gt; For Babel there&amp;#39;s &lt;a href=&quot;https://t.co/xxXttxl2Do&quot;&gt;https://t.co/xxXttxl2Do&lt;/a&gt; for Webpack: &lt;a href=&quot;https://t.co/mlU6ZhnExC&quot;&gt;https://t.co/mlU6ZhnExC&lt;/a&gt;&lt;/p&gt;&amp;mdash; Christopher Biscardi (@chrisbiscardi) &lt;a href=&quot;https://twitter.com/chrisbiscardi/status/863164375758131200&quot;&gt;May 12, 2017&lt;/a&gt;&lt;/blockquote&gt;&lt;/p&gt;
+&lt;script async src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;Babel Handbook &amp;gt; &lt;a href=&quot;https://github.com/thejameskyle/babel-handbook/blob/master/translations/en/README.md&quot;&gt;https://github.com/thejameskyle/babel-handbook/blob/master/translations/en/README.md&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;This is actually broken down into the &lt;em&gt;Babel Handbook&lt;/em&gt; and then the &lt;em&gt;Plugin Handbook&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Here are some links I’ve found that I’m currently working through as examples. They’re fairly useful in the context of getting some hands on experience just putting something together that is simple, works, and can be built off of.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://stormpath.com/blog/crud-application-react-spring-boot-user-authentication&quot;&gt;CURD Application with React Sprintboot &amp;amp; User Auth&lt;/a&gt; by Karl Penzhorn &lt;a href=&quot;https://twitter.com/gostormpath&quot;&gt;@gostormpath&lt;/a&gt; with a &lt;a href=&quot;https://github.com/stormpath/stormpath-spring-boot-react-example&quot;&gt;repo on Github&lt;/a&gt;… two other good entries I’ve reviewed are &lt;a href=&quot;https://stormpath.com/blog/build-a-react-app-with-user-authentication&quot;&gt;Build a React App With User Auth&lt;/a&gt; and &lt;a href=&quot;https://stormpath.com/blog/optimize-react-webpack&quot;&gt;Optimize React with WebPack&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.sitepoint.com/crud-app-react-redux-feathersjs/&quot;&gt;Building a CRUD App Using React, Redux, and FeatherJS&lt;/a&gt; my Michael Wanyoike (&lt;a href=&quot;https://twitter.com/myxsys&quot;&gt;@myxsys&lt;/a&gt;).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The hello world on the React site. It’s ok, but I found it lacking so I had to search onwards for more specific information.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://facebook.github.io/react/docs/hello-world.html&quot;&gt;https://facebook.github.io/react/docs/hello-world.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Some other frameworks/elements that work with/within React.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/mozilla-services/react-jsonschema-form&quot;&gt;https://github.com/mozilla-services/react-jsonschema-form&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://mozilla-services.github.io/react-jsonschema-form/&quot;&gt;https://mozilla-services.github.io/react-jsonschema-form/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/ReactTraining/react-router&quot;&gt;https://github.com/ReactTraining/react-router&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;notes&quot;&gt;Notes&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;React&lt;/strong&gt; is a declarative, component-based library for building user interfaces. The components in which React provides take data and then executes a &lt;code&gt;render()&lt;/code&gt; function that builds and returns what to display.&lt;/p&gt;
+&lt;p&gt;Inside the React library there is a feature called the &lt;em&gt;virtual DOM&lt;/em&gt; which is used to render components. React keeps two copies of this virtual DOM in action, one for what is rendered and one that is used for updated versions of the view. When rendering new elements, React executes a diff between the original and updated version, then returns the the appropriate operations to provide an updated view.&lt;/p&gt;
+&lt;p&gt;React has three main areas it brings innovation in:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;React - It provides a different way to handle event and data binding with components.&lt;/li&gt;
+&lt;li&gt;Virtual DOM - This provides React with its power for fast rendering, and related architectural differences. It’s also what enables the ability to have simple points of state and render the view according to this within the browser DOM.&lt;/li&gt;
+&lt;li&gt;Components - the design around components provides a way in which to break down the overall design, organization, and implmentation of applications within React.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;JSX, or JavaScript eXtension syntax is used for quoting of HTML and HTML tag syntax to render subcomponents.&lt;/p&gt;
+&lt;p&gt;Other characteristics of React that are important to note: &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;React can be rendered on the server side in addition to the obvious ability to render on the client side.&lt;/li&gt;
+&lt;li&gt;Because of the rendering process of the virtual DOM diff and then the push to the browser DOM, the components and properties are immutable.&lt;/li&gt;
+&lt;li&gt;The React library is &lt;em&gt;only the view&lt;/em&gt; of whatever architecture you’re using to build your overall application.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Other related to but not React things to know:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;React Native uses libraries to build native iOS, Android, and Universal Windows Platform (UWP) Applications.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;history&quot;&gt;History&lt;/h2&gt;
+&lt;p&gt;Jordan Walke created React working at Facebook. His influence was a PHP Component Framework called XHP. It was deployed first on Facebook in 2011 and then Instagram in 2012. In 2013 React was made open source during the May 2013 JSConf.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Fini&lt;/em&gt;&lt;/strong&gt; That’s it for today.&lt;/p&gt;
+</description>
+    </item>
     <item>
       <title>OSCON via twitter</title>
       <link>http://adron.github.io/articles/OSCON-via-twitter/</link>
@@ -4622,23 +4684,6 @@ In this talk I would be covering the following:&lt;/p&gt;
 </description>
     </item>
     <item>
-      <title>WebSockets Bring Light at the End of the Tunnel by Joel Lord</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</link>
-      <pubDate>Fri, 03 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</guid>
-      <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-left&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/joel-lord.jpg&quot; alt=&quot;Joel Lord&quot;&gt;
-&lt;/div&gt;
-
-&lt;p&gt;As a Development Manager, Joel’s motivation and proven technical prowess makes him a key member of Spiria’s software development team. With a degree in computational astrophysics, his interests eventually made their way to software and Web design. Today, his knowledge of JavaScript lets him to support a variety of projects on both the front end and back end. As we move into the age of the Internet of Things, Joel is ready with his passion for programming node bots and experimenting with gadgets.&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Joel is going to speak on Web Sockets and tunnels of light… or to describe it more specifically more and more, people seem to be obsessed with real-time data.  But what does real-time mean in the world of REST servers and one-way communication?  Most modern web applications are now either displaying a snapshot of data at a given time or use a polling mechanism to update series of data at a given interval.
-In this talk, you will learn about the power of WebSockets and how they can (and should!) be used in your modern web applications. In these 30 minutes, I will go through the process of building a Node server that can push data to multiple clients in real-time.  You will see how this can be easy using the socket.io library.&lt;/p&gt;
-</description>
-    </item>
-    <item>
       <title>MMOWAM - Build Server-less Games with a DSN by Josh Marinacci</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-josh-marinacci/</link>
       <pubDate>Fri, 03 Jun 2016 17:00:00 -0700</pubDate>
@@ -4676,6 +4721,40 @@ it can be.&lt;/p&gt;
 </description>
     </item>
     <item>
+      <title>WebSockets Bring Light at the End of the Tunnel by Joel Lord</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</link>
+      <pubDate>Fri, 03 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-left&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/joel-lord.jpg&quot; alt=&quot;Joel Lord&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;As a Development Manager, Joel’s motivation and proven technical prowess makes him a key member of Spiria’s software development team. With a degree in computational astrophysics, his interests eventually made their way to software and Web design. Today, his knowledge of JavaScript lets him to support a variety of projects on both the front end and back end. As we move into the age of the Internet of Things, Joel is ready with his passion for programming node bots and experimenting with gadgets.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Joel is going to speak on Web Sockets and tunnels of light… or to describe it more specifically more and more, people seem to be obsessed with real-time data.  But what does real-time mean in the world of REST servers and one-way communication?  Most modern web applications are now either displaying a snapshot of data at a given time or use a polling mechanism to update series of data at a given interval.
+In this talk, you will learn about the power of WebSockets and how they can (and should!) be used in your modern web applications. In these 30 minutes, I will go through the process of building a Node server that can push data to multiple clients in real-time.  You will see how this can be easy using the socket.io library.&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>I Play the JavaScript by Matt McKegg</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</link>
+      <pubDate>Thu, 02 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-left&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/mattmckegg.jpg&quot; alt=&quot;Matt McKegg&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;A JavaScript hacker and backyard musician and from Wellington, New Zealand. Lover of all things open and modular. I spend most of my time pressing buttons of various shapes, sizes and colours. Sometimes these buttons make sounds.&lt;/p&gt;
+&lt;p&gt;Matt has been making music with computers for about 10 years, but once he tried to move from bedroom composing to live performance, he got incredibly frustrated at how hard it was to play computer music live. He decided to start working on his own live electronic performance software written in JavaScript that would let me play the way he wanted to play. 3 years later, it’s finally starting to become a reality.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Here is one of the Matt’s recent performances, for your viewing pleasure. &lt;/p&gt;
+&lt;iframe width=&quot;1280&quot; height=&quot;720&quot; src=&quot;https://www.youtube.com/embed/L2BVDJWHdy0?rel=0&amp;amp;showinfo=0&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;</description>
+    </item>
+    <item>
       <title>The Web Platform is the Universal Instrument by Ben Michel</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-ben-michel/</link>
       <pubDate>Thu, 02 Jun 2016 17:00:00 -0700</pubDate>
@@ -4703,21 +4782,21 @@ it can be.&lt;/p&gt;
 </description>
     </item>
     <item>
-      <title>I Play the JavaScript by Matt McKegg</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</link>
-      <pubDate>Thu, 02 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</guid>
+      <title>The House Is Not On Fire - Building a home automation robot with Arduino, Raspberry Pi and Node.js by Artur Paikin</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</link>
+      <pubDate>Wed, 01 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</guid>
       <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-left&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/mattmckegg.jpg&quot; alt=&quot;Matt McKegg&quot;&gt;
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-right&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/art-stida.jpg&quot; alt=&quot;Artur Paikin&quot;&gt;
 &lt;/div&gt;
 
-&lt;p&gt;A JavaScript hacker and backyard musician and from Wellington, New Zealand. Lover of all things open and modular. I spend most of my time pressing buttons of various shapes, sizes and colours. Sometimes these buttons make sounds.&lt;/p&gt;
-&lt;p&gt;Matt has been making music with computers for about 10 years, but once he tried to move from bedroom composing to live performance, he got incredibly frustrated at how hard it was to play computer music live. He decided to start working on his own live electronic performance software written in JavaScript that would let me play the way he wanted to play. 3 years later, it’s finally starting to become a reality.&lt;/p&gt;
+&lt;p&gt;Artur describes himself as, “I’m a web developer and traveler. I write stories about my adventures in Russian and English on my site: &lt;a href=&quot;http://arturpaikin.com&quot;&gt;http://arturpaikin.com&lt;/a&gt; and run a small technology cooperative called &lt;a href=&quot;http://unebaguette.com&quot;&gt;Baguette&lt;/a&gt;, where I work on cool projects, currently building an ambitious next generation file uploader with &lt;a href=&quot;https://transloadit.com/&quot;&gt;Transloadit&lt;/a&gt;. I ride a &lt;a href=&quot;https://www.instagram.com/p/xC0qC2SSYb&quot;&gt;foldable bicycle&lt;/a&gt;, &lt;a href=&quot;http://unebaguette.com/web-course/&quot;&gt;teach&lt;/a&gt; web development and sometimes &lt;a href=&quot;https://www.instagram.com/p/4_6LO8ySVL/&quot;&gt;garden&lt;/a&gt; on the balcony.”&lt;/p&gt;
 &lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Here is one of the Matt’s recent performances, for your viewing pleasure. &lt;/p&gt;
-&lt;iframe width=&quot;1280&quot; height=&quot;720&quot; src=&quot;https://www.youtube.com/embed/L2BVDJWHdy0?rel=0&amp;amp;showinfo=0&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;</description>
+&lt;p&gt;Artur has built an open source home automation system called &lt;a href=&quot;https://github.com/arturi/kotihome&quot;&gt;Koti Home&lt;/a&gt; (Koti means home in Finnish language). It’s powered by an Arduino connected to Raspberry Pi, MQTT protocol for messaging, Node.js on the client and server, web sockets. You can interact with Koti robot via a React (like the cool kids do) control panel, Telegram Chat Bot and even your own voice.&lt;/p&gt;
+&lt;p&gt;Arthur will talk about how he’s turned this project into reality — the tech he used and the challenges he faced. From a blinking LED to a voice controlled home automation robot.&lt;/p&gt;
+</description>
     </item>
     <item>
       <title>Code First Docs How we Threw Out The Book &amp; Put Code First With Twilio Documentation by Jarod Reyes</title>
@@ -4741,23 +4820,6 @@ it can be.&lt;/p&gt;
 &lt;li&gt;Twitter: &lt;a href=&quot;https://twitter.com/jreyesdev&quot;&gt;@jreyesdev&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Github: &lt;a href=&quot;https://github.com/jarodreyes&quot;&gt;github.com/jarodreyes&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-</description>
-    </item>
-    <item>
-      <title>The House Is Not On Fire - Building a home automation robot with Arduino, Raspberry Pi and Node.js by Artur Paikin</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</link>
-      <pubDate>Wed, 01 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</guid>
-      <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-right&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/art-stida.jpg&quot; alt=&quot;Artur Paikin&quot;&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Artur describes himself as, “I’m a web developer and traveler. I write stories about my adventures in Russian and English on my site: &lt;a href=&quot;http://arturpaikin.com&quot;&gt;http://arturpaikin.com&lt;/a&gt; and run a small technology cooperative called &lt;a href=&quot;http://unebaguette.com&quot;&gt;Baguette&lt;/a&gt;, where I work on cool projects, currently building an ambitious next generation file uploader with &lt;a href=&quot;https://transloadit.com/&quot;&gt;Transloadit&lt;/a&gt;. I ride a &lt;a href=&quot;https://www.instagram.com/p/xC0qC2SSYb&quot;&gt;foldable bicycle&lt;/a&gt;, &lt;a href=&quot;http://unebaguette.com/web-course/&quot;&gt;teach&lt;/a&gt; web development and sometimes &lt;a href=&quot;https://www.instagram.com/p/4_6LO8ySVL/&quot;&gt;garden&lt;/a&gt; on the balcony.”&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Artur has built an open source home automation system called &lt;a href=&quot;https://github.com/arturi/kotihome&quot;&gt;Koti Home&lt;/a&gt; (Koti means home in Finnish language). It’s powered by an Arduino connected to Raspberry Pi, MQTT protocol for messaging, Node.js on the client and server, web sockets. You can interact with Koti robot via a React (like the cool kids do) control panel, Telegram Chat Bot and even your own voice.&lt;/p&gt;
-&lt;p&gt;Arthur will talk about how he’s turned this project into reality — the tech he used and the challenges he faced. From a blinking LED to a voice controlled home automation robot.&lt;/p&gt;
 </description>
     </item>
     <item>
