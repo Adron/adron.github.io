@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="/css/style.min.css">
     <script src="/js/modernizr.js"></script>
   </head>
-  <body>
+  <body class="article-detail">
     <!--[if lt IE 8]>
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -67,8 +67,10 @@
             <div class="col-md-12">
               <!-- Page Info-->
               <div class="page-info page-info-simple">
-                <h1>Adron's Composite Code</h1>
-                <h2 class="description">Coder, Messenger, Recon, Infrastructure, Ops</h2>
+                <h1>data diluvium a working day</h1>
+                <p class="author">Written by <span class="author">Adron Hall</span> and published on <span>May, 17 of 2017.</span>
+                </p>
+                <div class="nav"><a href="/">« Home</a></div>
               </div>
               <!-- End Page Info-->
             </div>
@@ -83,67 +85,20 @@
             <div class="col-md-9">
               <div class="main-content">
                 <!-- Blog Page-->
-                <div class="blog">
-                  <div class="row"></div>
-                </div>
-                <div class="col-md-12 col-sm-12">
-                  <!-- Blog List-->
-                  <div class="blog-grid">
-                    <div class="row">
-                      <div class="col-md-12 col-sm-12">
-                        <h3 class="blog-grid-title"><a href="/articles/devops-thoughts/">DevOps Thoughts, Fixing Culture Roadblocks, and Cultural Anti-Pattern Practices</a></h3>
-                        <p class="blog-grid-excerpt"><div class="image float-right">
-    <img src="/articles/devops-thoughts/artisanal.jpg" alt="Artisanal">
+                <article class="article">
+                  <section class="content"><p>Today after work and some dinner, I sat down to write some code for the Data Diluvium Project. There’s more than a few items to work and hoped to knock out one or&nbsp;two.</p>
+<p>As a refresher, here’s what I’d written about with regard to the Data Diluvium&nbsp;Project:</p>
+<ul>
+<li><a href="http://blog.adron.me/articles/data-diluvium-getting-started/">Data Diluvium Getting&nbsp;Started</a></li>
+<li><a href="http://blog.adron.me/articles/data-diluvium-design-ideas/">Data Diluvium Design&nbsp;Ideas</a></li>
+</ul>
+<p>I gave a quick reread of these myself for a refresher. For a quick review of the next items to work on, I’ve <a href="/articles/data-diluvium-a-working-day/">kept somewhat of a list</a> on Github and also a nice swim lane based kanban @ <a href="https://waffle.io/Adron/datadiluvium">waffle.io of work items</a>.</p>
+<p><span class="more"></span></p>
+<div class="image float-right">
+<img src="/articles/data-diluvium-a-working-day/streamset2.jpg" alt="Streamsets">
 </div>
-
-<p>DevOps Days <span class="caps">PDX</span> just wrapped up and I’m at home, working remotely today, digging into some deployment work around building Elasticsearch Clusters for monitoring with Beats. It’s a tricky beast at this point but I’m getting all the nuances figured&nbsp;out.</p>
-<p>I have a host of tools at my disposal that help tremendously with this endeavor. There is Packer, to help build the base images I need that have Elasticsearch, Beats, or whatever else needs to be on an image. There is Terraform that helps me to get the images deployed and start the final configuration process. Then there is the configuration process, which is a mix of bash, go, and other things to insure that the configuration of and services around Elasticsearch are started&nbsp;appropriately.</p>
-<p>
-                          <p class="more"><a href="/articles/devops-thoughts/">more</a></p>
-                        </p>
-                        <div class="blog-grid-meta"><span class="blog-grid-date">11. August 2016</span></div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End of Blog List-->
-                </div>
-                <div class="col-md-12 col-sm-12">
-                  <!-- Blog List-->
-                  <div class="blog-grid">
-                    <div class="row">
-                      <div class="col-md-12 col-sm-12">
-                        <h3 class="blog-grid-title"><a href="/articles/nginx-notes-from-the-url-redirect-part-two/">NGinx Notes from URL Redirect Project on Google Cloud with Terraform &amp; Packer - Part 2</a></h3>
-                        <p class="blog-grid-excerpt"><div class="image float-right">
-    <img src="/articles/nginx-notes-from-the-url-redirect-part-two/google-cloud-platform.png" alt="Google Cloud Platform">
-</div>
-
-<p>In the <a href="http://blog.adron.me/articles/nginx-notes-from-the-url-redirect/">first blog entry, “NGinx Notes from <span class="caps">URL</span> Redirect Project on Google Cloud with Terraform <span class="amp">&amp;</span> Packer - Part 1”</a> I covered getting a basic Nginx <span class="caps">URL</span> Redirector setup and running. Now it’s time to dig into some of the next&nbsp;steps.</p>
-<p>Since we have an operative server running that we want to automate, I’ll actually just wipe out the server we built in the first part of this series. Albeit I will refer back to it when I get to the process of recreating this server with Packer and Terraform. So first things first, let’s actually setup the networking elements needed to put the server into&nbsp;action.</p>
-<p>
-                          <p class="more"><a href="/articles/nginx-notes-from-the-url-redirect-part-two/">more</a></p>
-                        </p>
-                        <div class="blog-grid-meta"><span class="blog-grid-date">01. August 2016</span></div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End of Blog List-->
-                </div>
-                <div class="col-md-12 col-sm-12">
-                  <!-- Blog List-->
-                  <div class="blog-grid">
-                    <div class="row">
-                      <div class="col-md-12 col-sm-12">
-                        <h3 class="blog-grid-title"><a href="/articles/speaking-trips-tech-and-treks/">Speaking Trips, Tech, and Treks</a></h3>
-                        <p class="blog-grid-excerpt"><p>I’ll be off on some coding adventures in the coming months. I also hope to catch up with a lot of people and their respective projects, learn a few things, and if it’s possible maybe teach a few people a thing or three about immutable infrastructure, lessons I’ve learned, and how to avoid infrastructure catastrophes while building the next bad ass awesome application. This blog entry is about the details of my logistics, and I’ll follow up with more details of the coding adventure along the way. For now: details, details, and&nbsp;details.</p>
-<p>
-                          <p class="more"><a href="/articles/speaking-trips-tech-and-treks/">more</a></p>
-                        </p>
-                        <div class="blog-grid-meta"><span class="blog-grid-date">26. July 2016</span></div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End of Blog List-->
-                </div>
+</section>
+                </article>
                 <!-- End of Blog Page-->
               </div>
             </div>
@@ -233,8 +188,7 @@
             </div>
           </div>
         </div>
-        <div class="nav"><a href="/page/15/">« Newer</a>&nbsp;<a href="/page/17/">Previous »</a>
-        </div>
+        <div class="nav"><a href="/">« Home</a></div>
       </div>
     </div>
     <script src="/js/all.js"></script>
