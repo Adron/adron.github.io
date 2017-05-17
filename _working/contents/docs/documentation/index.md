@@ -69,6 +69,9 @@ template: doc.jade
                 <li class="is-file">Iterm2 Shortcuts -
                     <span class="file-tree-description">[Mac Shortcuts](../../docs/shortcuts-iterm2/)</span>
                 </li>
+                <li class="is-file">Git & Bash -
+                    <span class="file-tree-description">[Commands I Never Remember](../../docs/git-and-bash-commands-i-never-remember/)</span>
+                </li>
             </ul>
         </li>
         <li class="is-folder">Coding -
