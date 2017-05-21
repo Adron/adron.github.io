@@ -1,7 +1,7 @@
 ---
 title: Devday 2015 Wrap Up
 author: Adron Hall
-date: 2017-05-20 17:35:44
+date: 2015-09-17 17:35:44
 template: article.jade
 ---
 I was going to write something, but these tweets really summarize and show the fun had at Dev Day really well. Cheers!

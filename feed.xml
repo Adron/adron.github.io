@@ -5,68 +5,9 @@
     <atom:link href="http://adron.github.io/feed.xml" rel="self" type="application/rss+xml"></atom:link>
     <link>http://adron.github.io</link>
     <description>Coder, Messenger, Recon, Infrastructure, Ops</description>
-    <pubDate>Sat, 20 May 2017 10:35:44 -0700</pubDate>
+    <pubDate>Tue, 16 May 2017 13:26:17 -0700</pubDate>
     <generator>Wintersmith - https://github.com/jnordberg/wintersmith</generator>
     <language>en</language>
-    <item>
-      <title>Devday 2015 Wrap Up</title>
-      <link>http://adron.github.io/articles/devday-wrap-up/</link>
-      <pubDate>Sat, 20 May 2017 10:35:44 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/devday-wrap-up/</guid>
-      <author></author>
-      <description>&lt;p&gt;I was going to write something, but these tweets really summarize and show the fun had at Dev Day really well. Cheers!&lt;/p&gt;
-&lt;p&gt;&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;en&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;Start using document database today with &lt;a href=&quot;https://twitter.com/hashtag/jsonb?src=hash&quot;&gt;#jsonb&lt;/a&gt; type in &lt;a href=&quot;https://twitter.com/hashtag/PostgreSQL?src=hash&quot;&gt;#PostgreSQL&lt;/a&gt; &lt;a href=&quot;https://t.co/82KXAjIVka&quot;&gt;https://t.co/82KXAjIVka&lt;/a&gt; by &lt;a href=&quot;https://twitter.com/robconery&quot;&gt;@robconery&lt;/a&gt; at &lt;a href=&quot;https://twitter.com/hashtag/ABBDevDay?src=hash&quot;&gt;#ABBDevDay&lt;/a&gt;&lt;/p&gt;&amp;mdash; Kamil Lelonek (@KamilLelonek) &lt;a href=&quot;https://twitter.com/KamilLelonek/status/644880063658369024&quot;&gt;September 18, 2015&lt;/a&gt;&lt;/blockquote&gt;&lt;/p&gt;
-&lt;script async src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
-
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;en&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;&lt;a href=&quot;https://twitter.com/hashtag/abbdevday?src=hash&quot;&gt;#abbdevday&lt;/a&gt; - here&amp;#39;s the screencast of my keynote earlier: &lt;a href=&quot;https://t.co/5yNUvrmZ6t&quot;&gt;https://t.co/5yNUvrmZ6t&lt;/a&gt; - slides: &lt;a href=&quot;http://t.co/zGTMoxsGHc&quot;&gt;http://t.co/zGTMoxsGHc&lt;/a&gt;&lt;/p&gt;&amp;mdash; Chris Heilmann (@codepo8) &lt;a href=&quot;https://twitter.com/codepo8/status/644807615596363780&quot;&gt;September 18, 2015&lt;/a&gt;&lt;/blockquote&gt;&lt;/p&gt;
-&lt;script async src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
-
-&lt;p&gt;&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;en&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;&lt;a href=&quot;https://twitter.com/hashtag/abbdevday?src=hash&quot;&gt;#abbdevday&lt;/a&gt; keynote done, time to write the &lt;a href=&quot;https://twitter.com/hashtag/smartwebconf?src=hash&quot;&gt;#smartwebconf&lt;/a&gt; talk &lt;a href=&quot;http://t.co/wvyb4H9r7K&quot;&gt;pic.twitter.com/wvyb4H9r7K&lt;/a&gt;&lt;/p&gt;&amp;mdash; Chris Heilmann (@codepo8) &lt;a href=&quot;https://twitter.com/codepo8/status/644793078910451712&quot;&gt;September 18, 2015&lt;/a&gt;&lt;/blockquote&gt;&lt;/p&gt;
-&lt;script async src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
-
-&lt;p&gt;&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;en&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;&lt;a href=&quot;https://twitter.com/hashtag/abbdevday?src=hash&quot;&gt;#abbdevday&lt;/a&gt; learning some machine learning from &lt;a href=&quot;https://twitter.com/lenadroid&quot;&gt;@lenadroid&lt;/a&gt;! &lt;a href=&quot;http://t.co/y0btHVrzGs&quot;&gt;pic.twitter.com/y0btHVrzGs&lt;/a&gt;&lt;/p&gt;&amp;mdash; Λdrøn (@Adron) &lt;a href=&quot;https://twitter.com/Adron/status/644857049432621056&quot;&gt;September 18, 2015&lt;/a&gt;&lt;/blockquote&gt;&lt;/p&gt;
-&lt;script async src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
-
-&lt;p&gt;&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;en&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;If you&amp;#39;re into F#, even a little, or even hack it everyday could you respond to this ASAP! I want you to rep the awesome community! &lt;a href=&quot;https://twitter.com/hashtag/fsharp?src=hash&quot;&gt;#fsharp&lt;/a&gt;&lt;/p&gt;&amp;mdash; Λdrøn (@Adron) &lt;a href=&quot;https://twitter.com/Adron/status/644587163611475968&quot;&gt;September 17, 2015&lt;/a&gt;&lt;/blockquote&gt;&lt;/p&gt;
-&lt;script async src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
-
-&lt;p&gt;&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;en&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;.&lt;a href=&quot;https://twitter.com/lenadroid&quot;&gt;@lenadroid&lt;/a&gt; is doing science on stage of &lt;a href=&quot;https://twitter.com/hashtag/abbdevday?src=hash&quot;&gt;#abbdevday&lt;/a&gt; &lt;a href=&quot;https://twitter.com/hashtag/machinelearning?src=hash&quot;&gt;#machinelearning&lt;/a&gt; &lt;a href=&quot;http://t.co/03kSURjZkz&quot;&gt;pic.twitter.com/03kSURjZkz&lt;/a&gt;&lt;/p&gt;&amp;mdash; Michał Łusiak (@mlusiak) &lt;a href=&quot;https://twitter.com/mlusiak/status/644859691055599617&quot;&gt;September 18, 2015&lt;/a&gt;&lt;/blockquote&gt;&lt;/p&gt;
-&lt;script async src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
-
-&lt;p&gt;&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;en&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;A terrible data science talk by &lt;a href=&quot;https://twitter.com/RobAshton&quot;&gt;@RobAshton&lt;/a&gt; at &lt;a href=&quot;https://twitter.com/hashtag/abbdevday?src=hash&quot;&gt;#abbdevday&lt;/a&gt; /cc: &lt;a href=&quot;https://twitter.com/garyshort&quot;&gt;@garyshort&lt;/a&gt;&lt;/p&gt;&amp;mdash; Rafał Legiędź (@rafek) &lt;a href=&quot;https://twitter.com/rafek/status/644855661365469184&quot;&gt;September 18, 2015&lt;/a&gt;&lt;/blockquote&gt;&lt;/p&gt;
-&lt;script async src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
-
-&lt;p&gt;&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;en&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;.&lt;a href=&quot;https://twitter.com/mlusiak&quot;&gt;@mlusiak&lt;/a&gt; representing at &lt;a href=&quot;https://twitter.com/hashtag/abbdevday?src=hash&quot;&gt;#abbdevday&lt;/a&gt; \o/ &lt;a href=&quot;http://t.co/c2TMuSW3dA&quot;&gt;pic.twitter.com/c2TMuSW3dA&lt;/a&gt;&lt;/p&gt;&amp;mdash; tretton37 (@tretton37) &lt;a href=&quot;https://twitter.com/tretton37/status/644844857563942912&quot;&gt;September 18, 2015&lt;/a&gt;&lt;/blockquote&gt;&lt;/p&gt;
-&lt;script async src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
-
-&lt;p&gt;&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;en&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;I had a blast speaking at &lt;a href=&quot;https://twitter.com/hashtag/abbdevday?src=hash&quot;&gt;#abbdevday&lt;/a&gt;. I love this conference and feel great on the speaker&amp;#39;s side. &lt;a href=&quot;http://t.co/LzQ133aG5W&quot;&gt;pic.twitter.com/LzQ133aG5W&lt;/a&gt;&lt;/p&gt;&amp;mdash; Michał Łusiak (@mlusiak) &lt;a href=&quot;https://twitter.com/mlusiak/status/644828987844395008&quot;&gt;September 18, 2015&lt;/a&gt;&lt;/blockquote&gt;&lt;/p&gt;
-&lt;script async src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
-
-&lt;p&gt;&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;en&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;&amp;quot;IE is retired, it should be in a park feeding ducks&amp;quot; lol &lt;a href=&quot;https://twitter.com/hashtag/abbdevday?src=hash&quot;&gt;#abbdevday&lt;/a&gt;&lt;/p&gt;&amp;mdash; Maciej Aniserowicz💻 (@maniserowicz) &lt;a href=&quot;https://twitter.com/maniserowicz/status/644774940898652160&quot;&gt;September 18, 2015&lt;/a&gt;&lt;/blockquote&gt;&lt;/p&gt;
-&lt;script async src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
-
-&lt;p&gt;&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;en&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;Rethinking the &lt;a href=&quot;https://twitter.com/rethinkdb&quot;&gt;@rethinkdb&lt;/a&gt; with &lt;a href=&quot;https://twitter.com/robconery&quot;&gt;@robconery&lt;/a&gt; &lt;a href=&quot;https://twitter.com/hashtag/ABBDevDay?src=hash&quot;&gt;#ABBDevDay&lt;/a&gt; &lt;a href=&quot;http://t.co/BmZeUPNtQy&quot;&gt;pic.twitter.com/BmZeUPNtQy&lt;/a&gt;&lt;/p&gt;&amp;mdash; Mirosław Pragłowski (@mpraglowski) &lt;a href=&quot;https://twitter.com/mpraglowski/status/644496113094017024&quot;&gt;September 17, 2015&lt;/a&gt;&lt;/blockquote&gt;&lt;/p&gt;
-&lt;script async src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
-
-&lt;p&gt;&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;en&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;Great talk from &lt;a href=&quot;https://twitter.com/brandewinder&quot;&gt;@brandewinder&lt;/a&gt; about TDD and what ways this helps your thinking when coding. &lt;a href=&quot;https://twitter.com/hashtag/abbdevday?src=hash&quot;&gt;#abbdevday&lt;/a&gt; &lt;a href=&quot;http://t.co/CcyWvV7961&quot;&gt;pic.twitter.com/CcyWvV7961&lt;/a&gt;&lt;/p&gt;&amp;mdash; Λdrøn (@Adron) &lt;a href=&quot;https://twitter.com/Adron/status/644438084759748608&quot;&gt;September 17, 2015&lt;/a&gt;&lt;/blockquote&gt;&lt;/p&gt;
-&lt;script async src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
-
-&lt;p&gt;&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;en&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;F# crew obviously went to &amp;quot;cove of immutability&amp;quot; at &lt;a href=&quot;https://twitter.com/hashtag/abbdevday?src=hash&quot;&gt;#abbdevday&lt;/a&gt;  &lt;a href=&quot;https://twitter.com/tomaspetricek&quot;&gt;@tomaspetricek&lt;/a&gt; &lt;a href=&quot;https://twitter.com/lenadroid&quot;&gt;@lenadroid&lt;/a&gt; &lt;a href=&quot;https://twitter.com/Adron&quot;&gt;@adron&lt;/a&gt; &lt;a href=&quot;https://twitter.com/k_cieslak&quot;&gt;@k_cieslak&lt;/a&gt; &lt;a href=&quot;https://twitter.com/hashtag/fsharp?src=hash&quot;&gt;#fsharp&lt;/a&gt; &lt;a href=&quot;http://t.co/2dNY4qeRsk&quot;&gt;pic.twitter.com/2dNY4qeRsk&lt;/a&gt;&lt;/p&gt;&amp;mdash; Mathias Brandewinder (@brandewinder) &lt;a href=&quot;https://twitter.com/brandewinder/status/644404677786869760&quot;&gt;September 17, 2015&lt;/a&gt;&lt;/blockquote&gt;&lt;/p&gt;
-&lt;script async src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
-
-&lt;p&gt;&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;en&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;&lt;a href=&quot;https://twitter.com/hashtag/AbBDevDay?src=hash&quot;&gt;#AbBDevDay&lt;/a&gt; Cherry Vodka in beer seems to be the option. BOOM! &lt;a href=&quot;http://t.co/7FVswbfHX5&quot;&gt;pic.twitter.com/7FVswbfHX5&lt;/a&gt;&lt;/p&gt;&amp;mdash; Λdrøn (@Adron) &lt;a href=&quot;https://twitter.com/Adron/status/644222813688098816&quot;&gt;September 16, 2015&lt;/a&gt;&lt;/blockquote&gt;&lt;/p&gt;
-&lt;script async src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
-
-&lt;p&gt;&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;en&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;Mathias &lt;a href=&quot;https://twitter.com/brandewinder&quot;&gt;@brandewinder&lt;/a&gt; workshop on &lt;a href=&quot;https://twitter.com/hashtag/fsharp?src=hash&quot;&gt;#fsharp&lt;/a&gt; and &lt;a href=&quot;https://twitter.com/hashtag/machinelearning?src=hash&quot;&gt;#machinelearning&lt;/a&gt; is about to start! &lt;a href=&quot;https://twitter.com/hashtag/abbdevday?src=hash&quot;&gt;#abbdevday&lt;/a&gt; &lt;a href=&quot;http://t.co/q7L08UK46a&quot;&gt;pic.twitter.com/q7L08UK46a&lt;/a&gt;&lt;/p&gt;&amp;mdash; Lena Hall (@lenadroid) &lt;a href=&quot;https://twitter.com/lenadroid/status/644041819010002944&quot;&gt;September 16, 2015&lt;/a&gt;&lt;/blockquote&gt;&lt;/p&gt;
-&lt;script async src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
-
-&lt;p&gt;&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;en&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;That is a nice spot to have a workshop, isn&amp;#39;t it? &lt;a href=&quot;https://twitter.com/hashtag/abbdevday?src=hash&quot;&gt;#abbdevday&lt;/a&gt; &lt;a href=&quot;http://t.co/ofJzRhlpEv&quot;&gt;pic.twitter.com/ofJzRhlpEv&lt;/a&gt;&lt;/p&gt;&amp;mdash; Rafał Legiędź (@rafek) &lt;a href=&quot;https://twitter.com/rafek/status/644040444217851904&quot;&gt;September 16, 2015&lt;/a&gt;&lt;/blockquote&gt;&lt;/p&gt;
-&lt;script async src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
-
-&lt;p&gt;&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;en&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;While Waiting for DevDay 2015 check out best videos from DevDay 2014 &lt;a href=&quot;https://twitter.com/ABBDevDay&quot;&gt;@ABBDevDay&lt;/a&gt; &lt;a href=&quot;http://t.co/TuGfKuv2Gj&quot;&gt;http://t.co/TuGfKuv2Gj&lt;/a&gt; &lt;a href=&quot;https://twitter.com/hashtag/ABBDevDay?src=hash&quot;&gt;#ABBDevDay&lt;/a&gt;&lt;/p&gt;&amp;mdash; Bogusz Pękalski (@boguszp) &lt;a href=&quot;https://twitter.com/boguszp/status/608388950135328768&quot;&gt;June 9, 2015&lt;/a&gt;&lt;/blockquote&gt;&lt;/p&gt;
-&lt;script async src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;</description>
-    </item>
     <item>
       <title>Nuance Dammit</title>
       <link>http://adron.github.io/articles/nuance-dammit/</link>
@@ -4707,27 +4648,6 @@ export TF_VAR_password=&amp;quot;someSecretPassword&amp;quot;
 </description>
     </item>
     <item>
-      <title>How to Electron by Blaine Schmeisser</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-blaine-schmeisser/</link>
-      <pubDate>Sun, 05 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-blaine-schmeisser/</guid>
-      <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-blaine-schmeisser/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-left&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-blaine-schmeisser/blainesch.jpg&quot; alt=&quot;Blaine Schmeisser&quot;&gt;
-&lt;/div&gt;
-
-&lt;p&gt;I’m happy to introduce Blaine Schmeisser. He’s a recent Portland transplant currently working as a Senior Software Engineer at New Relic. He has a passion for building and shipping software and an advocate for pair programming. Outside of tech, Blaine spends his free time with his dog and maintains a simplistic, eco-friendly lifestyle.&lt;/p&gt;
-&lt;p&gt;Blaine’s “How to Electron” answers questions you have about building user interface applications with JavaScript. Have you ever wanted to build desktop apps with web technology you already know? If you’ve never heard of Electron or just want to learn more about it, this talk will cover what Electron is and how to utilize it to create powerful tools like Atom and Slack. You will learn the history of Electron, how to get started, the trade-offs of picking various boiler plates, and the unique Electron specific APIs that are vital to being a Electron developer.&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;GitHub: &lt;a href=&quot;https://github.com/blainesch&quot;&gt;https://github.com/blainesch&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Twitter: &lt;a href=&quot;https://twitter.com/blainesch&quot;&gt;https://twitter.com/blainesch&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Website: &lt;a href=&quot;http://blainesch.com&quot;&gt;http://blainesch.com&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-    </item>
-    <item>
       <title>Demystifying TypeScript Decorators by James Churchill</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-james-churchill/</link>
       <pubDate>Sun, 05 Jun 2016 17:00:00 -0700</pubDate>
@@ -4747,6 +4667,27 @@ export TF_VAR_password=&amp;quot;someSecretPassword&amp;quot;
 &lt;li&gt;Blog: &lt;a href=&quot;http://smashdev.com&quot;&gt;http://smashdev.com&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Github: &lt;a href=&quot;http://github.com/smashdevcode&quot;&gt;http://github.com/smashdevcode&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Twitter: &lt;a href=&quot;http://twitter.com/SmashDev&quot;&gt;http://twitter.com/SmashDev&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    <item>
+      <title>How to Electron by Blaine Schmeisser</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-blaine-schmeisser/</link>
+      <pubDate>Sun, 05 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-blaine-schmeisser/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-blaine-schmeisser/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-left&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-blaine-schmeisser/blainesch.jpg&quot; alt=&quot;Blaine Schmeisser&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;I’m happy to introduce Blaine Schmeisser. He’s a recent Portland transplant currently working as a Senior Software Engineer at New Relic. He has a passion for building and shipping software and an advocate for pair programming. Outside of tech, Blaine spends his free time with his dog and maintains a simplistic, eco-friendly lifestyle.&lt;/p&gt;
+&lt;p&gt;Blaine’s “How to Electron” answers questions you have about building user interface applications with JavaScript. Have you ever wanted to build desktop apps with web technology you already know? If you’ve never heard of Electron or just want to learn more about it, this talk will cover what Electron is and how to utilize it to create powerful tools like Atom and Slack. You will learn the history of Electron, how to get started, the trade-offs of picking various boiler plates, and the unique Electron specific APIs that are vital to being a Electron developer.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;GitHub: &lt;a href=&quot;https://github.com/blainesch&quot;&gt;https://github.com/blainesch&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Twitter: &lt;a href=&quot;https://twitter.com/blainesch&quot;&gt;https://twitter.com/blainesch&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Website: &lt;a href=&quot;http://blainesch.com&quot;&gt;http://blainesch.com&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>
@@ -4811,6 +4752,23 @@ In this talk I would be covering the following:&lt;/p&gt;
 </description>
     </item>
     <item>
+      <title>WebSockets Bring Light at the End of the Tunnel by Joel Lord</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</link>
+      <pubDate>Fri, 03 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-left&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/joel-lord.jpg&quot; alt=&quot;Joel Lord&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;As a Development Manager, Joel’s motivation and proven technical prowess makes him a key member of Spiria’s software development team. With a degree in computational astrophysics, his interests eventually made their way to software and Web design. Today, his knowledge of JavaScript lets him to support a variety of projects on both the front end and back end. As we move into the age of the Internet of Things, Joel is ready with his passion for programming node bots and experimenting with gadgets.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Joel is going to speak on Web Sockets and tunnels of light… or to describe it more specifically more and more, people seem to be obsessed with real-time data.  But what does real-time mean in the world of REST servers and one-way communication?  Most modern web applications are now either displaying a snapshot of data at a given time or use a polling mechanism to update series of data at a given interval.
+In this talk, you will learn about the power of WebSockets and how they can (and should!) be used in your modern web applications. In these 30 minutes, I will go through the process of building a Node server that can push data to multiple clients in real-time.  You will see how this can be easy using the socket.io library.&lt;/p&gt;
+</description>
+    </item>
+    <item>
       <title>MMOWAM - Build Server-less Games with a DSN by Josh Marinacci</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-josh-marinacci/</link>
       <pubDate>Fri, 03 Jun 2016 17:00:00 -0700</pubDate>
@@ -4848,40 +4806,6 @@ it can be.&lt;/p&gt;
 </description>
     </item>
     <item>
-      <title>WebSockets Bring Light at the End of the Tunnel by Joel Lord</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</link>
-      <pubDate>Fri, 03 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</guid>
-      <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-left&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/joel-lord.jpg&quot; alt=&quot;Joel Lord&quot;&gt;
-&lt;/div&gt;
-
-&lt;p&gt;As a Development Manager, Joel’s motivation and proven technical prowess makes him a key member of Spiria’s software development team. With a degree in computational astrophysics, his interests eventually made their way to software and Web design. Today, his knowledge of JavaScript lets him to support a variety of projects on both the front end and back end. As we move into the age of the Internet of Things, Joel is ready with his passion for programming node bots and experimenting with gadgets.&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Joel is going to speak on Web Sockets and tunnels of light… or to describe it more specifically more and more, people seem to be obsessed with real-time data.  But what does real-time mean in the world of REST servers and one-way communication?  Most modern web applications are now either displaying a snapshot of data at a given time or use a polling mechanism to update series of data at a given interval.
-In this talk, you will learn about the power of WebSockets and how they can (and should!) be used in your modern web applications. In these 30 minutes, I will go through the process of building a Node server that can push data to multiple clients in real-time.  You will see how this can be easy using the socket.io library.&lt;/p&gt;
-</description>
-    </item>
-    <item>
-      <title>I Play the JavaScript by Matt McKegg</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</link>
-      <pubDate>Thu, 02 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</guid>
-      <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-left&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/mattmckegg.jpg&quot; alt=&quot;Matt McKegg&quot;&gt;
-&lt;/div&gt;
-
-&lt;p&gt;A JavaScript hacker and backyard musician and from Wellington, New Zealand. Lover of all things open and modular. I spend most of my time pressing buttons of various shapes, sizes and colours. Sometimes these buttons make sounds.&lt;/p&gt;
-&lt;p&gt;Matt has been making music with computers for about 10 years, but once he tried to move from bedroom composing to live performance, he got incredibly frustrated at how hard it was to play computer music live. He decided to start working on his own live electronic performance software written in JavaScript that would let me play the way he wanted to play. 3 years later, it’s finally starting to become a reality.&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Here is one of the Matt’s recent performances, for your viewing pleasure. &lt;/p&gt;
-&lt;iframe width=&quot;1280&quot; height=&quot;720&quot; src=&quot;https://www.youtube.com/embed/L2BVDJWHdy0?rel=0&amp;amp;showinfo=0&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;</description>
-    </item>
-    <item>
       <title>The Web Platform is the Universal Instrument by Ben Michel</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-ben-michel/</link>
       <pubDate>Thu, 02 Jun 2016 17:00:00 -0700</pubDate>
@@ -4909,21 +4833,21 @@ In this talk, you will learn about the power of WebSockets and how they can (and
 </description>
     </item>
     <item>
-      <title>The House Is Not On Fire - Building a home automation robot with Arduino, Raspberry Pi and Node.js by Artur Paikin</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</link>
-      <pubDate>Wed, 01 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</guid>
+      <title>I Play the JavaScript by Matt McKegg</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</link>
+      <pubDate>Thu, 02 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</guid>
       <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-right&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/art-stida.jpg&quot; alt=&quot;Artur Paikin&quot;&gt;
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-left&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/mattmckegg.jpg&quot; alt=&quot;Matt McKegg&quot;&gt;
 &lt;/div&gt;
 
-&lt;p&gt;Artur describes himself as, “I’m a web developer and traveler. I write stories about my adventures in Russian and English on my site: &lt;a href=&quot;http://arturpaikin.com&quot;&gt;http://arturpaikin.com&lt;/a&gt; and run a small technology cooperative called &lt;a href=&quot;http://unebaguette.com&quot;&gt;Baguette&lt;/a&gt;, where I work on cool projects, currently building an ambitious next generation file uploader with &lt;a href=&quot;https://transloadit.com/&quot;&gt;Transloadit&lt;/a&gt;. I ride a &lt;a href=&quot;https://www.instagram.com/p/xC0qC2SSYb&quot;&gt;foldable bicycle&lt;/a&gt;, &lt;a href=&quot;http://unebaguette.com/web-course/&quot;&gt;teach&lt;/a&gt; web development and sometimes &lt;a href=&quot;https://www.instagram.com/p/4_6LO8ySVL/&quot;&gt;garden&lt;/a&gt; on the balcony.”&lt;/p&gt;
+&lt;p&gt;A JavaScript hacker and backyard musician and from Wellington, New Zealand. Lover of all things open and modular. I spend most of my time pressing buttons of various shapes, sizes and colours. Sometimes these buttons make sounds.&lt;/p&gt;
+&lt;p&gt;Matt has been making music with computers for about 10 years, but once he tried to move from bedroom composing to live performance, he got incredibly frustrated at how hard it was to play computer music live. He decided to start working on his own live electronic performance software written in JavaScript that would let me play the way he wanted to play. 3 years later, it’s finally starting to become a reality.&lt;/p&gt;
 &lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Artur has built an open source home automation system called &lt;a href=&quot;https://github.com/arturi/kotihome&quot;&gt;Koti Home&lt;/a&gt; (Koti means home in Finnish language). It’s powered by an Arduino connected to Raspberry Pi, MQTT protocol for messaging, Node.js on the client and server, web sockets. You can interact with Koti robot via a React (like the cool kids do) control panel, Telegram Chat Bot and even your own voice.&lt;/p&gt;
-&lt;p&gt;Arthur will talk about how he’s turned this project into reality — the tech he used and the challenges he faced. From a blinking LED to a voice controlled home automation robot.&lt;/p&gt;
-</description>
+&lt;p&gt;Here is one of the Matt’s recent performances, for your viewing pleasure. &lt;/p&gt;
+&lt;iframe width=&quot;1280&quot; height=&quot;720&quot; src=&quot;https://www.youtube.com/embed/L2BVDJWHdy0?rel=0&amp;amp;showinfo=0&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;</description>
     </item>
     <item>
       <title>Code First Docs How we Threw Out The Book &amp; Put Code First With Twilio Documentation by Jarod Reyes</title>
@@ -4947,6 +4871,23 @@ In this talk, you will learn about the power of WebSockets and how they can (and
 &lt;li&gt;Twitter: &lt;a href=&quot;https://twitter.com/jreyesdev&quot;&gt;@jreyesdev&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Github: &lt;a href=&quot;https://github.com/jarodreyes&quot;&gt;github.com/jarodreyes&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+</description>
+    </item>
+    <item>
+      <title>The House Is Not On Fire - Building a home automation robot with Arduino, Raspberry Pi and Node.js by Artur Paikin</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</link>
+      <pubDate>Wed, 01 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-right&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/art-stida.jpg&quot; alt=&quot;Artur Paikin&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Artur describes himself as, “I’m a web developer and traveler. I write stories about my adventures in Russian and English on my site: &lt;a href=&quot;http://arturpaikin.com&quot;&gt;http://arturpaikin.com&lt;/a&gt; and run a small technology cooperative called &lt;a href=&quot;http://unebaguette.com&quot;&gt;Baguette&lt;/a&gt;, where I work on cool projects, currently building an ambitious next generation file uploader with &lt;a href=&quot;https://transloadit.com/&quot;&gt;Transloadit&lt;/a&gt;. I ride a &lt;a href=&quot;https://www.instagram.com/p/xC0qC2SSYb&quot;&gt;foldable bicycle&lt;/a&gt;, &lt;a href=&quot;http://unebaguette.com/web-course/&quot;&gt;teach&lt;/a&gt; web development and sometimes &lt;a href=&quot;https://www.instagram.com/p/4_6LO8ySVL/&quot;&gt;garden&lt;/a&gt; on the balcony.”&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Artur has built an open source home automation system called &lt;a href=&quot;https://github.com/arturi/kotihome&quot;&gt;Koti Home&lt;/a&gt; (Koti means home in Finnish language). It’s powered by an Arduino connected to Raspberry Pi, MQTT protocol for messaging, Node.js on the client and server, web sockets. You can interact with Koti robot via a React (like the cool kids do) control panel, Telegram Chat Bot and even your own voice.&lt;/p&gt;
+&lt;p&gt;Arthur will talk about how he’s turned this project into reality — the tech he used and the challenges he faced. From a blinking LED to a voice controlled home automation robot.&lt;/p&gt;
 </description>
     </item>
     <item>
@@ -6119,6 +6060,65 @@ The &lt;a href=&quot;https://marketplace.visualstudio.com/#VSCode&quot; target=&
 </description>
     </item>
     <item>
+      <title>Devday 2015 Wrap Up</title>
+      <link>http://adron.github.io/articles/devday-wrap-up/</link>
+      <pubDate>Thu, 17 Sep 2015 10:35:44 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/devday-wrap-up/</guid>
+      <author></author>
+      <description>&lt;p&gt;I was going to write something, but these tweets really summarize and show the fun had at Dev Day really well. Cheers!&lt;/p&gt;
+&lt;p&gt;&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;en&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;Start using document database today with &lt;a href=&quot;https://twitter.com/hashtag/jsonb?src=hash&quot;&gt;#jsonb&lt;/a&gt; type in &lt;a href=&quot;https://twitter.com/hashtag/PostgreSQL?src=hash&quot;&gt;#PostgreSQL&lt;/a&gt; &lt;a href=&quot;https://t.co/82KXAjIVka&quot;&gt;https://t.co/82KXAjIVka&lt;/a&gt; by &lt;a href=&quot;https://twitter.com/robconery&quot;&gt;@robconery&lt;/a&gt; at &lt;a href=&quot;https://twitter.com/hashtag/ABBDevDay?src=hash&quot;&gt;#ABBDevDay&lt;/a&gt;&lt;/p&gt;&amp;mdash; Kamil Lelonek (@KamilLelonek) &lt;a href=&quot;https://twitter.com/KamilLelonek/status/644880063658369024&quot;&gt;September 18, 2015&lt;/a&gt;&lt;/blockquote&gt;&lt;/p&gt;
+&lt;script async src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;en&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;&lt;a href=&quot;https://twitter.com/hashtag/abbdevday?src=hash&quot;&gt;#abbdevday&lt;/a&gt; - here&amp;#39;s the screencast of my keynote earlier: &lt;a href=&quot;https://t.co/5yNUvrmZ6t&quot;&gt;https://t.co/5yNUvrmZ6t&lt;/a&gt; - slides: &lt;a href=&quot;http://t.co/zGTMoxsGHc&quot;&gt;http://t.co/zGTMoxsGHc&lt;/a&gt;&lt;/p&gt;&amp;mdash; Chris Heilmann (@codepo8) &lt;a href=&quot;https://twitter.com/codepo8/status/644807615596363780&quot;&gt;September 18, 2015&lt;/a&gt;&lt;/blockquote&gt;&lt;/p&gt;
+&lt;script async src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;en&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;&lt;a href=&quot;https://twitter.com/hashtag/abbdevday?src=hash&quot;&gt;#abbdevday&lt;/a&gt; keynote done, time to write the &lt;a href=&quot;https://twitter.com/hashtag/smartwebconf?src=hash&quot;&gt;#smartwebconf&lt;/a&gt; talk &lt;a href=&quot;http://t.co/wvyb4H9r7K&quot;&gt;pic.twitter.com/wvyb4H9r7K&lt;/a&gt;&lt;/p&gt;&amp;mdash; Chris Heilmann (@codepo8) &lt;a href=&quot;https://twitter.com/codepo8/status/644793078910451712&quot;&gt;September 18, 2015&lt;/a&gt;&lt;/blockquote&gt;&lt;/p&gt;
+&lt;script async src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;en&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;&lt;a href=&quot;https://twitter.com/hashtag/abbdevday?src=hash&quot;&gt;#abbdevday&lt;/a&gt; learning some machine learning from &lt;a href=&quot;https://twitter.com/lenadroid&quot;&gt;@lenadroid&lt;/a&gt;! &lt;a href=&quot;http://t.co/y0btHVrzGs&quot;&gt;pic.twitter.com/y0btHVrzGs&lt;/a&gt;&lt;/p&gt;&amp;mdash; Λdrøn (@Adron) &lt;a href=&quot;https://twitter.com/Adron/status/644857049432621056&quot;&gt;September 18, 2015&lt;/a&gt;&lt;/blockquote&gt;&lt;/p&gt;
+&lt;script async src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;en&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;If you&amp;#39;re into F#, even a little, or even hack it everyday could you respond to this ASAP! I want you to rep the awesome community! &lt;a href=&quot;https://twitter.com/hashtag/fsharp?src=hash&quot;&gt;#fsharp&lt;/a&gt;&lt;/p&gt;&amp;mdash; Λdrøn (@Adron) &lt;a href=&quot;https://twitter.com/Adron/status/644587163611475968&quot;&gt;September 17, 2015&lt;/a&gt;&lt;/blockquote&gt;&lt;/p&gt;
+&lt;script async src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;en&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;.&lt;a href=&quot;https://twitter.com/lenadroid&quot;&gt;@lenadroid&lt;/a&gt; is doing science on stage of &lt;a href=&quot;https://twitter.com/hashtag/abbdevday?src=hash&quot;&gt;#abbdevday&lt;/a&gt; &lt;a href=&quot;https://twitter.com/hashtag/machinelearning?src=hash&quot;&gt;#machinelearning&lt;/a&gt; &lt;a href=&quot;http://t.co/03kSURjZkz&quot;&gt;pic.twitter.com/03kSURjZkz&lt;/a&gt;&lt;/p&gt;&amp;mdash; Michał Łusiak (@mlusiak) &lt;a href=&quot;https://twitter.com/mlusiak/status/644859691055599617&quot;&gt;September 18, 2015&lt;/a&gt;&lt;/blockquote&gt;&lt;/p&gt;
+&lt;script async src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;en&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;A terrible data science talk by &lt;a href=&quot;https://twitter.com/RobAshton&quot;&gt;@RobAshton&lt;/a&gt; at &lt;a href=&quot;https://twitter.com/hashtag/abbdevday?src=hash&quot;&gt;#abbdevday&lt;/a&gt; /cc: &lt;a href=&quot;https://twitter.com/garyshort&quot;&gt;@garyshort&lt;/a&gt;&lt;/p&gt;&amp;mdash; Rafał Legiędź (@rafek) &lt;a href=&quot;https://twitter.com/rafek/status/644855661365469184&quot;&gt;September 18, 2015&lt;/a&gt;&lt;/blockquote&gt;&lt;/p&gt;
+&lt;script async src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;en&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;.&lt;a href=&quot;https://twitter.com/mlusiak&quot;&gt;@mlusiak&lt;/a&gt; representing at &lt;a href=&quot;https://twitter.com/hashtag/abbdevday?src=hash&quot;&gt;#abbdevday&lt;/a&gt; \o/ &lt;a href=&quot;http://t.co/c2TMuSW3dA&quot;&gt;pic.twitter.com/c2TMuSW3dA&lt;/a&gt;&lt;/p&gt;&amp;mdash; tretton37 (@tretton37) &lt;a href=&quot;https://twitter.com/tretton37/status/644844857563942912&quot;&gt;September 18, 2015&lt;/a&gt;&lt;/blockquote&gt;&lt;/p&gt;
+&lt;script async src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;en&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;I had a blast speaking at &lt;a href=&quot;https://twitter.com/hashtag/abbdevday?src=hash&quot;&gt;#abbdevday&lt;/a&gt;. I love this conference and feel great on the speaker&amp;#39;s side. &lt;a href=&quot;http://t.co/LzQ133aG5W&quot;&gt;pic.twitter.com/LzQ133aG5W&lt;/a&gt;&lt;/p&gt;&amp;mdash; Michał Łusiak (@mlusiak) &lt;a href=&quot;https://twitter.com/mlusiak/status/644828987844395008&quot;&gt;September 18, 2015&lt;/a&gt;&lt;/blockquote&gt;&lt;/p&gt;
+&lt;script async src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;en&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;&amp;quot;IE is retired, it should be in a park feeding ducks&amp;quot; lol &lt;a href=&quot;https://twitter.com/hashtag/abbdevday?src=hash&quot;&gt;#abbdevday&lt;/a&gt;&lt;/p&gt;&amp;mdash; Maciej Aniserowicz💻 (@maniserowicz) &lt;a href=&quot;https://twitter.com/maniserowicz/status/644774940898652160&quot;&gt;September 18, 2015&lt;/a&gt;&lt;/blockquote&gt;&lt;/p&gt;
+&lt;script async src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;en&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;Rethinking the &lt;a href=&quot;https://twitter.com/rethinkdb&quot;&gt;@rethinkdb&lt;/a&gt; with &lt;a href=&quot;https://twitter.com/robconery&quot;&gt;@robconery&lt;/a&gt; &lt;a href=&quot;https://twitter.com/hashtag/ABBDevDay?src=hash&quot;&gt;#ABBDevDay&lt;/a&gt; &lt;a href=&quot;http://t.co/BmZeUPNtQy&quot;&gt;pic.twitter.com/BmZeUPNtQy&lt;/a&gt;&lt;/p&gt;&amp;mdash; Mirosław Pragłowski (@mpraglowski) &lt;a href=&quot;https://twitter.com/mpraglowski/status/644496113094017024&quot;&gt;September 17, 2015&lt;/a&gt;&lt;/blockquote&gt;&lt;/p&gt;
+&lt;script async src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;en&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;Great talk from &lt;a href=&quot;https://twitter.com/brandewinder&quot;&gt;@brandewinder&lt;/a&gt; about TDD and what ways this helps your thinking when coding. &lt;a href=&quot;https://twitter.com/hashtag/abbdevday?src=hash&quot;&gt;#abbdevday&lt;/a&gt; &lt;a href=&quot;http://t.co/CcyWvV7961&quot;&gt;pic.twitter.com/CcyWvV7961&lt;/a&gt;&lt;/p&gt;&amp;mdash; Λdrøn (@Adron) &lt;a href=&quot;https://twitter.com/Adron/status/644438084759748608&quot;&gt;September 17, 2015&lt;/a&gt;&lt;/blockquote&gt;&lt;/p&gt;
+&lt;script async src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;en&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;F# crew obviously went to &amp;quot;cove of immutability&amp;quot; at &lt;a href=&quot;https://twitter.com/hashtag/abbdevday?src=hash&quot;&gt;#abbdevday&lt;/a&gt;  &lt;a href=&quot;https://twitter.com/tomaspetricek&quot;&gt;@tomaspetricek&lt;/a&gt; &lt;a href=&quot;https://twitter.com/lenadroid&quot;&gt;@lenadroid&lt;/a&gt; &lt;a href=&quot;https://twitter.com/Adron&quot;&gt;@adron&lt;/a&gt; &lt;a href=&quot;https://twitter.com/k_cieslak&quot;&gt;@k_cieslak&lt;/a&gt; &lt;a href=&quot;https://twitter.com/hashtag/fsharp?src=hash&quot;&gt;#fsharp&lt;/a&gt; &lt;a href=&quot;http://t.co/2dNY4qeRsk&quot;&gt;pic.twitter.com/2dNY4qeRsk&lt;/a&gt;&lt;/p&gt;&amp;mdash; Mathias Brandewinder (@brandewinder) &lt;a href=&quot;https://twitter.com/brandewinder/status/644404677786869760&quot;&gt;September 17, 2015&lt;/a&gt;&lt;/blockquote&gt;&lt;/p&gt;
+&lt;script async src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;en&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;&lt;a href=&quot;https://twitter.com/hashtag/AbBDevDay?src=hash&quot;&gt;#AbBDevDay&lt;/a&gt; Cherry Vodka in beer seems to be the option. BOOM! &lt;a href=&quot;http://t.co/7FVswbfHX5&quot;&gt;pic.twitter.com/7FVswbfHX5&lt;/a&gt;&lt;/p&gt;&amp;mdash; Λdrøn (@Adron) &lt;a href=&quot;https://twitter.com/Adron/status/644222813688098816&quot;&gt;September 16, 2015&lt;/a&gt;&lt;/blockquote&gt;&lt;/p&gt;
+&lt;script async src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;en&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;Mathias &lt;a href=&quot;https://twitter.com/brandewinder&quot;&gt;@brandewinder&lt;/a&gt; workshop on &lt;a href=&quot;https://twitter.com/hashtag/fsharp?src=hash&quot;&gt;#fsharp&lt;/a&gt; and &lt;a href=&quot;https://twitter.com/hashtag/machinelearning?src=hash&quot;&gt;#machinelearning&lt;/a&gt; is about to start! &lt;a href=&quot;https://twitter.com/hashtag/abbdevday?src=hash&quot;&gt;#abbdevday&lt;/a&gt; &lt;a href=&quot;http://t.co/q7L08UK46a&quot;&gt;pic.twitter.com/q7L08UK46a&lt;/a&gt;&lt;/p&gt;&amp;mdash; Lena Hall (@lenadroid) &lt;a href=&quot;https://twitter.com/lenadroid/status/644041819010002944&quot;&gt;September 16, 2015&lt;/a&gt;&lt;/blockquote&gt;&lt;/p&gt;
+&lt;script async src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;en&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;That is a nice spot to have a workshop, isn&amp;#39;t it? &lt;a href=&quot;https://twitter.com/hashtag/abbdevday?src=hash&quot;&gt;#abbdevday&lt;/a&gt; &lt;a href=&quot;http://t.co/ofJzRhlpEv&quot;&gt;pic.twitter.com/ofJzRhlpEv&lt;/a&gt;&lt;/p&gt;&amp;mdash; Rafał Legiędź (@rafek) &lt;a href=&quot;https://twitter.com/rafek/status/644040444217851904&quot;&gt;September 16, 2015&lt;/a&gt;&lt;/blockquote&gt;&lt;/p&gt;
+&lt;script async src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;en&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;While Waiting for DevDay 2015 check out best videos from DevDay 2014 &lt;a href=&quot;https://twitter.com/ABBDevDay&quot;&gt;@ABBDevDay&lt;/a&gt; &lt;a href=&quot;http://t.co/TuGfKuv2Gj&quot;&gt;http://t.co/TuGfKuv2Gj&lt;/a&gt; &lt;a href=&quot;https://twitter.com/hashtag/ABBDevDay?src=hash&quot;&gt;#ABBDevDay&lt;/a&gt;&lt;/p&gt;&amp;mdash; Bogusz Pękalski (@boguszp) &lt;a href=&quot;https://twitter.com/boguszp/status/608388950135328768&quot;&gt;June 9, 2015&lt;/a&gt;&lt;/blockquote&gt;&lt;/p&gt;
+&lt;script async src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;</description>
+    </item>
+    <item>
       <title>The Latest 5th Generation Dell XPS 13 Developer Edition</title>
       <link>http://adron.github.io/articles/latest-fifth-gen-dell-xps-13-developer-edition/</link>
       <pubDate>Wed, 22 Jul 2015 14:54:00 -0700</pubDate>
@@ -6811,6 +6811,18 @@ source ~/.bash-git-prompt/gitprompt.sh
 &lt;li&gt;&lt;a href=&quot;http://andrewray.me/bash-prompt-builder/&quot; target=&quot;_blank&quot;&gt;Bash Prompt Builder&lt;/a&gt;&lt;/li&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://ezprompt.net/&quot; target=&quot;_blank&quot;&gt;Ez Prompt&lt;/a&gt;&lt;/li&gt;&lt;/li&gt;
 &lt;/ul&gt;
+</description>
+    </item>
+    <item>
+      <title>dont learn to code learn to learn</title>
+      <link>http://adron.github.io/articles/dont-learn-to-code-learn-to-learn/</link>
+      <pubDate>Tue, 20 May 2014 10:41:47 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/dont-learn-to-code-learn-to-learn/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-right&quot;&gt;
+    &lt;img src=&quot;http://adron.github.io/articles/dont-learn-to-code-learn-to-learn/streamset2.jpg&quot; alt=&quot;Streamsets&quot;&gt;
+&lt;/div&gt;
 </description>
     </item>
     <item>
