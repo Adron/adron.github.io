@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="/css/style.min.css">
     <script src="/js/modernizr.js"></script>
   </head>
-  <body>
+  <body class="article-detail">
     <!--[if lt IE 8]>
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -67,8 +67,10 @@
             <div class="col-md-12">
               <!-- Page Info-->
               <div class="page-info page-info-simple">
-                <h1>Adron's Composite Code</h1>
-                <h2 class="description">Coder, Messenger, Recon, Infrastructure, Ops</h2>
+                <h1>Devday 2015 Wrap Up</h1>
+                <p class="author">Written by <span class="author">Adron Hall</span> and published on <span>May, 20 of 2017.</span>
+                </p>
+                <div class="nav"><a href="/">« Home</a></div>
               </div>
               <!-- End Page Info-->
             </div>
@@ -83,67 +85,60 @@
             <div class="col-md-9">
               <div class="main-content">
                 <!-- Blog Page-->
-                <div class="blog">
-                  <div class="row"></div>
-                </div>
-                <div class="col-md-12 col-sm-12">
-                  <!-- Blog List-->
-                  <div class="blog-grid">
-                    <div class="row">
-                      <div class="col-md-12 col-sm-12">
-                        <h3 class="blog-grid-title"><a href="/articles/devops-thoughts/">DevOps Thoughts, Fixing Culture Roadblocks, and Cultural Anti-Pattern Practices</a></h3>
-                        <p class="blog-grid-excerpt"><div class="image float-right">
-    <img src="/articles/devops-thoughts/artisanal.jpg" alt="Artisanal">
-</div>
+                <article class="article">
+                  <section class="content"><p>I was going to write something, but these tweets really summarize and show the fun had at Dev Day really well.&nbsp;Cheers!</p>
+<p><blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Start using document database today with <a href="https://twitter.com/hashtag/jsonb?src=hash">#jsonb</a> type in <a href="https://twitter.com/hashtag/PostgreSQL?src=hash">#PostgreSQL</a> <a href="https://t.co/82KXAjIVka">https://t.co/82KXAjIVka</a> by <a href="https://twitter.com/robconery">@robconery</a> at <a href="https://twitter.com/hashtag/ABBDevDay?src=hash">#ABBDevDay</a></p>&mdash; Kamil Lelonek (@KamilLelonek) <a href="https://twitter.com/KamilLelonek/status/644880063658369024">September 18, 2015</a></blockquote></p>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-<p>DevOps Days <span class="caps">PDX</span> just wrapped up and I’m at home, working remotely today, digging into some deployment work around building Elasticsearch Clusters for monitoring with Beats. It’s a tricky beast at this point but I’m getting all the nuances figured&nbsp;out.</p>
-<p>I have a host of tools at my disposal that help tremendously with this endeavor. There is Packer, to help build the base images I need that have Elasticsearch, Beats, or whatever else needs to be on an image. There is Terraform that helps me to get the images deployed and start the final configuration process. Then there is the configuration process, which is a mix of bash, go, and other things to insure that the configuration of and services around Elasticsearch are started&nbsp;appropriately.</p>
-<p>
-                          <p class="more"><a href="/articles/devops-thoughts/">more</a></p>
-                        </p>
-                        <div class="blog-grid-meta"><span class="blog-grid-date">11. August 2016</span></div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End of Blog List-->
-                </div>
-                <div class="col-md-12 col-sm-12">
-                  <!-- Blog List-->
-                  <div class="blog-grid">
-                    <div class="row">
-                      <div class="col-md-12 col-sm-12">
-                        <h3 class="blog-grid-title"><a href="/articles/nginx-notes-from-the-url-redirect-part-two/">NGinx Notes from URL Redirect Project on Google Cloud with Terraform &amp; Packer - Part 2</a></h3>
-                        <p class="blog-grid-excerpt"><div class="image float-right">
-    <img src="/articles/nginx-notes-from-the-url-redirect-part-two/google-cloud-platform.png" alt="Google Cloud Platform">
-</div>
+<p><span class="more"></span></p>
+<p><blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr"><a href="https://twitter.com/hashtag/abbdevday?src=hash">#abbdevday</a> - here&#39;s the screencast of my keynote earlier: <a href="https://t.co/5yNUvrmZ6t">https://t.co/5yNUvrmZ6t</a> - slides: <a href="http://t.co/zGTMoxsGHc">http://t.co/zGTMoxsGHc</a></p>&mdash; Chris Heilmann (@codepo8) <a href="https://twitter.com/codepo8/status/644807615596363780">September 18, 2015</a></blockquote></p>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-<p>In the <a href="http://blog.adron.me/articles/nginx-notes-from-the-url-redirect/">first blog entry, “NGinx Notes from <span class="caps">URL</span> Redirect Project on Google Cloud with Terraform <span class="amp">&amp;</span> Packer - Part 1”</a> I covered getting a basic Nginx <span class="caps">URL</span> Redirector setup and running. Now it’s time to dig into some of the next&nbsp;steps.</p>
-<p>Since we have an operative server running that we want to automate, I’ll actually just wipe out the server we built in the first part of this series. Albeit I will refer back to it when I get to the process of recreating this server with Packer and Terraform. So first things first, let’s actually setup the networking elements needed to put the server into&nbsp;action.</p>
-<p>
-                          <p class="more"><a href="/articles/nginx-notes-from-the-url-redirect-part-two/">more</a></p>
-                        </p>
-                        <div class="blog-grid-meta"><span class="blog-grid-date">01. August 2016</span></div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End of Blog List-->
-                </div>
-                <div class="col-md-12 col-sm-12">
-                  <!-- Blog List-->
-                  <div class="blog-grid">
-                    <div class="row">
-                      <div class="col-md-12 col-sm-12">
-                        <h3 class="blog-grid-title"><a href="/articles/speaking-trips-tech-and-treks/">Speaking Trips, Tech, and Treks</a></h3>
-                        <p class="blog-grid-excerpt"><p>I’ll be off on some coding adventures in the coming months. I also hope to catch up with a lot of people and their respective projects, learn a few things, and if it’s possible maybe teach a few people a thing or three about immutable infrastructure, lessons I’ve learned, and how to avoid infrastructure catastrophes while building the next bad ass awesome application. This blog entry is about the details of my logistics, and I’ll follow up with more details of the coding adventure along the way. For now: details, details, and&nbsp;details.</p>
-<p>
-                          <p class="more"><a href="/articles/speaking-trips-tech-and-treks/">more</a></p>
-                        </p>
-                        <div class="blog-grid-meta"><span class="blog-grid-date">26. July 2016</span></div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End of Blog List-->
-                </div>
+<p><blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr"><a href="https://twitter.com/hashtag/abbdevday?src=hash">#abbdevday</a> keynote done, time to write the <a href="https://twitter.com/hashtag/smartwebconf?src=hash">#smartwebconf</a> talk <a href="http://t.co/wvyb4H9r7K">pic.twitter.com/wvyb4H9r7K</a></p>&mdash; Chris Heilmann (@codepo8) <a href="https://twitter.com/codepo8/status/644793078910451712">September 18, 2015</a></blockquote></p>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<p><blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr"><a href="https://twitter.com/hashtag/abbdevday?src=hash">#abbdevday</a> learning some machine learning from <a href="https://twitter.com/lenadroid">@lenadroid</a>! <a href="http://t.co/y0btHVrzGs">pic.twitter.com/y0btHVrzGs</a></p>&mdash; Λdrøn (@Adron) <a href="https://twitter.com/Adron/status/644857049432621056">September 18, 2015</a></blockquote></p>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<p><blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">If you&#39;re into F#, even a little, or even hack it everyday could you respond to this <span class="caps">ASAP</span>! I want you to rep the awesome community! <a href="https://twitter.com/hashtag/fsharp?src=hash">#fsharp</a></p>&mdash; Λdrøn (@Adron) <a href="https://twitter.com/Adron/status/644587163611475968">September 17, 2015</a></blockquote></p>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<p><blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">.<a href="https://twitter.com/lenadroid">@lenadroid</a> is doing science on stage of <a href="https://twitter.com/hashtag/abbdevday?src=hash">#abbdevday</a> <a href="https://twitter.com/hashtag/machinelearning?src=hash">#machinelearning</a> <a href="http://t.co/03kSURjZkz">pic.twitter.com/03kSURjZkz</a></p>&mdash; Michał Łusiak (@mlusiak) <a href="https://twitter.com/mlusiak/status/644859691055599617">September 18, 2015</a></blockquote></p>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<p><blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">A terrible data science talk by <a href="https://twitter.com/RobAshton">@RobAshton</a> at <a href="https://twitter.com/hashtag/abbdevday?src=hash">#abbdevday</a> /cc: <a href="https://twitter.com/garyshort">@garyshort</a></p>&mdash; Rafał Legiędź (@rafek) <a href="https://twitter.com/rafek/status/644855661365469184">September 18, 2015</a></blockquote></p>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<p><blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">.<a href="https://twitter.com/mlusiak">@mlusiak</a> representing at <a href="https://twitter.com/hashtag/abbdevday?src=hash">#abbdevday</a> \o/ <a href="http://t.co/c2TMuSW3dA">pic.twitter.com/c2TMuSW3dA</a></p>&mdash; tretton37 (@tretton37) <a href="https://twitter.com/tretton37/status/644844857563942912">September 18, 2015</a></blockquote></p>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<p><blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">I had a blast speaking at <a href="https://twitter.com/hashtag/abbdevday?src=hash">#abbdevday</a>. I love this conference and feel great on the speaker&#39;s side. <a href="http://t.co/LzQ133aG5W">pic.twitter.com/LzQ133aG5W</a></p>&mdash; Michał Łusiak (@mlusiak) <a href="https://twitter.com/mlusiak/status/644828987844395008">September 18, 2015</a></blockquote></p>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<p><blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">&quot;<span class="caps">IE</span> is retired, it should be in a park feeding ducks&quot; lol <a href="https://twitter.com/hashtag/abbdevday?src=hash">#abbdevday</a></p>&mdash; Maciej Aniserowicz💻 (@maniserowicz) <a href="https://twitter.com/maniserowicz/status/644774940898652160">September 18, 2015</a></blockquote></p>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<p><blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Rethinking the <a href="https://twitter.com/rethinkdb">@rethinkdb</a> with <a href="https://twitter.com/robconery">@robconery</a> <a href="https://twitter.com/hashtag/ABBDevDay?src=hash">#ABBDevDay</a> <a href="http://t.co/BmZeUPNtQy">pic.twitter.com/BmZeUPNtQy</a></p>&mdash; Mirosław Pragłowski (@mpraglowski) <a href="https://twitter.com/mpraglowski/status/644496113094017024">September 17, 2015</a></blockquote></p>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<p><blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Great talk from <a href="https://twitter.com/brandewinder">@brandewinder</a> about <span class="caps">TDD</span> and what ways this helps your thinking when coding. <a href="https://twitter.com/hashtag/abbdevday?src=hash">#abbdevday</a> <a href="http://t.co/CcyWvV7961">pic.twitter.com/CcyWvV7961</a></p>&mdash; Λdrøn (@Adron) <a href="https://twitter.com/Adron/status/644438084759748608">September 17, 2015</a></blockquote></p>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<p><blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">F# crew obviously went to &quot;cove of immutability&quot; at <a href="https://twitter.com/hashtag/abbdevday?src=hash">#abbdevday</a>  <a href="https://twitter.com/tomaspetricek">@tomaspetricek</a> <a href="https://twitter.com/lenadroid">@lenadroid</a> <a href="https://twitter.com/Adron">@adron</a> <a href="https://twitter.com/k_cieslak">@k_cieslak</a> <a href="https://twitter.com/hashtag/fsharp?src=hash">#fsharp</a> <a href="http://t.co/2dNY4qeRsk">pic.twitter.com/2dNY4qeRsk</a></p>&mdash; Mathias Brandewinder (@brandewinder) <a href="https://twitter.com/brandewinder/status/644404677786869760">September 17, 2015</a></blockquote></p>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<p><blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr"><a href="https://twitter.com/hashtag/AbBDevDay?src=hash">#AbBDevDay</a> Cherry Vodka in beer seems to be the option. <span class="caps">BOOM</span>! <a href="http://t.co/7FVswbfHX5">pic.twitter.com/7FVswbfHX5</a></p>&mdash; Λdrøn (@Adron) <a href="https://twitter.com/Adron/status/644222813688098816">September 16, 2015</a></blockquote></p>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<p><blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Mathias <a href="https://twitter.com/brandewinder">@brandewinder</a> workshop on <a href="https://twitter.com/hashtag/fsharp?src=hash">#fsharp</a> and <a href="https://twitter.com/hashtag/machinelearning?src=hash">#machinelearning</a> is about to start! <a href="https://twitter.com/hashtag/abbdevday?src=hash">#abbdevday</a> <a href="http://t.co/q7L08UK46a">pic.twitter.com/q7L08UK46a</a></p>&mdash; Lena Hall (@lenadroid) <a href="https://twitter.com/lenadroid/status/644041819010002944">September 16, 2015</a></blockquote></p>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<p><blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">That is a nice spot to have a workshop, isn&#39;t it? <a href="https://twitter.com/hashtag/abbdevday?src=hash">#abbdevday</a> <a href="http://t.co/ofJzRhlpEv">pic.twitter.com/ofJzRhlpEv</a></p>&mdash; Rafał Legiędź (@rafek) <a href="https://twitter.com/rafek/status/644040444217851904">September 16, 2015</a></blockquote></p>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<p><blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">While Waiting for DevDay 2015 check out best videos from DevDay 2014 <a href="https://twitter.com/ABBDevDay">@ABBDevDay</a> <a href="http://t.co/TuGfKuv2Gj">http://t.co/TuGfKuv2Gj</a> <a href="https://twitter.com/hashtag/ABBDevDay?src=hash">#ABBDevDay</a></p>&mdash; Bogusz Pękalski (@boguszp) <a href="https://twitter.com/boguszp/status/608388950135328768">June 9, 2015</a></blockquote></p>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></section>
+                </article>
                 <!-- End of Blog Page-->
               </div>
             </div>
@@ -233,8 +228,7 @@
             </div>
           </div>
         </div>
-        <div class="nav"><a href="/page/15/">« Newer</a>&nbsp;<a href="/page/17/">Previous »</a>
-        </div>
+        <div class="nav"><a href="/">« Home</a></div>
       </div>
     </div>
     <script src="/js/all.js"></script>
