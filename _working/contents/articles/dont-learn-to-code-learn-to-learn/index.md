@@ -22,7 +22,7 @@ Don't learn to write code just to learn to program. That's just absurd and it's 
 
 An example, give into something like the freight system in North America (or Europe) and figure out how it works functionally from strategic to tactical levels.
 
-Learn to throw away <a href="https://en.wikipedia.org/wiki/Confirmation_bias" target="_blank">confirmation bias</a>, congnitive dissonance and always ask yourself if you have the data you need to draw the connections about life in an accurate and meaningful way. If you don't, keep asking questions and keep learning.
+Learn to throw away <a href="https://en.wikipedia.org/wiki/Confirmation_bias" target="_blank">confirmation bias</a>, cognitive dissonance, and always ask yourself if you have the data you need to draw the connections about life in an accurate and meaningful way. If you don't, keep asking questions and keep learning.
 
 ## [Autodidactism](https://en.wikipedia.org/wiki/Autodidacticism)
 
