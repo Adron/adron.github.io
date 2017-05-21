@@ -30,8 +30,6 @@ Learn to throw away <a href="https://en.wikipedia.org/wiki/Confirmation_bias" ta
 
 In the process of becoming an autodidact one helpful idea is to actually study learning. Take a course, get a book, find content, and just observe yourself. Get as much information as you can about how people learn and read it or watch videos on it. Whatever the case, get as many ideas and strategies about how you learn and what the most effective methods are for you to gain a deep, systemic, and ordered knowledge of topics you want to understand.
 
-<em><strong>Summarized</strong></em>
-
 ## Summarized
 
 These two skills will give you far more of an advantage in life then merely learning to program or taking classes or going to school to learn to program/code/hack/whatever. So do yourself a favor, don't get suckered by the "<em>Learn programming and get a good job QUICK!</em>" nonsense. If you gain the two skills I mentioned and get your brain sorted, you'll do much better than merely learning to program and you'll thank yourself in the future!
