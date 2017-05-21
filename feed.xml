@@ -5,28 +5,9 @@
     <atom:link href="http://adron.github.io/feed.xml" rel="self" type="application/rss+xml"></atom:link>
     <link>http://adron.github.io</link>
     <description>Coder, Messenger, Recon, Infrastructure, Ops</description>
-    <pubDate>Tue, 16 May 2017 23:24:14 -0700</pubDate>
+    <pubDate>Tue, 16 May 2017 13:26:17 -0700</pubDate>
     <generator>Wintersmith - https://github.com/jnordberg/wintersmith</generator>
     <language>en</language>
-    <item>
-      <title>data diluvium a working day</title>
-      <link>http://adron.github.io/articles/data-diluvium-a-working-day/</link>
-      <pubDate>Tue, 16 May 2017 23:24:14 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/data-diluvium-a-working-day/</guid>
-      <author></author>
-      <description>&lt;p&gt;Today after work and some dinner, I sat down to write some code for the Data Diluvium Project. There’s more than a few items to work and hoped to knock out one or two.&lt;/p&gt;
-&lt;p&gt;As a refresher, here’s what I’d written about with regard to the Data Diluvium Project:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://blog.adron.me/articles/data-diluvium-getting-started/&quot;&gt;Data Diluvium Getting Started&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://blog.adron.me/articles/data-diluvium-design-ideas/&quot;&gt;Data Diluvium Design Ideas&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;I gave a quick reread of these myself for a refresher. For a quick review of the next items to work on, I’ve &lt;a href=&quot;http://adron.github.io/articles/data-diluvium-a-working-day/&quot;&gt;kept somewhat of a list&lt;/a&gt; on Github and also a nice swim lane based kanban @ &lt;a href=&quot;https://waffle.io/Adron/datadiluvium&quot;&gt;waffle.io of work items&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-right&quot;&gt;
-&lt;img src=&quot;http://adron.github.io/articles/data-diluvium-a-working-day/streamset2.jpg&quot; alt=&quot;Streamsets&quot;&gt;
-&lt;/div&gt;
-</description>
-    </item>
     <item>
       <title>Nuance Dammit</title>
       <link>http://adron.github.io/articles/nuance-dammit/</link>
@@ -4667,27 +4648,6 @@ export TF_VAR_password=&amp;quot;someSecretPassword&amp;quot;
 </description>
     </item>
     <item>
-      <title>How to Electron by Blaine Schmeisser</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-blaine-schmeisser/</link>
-      <pubDate>Sun, 05 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-blaine-schmeisser/</guid>
-      <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-blaine-schmeisser/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-left&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-blaine-schmeisser/blainesch.jpg&quot; alt=&quot;Blaine Schmeisser&quot;&gt;
-&lt;/div&gt;
-
-&lt;p&gt;I’m happy to introduce Blaine Schmeisser. He’s a recent Portland transplant currently working as a Senior Software Engineer at New Relic. He has a passion for building and shipping software and an advocate for pair programming. Outside of tech, Blaine spends his free time with his dog and maintains a simplistic, eco-friendly lifestyle.&lt;/p&gt;
-&lt;p&gt;Blaine’s “How to Electron” answers questions you have about building user interface applications with JavaScript. Have you ever wanted to build desktop apps with web technology you already know? If you’ve never heard of Electron or just want to learn more about it, this talk will cover what Electron is and how to utilize it to create powerful tools like Atom and Slack. You will learn the history of Electron, how to get started, the trade-offs of picking various boiler plates, and the unique Electron specific APIs that are vital to being a Electron developer.&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;GitHub: &lt;a href=&quot;https://github.com/blainesch&quot;&gt;https://github.com/blainesch&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Twitter: &lt;a href=&quot;https://twitter.com/blainesch&quot;&gt;https://twitter.com/blainesch&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Website: &lt;a href=&quot;http://blainesch.com&quot;&gt;http://blainesch.com&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-    </item>
-    <item>
       <title>Demystifying TypeScript Decorators by James Churchill</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-james-churchill/</link>
       <pubDate>Sun, 05 Jun 2016 17:00:00 -0700</pubDate>
@@ -4711,33 +4671,24 @@ export TF_VAR_password=&amp;quot;someSecretPassword&amp;quot;
 </description>
     </item>
     <item>
-      <title>The SAM Pattern - a distributed system view of Front-End architectures by Jean-Jacques Dubray</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-jean-jacques-dubray/</link>
-      <pubDate>Sat, 04 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-jean-jacques-dubray/</guid>
+      <title>How to Electron by Blaine Schmeisser</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-blaine-schmeisser/</link>
+      <pubDate>Sun, 05 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-blaine-schmeisser/</guid>
       <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-jean-jacques-dubray/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-blaine-schmeisser/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;div class=&quot;image float-left&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-jean-jacques-dubray/jj-sized.png&quot; alt=&quot;Jean-Jacques Dubray&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-blaine-schmeisser/blainesch.jpg&quot; alt=&quot;Blaine Schmeisser&quot;&gt;
 &lt;/div&gt;
 
-&lt;p&gt;Jean-Jacques Dubray is the founder of &lt;a href=&quot;http://xgen.io&quot;&gt;xgen.io&lt;/a&gt; and &lt;a href=&quot;http://www.gliiph.com&quot;&gt;gliiph&lt;/a&gt;. He has been building Service Oriented Architectures,
-and API platforms for the last 15 years. He is a former member of the research staff at HRL and earned his Ph.D. from
-the University of Provence (Luminy campus), home of the Prolog language. He is the inventor of the &lt;a href=&quot;http://www.xgenio.com/bolt-introduction.pdf&quot;&gt;BOLT methodology&lt;/a&gt; and the SAM pattern.&lt;/p&gt;
-&lt;p&gt;In his talk Jean-Jacques Dubray presents that Web Applications are rapidly becoming sophisticated distributed systems. When you look at a Facebook page or a Netflix catalog,
-the number of components interacting with each other requires complex synchronization and state management capabilities, reaching
-the limits of the MVC pattern.&lt;/p&gt;
+&lt;p&gt;I’m happy to introduce Blaine Schmeisser. He’s a recent Portland transplant currently working as a Senior Software Engineer at New Relic. He has a passion for building and shipping software and an advocate for pair programming. Outside of tech, Blaine spends his free time with his dog and maintains a simplistic, eco-friendly lifestyle.&lt;/p&gt;
+&lt;p&gt;Blaine’s “How to Electron” answers questions you have about building user interface applications with JavaScript. Have you ever wanted to build desktop apps with web technology you already know? If you’ve never heard of Electron or just want to learn more about it, this talk will cover what Electron is and how to utilize it to create powerful tools like Atom and Slack. You will learn the history of Electron, how to get started, the trade-offs of picking various boiler plates, and the unique Electron specific APIs that are vital to being a Electron developer.&lt;/p&gt;
 &lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;In the last couple of years, several reactive architectures have started to get some interest (React, Cycle.js, ELM) without
-generating significant traction (compared to established frameworks like Angular), while struggling to position effects in their
-programming model. A new reactive, functional pattern, the State-Action-Model pattern (SAM) was introduced in early 2016 on the
-foundation of TLA+ semantics.&lt;/p&gt;
-&lt;p&gt;The pattern, which is unapologetically driven by simplicity, promotes a clear delineation between the business logic and the view
-and challenges the complexity of frameworks like Google’s Angular or Facebook’s React/Redux.&lt;/p&gt;
-&lt;p&gt;SAM’s unidirectional flow is also challenging interactive patterns like BFF (Back-End for Front-End) or the Vertical Slice Pattern
-which suggest creating view-specific APIs, per platform, app, versions of an app…&lt;/p&gt;
-&lt;p&gt;We’ll start by reviewing some of the key challenges of modern UX and Front-End Architectures. We will then present the
-key concepts of SAM and walk the audience through some node.js code samples (including server-side TimeTravel).&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;GitHub: &lt;a href=&quot;https://github.com/blainesch&quot;&gt;https://github.com/blainesch&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Twitter: &lt;a href=&quot;https://twitter.com/blainesch&quot;&gt;https://twitter.com/blainesch&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Website: &lt;a href=&quot;http://blainesch.com&quot;&gt;http://blainesch.com&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </description>
     </item>
     <item>
@@ -4768,6 +4719,36 @@ In this talk I would be covering the following:&lt;/p&gt;
 &lt;li&gt;Live Demo on how it’s really intuitive in a couple of non-trivial scenarios.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;So basically my goal is to attract more developers to adapt modern javascript frameworks and make a difference in the way complex apps are built.”&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>The SAM Pattern - a distributed system view of Front-End architectures by Jean-Jacques Dubray</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-jean-jacques-dubray/</link>
+      <pubDate>Sat, 04 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-jean-jacques-dubray/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-jean-jacques-dubray/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-left&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-jean-jacques-dubray/jj-sized.png&quot; alt=&quot;Jean-Jacques Dubray&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Jean-Jacques Dubray is the founder of &lt;a href=&quot;http://xgen.io&quot;&gt;xgen.io&lt;/a&gt; and &lt;a href=&quot;http://www.gliiph.com&quot;&gt;gliiph&lt;/a&gt;. He has been building Service Oriented Architectures,
+and API platforms for the last 15 years. He is a former member of the research staff at HRL and earned his Ph.D. from
+the University of Provence (Luminy campus), home of the Prolog language. He is the inventor of the &lt;a href=&quot;http://www.xgenio.com/bolt-introduction.pdf&quot;&gt;BOLT methodology&lt;/a&gt; and the SAM pattern.&lt;/p&gt;
+&lt;p&gt;In his talk Jean-Jacques Dubray presents that Web Applications are rapidly becoming sophisticated distributed systems. When you look at a Facebook page or a Netflix catalog,
+the number of components interacting with each other requires complex synchronization and state management capabilities, reaching
+the limits of the MVC pattern.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;In the last couple of years, several reactive architectures have started to get some interest (React, Cycle.js, ELM) without
+generating significant traction (compared to established frameworks like Angular), while struggling to position effects in their
+programming model. A new reactive, functional pattern, the State-Action-Model pattern (SAM) was introduced in early 2016 on the
+foundation of TLA+ semantics.&lt;/p&gt;
+&lt;p&gt;The pattern, which is unapologetically driven by simplicity, promotes a clear delineation between the business logic and the view
+and challenges the complexity of frameworks like Google’s Angular or Facebook’s React/Redux.&lt;/p&gt;
+&lt;p&gt;SAM’s unidirectional flow is also challenging interactive patterns like BFF (Back-End for Front-End) or the Vertical Slice Pattern
+which suggest creating view-specific APIs, per platform, app, versions of an app…&lt;/p&gt;
+&lt;p&gt;We’ll start by reviewing some of the key challenges of modern UX and Front-End Architectures. We will then present the
+key concepts of SAM and walk the audience through some node.js code samples (including server-side TimeTravel).&lt;/p&gt;
 </description>
     </item>
     <item>
@@ -5952,6 +5933,49 @@ No file asynchronously found.
 </description>
     </item>
     <item>
+      <title>Kafka &amp; Visual Studio Code &amp; OSS... Distributed Consensus &amp; Things to Learn</title>
+      <link>http://adron.github.io/articles/kafka-visual-studio-code-oss-distributed-consensus-things-to-learn/</link>
+      <pubDate>Wed, 18 Nov 2015 03:27:50 -0800</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/kafka-visual-studio-code-oss-distributed-consensus-things-to-learn/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;strong&gt;A Few Streams to Learn From: Apacha Kafka!&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Here I am in the middle of &lt;a href=&quot;https://qconsf.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;Qcon SF&lt;/a&gt;, about to enjoy the “&lt;a href=&quot;https://qconsf.com/sf2015/presentation/demystifying-large-scale-stream-processing&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;Demystifying Stream Processing with Apache Kafka&lt;/a&gt;“ talk with Neha Narkhede &lt;a href=&quot;https://twitter.com/nehanarkhede&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;@nehanarkhede&lt;/a&gt;. The background on this talk is rooted in Neha being a co-founder of &lt;a href=&quot;http://www.confluent.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;Confluent.io&lt;/a&gt;, with co-founder Jay Kreps of Karka co-creation fame. Neha is providing a fundamental talk on the insight and usage of streams across distributed systems.&lt;/p&gt;
+&lt;p&gt;&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;en&quot;&gt;&lt;p lang=&quot;de&quot; dir=&quot;ltr&quot;&gt;&lt;a href=&quot;https://twitter.com/hashtag/Qcon?src=hash&quot;&gt;#Qcon&lt;/a&gt; &amp;quot;Demystifying Stream Processing w/ Apache Kafka&amp;quot; w/ &lt;a href=&quot;https://twitter.com/nehanarkhede&quot;&gt;@nehanarkhede&lt;/a&gt; &lt;a href=&quot;https://t.co/zgR2H87xVn&quot;&gt;pic.twitter.com/zgR2H87xVn&lt;/a&gt;&lt;/p&gt;&amp;mdash; Λdrøn (@Adron) &lt;a href=&quot;https://twitter.com/Adron/status/667053052029829121&quot;&gt;November 18, 2015&lt;/a&gt;&lt;/blockquote&gt;&lt;/p&gt;
+&lt;script async src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;en&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;Holy smokes the distributed systems track is CRAZY packed!! &lt;a href=&quot;https://twitter.com/hashtag/qconsf?src=hash&quot;&gt;#qconsf&lt;/a&gt; &lt;a href=&quot;https://t.co/tVmUxExk0j&quot;&gt;pic.twitter.com/tVmUxExk0j&lt;/a&gt;&lt;/p&gt;&amp;mdash; Λdrøn (@Adron) &lt;a href=&quot;https://twitter.com/Adron/status/667045151659790336&quot;&gt;November 18, 2015&lt;/a&gt;&lt;/blockquote&gt;&lt;/p&gt;
+&lt;script async src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;&lt;em&gt;That second tweet was of the room before we had to move to the keynote space to make room for everybody that was interested in the topic! Holy snikies!&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;If you’d like to read some more information on Kafka and streaming, check out some of these posts.&lt;/p&gt;
+&lt;p&gt;&lt;ul&gt;
+    &lt;li&gt;&lt;a href=&quot;http://www.confluent.io/blog/distributed-consensus-reloaded-apache-zookeeper-and-replication-in-kafka&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;Distributed Consensus Reloaded: Apache Zookeeper and Replication in Kafka&lt;/a&gt; by &lt;a href=&quot;https://twitter.com/nehanarkhede&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;Neha Narkhede&lt;/a&gt; &amp;amp; &lt;a href=&quot;https://twitter.com/fpjunqueira&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;Flavio Jungueira&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;http://spark.apache.org/docs/latest/streaming-kafka-integration.html&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;Spark + Kafka Streaming Integration (from Docs)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;http://kafka.apache.org/&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;The Kafka Project&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;http://kafka.apache.org/code.html&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;Getting the Code&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://cwiki.apache.org/confluence/display/KAFKA/Kafka+papers+and+presentations&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;A crazy awesome list of papers &amp;amp; related material for those that love papers and want to read papers on Kafka.  ;)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;Follow the &lt;a href=&quot;https://twitter.com/apachekafka&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;Kafka project on Twitter&lt;/a&gt;, you should be on twitter, for professional and time killing reasons, because… just follow the account if you really want to keep up with the latest.&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;http://www.confluent.io/blog/stream-data-platform-1/&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;Putting Apache Kafka to Use: A Practical Guide to Building a Streaming Data Platform Part 1&lt;/a&gt; and &lt;a href=&quot;http://www.confluent.io/blog/stream-data-platform-2/&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;Part 2&lt;/a&gt;.&lt;/li&gt;
+    &lt;li&gt;More on &lt;a href=&quot;http://www.michael-noll.com/blog/2014/10/01/kafka-spark-streaming-integration-example-tutorial/&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;Spark and Kafka integration&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+I’m looking forward to digging into Kafka and various uses in the coming weeks. My current job (more on that &lt;em&gt;REAL&lt;/em&gt; soon, and yes I said &lt;em&gt;job&lt;/em&gt;). I’ve got some heavy data (big data just isn’t even discriptive, and I’m going with the Marty McFly terminology of “Heavy” and adding “Data” to form a more descriptive and unique term).  ;)&lt;/p&gt;
+&lt;p&gt;&lt;h2&gt;Visual Studio Code goes OSS &amp;amp; more Wicked F#!&lt;/h2&gt;
+As I’m sitting listening to Neha’s talk I see a stream (because I multi-task like a crazy person) of things getting mentioned about something something OSS and something something F# and something something Visual Studio Code. So even though we’re heavy into the middle of compaction, stream processings, discussions of queue points and how to manage so many things Kafka using a library with kstream DSL, processor API, and interfaces in a library Neha is discussing. It’s very interesting so&lt;/p&gt;
+&lt;p&gt;I’m going back and forth between what Neha is talking about, taking notes on the specific topic points I’ll need to research after her talk, and reading up on these something something OSS something something F# somethign something Visual Studio Code tweets. Then I stumbled into the rabbit hole of goodies that I was seeing…&lt;/p&gt;
+&lt;p&gt;&lt;blockquote&gt;Visual Studio Code is OSS now w/ F# Goodies!&lt;/p&gt;
+&lt;p&gt;HELL YEAH!&lt;/blockquote&gt;
+At least, that’s my first response because this fixes my #1 complaint about Visual Studio Code. I hated that it wasn’t open source, when there was very little reason for it to be closed source. So much of it was open already, it just seemed confusingly absurd that it wasn’t open source. But here it is, wide open and ready for PRs yo!&lt;/p&gt;
+&lt;p&gt;&lt;ul&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/Microsoft/vscode&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;https://github.com/Microsoft/vscode&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+The &lt;a href=&quot;https://marketplace.visualstudio.com/#VSCode&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;Marketplace for Visual Studio&lt;/a&gt; now has a few new goodies for F# too which is excellent!&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/kafka-visual-studio-code-oss-distributed-consensus-things-to-learn/ionide.png&quot; alt=&quot;Ionide&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Most of this is mentioned on the &lt;a href=&quot;https://wakatime.com/blog/27-visual-studio-code-extensions&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;Visual Studio Code blog&lt;/a&gt; of course, but I’m outlining a few of the bits here, since I know not too many follow the VSC blog that read my blog - for various good reasons!  ;)&lt;/p&gt;
+&lt;p&gt;With that, I leave you with the two key tidbits that worked their way into my brain while I enjoyed learning about Kafka in Neha’s talk. Cheers!&lt;/p&gt;
+</description>
+    </item>
+    <item>
       <title>Docker Tips n' Tricks - Gettging Rabbit MQ Running</title>
       <link>http://adron.github.io/articles/docker-tips-n-tricks-getting-rabbit-mq-running/</link>
       <pubDate>Tue, 10 Nov 2015 09:09:33 -0800</pubDate>
@@ -5994,6 +6018,45 @@ No file asynchronously found.
 &lt;li&gt;&lt;strong&gt;Talent Recon&lt;/strong&gt; - I’m looking for, scouting around like force recon, and connecting talent to future work we will be having come open in early 2016. (Again, this is where I get to come and hack with you, help build awesome open source software, and let you my fellow coding cohort know about the company’s existing and upcoming awesome work we’ll be hiring for! For those that know me, you know I’m serious about making sure I line up the right people with the right types of gigs, I’m no recruiter, I’m a coder, so I fight against wildly innappropriate misalignment and related silliness!)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;These are my top priorities as I step into this role with the &lt;a href=&quot;http://hdquotecenter.com/&quot; target=&quot;_blank&quot;&gt;Quote Center&lt;/a&gt;, a kind of &lt;strong&gt;&lt;em&gt;laboratory of inventive ideas&lt;/em&gt;&lt;/strong&gt; for &lt;a href=&quot;http://www.homedepot.com/&quot; target=&quot;_blank&quot;&gt;Home Depot&lt;/a&gt;. You’ll be hearing a lot more about this in the coming days, and if you’re interested in working with me and an awesome group of people - reach out and let me know &lt;a href=&quot;https://twitter.com/adron&quot; target=&quot;_blank&quot;&gt;@Adron&lt;/a&gt; on Twitter or just email me. Cheers!&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>DevDay 2015, Inspiration, and a quick look back...</title>
+      <link>http://adron.github.io/articles/devday-2015-inspiration-a-look-back/</link>
+      <pubDate>Wed, 30 Sep 2015 02:14:48 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/devday-2015-inspiration-a-look-back/</guid>
+      <author></author>
+      <description>&lt;p&gt;So far this year, which is obviously nowhere near finished yet, I have had some amazing experiences. From &lt;a href=&quot;http://dotnetfringe.org/&quot; target=&quot;_blank&quot;&gt;.NET Fringe&lt;/a&gt;, &lt;a href=&quot;http://www.polyglotconf.com/&quot; target=&quot;_blank&quot;&gt;Polyglot 2015&lt;/a&gt;, &lt;a href=&quot;https://skillsmatter.com/conferences/6859-progressive-dotnet-2015&quot; target=&quot;_blank&quot;&gt;Progressive .NET Tutorials 2015&lt;/a&gt;, to &lt;a href=&quot;http://devday.pl/&quot; target=&quot;_blank&quot;&gt;Dev Day 2015&lt;/a&gt; and more. I decided to add a little bit more of a personal note in this blog entry because of inspiration I just got from Michał Śliwoń (&lt;a href=&quot;https://twitter.com/mihcall&quot; target=&quot;_blank&quot;&gt;@mihcall&lt;/a&gt;) on his &lt;a href=&quot;http://blog.mihcall.com/2015/09/30/DevDay-2015/&quot; target=&quot;_blank&quot;&gt;Dev Day 2015 Aftermath&lt;/a&gt; write up.&lt;/p&gt;
+&lt;p&gt;Just as Michał writes,&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;“Inspiration is like a spark. It can be one brilliant presentation at the conference, one sentence at some session, one hallway conversation with another attendee and I’m excited, coming back with a head full of new ideas. Every conference has this little spark”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;and I completely agree. At .NET Fringe I got back into a few things on the .NET CLR stack, namely &lt;a href=&quot;http://compositecode.com/2015/04/19/truly-excellent-people-and-coding-inspiration/&quot; target=&quot;_blank&quot;&gt;F# and a little toying around with Akka .NET and micro-services using those technologies&lt;/a&gt;. I also had a hand in organizing and the origins of the conference, which &lt;a href=&quot;http://compositecode.com/2015/04/10/the-idea-of-net-fringe/&quot; target=&quot;_blank&quot;&gt;I wrote about&lt;/a&gt;. At Polyglot 2015 my desire increased to become more familiar with and comfortable with functional programming languages. At the Progressive .NET Tutorials I was again inspired to dive deeper into functional languages and take a look more closely at everything from &lt;a href=&quot;http://weave.works/&quot; target=&quot;_blank&quot;&gt;Weave&lt;/a&gt; and other container and virtualization based systems.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;h2 id=&quot;thrashing-code-news&quot;&gt;Thrashing Code News&lt;/h2&gt;
+&lt;p&gt;One things that this led me to, is to start putting together a list of people who are interested in these types of conferences. I’m talking about the really down to earth, nitty gritty, get into the weeds of the technology, and meet the people building and using that technology everyday conferences. This list, you can sign up for &lt;a href=&quot;http://compositecode.com/thrashing-code-news/&quot; target=&quot;_blank&quot;&gt;here&lt;/a&gt; and do &lt;a href=&quot;http://compositecode.com/thrashing-code-news/&quot; target=&quot;_blank&quot;&gt;read the article just below the sign up page&lt;/a&gt;, as this is NOT some spam list. I’ll be putting in real effort and time to put together good content when the list officially kicks off! I will blog about, and of course get that first email out about &lt;a href=&quot;http://compositecode.com/thrashing-code-news/&quot; target=&quot;_blank&quot;&gt;Thrashing Code News&lt;/a&gt; in the coming months.&lt;/p&gt;
+&lt;p&gt;Again at Dev Day I was also inspired by many people and got to meet many people. Which leads me to the number one thing that makes these conferences absolutely great. It’s all about the people who attend.&lt;/p&gt;
+&lt;h2 id=&quot;the-people&quot;&gt;The People&lt;/h2&gt;
+&lt;p&gt;I got to meet Rob Conery (&lt;a href=&quot;https://twitter.com/robconery&quot; target=&quot;_blank&quot;&gt;@robconery&lt;/a&gt; / &lt;a href=&quot;http://rob.conery.io/&quot; target=&quot;_blank&quot;&gt;http://rob.conery.io/&lt;/a&gt;). We hung out, had beers, talked shop, talked surfing, talked tech and training screencast, discussed future bad ass conferences (again, sign up to my list and I’ll keep you abreast of any mischievious conference Rob &amp;amp; I dive into) and tons more. It was seriously kick ass to meet Rob, especially after not getting a chance to at what must have been a gazillion conferences he and I have both been at before!&lt;/p&gt;
+&lt;iframe width=&quot;853&quot; height=&quot;480&quot; src=&quot;https://www.youtube.com/embed/rg_GiOZ5Owk&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;p&gt;I finally met Christian Heilmann (&lt;a href=&quot;https://twitter.com/codepo8&quot; target=&quot;_blank&quot;&gt;@codepo8&lt;/a&gt;) who I also think we must have both been at a gazillion of the same conferences and somehow managed to not meet each other. Good conversation, talk of Seattle, other devlish code happy things - and hopefully a beer or two to be had with good Christian in the near future in Seattle or Portland (or thereabouts).&lt;/p&gt;
+&lt;p&gt;I had the fortune of running into Alena Dzenisenka (&lt;a href=&quot;https://twitter.com/lenadroid&quot; target=&quot;_blank&quot;&gt;@lenadroid&lt;/a&gt;) again doing what she does, which is tell, teach, and show people a whole of awesome F# handiwork. For instance at Dev Day she was throwing down some machine learning math and helping to get people started. She’s also got &lt;a href=&quot;http://compositecode.com/2015/09/11/functional-programming-machine-learning-reactive-interactive-visualization-mbrace-and-net-unboxing-tour-of-cascadia-and-dallas-w-alena-dzenisenka/&quot; target=&quot;_blank&quot;&gt;some talks lined up near the Cascadian (that’s Seattle and Portland, but also San Francisco and Dallas!!) lands if you haven’t noticed&lt;/a&gt;, so come get inspired to sling some functional code!&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://twitter.com/mlusiak/status/644859691055599617&quot;&gt;https://twitter.com/mlusiak/status/644859691055599617&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;On day one the keynote by Chad Fowler (&lt;a href=&quot;https://twitter.com/chadfowler&quot; target=&quot;_blank&quot;&gt;@chadfowler&lt;/a&gt;) was excellent. I’d not realized he was a fellow who escaped the south like I had all while playing a bunch of music! I was able to catch Chad and chat a bit on day two of the conference. His presentation was great, and he’s motivated me to give his book &lt;a href=&quot;http://www.amazon.com/The-Passionate-Programmer-Remarkable-Development/dp/1934356344&quot; target=&quot;_blank&quot;&gt;Passionate Programmer&lt;/a&gt; a read.&lt;/p&gt;
+&lt;iframe width=&quot;853&quot; height=&quot;480&quot; src=&quot;https://www.youtube.com/embed/CkfjCef-iYI&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;p&gt;Another individual who I’d been aiming to meet, Mathias Brandewinder (&lt;a href=&quot;https://twitter.com/brandewinder&quot; target=&quot;_blank&quot;&gt;@brandewinder&lt;/a&gt;), was also at the conference. I even attended some of his workshop and learned a number of things about F# and machine learning. I’m definitely inspired to dig deeper into many of the machine learning realm and start figuring out more of the truly amazing things we can do with computers and machine learning algorithms - I honestly feel like we’ve only skimmed the surface for much of this technology. Mathias also has a book, that is truly worth buying titled “&lt;a href=&quot;http://www.amazon.com/dp/1430267674&quot; target=&quot;_blank&quot;&gt;Machine Learning Projects for .NET Developers&lt;/a&gt;“. If you’re curious, yes, I have the book and am working through it steadily!  :)&lt;/p&gt;
+&lt;p&gt;Gary Short (&lt;a href=&quot;https://twitter.com/garyshort&quot; target=&quot;_blank&quot;&gt;@garyshort&lt;/a&gt;) provided an amazing talk on digging into crop yields via the European Space Agency Data Science Project. I also enjoyed the multiple conversations that I was able to have with Gary from the talk of “really really really awesomely excited Americans” vs. “excited Americans” all the way to the talks on the matter of data science and crop yields themselves. Gary’s talk is linked below, so get a dose of the crop yields yourself, and any complaints be sure to send to his &lt;a href=&quot;https://twitter.com/robashton&quot; target=&quot;_blank&quot;&gt;@robashton&lt;/a&gt; twitter account!  (But seriously, you should follow Rob Ashton too as he’s got a lot of good twitter nuggets).&lt;/p&gt;
+&lt;iframe width=&quot;853&quot; height=&quot;480&quot; src=&quot;https://www.youtube.com/embed/7wpEgYDewD4&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;p&gt;Another person I was super stoked to run into again is Tomas Petricek (who I hear might be in the Cascadian lands of the Seattle area in a month or so). I met Tomas at Progressive .NET Tutorials in London and enjoyed a number of good conversations, and his general awesome personality and hilarious demeanor! Not sure I mentioned, but he’s got some wicked F# chops too. He spoke about Understanding the World with Type Providers, which is something that you should watch as it’s an interesting way to wrap one’s mind around a lot of ideas.&lt;/p&gt;
+&lt;iframe width=&quot;853&quot; height=&quot;480&quot; src=&quot;https://www.youtube.com/embed/LCiPehPzNow&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;p&gt;I also, after many random conversations about a whole host of conversation in &lt;a href=&quot;http://fpchat.com/&quot; target=&quot;_blank&quot;&gt;Functional Programming Slack&lt;/a&gt; (&lt;a href=&quot;http://fpchat.com/&quot; target=&quot;_blank&quot;&gt;follow the link to sign up&lt;/a&gt;) chats, got to meet Krzysztof Cieślak (&lt;a href=&quot;https://twitter.com/k_cieslak&quot; target=&quot;_blank&quot;&gt;@k_cieslak&lt;/a&gt;). Krzysztof (and if you can’t pronounce his name just keep trying, you’ll get it right sometime around 2023) was great to meet and catch up with in person. Also great to hear tidbits about what he’s working on since he’s driving some really cool projects, including working on projects like &lt;a href=&quot;https://twitter.com/IonideProject&quot; target=&quot;_blank&quot;&gt;Ionide Project&lt;/a&gt; for the &lt;a href=&quot;https://atom.io/&quot; target=&quot;_blank&quot;&gt;Atom Editor&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;There are so many people I enjoyed chatting with and getting to meet, which I really wish I had more time to hang out and chat or hack with everybody more. I met so many other individuals, that I already feel like a prick for not being able to write something about every single awesome person I’ve had a chance to speak with at Dev Day and the subsequent days after the conference. To those I didn’t, sorry about that, drinks and dinner are on me when you’re in Portland!&lt;/p&gt;
+&lt;p&gt;…on that note, get subscribed to Thrashing Code News so I can update you when the rumblings and dates of the next kick ass conferences, hackathons, hacking festivals, or other great materials, learnings, or such come up. In addition, get &lt;a href=&quot;http://blog.mihcall.com/2015/01/18/Why-You-Should-Speak-At-Meetups-And-Conferences/&quot; target=&quot;_blank&quot;&gt;inspired to speak&lt;/a&gt;, or get involved in some way and help make the next conference you attend as kick ass as you’d want it to be! It’s easy, just &lt;a href=&quot;http://compositecode.com/thrashing-code-news/&quot; target=&quot;_blank&quot;&gt;fill out your name and email here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;…and to Michał and Rafał I’ll be following up with you guys on some of my next confrence efforts coming up in the Cascadian Pacific Northwest (i.e. Seattle/Portland area)! Cheers!&lt;/p&gt;
 </description>
     </item>
     <item>

@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="/css/style.min.css">
     <script src="/js/modernizr.js"></script>
   </head>
-  <body>
+  <body class="article-detail">
     <!--[if lt IE 8]>
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -67,8 +67,10 @@
             <div class="col-md-12">
               <!-- Page Info-->
               <div class="page-info page-info-simple">
-                <h1>Adron's Composite Code</h1>
-                <h2 class="description">Coder, Messenger, Recon, Infrastructure, Ops</h2>
+                <h1>Kafka &amp; Visual Studio Code &amp; OSS... Distributed Consensus &amp; Things to Learn</h1>
+                <p class="author">Written by <span class="author">Adron Hall</span> and published on <span>November, 18 of 2015.</span>
+                </p>
+                <div class="nav"><a href="/">« Home</a></div>
               </div>
               <!-- End Page Info-->
             </div>
@@ -83,66 +85,44 @@
             <div class="col-md-9">
               <div class="main-content">
                 <!-- Blog Page-->
-                <div class="blog">
-                  <div class="row"></div>
-                </div>
-                <div class="col-md-12 col-sm-12">
-                  <!-- Blog List-->
-                  <div class="blog-grid">
-                    <div class="row">
-                      <div class="col-md-12 col-sm-12">
-                        <h3 class="blog-grid-title"><a href="/articles/nuance-dammit/">Nuance Dammit</a></h3>
-                        <p class="blog-grid-excerpt"><p><strong>Warning:</strong> <em>This write up is rated <span class="caps">PG</span>-13 based on the Motion Picture Association of America because it has dirty words and it seems like a laughably silly and subjective rating system that’s as laughable as the need to warn of such things. Hope you too find my use of this rating system as LOL worthy as I do. So if PG-13 is safe for you, read on and enjoy the&nbsp;thoughts!</em></p>
-<p><strong>Note:</strong> <em>Also note, that this has political overtones, but I do relate the article to the tech industry further onward in the article, just&nbsp;<span class="caps">FYI</span>.</em></p>
-<p>Alright, the word has come up a number of times in the last few months. More so than under normal circumstances and the cause is squarely rooted in our leadership in the White House. Notice my nuance right now, in that I’m now circumventing direct blame in these statements. The leadership we have in the White House, when it comes specifically to speaking, writing, and communication are grossly&nbsp;incompetent.</p>
-<p>
-                          <p class="more"><a href="/articles/nuance-dammit/">more</a></p>
-                        </p>
-                        <div class="blog-grid-meta"><span class="blog-grid-date">16. May 2017</span></div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End of Blog List-->
-                </div>
-                <div class="col-md-12 col-sm-12">
-                  <!-- Blog List-->
-                  <div class="blog-grid">
-                    <div class="row">
-                      <div class="col-md-12 col-sm-12">
-                        <h3 class="blog-grid-title"><a href="/articles/collected-react-starting-points/">Collected React Starting Points Links and Notes</a></h3>
-                        <p class="blog-grid-excerpt"><div class="image float-left">
-    <img src="/articles/collected-react-starting-points/react.png" alt="React">
-</div>
-
-<p>The following is a collection of links and related things that I have used for learning React this last two weeks. I’ve attempted to sort them into a way that seems useful, at least to me, and hope that this can be useful to others. Where the link was given via Twitter, I’ve embedded to tweet so it gives reference to those that have helped me along the way. Others are just inline as I found them via google or via whatever&nbsp;method.</p>
-<p>
-                          <p class="more"><a href="/articles/collected-react-starting-points/">more</a></p>
-                        </p>
-                        <div class="blog-grid-meta"><span class="blog-grid-date">15. May 2017</span></div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End of Blog List-->
-                </div>
-                <div class="col-md-12 col-sm-12">
-                  <!-- Blog List-->
-                  <div class="blog-grid">
-                    <div class="row">
-                      <div class="col-md-12 col-sm-12">
-                        <h3 class="blog-grid-title"><a href="/articles/OSCON-via-twitter/">OSCON via twitter</a></h3>
-                        <p class="blog-grid-excerpt"><p>I was going to post some pictures, but instead it seemed fitting to just post some tweets I selected specifically via the <a href="https://twitter.com/search?q=%23OSCON&amp;src=typd">#<span class="caps">OSCON</span></a> and <a href="https://twitter.com/search?q=%23OSCON2017&amp;src=typd">#<span class="caps">OSCON2017</span></a>&nbsp;hashtags.</p>
-<p><blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr"><a href="https://twitter.com/hashtag/oscon?src=hash">#oscon</a> we the <span class="caps">OSS</span> community <a href="https://t.co/k7Dp5ukn4X">pic.twitter.com/k7Dp5ukn4X</a></p>&mdash; Mike Jang (@TheMikeJang) <a href="https://twitter.com/TheMikeJang/status/862682161870245889">May 11, 2017</a></blockquote></p>
+                <article class="article">
+                  <section class="content"><p><strong>A Few Streams to Learn From: Apacha&nbsp;Kafka!</strong></p>
+<p>Here I am in the middle of <a href="https://qconsf.com/" target="_blank" rel="noopener noreferrer">Qcon <span class="caps">SF</span></a>, about to enjoy the “<a href="https://qconsf.com/sf2015/presentation/demystifying-large-scale-stream-processing" target="_blank" rel="noopener noreferrer">Demystifying Stream Processing with Apache Kafka</a>“ talk with Neha Narkhede <a href="https://twitter.com/nehanarkhede" target="_blank" rel="noopener noreferrer">@nehanarkhede</a>. The background on this talk is rooted in Neha being a co-founder of <a href="http://www.confluent.io/" target="_blank" rel="noopener noreferrer">Confluent.io</a>, with co-founder Jay Kreps of Karka co-creation fame. Neha is providing a fundamental talk on the insight and usage of streams across distributed&nbsp;systems.</p>
+<p><blockquote class="twitter-tweet" data-lang="en"><p lang="de" dir="ltr"><a href="https://twitter.com/hashtag/Qcon?src=hash">#Qcon</a> &quot;Demystifying Stream Processing w/ Apache Kafka&quot; w/ <a href="https://twitter.com/nehanarkhede">@nehanarkhede</a> <a href="https://t.co/zgR2H87xVn">pic.twitter.com/zgR2H87xVn</a></p>&mdash; Λdrøn (@Adron) <a href="https://twitter.com/Adron/status/667053052029829121">November 18, 2015</a></blockquote></p>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-<p>
-                          <p class="more"><a href="/articles/OSCON-via-twitter/">more</a></p>
-                        </p>
-                        <div class="blog-grid-meta"><span class="blog-grid-date">15. May 2017</span></div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End of Blog List-->
-                </div>
+<p><span class="more"></span></p>
+<p><blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Holy smokes the distributed systems track is <span class="caps">CRAZY</span> packed!! <a href="https://twitter.com/hashtag/qconsf?src=hash">#qconsf</a> <a href="https://t.co/tVmUxExk0j">pic.twitter.com/tVmUxExk0j</a></p>&mdash; Λdrøn (@Adron) <a href="https://twitter.com/Adron/status/667045151659790336">November 18, 2015</a></blockquote></p>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<p><em>That second tweet was of the room before we had to move to the keynote space to make room for everybody that was interested in the topic! Holy&nbsp;snikies!</em></p>
+<p>If you’d like to read some more information on Kafka and streaming, check out some of these&nbsp;posts.</p>
+<p><ul>
+    <li><a href="http://www.confluent.io/blog/distributed-consensus-reloaded-apache-zookeeper-and-replication-in-kafka" target="_blank" rel="noopener noreferrer">Distributed Consensus Reloaded: Apache Zookeeper and Replication in Kafka</a> by <a href="https://twitter.com/nehanarkhede" target="_blank" rel="noopener noreferrer">Neha Narkhede</a> <span class="amp">&amp;</span> <a href="https://twitter.com/fpjunqueira" target="_blank" rel="noopener noreferrer">Flavio&nbsp;Jungueira</a></li>
+    <li><a href="http://spark.apache.org/docs/latest/streaming-kafka-integration.html" target="_blank" rel="noopener noreferrer">Spark + Kafka Streaming Integration (from&nbsp;Docs)</a></li>
+    <li><a href="http://kafka.apache.org/" target="_blank" rel="noopener noreferrer">The Kafka&nbsp;Project</a></li>
+    <li><a href="http://kafka.apache.org/code.html" target="_blank" rel="noopener noreferrer">Getting the&nbsp;Code</a></li>
+    <li><a href="https://cwiki.apache.org/confluence/display/KAFKA/Kafka+papers+and+presentations" target="_blank" rel="noopener noreferrer">A crazy awesome list of papers <span class="amp">&amp;</span> related material for those that love papers and want to read papers on Kafka.&nbsp;;)</a></li>
+    <li>Follow the <a href="https://twitter.com/apachekafka" target="_blank" rel="noopener noreferrer">Kafka project on Twitter</a>, you should be on twitter, for professional and time killing reasons, because… just follow the account if you really want to keep up with the&nbsp;latest.</li>
+    <li><a href="http://www.confluent.io/blog/stream-data-platform-1/" target="_blank" rel="noopener noreferrer">Putting Apache Kafka to Use: A Practical Guide to Building a Streaming Data Platform Part 1</a> and <a href="http://www.confluent.io/blog/stream-data-platform-2/" target="_blank" rel="noopener noreferrer">Part 2</a>.</li>
+    <li>More on <a href="http://www.michael-noll.com/blog/2014/10/01/kafka-spark-streaming-integration-example-tutorial/" target="_blank" rel="noopener noreferrer">Spark and Kafka integration</a>.</li>
+</ul>
+I’m looking forward to digging into Kafka and various uses in the coming weeks. My current job (more on that <em><span class="caps">REAL</span></em> soon, and yes I said <em>job</em>). I’ve got some heavy data (big data just isn’t even discriptive, and I’m going with the Marty McFly terminology of “Heavy” and adding “Data” to form a more descriptive and unique term).&nbsp;;)</p>
+<p><h2>Visual Studio Code goes <span class="caps">OSS</span> <span class="amp">&amp;</span> more Wicked&nbsp;F#!</h2>
+As I’m sitting listening to Neha’s talk I see a stream (because I multi-task like a crazy person) of things getting mentioned about something something <span class="caps">OSS</span> and something something F# and something something Visual Studio Code. So even though we’re heavy into the middle of compaction, stream processings, discussions of queue points and how to manage so many things Kafka using a library with kstream DSL, processor API, and interfaces in a library Neha is discussing. It’s very interesting&nbsp;so</p>
+<p>I’m going back and forth between what Neha is talking about, taking notes on the specific topic points I’ll need to research after her talk, and reading up on these something something <span class="caps">OSS</span> something something F# somethign something Visual Studio Code tweets. Then I stumbled into the rabbit hole of goodies that I was&nbsp;seeing…</p>
+<p><blockquote>Visual Studio Code is <span class="caps">OSS</span> now w/ F#&nbsp;Goodies!</p>
+<p><span class="caps">HELL</span> YEAH!</blockquote>
+At least, that’s my first response because this fixes my #1 complaint about Visual Studio Code. I hated that it wasn’t open source, when there was very little reason for it to be closed source. So much of it was open already, it just seemed confusingly absurd that it wasn’t open source. But here it is, wide open and ready for PRs&nbsp;yo!</p>
+<p><ul>
+    <li><a href="https://github.com/Microsoft/vscode" target="_blank" rel="noopener noreferrer">https://github.com/Microsoft/vscode</a></li>
+</ul>
+The <a href="https://marketplace.visualstudio.com/#VSCode" target="_blank" rel="noopener noreferrer">Marketplace for Visual Studio</a> now has a few new goodies for F# too which is&nbsp;excellent!</p>
+<p><img src="/articles/kafka-visual-studio-code-oss-distributed-consensus-things-to-learn/ionide.png" alt="Ionide"></p>
+<p>Most of this is mentioned on the <a href="https://wakatime.com/blog/27-visual-studio-code-extensions" target="_blank" rel="noopener noreferrer">Visual Studio Code blog</a> of course, but I’m outlining a few of the bits here, since I know not too many follow the <span class="caps">VSC</span> blog that read my blog - for various good reasons!&nbsp;;)</p>
+<p>With that, I leave you with the two key tidbits that worked their way into my brain while I enjoyed learning about Kafka in Neha’s talk.&nbsp;Cheers!</p>
+</section>
+                </article>
                 <!-- End of Blog Page-->
               </div>
             </div>
@@ -232,8 +212,7 @@
             </div>
           </div>
         </div>
-        <div class="nav"><a href="/archive.html">« Archives</a>&nbsp;<a href="/page/2/">Previous »</a>
-        </div>
+        <div class="nav"><a href="/">« Home</a></div>
       </div>
     </div>
     <script src="/js/all.js"></script>
