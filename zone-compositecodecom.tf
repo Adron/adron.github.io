@@ -13,3 +13,4 @@ resource "google_dns_record_set" "compositecodecom" {
     "192.30.252.154",
     "192.30.252.153"]
 }
+
