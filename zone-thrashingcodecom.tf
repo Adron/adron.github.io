@@ -116,3 +116,35 @@ resource "google_dns_record_set" "sheets_thrashingcodecom" {
   ttl = 3600
   rrdatas = ["ghs.googlehosted.com."]
 }
+
+resource "google_dns_record_set" "sites_thrashingcodecom" {
+  managed_zone = "${google_dns_managed_zone.thrashingcodecom.name}"
+  name = "sites.${google_dns_managed_zone.thrashingcodecom.dns_name}"
+  type = "CNAME"
+  ttl = 3600
+  rrdatas = ["ghs.googlehosted.com."]
+}
+
+resource "google_dns_record_set" "slides_thrashingcodecom" {
+  managed_zone = "${google_dns_managed_zone.thrashingcodecom.name}"
+  name = "slides.${google_dns_managed_zone.thrashingcodecom.dns_name}"
+  type = "CNAME"
+  ttl = 3600
+  rrdatas = ["ghs.googlehosted.com."]
+}
+
+resource "google_dns_record_set" "start_thrashingcodecom" {
+  managed_zone = "${google_dns_managed_zone.thrashingcodecom.name}"
+  name = "start.${google_dns_managed_zone.thrashingcodecom.dns_name}"
+  type = "CNAME"
+  ttl = 3600
+  rrdatas = ["ghs.googlehosted.com."]
+}
+
+resource "google_dns_record_set" "vault_thrashingcodecom" {
+  managed_zone = "${google_dns_managed_zone.thrashingcodecom.name}"
+  name = "vault.${google_dns_managed_zone.thrashingcodecom.dns_name}"
+  type = "CNAME"
+  ttl = 3600
+  rrdatas = ["ghs.googlehosted.com."]
+}
