@@ -7,17 +7,17 @@ template: article.jade
 ---
 In 2011 I got a Macbook Air for a christmas gift. It changed my life in a huge way. I'd been a Microsoft Windows user for a long time. I'd also been doing primarily .NET C# Coding for more years than I'd like to count. But at this particular time I knew that I was at a turning point in what I would be working on in the coming years. This Macbook Air was the gateway into a new realm of getting things done on the bleeding edge. This was something that had truly been a long while coming, and I was more than ready for this change.
 
-My days exclusively using Microsoft Technologies were coming to an end.
+*My days exclusively using Microsoft Technologies were coming to an end.*
 
 <span class="more"></span>
  
 You see, I'd been bitten by the distributed systems, cloud computing, and large scale, advanced, super computer (yeah, actual super computers) bug. I loved this computing space and I was extremely curious what it held. I had long wanted to delve more into these topics and work more diligently with larger scale, distributed, and related system concerns. Whether it was in the web space or some other area, it didn't matter, I was curious in a host of things and reasons people were building these systems and applications around them.
 
-Windows and Microsoft Technologies were almost nonexistent in this space.
+*Windows and Microsoft Technologies were almost nonexistent in this space.*
 
 I'd cut my teeth earlier in my career working around computer scientists that extensively used UNIX and, even in the earliest days of Linux, had begun doing some large scale compute. I got to see the first Beowolf Clusters being put together. Even brought some of the actual computers to the research lab crew that was putting them together. I saw and even got to allocate *compute* resources on the Naval Oceanographic Office's super computer located out at Stennis Space Center. This was real computing and I had wanted more of it ever since then.
 
-Windows & Microsoft Technologies were nowhere to be seen.
+*Windows & Microsoft Technologies were nowhere to be seen.*
 
 Moving to Mac was extremely easy. I quickly adapted to shortcut keys and started finding tools I needed to get the job done. I picked up the Jetbrains Suite of IDEs and quickly found other applications to take the place of other various needs. With gaming that was relatively easy too, as more games were starting to be released for the Mac in 2011 anyway. I'll admit though, still no heavy game and haven't been since probably 2004.
 
