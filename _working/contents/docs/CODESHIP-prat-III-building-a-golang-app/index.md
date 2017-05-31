@@ -4,4 +4,6 @@ author: Adron Hall
 date: 2017-03-03:22:33:18
 template: doc.jade
 ---
-The last two articles of this series have covered a lot of ground. In today's article I aim to dive more heavily into some Go, the libraries we're using, and the code that will drive the data generation API.
+# Getting Go Going Continuously with Integration & Delivery on Codeship Pro - Stage III
+
+In this article it's time to dive into some Go coding. Here are the key objectives.
