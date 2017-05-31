@@ -84,7 +84,8 @@
               <div class="main-content">
                 <!-- Blog Page-->
                 <docs class="article">
-                  <section class="content"><p>Previously in this series I’ve put together all of the basic elements to insure I have a working build to develop from. This insures I have the ability to make changes rapidly, change direction when needed, insure the code base is always building, tested, and able to be deployed. If you want to catch up and follow along step through the previous article of the series <a href="#part1">here</a>.</p>
+                  <section class="content"><h1 id="getting-go-going-continuously-with-integration-delivery-on-codeship-pro-stage-ii">Getting Go Going Continuously with Integration <span class="amp">&amp;</span> Delivery on Codeship Pro - Stage&nbsp;<span class="caps">II</span></h1>
+<p>Previously in this series I’ve put together all of the basic elements to insure I have a working build to develop from. This way I have the ability to make changes rapidly, change direction when needed, insure the code base is always building, tested, and able to be deployed. If you want to catch up and follow along step through the previous article of the series <a href="#part1">here</a>.</p>
 <p>In this article I’m going to start stepping toward a working services product, and provide a description and details of what I intend to&nbsp;build.</p>
 <h2 id="application-description">Application&nbsp;Description</h2>
 <p>The idea behind this application is to generate data. However I don’t want to create just a simple data generator alone. Instead I want a system which can generate data and also place it into an appropriate location after generating the data. With this basic setup I would need 2 key pieces of information to pass along to the <span class="caps">API</span>, so that it can then generate the data and put the data into the location&nbsp;designated.</p>
@@ -95,169 +96,34 @@
 <li>In the schema, I’ll also want to be able to designate the type, and how many of the specific piece of data to&nbsp;generate.</li>
 </ul>
 <p>I’ve created an example below, to provide an idea of what would be passed into the <span class="caps">API</span>. At this point I’m not trying to determine exactly how something would work, specific criteria, or the details of verifying the data, but just simply a workflow to achieve basic functionality around the core&nbsp;goals.</p>
-<pre><code class="lang-javascript">[
-  {
-    <span class="string">"schema"</span>: <span class="string">"relational"</span>,
-    <span class="string">"database"</span>: <span class="string">"postgresql"</span>,
-    <span class="string">"connection"</span>: [
-      {
-        <span class="string">"connectionData"</span>: <span class="string">"stringForConnectionEtc"</span>,
-        <span class="string">"username"</span>: <span class="string">"theUser"</span>,
-        <span class="string">"password"</span>: <span class="string">"thePassword"</span>,
-        <span class="string">"otherConnectionParam"</span>: <span class="string">"TheOtherValue"</span>
-      }
-    ],
-    <span class="string">"structure"</span>: [
-      {
-        <span class="string">"table"</span>: <span class="string">"Users"</span>,
-        <span class="string">"generate"</span>: <span class="string">"4234908"</span>,
-        <span class="string">"columns"</span>: [
-          {<span class="string">"name"</span>: <span class="string">"id"</span>, <span class="string">"type"</span>: <span class="string">"uuid"</span>},
-          {<span class="string">"name"</span>: <span class="string">"firstname"</span>, <span class="string">"type"</span>: <span class="string">"firstname"</span>},
-          {<span class="string">"name"</span>: <span class="string">"lastname"</span>, <span class="string">"type"</span>: <span class="string">"lastname"</span>},
-          {<span class="string">"name"</span>: <span class="string">"email_address"</span>, <span class="string">"type"</span>: <span class="string">"email"</span>}
-        ]
-      },
-      {
-        <span class="string">"table"</span>: <span class="string">"Addresses"</span>,
-        <span class="string">"generate"</span>: <span class="string">"2323498"</span>,
-        <span class="string">"columns"</span>: [
-          {<span class="string">"name"</span>: <span class="string">"id"</span>, <span class="string">"type"</span>: <span class="string">"uuid"</span>},
-          {<span class="string">"name"</span>: <span class="string">"userFkId"</span>, <span class="string">"type"</span>: <span class="string">"uuid"</span>, <span class="string">"keyParentTable"</span>: <span class="string">"Users"</span>, <span class="string">"keyParentColumn"</span>: <span class="string">"id"</span>},
-          {<span class="string">"name"</span>: <span class="string">"street"</span>, <span class="string">"type"</span>: <span class="string">"address"</span>},
-          {<span class="string">"name"</span>: <span class="string">"city"</span>, <span class="string">"type"</span>: <span class="string">"city"</span>},
-          {<span class="string">"name"</span>: <span class="string">"state"</span>, <span class="string">"type"</span>: <span class="string">"state"</span>},
-          {<span class="string">"name"</span>: <span class="string">"postalcode"</span>, <span class="string">"type"</span>: <span class="string">"zip"</span>}
-        ]
-      },
-      {
-        <span class="string">"table"</span>: <span class="string">"Transactions"</span>,
-        <span class="string">"generate"</span>: <span class="string">"1432434908"</span>,
-        <span class="string">"columns"</span>: [
-          { <span class="string">"name"</span>: <span class="string">"id"</span>, <span class="string">"type"</span>: <span class="string">"uuid"</span> },
-          {<span class="string">"name"</span>: <span class="string">"userFkId"</span>, <span class="string">"type"</span>: <span class="string">"uuid"</span>, <span class="string">"keyParentTable"</span>: <span class="string">"Users"</span>, <span class="string">"keyParentColumn"</span>: <span class="string">"id"</span>},
-          { <span class="string">"name"</span>: <span class="string">"transaction"</span>, <span class="string">"type"</span>: <span class="string">"money"</span> },
-          { <span class="string">"name"</span>: <span class="string">"stamp"</span>, <span class="string">"type"</span>: <span class="string">"date"</span> }
-        ]
-      }
-    ]
-  }
-]
-</code></pre>
+<script src="https://gist.github.com/Adron/402a5e4b5e11554f72a663416ac6d92c.js"></script>
+
 <p>This example covers the core features. I’ve setup a schema and database key value pair, which I’ve set here to a relational schema setup for a Postgresql relational database. The connection parameter would be an array of key value pairs that would have the necessary information for connecting to the database. Below that the structure is where the database, which will be filled with generated data, is&nbsp;described.</p>
 <p>At this point there are many other stories and feature requests I could come up with. At this point I know enough of the story to start building out some more of the systemic elements that are needed. I’ll get right into that and step back into describing features after getting more of a feel for building this <span class="caps">API</span>&nbsp;service.</p>
 <h2 id="next-step-dependencies">Next Step&nbsp;Dependencies</h2>
-<p>I really need to get into the services at this point. Get something working to actually work from. Similar to how I have already put together the actual build with Codeship Pro. At the end of the last article in this series I had written a <em>hello world</em> style service, but that won’t cut it. For this I want to use something that has features and capabilities focused around a service. This could and should cut back on a lot of the standard work that is needed. For this I’ll use <a href="https://github.com/go-kit/kit">go-kit</a>.</p>
-<p>To get this library, I use the standard <a href="https://golang.org/cmd/go/">Go Get</a> command. This command will retrieve an available library for use, creating a dependency within my project. In this case I want to get the go-kit and start using&nbsp;it.</p>
-<p><code>go get github.com/go-kit/kit</code></p>
-<p>Go-kit focuses on a few key goals. The framework is designed to operate in a heterogenous environment, with the intent to communicate with any and all non go-kit services. <span class="caps">RPC</span> is the primary messaging pattern, it includes pluggable transport and serialization, and is designed to operate with existing&nbsp;infrastructures.</p>
+<p>I really need to get into the services at this point. Get something working to actually work from. Similar to how I have already put together the actual build with Codeship Pro. At the end of the last article in this series I had written a <em>hello world</em> style service, but that won’t cut it. For this I want to use something that has features and capabilities focused around a service. This could and should cut back on a lot of the standard work that is needed. For this I’ll use <a href="http://www.gorillatoolkit.org/pkg/mux">Mux</a>.</p>
+<p>To get this library, I use the standard <a href="https://golang.org/cmd/go/">Go Get</a> command. This command will retrieve an available library for use, creating a dependency within my project. In this case I want to get the Mux Package and start using&nbsp;it.</p>
+<p><code>go get github.com/gorilla/mux</code></p>
 <h2 id="build-some-basic-features">Build Some Basic&nbsp;Features</h2>
-<p>I’ll need a service that accepts <span class="caps">JSON</span>, and then can act on that JSON. So the first thing I need to do is to spool up a service with go-kit. To build out this initial business logic I’ll start with an interface. This interface will then have an implementation based on this interface’s&nbsp;contract.</p>
-<pre><code>type TellMeAboutJsonService interface {
-    TellMeAbout(string) (string, error)
-    Elements(string) int
-}
-</code></pre><p>Next I’ll add a structure&nbsp;variable.</p>
-<pre><code>type tellMeAboutJsonService struct{}
-</code></pre><p>Now the implementation of the interface for the <code>TellMeAbout</code> and <code>Elements</code> functions.</p>
-<pre><code>func (tellMeAboutJsonService) TellMeAbout(s string) (string, error) {
-    if s == &quot;&quot; {
-        return &quot;&quot;, ErrEmpty
-    }
+<p>To get things going I’ll just create a few key pieces that are needed. First, let’s create a Logger function to use for, well, ya know,&nbsp;logging.</p>
+<script src="https://gist.github.com/Adron/481f0df5af0403720adb3da6e6782cf5.js"></script>
 
-    return s, nil
-}
+<p>Once I have that I’ll need to create a new router using mux, and the respective routes and a handler. Let’s first add the pieces needed for routes. First I’ll add a Route struct type, then an array of this type struct, then create a variable to hold routes of type Route. The code looks like&nbsp;this.</p>
+<script src="https://gist.github.com/Adron/ad15920b576118758d37112dbdcfe526.js"></script>
 
-func (tellMeAboutJsonService) Elements(s string) int {
-    return len(s)
-}
-</code></pre><p>Now I’ll need some request and response variable object declarations too. These read like&nbsp;this.</p>
-<pre><code>type tellMeAboutRequest struct {
-    S string `json:&quot;s&quot;`
-}
+<p>In the routes variable I go ahead and assign the root route, and give it a currently non-existent handler function name of <code>HandleThis</code>. This is however, the next piece of code I’ll add and immediately after I’ll add the function that’ll handle router creation based on the mux&nbsp;library.</p>
+<script src="https://gist.github.com/Adron/ef6312fe492b7ab0fa4d2adaa9546d92.js"></script>
 
-type tellMeAboutResponse struct {
-    V   string `json:&quot;v&quot;`
-    Err string `json:&quot;err,omitempty&quot;`
-}
-
-type elementsRequest struct {
-    S string `json:&quot;s&quot;`
-}
-
-type elementsResponse struct {
-    V int `json:&quot;v&quot;`
-}
-</code></pre><p>I’ll also need to be able to decade and encode requests and responses too. Here I’ve added some basic <span class="caps">JSON</span> deoding using the JSON decoder wrapped in some standard error&nbsp;handling.</p>
-<pre><code>func decodeTellMeAboutRequest(_ context.Context, r *http.Request) (interface{}, error) {
-    var request tellMeAboutRequest
-    if err := json.NewDecoder(r.Body).Decode(&amp;request); err != nil {
-        return nil, err
-    }
-    return request, nil
-}
-
-func decodeElementsRequest(_ context.Context, r *http.Request) (interface{}, error) {
-    var request elementsRequest
-    if err := json.NewDecoder(r.Body).Decode(&amp;request); err != nil {
-        return nil, err
-    }
-    return request, nil
-}
-
-func encodeResponse(_ context.Context, w http.ResponseWriter, response interface{}) error {
-    return json.NewEncoder(w).Encode(response)
-}
-</code></pre><p>Now I’ll setup the end points. For each go-kit service there is an end point, which basically what will become an access point made available via a <span class="caps">URI</span> that HTTP requests can be made against. For handling JSON that I’ll pass in, as previously described in this article, I’ve setup the <code>makeTellMeAboutEndpoint</code> to handle this processing, and for the <code>makeElementsEndpoint</code> for counting the elements in <span class="caps">JSON</span>. The later isn’t specifically needed immediately, but I can use it to do some simple testing, experimentation, and manipulation of JSON while I work to build this&nbsp;API.</p>
-<p>For both of these functions, I’ve writting some extremely basic code just to be able to, at this point, verify that they work. The <code>makeTellMeAboutEndpoint</code> takes the <span class="caps">JSON</span> data and processes it in a basic way, and the elements simply provides a count of characters at this time. Again, just working on insuring a basic working element, and then I can iterate on additional processing of JSON data and such. <em>Small steps, make the bigger bridges&nbsp;possible!</em></p>
-<pre><code>func makeTellMeAboutEndpoint(svc TellMeAboutJsonService) endpoint.Endpoint {
-    return func(ctx context.Context, request interface{}) (interface{}, error) {
-        req := request.(tellMeAboutRequest)
-        v, err := svc.TellMeAbout(req.S)
-        if err != nil {
-            return tellMeAboutResponse{v, err.Error()}, nil
-        }
-        return tellMeAboutResponse{v, &quot;&quot;}, nil
-    }
-}
-
-func makeElementsEndpoint(svc TellMeAboutJsonService) endpoint.Endpoint {
-    return func(ctx context.Context, request interface{}) (interface{}, error) {
-        req := request.(elementsRequest)
-        v := svc.Elements(req.S)
-        return elementsResponse{v}, nil
-    }
-}
-</code></pre><p>Finally the main&nbsp;function.</p>
+<p>Finally, I’ll add the main func that’ll kick all of this into gear and start the logger <span class="amp">&amp;</span> service. Since I’ve broken apart the logger, router, handler, and routes appropriately, the main function is a simple two line&nbsp;function.</p>
 <pre><code>func main() {
-    svc := tellMeAboutJsonService{}
-
-    tellMeAboutHandler := httptransport.NewServer(
-        makeTellMeAboutEndpoint(svc),
-        decodeTellMeAboutRequest,
-        encodeResponse,
-    )
-
-    elementsHandler := httptransport.NewServer(
-        makeElementsEndpoint(svc),
-        decodeElementsRequest,
-        encodeResponse,
-    )
-
-    // The URI Endpoints.
-    http.Handle(&quot;/tellmeabout&quot;, tellMeAboutHandler)
-    http.Handle(&quot;/elements&quot;, elementsHandler)
-    log.Fatal(http.ListenAndServe(&quot;:8080&quot;, nil))
+    router := NewRouter()
+    log.Fatal(http.ListenAndServe(&quot;:8080&quot;, router))
 }
-</code></pre><p>In the main function all these pieces come together. I start by setting variable <code>svc</code> to the interface with <code>svc := tellMeAboutJsonService{}</code>. Next I assign some handlers to deal with the http communication with the various end points I’ll create. This is done with the assignments of <code>tellMeABoutHandler</code> and <code>elementsHandler</code>, which is assigned via a call to <code>NewServer</code> made availble via the <code>httptransport</code> library. Using this function I then pass in the end point with the svc variable interface contract, decade, and encode for each of the specific http servers handling the two endpoints. Finally the two end points are set for the handlers with <code>http.Hanlde(&quot;/uri_path&quot;, handler)</code>. Wrapping up the main method is the call to <code>http.ListenAndServe</code> set to port 8080 and passed into <code>log.Fatal</code> to handle&nbsp;errors.</p>
-<p>Now when I run this service, I can execute http calls against the end points with curl. To test this service out I start it by running the service with the basic Go command <em>Run</em>.</p>
-<pre><code>go run main.go
-</code></pre><p>With that running in one terminal window I can execute http requests against it now. For example I’ll take the above <span class="caps">JSON</span> and send it to the first end point with this&nbsp;command.</p>
-<pre><code>curl -XPOST -d&#39;{&quot;s&quot;:&quot;A small sample of JSON data.&quot;}&#39; localhost:8080/tellmeabout
-</code></pre><p>The result returns in the terminal with <code>{&quot;v&quot;:&quot;A small sample of JSON data.&quot;}</code>.</p>
-<p>Trying that same sample against the count of elements, I get back the character count as&nbsp;expected.</p>
-<pre><code>curl -XPOST -d&#39;{&quot;s&quot;:&quot;A small sample of JSON data.&quot;}&#39; localhost:8080/elements
-</code></pre><p>The result displays a simple <code>{&quot;v&quot;:28}</code>. Now, the next step is to actually process some more legitimate <span class="caps">JSON</span> that looks more like the configuration example above. However, at this point I’m going to detour and talk about some other development continuous integration&nbsp;process.</p>
+</code></pre><p>This now helps me prove out that I have a working service, with a simple curl command issued against the end point I can verify everything is running&nbsp;ok.</p>
+<pre><code>curl localhost:8080
+</code></pre><p>Below I’ve executed a curl request against the root end point in the bottom terminal below. In addition, I’ve shown what the logger will print out when a curl is issued against the end point in the top terminal shown&nbsp;below.</p>
+<p><img src="/docs/CODESHIP-part-II-dockerizing-golang/go-run-main.png" alt="Running The Service"></p>
+<p>At this point I’m going to detour and talk about the continuous integration process some&nbsp;more.</p>
 <h3 id="the-build-has-broken-">The Build Has&nbsp;Broken!</h3>
 <p>If I take a step away from this working code and take a look at the build process, I’ve broken the build with this latest addition of&nbsp;code.</p>
 <p><img src="/docs/CODESHIP-part-II-dockerizing-golang/Datadiluvium01d.png" alt="Data Diluvium Broken Build"></p>
@@ -317,7 +183,7 @@ RUN cd /go/src/github.com/Adron/datadiluvium-02 &amp;&amp; \
       command: go build
 </code></pre><p>Notice I removed some previous steps and now just clean and then build the code. The build process service automatically build the container image itself, so I’m all set now for the build with full dependency&nbsp;support.</p>
 <h2 id="summary">Summary</h2>
-<p>In this post I’ve covered a fair amount of distance toward a fully functioning Data Diluvium Project. First coverage of what the key feature stories are for the Data Diluvium Project itself. I’ve covered coding up a working service, from first principles, into a working service that accepts <span class="caps">JSON</span>. This provides the ground work in which I can now start writing code toward processing the JSON the service would recieve. From that point, I took a break from coding to extend the capabilities of the project to handle dependency management with Glide. Finally wrapped up this part with some changes to insure a good build with the new dependency management in&nbsp;place.</p>
+<p>In this post I’ve covered a fair amount of distance toward a fully functioning Data Diluvium Project. First coverage of what the key feature stories are for the Data Diluvium Project itself. I’ve covered coding up a working service, from first principles, into a working service that accepts <span class="caps">JSON</span>. This provides the groundwork in which I can now start writing code toward processing the JSON the service would receive. From that point, I took a break from coding to extend the capabilities of the project to handle dependency management with Glide. Finally wrapped up this part with some changes to insure a good build with the new dependency management in&nbsp;place.</p>
 </section>
                 </docs>
                 <!-- End of Blog Page-->
