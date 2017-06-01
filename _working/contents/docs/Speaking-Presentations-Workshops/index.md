@@ -8,10 +8,11 @@ This page links to my history of speaking via presentations, workshops, or other
 
 **Upcoming Presentations**
 
-* [Terraform/Packer/Atlas @ The Orange Retailer](/talks/terraform-packer-atlas-at-big-orange) on May 24th, 2017 2 [Peloton Tech.IO Share Out](https://www.meetup.com/Peloton-Technology-Share-Out/events/239488795/) - Location TBD - A review of things accomplished with Terraform, Packer, and Atlas from HashiCorp.
+* Currently None Scheduled. If you'd like to have me come speak feel free to ping me via Twitter [@Adron](https://twitter.com/Adron).
 
 **Past Presentations**
 
+* [Terraform/Packer/Atlas @ The Orange Retailer](/talks/terraform-packer-atlas-at-big-orange) on May 24th, 2017 2 [Peloton Tech.IO Share Out](https://www.meetup.com/Peloton-Technology-Share-Out/events/239488795/) - A review of things accomplished with Terraform, Packer, and Atlas from HashiCorp.
 * [Moving Enterprise Practices and Development to Open Source](/talks/Moving-Enterprise-Practices-and-Development-to-Open-Source) at [O'Reilly Architecture Conference](http://conferences.oreilly.com/software-architecture/engineering-business-eu).
 * [Building Immutably to Continuous Delivery with Minimal Inputs](/talks/Building-Immutably-Continuous-Delivery-Minimal-Inputs-London) at [O'Reilly Architecture Conference](http://conferences.oreilly.com/software-architecture/engineering-business-eu).
 * [Managing (or not) the Data in Immutable Infrastructure](/talks/managing-or-not-the-data-in-immutable-infrastructure) at [Data Layer](https://datalayer.com/).

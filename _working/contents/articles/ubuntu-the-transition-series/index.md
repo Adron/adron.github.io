@@ -5,13 +5,13 @@ date: 2017-05-30 19:50:28
 
 template: article.jade
 ---
-In 2011 I got a Macbook Air for a christmas gift. It changed my life in a huge way. I'd been a Microsoft Windows user for a long time. I'd also been doing primarily .NET C# Coding for more years than I'd like to count. But at this particular time I knew that I was at a turning point in what I would be working on in the coming years. This Macbook Air was the gateway into a new realm of getting things done on the bleeding edge. This was something that had truly been a long while coming, and I was more than ready for this change.
+In 2011 I got a Macbook Air for a christmas gift. It changed my life in a huge way. I'd been a Microsoft Windows user for a long time. I'd also been doing primarily .NET C# Coding (along with more than a few other languages) for more years than I'd like to count. But at this particular time I knew that I was at a turning point in what I would be working on in the coming years. This Macbook Air was the gateway into a new realm of getting things done on the bleeding edge. This was something that had truly been a long while coming, and I was more than ready for this change.
 
 *My days exclusively using Microsoft Technologies were coming to an end.*
 
 <span class="more"></span>
- 
-You see, I'd been bitten by the distributed systems, cloud computing, and large scale, advanced, super computer (yeah, actual super computers) bug. I loved this computing space and I was extremely curious what it held. I had long wanted to delve more into these topics and work more diligently with larger scale, distributed, and related system concerns. Whether it was in the web space or some other area, it didn't matter, I was curious in a host of things and reasons people were building these systems and applications around them.
+
+You see, I'd been bitten by the distributed systems, cloud computing, and large scale, advanced, super computer (yeah, actual super computers) bug. I loved this computing space and I was extremely curious what opportunities it held. I had long wanted to delve more into these topics and work more diligently with larger scale, distributed, and related system concerns. Whether it was in the web space or some other area, it didn't matter, I was curious in a host of things and reasons people were building these systems and applications around them.
 
 *Windows and Microsoft Technologies were almost nonexistent in this space.*
 
