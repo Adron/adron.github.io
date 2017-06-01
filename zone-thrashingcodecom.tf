@@ -6,14 +6,14 @@ resource "google_dns_managed_zone" "thrashingcodecom" {
 
 resource "google_dns_record_set" "ecosystem_thrashingcodecom" {
   managed_zone = "${google_dns_managed_zone.thrashingcodecom.name}"
-  name = "ecosystem.${google_dns_managed_zone.thrashingcodecom.dns_name}"
+  name = "r.${google_dns_managed_zone.thrashingcodecom.dns_name}"
   type = "NS"
   ttl = 30
   rrdatas = [
-    "ns-18.awsdns-02.com.",
-    "ns-834.awsdns-40.net.",
-    "ns-1581.awsdns-05.co.uk.",
-    "ns-1316.awsdns-36.org."]
+    "ns-210.awsdns-26.com.",
+    "ns-774.awsdns-32.net.",
+    "ns-1828.awsdns-36.co.uk.",
+    "ns-1429.awsdns-50.org."]
 }
 
 resource "google_dns_record_set" "gmail_thrashingcodecom" {
