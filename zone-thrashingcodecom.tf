@@ -4,21 +4,21 @@ resource "google_dns_managed_zone" "thrashingcodecom" {
   description = "Production http://compositecode.com Domain."
 }
 
-// resource "google_dns_record_set" "ecosystem_thrashingcodecom" {
-//   managed_zone = "${google_dns_managed_zone.thrashingcodecom.name}"
-//   name = "ecosystem.${google_dns_managed_zone.thrashingcodecom.dns_name}"
-//   type = "NS"
-//   ttl = 30
-//   rrdatas = [
-//     "ns-1829.awsdns-36.co.uk.",
-//     "ns-553.awsdns-05.net.",
-//     "ns-219.awsdns-27.com.",
-//     "ns-1134.awsdns-13.org."]
-// }
+resource "google_dns_record_set" "ecosystem_thrashingcodecom" {
+  managed_zone = "${google_dns_managed_zone.thrashingcodecom.name}"
+  name = "ecosystem.${google_dns_managed_zone.thrashingcodecom.dns_name}"
+  type = "NS"
+  ttl = 30
+  rrdatas = [
+    "ns-18.awsdns-02.com.",
+    "ns-834.awsdns-40.net.",
+    "ns-1581.awsdns-05.co.uk.",
+    "ns-1316.awsdns-36.org."]
+}
 
 resource "google_dns_record_set" "gmail_thrashingcodecom" {
   managed_zone = "${google_dns_managed_zone.thrashingcodecom.name}"
-  name = "@.${google_dns_managed_zone.thrashingcodecom.dns_name}"
+  name = "${google_dns_managed_zone.thrashingcodecom.dns_name}"
   type = "MX"
   ttl = 3600
   rrdatas = [
@@ -31,7 +31,7 @@ resource "google_dns_record_set" "gmail_thrashingcodecom" {
 
 resource "google_dns_record_set" "spf_thrashingcodecom" {
   managed_zone = "${google_dns_managed_zone.thrashingcodecom.name}"
-  name = "@.${google_dns_managed_zone.thrashingcodecom.dns_name}"
+  name = "${google_dns_managed_zone.thrashingcodecom.dns_name}"
   type = "SPF"
   ttl = 3600
   rrdatas = ["v=spf1 include:_spf.google.com ~all"]
@@ -39,7 +39,7 @@ resource "google_dns_record_set" "spf_thrashingcodecom" {
 
 resource "google_dns_record_set" "txt_thrashingcodecom" {
   managed_zone = "${google_dns_managed_zone.thrashingcodecom.name}"
-  name = "@.${google_dns_managed_zone.thrashingcodecom.dns_name}"
+  name = "${google_dns_managed_zone.thrashingcodecom.dns_name}"
   type = "TXT"
   ttl = 3600
   rrdatas = ["v=spf1 include:_spf.google.com ~all"]
