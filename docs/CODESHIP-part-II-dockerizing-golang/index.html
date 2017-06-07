@@ -141,7 +141,7 @@
 <p>“Are you used to tools such as Cargo, npm, Composer, Nuget, Pip, Maven, Bundler, or other modern package managers? If so, Glide is the comparable Go&nbsp;tool.”</p>
 </blockquote>
 <p>Basically, it’s a Go vendor and vendored package management tool. In Go, there is a feature around keeping dependencies in a directory, called <em>vendor</em> that stores the various dependencies for a&nbsp;project.</p>
-<p>Since the build has broken, and brought the issue of dependencies to the forefront of concern at the moment, I’m going to wrap up this installment of this series by installing Glide and adding the go-kit&nbsp;dependencies.</p>
+<p>Since the build has broken, and brought the issue of dependencies to the forefront of concern at the moment, I’m going to wrap up this installment of this series by installing Glide and adding the mux&nbsp;dependency.</p>
 <h3 id="installing-glide">Installing&nbsp;Glide</h3>
 <p><img src="/docs/CODESHIP-part-II-dockerizing-golang/glide.png" alt="Glide Logo"></p>
 <p>The easiest way to install glide is to install it with brew on the Mac or with apt-get on Linux. The command for <span class="caps">OS</span>-X is simply <code>brew install glide</code>. With Linux, the repository needs added first, then glide can be&nbsp;installed.</p>
@@ -153,12 +153,8 @@ sudo apt-get install glide
 <p>Next I’ll need to verify what the create process did, so I’ll open up the newly created <code>glide.yaml</code> file. The contents, since the glide command scans through the project it is run within, looks like&nbsp;this.</p>
 <pre><code>package: github.com/adron/datadiluvium-02
 import:
-- package: github.com/go-kit/kit
-  version: ~0.4.0
-  subpackages:
-  - endpoint
-  - transport/http
-</code></pre><p>The core package is go-kit or github.com/go-kit/kit while the two specific subpackages I’m using, are <em>endpoint</em> and <em>transport/http</em>. There are of course some other dependencies in there, but these dependencies generally all come from the core libraries that come with&nbsp;Go.</p>
+- package: github.com/gorilla/mux
+</code></pre><p>The core package I’m using and need for the build is mux, or <code>github.com/gorilla/mux</code>.</p>
 <p>The next step is to tweak the Dockerfile so that it builds the container image appropriately, pulls glide, retrieves the dependencies, sets the <span class="caps">GOPATH</span> appropriately to where the project and dependencies are loaded, and builds the service. With changes, the complete Dockerfile I have now reads like&nbsp;this.</p>
 <pre><code>FROM golang:1.8-alpine
 

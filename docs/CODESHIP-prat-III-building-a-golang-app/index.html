@@ -85,7 +85,22 @@
                 <!-- Blog Page-->
                 <docs class="article">
                   <section class="content"><h1 id="getting-go-going-continuously-with-integration-delivery-on-codeship-pro-stage-iii">Getting Go Going Continuously with Integration <span class="amp">&amp;</span> Delivery on Codeship Pro - Stage&nbsp;<span class="caps">III</span></h1>
-<p>In this article it’s time to dive into some Go coding. Here are the key&nbsp;objectives.</p>
+<p>In this article it’s time to dive into some heavier Go coding. Here are the key&nbsp;objectives.</p>
+<ul>
+<li>Gain some basic functionality that processes a basic <span class="caps">JSON</span> schema file as outlined in <a href="/docs/CODESHIP-prat-III-building-a-golang-app/"><span class="caps">INSERT</span> LINK TO PREVIOUS BLOG ENTRY HERE</a>.</li>
+<li>Break out the code into some logical files to organize ongoing&nbsp;development.</li>
+<li>Add a few tests to confirm for the build <span class="amp">&amp;</span> deployment as a gated step of the&nbsp;build.</li>
+</ul>
+<h2 id="data-diluvii-ad-populum">Data Diluvii ad&nbsp;Populum</h2>
+<p>Now I’m going to pull together some basic processing for the data deluge for the people, or in Latin “data diluvii ad populum”. The first thing I’ll need is to add is one more dependency. By using Glide I’ll add that with the following&nbsp;command.</p>
+<pre><code>glide get github.com/Pallinder/go-randomdata
+</code></pre><p>This will put the dependency into the <code>glide.yaml</code> file. With this update the file now contents now look like&nbsp;this.</p>
+<pre><code>package: github.com/adron/datadiluvium
+import:
+- package: github.com/gorilla/mux
+  version: ^1.4.0
+- package: github.com/Pallinder/go-randomdata
+</code></pre><p>Once that’s added I’m going to also add the ingestion of a basic <span class="caps">JSON</span> schema file via one of the service end&nbsp;points.</p>
 </section>
                 </docs>
                 <!-- End of Blog Page-->

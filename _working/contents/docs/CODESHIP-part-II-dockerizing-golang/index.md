@@ -94,7 +94,7 @@ Glide is described on its README.md as
 
 Basically, it's a Go vendor and vendored package management tool. In Go, there is a feature around keeping dependencies in a directory, called *vendor* that stores the various dependencies for a project.
 
-Since the build has broken, and brought the issue of dependencies to the forefront of concern at the moment, I'm going to wrap up this installment of this series by installing Glide and adding the go-kit dependencies.
+Since the build has broken, and brought the issue of dependencies to the forefront of concern at the moment, I'm going to wrap up this installment of this series by installing Glide and adding the mux dependency.
 
 ### Installing Glide
 
@@ -118,14 +118,11 @@ Next I'll need to verify what the create process did, so I'll open up the newly 
 ```
 package: github.com/adron/datadiluvium-02
 import:
-- package: github.com/go-kit/kit
-  version: ~0.4.0
-  subpackages:
-  - endpoint
-  - transport/http
+- package: github.com/gorilla/mux
+
 ```
 
-The core package is go-kit or github.com/go-kit/kit while the two specific subpackages I'm using, are *endpoint* and *transport/http*. There are of course some other dependencies in there, but these dependencies generally all come from the core libraries that come with Go.
+The core package I'm using and need for the build is mux, or `github.com/gorilla/mux`.
 
 The next step is to tweak the Dockerfile so that it builds the container image appropriately, pulls glide, retrieves the dependencies, sets the GOPATH appropriately to where the project and dependencies are loaded, and builds the service. With changes, the complete Dockerfile I have now reads like this.
 
