@@ -4,7 +4,7 @@ author: Adron Hall
 date: 2017-06-20 09:43:15
 template: article.jade
 ---
-*GSD Tips Issue 2*
+*GSD Tips Issue 1*
 
 Alright... the beginning of a whole slew of short tips on getting shit done.
 
