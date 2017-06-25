@@ -5,16 +5,42 @@
     <atom:link href="http://adron.github.io/feed.xml" rel="self" type="application/rss+xml"></atom:link>
     <link>http://adron.github.io</link>
     <description>Coder, Messenger, Recon, Infrastructure, Ops</description>
-    <pubDate>Tue, 20 Jun 2017 02:43:15 -0700</pubDate>
+    <pubDate>Sun, 25 Jun 2017 04:23:15 -0700</pubDate>
     <generator>Wintersmith - https://github.com/jnordberg/wintersmith</generator>
     <language>en</language>
     <item>
-      <title>GSD Tips - Don't Commute...</title>
+      <title>Know Your Toolchain, But...</title>
+      <link>http://adron.github.io/articles/GSD-tips-0002/</link>
+      <pubDate>Sun, 25 Jun 2017 04:23:15 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/GSD-tips-0002/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;em&gt;GSD Tips Issue 2&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;The way we build applications are done with a mix of tooling; compilers, IDEs, text editors, and others. Knowing these tools well is fundamental to being effective at implementing solutions in a systemic way. Not knowing the tools adds endless interruptions during the process that add up, cause frustration and stress, and generally prevent you from getting shit done. To summarize this tip…&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Specifically learn how to do what your doing with the tool your going to need to work in.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Here are some of the specifics to focus on…&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;em&gt;IDEs - Whether it’s VIM, Emacs, WebStorm, Intellij, Visual Studio, Visual Studio Code, Atom, Eclipse, Notepad, Gedit, or some other editor of some sort get to know it extremely well.&lt;/em&gt; Learn the shortcuts for building and editor layouts or word wrap or whatever functionality is used regularly. Don’t resort to banging away at the mouse, it’s just one more mental interruption to staying in the problem space you’re writing code to solve.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Don’t get locked into the peripheral tooling.&lt;/em&gt; This is most noticeably a problem in the realm of Microsoft’s Visual Studio or even XCode where the IDE is required for the underlying languages and tooling to even work. At least, in the sense that after a project is started, and the IDE is locked into the project structure it’s almost impossible to use, maintain, or develop against the code without the IDE itself. This is a bad idea, even if you’re OK with being subservient to the IDE itself. For those in .NET land that have ever had to setup a build server with the Visual Studio IDE installed to actually get a build of the solution, you know all to well how insanely bad this crutch is. Don’t fall for it and you’ll be happier with your career over time. TLDR; &lt;em&gt;Use the IDE to build things but don’t become subservient to your IDE. If you can’t run a build without the IDE, you’ve seriously built yourself into a problem.&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Use plugins to help, but don’t get locked into the plugins.&lt;/em&gt; Same as the IDE. For example, if you setup your HCL (HashiCorp Configuration Language) plugin with IntelliJ and are rocking your templates this way, you can still the next minute turn around and on an entirely new machine with zero plugins edit, maintain, or execute a patch or something against your HCL config. This is the same for most things, and maintains the flexibility of the plugin without limiting your future needs and options to interact with the code/config or whatever.&lt;/li&gt;
+&lt;li&gt;Know a tool chain and related language, IDE, etc very well, but know many in a general sense. In other words, keep a systemic knowledge of what things are for so that you have the ability to use the right tool for the right job. This enables you to switch the tool chain and stack when you need to specific benefits of a system you don’t particularly know.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;Summary&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Whatever you’re building in, know one toolchain well, but know what others exist too. The idea, is if you move up a level of abstraction away from the tooling into the realm of the problem domain, the tooling may need to change. Be able to know when it should change, to use &lt;em&gt;the right tool for the job&lt;/em&gt;, and solutions work better, time is better spent, and your ability to come up with a systemic solution instead of a &lt;em&gt;one off&lt;/em&gt; throwaway solution dramatically increases. I mean, you wouldn’t use Terraform to try to build a user interface for Windows, and it would be insane to use .NET to build a configuration for your ecosystem! Use the right tool for the job, and don’t get locked into a single tool to try to implement every solution!&lt;/p&gt;
+&lt;p&gt;Got other suggestions on how to GSD? Lemme know on the twitters &lt;a href=&quot;https://twitter.com/Adron&quot;&gt;@Adron&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;GSD Tips Issue 0002&lt;/strong&gt; of &lt;a href=&quot;http://adron.github.io/docs/gsd-tips/&quot;&gt;…many…&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>Don't Commute...</title>
       <link>http://adron.github.io/articles/GSD-tips-0001/</link>
       <pubDate>Tue, 20 Jun 2017 02:43:15 -0700</pubDate>
       <guid isPermaLink="true">http://adron.github.io/articles/GSD-tips-0001/</guid>
       <author></author>
-      <description>&lt;p&gt;Alright… the beginning of a whole slew of short tips on getting shit done.&lt;/p&gt;
+      <description>&lt;p&gt;&lt;em&gt;GSD Tips Issue 2&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Alright… the beginning of a whole slew of short tips on getting shit done.&lt;/p&gt;
 &lt;p&gt;First tip…&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Don’t let the commute be a total time sucking waste. &lt;/p&gt;
@@ -30,6 +56,7 @@
 &lt;/ol&gt;
 &lt;p&gt;I wish everyone a good commute and if it sucks, hopefully you can shape your future so that it rocks! Cheers!&lt;/p&gt;
 &lt;p&gt;Got other suggestions on how to GSD? Lemme know on the twitters &lt;a href=&quot;https://twitter.com/Adron&quot;&gt;@Adron&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;GSD Tips Issue 0001&lt;/strong&gt; of &lt;a href=&quot;http://adron.github.io/docs/gsd-tips/&quot;&gt;…many…&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     <item>
@@ -1735,17 +1762,17 @@ n
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;I then ran &lt;code&gt;glide get github.com/icrowley/fake&lt;/code&gt; to get the fake library I would need. The &lt;code&gt;glide.yaml&lt;/code&gt; and &lt;code&gt;glide.lock&lt;/code&gt; looked like this after I pulled in this library.&lt;/p&gt;
 &lt;p&gt;glide.yaml&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;lang-yaml&quot;&gt;&lt;span class=&quot;attr&quot;&gt;package:&lt;/span&gt; github.com/adron/datadiluvium
+&lt;pre&gt;&lt;code class=&quot;lang-yaml&quot;&gt;&lt;span class=&quot;attr&quot;&gt;package:&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;github.com/adron/datadiluvium&lt;/span&gt;
 &lt;span class=&quot;attr&quot;&gt;import:&lt;/span&gt;
-&lt;span class=&quot;attr&quot;&gt;- package:&lt;/span&gt; github.com/icrowley/fake
+&lt;span class=&quot;attr&quot;&gt;- package:&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;github.com/icrowley/fake&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;glide.lock&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;lang-yaml&quot;&gt;&lt;span class=&quot;attr&quot;&gt;hash:&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;fd78ca8369405d5998e65ea4cfce94c6599e878c36fec39b85fd385552392d7
-&lt;span class=&quot;attr&quot;&gt;updated:&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;2017&lt;/span&gt;&lt;span class=&quot;bullet&quot;&gt;-01&lt;/span&gt;&lt;span class=&quot;bullet&quot;&gt;-09&lt;/span&gt;T01:&lt;span class=&quot;number&quot;&gt;04&lt;/span&gt;:&lt;span class=&quot;number&quot;&gt;18.134993358&lt;/span&gt;&lt;span class=&quot;bullet&quot;&gt;-08&lt;/span&gt;:&lt;span class=&quot;number&quot;&gt;00&lt;/span&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-yaml&quot;&gt;&lt;span class=&quot;attr&quot;&gt;hash:&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;string&quot;&gt;fd78ca8369405d5998e65ea4cfce94c6599e878c36fec39b85fd385552392d7&lt;/span&gt;
+&lt;span class=&quot;attr&quot;&gt;updated:&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;2017&lt;/span&gt;&lt;span class=&quot;bullet&quot;&gt;-01&lt;/span&gt;&lt;span class=&quot;bullet&quot;&gt;-09&lt;/span&gt;&lt;span class=&quot;attr&quot;&gt;T01:04:18.134993358-08:00&lt;/span&gt;
 &lt;span class=&quot;attr&quot;&gt;imports:&lt;/span&gt;
-&lt;span class=&quot;attr&quot;&gt;- name:&lt;/span&gt; github.com/icrowley/fake
-&lt;span class=&quot;attr&quot;&gt;  version:&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;84&lt;/span&gt;bff6d01560fb0b5a396ba29534e93fd00d09c6
-&lt;span class=&quot;attr&quot;&gt;testImports:&lt;/span&gt; []
+&lt;span class=&quot;attr&quot;&gt;- name:&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;github.com/icrowley/fake&lt;/span&gt;
+&lt;span class=&quot;attr&quot;&gt;  version:&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;84&lt;/span&gt;&lt;span class=&quot;string&quot;&gt;bff6d01560fb0b5a396ba29534e93fd00d09c6&lt;/span&gt;
+&lt;span class=&quot;attr&quot;&gt;testImports:&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;[]&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;If you’re curious about the hash, and related properties of this file check out the glide &lt;a href=&quot;https://github.com/Masterminds/glide/blob/master/README.md&quot;&gt;README.md&lt;/a&gt;, it’s useful in understanding what’s stored here.&lt;/p&gt;
 &lt;p&gt;At this point, it was time to actually sling some Go code! At this point, I do indeed mean sling some too. Splat!&lt;/p&gt;
@@ -5015,6 +5042,23 @@ it can be.&lt;/p&gt;
 &lt;iframe width=&quot;1280&quot; height=&quot;720&quot; src=&quot;https://www.youtube.com/embed/L2BVDJWHdy0?rel=0&amp;amp;showinfo=0&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;</description>
     </item>
     <item>
+      <title>The House Is Not On Fire - Building a home automation robot with Arduino, Raspberry Pi and Node.js by Artur Paikin</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</link>
+      <pubDate>Wed, 01 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-right&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/art-stida.jpg&quot; alt=&quot;Artur Paikin&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Artur describes himself as, “I’m a web developer and traveler. I write stories about my adventures in Russian and English on my site: &lt;a href=&quot;http://arturpaikin.com&quot;&gt;http://arturpaikin.com&lt;/a&gt; and run a small technology cooperative called &lt;a href=&quot;http://unebaguette.com&quot;&gt;Baguette&lt;/a&gt;, where I work on cool projects, currently building an ambitious next generation file uploader with &lt;a href=&quot;https://transloadit.com/&quot;&gt;Transloadit&lt;/a&gt;. I ride a &lt;a href=&quot;https://www.instagram.com/p/xC0qC2SSYb&quot;&gt;foldable bicycle&lt;/a&gt;, &lt;a href=&quot;http://unebaguette.com/web-course/&quot;&gt;teach&lt;/a&gt; web development and sometimes &lt;a href=&quot;https://www.instagram.com/p/4_6LO8ySVL/&quot;&gt;garden&lt;/a&gt; on the balcony.”&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Artur has built an open source home automation system called &lt;a href=&quot;https://github.com/arturi/kotihome&quot;&gt;Koti Home&lt;/a&gt; (Koti means home in Finnish language). It’s powered by an Arduino connected to Raspberry Pi, MQTT protocol for messaging, Node.js on the client and server, web sockets. You can interact with Koti robot via a React (like the cool kids do) control panel, Telegram Chat Bot and even your own voice.&lt;/p&gt;
+&lt;p&gt;Arthur will talk about how he’s turned this project into reality — the tech he used and the challenges he faced. From a blinking LED to a voice controlled home automation robot.&lt;/p&gt;
+</description>
+    </item>
+    <item>
       <title>Code First Docs How we Threw Out The Book &amp; Put Code First With Twilio Documentation by Jarod Reyes</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-jarod-reyes/</link>
       <pubDate>Wed, 01 Jun 2016 17:00:00 -0700</pubDate>
@@ -5036,23 +5080,6 @@ it can be.&lt;/p&gt;
 &lt;li&gt;Twitter: &lt;a href=&quot;https://twitter.com/jreyesdev&quot;&gt;@jreyesdev&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Github: &lt;a href=&quot;https://github.com/jarodreyes&quot;&gt;github.com/jarodreyes&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-</description>
-    </item>
-    <item>
-      <title>The House Is Not On Fire - Building a home automation robot with Arduino, Raspberry Pi and Node.js by Artur Paikin</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</link>
-      <pubDate>Wed, 01 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</guid>
-      <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-right&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/art-stida.jpg&quot; alt=&quot;Artur Paikin&quot;&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Artur describes himself as, “I’m a web developer and traveler. I write stories about my adventures in Russian and English on my site: &lt;a href=&quot;http://arturpaikin.com&quot;&gt;http://arturpaikin.com&lt;/a&gt; and run a small technology cooperative called &lt;a href=&quot;http://unebaguette.com&quot;&gt;Baguette&lt;/a&gt;, where I work on cool projects, currently building an ambitious next generation file uploader with &lt;a href=&quot;https://transloadit.com/&quot;&gt;Transloadit&lt;/a&gt;. I ride a &lt;a href=&quot;https://www.instagram.com/p/xC0qC2SSYb&quot;&gt;foldable bicycle&lt;/a&gt;, &lt;a href=&quot;http://unebaguette.com/web-course/&quot;&gt;teach&lt;/a&gt; web development and sometimes &lt;a href=&quot;https://www.instagram.com/p/4_6LO8ySVL/&quot;&gt;garden&lt;/a&gt; on the balcony.”&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Artur has built an open source home automation system called &lt;a href=&quot;https://github.com/arturi/kotihome&quot;&gt;Koti Home&lt;/a&gt; (Koti means home in Finnish language). It’s powered by an Arduino connected to Raspberry Pi, MQTT protocol for messaging, Node.js on the client and server, web sockets. You can interact with Koti robot via a React (like the cool kids do) control panel, Telegram Chat Bot and even your own voice.&lt;/p&gt;
-&lt;p&gt;Arthur will talk about how he’s turned this project into reality — the tech he used and the challenges he faced. From a blinking LED to a voice controlled home automation robot.&lt;/p&gt;
 </description>
     </item>
     <item>

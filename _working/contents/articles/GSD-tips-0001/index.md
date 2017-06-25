@@ -1,9 +1,11 @@
 ---
-title: GSD Tips - Don't Commute...
+title: Don't Commute...
 author: Adron Hall
 date: 2017-06-20 09:43:15
 template: article.jade
 ---
+*GSD Tips Issue 2*
+
 Alright... the beginning of a whole slew of short tips on getting shit done.
 
 First tip...
@@ -23,3 +25,5 @@ There are a zillion ways to get something done and reduce the overall cost in ti
 I wish everyone a good commute and if it sucks, hopefully you can shape your future so that it rocks! Cheers!
 
 Got other suggestions on how to GSD? Lemme know on the twitters [@Adron](https://twitter.com/Adron)
+
+**GSD Tips Issue 0001** of [...many...](/docs/gsd-tips/)

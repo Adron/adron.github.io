@@ -6,9 +6,7 @@ template: doc.jade
 ---
 ### Generating a New ssh Key.
 
-```shell-script
-ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
-```
+<script src="https://gist.github.com/Adron/9a6955d88ee9f14a5c388638291f1704.js"></script>
 
 ### Setting a Git branch to Track to a Remote.
 
