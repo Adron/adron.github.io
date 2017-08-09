@@ -8,7 +8,8 @@ This page links to my history of speaking via presentations, workshops, or other
 
 **Upcoming Presentations**
 
-* Currently None Scheduled. If you'd like to have me come speak feel free to ping me via Twitter [@Adron](https://twitter.com/Adron).
+* Inception to Iterative Development with Azure - A review of nothing to something with Go, Terraform, Docker, and Windows Azure... at locations to be announced.
+
 
 **Past Presentations**
 
