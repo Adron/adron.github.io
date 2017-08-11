@@ -8,8 +8,7 @@ This page links to my history of speaking via presentations, workshops, or other
 
 **Upcoming Presentations**
 
-* Inception to Iterative Development with Azure - A review of nothing to something with Go, Terraform, Docker, and Windows Azure... at locations to be announced.
-
+* [Inception to Iterative Development with Azure](/talks/inception-workflow-deployed) - An overview of the leanest, meanest, modern technique to dev stacks, implementation, and deployment. Location and dates coming soon!
 
 **Past Presentations**
 
