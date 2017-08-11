@@ -6,14 +6,12 @@ provider "google" {
 }
 
 provider "azurerm" {
-  subscription_id = "..."
-  client_id       = "..."
-  client_secret   = "..."
-  tenant_id       = "..."
+  subscription_id = "${SUBSCRIPTION_ID}"
+  // client_id       = "${CLIENT_ID}"
+  // client_secret   = "${CLIENT_SECRET}"
+  // tenant_id       = "${TENANT_ID}"
 }
 
-# Create a resource group
-resource "azurerm_resource_group" "production" {
-  name     = "production"
-  location = "West US"
+provider "aws" {
+  region = "us-west-2"
 }

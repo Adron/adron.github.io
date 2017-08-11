@@ -19,12 +19,3 @@ resource "google_dns_record_set" "photos" {
     ttl = 5
     rrdatas = ["domains.smugmug.com."]
 }
-
-//resource "google_dns_record_set" "data" {
-//    managed_zone = "${google_dns_managed_zone.adronme.name}"
-//    name = "data.${google_dns_managed_zone.adronme.dns_name}"
-//    type = "A"
-//    ttl = 5
-//    rrdatas = [
-//        "${google_compute_address.redirector.address}"]
-//}
