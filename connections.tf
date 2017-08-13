@@ -5,12 +5,7 @@ provider "google" {
   region = "us-west1"
 }
 
-provider "azurerm" {
-  subscription_id =
-  client_id       =
-  client_secret   =
-  tenant_id       = 
-}
+
 
 provider "aws" {
   region = "us-west-2"
