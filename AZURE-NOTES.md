@@ -58,3 +58,6 @@ or if it exists...
 appId == client_id
 password == client_secret
 tenant == tenant_id
+
+Sample references used from here too > https://github.com/paulbouwer/terraform-azure-quickstarts-samples/blob/master/101-acs-kubernetes/variables.tf
+
