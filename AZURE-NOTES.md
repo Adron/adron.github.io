@@ -43,6 +43,10 @@ Create the subscription service principal.
 
 `az ad sp create-for-rbac --role="Contributor" --scopes="/subscriptions/SUBSCRIPTION_ID"`
 
+or if it exists...
+
+`az ad sp `
+
 {
   "appId": "00000000-0000-0000-0000-000000000000",
   "displayName": "azure-cli-2017-06-05-10-41-15",
