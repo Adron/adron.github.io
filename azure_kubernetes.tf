@@ -24,7 +24,7 @@
 //
 //  agent_pool_profile {
 //    name       = "default"
-//    count      = 1
+//    count      = 2
 //    dns_prefix = "kuby.house"
 //    vm_size    = "Standard_A0"
 //  }
