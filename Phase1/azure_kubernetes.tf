@@ -3,8 +3,8 @@ resource "azurerm_resource_group" "kubernetes_house" {
   location = "West US"
 }
 
-resource "azurerm_container_service" "test" {
-  name                   = "acctestcontservice1"
+resource "azurerm_container_service" "kubyhousecontainers" {
+  name                   = "kubecontainers"
   location               = "${azurerm_resource_group.kubernetes_house.location}"
   resource_group_name    = "${azurerm_resource_group.kubernetes_house.name}"
   orchestration_platform = "Kubernetes"
@@ -18,7 +18,7 @@ resource "azurerm_container_service" "test" {
     admin_username = "${var.linux_admin_username}"
 
     ssh_key {
-      key_data = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCqaZoyiz1qbdOQ8xEf6uEu1cCwYowo5FHtsBhqLoDnnp7KUTEBN+L2NxRIfQ781rxV6Iq5jSav6b2Q8z5KiseOlvKA/RF2wqU0UPYqQviQhLmW6THTpmrv/YkUCuzxDpsH7DUDhZcwySLKVVe0Qm3+5N2Ta6UYH3lsDf9R9wTP2K/+vAnflKebuypNlmocIvakFWoZda18FOmsOoIVXQ8HWFNCuw9ZCunMSN62QGamCe3dL5cXlkgHYv7ekJE15IA9aOJcM7e90oeTqo+7HTcWfdu0qQqPWY5ujyMw/llas8tsXY85LFqRnr3gJ02bAscjc477+X+j/gkpFoN1QEmt terraform@demo.tld"
+      key_data = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCaRP6U+UwBP6LRelSsO+tgzZGul5UNHiGMy0GlSI/CG4d8jpdt4OIbZLsWtFsyiyTyVhBzmShiZZh+V2j9vFojqPTTK34KBj35vo1EKwTgLFEDBvsDFZzjc7SrQZ/DuHN6eJnv2ot9+fSJpfB7tg8m9OUEnFs8oZFrAq+qOmT5DWFpXwIo9VgcisDHack9bTFVABq2nnHWex4Y1NA8xtM0Q/FQulQ2jX8iVRCVbEOcRE6IVnEaPMLol+7ilX/eW0Ojgg4Y5e8LBXqUGUuXQyURPfOXuaYJrZqGMrMNflrAiufh6HRXceT8/v4ExJGQvJdPnwyxIl1Dxv2HRYt0ImZhRxFvpw1+UsBgYc6Gfi3icBTsXuJDZkhIE2lL2qWiFKEsvV4zXbORjDM7EHvGk1uunVdvfJ22CpLC/7QI7VQtd3e7mBa1t+mSdkKgN121h5xkpDVuPViUMob7HiwlCNI81PowfYeuZx2S8ZOqjHTg9UEh2Q3IK7k5ZiAL7zrWpTOwID+H1BfgKJmeXfVW4v9iMOoZk9OKTXz5qACZtdntV21bxRyXUUHssTUbdpw3f+MQlKIEstvNI6BC7fTLVK1VXlEcDrfHAgNjDQi55iE0p8JrZU5rwkJBHhVSJlM6uG3rLAssyOLu2Qklltt1kxMIEg7jIKLIi1yVtEKkz2WhWQ== adronhall@gmail.com"
     }
   }
 
@@ -44,9 +44,9 @@ resource "azurerm_container_service" "test" {
 }
 
 output "master_fqdn" {
-  value = "${azurerm_container_service.test.master_profile.fqdn}"
+  value = "${azurerm_container_service.kubyhousecontainers.master_profile.fqdn}"
 }
 
 output "ssh_command_master0" {
-  value = "ssh ${var.linux_admin_username}@${azurerm_container_service.test.master_profile.fqdn} -A -p 22"
+  value = "ssh ${var.linux_admin_username}@${azurerm_container_service.kubyhousecontainers.master_profile.fqdn} -A -p 22"
 }
