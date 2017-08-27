@@ -8,7 +8,8 @@ This page links to my history of speaking via presentations, workshops, or other
 
 **Upcoming Presentations**
 
-* [Inception to Iterative Development with Azure](/talks/inception-workflow-deployed) - An overview of the leanest, meanest, modern technique to dev stacks, implementation, and deployment. Location and dates coming soon!
+* [Inception, Workflow, to $Deployed$](/talks/inception-workflow-deployed) - An overview of the leanest, meanest, modern technique to dev stacks, implementation, and deployment. Location and dates coming soon!
+* [CI/CD in 30 Minutes or Less](/talks/cicd-in-30-minutes-or-less) - Walk through of building a greenfield CI/CD Environment from scratch in the cloud. 
 
 **Past Presentations**
 
