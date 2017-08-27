@@ -1,5 +1,5 @@
 ---
-title: cicd in 30 minutes or less
+title: CI/CD in 30 Minutes or Less
 author: Adron Hall
 date: 2017-08-27:15:40:35
 template: talk.jade
