@@ -5,60 +5,9 @@
     <atom:link href="http://adron.github.io/feed.xml" rel="self" type="application/rss+xml"></atom:link>
     <link>http://adron.github.io</link>
     <description>Coder, Messenger, Recon, Infrastructure, Ops</description>
-    <pubDate>Sun, 25 Jun 2017 04:23:15 -0700</pubDate>
+    <pubDate>Thu, 08 Jun 2017 08:37:29 -0700</pubDate>
     <generator>Wintersmith - https://github.com/jnordberg/wintersmith</generator>
     <language>en</language>
-    <item>
-      <title>Know Your Toolchain, But...</title>
-      <link>http://adron.github.io/articles/GSD-tips-0002/</link>
-      <pubDate>Sun, 25 Jun 2017 04:23:15 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/GSD-tips-0002/</guid>
-      <author></author>
-      <description>&lt;p&gt;&lt;em&gt;GSD Tips Issue 2&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;The way we build applications are done with a mix of tooling; compilers, IDEs, text editors, and others. Knowing these tools well is fundamental to being effective at implementing solutions in a systemic way. Not knowing the tools adds endless interruptions during the process that add up, cause frustration and stress, and generally prevent you from getting shit done. To summarize this tip…&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Specifically learn how to do what your doing with the tool your going to need to work in.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Here are some of the specifics to focus on…&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;em&gt;IDEs - Whether it’s VIM, Emacs, WebStorm, Intellij, Visual Studio, Visual Studio Code, Atom, Eclipse, Notepad, Gedit, or some other editor of some sort get to know it extremely well.&lt;/em&gt; Learn the shortcuts for building and editor layouts or word wrap or whatever functionality is used regularly. Don’t resort to banging away at the mouse, it’s just one more mental interruption to staying in the problem space you’re writing code to solve.&lt;/li&gt;
-&lt;li&gt;&lt;em&gt;Don’t get locked into the peripheral tooling.&lt;/em&gt; This is most noticeably a problem in the realm of Microsoft’s Visual Studio or even XCode where the IDE is required for the underlying languages and tooling to even work. At least, in the sense that after a project is started, and the IDE is locked into the project structure it’s almost impossible to use, maintain, or develop against the code without the IDE itself. This is a bad idea, even if you’re OK with being subservient to the IDE itself. For those in .NET land that have ever had to setup a build server with the Visual Studio IDE installed to actually get a build of the solution, you know all to well how insanely bad this crutch is. Don’t fall for it and you’ll be happier with your career over time. TLDR; &lt;em&gt;Use the IDE to build things but don’t become subservient to your IDE. If you can’t run a build without the IDE, you’ve seriously built yourself into a problem.&lt;/em&gt;&lt;/li&gt;
-&lt;li&gt;&lt;em&gt;Use plugins to help, but don’t get locked into the plugins.&lt;/em&gt; Same as the IDE. For example, if you setup your HCL (HashiCorp Configuration Language) plugin with IntelliJ and are rocking your templates this way, you can still the next minute turn around and on an entirely new machine with zero plugins edit, maintain, or execute a patch or something against your HCL config. This is the same for most things, and maintains the flexibility of the plugin without limiting your future needs and options to interact with the code/config or whatever.&lt;/li&gt;
-&lt;li&gt;Know a tool chain and related language, IDE, etc very well, but know many in a general sense. In other words, keep a systemic knowledge of what things are for so that you have the ability to use the right tool for the right job. This enables you to switch the tool chain and stack when you need to specific benefits of a system you don’t particularly know.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;&lt;strong&gt;Summary&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Whatever you’re building in, know one toolchain well, but know what others exist too. The idea, is if you move up a level of abstraction away from the tooling into the realm of the problem domain, the tooling may need to change. Be able to know when it should change, to use &lt;em&gt;the right tool for the job&lt;/em&gt;, and solutions work better, time is better spent, and your ability to come up with a systemic solution instead of a &lt;em&gt;one off&lt;/em&gt; throwaway solution dramatically increases. I mean, you wouldn’t use Terraform to try to build a user interface for Windows, and it would be insane to use .NET to build a configuration for your ecosystem! Use the right tool for the job, and don’t get locked into a single tool to try to implement every solution!&lt;/p&gt;
-&lt;p&gt;Got other suggestions on how to GSD? Lemme know on the twitters &lt;a href=&quot;https://twitter.com/Adron&quot;&gt;@Adron&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;GSD Tips Issue 0002&lt;/strong&gt; of &lt;a href=&quot;http://adron.github.io/docs/gsd-tips/&quot;&gt;…many…&lt;/a&gt;&lt;/p&gt;
-</description>
-    </item>
-    <item>
-      <title>Don't Commute...</title>
-      <link>http://adron.github.io/articles/GSD-tips-0001/</link>
-      <pubDate>Tue, 20 Jun 2017 02:43:15 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/GSD-tips-0001/</guid>
-      <author></author>
-      <description>&lt;p&gt;&lt;em&gt;GSD Tips Issue 1&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;Alright… the beginning of a whole slew of short tips on getting shit done.&lt;/p&gt;
-&lt;p&gt;First tip…&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Don’t let the commute be a total time sucking waste. &lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;There are a zillion ways to get something done and reduce the overall cost in time, effort, and agony of the commuting. Often, it can be some of the most productive time you have in the entire day if handled right and the opportunity arises.&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Don’t drive. Seriously, if you drive, it’s a waste. Don’t gimme that, “I listen to podcasts in the car” bullshit either. This is literally one of the least productive states you could exist in besides actual efforts to &lt;em&gt;NOT&lt;/em&gt; be productive and &lt;em&gt;NOT&lt;/em&gt; get shit done! I could rant further, but for those chained to the cage that have to drive, I’m sorry. Hopefully a better future awaits.&lt;/li&gt;
-&lt;li&gt;Take transit and work on the bus, train, ferry, lyft, or plane. Whatever mode you do take, if you have to have a commute, make sure you can do something while en route. Especially for anything longer than 10-20 minutes. Once veering into the 20+ minute commutes that is a goldmine of free time that can be spent effectively with emails, writing, reading, researching, or otherwise getting shit done.&lt;/li&gt;
-&lt;li&gt;Bike. I should not have to explain how awesome this is. Simply you get your heart rate up, you’re active which in turn will increase the amount of time you’ll be 100% throughout the day, and you’re actually doing every single person around a favor by doing this. You aren’t doing work, but if you know anything about cycling to work, you know it amps up your productive day several times over.&lt;/li&gt;
-&lt;li&gt;Walk. If you have the fortune to walk to work, you’re doing really well in life. See all the reasons under biking to work, plus you get to enjoy a relaxed state before diving into the crossfire of the office.&lt;/li&gt;
-&lt;li&gt;Don’t commute. Work from home and get a home office or whatever works for you. The most productive commute is not really needing to have a commute. There are complexities to this, but the obvious benefits don’t really need enumerated.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;I wish everyone a good commute and if it sucks, hopefully you can shape your future so that it rocks! Cheers!&lt;/p&gt;
-&lt;p&gt;Got other suggestions on how to GSD? Lemme know on the twitters &lt;a href=&quot;https://twitter.com/Adron&quot;&gt;@Adron&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;GSD Tips Issue 0001&lt;/strong&gt; of &lt;a href=&quot;http://adron.github.io/docs/gsd-tips/&quot;&gt;…many…&lt;/a&gt;&lt;/p&gt;
-</description>
-    </item>
     <item>
       <title>Self-Awareness vs. Obliviousness in The Tech Industry</title>
       <link>http://adron.github.io/articles/self-awareness-vs-obliviousness/</link>
@@ -4944,23 +4893,6 @@ key concepts of SAM and walk the audience through some node.js code samples (inc
 </description>
     </item>
     <item>
-      <title>WebSockets Bring Light at the End of the Tunnel by Joel Lord</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</link>
-      <pubDate>Fri, 03 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</guid>
-      <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-left&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/joel-lord.jpg&quot; alt=&quot;Joel Lord&quot;&gt;
-&lt;/div&gt;
-
-&lt;p&gt;As a Development Manager, Joel’s motivation and proven technical prowess makes him a key member of Spiria’s software development team. With a degree in computational astrophysics, his interests eventually made their way to software and Web design. Today, his knowledge of JavaScript lets him to support a variety of projects on both the front end and back end. As we move into the age of the Internet of Things, Joel is ready with his passion for programming node bots and experimenting with gadgets.&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Joel is going to speak on Web Sockets and tunnels of light… or to describe it more specifically more and more, people seem to be obsessed with real-time data.  But what does real-time mean in the world of REST servers and one-way communication?  Most modern web applications are now either displaying a snapshot of data at a given time or use a polling mechanism to update series of data at a given interval.
-In this talk, you will learn about the power of WebSockets and how they can (and should!) be used in your modern web applications. In these 30 minutes, I will go through the process of building a Node server that can push data to multiple clients in real-time.  You will see how this can be easy using the socket.io library.&lt;/p&gt;
-</description>
-    </item>
-    <item>
       <title>MMOWAM - Build Server-less Games with a DSN by Josh Marinacci</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-josh-marinacci/</link>
       <pubDate>Fri, 03 Jun 2016 17:00:00 -0700</pubDate>
@@ -4998,21 +4930,21 @@ it can be.&lt;/p&gt;
 </description>
     </item>
     <item>
-      <title>I Play the JavaScript by Matt McKegg</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</link>
-      <pubDate>Thu, 02 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</guid>
+      <title>WebSockets Bring Light at the End of the Tunnel by Joel Lord</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</link>
+      <pubDate>Fri, 03 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</guid>
       <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;div class=&quot;image float-left&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/mattmckegg.jpg&quot; alt=&quot;Matt McKegg&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/joel-lord.jpg&quot; alt=&quot;Joel Lord&quot;&gt;
 &lt;/div&gt;
 
-&lt;p&gt;A JavaScript hacker and backyard musician and from Wellington, New Zealand. Lover of all things open and modular. I spend most of my time pressing buttons of various shapes, sizes and colours. Sometimes these buttons make sounds.&lt;/p&gt;
-&lt;p&gt;Matt has been making music with computers for about 10 years, but once he tried to move from bedroom composing to live performance, he got incredibly frustrated at how hard it was to play computer music live. He decided to start working on his own live electronic performance software written in JavaScript that would let me play the way he wanted to play. 3 years later, it’s finally starting to become a reality.&lt;/p&gt;
+&lt;p&gt;As a Development Manager, Joel’s motivation and proven technical prowess makes him a key member of Spiria’s software development team. With a degree in computational astrophysics, his interests eventually made their way to software and Web design. Today, his knowledge of JavaScript lets him to support a variety of projects on both the front end and back end. As we move into the age of the Internet of Things, Joel is ready with his passion for programming node bots and experimenting with gadgets.&lt;/p&gt;
 &lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Here is one of the Matt’s recent performances, for your viewing pleasure. &lt;/p&gt;
-&lt;iframe width=&quot;1280&quot; height=&quot;720&quot; src=&quot;https://www.youtube.com/embed/L2BVDJWHdy0?rel=0&amp;amp;showinfo=0&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;</description>
+&lt;p&gt;Joel is going to speak on Web Sockets and tunnels of light… or to describe it more specifically more and more, people seem to be obsessed with real-time data.  But what does real-time mean in the world of REST servers and one-way communication?  Most modern web applications are now either displaying a snapshot of data at a given time or use a polling mechanism to update series of data at a given interval.
+In this talk, you will learn about the power of WebSockets and how they can (and should!) be used in your modern web applications. In these 30 minutes, I will go through the process of building a Node server that can push data to multiple clients in real-time.  You will see how this can be easy using the socket.io library.&lt;/p&gt;
+</description>
     </item>
     <item>
       <title>The Web Platform is the Universal Instrument by Ben Michel</title>
@@ -5042,21 +4974,21 @@ it can be.&lt;/p&gt;
 </description>
     </item>
     <item>
-      <title>The House Is Not On Fire - Building a home automation robot with Arduino, Raspberry Pi and Node.js by Artur Paikin</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</link>
-      <pubDate>Wed, 01 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</guid>
+      <title>I Play the JavaScript by Matt McKegg</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</link>
+      <pubDate>Thu, 02 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</guid>
       <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-right&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/art-stida.jpg&quot; alt=&quot;Artur Paikin&quot;&gt;
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-left&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/mattmckegg.jpg&quot; alt=&quot;Matt McKegg&quot;&gt;
 &lt;/div&gt;
 
-&lt;p&gt;Artur describes himself as, “I’m a web developer and traveler. I write stories about my adventures in Russian and English on my site: &lt;a href=&quot;http://arturpaikin.com&quot;&gt;http://arturpaikin.com&lt;/a&gt; and run a small technology cooperative called &lt;a href=&quot;http://unebaguette.com&quot;&gt;Baguette&lt;/a&gt;, where I work on cool projects, currently building an ambitious next generation file uploader with &lt;a href=&quot;https://transloadit.com/&quot;&gt;Transloadit&lt;/a&gt;. I ride a &lt;a href=&quot;https://www.instagram.com/p/xC0qC2SSYb&quot;&gt;foldable bicycle&lt;/a&gt;, &lt;a href=&quot;http://unebaguette.com/web-course/&quot;&gt;teach&lt;/a&gt; web development and sometimes &lt;a href=&quot;https://www.instagram.com/p/4_6LO8ySVL/&quot;&gt;garden&lt;/a&gt; on the balcony.”&lt;/p&gt;
+&lt;p&gt;A JavaScript hacker and backyard musician and from Wellington, New Zealand. Lover of all things open and modular. I spend most of my time pressing buttons of various shapes, sizes and colours. Sometimes these buttons make sounds.&lt;/p&gt;
+&lt;p&gt;Matt has been making music with computers for about 10 years, but once he tried to move from bedroom composing to live performance, he got incredibly frustrated at how hard it was to play computer music live. He decided to start working on his own live electronic performance software written in JavaScript that would let me play the way he wanted to play. 3 years later, it’s finally starting to become a reality.&lt;/p&gt;
 &lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Artur has built an open source home automation system called &lt;a href=&quot;https://github.com/arturi/kotihome&quot;&gt;Koti Home&lt;/a&gt; (Koti means home in Finnish language). It’s powered by an Arduino connected to Raspberry Pi, MQTT protocol for messaging, Node.js on the client and server, web sockets. You can interact with Koti robot via a React (like the cool kids do) control panel, Telegram Chat Bot and even your own voice.&lt;/p&gt;
-&lt;p&gt;Arthur will talk about how he’s turned this project into reality — the tech he used and the challenges he faced. From a blinking LED to a voice controlled home automation robot.&lt;/p&gt;
-</description>
+&lt;p&gt;Here is one of the Matt’s recent performances, for your viewing pleasure. &lt;/p&gt;
+&lt;iframe width=&quot;1280&quot; height=&quot;720&quot; src=&quot;https://www.youtube.com/embed/L2BVDJWHdy0?rel=0&amp;amp;showinfo=0&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;</description>
     </item>
     <item>
       <title>Code First Docs How we Threw Out The Book &amp; Put Code First With Twilio Documentation by Jarod Reyes</title>
@@ -5080,6 +5012,23 @@ it can be.&lt;/p&gt;
 &lt;li&gt;Twitter: &lt;a href=&quot;https://twitter.com/jreyesdev&quot;&gt;@jreyesdev&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Github: &lt;a href=&quot;https://github.com/jarodreyes&quot;&gt;github.com/jarodreyes&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+</description>
+    </item>
+    <item>
+      <title>The House Is Not On Fire - Building a home automation robot with Arduino, Raspberry Pi and Node.js by Artur Paikin</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</link>
+      <pubDate>Wed, 01 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-right&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/art-stida.jpg&quot; alt=&quot;Artur Paikin&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Artur describes himself as, “I’m a web developer and traveler. I write stories about my adventures in Russian and English on my site: &lt;a href=&quot;http://arturpaikin.com&quot;&gt;http://arturpaikin.com&lt;/a&gt; and run a small technology cooperative called &lt;a href=&quot;http://unebaguette.com&quot;&gt;Baguette&lt;/a&gt;, where I work on cool projects, currently building an ambitious next generation file uploader with &lt;a href=&quot;https://transloadit.com/&quot;&gt;Transloadit&lt;/a&gt;. I ride a &lt;a href=&quot;https://www.instagram.com/p/xC0qC2SSYb&quot;&gt;foldable bicycle&lt;/a&gt;, &lt;a href=&quot;http://unebaguette.com/web-course/&quot;&gt;teach&lt;/a&gt; web development and sometimes &lt;a href=&quot;https://www.instagram.com/p/4_6LO8ySVL/&quot;&gt;garden&lt;/a&gt; on the balcony.”&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Artur has built an open source home automation system called &lt;a href=&quot;https://github.com/arturi/kotihome&quot;&gt;Koti Home&lt;/a&gt; (Koti means home in Finnish language). It’s powered by an Arduino connected to Raspberry Pi, MQTT protocol for messaging, Node.js on the client and server, web sockets. You can interact with Koti robot via a React (like the cool kids do) control panel, Telegram Chat Bot and even your own voice.&lt;/p&gt;
+&lt;p&gt;Arthur will talk about how he’s turned this project into reality — the tech he used and the challenges he faced. From a blinking LED to a voice controlled home automation robot.&lt;/p&gt;
 </description>
     </item>
     <item>

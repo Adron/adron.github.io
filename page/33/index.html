@@ -91,44 +91,6 @@
                   <div class="blog-grid">
                     <div class="row">
                       <div class="col-md-12 col-sm-12">
-                        <h3 class="blog-grid-title"><a href="/articles/docker-tips-n-tricks-getting-rabbit-mq-running/">Docker Tips n' Tricks - Gettging Rabbit MQ Running</a></h3>
-                        <p class="blog-grid-excerpt"><p>There are a few clean ways to get started running  RabbitMQ with Docker. The easiest is of course just to grab the Kitematic <span class="caps">UI</span> and pull the repo and start it. However, here are the actual commands to get the Rabbit MQ started from the command&nbsp;line.</p>
-<pre><code>docker run -d -p 5672:5672 -p 15672:15672 dockerfile/rabbitmq
-</code></pre><p>If you want persistent shared directories, then make sure to run the command like&nbsp;this.</p>
-<pre><code>docker run -d -p 5672:5672 -p 15672:15672 -v &lt;log-dir&gt;:/data/log -v &lt;data-dir&gt;:/data/mnesia dockerfile/rabbitmq
-</code></pre><p>Now that the instance is up and running, you can get to work playing around and using RabbitMQ on your new docker&nbsp;container.</p>
-
-                        </p>
-                        <div class="blog-grid-meta"><span class="blog-grid-date">10. November 2015</span></div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End of Blog List-->
-                </div>
-                <div class="col-md-12 col-sm-12">
-                  <!-- Blog List-->
-                  <div class="blog-grid">
-                    <div class="row">
-                      <div class="col-md-12 col-sm-12">
-                        <h3 class="blog-grid-title"><a href="/articles/docker-tips-n-tricks-delete-all-the-images-containers/">Docker Tips n' Tricks - Delete All The Images &amp; Containers</a></h3>
-                        <p class="blog-grid-excerpt"><p>Two simple commands that’ll wipe your installation clean of images and&nbsp;containers.</p>
-<p>Deletes all&nbsp;containers</p>
-<pre><code>docker rm $(docker ps -a -q)
-</code></pre><p>Deletes all&nbsp;images</p>
-<pre><code>docker rmi $(docker images -q)
-</code></pre>
-                        </p>
-                        <div class="blog-grid-meta"><span class="blog-grid-date">02. November 2015</span></div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End of Blog List-->
-                </div>
-                <div class="col-md-12 col-sm-12">
-                  <!-- Blog List-->
-                  <div class="blog-grid">
-                    <div class="row">
-                      <div class="col-md-12 col-sm-12">
                         <h3 class="blog-grid-title"><a href="/articles/after-816-days-taking-a-job/">After 816 Days I'm Taking a Job!</a></h3>
                         <p class="blog-grid-excerpt"><p><img src="/articles/after-816-days-taking-a-job/header.jpg" alt="MAX Train"></p>
 <p>The new mission, or as some may call it, a job! The context for those that might not be familiar with my adventures is that I’ve been working independently as a consultant, contractor, community builder, beer drinker, hacker, teacher, trainer, mentor, curriculum builder, and training content creator. The last time I held something that resembled a job was 560 business days ago, or more specifically 816 days ago. Honestly, I’m not even sure that <a href="http://compositecode.wordpress.com/2012/11/21/sitrep-thor-iron-foundry-basho/" target="_blank">it could be considered a job, it was a strange gig to say the least</a>. Recently after this long break I’m taking up a new job position with some interesting objectives and&nbsp;priorities.</p>
@@ -136,6 +98,46 @@
                           <p class="more"><a href="/articles/after-816-days-taking-a-job/">more</a></p>
                         </p>
                         <div class="blog-grid-meta"><span class="blog-grid-date">31. October 2015</span></div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- End of Blog List-->
+                </div>
+                <div class="col-md-12 col-sm-12">
+                  <!-- Blog List-->
+                  <div class="blog-grid">
+                    <div class="row">
+                      <div class="col-md-12 col-sm-12">
+                        <h3 class="blog-grid-title"><a href="/articles/devday-2015-inspiration-a-look-back/">DevDay 2015, Inspiration, and a quick look back...</a></h3>
+                        <p class="blog-grid-excerpt"><p>So far this year, which is obviously nowhere near finished yet, I have had some amazing experiences. From <a href="http://dotnetfringe.org/" target="_blank">.<span class="caps">NET</span> Fringe</a>, <a href="http://www.polyglotconf.com/" target="_blank">Polyglot 2015</a>, <a href="https://skillsmatter.com/conferences/6859-progressive-dotnet-2015" target="_blank">Progressive .<span class="caps">NET</span> Tutorials 2015</a>, to <a href="http://devday.pl/" target="_blank">Dev Day 2015</a> and more. I decided to add a little bit more of a personal note in this blog entry because of inspiration I just got from Michał Śliwoń (<a href="https://twitter.com/mihcall" target="_blank">@mihcall</a>) on his <a href="http://blog.mihcall.com/2015/09/30/DevDay-2015/" target="_blank">Dev Day 2015 Aftermath</a> write&nbsp;up.</p>
+<p>Just as Michał&nbsp;writes,</p>
+<blockquote>
+<p>“Inspiration is like a spark. It can be one brilliant presentation at the conference, one sentence at some session, one hallway conversation with another attendee and I’m excited, coming back with a head full of new ideas. Every conference has this little&nbsp;spark”</p>
+</blockquote>
+<p>and I completely agree. At .<span class="caps">NET</span> Fringe I got back into a few things on the .NET CLR stack, namely <a href="http://compositecode.com/2015/04/19/truly-excellent-people-and-coding-inspiration/" target="_blank">F# and a little toying around with Akka .<span class="caps">NET</span> and micro-services using those technologies</a>. I also had a hand in organizing and the origins of the conference, which <a href="http://compositecode.com/2015/04/10/the-idea-of-net-fringe/" target="_blank">I wrote about</a>. At Polyglot 2015 my desire increased to become more familiar with and comfortable with functional programming languages. At the Progressive .<span class="caps">NET</span> Tutorials I was again inspired to dive deeper into functional languages and take a look more closely at everything from <a href="http://weave.works/" target="_blank">Weave</a> and other container and virtualization based&nbsp;systems.</p>
+<p>
+                          <p class="more"><a href="/articles/devday-2015-inspiration-a-look-back/">more</a></p>
+                        </p>
+                        <div class="blog-grid-meta"><span class="blog-grid-date">30. September 2015</span></div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- End of Blog List-->
+                </div>
+                <div class="col-md-12 col-sm-12">
+                  <!-- Blog List-->
+                  <div class="blog-grid">
+                    <div class="row">
+                      <div class="col-md-12 col-sm-12">
+                        <h3 class="blog-grid-title"><a href="/articles/devday-wrap-up/">Devday 2015 Wrap Up</a></h3>
+                        <p class="blog-grid-excerpt"><p>I was going to write something, but these tweets really summarize and show the fun had at Dev Day really well.&nbsp;Cheers!</p>
+<p><blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Start using document database today with <a href="https://twitter.com/hashtag/jsonb?src=hash">#jsonb</a> type in <a href="https://twitter.com/hashtag/PostgreSQL?src=hash">#PostgreSQL</a> <a href="https://t.co/82KXAjIVka">https://t.co/82KXAjIVka</a> by <a href="https://twitter.com/robconery">@robconery</a> at <a href="https://twitter.com/hashtag/ABBDevDay?src=hash">#ABBDevDay</a></p>&mdash; Kamil Lelonek (@KamilLelonek) <a href="https://twitter.com/KamilLelonek/status/644880063658369024">September 18, 2015</a></blockquote></p>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<p>
+                          <p class="more"><a href="/articles/devday-wrap-up/">more</a></p>
+                        </p>
+                        <div class="blog-grid-meta"><span class="blog-grid-date">17. September 2015</span></div>
                       </div>
                     </div>
                   </div>
