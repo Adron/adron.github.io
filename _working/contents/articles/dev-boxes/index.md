@@ -12,21 +12,21 @@ I've been using a number of commands that I wanted to post here, just to provide
 <span class="more"></span>
 
 Determine what version of Ubuntu you're running.
-
 ```
 lsb_release -a
 ```
-
 Determine what version of MacOS you're running. This one has a few options which can show a range of information about versions.
-
 ```
-sw_vers
+adron$ sw_vers
+ProductName:	Mac OS X
+ProductVersion:	10.12.6
+BuildVersion:	16G29
 ```
-
+To get just the OS version, add the `-productVersion` switch.
 ```
-sw_vers -productVersion
+adron$ sw_vers -productVersion
+10.12.6
 ```
-
 
 <div class="image float-right">
     ![Streamsets](streamset2.jpg)
