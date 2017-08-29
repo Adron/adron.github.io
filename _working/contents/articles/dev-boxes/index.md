@@ -27,6 +27,25 @@ To get just the OS version, add the `-productVersion` switch.
 adron$ sw_vers -productVersion
 10.12.6
 ```
+Then there is this monster, which provides a lot of additional version information.
+```
+adron$ system_profiler SPSoftwareDataType
+Software:
+
+    System Software Overview:
+
+      System Version: macOS 10.12.6 (16G29)
+      Kernel Version: Darwin 16.7.0
+      Boot Volume: Pile
+      Boot Mode: Normal
+      Computer Name: Adron’s iMac
+      User Name: Adron Hall (adron)
+      Secure Virtual Memory: Enabled
+      System Integrity Protection: Enabled
+      Time since boot: 4:27
+```
+
+
 
 <div class="image float-right">
     ![Streamsets](streamset2.jpg)
