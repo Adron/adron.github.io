@@ -40,10 +40,4 @@ Want to talk, chit chat, argue, discuss, debate, or otherwise communicate? These
 
 * Do you have a job I might find interesting, just [let me know here](/docs/job-talk/) and we'll talk. If I'm not game, I regularly know others that may be looking.
 
-Currently I'm pretty busy delivering some sweet immutable infrastructure, actively involved in the community here in Portland, Oregon, writing a ton of polyglot code, and generally staying active. So to save time for you and I when contacting me for a chat about software, technology, jobs, or a related topic, please tweet at me (@adron) with a direct message (you may have to @ me first) the following information:
-
-* What is your favorite beer, coffee, or beverage to enjoy in [Cascadia]()?
-* What is your favorite thing to do in your spare time?
-* ...and specifically why you're contacting me related to tech/software/etc.
-
-You could phrase it as "*I love a Coava Cap in the AM hours and enjoy relaxing along the Portland waterfront after a good ride over the Tillikum Bridge. I'd love to chat with you about... X, got a few?*" and I'll respond ASAP.
+Currently I'm pretty busy delivering some sweet immutable infrastructure, actively involved in the community here in Seattle, Washington, writing a ton of polyglot code, and generally staying active. However, I'm always keen to hear about new things going on or how we might want to team up on a project or three. Contact me on Twitter [@Adron](https://twitter.com/Adron) or [message me](/docs/contact/).
