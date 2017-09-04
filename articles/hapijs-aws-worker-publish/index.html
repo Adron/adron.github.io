@@ -197,9 +197,9 @@ export AWS_SECRET_KEY=YOUR_SUPER_SECRET_AWS_KEY
 <p>Now that I have these two passing I’ve added another that shows the <span class="caps">SDK</span> to have the settings have actually been set. The main reason here is also to just discover how it is set and where those values are stored on the AWS object. I discovered that to set the config, just issue a call to update({}) and pass in the respective configuration as name value pairs using&nbsp;JSON.</p>
 <pre><code class="lang-javascript">before(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>{
   <span class="caps">AWS</span>.config.update({
-    <span class="attr">accessKeyId</span>: process.env.AWS_ACCESS_KEY_ID,
-    <span class="attr">secretAccessKey</span>: process.env.AWS_SECRET_KEY,
-    <span class="attr">region</span>: awsRegion});
+    accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+    secretAccessKey: process.env.AWS_SECRET_KEY,
+    region: awsRegion});
 })
 
 it(<span class="string">'should have the <span class="caps">AWS</span> Access Key set in the AWS config'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>{
@@ -230,17 +230,17 @@ it(<span class="string">'should have the <span class="caps">AWS</span> region se
 <span class="keyword">var</span> server = <span class="keyword">new</span> Hapi.Server(<span class="number">3000</span>);
 
 server.route({
-  <span class="attr">method</span>: <span class="string">'<span class="caps">GET</span>'</span>,
-  <span class="attr">path</span>: <span class="string">'/'</span>,
-  <span class="attr">handler</span>: <span class="function"><span class="keyword">function</span> (<span class="params">request, reply</span>) </span>{
+  method: <span class="string">'<span class="caps">GET</span>'</span>,
+  path: <span class="string">'/'</span>,
+  handler: <span class="function"><span class="keyword">function</span> (<span class="params">request, reply</span>) </span>{
     reply(<span class="string">'Hello, world!'</span>);
   }
 });
 
 server.route({
-  <span class="attr">method</span>: <span class="string">'<span class="caps">GET</span>'</span>,
-  <span class="attr">path</span>: <span class="string">'/{name}'</span>,
-  <span class="attr">handler</span>: <span class="function"><span class="keyword">function</span> (<span class="params">request, reply</span>) </span>{
+  method: <span class="string">'<span class="caps">GET</span>'</span>,
+  path: <span class="string">'/{name}'</span>,
+  handler: <span class="function"><span class="keyword">function</span> (<span class="params">request, reply</span>) </span>{
     reply(<span class="string">'Hello, '</span> + <span class="built_in">encodeURIComponent</span>(request.params.name) + <span class="string">'!'</span>);
   }
 });
@@ -285,9 +285,9 @@ Hello, Sally!~
 <span class="keyword">var</span> server = <span class="keyword">new</span> Hapi.Server(process.env.<span class="caps">PORT</span> || <span class="number">3000</span>);
 
 server.route({
-  <span class="attr">method</span>: <span class="string">'<span class="caps">GET</span>'</span>,
-  <span class="attr">path</span>: <span class="string">'/'</span>,
-  <span class="attr">handler</span>: <span class="function"><span class="keyword">function</span> (<span class="params">request, reply</span>) </span>{
+  method: <span class="string">'<span class="caps">GET</span>'</span>,
+  path: <span class="string">'/'</span>,
+  handler: <span class="function"><span class="keyword">function</span> (<span class="params">request, reply</span>) </span>{
     reply(<span class="string">'Hello, world!'</span>);
   }
 });
@@ -296,16 +296,16 @@ server.route({
 <span class="meta">  'use strict'</span>;
 
   <span class="caps">AWS</span>.config.update({
-    <span class="attr">accessKeyId</span>: process.env.AWS_ACCESS_KEY_ID,
-    <span class="attr">secretAccessKey</span>: process.env.AWS_SECRET_KEY,
-    <span class="attr">region</span>: awsRegion
+    accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+    secretAccessKey: process.env.AWS_SECRET_KEY,
+    region: awsRegion
   });
   sqs = <span class="keyword">new</span> <span class="caps">AWS</span>.SQS();
 
   <span class="keyword">var</span> params = {
-    <span class="attr">MessageBody</span>: <span class="string">'The Message Body Goes Here'</span>,
-    <span class="attr">QueueUrl</span>: <span class="string">'https://sqs.us-west-2.amazonaws.com/588271471917/a_sample'</span>,
-    <span class="attr">DelaySeconds</span>: <span class="number">0</span>
+    MessageBody: <span class="string">'The Message Body Goes Here'</span>,
+    QueueUrl: <span class="string">'https://sqs.us-west-2.amazonaws.com/588271471917/a_sample'</span>,
+    DelaySeconds: <span class="number">0</span>
   };
 
   sqs.sendMessage(params, <span class="function"><span class="keyword">function</span> (<span class="params">err, data</span>) </span>{
@@ -320,9 +320,9 @@ server.route({
 }
 
 server.route({
-  <span class="attr">method</span>: <span class="string">'<span class="caps">GET</span>'</span>,
-  <span class="attr">path</span>: <span class="string">'/{name}'</span>,
-  <span class="attr">handler</span>: <span class="function"><span class="keyword">function</span> (<span class="params">request, reply</span>) </span>{
+  method: <span class="string">'<span class="caps">GET</span>'</span>,
+  path: <span class="string">'/{name}'</span>,
+  handler: <span class="function"><span class="keyword">function</span> (<span class="params">request, reply</span>) </span>{
     sendSqsMessage(<span class="built_in">encodeURIComponent</span>(request.params.name));
     reply(<span class="string">'Your message '</span> + <span class="built_in">encodeURIComponent</span>(request.params.name) + <span class="string">' has been sent to queue!'</span>);
   }
@@ -347,16 +347,16 @@ server.pack.register(Good, <span class="function"><span class="keyword">function
 <span class="meta">  'use strict'</span>;
 
   <span class="caps">AWS</span>.config.update({
-    <span class="attr">accessKeyId</span>: process.env.AWS_ACCESS_KEY_ID,
-    <span class="attr">secretAccessKey</span>: process.env.AWS_SECRET_KEY,
-    <span class="attr">region</span>: awsRegion
+    accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+    secretAccessKey: process.env.AWS_SECRET_KEY,
+    region: awsRegion
   });
   sqs = <span class="keyword">new</span> <span class="caps">AWS</span>.SQS();
 
   <span class="keyword">var</span> params = {
-    <span class="attr">MessageBody</span>: <span class="string">'The Message Body Goes Here'</span>,
-    <span class="attr">QueueUrl</span>: <span class="string">'https://sqs.us-west-2.amazonaws.com/588266671666/the_path_to_the_queue'</span>,
-    <span class="attr">DelaySeconds</span>: <span class="number">0</span>
+    MessageBody: <span class="string">'The Message Body Goes Here'</span>,
+    QueueUrl: <span class="string">'https://sqs.us-west-2.amazonaws.com/588266671666/the_path_to_the_queue'</span>,
+    DelaySeconds: <span class="number">0</span>
   };
 
   sqs.sendMessage(params, <span class="function"><span class="keyword">function</span> (<span class="params">err, data</span>) </span>{

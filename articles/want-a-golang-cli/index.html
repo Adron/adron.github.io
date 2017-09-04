@@ -119,9 +119,9 @@ func main() {
 )
 
 func main() {
-    <span class="attr">reader</span> := bufio.NewReader(os.Stdin)
+    reader := bufio.NewReader(os.Stdin)
     fmt.Print(<span class="string">"Enter text: "</span>)
-    text, <span class="attr">_</span> := reader.ReadString(<span class="string">'\n'</span>)
+    text, _ := reader.ReadString(<span class="string">'\n'</span>)
     fmt.Println(text)
 }
 </code></pre>
@@ -134,7 +134,7 @@ func main() {
 <p>Ok, so now I wanted some other features to the cli. The first is the ability to pass in some flags. There is a library for that, simply called <em>flag</em> which I’ll add. I added that to the import&nbsp;list.</p>
 <p>One of the really cool features of the flag library is that it will auto-generate flag help documentation. To display the flag documentation pass the -h flag. For instance, to see the flag documentation type in <code>go run hi-cli.go -h</code>. However, I need to actually add some flags with their appropriate descriptions and actually use them somewhere. So I’ve edited my go code file as&nbsp;shown.</p>
 <pre><code class="lang-javascript">func main() {
-  <span class="attr">wordFlag</span> := flag.String(<span class="string">"wordly"</span>, <span class="string">"the-word"</span>, <span class="string">"A string value."</span>)
+  wordFlag := flag.String(<span class="string">"wordly"</span>, <span class="string">"the-word"</span>, <span class="string">"A string value."</span>)
   numberFlag := flag.Int(<span class="string">"numeraly"</span>, <span class="number">42012</span>, <span class="string">"An integer value."</span>)
   booleanFlag := flag.Bool(<span class="string">"booly"</span>, <span class="literal">true</span>, <span class="string">"A boolean value."</span>)
   nameFlag := flag.String(<span class="string">"yourname"</span>, <span class="string">"Person With No Name"</span>, <span class="string">"Put your name here."</span>)
@@ -143,7 +143,7 @@ func main() {
 
   <span class="keyword">var</span> reader = bufio.NewReader(os.Stdin)
   fmt.Print(<span class="string">"Hello, "</span> + *nameFlag + <span class="string">", please enter some text: "</span>)
-  text, <span class="attr">_</span> := reader.ReadString(<span class="string">'\n'</span>)
+  text, _ := reader.ReadString(<span class="string">'\n'</span>)
   fmt.Println(text)
 
   fmt.Println(<span class="string">"word: "</span>, *wordFlag)

@@ -156,8 +156,8 @@ _
 <p>I then added a little error catch in case the json blows up for whatever reason. Then I write it out via this&nbsp;function.</p>
 <pre><code class="lang-javascript">func about (w http.ResponseWriter, r *http.Request) {
 
-   <span class="attr">m</span> := Message{<span class="string">"Welcome to the Twosi <span class="caps">API</span>, build v0.0.001."</span>}
-   b, <span class="attr">err</span> := json.Marshal(m)
+   m := Message{<span class="string">"Welcome to the Twosi <span class="caps">API</span>, build v0.0.001."</span>}
+   b, err := json.Marshal(m)
 
    <span class="keyword">if</span> err != nil {
        panic(err)

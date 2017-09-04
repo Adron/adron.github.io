@@ -1711,17 +1711,17 @@ n
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;I then ran &lt;code&gt;glide get github.com/icrowley/fake&lt;/code&gt; to get the fake library I would need. The &lt;code&gt;glide.yaml&lt;/code&gt; and &lt;code&gt;glide.lock&lt;/code&gt; looked like this after I pulled in this library.&lt;/p&gt;
 &lt;p&gt;glide.yaml&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;lang-yaml&quot;&gt;&lt;span class=&quot;attr&quot;&gt;package:&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;github.com/adron/datadiluvium&lt;/span&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-yaml&quot;&gt;&lt;span class=&quot;attr&quot;&gt;package:&lt;/span&gt; github.com/adron/datadiluvium
 &lt;span class=&quot;attr&quot;&gt;import:&lt;/span&gt;
-&lt;span class=&quot;attr&quot;&gt;- package:&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;github.com/icrowley/fake&lt;/span&gt;
+&lt;span class=&quot;attr&quot;&gt;- package:&lt;/span&gt; github.com/icrowley/fake
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;glide.lock&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;lang-yaml&quot;&gt;&lt;span class=&quot;attr&quot;&gt;hash:&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;string&quot;&gt;fd78ca8369405d5998e65ea4cfce94c6599e878c36fec39b85fd385552392d7&lt;/span&gt;
-&lt;span class=&quot;attr&quot;&gt;updated:&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;2017&lt;/span&gt;&lt;span class=&quot;bullet&quot;&gt;-01&lt;/span&gt;&lt;span class=&quot;bullet&quot;&gt;-09&lt;/span&gt;&lt;span class=&quot;attr&quot;&gt;T01:04:18.134993358-08:00&lt;/span&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-yaml&quot;&gt;&lt;span class=&quot;attr&quot;&gt;hash:&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;fd78ca8369405d5998e65ea4cfce94c6599e878c36fec39b85fd385552392d7
+&lt;span class=&quot;attr&quot;&gt;updated:&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;2017&lt;/span&gt;&lt;span class=&quot;bullet&quot;&gt;-01&lt;/span&gt;&lt;span class=&quot;bullet&quot;&gt;-09&lt;/span&gt;T01:&lt;span class=&quot;number&quot;&gt;04&lt;/span&gt;:&lt;span class=&quot;number&quot;&gt;18.134993358&lt;/span&gt;&lt;span class=&quot;bullet&quot;&gt;-08&lt;/span&gt;:&lt;span class=&quot;number&quot;&gt;00&lt;/span&gt;
 &lt;span class=&quot;attr&quot;&gt;imports:&lt;/span&gt;
-&lt;span class=&quot;attr&quot;&gt;- name:&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;github.com/icrowley/fake&lt;/span&gt;
-&lt;span class=&quot;attr&quot;&gt;  version:&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;84&lt;/span&gt;&lt;span class=&quot;string&quot;&gt;bff6d01560fb0b5a396ba29534e93fd00d09c6&lt;/span&gt;
-&lt;span class=&quot;attr&quot;&gt;testImports:&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;[]&lt;/span&gt;
+&lt;span class=&quot;attr&quot;&gt;- name:&lt;/span&gt; github.com/icrowley/fake
+&lt;span class=&quot;attr&quot;&gt;  version:&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;84&lt;/span&gt;bff6d01560fb0b5a396ba29534e93fd00d09c6
+&lt;span class=&quot;attr&quot;&gt;testImports:&lt;/span&gt; []
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;If you’re curious about the hash, and related properties of this file check out the glide &lt;a href=&quot;https://github.com/Masterminds/glide/blob/master/README.md&quot;&gt;README.md&lt;/a&gt;, it’s useful in understanding what’s stored here.&lt;/p&gt;
 &lt;p&gt;At this point, it was time to actually sling some Go code! At this point, I do indeed mean sling some too. Splat!&lt;/p&gt;
@@ -1749,7 +1749,7 @@ func (p Page) toString() string {
 }
 
 func toJson(p interface{}) string {
-    bytes, &lt;span class=&quot;attr&quot;&gt;err&lt;/span&gt; := json.Marshal(p)
+    bytes, err := json.Marshal(p)
     &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; err != nil {
         fmt.Println(err.Error())
         os.Exit(&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;)
@@ -1758,8 +1758,8 @@ func toJson(p interface{}) string {
 }
 
 func main() {
-    &lt;span class=&quot;attr&quot;&gt;pages&lt;/span&gt; := getPages()
-    &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; _, &lt;span class=&quot;attr&quot;&gt;p&lt;/span&gt; := range pages {
+    pages := getPages()
+    &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; _, p := range pages {
         fmt.Println(p.toString())
     }
 
@@ -1793,7 +1793,7 @@ func main() {
 }
 
 func getPages() []Page {
-    raw, &lt;span class=&quot;attr&quot;&gt;err&lt;/span&gt; := ioutil.ReadFile(&lt;span class=&quot;string&quot;&gt;&quot;./deluge.json&quot;&lt;/span&gt;)
+    raw, err := ioutil.ReadFile(&lt;span class=&quot;string&quot;&gt;&quot;./deluge.json&quot;&lt;/span&gt;)
     &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; err != nil {
         fmt.Println(err.Error())
         os.Exit(&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;)
@@ -1845,19 +1845,19 @@ func getPages() []Page {
 
 &lt;span class=&quot;keyword&quot;&gt;ENV&lt;/span&gt; GOPATH /go
 
-&lt;span class=&quot;keyword&quot;&gt;RUN&lt;/span&gt;&lt;span class=&quot;bash&quot;&gt; mkdir /app &amp;amp;&amp;amp; \
+&lt;span class=&quot;keyword&quot;&gt;RUN&lt;/span&gt; &lt;span class=&quot;bash&quot;&gt;mkdir /app &amp;amp;&amp;amp; \
     apk add --update curl &amp;amp;&amp;amp; \
     rm -rf /var/cache/apk/*
 &lt;/span&gt;
-&lt;span class=&quot;keyword&quot;&gt;ADD&lt;/span&gt;&lt;span class=&quot;bash&quot;&gt; . /app/
-&lt;/span&gt;&lt;span class=&quot;keyword&quot;&gt;WORKDIR&lt;/span&gt;&lt;span class=&quot;bash&quot;&gt; /app
-&lt;/span&gt;&lt;span class=&quot;keyword&quot;&gt;RUN&lt;/span&gt;&lt;span class=&quot;bash&quot;&gt; apk update &amp;amp;&amp;amp; apk upgrade &amp;amp;&amp;amp; \
+&lt;span class=&quot;keyword&quot;&gt;ADD&lt;/span&gt; &lt;span class=&quot;bash&quot;&gt;. /app/
+&lt;/span&gt;&lt;span class=&quot;keyword&quot;&gt;WORKDIR&lt;/span&gt; &lt;span class=&quot;bash&quot;&gt;/app
+&lt;/span&gt;&lt;span class=&quot;keyword&quot;&gt;RUN&lt;/span&gt; &lt;span class=&quot;bash&quot;&gt;apk update &amp;amp;&amp;amp; apk upgrade &amp;amp;&amp;amp; \
   apk add --no-cache git &amp;amp;&amp;amp; \
   curl https://glide.sh/get | sh
 &lt;/span&gt;
-&lt;span class=&quot;keyword&quot;&gt;RUN&lt;/span&gt;&lt;span class=&quot;bash&quot;&gt; glide up &amp;amp;&amp;amp; go get github.com/icrowley/fake &amp;amp;&amp;amp; \
+&lt;span class=&quot;keyword&quot;&gt;RUN&lt;/span&gt; &lt;span class=&quot;bash&quot;&gt;glide up &amp;amp;&amp;amp; go get github.com/icrowley/fake &amp;amp;&amp;amp; \
   go build
-&lt;/span&gt;&lt;span class=&quot;keyword&quot;&gt;CMD&lt;/span&gt;&lt;span class=&quot;bash&quot;&gt; [&lt;span class=&quot;string&quot;&gt;&quot;/app/datadiluvium&quot;&lt;/span&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;span class=&quot;keyword&quot;&gt;CMD&lt;/span&gt; &lt;span class=&quot;bash&quot;&gt;[&lt;span class=&quot;string&quot;&gt;&quot;/app/datadiluvium&quot;&lt;/span&gt;]&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;The first part of the file sets the official golang image and immediately after that I set the actual $GOPATH environment variable on the image.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&quot;lang-docker&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;FROM&lt;/span&gt; golang:&lt;span class=&quot;number&quot;&gt;1.7&lt;/span&gt;.&lt;span class=&quot;number&quot;&gt;4&lt;/span&gt;-alpine
@@ -1865,21 +1865,21 @@ func getPages() []Page {
 &lt;span class=&quot;keyword&quot;&gt;ENV&lt;/span&gt; GOPATH /go
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Next, I install curl with Alpine’s apk and clear out the apk cache.&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;lang-docker&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;RUN&lt;/span&gt;&lt;span class=&quot;bash&quot;&gt; mkdir /app &amp;amp;&amp;amp; \
+&lt;pre&gt;&lt;code class=&quot;lang-docker&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;RUN&lt;/span&gt; &lt;span class=&quot;bash&quot;&gt;mkdir /app &amp;amp;&amp;amp; \
     apk add --update curl &amp;amp;&amp;amp; \
     rm -rf /var/cache/apk/*&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Next are some very specific steps, which I’m not sure really meet a good practice, but it’s what I needed to do in the moment to get things working. The first steps here is simply adding the app directory, then setting it as the WORKDIR. Next I update apk again and upgrade the cache before installing glide. I’m not sure if this is absolutely necessary but I was running into errors and things not executing until I broke apart this section from the aforementioned section.&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;lang-docker&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;ADD&lt;/span&gt;&lt;span class=&quot;bash&quot;&gt; . /app/
-&lt;/span&gt;&lt;span class=&quot;keyword&quot;&gt;WORKDIR&lt;/span&gt;&lt;span class=&quot;bash&quot;&gt; /app
-&lt;/span&gt;&lt;span class=&quot;keyword&quot;&gt;RUN&lt;/span&gt;&lt;span class=&quot;bash&quot;&gt; apk update &amp;amp;&amp;amp; apk upgrade &amp;amp;&amp;amp; \
+&lt;pre&gt;&lt;code class=&quot;lang-docker&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;ADD&lt;/span&gt; &lt;span class=&quot;bash&quot;&gt;. /app/
+&lt;/span&gt;&lt;span class=&quot;keyword&quot;&gt;WORKDIR&lt;/span&gt; &lt;span class=&quot;bash&quot;&gt;/app
+&lt;/span&gt;&lt;span class=&quot;keyword&quot;&gt;RUN&lt;/span&gt; &lt;span class=&quot;bash&quot;&gt;apk update &amp;amp;&amp;amp; apk upgrade &amp;amp;&amp;amp; \
   apk add --no-cache git &amp;amp;&amp;amp; \
   curl https://glide.sh/get | sh&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;With glide installed it was time to grab the dependencies for the Docker image with &lt;code&gt;glide up&lt;/code&gt; and for some reason, even though it’s in the glide yaml file I still had to specifically call out the &lt;code&gt;go get github.com/icrowley/fake&lt;/code&gt; library before executing the &lt;code&gt;go build&lt;/code&gt; step.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&quot;lang-docker&quot;&gt;UN glide up &amp;amp;&amp;amp; go get github.com/icrowley/fake &amp;amp;&amp;amp; \
   go build
-&lt;span class=&quot;keyword&quot;&gt;CMD&lt;/span&gt;&lt;span class=&quot;bash&quot;&gt; [&lt;span class=&quot;string&quot;&gt;&quot;/app/datadiluvium&quot;&lt;/span&gt;]&lt;/span&gt;
+&lt;span class=&quot;keyword&quot;&gt;CMD&lt;/span&gt; &lt;span class=&quot;bash&quot;&gt;[&lt;span class=&quot;string&quot;&gt;&quot;/app/datadiluvium&quot;&lt;/span&gt;]&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;With that done, I could then finally run a build that encompassed all elements of what I’ve built so far. I did this simple with a &lt;code&gt;jet steps&lt;/code&gt; command and realized I’d missed the steps needed to actually &lt;a href=&quot;https://documentation.codeship.com/pro/getting-started/installation/#jet&quot;&gt;install the jet CLI&lt;/a&gt;. Since this first build I was working on, was actually on Ubuntu Linux, I followed these steps for getting the Jet CLI installed.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&quot;lang-shell-script&quot;&gt;curl -SLO &amp;quot;https://s3.amazonaws.com/codeship-jet-releases/1.15.4/jet-linux_amd64_1.15.4.tar.gz&amp;quot;
@@ -2329,8 +2329,8 @@ git push origin master
 }
 
 func TestAverage(t *testing.T) {
-  &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; _, &lt;span class=&quot;attr&quot;&gt;pair&lt;/span&gt; := range testAverages {
-    &lt;span class=&quot;attr&quot;&gt;v&lt;/span&gt; := Average(pair.values)
+  &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; _, pair := range testAverages {
+    v := Average(pair.values)
     &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; v != pair.result {
       t.Error(
         &lt;span class=&quot;string&quot;&gt;&quot;For&quot;&lt;/span&gt;, pair.values,
@@ -2343,8 +2343,8 @@ func TestAverage(t *testing.T) {
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;At this point, following this TDD style approach, the build fails without the &lt;code&gt;Average&lt;/code&gt; func implemented. I continued forward and implement the function as shown below.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;func Average(xs []float64) float64 {
-  &lt;span class=&quot;attr&quot;&gt;total&lt;/span&gt; := float64(&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;)
-  &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; _, &lt;span class=&quot;attr&quot;&gt;x&lt;/span&gt; := range xs {
+  total := float64(&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;)
+  &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; _, x := range xs {
     total += x
   }
   &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; total / float64(len(xs))
@@ -2459,8 +2459,8 @@ type Message struct {
 
 func about (w http.ResponseWriter, r *http.Request) {
 
-   &lt;span class=&quot;attr&quot;&gt;m&lt;/span&gt; := Message{&lt;span class=&quot;string&quot;&gt;&quot;Welcome to the Twosi API, build v0.0.001.&quot;&lt;/span&gt;}
-   b, &lt;span class=&quot;attr&quot;&gt;err&lt;/span&gt; := json.Marshal(m)
+   m := Message{&lt;span class=&quot;string&quot;&gt;&quot;Welcome to the Twosi API, build v0.0.001.&quot;&lt;/span&gt;}
+   b, err := json.Marshal(m)
 
    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; err != nil {
        panic(err)
@@ -2572,8 +2572,8 @@ _
 &lt;p&gt;I then added a little error catch in case the json blows up for whatever reason. Then I write it out via this function.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;func about (w http.ResponseWriter, r *http.Request) {
 
-   &lt;span class=&quot;attr&quot;&gt;m&lt;/span&gt; := Message{&lt;span class=&quot;string&quot;&gt;&quot;Welcome to the Twosi API, build v0.0.001.&quot;&lt;/span&gt;}
-   b, &lt;span class=&quot;attr&quot;&gt;err&lt;/span&gt; := json.Marshal(m)
+   m := Message{&lt;span class=&quot;string&quot;&gt;&quot;Welcome to the Twosi API, build v0.0.001.&quot;&lt;/span&gt;}
+   b, err := json.Marshal(m)
 
    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; err != nil {
        panic(err)
@@ -2652,9 +2652,9 @@ func main() {
 )
 
 func main() {
-    &lt;span class=&quot;attr&quot;&gt;reader&lt;/span&gt; := bufio.NewReader(os.Stdin)
+    reader := bufio.NewReader(os.Stdin)
     fmt.Print(&lt;span class=&quot;string&quot;&gt;&quot;Enter text: &quot;&lt;/span&gt;)
-    text, &lt;span class=&quot;attr&quot;&gt;_&lt;/span&gt; := reader.ReadString(&lt;span class=&quot;string&quot;&gt;'\n'&lt;/span&gt;)
+    text, _ := reader.ReadString(&lt;span class=&quot;string&quot;&gt;'\n'&lt;/span&gt;)
     fmt.Println(text)
 }
 &lt;/code&gt;&lt;/pre&gt;
@@ -2667,7 +2667,7 @@ func main() {
 &lt;p&gt;Ok, so now I wanted some other features to the cli. The first is the ability to pass in some flags. There is a library for that, simply called &lt;em&gt;flag&lt;/em&gt; which I’ll add. I added that to the import list.&lt;/p&gt;
 &lt;p&gt;One of the really cool features of the flag library is that it will auto-generate flag help documentation. To display the flag documentation pass the -h flag. For instance, to see the flag documentation type in &lt;code&gt;go run hi-cli.go -h&lt;/code&gt;. However, I need to actually add some flags with their appropriate descriptions and actually use them somewhere. So I’ve edited my go code file as shown.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;func main() {
-  &lt;span class=&quot;attr&quot;&gt;wordFlag&lt;/span&gt; := flag.String(&lt;span class=&quot;string&quot;&gt;&quot;wordly&quot;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&quot;the-word&quot;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&quot;A string value.&quot;&lt;/span&gt;)
+  wordFlag := flag.String(&lt;span class=&quot;string&quot;&gt;&quot;wordly&quot;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&quot;the-word&quot;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&quot;A string value.&quot;&lt;/span&gt;)
   numberFlag := flag.Int(&lt;span class=&quot;string&quot;&gt;&quot;numeraly&quot;&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;42012&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&quot;An integer value.&quot;&lt;/span&gt;)
   booleanFlag := flag.Bool(&lt;span class=&quot;string&quot;&gt;&quot;booly&quot;&lt;/span&gt;, &lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&quot;A boolean value.&quot;&lt;/span&gt;)
   nameFlag := flag.String(&lt;span class=&quot;string&quot;&gt;&quot;yourname&quot;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&quot;Person With No Name&quot;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&quot;Put your name here.&quot;&lt;/span&gt;)
@@ -2676,7 +2676,7 @@ func main() {
 
   &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; reader = bufio.NewReader(os.Stdin)
   fmt.Print(&lt;span class=&quot;string&quot;&gt;&quot;Hello, &quot;&lt;/span&gt; + *nameFlag + &lt;span class=&quot;string&quot;&gt;&quot;, please enter some text: &quot;&lt;/span&gt;)
-  text, &lt;span class=&quot;attr&quot;&gt;_&lt;/span&gt; := reader.ReadString(&lt;span class=&quot;string&quot;&gt;'\n'&lt;/span&gt;)
+  text, _ := reader.ReadString(&lt;span class=&quot;string&quot;&gt;'\n'&lt;/span&gt;)
   fmt.Println(text)
 
   fmt.Println(&lt;span class=&quot;string&quot;&gt;&quot;word: &quot;&lt;/span&gt;, *wordFlag)
@@ -4833,36 +4833,6 @@ export TF_VAR_password=&amp;quot;someSecretPassword&amp;quot;
 </description>
     </item>
     <item>
-      <title>Modern Javascript Frameworks - Introduction to Ember.JS and Ember-CLI by Suchita Doshi</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-suchita-doshi/</link>
-      <pubDate>Sat, 04 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-suchita-doshi/</guid>
-      <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-suchita-doshi/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-right&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-suchita-doshi/suchita-doshi.jpg&quot; alt=&quot;Suchita Doshi&quot;&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Suchita is UI Lead for the analytics module of Yahoo Admanager Plus team and Core member of Emberjs group @Yahoo, Speaker at Women Who code organization (Introduction To Emberjs/Ember CLI), Conducted Webinar for the TenXList members on EmberJS. She’s passionate about improving developers ergonomics and a hardcore “cricket” fan.&lt;/p&gt;
-&lt;p&gt;In other Suchita news, she’s opening bats-woman for the Bay Area Cricket Association team! 😀&lt;/p&gt;
-&lt;p&gt;Suchita describes her talk as “There will never be a “one size fits all” approach to web development. If you want your application to be minimally interactive, then server side rendered HTML would be the way to go, else, if it were a more interactive application, then client side framework would benefit you.
-Why not use just JQuery instead of adopting these Modern Javascript Frameworks? Think about it! If your application has interactivity on the lighter side, then JQuery would work well, but as soon as you introduce more states in your application, it would then become messier and heavier on the DOM. You would need to use the ‘data-‘ attributes to store the data in your DOM and also remember how to map them with the triggered events.&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Here is where client side frameworks come to the rescue. I have worked on several client side frameworks like Backbone.js, Ember.js. Few of the many features I love about Ember.js are the two-way data binding, Computed Properties, the run loop, convention over configuration nature, ease of handling routing and many more.
-In this talk I would be covering the following:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Introduction to Emberjs and why Ember&lt;/li&gt;
-&lt;li&gt;How Ember js makes a difference&lt;/li&gt;
-&lt;li&gt;Ember convention over configuration nature&lt;/li&gt;
-&lt;li&gt;Introduction to Ember routes, components and templates&lt;/li&gt;
-&lt;li&gt;Introduction to Ember CLI&lt;/li&gt;
-&lt;li&gt;Computed Properties&lt;/li&gt;
-&lt;li&gt;Live Demo on how it’s really intuitive in a couple of non-trivial scenarios.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;So basically my goal is to attract more developers to adapt modern javascript frameworks and make a difference in the way complex apps are built.”&lt;/p&gt;
-</description>
-    </item>
-    <item>
       <title>The SAM Pattern - a distributed system view of Front-End architectures by Jean-Jacques Dubray</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-jean-jacques-dubray/</link>
       <pubDate>Sat, 04 Jun 2016 17:00:00 -0700</pubDate>
@@ -4890,6 +4860,36 @@ and challenges the complexity of frameworks like Google’s Angular or Facebook�
 which suggest creating view-specific APIs, per platform, app, versions of an app…&lt;/p&gt;
 &lt;p&gt;We’ll start by reviewing some of the key challenges of modern UX and Front-End Architectures. We will then present the
 key concepts of SAM and walk the audience through some node.js code samples (including server-side TimeTravel).&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>Modern Javascript Frameworks - Introduction to Ember.JS and Ember-CLI by Suchita Doshi</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-suchita-doshi/</link>
+      <pubDate>Sat, 04 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-suchita-doshi/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-suchita-doshi/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-right&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-suchita-doshi/suchita-doshi.jpg&quot; alt=&quot;Suchita Doshi&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Suchita is UI Lead for the analytics module of Yahoo Admanager Plus team and Core member of Emberjs group @Yahoo, Speaker at Women Who code organization (Introduction To Emberjs/Ember CLI), Conducted Webinar for the TenXList members on EmberJS. She’s passionate about improving developers ergonomics and a hardcore “cricket” fan.&lt;/p&gt;
+&lt;p&gt;In other Suchita news, she’s opening bats-woman for the Bay Area Cricket Association team! 😀&lt;/p&gt;
+&lt;p&gt;Suchita describes her talk as “There will never be a “one size fits all” approach to web development. If you want your application to be minimally interactive, then server side rendered HTML would be the way to go, else, if it were a more interactive application, then client side framework would benefit you.
+Why not use just JQuery instead of adopting these Modern Javascript Frameworks? Think about it! If your application has interactivity on the lighter side, then JQuery would work well, but as soon as you introduce more states in your application, it would then become messier and heavier on the DOM. You would need to use the ‘data-‘ attributes to store the data in your DOM and also remember how to map them with the triggered events.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Here is where client side frameworks come to the rescue. I have worked on several client side frameworks like Backbone.js, Ember.js. Few of the many features I love about Ember.js are the two-way data binding, Computed Properties, the run loop, convention over configuration nature, ease of handling routing and many more.
+In this talk I would be covering the following:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Introduction to Emberjs and why Ember&lt;/li&gt;
+&lt;li&gt;How Ember js makes a difference&lt;/li&gt;
+&lt;li&gt;Ember convention over configuration nature&lt;/li&gt;
+&lt;li&gt;Introduction to Ember routes, components and templates&lt;/li&gt;
+&lt;li&gt;Introduction to Ember CLI&lt;/li&gt;
+&lt;li&gt;Computed Properties&lt;/li&gt;
+&lt;li&gt;Live Demo on how it’s really intuitive in a couple of non-trivial scenarios.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;So basically my goal is to attract more developers to adapt modern javascript frameworks and make a difference in the way complex apps are built.”&lt;/p&gt;
 </description>
     </item>
     <item>
@@ -4991,6 +4991,23 @@ In this talk, you will learn about the power of WebSockets and how they can (and
 &lt;iframe width=&quot;1280&quot; height=&quot;720&quot; src=&quot;https://www.youtube.com/embed/L2BVDJWHdy0?rel=0&amp;amp;showinfo=0&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;</description>
     </item>
     <item>
+      <title>The House Is Not On Fire - Building a home automation robot with Arduino, Raspberry Pi and Node.js by Artur Paikin</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</link>
+      <pubDate>Wed, 01 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-right&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/art-stida.jpg&quot; alt=&quot;Artur Paikin&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Artur describes himself as, “I’m a web developer and traveler. I write stories about my adventures in Russian and English on my site: &lt;a href=&quot;http://arturpaikin.com&quot;&gt;http://arturpaikin.com&lt;/a&gt; and run a small technology cooperative called &lt;a href=&quot;http://unebaguette.com&quot;&gt;Baguette&lt;/a&gt;, where I work on cool projects, currently building an ambitious next generation file uploader with &lt;a href=&quot;https://transloadit.com/&quot;&gt;Transloadit&lt;/a&gt;. I ride a &lt;a href=&quot;https://www.instagram.com/p/xC0qC2SSYb&quot;&gt;foldable bicycle&lt;/a&gt;, &lt;a href=&quot;http://unebaguette.com/web-course/&quot;&gt;teach&lt;/a&gt; web development and sometimes &lt;a href=&quot;https://www.instagram.com/p/4_6LO8ySVL/&quot;&gt;garden&lt;/a&gt; on the balcony.”&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Artur has built an open source home automation system called &lt;a href=&quot;https://github.com/arturi/kotihome&quot;&gt;Koti Home&lt;/a&gt; (Koti means home in Finnish language). It’s powered by an Arduino connected to Raspberry Pi, MQTT protocol for messaging, Node.js on the client and server, web sockets. You can interact with Koti robot via a React (like the cool kids do) control panel, Telegram Chat Bot and even your own voice.&lt;/p&gt;
+&lt;p&gt;Arthur will talk about how he’s turned this project into reality — the tech he used and the challenges he faced. From a blinking LED to a voice controlled home automation robot.&lt;/p&gt;
+</description>
+    </item>
+    <item>
       <title>Code First Docs How we Threw Out The Book &amp; Put Code First With Twilio Documentation by Jarod Reyes</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-jarod-reyes/</link>
       <pubDate>Wed, 01 Jun 2016 17:00:00 -0700</pubDate>
@@ -5012,23 +5029,6 @@ In this talk, you will learn about the power of WebSockets and how they can (and
 &lt;li&gt;Twitter: &lt;a href=&quot;https://twitter.com/jreyesdev&quot;&gt;@jreyesdev&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Github: &lt;a href=&quot;https://github.com/jarodreyes&quot;&gt;github.com/jarodreyes&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-</description>
-    </item>
-    <item>
-      <title>The House Is Not On Fire - Building a home automation robot with Arduino, Raspberry Pi and Node.js by Artur Paikin</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</link>
-      <pubDate>Wed, 01 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</guid>
-      <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-right&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/art-stida.jpg&quot; alt=&quot;Artur Paikin&quot;&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Artur describes himself as, “I’m a web developer and traveler. I write stories about my adventures in Russian and English on my site: &lt;a href=&quot;http://arturpaikin.com&quot;&gt;http://arturpaikin.com&lt;/a&gt; and run a small technology cooperative called &lt;a href=&quot;http://unebaguette.com&quot;&gt;Baguette&lt;/a&gt;, where I work on cool projects, currently building an ambitious next generation file uploader with &lt;a href=&quot;https://transloadit.com/&quot;&gt;Transloadit&lt;/a&gt;. I ride a &lt;a href=&quot;https://www.instagram.com/p/xC0qC2SSYb&quot;&gt;foldable bicycle&lt;/a&gt;, &lt;a href=&quot;http://unebaguette.com/web-course/&quot;&gt;teach&lt;/a&gt; web development and sometimes &lt;a href=&quot;https://www.instagram.com/p/4_6LO8ySVL/&quot;&gt;garden&lt;/a&gt; on the balcony.”&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Artur has built an open source home automation system called &lt;a href=&quot;https://github.com/arturi/kotihome&quot;&gt;Koti Home&lt;/a&gt; (Koti means home in Finnish language). It’s powered by an Arduino connected to Raspberry Pi, MQTT protocol for messaging, Node.js on the client and server, web sockets. You can interact with Koti robot via a React (like the cool kids do) control panel, Telegram Chat Bot and even your own voice.&lt;/p&gt;
-&lt;p&gt;Arthur will talk about how he’s turned this project into reality — the tech he used and the challenges he faced. From a blinking LED to a voice controlled home automation robot.&lt;/p&gt;
 </description>
     </item>
     <item>
@@ -6466,13 +6466,13 @@ npm install good --save
 &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; server = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; Hapi.Server(process.env.PORT || &lt;span class=&quot;number&quot;&gt;3000&lt;/span&gt;);
 
 server.route({
-  &lt;span class=&quot;attr&quot;&gt;method&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;'POST'&lt;/span&gt;,
-  &lt;span class=&quot;attr&quot;&gt;path&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;'/hi'&lt;/span&gt;,
-  &lt;span class=&quot;attr&quot;&gt;handler&lt;/span&gt;: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;request, reply&lt;/span&gt;) &lt;/span&gt;{
+  method: &lt;span class=&quot;string&quot;&gt;'POST'&lt;/span&gt;,
+  path: &lt;span class=&quot;string&quot;&gt;'/hi'&lt;/span&gt;,
+  handler: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;request, reply&lt;/span&gt;) &lt;/span&gt;{
     AWS.config.update({
-      &lt;span class=&quot;attr&quot;&gt;accessKeyId&lt;/span&gt;: process.env.AWS_ACCESS_KEY_ID,
-      &lt;span class=&quot;attr&quot;&gt;secretAccessKey&lt;/span&gt;: process.env.AWS_SECRET_KEY,
-      &lt;span class=&quot;attr&quot;&gt;region&lt;/span&gt;: awsRegion
+      accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+      secretAccessKey: process.env.AWS_SECRET_KEY,
+      region: awsRegion
     });
     sqs = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; AWS.SQS();
 
@@ -6642,9 +6642,9 @@ export AWS_SECRET_KEY=YOUR_SUPER_SECRET_AWS_KEY
 &lt;p&gt;Now that I have these two passing I’ve added another that shows the SDK to have the settings have actually been set. The main reason here is also to just discover how it is set and where those values are stored on the AWS object. I discovered that to set the config, just issue a call to update({}) and pass in the respective configuration as name value pairs using JSON.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;before(&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;{
   AWS.config.update({
-    &lt;span class=&quot;attr&quot;&gt;accessKeyId&lt;/span&gt;: process.env.AWS_ACCESS_KEY_ID,
-    &lt;span class=&quot;attr&quot;&gt;secretAccessKey&lt;/span&gt;: process.env.AWS_SECRET_KEY,
-    &lt;span class=&quot;attr&quot;&gt;region&lt;/span&gt;: awsRegion});
+    accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+    secretAccessKey: process.env.AWS_SECRET_KEY,
+    region: awsRegion});
 })
 
 it(&lt;span class=&quot;string&quot;&gt;'should have the AWS Access Key set in the AWS config'&lt;/span&gt;, &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;{
@@ -6675,17 +6675,17 @@ it(&lt;span class=&quot;string&quot;&gt;'should have the AWS region set to us we
 &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; server = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; Hapi.Server(&lt;span class=&quot;number&quot;&gt;3000&lt;/span&gt;);
 
 server.route({
-  &lt;span class=&quot;attr&quot;&gt;method&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;'GET'&lt;/span&gt;,
-  &lt;span class=&quot;attr&quot;&gt;path&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;'/'&lt;/span&gt;,
-  &lt;span class=&quot;attr&quot;&gt;handler&lt;/span&gt;: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;request, reply&lt;/span&gt;) &lt;/span&gt;{
+  method: &lt;span class=&quot;string&quot;&gt;'GET'&lt;/span&gt;,
+  path: &lt;span class=&quot;string&quot;&gt;'/'&lt;/span&gt;,
+  handler: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;request, reply&lt;/span&gt;) &lt;/span&gt;{
     reply(&lt;span class=&quot;string&quot;&gt;'Hello, world!'&lt;/span&gt;);
   }
 });
 
 server.route({
-  &lt;span class=&quot;attr&quot;&gt;method&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;'GET'&lt;/span&gt;,
-  &lt;span class=&quot;attr&quot;&gt;path&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;'/{name}'&lt;/span&gt;,
-  &lt;span class=&quot;attr&quot;&gt;handler&lt;/span&gt;: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;request, reply&lt;/span&gt;) &lt;/span&gt;{
+  method: &lt;span class=&quot;string&quot;&gt;'GET'&lt;/span&gt;,
+  path: &lt;span class=&quot;string&quot;&gt;'/{name}'&lt;/span&gt;,
+  handler: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;request, reply&lt;/span&gt;) &lt;/span&gt;{
     reply(&lt;span class=&quot;string&quot;&gt;'Hello, '&lt;/span&gt; + &lt;span class=&quot;built_in&quot;&gt;encodeURIComponent&lt;/span&gt;(request.params.name) + &lt;span class=&quot;string&quot;&gt;'!'&lt;/span&gt;);
   }
 });
@@ -6730,9 +6730,9 @@ Hello, Sally!~
 &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; server = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; Hapi.Server(process.env.PORT || &lt;span class=&quot;number&quot;&gt;3000&lt;/span&gt;);
 
 server.route({
-  &lt;span class=&quot;attr&quot;&gt;method&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;'GET'&lt;/span&gt;,
-  &lt;span class=&quot;attr&quot;&gt;path&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;'/'&lt;/span&gt;,
-  &lt;span class=&quot;attr&quot;&gt;handler&lt;/span&gt;: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;request, reply&lt;/span&gt;) &lt;/span&gt;{
+  method: &lt;span class=&quot;string&quot;&gt;'GET'&lt;/span&gt;,
+  path: &lt;span class=&quot;string&quot;&gt;'/'&lt;/span&gt;,
+  handler: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;request, reply&lt;/span&gt;) &lt;/span&gt;{
     reply(&lt;span class=&quot;string&quot;&gt;'Hello, world!'&lt;/span&gt;);
   }
 });
@@ -6741,16 +6741,16 @@ server.route({
 &lt;span class=&quot;meta&quot;&gt;  'use strict'&lt;/span&gt;;
 
   AWS.config.update({
-    &lt;span class=&quot;attr&quot;&gt;accessKeyId&lt;/span&gt;: process.env.AWS_ACCESS_KEY_ID,
-    &lt;span class=&quot;attr&quot;&gt;secretAccessKey&lt;/span&gt;: process.env.AWS_SECRET_KEY,
-    &lt;span class=&quot;attr&quot;&gt;region&lt;/span&gt;: awsRegion
+    accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+    secretAccessKey: process.env.AWS_SECRET_KEY,
+    region: awsRegion
   });
   sqs = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; AWS.SQS();
 
   &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; params = {
-    &lt;span class=&quot;attr&quot;&gt;MessageBody&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;'The Message Body Goes Here'&lt;/span&gt;,
-    &lt;span class=&quot;attr&quot;&gt;QueueUrl&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;'https://sqs.us-west-2.amazonaws.com/588271471917/a_sample'&lt;/span&gt;,
-    &lt;span class=&quot;attr&quot;&gt;DelaySeconds&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;
+    MessageBody: &lt;span class=&quot;string&quot;&gt;'The Message Body Goes Here'&lt;/span&gt;,
+    QueueUrl: &lt;span class=&quot;string&quot;&gt;'https://sqs.us-west-2.amazonaws.com/588271471917/a_sample'&lt;/span&gt;,
+    DelaySeconds: &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;
   };
 
   sqs.sendMessage(params, &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;err, data&lt;/span&gt;) &lt;/span&gt;{
@@ -6765,9 +6765,9 @@ server.route({
 }
 
 server.route({
-  &lt;span class=&quot;attr&quot;&gt;method&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;'GET'&lt;/span&gt;,
-  &lt;span class=&quot;attr&quot;&gt;path&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;'/{name}'&lt;/span&gt;,
-  &lt;span class=&quot;attr&quot;&gt;handler&lt;/span&gt;: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;request, reply&lt;/span&gt;) &lt;/span&gt;{
+  method: &lt;span class=&quot;string&quot;&gt;'GET'&lt;/span&gt;,
+  path: &lt;span class=&quot;string&quot;&gt;'/{name}'&lt;/span&gt;,
+  handler: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;request, reply&lt;/span&gt;) &lt;/span&gt;{
     sendSqsMessage(&lt;span class=&quot;built_in&quot;&gt;encodeURIComponent&lt;/span&gt;(request.params.name));
     reply(&lt;span class=&quot;string&quot;&gt;'Your message '&lt;/span&gt; + &lt;span class=&quot;built_in&quot;&gt;encodeURIComponent&lt;/span&gt;(request.params.name) + &lt;span class=&quot;string&quot;&gt;' has been sent to queue!'&lt;/span&gt;);
   }
@@ -6792,16 +6792,16 @@ server.pack.register(Good, &lt;span class=&quot;function&quot;&gt;&lt;span class
 &lt;span class=&quot;meta&quot;&gt;  'use strict'&lt;/span&gt;;
 
   AWS.config.update({
-    &lt;span class=&quot;attr&quot;&gt;accessKeyId&lt;/span&gt;: process.env.AWS_ACCESS_KEY_ID,
-    &lt;span class=&quot;attr&quot;&gt;secretAccessKey&lt;/span&gt;: process.env.AWS_SECRET_KEY,
-    &lt;span class=&quot;attr&quot;&gt;region&lt;/span&gt;: awsRegion
+    accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+    secretAccessKey: process.env.AWS_SECRET_KEY,
+    region: awsRegion
   });
   sqs = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; AWS.SQS();
 
   &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; params = {
-    &lt;span class=&quot;attr&quot;&gt;MessageBody&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;'The Message Body Goes Here'&lt;/span&gt;,
-    &lt;span class=&quot;attr&quot;&gt;QueueUrl&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;'https://sqs.us-west-2.amazonaws.com/588266671666/the_path_to_the_queue'&lt;/span&gt;,
-    &lt;span class=&quot;attr&quot;&gt;DelaySeconds&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;
+    MessageBody: &lt;span class=&quot;string&quot;&gt;'The Message Body Goes Here'&lt;/span&gt;,
+    QueueUrl: &lt;span class=&quot;string&quot;&gt;'https://sqs.us-west-2.amazonaws.com/588266671666/the_path_to_the_queue'&lt;/span&gt;,
+    DelaySeconds: &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;
   };
 
   sqs.sendMessage(params, &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;err, data&lt;/span&gt;) &lt;/span&gt;{

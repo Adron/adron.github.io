@@ -184,17 +184,17 @@ n
 </code></pre>
 <p>I then ran <code>glide get github.com/icrowley/fake</code> to get the fake library I would need. The <code>glide.yaml</code> and <code>glide.lock</code> looked like this after I pulled in this&nbsp;library.</p>
 <p>glide.yaml</p>
-<pre><code class="lang-yaml"><span class="attr">package:</span> <span class="string">github.com/adron/datadiluvium</span>
+<pre><code class="lang-yaml"><span class="attr">package:</span> github.com/adron/datadiluvium
 <span class="attr">import:</span>
-<span class="attr">- package:</span> <span class="string">github.com/icrowley/fake</span>
+<span class="attr">- package:</span> github.com/icrowley/fake
 </code></pre>
 <p>glide.lock</p>
-<pre><code class="lang-yaml"><span class="attr">hash:</span> <span class="number">2</span><span class="string">fd78ca8369405d5998e65ea4cfce94c6599e878c36fec39b85fd385552392d7</span>
-<span class="attr">updated:</span> <span class="number">2017</span><span class="bullet">-01</span><span class="bullet">-09</span><span class="attr">T01:04:18.134993358-08:00</span>
+<pre><code class="lang-yaml"><span class="attr">hash:</span> <span class="number">2</span>fd78ca8369405d5998e65ea4cfce94c6599e878c36fec39b85fd385552392d7
+<span class="attr">updated:</span> <span class="number">2017</span><span class="bullet">-01</span><span class="bullet">-09</span>T01:<span class="number">04</span>:<span class="number">18.134993358</span><span class="bullet">-08</span>:<span class="number">00</span>
 <span class="attr">imports:</span>
-<span class="attr">- name:</span> <span class="string">github.com/icrowley/fake</span>
-<span class="attr">  version:</span> <span class="number">84</span><span class="string">bff6d01560fb0b5a396ba29534e93fd00d09c6</span>
-<span class="attr">testImports:</span> <span class="string">[]</span>
+<span class="attr">- name:</span> github.com/icrowley/fake
+<span class="attr">  version:</span> <span class="number">84</span>bff6d01560fb0b5a396ba29534e93fd00d09c6
+<span class="attr">testImports:</span> []
 </code></pre>
 <p>If you’re curious about the hash, and related properties of this file check out the glide <a href="https://github.com/Masterminds/glide/blob/master/README.md"><span class="caps">README</span>.md</a>, it’s useful in understanding what’s stored&nbsp;here.</p>
 <p>At this point, it was time to actually sling some Go code! At this point, I do indeed mean sling some too.&nbsp;Splat!</p>
@@ -222,7 +222,7 @@ func (p Page) toString() string {
 }
 
 func toJson(p interface{}) string {
-    bytes, <span class="attr">err</span> := json.Marshal(p)
+    bytes, err := json.Marshal(p)
     <span class="keyword">if</span> err != nil {
         fmt.Println(err.Error())
         os.Exit(<span class="number">1</span>)
@@ -231,8 +231,8 @@ func toJson(p interface{}) string {
 }
 
 func main() {
-    <span class="attr">pages</span> := getPages()
-    <span class="keyword">for</span> _, <span class="attr">p</span> := range pages {
+    pages := getPages()
+    <span class="keyword">for</span> _, p := range pages {
         fmt.Println(p.toString())
     }
 
@@ -266,7 +266,7 @@ func main() {
 }
 
 func getPages() []Page {
-    raw, <span class="attr">err</span> := ioutil.ReadFile(<span class="string">"./deluge.json"</span>)
+    raw, err := ioutil.ReadFile(<span class="string">"./deluge.json"</span>)
     <span class="keyword">if</span> err != nil {
         fmt.Println(err.Error())
         os.Exit(<span class="number">1</span>)
@@ -318,19 +318,19 @@ func getPages() []Page {
 
 <span class="keyword"><span class="caps">ENV</span></span> <span class="caps">GOPATH</span> /go
 
-<span class="keyword"><span class="caps">RUN</span></span><span class="bash"> mkdir /app &amp;&amp; \
+<span class="keyword"><span class="caps">RUN</span></span> <span class="bash">mkdir /app &amp;&amp; \
     apk add --update curl &amp;&amp; \
     rm -rf /var/cache/apk/*
 </span>
-<span class="keyword"><span class="caps">ADD</span></span><span class="bash"> . /app/
-</span><span class="keyword"><span class="caps">WORKDIR</span></span><span class="bash"> /app
-</span><span class="keyword"><span class="caps">RUN</span></span><span class="bash"> apk update &amp;&amp; apk upgrade &amp;&amp; \
+<span class="keyword"><span class="caps">ADD</span></span> <span class="bash">. /app/
+</span><span class="keyword"><span class="caps">WORKDIR</span></span> <span class="bash">/app
+</span><span class="keyword"><span class="caps">RUN</span></span> <span class="bash">apk update &amp;&amp; apk upgrade &amp;&amp; \
   apk add --no-cache git &amp;&amp; \
   curl https://glide.sh/get | sh
 </span>
-<span class="keyword"><span class="caps">RUN</span></span><span class="bash"> glide up &amp;&amp; go get github.com/icrowley/fake &amp;&amp; \
+<span class="keyword"><span class="caps">RUN</span></span> <span class="bash">glide up &amp;&amp; go get github.com/icrowley/fake &amp;&amp; \
   go build
-</span><span class="keyword"><span class="caps">CMD</span></span><span class="bash"> [<span class="string">"/app/datadiluvium"</span>]</span>
+</span><span class="keyword"><span class="caps">CMD</span></span> <span class="bash">[<span class="string">"/app/datadiluvium"</span>]</span>
 </code></pre>
 <p>The first part of the file sets the official golang image and immediately after that I set the actual $<span class="caps">GOPATH</span> environment variable on the&nbsp;image.</p>
 <pre><code class="lang-docker"><span class="keyword"><span class="caps">FROM</span></span> golang:<span class="number">1.7</span>.<span class="number">4</span>-alpine
@@ -338,21 +338,21 @@ func getPages() []Page {
 <span class="keyword"><span class="caps">ENV</span></span> <span class="caps">GOPATH</span> /go
 </code></pre>
 <p>Next, I install curl with Alpine’s apk and clear out the apk&nbsp;cache.</p>
-<pre><code class="lang-docker"><span class="keyword"><span class="caps">RUN</span></span><span class="bash"> mkdir /app &amp;&amp; \
+<pre><code class="lang-docker"><span class="keyword"><span class="caps">RUN</span></span> <span class="bash">mkdir /app &amp;&amp; \
     apk add --update curl &amp;&amp; \
     rm -rf /var/cache/apk/*</span>
 </code></pre>
 <p>Next are some very specific steps, which I’m not sure really meet a good practice, but it’s what I needed to do in the moment to get things working. The first steps here is simply adding the app directory, then setting it as the <span class="caps">WORKDIR</span>. Next I update apk again and upgrade the cache before installing glide. I’m not sure if this is absolutely necessary but I was running into errors and things not executing until I broke apart this section from the aforementioned&nbsp;section.</p>
-<pre><code class="lang-docker"><span class="keyword"><span class="caps">ADD</span></span><span class="bash"> . /app/
-</span><span class="keyword"><span class="caps">WORKDIR</span></span><span class="bash"> /app
-</span><span class="keyword"><span class="caps">RUN</span></span><span class="bash"> apk update &amp;&amp; apk upgrade &amp;&amp; \
+<pre><code class="lang-docker"><span class="keyword"><span class="caps">ADD</span></span> <span class="bash">. /app/
+</span><span class="keyword"><span class="caps">WORKDIR</span></span> <span class="bash">/app
+</span><span class="keyword"><span class="caps">RUN</span></span> <span class="bash">apk update &amp;&amp; apk upgrade &amp;&amp; \
   apk add --no-cache git &amp;&amp; \
   curl https://glide.sh/get | sh</span>
 </code></pre>
 <p>With glide installed it was time to grab the dependencies for the Docker image with <code>glide up</code> and for some reason, even though it’s in the glide yaml file I still had to specifically call out the <code>go get github.com/icrowley/fake</code> library before executing the <code>go build</code> step.</p>
 <pre><code class="lang-docker">UN glide up &amp;&amp; go get github.com/icrowley/fake &amp;&amp; \
   go build
-<span class="keyword"><span class="caps">CMD</span></span><span class="bash"> [<span class="string">"/app/datadiluvium"</span>]</span>
+<span class="keyword"><span class="caps">CMD</span></span> <span class="bash">[<span class="string">"/app/datadiluvium"</span>]</span>
 </code></pre>
 <p>With that done, I could then finally run a build that encompassed all elements of what I’ve built so far. I did this simple with a <code>jet steps</code> command and realized I’d missed the steps needed to actually <a href="https://documentation.codeship.com/pro/getting-started/installation/#jet">install the jet <span class="caps">CLI</span></a>. Since this first build I was working on, was actually on Ubuntu Linux, I followed these steps for getting the Jet <span class="caps">CLI</span>&nbsp;installed.</p>
 <pre><code class="lang-shell-script">curl -SLO &quot;https://s3.amazonaws.com/codeship-jet-releases/1.15.4/jet-linux_amd64_1.15.4.tar.gz&quot;
