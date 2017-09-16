@@ -7,4 +7,6 @@ template: talk.jade
 ## Infrastructure with Code and Containers
 *@ Cloud Power on 10-03-2017*
 
-More details to come, for now, check out the meetup post [here]().
+
+
+More details to come, for now, check out the meetup post [here](https://www.meetup.com/mscloud/events/243273397/).
