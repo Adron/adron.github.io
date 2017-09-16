@@ -17,9 +17,9 @@ This talk is at [Cloud Power](https://www.meetup.com/mscloud/events/243273397/) 
 
 For more details from this talk, check out the details page I've created [here](/talks/infrastructure-code-containers/).
 
-# [The Joy of Coding](https://www.meetup.com/WVSE-meetup/events/241117362/)
+# [The Joy of Coding](/talks/joy-of-coding)
 
-[WVSE - Willamette Valley Software Engineers](https://www.meetup.com/WVSE-meetup/) on **Thursday, October 5th, 2017**. At the WVSE meetup I'll be presenting "[The Joy of Coding](https://www.meetup.com/WVSE-meetup/events/241117362/)" inspired by none other than Bob Ross!
+[WVSE - Willamette Valley Software Engineers](https://www.meetup.com/WVSE-meetup/events/241117362/) on **Thursday, October 5th, 2017**. At the WVSE meetup I'll be presenting "[The Joy of Coding](https://www.meetup.com/WVSE-meetup/events/241117362/)" inspired by none other than Bob Ross!
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/YLO7tCdBVrA?rel=0" frameborder="0" allowfullscreen></iframe>
 
