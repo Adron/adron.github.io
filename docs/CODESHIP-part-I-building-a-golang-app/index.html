@@ -160,12 +160,12 @@
 
 <span class="keyword"><span class="caps">ENV</span></span> <span class="caps">GOPATH</span> /go
 
-<span class="keyword"><span class="caps">RUN</span></span> <span class="bash">mkdir /app &amp;&amp; \
+<span class="keyword"><span class="caps">RUN</span></span><span class="bash"> mkdir /app &amp;&amp; \
     apk add --update curl &amp;&amp; \
     rm -rf /var/cache/apk/*
 </span>
-<span class="keyword"><span class="caps">ADD</span></span> <span class="bash">. /app/
-</span><span class="keyword"><span class="caps">WORKDIR</span></span> <span class="bash">/app</span>
+<span class="keyword"><span class="caps">ADD</span></span><span class="bash"> . /app/
+</span><span class="keyword"><span class="caps">WORKDIR</span></span><span class="bash"> /app</span>
 </code></pre>
 <p>With those files in place, I can now run a local build with <code>jet steps</code>.</p>
 <pre><code class="lang-shell-script">$ jet steps

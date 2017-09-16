@@ -4,7 +4,7 @@ author: Adron Hall
 date: 2017-08-11:15:40:03
 template: talk.jade
 ---
-## Inception, Workflow, to $Deployed$
+## Inception, Workflow, to $Deployed$ 
 *@ [TBD](#) Coming Soon!*
 
 Removing Chaos and Noise From Your Dev Stack to GSD!
