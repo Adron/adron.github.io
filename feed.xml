@@ -5,9 +5,50 @@
     <atom:link href="http://adron.github.io/feed.xml" rel="self" type="application/rss+xml"></atom:link>
     <link>http://adron.github.io</link>
     <description>Coder, Messenger, Recon, Infrastructure, Ops</description>
-    <pubDate>Sat, 16 Sep 2017 06:20:00 -0700</pubDate>
+    <pubDate>Mon, 18 Sep 2017 01:12:17 -0700</pubDate>
     <generator>Wintersmith - https://github.com/jnordberg/wintersmith</generator>
     <language>en</language>
+    <item>
+      <title>Thrashing Code Metal Monday for Week of September 18th 2017</title>
+      <link>http://adron.github.io/articles/thrashing-code-metal-monday-09-18-2017/</link>
+      <pubDate>Mon, 18 Sep 2017 01:12:17 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/thrashing-code-metal-monday-09-18-2017/</guid>
+      <author></author>
+      <description>&lt;p&gt;Ok, previously I’d had a few Metal Monday posts. I’m officially kicking that off again with an extra kicker. Coding problems… but likely not the easy kind. So first, here’s some tunes to thrash the mind awake. Then read on for the coding challenge.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/thrashing-code-metal-monday-09-18-2017/unleash-the-archers.png&quot; alt=&quot;Unleash the Archers&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;First off is &lt;strong&gt;&lt;em&gt;Unleash the Archers&lt;/em&gt;&lt;/strong&gt;. I’ve posted them once before but they’ve ended up, deservingly, back on my playlist a lot. The band - ALL OF THE BAND - are amazing musicians.&lt;/p&gt;
+&lt;div class=&quot;image float-right&quot;&gt;
+  &lt;iframe src=&quot;https://open.spotify.com/embed/track/2SSjG3f820oZL5zd43RzTi&quot; width=&quot;300&quot; height=&quot;380&quot; frameborder=&quot;0&quot; allowtransparency=&quot;true&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Brittney Hayes, vocals one can’t touch on perfection. Notes are flawless, range is excellent, and she uses the spectrum.&lt;/li&gt;
+&lt;li&gt;Grant Truesdell - Tearing it up like a king’s guard.&lt;/li&gt;
+&lt;li&gt;Brayden Dyczkowski - Holding down the fort like a boss with Grant.&lt;/li&gt;
+&lt;li&gt;Scott Buchanan - Beating the skins of the dead.&lt;/li&gt;
+&lt;li&gt;Andrew Kingsley - Belting out the demon’s vocals, along with support of that guard!&lt;/li&gt;
+&lt;li&gt;Nikko Whitworth - Laying down esoteric bass thumping like nobody’s business.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;image float-left&quot;&gt;
+&lt;iframe src=&quot;https://open.spotify.com/embed/track/4OC44Jthj26IkmIPqbbvsZ&quot; width=&quot;300&quot; height=&quot;380&quot; frameborder=&quot;0&quot; allowtransparency=&quot;true&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;p&gt;The next band I’ve found myself jamming a number of times lately is &lt;strong&gt;&lt;em&gt;Toothgrinder&lt;/em&gt;&lt;/strong&gt;. Especially their new song &lt;em&gt;The Shadow&lt;/em&gt;. It’s got an interesting groover, knarly guitars, clean vocals, distorted vocals, clean psychedelic guitars, and ambient sounds. Yielding the Ashbury Park in New Jersey; Justin Matthews, Wills Weller, Jason Goss, Matt Arensdorf, and Johnuel Hasney lay down some unique music.&lt;/p&gt;
+&lt;p&gt;…and now for the challenge. If anybody has solutions, estimations of what ought to be the solution, or otherwise let me know &lt;a href=&quot;https://twitter.com&quot;&gt;@Adron&lt;/a&gt; I’ll offer up $100.00 of my own cash to the best solution that you blog or show me that I can blog about! Also, beer is on me if you’re victorious!&lt;/p&gt;
+&lt;h2 id=&quot;the-code-challenge&quot;&gt;The Code Challenge&lt;/h2&gt;
+&lt;p&gt;Given that roadways have three primary functions they’re used for: &lt;em&gt;active transport&lt;/em&gt;, &lt;em&gt;storage or parking&lt;/em&gt;, and &lt;em&gt;nil or no use&lt;/em&gt;. Solve for what percentage of time a roadway experiences each. Details are further elaborated on here:&lt;/p&gt;
+&lt;p&gt;Ask: Well what type of road is it, how many lanes, how many parking spots? What is the layout?&lt;/p&gt;
+&lt;p&gt;Answer: Here are three types of roads specifically to solve for in a first attempt. These are specified just to have a starting point.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Country roadway: Two lanes, no parking spaces, and no area to pull off on. Each lane has a capacity of ~800-1200 cars per hour. Traffic on the particular road is about 8000 per day.&lt;/li&gt;
+&lt;li&gt;City arterial, 6-lanes: Two lanes each way, one lane parking on each side. Each lane has a theoretical capacity of about ~700-1000 cars per hour (that lane changing brings down the number). Traffic usually is about 12,000 per day.&lt;/li&gt;
+&lt;li&gt;Neighborhood street, 3-lanes: Single travel lane in the center, one parking lane on either side. Ability to move about ~500 cars per hour but only experiences about ~1500 cars per day.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The challenge here far exceeds merely some algorithm to solve for X, but instead ponders what would need to be included to find transport use (driving or in movement), storage (parked car), and no car, no movement, and nobody parked anywhere to be seen (and empty road).&lt;/p&gt;
+&lt;p&gt;…there’s $100 bucks and beer on me if you’ve got answers and the respective code to solve this. Cheers, and good luck thrashing that code!&lt;/p&gt;
+</description>
+    </item>
     <item>
       <title>Technology Talks &amp; Upcoming Projects</title>
       <link>http://adron.github.io/articles/technology-and-upcoming-talks/</link>
@@ -4925,6 +4966,23 @@ In this talk I would be covering the following:&lt;/p&gt;
 </description>
     </item>
     <item>
+      <title>WebSockets Bring Light at the End of the Tunnel by Joel Lord</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</link>
+      <pubDate>Fri, 03 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-left&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/joel-lord.jpg&quot; alt=&quot;Joel Lord&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;As a Development Manager, Joel’s motivation and proven technical prowess makes him a key member of Spiria’s software development team. With a degree in computational astrophysics, his interests eventually made their way to software and Web design. Today, his knowledge of JavaScript lets him to support a variety of projects on both the front end and back end. As we move into the age of the Internet of Things, Joel is ready with his passion for programming node bots and experimenting with gadgets.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Joel is going to speak on Web Sockets and tunnels of light… or to describe it more specifically more and more, people seem to be obsessed with real-time data.  But what does real-time mean in the world of REST servers and one-way communication?  Most modern web applications are now either displaying a snapshot of data at a given time or use a polling mechanism to update series of data at a given interval.
+In this talk, you will learn about the power of WebSockets and how they can (and should!) be used in your modern web applications. In these 30 minutes, I will go through the process of building a Node server that can push data to multiple clients in real-time.  You will see how this can be easy using the socket.io library.&lt;/p&gt;
+</description>
+    </item>
+    <item>
       <title>MMOWAM - Build Server-less Games with a DSN by Josh Marinacci</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-josh-marinacci/</link>
       <pubDate>Fri, 03 Jun 2016 17:00:00 -0700</pubDate>
@@ -4959,23 +5017,6 @@ it can be.&lt;/p&gt;
 &lt;li&gt;show number of players&lt;/li&gt;
 &lt;li&gt;start when 4 players in? one player hit’s start? let all player see total count as well and status of the other players&lt;/li&gt;
 &lt;/ul&gt;
-</description>
-    </item>
-    <item>
-      <title>WebSockets Bring Light at the End of the Tunnel by Joel Lord</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</link>
-      <pubDate>Fri, 03 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</guid>
-      <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-left&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/joel-lord.jpg&quot; alt=&quot;Joel Lord&quot;&gt;
-&lt;/div&gt;
-
-&lt;p&gt;As a Development Manager, Joel’s motivation and proven technical prowess makes him a key member of Spiria’s software development team. With a degree in computational astrophysics, his interests eventually made their way to software and Web design. Today, his knowledge of JavaScript lets him to support a variety of projects on both the front end and back end. As we move into the age of the Internet of Things, Joel is ready with his passion for programming node bots and experimenting with gadgets.&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Joel is going to speak on Web Sockets and tunnels of light… or to describe it more specifically more and more, people seem to be obsessed with real-time data.  But what does real-time mean in the world of REST servers and one-way communication?  Most modern web applications are now either displaying a snapshot of data at a given time or use a polling mechanism to update series of data at a given interval.
-In this talk, you will learn about the power of WebSockets and how they can (and should!) be used in your modern web applications. In these 30 minutes, I will go through the process of building a Node server that can push data to multiple clients in real-time.  You will see how this can be easy using the socket.io library.&lt;/p&gt;
 </description>
     </item>
     <item>

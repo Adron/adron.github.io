@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="/css/style.min.css">
     <script src="/js/modernizr.js"></script>
   </head>
-  <body>
+  <body class="article-detail">
     <!--[if lt IE 8]>
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -67,8 +67,10 @@
             <div class="col-md-12">
               <!-- Page Info-->
               <div class="page-info page-info-simple">
-                <h1>Adron's Composite Code</h1>
-                <h2 class="description">Coder, Messenger, Recon, Infrastructure, Ops</h2>
+                <h1>Thrashing Code Metal Monday for Week of September 18th 2017</h1>
+                <p class="author">Written by <span class="author">Adron Hall</span> and published on <span>September, 18 of 2017.</span>
+                </p>
+                <div class="nav"><a href="/">« Home</a></div>
               </div>
               <!-- End Page Info-->
             </div>
@@ -83,86 +85,42 @@
             <div class="col-md-9">
               <div class="main-content">
                 <!-- Blog Page-->
-                <div class="blog">
-                  <div class="row"></div>
-                </div>
-                <div class="col-md-12 col-sm-12">
-                  <!-- Blog List-->
-                  <div class="blog-grid">
-                    <div class="row">
-                      <div class="col-md-12 col-sm-12">
-                        <h3 class="blog-grid-title"><a href="/articles/thrashing-code-metal-monday-03-13-2017/">Thrashing Code Metal Monday for Week of March 13th 2017</a></h3>
-                        <p class="blog-grid-excerpt"><p><img src="/articles/thrashing-code-metal-monday-03-13-2017/assemble-the-charriots-top.jpg" alt="Assemble the Charriots"></p>
-<p>Some completely new tunes I’ve been&nbsp;enjoying.</p>
-<iframe width="300" height="56" src="https://embed.spotify.com/follow/1/?uri=spotify%3Aartist%3A0dYCExAAfFpFvjYjgiEC0n&amp;size=detail&amp;theme=dark" scrolling="no" frameborder="0" style="border:none; overflow:hidden;" allowtransparency="true"></iframe>
-
-<iframe width="300" height="56" src="https://embed.spotify.com/follow/1/?uri=spotify%3Aartist%3A6MWE8Xn602R4dRfbmJaNRJ&amp;size=detail&amp;theme=dark" scrolling="no" frameborder="0" style="border:none; overflow:hidden;" allowtransparency="true"></iframe>
-
-<iframe width="300" height="56" src="https://embed.spotify.com/follow/1/?uri=spotify%3Aartist%3A1AdrYGYDz4oa9dvW2jfFrG&amp;size=detail&amp;theme=dark" scrolling="no" frameborder="0" style="border:none; overflow:hidden;" allowtransparency="true"></iframe>
-
-<p>
-                          <p class="more"><a href="/articles/thrashing-code-metal-monday-03-13-2017/">more</a></p>
-                        </p>
-                        <div class="blog-grid-meta"><span class="blog-grid-date">13. March 2017</span></div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End of Blog List-->
-                </div>
-                <div class="col-md-12 col-sm-12">
-                  <!-- Blog List-->
-                  <div class="blog-grid">
-                    <div class="row">
-                      <div class="col-md-12 col-sm-12">
-                        <h3 class="blog-grid-title"><a href="/articles/cooking-golang/">A Go UUID Solution - Cooking Go - Issue 001</a></h3>
-                        <p class="blog-grid-excerpt"><div class="image float-right">
-    <img src="/articles/cooking-golang/golang-mascot.png" alt="Go Mascot">
+                <article class="article">
+                  <section class="content"><p>Ok, previously I’d had a few Metal Monday posts. I’m officially kicking that off again with an extra kicker. Coding problems… but likely not the easy kind. So first, here’s some tunes to thrash the mind awake. Then read on for the coding&nbsp;challenge.</p>
+<p><img src="/articles/thrashing-code-metal-monday-09-18-2017/unleash-the-archers.png" alt="Unleash the Archers"></p>
+<p><span class="more"></span></p>
+<p>First off is <strong><em>Unleash the Archers</em></strong>. I’ve posted them once before but they’ve ended up, deservingly, back on my playlist a lot. The band - <span class="caps">ALL</span> OF THE BAND - are amazing&nbsp;musicians.</p>
+<div class="image float-right">
+  <iframe src="https://open.spotify.com/embed/track/2SSjG3f820oZL5zd43RzTi" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
 </div>
 
-<p>Want a <span class="caps">UUID</span> generator for your Go code? It’s likely you’ll need one sometime. Well here’s a short code snippet and a review of one of the available UUID libraries&nbsp;available.</p>
-<p>The library is avaliable at <a href="https://github.com/satori/go.uuid">https://github.com/satori/go.uuid</a>.</p>
-<p>With test coverage this library supports the following <span class="caps">UUID</span> types. I’ll elaborate on what each of these types are after a code snippet or&nbsp;two.</p>
 <ul>
-<li>Version 1, based on timestamp and <span class="caps">MAC</span> address (RFC&nbsp;4122)</li>
-<li>Version 2, based on timestamp, <span class="caps">MAC</span> address and POSIX UID/GID (DCE&nbsp;1.1)</li>
-<li>Version 3, based on <span class="caps">MD5</span> hashing (RFC&nbsp;4122)</li>
-<li>Version 4, based on random numbers (<span class="caps">RFC</span>&nbsp;4122)</li>
-<li>Version 5, based on <span class="caps">SHA</span>-1 hashing (RFC&nbsp;4122)</li>
+<li>Brittney Hayes, vocals one can’t touch on perfection. Notes are flawless, range is excellent, and she uses the&nbsp;spectrum.</li>
+<li>Grant Truesdell - Tearing it up like a king’s&nbsp;guard.</li>
+<li>Brayden Dyczkowski - Holding down the fort like a boss with&nbsp;Grant.</li>
+<li>Scott Buchanan - Beating the skins of the&nbsp;dead.</li>
+<li>Andrew Kingsley - Belting out the demon’s vocals, along with support of that&nbsp;guard!</li>
+<li>Nikko Whitworth - Laying down esoteric bass thumping like nobody’s&nbsp;business.</li>
 </ul>
-<p>First step. Get the&nbsp;library.</p>
-<pre><code class="lang-shell-script">go get github.com/satori/go.uuid
-</code></pre>
-<p>
-                          <p class="more"><a href="/articles/cooking-golang/">more</a></p>
-                        </p>
-                        <div class="blog-grid-meta"><span class="blog-grid-date">12. March 2017</span></div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End of Blog List-->
-                </div>
-                <div class="col-md-12 col-sm-12">
-                  <!-- Blog List-->
-                  <div class="blog-grid">
-                    <div class="row">
-                      <div class="col-md-12 col-sm-12">
-                        <h3 class="blog-grid-title"><a href="/articles/thrashing-code-metal-monday-03-07-2017/">Thrashing Code Metal Monday for Week of March 6th 2017, on Tuesday the 7th!</a></h3>
-                        <p class="blog-grid-excerpt"><p>Obviously it isn’t Monday. But sometimes you go to a show on Sunday and you’re recovering on Monday and writing a blog entry just isn’t a priority. But in that vein, here’s the line up for the Bound by the Road Tour I dived into the pit for this last&nbsp;Sunday!</p>
-<p><img src="/articles/thrashing-code-metal-monday-03-07-2017/dd.jpg" alt="Devil Driver"></p>
-<p>K’atun &gt; <a href="https://www.facebook.com/pg/katunband">https://www.facebook.com/pg/katunband</a></p>
-<iframe width="300" height="56" src="https://embed.spotify.com/follow/1/?uri=spotify%3Aartist%3A21XgrFZKhmE6A7U1Om95eU&amp;size=detail&amp;theme=dark" scrolling="no" frameborder="0" style="border:none; overflow:hidden;" allowtransparency="true"></iframe>
+<div class="image float-left">
+<iframe src="https://open.spotify.com/embed/track/4OC44Jthj26IkmIPqbbvsZ" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
+</div>
 
-<iframe width="300" height="56" src="https://embed.spotify.com/follow/1/?uri=spotify%3Aartist%3A1CToivUVH4hS9CXlYOSFgb&amp;size=detail&amp;theme=dark" scrolling="no" frameborder="0" style="border:none; overflow:hidden;" allowtransparency="true"></iframe>
-
-<p>
-                          <p class="more"><a href="/articles/thrashing-code-metal-monday-03-07-2017/">more</a></p>
-                        </p>
-                        <div class="blog-grid-meta"><span class="blog-grid-date">07. March 2017</span></div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End of Blog List-->
-                </div>
+<p>The next band I’ve found myself jamming a number of times lately is <strong><em>Toothgrinder</em></strong>. Especially their new song <em>The Shadow</em>. It’s got an interesting groover, knarly guitars, clean vocals, distorted vocals, clean psychedelic guitars, and ambient sounds. Yielding the Ashbury Park in New Jersey; Justin Matthews, Wills Weller, Jason Goss, Matt Arensdorf, and Johnuel Hasney lay down some unique&nbsp;music.</p>
+<p>…and now for the challenge. If anybody has solutions, estimations of what ought to be the solution, or otherwise let me know <a href="https://twitter.com">@Adron</a> I’ll offer up $100.00 of my own cash to the best solution that you blog or show me that I can blog about! Also, beer is on me if you’re&nbsp;victorious!</p>
+<h2 id="the-code-challenge">The Code&nbsp;Challenge</h2>
+<p>Given that roadways have three primary functions they’re used for: <em>active transport</em>, <em>storage or parking</em>, and <em>nil or no use</em>. Solve for what percentage of time a roadway experiences each. Details are further elaborated on&nbsp;here:</p>
+<p>Ask: Well what type of road is it, how many lanes, how many parking spots? What is the&nbsp;layout?</p>
+<p>Answer: Here are three types of roads specifically to solve for in a first attempt. These are specified just to have a starting&nbsp;point.</p>
+<ul>
+<li>Country roadway: Two lanes, no parking spaces, and no area to pull off on. Each lane has a capacity of ~800-1200 cars per hour. Traffic on the particular road is about 8000 per&nbsp;day.</li>
+<li>City arterial, 6-lanes: Two lanes each way, one lane parking on each side. Each lane has a theoretical capacity of about ~700-1000 cars per hour (that lane changing brings down the number). Traffic usually is about 12,000 per&nbsp;day.</li>
+<li>Neighborhood street, 3-lanes: Single travel lane in the center, one parking lane on either side. Ability to move about ~500 cars per hour but only experiences about ~1500 cars per&nbsp;day.</li>
+</ul>
+<p>The challenge here far exceeds merely some algorithm to solve for X, but instead ponders what would need to be included to find transport use (driving or in movement), storage (parked car), and no car, no movement, and nobody parked anywhere to be seen (and empty&nbsp;road).</p>
+<p>…there’s $100 bucks and beer on me if you’ve got answers and the respective code to solve this. Cheers, and good luck thrashing that&nbsp;code!</p>
+</section>
+                </article>
                 <!-- End of Blog Page-->
               </div>
             </div>
@@ -252,8 +210,7 @@
             </div>
           </div>
         </div>
-        <div class="nav"><a href="/page/4/">« Newer</a>&nbsp;<a href="/page/6/">Previous »</a>
-        </div>
+        <div class="nav"><a href="/">« Home</a></div>
       </div>
     </div>
     <script src="/js/all.js"></script>
