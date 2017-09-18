@@ -1,7 +1,7 @@
 ---
 title: what makes good software engineers
 author: Adron Hall
-date: 2017-09-16 19:59:42
+date: 2017-09-18 08:17:33
 template: article.jade
 ---
 <span class="more"></span>
