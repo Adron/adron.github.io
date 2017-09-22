@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="/css/style.min.css">
     <script src="/js/modernizr.js"></script>
   </head>
-  <body>
+  <body class="article-detail">
     <!--[if lt IE 8]>
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -67,8 +67,10 @@
             <div class="col-md-12">
               <!-- Page Info-->
               <div class="page-info page-info-simple">
-                <h1>Adron's Composite Code</h1>
-                <h2 class="description">Coder, Messenger, Recon, Infrastructure, Ops</h2>
+                <h1>Quick Start Connections With Terraform and Kubernetes</h1>
+                <p class="author">Written by <span class="author">Adron Hall</span> and published on <span>September, 22 of 2017.</span>
+                </p>
+                <div class="nav"><a href="/">« Home</a></div>
               </div>
               <!-- End Page Info-->
             </div>
@@ -83,68 +85,59 @@
             <div class="col-md-9">
               <div class="main-content">
                 <!-- Blog Page-->
-                <div class="blog">
-                  <div class="row"></div>
-                </div>
-                <div class="col-md-12 col-sm-12">
-                  <!-- Blog List-->
-                  <div class="blog-grid">
-                    <div class="row">
-                      <div class="col-md-12 col-sm-12">
-                        <h3 class="blog-grid-title"><a href="/articles/want-a-golang-service/">I Want a Go Service</a></h3>
-                        <p class="blog-grid-excerpt"><p>In the last post, I put together a quick Go <span class="caps">CLI</span> that took some flags and acted upon each of the flags. So today, instead of a Bowing 777 I’m aboard Amtrak Cascade’s service to Portland (from Seattle) aboard a <em>Tren Articulado Ligero Goicoechea Oriol</em>, or <em>Talgo</em>&nbsp;Train.</p>
-<div class="image float-right">
-    <img src="/articles/want-a-golang-service/american-talgo.jpg" alt="Amtrak Cascades Talgo">
-</div>
-
-<p>Traveling in comfort is an unbelievably great way to get some coding done. It’s easy to disconnect form interruptions (albeit there is internet access, but just enough, not to much) and just get some coding done. <strong>Mission:</strong> <em>Put together a service that has a basic response for a request, with some message. There needs to be a root response of the service, but also a response from one or more <span class="caps">URI</span> end&nbsp;points.</em></p>
-<p>
-                          <p class="more"><a href="/articles/want-a-golang-service/">more</a></p>
-                        </p>
-                        <div class="blog-grid-meta"><span class="blog-grid-date">01. November 2016</span></div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End of Blog List-->
-                </div>
-                <div class="col-md-12 col-sm-12">
-                  <!-- Blog List-->
-                  <div class="blog-grid">
-                    <div class="row">
-                      <div class="col-md-12 col-sm-12">
-                        <h3 class="blog-grid-title"><a href="/articles/want-a-golang-cli/">I Want a Go CLI</a></h3>
-                        <p class="blog-grid-excerpt"><div class="image float-left">
-    <img src="/articles/want-a-golang-cli/united-airlines-boeing-777.jpg" alt="United Airlines Boeing 777">
-</div>
-
-<p>I sat in seat 20B on United Airlines Flight <span class="caps">UA</span> 949, enjoying the roominess of the Boeing 777 in service on this route between London (LHR) and San Francisco (SFO). At this time I decided it was time to hack together a <a href="https://golang.org/">Go</a> <a href="https://en.wikipedia.org/wiki/Command-line_interface"><span class="caps">CLI</span></a>&nbsp;Project.</p>
-<p><strong>Mission:</strong> Create a Command Line Interface (<span class="caps">CLI</span>) that takes some flags, basic user input, and prints out&nbsp;something.</p>
-<p>
-                          <p class="more"><a href="/articles/want-a-golang-cli/">more</a></p>
-                        </p>
-                        <div class="blog-grid-meta"><span class="blog-grid-date">25. October 2016</span></div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End of Blog List-->
-                </div>
-                <div class="col-md-12 col-sm-12">
-                  <!-- Blog List-->
-                  <div class="blog-grid">
-                    <div class="row">
-                      <div class="col-md-12 col-sm-12">
-                        <h3 class="blog-grid-title"><a href="/articles/devops-obliviousness-site-reliability-wtf/">Marketing Obliviousness of DevOps, WTF is Site Reliability</a></h3>
-                        <p class="blog-grid-excerpt"><p>Recently I started researching what people think DevOps means. What it was originally intended to mean and how ridiculous it is to actually see it in a job title. On the flip of that, since one of my titles was actually “Site Reliability Engineer” I started looking into what is perceived to be the roles of that job. This article is my findings, in full unconstrained wording, about the absurdity of one as a title and the specifics of the&nbsp;other.</p>
-<p><img src="/articles/devops-obliviousness-site-reliability-wtf/syntax%20error.gif" alt="Syntax Error Explosion"></p>
-<p>
-                          <p class="more"><a href="/articles/devops-obliviousness-site-reliability-wtf/">more</a></p>
-                        </p>
-                        <div class="blog-grid-meta"><span class="blog-grid-date">24. October 2016</span></div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End of Blog List-->
-                </div>
+                <article class="article">
+                  <section class="content"><p>Friday is here… a quick sitrep on my practices around Terraform connections with Azure, <span class="caps">AWS</span>, and GCP. In the past week I’ve been working on getting Terraform deploying a clean Kubernetes Cluster, then getting connected to that cluster and getting some resources deployed to the cluster. This article I’m just going to cover the practices I’m using to secure connections with the respective cloud providers, but more is coming&nbsp;soon.</p>
+<p><span class="more"></span></p>
+<h1 id="kubernetes-and-terraform">Kubernetes and&nbsp;Terraform</h1>
+<p>I’ve used Azure and Google Compute Platform (<span class="caps">GCP</span>) to accomplish the initial Kubernetes Cluster deployments. The following is the path I followed to get each cluster running on the respective&nbsp;platform.</p>
+<p>Before diving directly into the deployments I’ve setup with Terraform, I’ll cover a little of how I’ve setup Terraform to authenticate and such. First, Azure and then&nbsp;<span class="caps">GCP</span>.</p>
+<h3 id="azure-terraform-setup">Azure Terraform&nbsp;Setup</h3>
+<p>My Terraform configuration file for connections with Azure looks like&nbsp;this.</p>
+<pre><code>provider &quot;azurerm&quot; {
+  subscription_id = &quot;${var.subscription_id}&quot;
+  client_id       = &quot;${var.client_id}&quot;
+  client_secret   = &quot;${var.client_secret}&quot;
+  tenant_id       = &quot;${var.tenant_id}&quot;
+}
+</code></pre><p>What I’ve done is setup a variable for each of the connection requirements. These variables are then set via environment variables. The environment variables I set via my ~/.bash_profile or ~/.bashrc file depending on if I’m working on the System76 Ubuntu machine, Mac Book Pros, or iMacs I regularly work&nbsp;on.</p>
+<pre><code>export TF_VAR_subscription_id=&quot;90a9b1d7-1529-4ec4-abd4-e2ad84bfadf3&quot;
+export TF_VAR_client_id=&quot;e705e58a-8a2b-4b87-b69a-c3eee633b8e6&quot;
+export TF_VAR_client_secret=&quot;c4f13f94-4d1f-42c4-bfd5-cd55a3620d1b&quot;
+export TF_VAR_tenant_id=&quot;7325bc0f-1842-4126-8109-7c12773e7d30&quot;
+</code></pre><p>(Don’t worry, those are fakey UUIDs, but they’re the same&nbsp;type)</p>
+<p>Once those are setup this way, I can easily connect to the Azure account without having any of my UUIDs (security IDs?, Key IDs?, whatever they’re called) sitting in any actual repositories. It’s all just&nbsp;variables.</p>
+<p>The way Terraform works with environment variables is pretty straight forward, yet not intuitive without some solid <a href="https://en.wikipedia.org/wiki/RTFM"><span class="caps">RTFM</span></a> time. The short description is Terraform picks up any prepended environment variables starting with <code>TF_VAR</code> and using the name after that as the variable name. Thus, above, <code>TF_VAR_subscription_id</code> become simply <code>subscription_id</code> in the example&nbsp;above.</p>
+<p>It’s also important to note that Terraform pulls these environment variables in without the need for them to be declared in configuration. This can be somewhat confusing since other variables need declared before use regardless of being passed in at execution time or assigned in a <em>tfvars</em>&nbsp;file.</p>
+<h3 id="gcp-terraform-setup"><span class="caps">GCP</span> Terraform&nbsp;Setup</h3>
+<p>For <span class="caps">GCP</span> the connection I set it up using the <em>account.json</em> file. What I do is place the <em>account.json</em> file in a parallel <em>security</em> directory and simply reference it in the connection. Again, nothing with security information goes into the repository. The configuration looks like&nbsp;this.</p>
+<pre><code>provider &quot;google&quot; {
+  credentials = &quot;${file(&quot;../../secrets/account.json&quot;)}&quot;
+  project     = &quot;mythrashingawesomeprojectname&quot;
+  region      = &quot;us-west1&quot;
+}
+</code></pre><p>With <span class="caps">GCP</span> there are not any magical environment variables. This is something I actually like, which makes it a little easier to make it all inclusive within a repository and a security package that I can securely move from machine to machine, instead of needing to re-implement more junk loading as environment variables. Those ~/.bash_profile and ~/.bashrc files get messy enough without additional development environment specific repository specific&nbsp;variables!</p>
+<h3 id="aws-setup"><span class="caps">AWS</span>&nbsp;Setup</h3>
+<p><span class="caps">AWS</span> is absurdly simple, yet it requires you’ve setup all the default connection and configuration for the AWS CLI. The only connection info for AWS is as shown&nbsp;below.</p>
+<pre><code>provider &quot;aws&quot; {}
+</code></pre><p>In the end, with all three of these added my ~/.bashrc and ~/.bash_profile files look like&nbsp;this.</p>
+<pre><code># Azure Variables
+export TF_VAR_subscription_id=&quot;90a9b1d7-1529-4ec4-abd4-e2ad84bfadf3&quot;
+export TF_VAR_client_id=&quot;e705e58a-8a2b-4b87-b69a-c3eee633b8e6&quot;
+export TF_VAR_client_secret=&quot;c4f13f94-4d1f-42c4-bfd5-cd55a3620d1b&quot;
+export TF_VAR_tenant_id=&quot;7325bc0f-1842-4126-8109-7c12773e7d30&quot;
+# AWS Variables
+export TF_VAR_aws_region=&quot;us-west-2&quot;
+</code></pre><p>Note the only <span class="caps">AWS</span> variable I specifically add, is the region, the CLI adds a bunch of others or sets/assumes environment defaults in the <code>~/.aws/</code> directory. It also sets the region, but I’ve found <em>some</em> tooling doesn’t seem to use the set one, so I add the variable here so Terraform doesn’t get confused and has it set&nbsp;specifically.</p>
+<p>So that’s the way I generally find myself setting up connections for Terraform and <span class="caps">AWS</span>, Google Cloud Platform, and Azure. If you’ve got suggestions, questions, or thoughts on better ways to do this I’d love to hear about them. Ping me on Twitter <a href="https://twitter.com/Adron">@Adron</a> and we’ll&nbsp;discuss.</p>
+<p><strong>References:</strong></p>
+<ul>
+<li>My current <a href="https://github.com/Adron/blue-world-making">working repo</a> of config <span class="amp">&amp;</span> code related to <a href="/articles/technology-and-upcoming-talks/">upcoming talks</a> and their respective&nbsp;examples.</li>
+<li><a href="https://www.terraform.io/docs/providers/aws/index.html">Terraform <span class="caps">AWS</span> Provider&nbsp;Documentation</a></li>
+<li><a href="https://www.terraform.io/docs/providers/google/index.html">Terraform <span class="caps">GCP</span> Provider&nbsp;Documentation</a></li>
+<li><a href="https://www.terraform.io/docs/providers/azurerm/index.html">Terraform Azure Provider&nbsp;Documentation</a></li>
+</ul>
+</section>
+                </article>
                 <!-- End of Blog Page-->
               </div>
             </div>
@@ -234,8 +227,7 @@
             </div>
           </div>
         </div>
-        <div class="nav"><a href="/page/11/">« Newer</a>&nbsp;<a href="/page/13/">Previous »</a>
-        </div>
+        <div class="nav"><a href="/">« Home</a></div>
       </div>
     </div>
     <script src="/js/all.js"></script>
