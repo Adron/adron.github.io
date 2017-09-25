@@ -11,10 +11,7 @@ This page links to my history of speaking via presentations, workshops, or other
 * [Infrastructure as Code and Containers](/talks/infrastructure-code-containers/) on October 3rd, 2017.  RSVP @ [Meetup](https://www.meetup.com/mscloud/events/243273397/).
 * [The Joy of Coding](/talks/joy-of-coding/) on October 5th, 2017. RSVP @ [Meetup](https://www.meetup.com/WVSE-meetup/events/241117362/).
 * [Inception, Workflow, to $Deployed$ Removing Chaos and Noise From Your Dev Stack](/talks/inception-workflow-deployed/) on November 7th, 2017. RSVP @ [Meetup](https://www.meetup.com/NET-Developers-Association-Westside/events/242573016/).
-
-***Pending***
-* [CI/CD in 30 Minutes or Less](/talks/cicd-in-30-minutes-or-less) - Walk through of building a greenfield CI/CD Environment from scratch in the cloud.
-
+* [Automated Environment Spinup & CI/CD Practices: Inception, Workflow, Deployment](/talks/cicd-in-30-minutes-or-less/) on January 18th, 2017 & [Meetup](https://www.meetup.com/CloudTalk/events/243522258/).
 
 **Past Presentations**
 
