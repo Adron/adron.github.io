@@ -5,9 +5,40 @@
     <atom:link href="http://adron.github.io/feed.xml" rel="self" type="application/rss+xml"></atom:link>
     <link>http://adron.github.io</link>
     <description>Coder, Messenger, Recon, Infrastructure, Ops</description>
-    <pubDate>Fri, 22 Sep 2017 03:40:19 -0700</pubDate>
+    <pubDate>Mon, 25 Sep 2017 14:21:50 -0700</pubDate>
     <generator>Wintersmith - https://github.com/jnordberg/wintersmith</generator>
     <language>en</language>
+    <item>
+      <title>Thrashing Code Metal Monday for Week of September 25th 2017</title>
+      <link>http://adron.github.io/articles/thrashing-code-metal-monday-09-25-2017/</link>
+      <pubDate>Mon, 25 Sep 2017 14:21:50 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/thrashing-code-metal-monday-09-25-2017/</guid>
+      <author></author>
+      <description>&lt;p&gt;Start off today with a little Gray Matter Mechanics.&lt;/p&gt;
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/tu-NvEec8y8&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;p&gt;So here’s the programming challenge. Determine what year, pending we continue at the rate we’re building clean tech energy of solar, wind, and hydro, that we as a planet could be 100% clean energy.&lt;/p&gt;
+&lt;p&gt;Here’s some starting points.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Solar_cell_efficiency&quot;&gt;https://en.wikipedia.org/wiki/Solar_cell_efficiency&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.sciencealert.com/researchers-have-broken-the-record-for-solar-panel-efficiency-again&quot;&gt;https://www.sciencealert.com/researchers-have-broken-the-record-for-solar-panel-efficiency-again&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Energy_development&quot;&gt;https://en.wikipedia.org/wiki/Energy_development&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.independent.co.uk/environment/nuclear-power-solar-wind-provide-more-electricity-gas-coal-combined-first-time-renewable-energy-a7778541.html&quot;&gt;http://www.independent.co.uk/environment/nuclear-power-solar-wind-provide-more-electricity-gas-coal-combined-first-time-renewable-energy-a7778541.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.eia.gov/energyexplained/?page=us_energy_home&quot;&gt;https://www.eia.gov/energyexplained/?page=us_energy_home&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;More problems next week, for now, it’s time to all hail science!&lt;/p&gt;
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/ONPMWHP8AZ4&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;p&gt;After all that I’d definitely say I’m a proponent of sentience too.&lt;/p&gt;
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/xixI-q5wFpg&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;p&gt;One more tune, an oldy but goody, on such a great topic! &lt;em&gt;The God Particle&lt;/em&gt; is intense, which I’ve dug for a while now.&lt;/p&gt;
+&lt;iframe src=&quot;https://embed.spotify.com/?uri=spotify%3Atrack%3A6Z6QU3AGHrktl5YaJ7aeQn&quot; width=&quot;300&quot; height=&quot;380&quot; frameborder=&quot;0&quot; allowtransparency=&quot;true&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;Have a blasted good Monday night thrashing some code!&lt;/p&gt;
+</description>
+    </item>
     <item>
       <title>Quick Start Connections With Terraform and Kubernetes</title>
       <link>http://adron.github.io/articles/quick-start-terraform-kubernetes/</link>
@@ -1842,17 +1873,17 @@ n
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;I then ran &lt;code&gt;glide get github.com/icrowley/fake&lt;/code&gt; to get the fake library I would need. The &lt;code&gt;glide.yaml&lt;/code&gt; and &lt;code&gt;glide.lock&lt;/code&gt; looked like this after I pulled in this library.&lt;/p&gt;
 &lt;p&gt;glide.yaml&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;lang-yaml&quot;&gt;&lt;span class=&quot;attr&quot;&gt;package:&lt;/span&gt; github.com/adron/datadiluvium
+&lt;pre&gt;&lt;code class=&quot;lang-yaml&quot;&gt;&lt;span class=&quot;attr&quot;&gt;package:&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;github.com/adron/datadiluvium&lt;/span&gt;
 &lt;span class=&quot;attr&quot;&gt;import:&lt;/span&gt;
-&lt;span class=&quot;attr&quot;&gt;- package:&lt;/span&gt; github.com/icrowley/fake
+&lt;span class=&quot;attr&quot;&gt;- package:&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;github.com/icrowley/fake&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;glide.lock&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;lang-yaml&quot;&gt;&lt;span class=&quot;attr&quot;&gt;hash:&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;fd78ca8369405d5998e65ea4cfce94c6599e878c36fec39b85fd385552392d7
-&lt;span class=&quot;attr&quot;&gt;updated:&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;2017&lt;/span&gt;&lt;span class=&quot;bullet&quot;&gt;-01&lt;/span&gt;&lt;span class=&quot;bullet&quot;&gt;-09&lt;/span&gt;T01:&lt;span class=&quot;number&quot;&gt;04&lt;/span&gt;:&lt;span class=&quot;number&quot;&gt;18.134993358&lt;/span&gt;&lt;span class=&quot;bullet&quot;&gt;-08&lt;/span&gt;:&lt;span class=&quot;number&quot;&gt;00&lt;/span&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-yaml&quot;&gt;&lt;span class=&quot;attr&quot;&gt;hash:&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;string&quot;&gt;fd78ca8369405d5998e65ea4cfce94c6599e878c36fec39b85fd385552392d7&lt;/span&gt;
+&lt;span class=&quot;attr&quot;&gt;updated:&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;2017&lt;/span&gt;&lt;span class=&quot;bullet&quot;&gt;-01&lt;/span&gt;&lt;span class=&quot;bullet&quot;&gt;-09&lt;/span&gt;&lt;span class=&quot;attr&quot;&gt;T01:04:18.134993358-08:00&lt;/span&gt;
 &lt;span class=&quot;attr&quot;&gt;imports:&lt;/span&gt;
-&lt;span class=&quot;attr&quot;&gt;- name:&lt;/span&gt; github.com/icrowley/fake
-&lt;span class=&quot;attr&quot;&gt;  version:&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;84&lt;/span&gt;bff6d01560fb0b5a396ba29534e93fd00d09c6
-&lt;span class=&quot;attr&quot;&gt;testImports:&lt;/span&gt; []
+&lt;span class=&quot;attr&quot;&gt;- name:&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;github.com/icrowley/fake&lt;/span&gt;
+&lt;span class=&quot;attr&quot;&gt;  version:&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;84&lt;/span&gt;&lt;span class=&quot;string&quot;&gt;bff6d01560fb0b5a396ba29534e93fd00d09c6&lt;/span&gt;
+&lt;span class=&quot;attr&quot;&gt;testImports:&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;[]&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;If you’re curious about the hash, and related properties of this file check out the glide &lt;a href=&quot;https://github.com/Masterminds/glide/blob/master/README.md&quot;&gt;README.md&lt;/a&gt;, it’s useful in understanding what’s stored here.&lt;/p&gt;
 &lt;p&gt;At this point, it was time to actually sling some Go code! At this point, I do indeed mean sling some too. Splat!&lt;/p&gt;
@@ -4920,27 +4951,6 @@ export TF_VAR_password=&amp;quot;someSecretPassword&amp;quot;
 </description>
     </item>
     <item>
-      <title>How to Electron by Blaine Schmeisser</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-blaine-schmeisser/</link>
-      <pubDate>Sun, 05 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-blaine-schmeisser/</guid>
-      <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-blaine-schmeisser/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-left&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-blaine-schmeisser/blainesch.jpg&quot; alt=&quot;Blaine Schmeisser&quot;&gt;
-&lt;/div&gt;
-
-&lt;p&gt;I’m happy to introduce Blaine Schmeisser. He’s a recent Portland transplant currently working as a Senior Software Engineer at New Relic. He has a passion for building and shipping software and an advocate for pair programming. Outside of tech, Blaine spends his free time with his dog and maintains a simplistic, eco-friendly lifestyle.&lt;/p&gt;
-&lt;p&gt;Blaine’s “How to Electron” answers questions you have about building user interface applications with JavaScript. Have you ever wanted to build desktop apps with web technology you already know? If you’ve never heard of Electron or just want to learn more about it, this talk will cover what Electron is and how to utilize it to create powerful tools like Atom and Slack. You will learn the history of Electron, how to get started, the trade-offs of picking various boiler plates, and the unique Electron specific APIs that are vital to being a Electron developer.&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;GitHub: &lt;a href=&quot;https://github.com/blainesch&quot;&gt;https://github.com/blainesch&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Twitter: &lt;a href=&quot;https://twitter.com/blainesch&quot;&gt;https://twitter.com/blainesch&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Website: &lt;a href=&quot;http://blainesch.com&quot;&gt;http://blainesch.com&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-    </item>
-    <item>
       <title>Demystifying TypeScript Decorators by James Churchill</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-james-churchill/</link>
       <pubDate>Sun, 05 Jun 2016 17:00:00 -0700</pubDate>
@@ -4960,6 +4970,27 @@ export TF_VAR_password=&amp;quot;someSecretPassword&amp;quot;
 &lt;li&gt;Blog: &lt;a href=&quot;http://smashdev.com&quot;&gt;http://smashdev.com&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Github: &lt;a href=&quot;http://github.com/smashdevcode&quot;&gt;http://github.com/smashdevcode&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Twitter: &lt;a href=&quot;http://twitter.com/SmashDev&quot;&gt;http://twitter.com/SmashDev&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    <item>
+      <title>How to Electron by Blaine Schmeisser</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-blaine-schmeisser/</link>
+      <pubDate>Sun, 05 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-blaine-schmeisser/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-blaine-schmeisser/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-left&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-blaine-schmeisser/blainesch.jpg&quot; alt=&quot;Blaine Schmeisser&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;I’m happy to introduce Blaine Schmeisser. He’s a recent Portland transplant currently working as a Senior Software Engineer at New Relic. He has a passion for building and shipping software and an advocate for pair programming. Outside of tech, Blaine spends his free time with his dog and maintains a simplistic, eco-friendly lifestyle.&lt;/p&gt;
+&lt;p&gt;Blaine’s “How to Electron” answers questions you have about building user interface applications with JavaScript. Have you ever wanted to build desktop apps with web technology you already know? If you’ve never heard of Electron or just want to learn more about it, this talk will cover what Electron is and how to utilize it to create powerful tools like Atom and Slack. You will learn the history of Electron, how to get started, the trade-offs of picking various boiler plates, and the unique Electron specific APIs that are vital to being a Electron developer.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;GitHub: &lt;a href=&quot;https://github.com/blainesch&quot;&gt;https://github.com/blainesch&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Twitter: &lt;a href=&quot;https://twitter.com/blainesch&quot;&gt;https://twitter.com/blainesch&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Website: &lt;a href=&quot;http://blainesch.com&quot;&gt;http://blainesch.com&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>
@@ -5122,23 +5153,6 @@ it can be.&lt;/p&gt;
 </description>
     </item>
     <item>
-      <title>The House Is Not On Fire - Building a home automation robot with Arduino, Raspberry Pi and Node.js by Artur Paikin</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</link>
-      <pubDate>Wed, 01 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</guid>
-      <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-right&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/art-stida.jpg&quot; alt=&quot;Artur Paikin&quot;&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Artur describes himself as, “I’m a web developer and traveler. I write stories about my adventures in Russian and English on my site: &lt;a href=&quot;http://arturpaikin.com&quot;&gt;http://arturpaikin.com&lt;/a&gt; and run a small technology cooperative called &lt;a href=&quot;http://unebaguette.com&quot;&gt;Baguette&lt;/a&gt;, where I work on cool projects, currently building an ambitious next generation file uploader with &lt;a href=&quot;https://transloadit.com/&quot;&gt;Transloadit&lt;/a&gt;. I ride a &lt;a href=&quot;https://www.instagram.com/p/xC0qC2SSYb&quot;&gt;foldable bicycle&lt;/a&gt;, &lt;a href=&quot;http://unebaguette.com/web-course/&quot;&gt;teach&lt;/a&gt; web development and sometimes &lt;a href=&quot;https://www.instagram.com/p/4_6LO8ySVL/&quot;&gt;garden&lt;/a&gt; on the balcony.”&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Artur has built an open source home automation system called &lt;a href=&quot;https://github.com/arturi/kotihome&quot;&gt;Koti Home&lt;/a&gt; (Koti means home in Finnish language). It’s powered by an Arduino connected to Raspberry Pi, MQTT protocol for messaging, Node.js on the client and server, web sockets. You can interact with Koti robot via a React (like the cool kids do) control panel, Telegram Chat Bot and even your own voice.&lt;/p&gt;
-&lt;p&gt;Arthur will talk about how he’s turned this project into reality — the tech he used and the challenges he faced. From a blinking LED to a voice controlled home automation robot.&lt;/p&gt;
-</description>
-    </item>
-    <item>
       <title>Code First Docs How we Threw Out The Book &amp; Put Code First With Twilio Documentation by Jarod Reyes</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-jarod-reyes/</link>
       <pubDate>Wed, 01 Jun 2016 17:00:00 -0700</pubDate>
@@ -5160,6 +5174,23 @@ it can be.&lt;/p&gt;
 &lt;li&gt;Twitter: &lt;a href=&quot;https://twitter.com/jreyesdev&quot;&gt;@jreyesdev&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Github: &lt;a href=&quot;https://github.com/jarodreyes&quot;&gt;github.com/jarodreyes&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+</description>
+    </item>
+    <item>
+      <title>The House Is Not On Fire - Building a home automation robot with Arduino, Raspberry Pi and Node.js by Artur Paikin</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</link>
+      <pubDate>Wed, 01 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-right&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/art-stida.jpg&quot; alt=&quot;Artur Paikin&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Artur describes himself as, “I’m a web developer and traveler. I write stories about my adventures in Russian and English on my site: &lt;a href=&quot;http://arturpaikin.com&quot;&gt;http://arturpaikin.com&lt;/a&gt; and run a small technology cooperative called &lt;a href=&quot;http://unebaguette.com&quot;&gt;Baguette&lt;/a&gt;, where I work on cool projects, currently building an ambitious next generation file uploader with &lt;a href=&quot;https://transloadit.com/&quot;&gt;Transloadit&lt;/a&gt;. I ride a &lt;a href=&quot;https://www.instagram.com/p/xC0qC2SSYb&quot;&gt;foldable bicycle&lt;/a&gt;, &lt;a href=&quot;http://unebaguette.com/web-course/&quot;&gt;teach&lt;/a&gt; web development and sometimes &lt;a href=&quot;https://www.instagram.com/p/4_6LO8ySVL/&quot;&gt;garden&lt;/a&gt; on the balcony.”&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Artur has built an open source home automation system called &lt;a href=&quot;https://github.com/arturi/kotihome&quot;&gt;Koti Home&lt;/a&gt; (Koti means home in Finnish language). It’s powered by an Arduino connected to Raspberry Pi, MQTT protocol for messaging, Node.js on the client and server, web sockets. You can interact with Koti robot via a React (like the cool kids do) control panel, Telegram Chat Bot and even your own voice.&lt;/p&gt;
+&lt;p&gt;Arthur will talk about how he’s turned this project into reality — the tech he used and the challenges he faced. From a blinking LED to a voice controlled home automation robot.&lt;/p&gt;
 </description>
     </item>
     <item>
