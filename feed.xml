@@ -40,64 +40,6 @@
 </description>
     </item>
     <item>
-      <title>Quick Start Connections With Terraform and Kubernetes</title>
-      <link>http://adron.github.io/articles/quick-start-terraform-kubernetes/</link>
-      <pubDate>Fri, 22 Sep 2017 03:40:19 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/quick-start-terraform-kubernetes/</guid>
-      <author></author>
-      <description>&lt;p&gt;Friday is here… a quick sitrep on my practices around Terraform connections with Azure, AWS, and GCP. In the past week I’ve been working on getting Terraform deploying a clean Kubernetes Cluster, then getting connected to that cluster and getting some resources deployed to the cluster. This article I’m just going to cover the practices I’m using to secure connections with the respective cloud providers, but more is coming soon.&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;h1 id=&quot;kubernetes-and-terraform&quot;&gt;Kubernetes and Terraform&lt;/h1&gt;
-&lt;p&gt;I’ve used Azure and Google Compute Platform (GCP) to accomplish the initial Kubernetes Cluster deployments. The following is the path I followed to get each cluster running on the respective platform.&lt;/p&gt;
-&lt;p&gt;Before diving directly into the deployments I’ve setup with Terraform, I’ll cover a little of how I’ve setup Terraform to authenticate and such. First, Azure and then GCP.&lt;/p&gt;
-&lt;h3 id=&quot;azure-terraform-setup&quot;&gt;Azure Terraform Setup&lt;/h3&gt;
-&lt;p&gt;My Terraform configuration file for connections with Azure looks like this.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;provider &amp;quot;azurerm&amp;quot; {
-  subscription_id = &amp;quot;${var.subscription_id}&amp;quot;
-  client_id       = &amp;quot;${var.client_id}&amp;quot;
-  client_secret   = &amp;quot;${var.client_secret}&amp;quot;
-  tenant_id       = &amp;quot;${var.tenant_id}&amp;quot;
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;What I’ve done is setup a variable for each of the connection requirements. These variables are then set via environment variables. The environment variables I set via my ~/.bash_profile or ~/.bashrc file depending on if I’m working on the System76 Ubuntu machine, Mac Book Pros, or iMacs I regularly work on.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;export TF_VAR_subscription_id=&amp;quot;90a9b1d7-1529-4ec4-abd4-e2ad84bfadf3&amp;quot;
-export TF_VAR_client_id=&amp;quot;e705e58a-8a2b-4b87-b69a-c3eee633b8e6&amp;quot;
-export TF_VAR_client_secret=&amp;quot;c4f13f94-4d1f-42c4-bfd5-cd55a3620d1b&amp;quot;
-export TF_VAR_tenant_id=&amp;quot;7325bc0f-1842-4126-8109-7c12773e7d30&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;(Don’t worry, those are fakey UUIDs, but they’re the same type)&lt;/p&gt;
-&lt;p&gt;Once those are setup this way, I can easily connect to the Azure account without having any of my UUIDs (security IDs?, Key IDs?, whatever they’re called) sitting in any actual repositories. It’s all just variables.&lt;/p&gt;
-&lt;p&gt;The way Terraform works with environment variables is pretty straight forward, yet not intuitive without some solid &lt;a href=&quot;https://en.wikipedia.org/wiki/RTFM&quot;&gt;RTFM&lt;/a&gt; time. The short description is Terraform picks up any prepended environment variables starting with &lt;code&gt;TF_VAR&lt;/code&gt; and using the name after that as the variable name. Thus, above, &lt;code&gt;TF_VAR_subscription_id&lt;/code&gt; become simply &lt;code&gt;subscription_id&lt;/code&gt; in the example above.&lt;/p&gt;
-&lt;p&gt;It’s also important to note that Terraform pulls these environment variables in without the need for them to be declared in configuration. This can be somewhat confusing since other variables need declared before use regardless of being passed in at execution time or assigned in a &lt;em&gt;tfvars&lt;/em&gt; file.&lt;/p&gt;
-&lt;h3 id=&quot;gcp-terraform-setup&quot;&gt;GCP Terraform Setup&lt;/h3&gt;
-&lt;p&gt;For GCP the connection I set it up using the &lt;em&gt;account.json&lt;/em&gt; file. What I do is place the &lt;em&gt;account.json&lt;/em&gt; file in a parallel &lt;em&gt;security&lt;/em&gt; directory and simply reference it in the connection. Again, nothing with security information goes into the repository. The configuration looks like this.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;provider &amp;quot;google&amp;quot; {
-  credentials = &amp;quot;${file(&amp;quot;../../secrets/account.json&amp;quot;)}&amp;quot;
-  project     = &amp;quot;mythrashingawesomeprojectname&amp;quot;
-  region      = &amp;quot;us-west1&amp;quot;
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;With GCP there are not any magical environment variables. This is something I actually like, which makes it a little easier to make it all inclusive within a repository and a security package that I can securely move from machine to machine, instead of needing to re-implement more junk loading as environment variables. Those ~/.bash_profile and ~/.bashrc files get messy enough without additional development environment specific repository specific variables!&lt;/p&gt;
-&lt;h3 id=&quot;aws-setup&quot;&gt;AWS Setup&lt;/h3&gt;
-&lt;p&gt;AWS is absurdly simple, yet it requires you’ve setup all the default connection and configuration for the AWS CLI. The only connection info for AWS is as shown below.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;provider &amp;quot;aws&amp;quot; {}
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;In the end, with all three of these added my ~/.bashrc and ~/.bash_profile files look like this.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;# Azure Variables
-export TF_VAR_subscription_id=&amp;quot;90a9b1d7-1529-4ec4-abd4-e2ad84bfadf3&amp;quot;
-export TF_VAR_client_id=&amp;quot;e705e58a-8a2b-4b87-b69a-c3eee633b8e6&amp;quot;
-export TF_VAR_client_secret=&amp;quot;c4f13f94-4d1f-42c4-bfd5-cd55a3620d1b&amp;quot;
-export TF_VAR_tenant_id=&amp;quot;7325bc0f-1842-4126-8109-7c12773e7d30&amp;quot;
-# AWS Variables
-export TF_VAR_aws_region=&amp;quot;us-west-2&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Note the only AWS variable I specifically add, is the region, the CLI adds a bunch of others or sets/assumes environment defaults in the &lt;code&gt;~/.aws/&lt;/code&gt; directory. It also sets the region, but I’ve found &lt;em&gt;some&lt;/em&gt; tooling doesn’t seem to use the set one, so I add the variable here so Terraform doesn’t get confused and has it set specifically.&lt;/p&gt;
-&lt;p&gt;So that’s the way I generally find myself setting up connections for Terraform and AWS, Google Cloud Platform, and Azure. If you’ve got suggestions, questions, or thoughts on better ways to do this I’d love to hear about them. Ping me on Twitter &lt;a href=&quot;https://twitter.com/Adron&quot;&gt;@Adron&lt;/a&gt; and we’ll discuss.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;References:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;My current &lt;a href=&quot;https://github.com/Adron/blue-world-making&quot;&gt;working repo&lt;/a&gt; of config &amp;amp; code related to &lt;a href=&quot;http://adron.github.io/articles/technology-and-upcoming-talks/&quot;&gt;upcoming talks&lt;/a&gt; and their respective examples.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.terraform.io/docs/providers/aws/index.html&quot;&gt;Terraform AWS Provider Documentation&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.terraform.io/docs/providers/google/index.html&quot;&gt;Terraform GCP Provider Documentation&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.terraform.io/docs/providers/azurerm/index.html&quot;&gt;Terraform Azure Provider Documentation&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-    </item>
-    <item>
       <title>Thrashing Code Metal Monday for Week of September 18th 2017</title>
       <link>http://adron.github.io/articles/thrashing-code-metal-monday-09-18-2017/</link>
       <pubDate>Mon, 18 Sep 2017 01:12:17 -0700</pubDate>
@@ -5153,6 +5095,23 @@ it can be.&lt;/p&gt;
 </description>
     </item>
     <item>
+      <title>The House Is Not On Fire - Building a home automation robot with Arduino, Raspberry Pi and Node.js by Artur Paikin</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</link>
+      <pubDate>Wed, 01 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-right&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/art-stida.jpg&quot; alt=&quot;Artur Paikin&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Artur describes himself as, “I’m a web developer and traveler. I write stories about my adventures in Russian and English on my site: &lt;a href=&quot;http://arturpaikin.com&quot;&gt;http://arturpaikin.com&lt;/a&gt; and run a small technology cooperative called &lt;a href=&quot;http://unebaguette.com&quot;&gt;Baguette&lt;/a&gt;, where I work on cool projects, currently building an ambitious next generation file uploader with &lt;a href=&quot;https://transloadit.com/&quot;&gt;Transloadit&lt;/a&gt;. I ride a &lt;a href=&quot;https://www.instagram.com/p/xC0qC2SSYb&quot;&gt;foldable bicycle&lt;/a&gt;, &lt;a href=&quot;http://unebaguette.com/web-course/&quot;&gt;teach&lt;/a&gt; web development and sometimes &lt;a href=&quot;https://www.instagram.com/p/4_6LO8ySVL/&quot;&gt;garden&lt;/a&gt; on the balcony.”&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Artur has built an open source home automation system called &lt;a href=&quot;https://github.com/arturi/kotihome&quot;&gt;Koti Home&lt;/a&gt; (Koti means home in Finnish language). It’s powered by an Arduino connected to Raspberry Pi, MQTT protocol for messaging, Node.js on the client and server, web sockets. You can interact with Koti robot via a React (like the cool kids do) control panel, Telegram Chat Bot and even your own voice.&lt;/p&gt;
+&lt;p&gt;Arthur will talk about how he’s turned this project into reality — the tech he used and the challenges he faced. From a blinking LED to a voice controlled home automation robot.&lt;/p&gt;
+</description>
+    </item>
+    <item>
       <title>Code First Docs How we Threw Out The Book &amp; Put Code First With Twilio Documentation by Jarod Reyes</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-jarod-reyes/</link>
       <pubDate>Wed, 01 Jun 2016 17:00:00 -0700</pubDate>
@@ -5174,23 +5133,6 @@ it can be.&lt;/p&gt;
 &lt;li&gt;Twitter: &lt;a href=&quot;https://twitter.com/jreyesdev&quot;&gt;@jreyesdev&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Github: &lt;a href=&quot;https://github.com/jarodreyes&quot;&gt;github.com/jarodreyes&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-</description>
-    </item>
-    <item>
-      <title>The House Is Not On Fire - Building a home automation robot with Arduino, Raspberry Pi and Node.js by Artur Paikin</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</link>
-      <pubDate>Wed, 01 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</guid>
-      <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-right&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/art-stida.jpg&quot; alt=&quot;Artur Paikin&quot;&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Artur describes himself as, “I’m a web developer and traveler. I write stories about my adventures in Russian and English on my site: &lt;a href=&quot;http://arturpaikin.com&quot;&gt;http://arturpaikin.com&lt;/a&gt; and run a small technology cooperative called &lt;a href=&quot;http://unebaguette.com&quot;&gt;Baguette&lt;/a&gt;, where I work on cool projects, currently building an ambitious next generation file uploader with &lt;a href=&quot;https://transloadit.com/&quot;&gt;Transloadit&lt;/a&gt;. I ride a &lt;a href=&quot;https://www.instagram.com/p/xC0qC2SSYb&quot;&gt;foldable bicycle&lt;/a&gt;, &lt;a href=&quot;http://unebaguette.com/web-course/&quot;&gt;teach&lt;/a&gt; web development and sometimes &lt;a href=&quot;https://www.instagram.com/p/4_6LO8ySVL/&quot;&gt;garden&lt;/a&gt; on the balcony.”&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Artur has built an open source home automation system called &lt;a href=&quot;https://github.com/arturi/kotihome&quot;&gt;Koti Home&lt;/a&gt; (Koti means home in Finnish language). It’s powered by an Arduino connected to Raspberry Pi, MQTT protocol for messaging, Node.js on the client and server, web sockets. You can interact with Koti robot via a React (like the cool kids do) control panel, Telegram Chat Bot and even your own voice.&lt;/p&gt;
-&lt;p&gt;Arthur will talk about how he’s turned this project into reality — the tech he used and the challenges he faced. From a blinking LED to a voice controlled home automation robot.&lt;/p&gt;
 </description>
     </item>
     <item>
