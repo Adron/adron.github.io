@@ -4893,29 +4893,6 @@ export TF_VAR_password=&amp;quot;someSecretPassword&amp;quot;
 </description>
     </item>
     <item>
-      <title>Demystifying TypeScript Decorators by James Churchill</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-james-churchill/</link>
-      <pubDate>Sun, 05 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-james-churchill/</guid>
-      <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-james-churchill/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-right&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-james-churchill/james-churchill-nyc.jpg&quot; alt=&quot;James Churchill&quot;&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Portlander James has worked extensively with a variety of technologies, including ASP.NET MVC, SQL Server, JavaScript, TypeScript, Knockout.js, and AngularJS. James, a self-confessed geek, enjoys talking about programming and learning new technologies. He recently joined the Treehouse team as a teacher and is excited to have the opportunity to help beginners become developers.&lt;/p&gt;
-&lt;p&gt;James also enjoys participating in the greater Cascadian Developer Community, presenting talks in Portland, Seattle, Salt Lake City, Boise, Eugene, Salem, and Hood River. Last April, James started and co-organized the Portland TypeScript Meetup (&lt;a href=&quot;http://typescriptpdx.com/&quot;&gt;http://typescriptpdx.com/&lt;/a&gt; which is an awesome meetup, come check it out sometime!).&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;When he is not working, he can be found skiing with his wife and kids, remodeling the house, playing music with his band, or hanging out in the yard with his chickens.&lt;/p&gt;
-&lt;p&gt;In “Demystifying TypeScript Decorators” will show us TypeScript decorators, based on the ES2016 decorator proposal and introduced as part of TypeScript 1.5, provide developers with a way to modify a JavaScript class, property, method, or method parameter using a convenient declarative syntax. We’ll start this session by creating our own decorator, to see firsthand how they work. Then, we’ll take a look at how decorators can be used in a variety of settings.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Blog: &lt;a href=&quot;http://smashdev.com&quot;&gt;http://smashdev.com&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Github: &lt;a href=&quot;http://github.com/smashdevcode&quot;&gt;http://github.com/smashdevcode&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Twitter: &lt;a href=&quot;http://twitter.com/SmashDev&quot;&gt;http://twitter.com/SmashDev&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-    </item>
-    <item>
       <title>How to Electron by Blaine Schmeisser</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-blaine-schmeisser/</link>
       <pubDate>Sun, 05 Jun 2016 17:00:00 -0700</pubDate>
@@ -4937,33 +4914,26 @@ export TF_VAR_password=&amp;quot;someSecretPassword&amp;quot;
 </description>
     </item>
     <item>
-      <title>The SAM Pattern - a distributed system view of Front-End architectures by Jean-Jacques Dubray</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-jean-jacques-dubray/</link>
-      <pubDate>Sat, 04 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-jean-jacques-dubray/</guid>
+      <title>Demystifying TypeScript Decorators by James Churchill</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-james-churchill/</link>
+      <pubDate>Sun, 05 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-james-churchill/</guid>
       <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-jean-jacques-dubray/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-left&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-jean-jacques-dubray/jj-sized.png&quot; alt=&quot;Jean-Jacques Dubray&quot;&gt;
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-james-churchill/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-right&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-james-churchill/james-churchill-nyc.jpg&quot; alt=&quot;James Churchill&quot;&gt;
 &lt;/div&gt;
 
-&lt;p&gt;Jean-Jacques Dubray is the founder of &lt;a href=&quot;http://xgen.io&quot;&gt;xgen.io&lt;/a&gt; and &lt;a href=&quot;http://www.gliiph.com&quot;&gt;gliiph&lt;/a&gt;. He has been building Service Oriented Architectures,
-and API platforms for the last 15 years. He is a former member of the research staff at HRL and earned his Ph.D. from
-the University of Provence (Luminy campus), home of the Prolog language. He is the inventor of the &lt;a href=&quot;http://www.xgenio.com/bolt-introduction.pdf&quot;&gt;BOLT methodology&lt;/a&gt; and the SAM pattern.&lt;/p&gt;
-&lt;p&gt;In his talk Jean-Jacques Dubray presents that Web Applications are rapidly becoming sophisticated distributed systems. When you look at a Facebook page or a Netflix catalog,
-the number of components interacting with each other requires complex synchronization and state management capabilities, reaching
-the limits of the MVC pattern.&lt;/p&gt;
+&lt;p&gt;Portlander James has worked extensively with a variety of technologies, including ASP.NET MVC, SQL Server, JavaScript, TypeScript, Knockout.js, and AngularJS. James, a self-confessed geek, enjoys talking about programming and learning new technologies. He recently joined the Treehouse team as a teacher and is excited to have the opportunity to help beginners become developers.&lt;/p&gt;
+&lt;p&gt;James also enjoys participating in the greater Cascadian Developer Community, presenting talks in Portland, Seattle, Salt Lake City, Boise, Eugene, Salem, and Hood River. Last April, James started and co-organized the Portland TypeScript Meetup (&lt;a href=&quot;http://typescriptpdx.com/&quot;&gt;http://typescriptpdx.com/&lt;/a&gt; which is an awesome meetup, come check it out sometime!).&lt;/p&gt;
 &lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;In the last couple of years, several reactive architectures have started to get some interest (React, Cycle.js, ELM) without
-generating significant traction (compared to established frameworks like Angular), while struggling to position effects in their
-programming model. A new reactive, functional pattern, the State-Action-Model pattern (SAM) was introduced in early 2016 on the
-foundation of TLA+ semantics.&lt;/p&gt;
-&lt;p&gt;The pattern, which is unapologetically driven by simplicity, promotes a clear delineation between the business logic and the view
-and challenges the complexity of frameworks like Google’s Angular or Facebook’s React/Redux.&lt;/p&gt;
-&lt;p&gt;SAM’s unidirectional flow is also challenging interactive patterns like BFF (Back-End for Front-End) or the Vertical Slice Pattern
-which suggest creating view-specific APIs, per platform, app, versions of an app…&lt;/p&gt;
-&lt;p&gt;We’ll start by reviewing some of the key challenges of modern UX and Front-End Architectures. We will then present the
-key concepts of SAM and walk the audience through some node.js code samples (including server-side TimeTravel).&lt;/p&gt;
+&lt;p&gt;When he is not working, he can be found skiing with his wife and kids, remodeling the house, playing music with his band, or hanging out in the yard with his chickens.&lt;/p&gt;
+&lt;p&gt;In “Demystifying TypeScript Decorators” will show us TypeScript decorators, based on the ES2016 decorator proposal and introduced as part of TypeScript 1.5, provide developers with a way to modify a JavaScript class, property, method, or method parameter using a convenient declarative syntax. We’ll start this session by creating our own decorator, to see firsthand how they work. Then, we’ll take a look at how decorators can be used in a variety of settings.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Blog: &lt;a href=&quot;http://smashdev.com&quot;&gt;http://smashdev.com&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Github: &lt;a href=&quot;http://github.com/smashdevcode&quot;&gt;http://github.com/smashdevcode&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Twitter: &lt;a href=&quot;http://twitter.com/SmashDev&quot;&gt;http://twitter.com/SmashDev&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </description>
     </item>
     <item>
@@ -4997,20 +4967,33 @@ In this talk I would be covering the following:&lt;/p&gt;
 </description>
     </item>
     <item>
-      <title>WebSockets Bring Light at the End of the Tunnel by Joel Lord</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</link>
-      <pubDate>Fri, 03 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</guid>
+      <title>The SAM Pattern - a distributed system view of Front-End architectures by Jean-Jacques Dubray</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-jean-jacques-dubray/</link>
+      <pubDate>Sat, 04 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-jean-jacques-dubray/</guid>
       <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-jean-jacques-dubray/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;div class=&quot;image float-left&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/joel-lord.jpg&quot; alt=&quot;Joel Lord&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-jean-jacques-dubray/jj-sized.png&quot; alt=&quot;Jean-Jacques Dubray&quot;&gt;
 &lt;/div&gt;
 
-&lt;p&gt;As a Development Manager, Joel’s motivation and proven technical prowess makes him a key member of Spiria’s software development team. With a degree in computational astrophysics, his interests eventually made their way to software and Web design. Today, his knowledge of JavaScript lets him to support a variety of projects on both the front end and back end. As we move into the age of the Internet of Things, Joel is ready with his passion for programming node bots and experimenting with gadgets.&lt;/p&gt;
+&lt;p&gt;Jean-Jacques Dubray is the founder of &lt;a href=&quot;http://xgen.io&quot;&gt;xgen.io&lt;/a&gt; and &lt;a href=&quot;http://www.gliiph.com&quot;&gt;gliiph&lt;/a&gt;. He has been building Service Oriented Architectures,
+and API platforms for the last 15 years. He is a former member of the research staff at HRL and earned his Ph.D. from
+the University of Provence (Luminy campus), home of the Prolog language. He is the inventor of the &lt;a href=&quot;http://www.xgenio.com/bolt-introduction.pdf&quot;&gt;BOLT methodology&lt;/a&gt; and the SAM pattern.&lt;/p&gt;
+&lt;p&gt;In his talk Jean-Jacques Dubray presents that Web Applications are rapidly becoming sophisticated distributed systems. When you look at a Facebook page or a Netflix catalog,
+the number of components interacting with each other requires complex synchronization and state management capabilities, reaching
+the limits of the MVC pattern.&lt;/p&gt;
 &lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Joel is going to speak on Web Sockets and tunnels of light… or to describe it more specifically more and more, people seem to be obsessed with real-time data.  But what does real-time mean in the world of REST servers and one-way communication?  Most modern web applications are now either displaying a snapshot of data at a given time or use a polling mechanism to update series of data at a given interval.
-In this talk, you will learn about the power of WebSockets and how they can (and should!) be used in your modern web applications. In these 30 minutes, I will go through the process of building a Node server that can push data to multiple clients in real-time.  You will see how this can be easy using the socket.io library.&lt;/p&gt;
+&lt;p&gt;In the last couple of years, several reactive architectures have started to get some interest (React, Cycle.js, ELM) without
+generating significant traction (compared to established frameworks like Angular), while struggling to position effects in their
+programming model. A new reactive, functional pattern, the State-Action-Model pattern (SAM) was introduced in early 2016 on the
+foundation of TLA+ semantics.&lt;/p&gt;
+&lt;p&gt;The pattern, which is unapologetically driven by simplicity, promotes a clear delineation between the business logic and the view
+and challenges the complexity of frameworks like Google’s Angular or Facebook’s React/Redux.&lt;/p&gt;
+&lt;p&gt;SAM’s unidirectional flow is also challenging interactive patterns like BFF (Back-End for Front-End) or the Vertical Slice Pattern
+which suggest creating view-specific APIs, per platform, app, versions of an app…&lt;/p&gt;
+&lt;p&gt;We’ll start by reviewing some of the key challenges of modern UX and Front-End Architectures. We will then present the
+key concepts of SAM and walk the audience through some node.js code samples (including server-side TimeTravel).&lt;/p&gt;
 </description>
     </item>
     <item>
@@ -5048,6 +5031,23 @@ it can be.&lt;/p&gt;
 &lt;li&gt;show number of players&lt;/li&gt;
 &lt;li&gt;start when 4 players in? one player hit’s start? let all player see total count as well and status of the other players&lt;/li&gt;
 &lt;/ul&gt;
+</description>
+    </item>
+    <item>
+      <title>WebSockets Bring Light at the End of the Tunnel by Joel Lord</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</link>
+      <pubDate>Fri, 03 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-left&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/joel-lord.jpg&quot; alt=&quot;Joel Lord&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;As a Development Manager, Joel’s motivation and proven technical prowess makes him a key member of Spiria’s software development team. With a degree in computational astrophysics, his interests eventually made their way to software and Web design. Today, his knowledge of JavaScript lets him to support a variety of projects on both the front end and back end. As we move into the age of the Internet of Things, Joel is ready with his passion for programming node bots and experimenting with gadgets.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Joel is going to speak on Web Sockets and tunnels of light… or to describe it more specifically more and more, people seem to be obsessed with real-time data.  But what does real-time mean in the world of REST servers and one-way communication?  Most modern web applications are now either displaying a snapshot of data at a given time or use a polling mechanism to update series of data at a given interval.
+In this talk, you will learn about the power of WebSockets and how they can (and should!) be used in your modern web applications. In these 30 minutes, I will go through the process of building a Node server that can push data to multiple clients in real-time.  You will see how this can be easy using the socket.io library.&lt;/p&gt;
 </description>
     </item>
     <item>
