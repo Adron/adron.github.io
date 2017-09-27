@@ -40,6 +40,151 @@
 </description>
     </item>
     <item>
+      <title>Quick Start Connections With Terraform and Kubernetes</title>
+      <link>http://adron.github.io/articles/quick-start-terraform-kubernetes/</link>
+      <pubDate>Fri, 22 Sep 2017 03:40:19 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/quick-start-terraform-kubernetes/</guid>
+      <author></author>
+      <description>&lt;p&gt;Friday is here… a quick sitrep on my practices around Terraform connections with Azure, AWS, and GCP. In the past week I’ve been working on getting Terraform deploying a clean Kubernetes Cluster, then getting connected to that cluster and getting some resources deployed to the cluster. This article I’m just going to cover the practices I’m using to secure connections with the respective cloud providers, but more is coming soon.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;h1 id=&quot;kubernetes-and-terraform&quot;&gt;Kubernetes and Terraform&lt;/h1&gt;
+&lt;p&gt;I’ve used Azure and Google Compute Platform (GCP) to accomplish the initial Kubernetes Cluster deployments. The following is the path I followed to get each cluster running on the respective platform.&lt;/p&gt;
+&lt;p&gt;Before diving directly into the deployments I’ve setup with Terraform, I’ll cover a little of how I’ve setup Terraform to authenticate and such. First, Azure and then GCP.&lt;/p&gt;
+&lt;h3 id=&quot;azure-terraform-setup&quot;&gt;Azure Terraform Setup&lt;/h3&gt;
+&lt;p&gt;My Terraform configuration file for connections with Azure looks like this.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;provider &amp;quot;azurerm&amp;quot; {
+  subscription_id = &amp;quot;${var.subscription_id}&amp;quot;
+  client_id       = &amp;quot;${var.client_id}&amp;quot;
+  client_secret   = &amp;quot;${var.client_secret}&amp;quot;
+  tenant_id       = &amp;quot;${var.tenant_id}&amp;quot;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;What I’ve done is setup a variable for each of the connection requirements. These variables are then set via environment variables. The environment variables I set via my ~/.bash_profile or ~/.bashrc file depending on if I’m working on the System76 Ubuntu machine, Mac Book Pros, or iMacs I regularly work on.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;export TF_VAR_subscription_id=&amp;quot;90a9b1d7-1529-4ec4-abd4-e2ad84bfadf3&amp;quot;
+export TF_VAR_client_id=&amp;quot;e705e58a-8a2b-4b87-b69a-c3eee633b8e6&amp;quot;
+export TF_VAR_client_secret=&amp;quot;c4f13f94-4d1f-42c4-bfd5-cd55a3620d1b&amp;quot;
+export TF_VAR_tenant_id=&amp;quot;7325bc0f-1842-4126-8109-7c12773e7d30&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;(Don’t worry, those are fakey UUIDs, but they’re the same type)&lt;/p&gt;
+&lt;p&gt;Once those are setup this way, I can easily connect to the Azure account without having any of my UUIDs (security IDs?, Key IDs?, whatever they’re called) sitting in any actual repositories. It’s all just variables.&lt;/p&gt;
+&lt;p&gt;The way Terraform works with environment variables is pretty straight forward, yet not intuitive without some solid &lt;a href=&quot;https://en.wikipedia.org/wiki/RTFM&quot;&gt;RTFM&lt;/a&gt; time. The short description is Terraform picks up any prepended environment variables starting with &lt;code&gt;TF_VAR&lt;/code&gt; and using the name after that as the variable name. Thus, above, &lt;code&gt;TF_VAR_subscription_id&lt;/code&gt; become simply &lt;code&gt;subscription_id&lt;/code&gt; in the example above.&lt;/p&gt;
+&lt;p&gt;It’s also important to note that Terraform pulls these environment variables in without the need for them to be declared in configuration. This can be somewhat confusing since other variables need declared before use regardless of being passed in at execution time or assigned in a &lt;em&gt;tfvars&lt;/em&gt; file.&lt;/p&gt;
+&lt;h3 id=&quot;gcp-terraform-setup&quot;&gt;GCP Terraform Setup&lt;/h3&gt;
+&lt;p&gt;For GCP the connection I set it up using the &lt;em&gt;account.json&lt;/em&gt; file. What I do is place the &lt;em&gt;account.json&lt;/em&gt; file in a parallel &lt;em&gt;security&lt;/em&gt; directory and simply reference it in the connection. Again, nothing with security information goes into the repository. The configuration looks like this.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;provider &amp;quot;google&amp;quot; {
+  credentials = &amp;quot;${file(&amp;quot;../../secrets/account.json&amp;quot;)}&amp;quot;
+  project     = &amp;quot;mythrashingawesomeprojectname&amp;quot;
+  region      = &amp;quot;us-west1&amp;quot;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;With GCP there are not any magical environment variables. This is something I actually like, which makes it a little easier to make it all inclusive within a repository and a security package that I can securely move from machine to machine, instead of needing to re-implement more junk loading as environment variables. Those ~/.bash_profile and ~/.bashrc files get messy enough without additional development environment specific repository specific variables!&lt;/p&gt;
+&lt;h3 id=&quot;aws-setup&quot;&gt;AWS Setup&lt;/h3&gt;
+&lt;p&gt;AWS is absurdly simple, yet it requires you’ve setup all the default connection and configuration for the AWS CLI. The only connection info for AWS is as shown below.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;provider &amp;quot;aws&amp;quot; {}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;In the end, with all three of these added my ~/.bashrc and ~/.bash_profile files look like this.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# Azure Variables
+export TF_VAR_subscription_id=&amp;quot;90a9b1d7-1529-4ec4-abd4-e2ad84bfadf3&amp;quot;
+export TF_VAR_client_id=&amp;quot;e705e58a-8a2b-4b87-b69a-c3eee633b8e6&amp;quot;
+export TF_VAR_client_secret=&amp;quot;c4f13f94-4d1f-42c4-bfd5-cd55a3620d1b&amp;quot;
+export TF_VAR_tenant_id=&amp;quot;7325bc0f-1842-4126-8109-7c12773e7d30&amp;quot;
+# AWS Variables
+export TF_VAR_aws_region=&amp;quot;us-west-2&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Note the only AWS variable I specifically add, is the region, the CLI adds a bunch of others or sets/assumes environment defaults in the &lt;code&gt;~/.aws/&lt;/code&gt; directory. It also sets the region, but I’ve found &lt;em&gt;some&lt;/em&gt; tooling doesn’t seem to use the set one, so I add the variable here so Terraform doesn’t get confused and has it set specifically.&lt;/p&gt;
+&lt;p&gt;That’s the way I find myself setting up connections for Terraform and AWS, Google Cloud Platform, and Azure. If you’ve got suggestions, questions, or thoughts on better ways to do this I’d love to hear about them. Ping me on Twitter &lt;a href=&quot;https://twitter.com/Adron&quot;&gt;@Adron&lt;/a&gt; and we’ll discuss.&lt;/p&gt;
+&lt;p&gt;Alright, so now it’s Kubernetes time. Once the above connection is worked out for the respective cloud providers, I can get a Kubernetes Cluster running in each. I’ll tackle the creation of each below, broken out to GCP and Azure, with a follow up blog post on getting Terraform to launch a Kubernetes Cluster in AWS at a later time.&lt;/p&gt;
+&lt;h2 id=&quot;gcp-kubernetes-cluster&quot;&gt;GCP Kubernetes Cluster&lt;/h2&gt;
+&lt;p&gt;For GCP I setup my resource as shown.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;resource &amp;quot;google_container_cluster&amp;quot; &amp;quot;googlykuby&amp;quot; {
+  name               = &amp;quot;${var.cluster_name}&amp;quot;
+  zone               = &amp;quot;us-west1-a&amp;quot;
+  initial_node_count = &amp;quot;${var.gcp_cluster_count}&amp;quot;
+
+  additional_zones = [
+    &amp;quot;us-west1-b&amp;quot;,
+    &amp;quot;us-west1-c&amp;quot;,
+  ]
+
+  master_auth {
+    username = &amp;quot;${var.linux_admin_username}&amp;quot;
+    password = &amp;quot;${var.linux_admin_password}}&amp;quot;
+
+  }
+
+  node_config {
+    oauth_scopes = [
+      &amp;quot;https://www.googleapis.com/auth/compute&amp;quot;,
+      &amp;quot;https://www.googleapis.com/auth/devstorage.read_only&amp;quot;,
+      &amp;quot;https://www.googleapis.com/auth/logging.write&amp;quot;,
+      &amp;quot;https://www.googleapis.com/auth/monitoring&amp;quot;,
+    ]
+
+    labels {
+      this-is-for = &amp;quot;dev-cluster&amp;quot;
+    }
+
+    tags = [&amp;quot;dev&amp;quot;, &amp;quot;work&amp;quot;]
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;I setup the two variables; &lt;code&gt;cluster_name&lt;/code&gt; and &lt;code&gt;gcp_cluster_count&lt;/code&gt; to pull some of the settings into the variables file. Currently, my default setup is also to have two additional zones too, which means that a node will be setup in each of these zones. So expect the VM count to be &lt;code&gt;gcp_cluster_count&lt;/code&gt; multiplied by the number of zones that are being used. In this case, there are two additional zones plus the zone the cluster is being created in, times let’s say 2 for &lt;code&gt;gcp_cluster_count&lt;/code&gt;, which will give me 6 VM instances running. This is respectively 6 nodes in the cluster.&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;master_auth&lt;/code&gt; is then also setup, similarly to the way I setup the connection variables previously, in which they’re environment variables or I pass them in via CLI parameters.&lt;/p&gt;
+&lt;p&gt;Then, just for good measure I’ve added some labels and tags. Partly as an example of how to use them but also just to differentiate this cluster versus other clusters I might have running.&lt;/p&gt;
+&lt;p&gt;This might be surprising, but that’s it for the resource in Kubernetes. We’re now ready to launch our cluster in GCP.&lt;/p&gt;
+&lt;h2 id=&quot;azure-kubernetes-cluster&quot;&gt;Azure Kubernetes Cluster&lt;/h2&gt;
+&lt;p&gt;The Azure setup is a bit different, and in some ways more extensive in demand than the GCP setup. I’ve tested out a few configurations and have ended up, generally, with configuration that looks like this.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;resource &amp;quot;azurerm_container_service&amp;quot; &amp;quot;bluekuby&amp;quot; {
+  name = &amp;quot;bluekubyhouse&amp;quot;
+  location = &amp;quot;${azurerm_resource_group.blue_kuby_group.location}&amp;quot;
+  resource_group_name = &amp;quot;${azurerm_resource_group.blue_kuby_group.name}&amp;quot;
+  orchestration_platform = &amp;quot;Kubernetes&amp;quot;
+
+  master_profile {
+    count = 1
+    dns_prefix = &amp;quot;${var.azure_cluster_prefix}&amp;quot;
+  }
+
+  linux_profile {
+    admin_username = &amp;quot;${var.linux_admin_username}&amp;quot;
+
+    ssh_key {
+      key_data = &amp;quot;${var.ssh_key}&amp;quot;
+    }
+  }
+
+  agent_pool_profile {
+    name = &amp;quot;default&amp;quot;
+    count = &amp;quot;${var.azure_node_count}&amp;quot;
+    dns_prefix = &amp;quot;kuby.house&amp;quot;
+    vm_size = &amp;quot;Standard_A0&amp;quot;
+  }
+
+  service_principal {
+    client_id = &amp;quot;${var.client_id}&amp;quot;
+    client_secret = &amp;quot;${var.client_secret}&amp;quot;
+  }
+
+  diagnostics_profile {
+    enabled = false
+  }
+
+  tags {
+    Environment = &amp;quot;Production&amp;quot;
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The location and resource group values passed in the &lt;code&gt;azurerm_resource_group.blue_kuby_group.location&lt;/code&gt; and &lt;code&gt;azurerm_resource_group.blue_kuby_group.name&lt;/code&gt; are created in the following resource.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;resource &amp;quot;azurerm_resource_group&amp;quot; &amp;quot;blue_kuby_group&amp;quot; {
+  name = &amp;quot;bluekubygroup&amp;quot;
+  location = &amp;quot;West US&amp;quot;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;One of the differences I’ve noticed with the Azure setup vs. the GCP setup is that it appears, the Azure setup needs an ssh key to work with for authentication purposes while the GCP setup doesn’t particularly need this.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Or does it?&lt;/em&gt; I’ll talk more about that in a future post. For now I’ll leave you to ponder what one is doing versus the other! #shock #amaze #ohnoez!&lt;/p&gt;
+&lt;p&gt;This provides a simple summary of the two Kubernetes setups for GCP and Azure. In a subsequent post I’ll dive into AWS Kubernetes setup via Terraform and also elaborate on some of the specifics that are going on when using Terraform to setup Kubernetes in any of these environments. Stay tuned, subscribe via &lt;a href=&quot;http://adron.github.io/articles/quick-start-terraform-kubernetes/&quot;&gt;rss&lt;/a&gt; or for lower volume, subscribe to &lt;a href=&quot;http://adron.github.io/&quot;&gt;Thrashing Code News&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;References:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;My current &lt;a href=&quot;https://github.com/Adron/blue-world-making&quot;&gt;working repo&lt;/a&gt; of config &amp;amp; code related to &lt;a href=&quot;http://adron.github.io/articles/technology-and-upcoming-talks/&quot;&gt;upcoming talks&lt;/a&gt; and their respective examples.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.terraform.io/docs/providers/aws/index.html&quot;&gt;Terraform AWS Provider Documentation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.terraform.io/docs/providers/google/index.html&quot;&gt;Terraform GCP Provider Documentation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.terraform.io/docs/providers/azurerm/index.html&quot;&gt;Terraform Azure Provider Documentation&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    <item>
       <title>Thrashing Code Metal Monday for Week of September 18th 2017</title>
       <link>http://adron.github.io/articles/thrashing-code-metal-monday-09-18-2017/</link>
       <pubDate>Mon, 18 Sep 2017 01:12:17 -0700</pubDate>
@@ -1815,17 +1960,17 @@ n
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;I then ran &lt;code&gt;glide get github.com/icrowley/fake&lt;/code&gt; to get the fake library I would need. The &lt;code&gt;glide.yaml&lt;/code&gt; and &lt;code&gt;glide.lock&lt;/code&gt; looked like this after I pulled in this library.&lt;/p&gt;
 &lt;p&gt;glide.yaml&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;lang-yaml&quot;&gt;&lt;span class=&quot;attr&quot;&gt;package:&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;github.com/adron/datadiluvium&lt;/span&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-yaml&quot;&gt;&lt;span class=&quot;attr&quot;&gt;package:&lt;/span&gt; github.com/adron/datadiluvium
 &lt;span class=&quot;attr&quot;&gt;import:&lt;/span&gt;
-&lt;span class=&quot;attr&quot;&gt;- package:&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;github.com/icrowley/fake&lt;/span&gt;
+&lt;span class=&quot;attr&quot;&gt;- package:&lt;/span&gt; github.com/icrowley/fake
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;glide.lock&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;lang-yaml&quot;&gt;&lt;span class=&quot;attr&quot;&gt;hash:&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;string&quot;&gt;fd78ca8369405d5998e65ea4cfce94c6599e878c36fec39b85fd385552392d7&lt;/span&gt;
-&lt;span class=&quot;attr&quot;&gt;updated:&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;2017&lt;/span&gt;&lt;span class=&quot;bullet&quot;&gt;-01&lt;/span&gt;&lt;span class=&quot;bullet&quot;&gt;-09&lt;/span&gt;&lt;span class=&quot;attr&quot;&gt;T01:04:18.134993358-08:00&lt;/span&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-yaml&quot;&gt;&lt;span class=&quot;attr&quot;&gt;hash:&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;fd78ca8369405d5998e65ea4cfce94c6599e878c36fec39b85fd385552392d7
+&lt;span class=&quot;attr&quot;&gt;updated:&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;2017&lt;/span&gt;&lt;span class=&quot;bullet&quot;&gt;-01&lt;/span&gt;&lt;span class=&quot;bullet&quot;&gt;-09&lt;/span&gt;T01:&lt;span class=&quot;number&quot;&gt;04&lt;/span&gt;:&lt;span class=&quot;number&quot;&gt;18.134993358&lt;/span&gt;&lt;span class=&quot;bullet&quot;&gt;-08&lt;/span&gt;:&lt;span class=&quot;number&quot;&gt;00&lt;/span&gt;
 &lt;span class=&quot;attr&quot;&gt;imports:&lt;/span&gt;
-&lt;span class=&quot;attr&quot;&gt;- name:&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;github.com/icrowley/fake&lt;/span&gt;
-&lt;span class=&quot;attr&quot;&gt;  version:&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;84&lt;/span&gt;&lt;span class=&quot;string&quot;&gt;bff6d01560fb0b5a396ba29534e93fd00d09c6&lt;/span&gt;
-&lt;span class=&quot;attr&quot;&gt;testImports:&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;[]&lt;/span&gt;
+&lt;span class=&quot;attr&quot;&gt;- name:&lt;/span&gt; github.com/icrowley/fake
+&lt;span class=&quot;attr&quot;&gt;  version:&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;84&lt;/span&gt;bff6d01560fb0b5a396ba29534e93fd00d09c6
+&lt;span class=&quot;attr&quot;&gt;testImports:&lt;/span&gt; []
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;If you’re curious about the hash, and related properties of this file check out the glide &lt;a href=&quot;https://github.com/Masterminds/glide/blob/master/README.md&quot;&gt;README.md&lt;/a&gt;, it’s useful in understanding what’s stored here.&lt;/p&gt;
 &lt;p&gt;At this point, it was time to actually sling some Go code! At this point, I do indeed mean sling some too. Splat!&lt;/p&gt;
@@ -4893,27 +5038,6 @@ export TF_VAR_password=&amp;quot;someSecretPassword&amp;quot;
 </description>
     </item>
     <item>
-      <title>How to Electron by Blaine Schmeisser</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-blaine-schmeisser/</link>
-      <pubDate>Sun, 05 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-blaine-schmeisser/</guid>
-      <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-blaine-schmeisser/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-left&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-blaine-schmeisser/blainesch.jpg&quot; alt=&quot;Blaine Schmeisser&quot;&gt;
-&lt;/div&gt;
-
-&lt;p&gt;I’m happy to introduce Blaine Schmeisser. He’s a recent Portland transplant currently working as a Senior Software Engineer at New Relic. He has a passion for building and shipping software and an advocate for pair programming. Outside of tech, Blaine spends his free time with his dog and maintains a simplistic, eco-friendly lifestyle.&lt;/p&gt;
-&lt;p&gt;Blaine’s “How to Electron” answers questions you have about building user interface applications with JavaScript. Have you ever wanted to build desktop apps with web technology you already know? If you’ve never heard of Electron or just want to learn more about it, this talk will cover what Electron is and how to utilize it to create powerful tools like Atom and Slack. You will learn the history of Electron, how to get started, the trade-offs of picking various boiler plates, and the unique Electron specific APIs that are vital to being a Electron developer.&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;GitHub: &lt;a href=&quot;https://github.com/blainesch&quot;&gt;https://github.com/blainesch&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Twitter: &lt;a href=&quot;https://twitter.com/blainesch&quot;&gt;https://twitter.com/blainesch&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Website: &lt;a href=&quot;http://blainesch.com&quot;&gt;http://blainesch.com&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-    </item>
-    <item>
       <title>Demystifying TypeScript Decorators by James Churchill</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-james-churchill/</link>
       <pubDate>Sun, 05 Jun 2016 17:00:00 -0700</pubDate>
@@ -4937,33 +5061,24 @@ export TF_VAR_password=&amp;quot;someSecretPassword&amp;quot;
 </description>
     </item>
     <item>
-      <title>Modern Javascript Frameworks - Introduction to Ember.JS and Ember-CLI by Suchita Doshi</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-suchita-doshi/</link>
-      <pubDate>Sat, 04 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-suchita-doshi/</guid>
+      <title>How to Electron by Blaine Schmeisser</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-blaine-schmeisser/</link>
+      <pubDate>Sun, 05 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-blaine-schmeisser/</guid>
       <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-suchita-doshi/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-right&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-suchita-doshi/suchita-doshi.jpg&quot; alt=&quot;Suchita Doshi&quot;&gt;
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-blaine-schmeisser/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-left&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-blaine-schmeisser/blainesch.jpg&quot; alt=&quot;Blaine Schmeisser&quot;&gt;
 &lt;/div&gt;
 
-&lt;p&gt;Suchita is UI Lead for the analytics module of Yahoo Admanager Plus team and Core member of Emberjs group @Yahoo, Speaker at Women Who code organization (Introduction To Emberjs/Ember CLI), Conducted Webinar for the TenXList members on EmberJS. She’s passionate about improving developers ergonomics and a hardcore “cricket” fan.&lt;/p&gt;
-&lt;p&gt;In other Suchita news, she’s opening bats-woman for the Bay Area Cricket Association team! 😀&lt;/p&gt;
-&lt;p&gt;Suchita describes her talk as “There will never be a “one size fits all” approach to web development. If you want your application to be minimally interactive, then server side rendered HTML would be the way to go, else, if it were a more interactive application, then client side framework would benefit you.
-Why not use just JQuery instead of adopting these Modern Javascript Frameworks? Think about it! If your application has interactivity on the lighter side, then JQuery would work well, but as soon as you introduce more states in your application, it would then become messier and heavier on the DOM. You would need to use the ‘data-‘ attributes to store the data in your DOM and also remember how to map them with the triggered events.&lt;/p&gt;
+&lt;p&gt;I’m happy to introduce Blaine Schmeisser. He’s a recent Portland transplant currently working as a Senior Software Engineer at New Relic. He has a passion for building and shipping software and an advocate for pair programming. Outside of tech, Blaine spends his free time with his dog and maintains a simplistic, eco-friendly lifestyle.&lt;/p&gt;
+&lt;p&gt;Blaine’s “How to Electron” answers questions you have about building user interface applications with JavaScript. Have you ever wanted to build desktop apps with web technology you already know? If you’ve never heard of Electron or just want to learn more about it, this talk will cover what Electron is and how to utilize it to create powerful tools like Atom and Slack. You will learn the history of Electron, how to get started, the trade-offs of picking various boiler plates, and the unique Electron specific APIs that are vital to being a Electron developer.&lt;/p&gt;
 &lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Here is where client side frameworks come to the rescue. I have worked on several client side frameworks like Backbone.js, Ember.js. Few of the many features I love about Ember.js are the two-way data binding, Computed Properties, the run loop, convention over configuration nature, ease of handling routing and many more.
-In this talk I would be covering the following:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Introduction to Emberjs and why Ember&lt;/li&gt;
-&lt;li&gt;How Ember js makes a difference&lt;/li&gt;
-&lt;li&gt;Ember convention over configuration nature&lt;/li&gt;
-&lt;li&gt;Introduction to Ember routes, components and templates&lt;/li&gt;
-&lt;li&gt;Introduction to Ember CLI&lt;/li&gt;
-&lt;li&gt;Computed Properties&lt;/li&gt;
-&lt;li&gt;Live Demo on how it’s really intuitive in a couple of non-trivial scenarios.&lt;/li&gt;
+&lt;li&gt;GitHub: &lt;a href=&quot;https://github.com/blainesch&quot;&gt;https://github.com/blainesch&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Twitter: &lt;a href=&quot;https://twitter.com/blainesch&quot;&gt;https://twitter.com/blainesch&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Website: &lt;a href=&quot;http://blainesch.com&quot;&gt;http://blainesch.com&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;So basically my goal is to attract more developers to adapt modern javascript frameworks and make a difference in the way complex apps are built.”&lt;/p&gt;
 </description>
     </item>
     <item>
@@ -4994,6 +5109,36 @@ and challenges the complexity of frameworks like Google’s Angular or Facebook�
 which suggest creating view-specific APIs, per platform, app, versions of an app…&lt;/p&gt;
 &lt;p&gt;We’ll start by reviewing some of the key challenges of modern UX and Front-End Architectures. We will then present the
 key concepts of SAM and walk the audience through some node.js code samples (including server-side TimeTravel).&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>Modern Javascript Frameworks - Introduction to Ember.JS and Ember-CLI by Suchita Doshi</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-suchita-doshi/</link>
+      <pubDate>Sat, 04 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-suchita-doshi/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-suchita-doshi/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-right&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-suchita-doshi/suchita-doshi.jpg&quot; alt=&quot;Suchita Doshi&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Suchita is UI Lead for the analytics module of Yahoo Admanager Plus team and Core member of Emberjs group @Yahoo, Speaker at Women Who code organization (Introduction To Emberjs/Ember CLI), Conducted Webinar for the TenXList members on EmberJS. She’s passionate about improving developers ergonomics and a hardcore “cricket” fan.&lt;/p&gt;
+&lt;p&gt;In other Suchita news, she’s opening bats-woman for the Bay Area Cricket Association team! 😀&lt;/p&gt;
+&lt;p&gt;Suchita describes her talk as “There will never be a “one size fits all” approach to web development. If you want your application to be minimally interactive, then server side rendered HTML would be the way to go, else, if it were a more interactive application, then client side framework would benefit you.
+Why not use just JQuery instead of adopting these Modern Javascript Frameworks? Think about it! If your application has interactivity on the lighter side, then JQuery would work well, but as soon as you introduce more states in your application, it would then become messier and heavier on the DOM. You would need to use the ‘data-‘ attributes to store the data in your DOM and also remember how to map them with the triggered events.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Here is where client side frameworks come to the rescue. I have worked on several client side frameworks like Backbone.js, Ember.js. Few of the many features I love about Ember.js are the two-way data binding, Computed Properties, the run loop, convention over configuration nature, ease of handling routing and many more.
+In this talk I would be covering the following:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Introduction to Emberjs and why Ember&lt;/li&gt;
+&lt;li&gt;How Ember js makes a difference&lt;/li&gt;
+&lt;li&gt;Ember convention over configuration nature&lt;/li&gt;
+&lt;li&gt;Introduction to Ember routes, components and templates&lt;/li&gt;
+&lt;li&gt;Introduction to Ember CLI&lt;/li&gt;
+&lt;li&gt;Computed Properties&lt;/li&gt;
+&lt;li&gt;Live Demo on how it’s really intuitive in a couple of non-trivial scenarios.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;So basically my goal is to attract more developers to adapt modern javascript frameworks and make a difference in the way complex apps are built.”&lt;/p&gt;
 </description>
     </item>
     <item>
@@ -5095,23 +5240,6 @@ In this talk, you will learn about the power of WebSockets and how they can (and
 </description>
     </item>
     <item>
-      <title>The House Is Not On Fire - Building a home automation robot with Arduino, Raspberry Pi and Node.js by Artur Paikin</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</link>
-      <pubDate>Wed, 01 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</guid>
-      <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-right&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/art-stida.jpg&quot; alt=&quot;Artur Paikin&quot;&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Artur describes himself as, “I’m a web developer and traveler. I write stories about my adventures in Russian and English on my site: &lt;a href=&quot;http://arturpaikin.com&quot;&gt;http://arturpaikin.com&lt;/a&gt; and run a small technology cooperative called &lt;a href=&quot;http://unebaguette.com&quot;&gt;Baguette&lt;/a&gt;, where I work on cool projects, currently building an ambitious next generation file uploader with &lt;a href=&quot;https://transloadit.com/&quot;&gt;Transloadit&lt;/a&gt;. I ride a &lt;a href=&quot;https://www.instagram.com/p/xC0qC2SSYb&quot;&gt;foldable bicycle&lt;/a&gt;, &lt;a href=&quot;http://unebaguette.com/web-course/&quot;&gt;teach&lt;/a&gt; web development and sometimes &lt;a href=&quot;https://www.instagram.com/p/4_6LO8ySVL/&quot;&gt;garden&lt;/a&gt; on the balcony.”&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Artur has built an open source home automation system called &lt;a href=&quot;https://github.com/arturi/kotihome&quot;&gt;Koti Home&lt;/a&gt; (Koti means home in Finnish language). It’s powered by an Arduino connected to Raspberry Pi, MQTT protocol for messaging, Node.js on the client and server, web sockets. You can interact with Koti robot via a React (like the cool kids do) control panel, Telegram Chat Bot and even your own voice.&lt;/p&gt;
-&lt;p&gt;Arthur will talk about how he’s turned this project into reality — the tech he used and the challenges he faced. From a blinking LED to a voice controlled home automation robot.&lt;/p&gt;
-</description>
-    </item>
-    <item>
       <title>Code First Docs How we Threw Out The Book &amp; Put Code First With Twilio Documentation by Jarod Reyes</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-jarod-reyes/</link>
       <pubDate>Wed, 01 Jun 2016 17:00:00 -0700</pubDate>
@@ -5133,6 +5261,23 @@ In this talk, you will learn about the power of WebSockets and how they can (and
 &lt;li&gt;Twitter: &lt;a href=&quot;https://twitter.com/jreyesdev&quot;&gt;@jreyesdev&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Github: &lt;a href=&quot;https://github.com/jarodreyes&quot;&gt;github.com/jarodreyes&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+</description>
+    </item>
+    <item>
+      <title>The House Is Not On Fire - Building a home automation robot with Arduino, Raspberry Pi and Node.js by Artur Paikin</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</link>
+      <pubDate>Wed, 01 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-right&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/art-stida.jpg&quot; alt=&quot;Artur Paikin&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Artur describes himself as, “I’m a web developer and traveler. I write stories about my adventures in Russian and English on my site: &lt;a href=&quot;http://arturpaikin.com&quot;&gt;http://arturpaikin.com&lt;/a&gt; and run a small technology cooperative called &lt;a href=&quot;http://unebaguette.com&quot;&gt;Baguette&lt;/a&gt;, where I work on cool projects, currently building an ambitious next generation file uploader with &lt;a href=&quot;https://transloadit.com/&quot;&gt;Transloadit&lt;/a&gt;. I ride a &lt;a href=&quot;https://www.instagram.com/p/xC0qC2SSYb&quot;&gt;foldable bicycle&lt;/a&gt;, &lt;a href=&quot;http://unebaguette.com/web-course/&quot;&gt;teach&lt;/a&gt; web development and sometimes &lt;a href=&quot;https://www.instagram.com/p/4_6LO8ySVL/&quot;&gt;garden&lt;/a&gt; on the balcony.”&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Artur has built an open source home automation system called &lt;a href=&quot;https://github.com/arturi/kotihome&quot;&gt;Koti Home&lt;/a&gt; (Koti means home in Finnish language). It’s powered by an Arduino connected to Raspberry Pi, MQTT protocol for messaging, Node.js on the client and server, web sockets. You can interact with Koti robot via a React (like the cool kids do) control panel, Telegram Chat Bot and even your own voice.&lt;/p&gt;
+&lt;p&gt;Arthur will talk about how he’s turned this project into reality — the tech he used and the challenges he faced. From a blinking LED to a voice controlled home automation robot.&lt;/p&gt;
 </description>
     </item>
     <item>

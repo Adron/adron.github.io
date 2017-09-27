@@ -128,7 +128,94 @@ export TF_VAR_tenant_id=&quot;7325bc0f-1842-4126-8109-7c12773e7d30&quot;
 # AWS Variables
 export TF_VAR_aws_region=&quot;us-west-2&quot;
 </code></pre><p>Note the only <span class="caps">AWS</span> variable I specifically add, is the region, the CLI adds a bunch of others or sets/assumes environment defaults in the <code>~/.aws/</code> directory. It also sets the region, but I’ve found <em>some</em> tooling doesn’t seem to use the set one, so I add the variable here so Terraform doesn’t get confused and has it set&nbsp;specifically.</p>
-<p>So that’s the way I generally find myself setting up connections for Terraform and <span class="caps">AWS</span>, Google Cloud Platform, and Azure. If you’ve got suggestions, questions, or thoughts on better ways to do this I’d love to hear about them. Ping me on Twitter <a href="https://twitter.com/Adron">@Adron</a> and we’ll&nbsp;discuss.</p>
+<p>That’s the way I find myself setting up connections for Terraform and <span class="caps">AWS</span>, Google Cloud Platform, and Azure. If you’ve got suggestions, questions, or thoughts on better ways to do this I’d love to hear about them. Ping me on Twitter <a href="https://twitter.com/Adron">@Adron</a> and we’ll&nbsp;discuss.</p>
+<p>Alright, so now it’s Kubernetes time. Once the above connection is worked out for the respective cloud providers, I can get a Kubernetes Cluster running in each. I’ll tackle the creation of each below, broken out to <span class="caps">GCP</span> and Azure, with a follow up blog post on getting Terraform to launch a Kubernetes Cluster in AWS at a later&nbsp;time.</p>
+<h2 id="gcp-kubernetes-cluster"><span class="caps">GCP</span> Kubernetes&nbsp;Cluster</h2>
+<p>For <span class="caps">GCP</span> I setup my resource as&nbsp;shown.</p>
+<pre><code>resource &quot;google_container_cluster&quot; &quot;googlykuby&quot; {
+  name               = &quot;${var.cluster_name}&quot;
+  zone               = &quot;us-west1-a&quot;
+  initial_node_count = &quot;${var.gcp_cluster_count}&quot;
+
+  additional_zones = [
+    &quot;us-west1-b&quot;,
+    &quot;us-west1-c&quot;,
+  ]
+
+  master_auth {
+    username = &quot;${var.linux_admin_username}&quot;
+    password = &quot;${var.linux_admin_password}}&quot;
+
+  }
+
+  node_config {
+    oauth_scopes = [
+      &quot;https://www.googleapis.com/auth/compute&quot;,
+      &quot;https://www.googleapis.com/auth/devstorage.read_only&quot;,
+      &quot;https://www.googleapis.com/auth/logging.write&quot;,
+      &quot;https://www.googleapis.com/auth/monitoring&quot;,
+    ]
+
+    labels {
+      this-is-for = &quot;dev-cluster&quot;
+    }
+
+    tags = [&quot;dev&quot;, &quot;work&quot;]
+  }
+}
+</code></pre><p>I setup the two variables; <code>cluster_name</code> and <code>gcp_cluster_count</code> to pull some of the settings into the variables file. Currently, my default setup is also to have two additional zones too, which means that a node will be setup in each of these zones. So expect the <span class="caps">VM</span> count to be <code>gcp_cluster_count</code> multiplied by the number of zones that are being used. In this case, there are two additional zones plus the zone the cluster is being created in, times let’s say 2 for <code>gcp_cluster_count</code>, which will give me 6 <span class="caps">VM</span> instances running. This is respectively 6 nodes in the&nbsp;cluster.</p>
+<p>The <code>master_auth</code> is then also setup, similarly to the way I setup the connection variables previously, in which they’re environment variables or I pass them in via <span class="caps">CLI</span>&nbsp;parameters.</p>
+<p>Then, just for good measure I’ve added some labels and tags. Partly as an example of how to use them but also just to differentiate this cluster versus other clusters I might have&nbsp;running.</p>
+<p>This might be surprising, but that’s it for the resource in Kubernetes. We’re now ready to launch our cluster in&nbsp;<span class="caps">GCP</span>.</p>
+<h2 id="azure-kubernetes-cluster">Azure Kubernetes&nbsp;Cluster</h2>
+<p>The Azure setup is a bit different, and in some ways more extensive in demand than the <span class="caps">GCP</span> setup. I’ve tested out a few configurations and have ended up, generally, with configuration that looks like&nbsp;this.</p>
+<pre><code>resource &quot;azurerm_container_service&quot; &quot;bluekuby&quot; {
+  name = &quot;bluekubyhouse&quot;
+  location = &quot;${azurerm_resource_group.blue_kuby_group.location}&quot;
+  resource_group_name = &quot;${azurerm_resource_group.blue_kuby_group.name}&quot;
+  orchestration_platform = &quot;Kubernetes&quot;
+
+  master_profile {
+    count = 1
+    dns_prefix = &quot;${var.azure_cluster_prefix}&quot;
+  }
+
+  linux_profile {
+    admin_username = &quot;${var.linux_admin_username}&quot;
+
+    ssh_key {
+      key_data = &quot;${var.ssh_key}&quot;
+    }
+  }
+
+  agent_pool_profile {
+    name = &quot;default&quot;
+    count = &quot;${var.azure_node_count}&quot;
+    dns_prefix = &quot;kuby.house&quot;
+    vm_size = &quot;Standard_A0&quot;
+  }
+
+  service_principal {
+    client_id = &quot;${var.client_id}&quot;
+    client_secret = &quot;${var.client_secret}&quot;
+  }
+
+  diagnostics_profile {
+    enabled = false
+  }
+
+  tags {
+    Environment = &quot;Production&quot;
+  }
+}
+</code></pre><p>The location and resource group values passed in the <code>azurerm_resource_group.blue_kuby_group.location</code> and <code>azurerm_resource_group.blue_kuby_group.name</code> are created in the following&nbsp;resource.</p>
+<pre><code>resource &quot;azurerm_resource_group&quot; &quot;blue_kuby_group&quot; {
+  name = &quot;bluekubygroup&quot;
+  location = &quot;West US&quot;
+}
+</code></pre><p>One of the differences I’ve noticed with the Azure setup vs. the <span class="caps">GCP</span> setup is that it appears, the Azure setup needs an ssh key to work with for authentication purposes while the GCP setup doesn’t particularly need&nbsp;this.</p>
+<p><em>Or does it?</em> I’ll talk more about that in a future post. For now I’ll leave you to ponder what one is doing versus the other! #shock #amaze&nbsp;#ohnoez!</p>
+<p>This provides a simple summary of the two Kubernetes setups for <span class="caps">GCP</span> and Azure. In a subsequent post I’ll dive into AWS Kubernetes setup via Terraform and also elaborate on some of the specifics that are going on when using Terraform to setup Kubernetes in any of these environments. Stay tuned, subscribe via <a href="/articles/quick-start-terraform-kubernetes/">rss</a> or for lower volume, subscribe to <a href="/">Thrashing Code&nbsp;News</a></p>
 <p><strong>References:</strong></p>
 <ul>
 <li>My current <a href="https://github.com/Adron/blue-world-making">working repo</a> of config <span class="amp">&amp;</span> code related to <a href="/articles/technology-and-upcoming-talks/">upcoming talks</a> and their respective&nbsp;examples.</li>
