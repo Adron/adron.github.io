@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="/css/style.min.css">
     <script src="/js/modernizr.js"></script>
   </head>
-  <body>
+  <body class="article-detail">
     <!--[if lt IE 8]>
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -67,8 +67,10 @@
             <div class="col-md-12">
               <!-- Page Info-->
               <div class="page-info page-info-simple">
-                <h1>Adron's Composite Code</h1>
-                <h2 class="description">Coder, Messenger, Recon, Infrastructure, Ops</h2>
+                <h1>State for Terraform with Google Cloud Storage (GCS)</h1>
+                <p class="author">Written by <span class="author">Adron Hall</span> and published on <span>September, 28 of 2017.</span>
+                </p>
+                <div class="nav"><a href="/">« Home</a></div>
               </div>
               <!-- End Page Info-->
             </div>
@@ -83,59 +85,113 @@
             <div class="col-md-9">
               <div class="main-content">
                 <!-- Blog Page-->
-                <div class="blog">
-                  <div class="row"></div>
-                </div>
-                <div class="col-md-12 col-sm-12">
-                  <!-- Blog List-->
-                  <div class="blog-grid">
-                    <div class="row">
-                      <div class="col-md-12 col-sm-12">
-                        <h3 class="blog-grid-title"><a href="/articles/dropping-the-ball-gsd-and-staying-productive/">Dropping the Ball, GSD, and Staying Productive</a></h3>
-                        <p class="blog-grid-excerpt"><p><em>[<strong><span class="caps">NOTE</span>:</strong> This was actually written Thursday the 5<span class="ord">th</span>, things make more sense with that in&nbsp;mind.]</em></p>
-<p>I sat here today, and several normal things happened that made me think of some seriously important things. The thoughts are presented very well by Scott Hanselman in a talk on <em>scaling oneself</em>. He’s got a lot of gems in this presentation (links and video below), which he’s given a few times. In those presentations he makes a few very quotable statements that I had pop into my&nbsp;mind.</p>
-<p>
-                          <p class="more"><a href="/articles/dropping-the-ball-gsd-and-staying-productive/">more</a></p>
-                        </p>
-                        <div class="blog-grid-meta"><span class="blog-grid-date">13. May 2016</span></div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End of Blog List-->
-                </div>
-                <div class="col-md-12 col-sm-12">
-                  <!-- Blog List-->
-                  <div class="blog-grid">
-                    <div class="row">
-                      <div class="col-md-12 col-sm-12">
-                        <h3 class="blog-grid-title"><a href="/articles/immutable-infrastructure-some-reads-clarification-what-it-is/">Immutable Infrastructure - Some Reads and Clarification of What It Is</a></h3>
-                        <p class="blog-grid-excerpt"><p>First let’s get these terms a little more defined with the help of some well written articles on the&nbsp;matter.</p>
+                <article class="article">
+                  <section class="content"><p>I’ve started this process by setting up two stages for execution. The initial Terraform execution which will create the Google Cloud Storage (<span class="caps">GCS</span>) bucket and then the Terraform stage that will then init that bucket for Terraform State and then create a simple&nbsp;resource.</p>
+<p>For phase 1 I have created a simple <em>connetion.tf</em> file that has the provider information in&nbsp;it.</p>
+<p><span class="more"></span></p>
+<pre><code>provider &quot;google&quot; {
+  credentials = &quot;${file(&quot;../../secrets/account-thrashingcode.json&quot;)}&quot;
+  project     = &quot;thrashingcorecode&quot;
+  region      = &quot;us-west1&quot;
+}
+</code></pre><p>The next element of phase 1 is a simple resource with the storage to be created for use as the remote state management for Terraform. That file I’ve named <em>google-cloud-storage.tf</em> with the following contents for creating the Google Cloud Storage&nbsp;resource.</p>
+<pre><code>resource &quot;google_storage_bucket&quot; &quot;blue-world-tf-state&quot; {
+  name     = &quot;blue-world-terraform-state-test&quot;
+  location = &quot;us-west1&quot;
+}
+</code></pre><p>This part of the process works quickly, just a few seconds. A simple <code>terraform apply</code> and the resource is&nbsp;created.</p>
+<pre><code>$ terraform apply
+google_storage_bucket.blue-world-tf-state: Creating...
+  force_destroy: &quot;&quot; =&gt; &quot;false&quot;
+  location:      &quot;&quot; =&gt; &quot;US-WEST1&quot;
+  name:          &quot;&quot; =&gt; &quot;blue-world-terraform-state&quot;
+  self_link:     &quot;&quot; =&gt; &quot;&lt;computed&gt;&quot;
+  storage_class: &quot;&quot; =&gt; &quot;STANDARD&quot;
+  url:           &quot;&quot; =&gt; &quot;&lt;computed&gt;&quot;
+google_storage_bucket.blue-world-tf-state: Creation complete (ID: blue-world-terraform-state)
 
-                          <p class="more"><a href="/articles/immutable-infrastructure-some-reads-clarification-what-it-is/">more</a></p>
-                        </p>
-                        <div class="blog-grid-meta"><span class="blog-grid-date">12. April 2016</span></div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End of Blog List-->
-                </div>
-                <div class="col-md-12 col-sm-12">
-                  <!-- Blog List-->
-                  <div class="blog-grid">
-                    <div class="row">
-                      <div class="col-md-12 col-sm-12">
-                        <h3 class="blog-grid-title"><a href="/articles/the-difficult-open-source-path/">The Difficult Open Source Path</a></h3>
-                        <p class="blog-grid-excerpt"><p>Bringing a closed source, or just simply an internally managed code base, into the wild of open source software can be an arduous and surreal process. In this article I’m going to ramble on about exactly that, with a few learned lessons and key successes I’ve&nbsp;had.</p>
-<p>I’m currently helping the Home Depot Quote Center determine what is useful software to open source, and then helping them move toward open sourcing that software. In the past I’ve managed the open source development of .<span class="caps">NET</span> Extensions of Cloud Foundry, called Iron Foundry, which provided .NET support to the Cloud Foundry Platform. I’ve also helped organize and run open source efforts for plugins at New Relic, Basho, and a host of other smaller companies. Sometimes I’ve been a code contributor, sometimes I’m just interacting with contributors and managing pull requests. Either way it has been a lot of fun and every time it has been a seriously intense learning&nbsp;opportunity.</p>
-<p>
-                          <p class="more"><a href="/articles/the-difficult-open-source-path/">more</a></p>
-                        </p>
-                        <div class="blog-grid-meta"><span class="blog-grid-date">25. March 2016</span></div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End of Blog List-->
-                </div>
+Apply complete! Resources: 1 added, 0 changed, 0 destroyed.
+✔ ~/Codez/terraform-gcs-state/phase1
+</code></pre><p><strong><em>Success!</em></strong></p>
+<p>In the phase 2 Terraform execution I’ve setup a <em>connection.tf</em> file for connection and declaration of <span class="caps">GCS</span> for the Terraform state files. The file contents looks like&nbsp;this.</p>
+<pre><code>provider &quot;google&quot; {
+  credentials = &quot;${file(&quot;../../secrets/account-thrashingcode.json&quot;)}&quot;
+  project     = &quot;thrashingcorecode&quot;
+  region      = &quot;us-west1&quot;
+}
+
+terraform {
+  backend &quot;gcs&quot; {
+    bucket  = &quot;terraform-remote-states&quot;
+    path    = &quot;dev/terraform.tfstate&quot;
+    project = &quot;sahas-codelab&quot;
+  }
+}
+</code></pre><p>The resource I’ve setup, at least for this example, is a super simple configuration to create a default network in <span class="caps">GCP</span>. That configuration looks like&nbsp;this.</p>
+<pre><code>data &quot;google_compute_network&quot; &quot;my-network&quot; {
+  name = &quot;default-us-west1&quot;
+}
+</code></pre><p>Now when I run <code>terraform init</code> I get this&nbsp;error.</p>
+<pre><code>$ terraform init
+
+Initializing the backend...
+
+Successfully configured the backend &quot;gcs&quot;! Terraform will automatically
+use this backend unless the backend configuration changes.
+Error refreshing state: [WARN] Error retrieving object blue-world-terraform-state/dev/terraform.tfstate: googleapi: got HTTP response code 403 with body: adronsotheremail@gmail.com does not have storage.objects.get access to blue-world-terraform-state/dev/terraform.tfstate.
+</code></pre><p>This leaves me with a few&nbsp;questions.</p>
+<ul>
+<li>Where does Terraform derive the “adronsotheremail@gmail.com” email identity as the account to try to access the storage location with? It doesn’t appear to actually be the same email associated to the account I created the resource&nbsp;with.</li>
+<li>If I can create the resource originally with a service account that has ownership rights in phase 1, what is it using for permissions in this particular situation? It does clearly exist as shown <img src="/articles/my-terraform-is-broken-in-state/exists.png" alt="Shown in GCP Interface"></li>
+</ul>
+<p>My first attempt to fix this was to go to the storage resource and add this account to insure it has permission to this&nbsp;resource.</p>
+<p><img src="/articles/my-terraform-is-broken-in-state/add-member.png" alt="Adding Access"></p>
+<p>Ok, so that fixed the issue, but I’m still not entirely sure why I had to add the member, when theoretically I thought I was using the connection information detailed in the <em>connection.tf</em> files in both phases right?&nbsp;<span class="caps">RIGHT</span>?</p>
+<p>I went to <span class="caps">RTFM</span> at this point, to see what I might be missing. I found on the <a href="https://www.terraform.io/docs/backends/types/gcs.html">Hashicorp Docs</a> some information. As I scrolled down it appeared that maybe I could use the <em>credentials</em> property for the configuration&nbsp;resource.</p>
+<p><img src="/articles/my-terraform-is-broken-in-state/maybe-add-credentials-here.png" alt="Adding Credentials"></p>
+<p>I added it as such to my configuration in the <em>connection.tf</em>&nbsp;file.</p>
+<pre><code>terraform {
+  backend &quot;gcs&quot; {
+    bucket  = &quot;blue-world-terraform-state&quot;
+    path    = &quot;dev/terraform.tfstate&quot;
+    project = &quot;thrashingcorecode&quot;
+    credentials = &quot;${file(&quot;../../secrets/account-thrashingcode.json&quot;)}&quot;
+  }
+}
+</code></pre><p>Now, this seems all groovy. But now I’m looking at my <em>connection.tf</em> file and the complete file looks like&nbsp;this.</p>
+<pre><code>provider &quot;google&quot; {
+  credentials = &quot;${file(&quot;../../secrets/account-thrashingcode.json&quot;)}&quot;
+  project     = &quot;thrashingcorecode&quot;
+  region      = &quot;us-west1&quot;
+}
+
+terraform {
+  backend &quot;gcs&quot; {
+    bucket  = &quot;blue-world-terraform-state&quot;
+    path    = &quot;dev/terraform.tfstate&quot;
+    project = &quot;thrashingcorecode&quot;
+    credentials = &quot;${file(&quot;../../secrets/account-thrashingcode.json&quot;)}&quot;
+  }
+}
+</code></pre><p>My first issue with this is I have two credentials properties and really there should just be the one, in the provider. But I digress, I’m experimenting so upwards and&nbsp;onward.</p>
+<pre><code>$ terraform apply
+Failed to load backend: Error loading backend config: 1 error(s) occurred:
+
+* terraform.backend: configuration cannot contain interpolations
+
+The backend configuration is loaded by Terraform extremely early, before
+the core of Terraform can be initialized. This is necessary because the backend
+dictates the behavior of that core. The core is what handles interpolation
+processing. Because of this, interpolations cannot be used in backend
+configuration.
+
+If you&#39;d like to parameterize backend configuration, we recommend using
+partial configuration with the &quot;-backend-config&quot; flag to &quot;terraform init&quot;.
+</code></pre><p>So yup, that’s an utter failure. Let’s read this. The meat of this message boils down to <em>“terraform.backend: configuration cannot contain interpolations”</em>. Ok, that I understand, the <code>credentials = &quot;${file(&quot;../../secrets/account-thrashingcode.json&quot;)}&quot;</code> can’t be used in this particular configuration. That doesn’t fix the underlying&nbsp;issue.</p>
+<p>I’m not exactly sure, at this point, what is using what permission and why the permission isn’t available by creating the resource and using the same service account to write into that bucket, the resource, with the contents of the Terraform state unless I go set the bucket’s permissions manually. Simply, this is odd and I’m convinced I’m missing something or maybe something really is just that&nbsp;crazy.</p>
+<p>If you’ve got any idea what’s going on, ping me <a href="https://twitter.com/adron">@Adron</a> if you would. I’d love to complete this automation without such a hacky fix. When I get all the pieces understood, figure out this issue, and fix it, I’ll update this post <span class="caps">ASAP</span> with the end of this whole&nbsp;story!</p>
+</section>
+                </article>
                 <!-- End of Blog Page-->
               </div>
             </div>
@@ -228,8 +284,7 @@
             </div>
           </div>
         </div>
-        <div class="nav"><a href="/page/28/">« Newer</a>&nbsp;<a href="/page/30/">Previous »</a>
-        </div>
+        <div class="nav"><a href="/">« Home</a></div>
       </div>
     </div>
     <script src="/js/all.js"></script>

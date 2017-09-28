@@ -5,9 +5,121 @@
     <atom:link href="http://adron.github.io/feed.xml" rel="self" type="application/rss+xml"></atom:link>
     <link>http://adron.github.io</link>
     <description>Coder, Messenger, Recon, Infrastructure, Ops</description>
-    <pubDate>Mon, 25 Sep 2017 14:21:50 -0700</pubDate>
+    <pubDate>Thu, 28 Sep 2017 07:35:13 -0700</pubDate>
     <generator>Wintersmith - https://github.com/jnordberg/wintersmith</generator>
     <language>en</language>
+    <item>
+      <title>State for Terraform with Google Cloud Storage (GCS)</title>
+      <link>http://adron.github.io/articles/my-terraform-is-broken-in-state/</link>
+      <pubDate>Thu, 28 Sep 2017 07:35:13 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/my-terraform-is-broken-in-state/</guid>
+      <author></author>
+      <description>&lt;p&gt;I’ve started this process by setting up two stages for execution. The initial Terraform execution which will create the Google Cloud Storage (GCS) bucket and then the Terraform stage that will then init that bucket for Terraform State and then create a simple resource.&lt;/p&gt;
+&lt;p&gt;For phase 1 I have created a simple &lt;em&gt;connetion.tf&lt;/em&gt; file that has the provider information in it.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;provider &amp;quot;google&amp;quot; {
+  credentials = &amp;quot;${file(&amp;quot;../../secrets/account-thrashingcode.json&amp;quot;)}&amp;quot;
+  project     = &amp;quot;thrashingcorecode&amp;quot;
+  region      = &amp;quot;us-west1&amp;quot;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The next element of phase 1 is a simple resource with the storage to be created for use as the remote state management for Terraform. That file I’ve named &lt;em&gt;google-cloud-storage.tf&lt;/em&gt; with the following contents for creating the Google Cloud Storage resource.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;resource &amp;quot;google_storage_bucket&amp;quot; &amp;quot;blue-world-tf-state&amp;quot; {
+  name     = &amp;quot;blue-world-terraform-state-test&amp;quot;
+  location = &amp;quot;us-west1&amp;quot;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;This part of the process works quickly, just a few seconds. A simple &lt;code&gt;terraform apply&lt;/code&gt; and the resource is created.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ terraform apply
+google_storage_bucket.blue-world-tf-state: Creating...
+  force_destroy: &amp;quot;&amp;quot; =&amp;gt; &amp;quot;false&amp;quot;
+  location:      &amp;quot;&amp;quot; =&amp;gt; &amp;quot;US-WEST1&amp;quot;
+  name:          &amp;quot;&amp;quot; =&amp;gt; &amp;quot;blue-world-terraform-state&amp;quot;
+  self_link:     &amp;quot;&amp;quot; =&amp;gt; &amp;quot;&amp;lt;computed&amp;gt;&amp;quot;
+  storage_class: &amp;quot;&amp;quot; =&amp;gt; &amp;quot;STANDARD&amp;quot;
+  url:           &amp;quot;&amp;quot; =&amp;gt; &amp;quot;&amp;lt;computed&amp;gt;&amp;quot;
+google_storage_bucket.blue-world-tf-state: Creation complete (ID: blue-world-terraform-state)
+
+Apply complete! Resources: 1 added, 0 changed, 0 destroyed.
+✔ ~/Codez/terraform-gcs-state/phase1
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;&lt;em&gt;Success!&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;In the phase 2 Terraform execution I’ve setup a &lt;em&gt;connection.tf&lt;/em&gt; file for connection and declaration of GCS for the Terraform state files. The file contents looks like this.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;provider &amp;quot;google&amp;quot; {
+  credentials = &amp;quot;${file(&amp;quot;../../secrets/account-thrashingcode.json&amp;quot;)}&amp;quot;
+  project     = &amp;quot;thrashingcorecode&amp;quot;
+  region      = &amp;quot;us-west1&amp;quot;
+}
+
+terraform {
+  backend &amp;quot;gcs&amp;quot; {
+    bucket  = &amp;quot;terraform-remote-states&amp;quot;
+    path    = &amp;quot;dev/terraform.tfstate&amp;quot;
+    project = &amp;quot;sahas-codelab&amp;quot;
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The resource I’ve setup, at least for this example, is a super simple configuration to create a default network in GCP. That configuration looks like this.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;data &amp;quot;google_compute_network&amp;quot; &amp;quot;my-network&amp;quot; {
+  name = &amp;quot;default-us-west1&amp;quot;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Now when I run &lt;code&gt;terraform init&lt;/code&gt; I get this error.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ terraform init
+
+Initializing the backend...
+
+Successfully configured the backend &amp;quot;gcs&amp;quot;! Terraform will automatically
+use this backend unless the backend configuration changes.
+Error refreshing state: [WARN] Error retrieving object blue-world-terraform-state/dev/terraform.tfstate: googleapi: got HTTP response code 403 with body: adronsotheremail@gmail.com does not have storage.objects.get access to blue-world-terraform-state/dev/terraform.tfstate.
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;This leaves me with a few questions.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Where does Terraform derive the “adronsotheremail@gmail.com” email identity as the account to try to access the storage location with? It doesn’t appear to actually be the same email associated to the account I created the resource with.&lt;/li&gt;
+&lt;li&gt;If I can create the resource originally with a service account that has ownership rights in phase 1, what is it using for permissions in this particular situation? It does clearly exist as shown &lt;img src=&quot;/articles/my-terraform-is-broken-in-state/exists.png&quot; alt=&quot;Shown in GCP Interface&quot;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;My first attempt to fix this was to go to the storage resource and add this account to insure it has permission to this resource.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/my-terraform-is-broken-in-state/add-member.png&quot; alt=&quot;Adding Access&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Ok, so that fixed the issue, but I’m still not entirely sure why I had to add the member, when theoretically I thought I was using the connection information detailed in the &lt;em&gt;connection.tf&lt;/em&gt; files in both phases right? RIGHT?&lt;/p&gt;
+&lt;p&gt;I went to RTFM at this point, to see what I might be missing. I found on the &lt;a href=&quot;https://www.terraform.io/docs/backends/types/gcs.html&quot;&gt;Hashicorp Docs&lt;/a&gt; some information. As I scrolled down it appeared that maybe I could use the &lt;em&gt;credentials&lt;/em&gt; property for the configuration resource.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/my-terraform-is-broken-in-state/maybe-add-credentials-here.png&quot; alt=&quot;Adding Credentials&quot;&gt;&lt;/p&gt;
+&lt;p&gt;I added it as such to my configuration in the &lt;em&gt;connection.tf&lt;/em&gt; file.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;terraform {
+  backend &amp;quot;gcs&amp;quot; {
+    bucket  = &amp;quot;blue-world-terraform-state&amp;quot;
+    path    = &amp;quot;dev/terraform.tfstate&amp;quot;
+    project = &amp;quot;thrashingcorecode&amp;quot;
+    credentials = &amp;quot;${file(&amp;quot;../../secrets/account-thrashingcode.json&amp;quot;)}&amp;quot;
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Now, this seems all groovy. But now I’m looking at my &lt;em&gt;connection.tf&lt;/em&gt; file and the complete file looks like this.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;provider &amp;quot;google&amp;quot; {
+  credentials = &amp;quot;${file(&amp;quot;../../secrets/account-thrashingcode.json&amp;quot;)}&amp;quot;
+  project     = &amp;quot;thrashingcorecode&amp;quot;
+  region      = &amp;quot;us-west1&amp;quot;
+}
+
+terraform {
+  backend &amp;quot;gcs&amp;quot; {
+    bucket  = &amp;quot;blue-world-terraform-state&amp;quot;
+    path    = &amp;quot;dev/terraform.tfstate&amp;quot;
+    project = &amp;quot;thrashingcorecode&amp;quot;
+    credentials = &amp;quot;${file(&amp;quot;../../secrets/account-thrashingcode.json&amp;quot;)}&amp;quot;
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;My first issue with this is I have two credentials properties and really there should just be the one, in the provider. But I digress, I’m experimenting so upwards and onward.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ terraform apply
+Failed to load backend: Error loading backend config: 1 error(s) occurred:
+
+* terraform.backend: configuration cannot contain interpolations
+
+The backend configuration is loaded by Terraform extremely early, before
+the core of Terraform can be initialized. This is necessary because the backend
+dictates the behavior of that core. The core is what handles interpolation
+processing. Because of this, interpolations cannot be used in backend
+configuration.
+
+If you&amp;#39;d like to parameterize backend configuration, we recommend using
+partial configuration with the &amp;quot;-backend-config&amp;quot; flag to &amp;quot;terraform init&amp;quot;.
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;So yup, that’s an utter failure. Let’s read this. The meat of this message boils down to &lt;em&gt;“terraform.backend: configuration cannot contain interpolations”&lt;/em&gt;. Ok, that I understand, the &lt;code&gt;credentials = &amp;quot;${file(&amp;quot;../../secrets/account-thrashingcode.json&amp;quot;)}&amp;quot;&lt;/code&gt; can’t be used in this particular configuration. That doesn’t fix the underlying issue.&lt;/p&gt;
+&lt;p&gt;I’m not exactly sure, at this point, what is using what permission and why the permission isn’t available by creating the resource and using the same service account to write into that bucket, the resource, with the contents of the Terraform state unless I go set the bucket’s permissions manually. Simply, this is odd and I’m convinced I’m missing something or maybe something really is just that crazy.&lt;/p&gt;
+&lt;p&gt;If you’ve got any idea what’s going on, ping me &lt;a href=&quot;https://twitter.com/adron&quot;&gt;@Adron&lt;/a&gt; if you would. I’d love to complete this automation without such a hacky fix. When I get all the pieces understood, figure out this issue, and fix it, I’ll update this post ASAP with the end of this whole story!&lt;/p&gt;
+</description>
+    </item>
     <item>
       <title>Thrashing Code Metal Monday for Week of September 25th 2017</title>
       <link>http://adron.github.io/articles/thrashing-code-metal-monday-09-25-2017/</link>
@@ -5142,6 +5254,23 @@ In this talk I would be covering the following:&lt;/p&gt;
 </description>
     </item>
     <item>
+      <title>WebSockets Bring Light at the End of the Tunnel by Joel Lord</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</link>
+      <pubDate>Fri, 03 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-left&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/joel-lord.jpg&quot; alt=&quot;Joel Lord&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;As a Development Manager, Joel’s motivation and proven technical prowess makes him a key member of Spiria’s software development team. With a degree in computational astrophysics, his interests eventually made their way to software and Web design. Today, his knowledge of JavaScript lets him to support a variety of projects on both the front end and back end. As we move into the age of the Internet of Things, Joel is ready with his passion for programming node bots and experimenting with gadgets.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Joel is going to speak on Web Sockets and tunnels of light… or to describe it more specifically more and more, people seem to be obsessed with real-time data.  But what does real-time mean in the world of REST servers and one-way communication?  Most modern web applications are now either displaying a snapshot of data at a given time or use a polling mechanism to update series of data at a given interval.
+In this talk, you will learn about the power of WebSockets and how they can (and should!) be used in your modern web applications. In these 30 minutes, I will go through the process of building a Node server that can push data to multiple clients in real-time.  You will see how this can be easy using the socket.io library.&lt;/p&gt;
+</description>
+    </item>
+    <item>
       <title>MMOWAM - Build Server-less Games with a DSN by Josh Marinacci</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-josh-marinacci/</link>
       <pubDate>Fri, 03 Jun 2016 17:00:00 -0700</pubDate>
@@ -5179,40 +5308,6 @@ it can be.&lt;/p&gt;
 </description>
     </item>
     <item>
-      <title>WebSockets Bring Light at the End of the Tunnel by Joel Lord</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</link>
-      <pubDate>Fri, 03 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</guid>
-      <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-left&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/joel-lord.jpg&quot; alt=&quot;Joel Lord&quot;&gt;
-&lt;/div&gt;
-
-&lt;p&gt;As a Development Manager, Joel’s motivation and proven technical prowess makes him a key member of Spiria’s software development team. With a degree in computational astrophysics, his interests eventually made their way to software and Web design. Today, his knowledge of JavaScript lets him to support a variety of projects on both the front end and back end. As we move into the age of the Internet of Things, Joel is ready with his passion for programming node bots and experimenting with gadgets.&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Joel is going to speak on Web Sockets and tunnels of light… or to describe it more specifically more and more, people seem to be obsessed with real-time data.  But what does real-time mean in the world of REST servers and one-way communication?  Most modern web applications are now either displaying a snapshot of data at a given time or use a polling mechanism to update series of data at a given interval.
-In this talk, you will learn about the power of WebSockets and how they can (and should!) be used in your modern web applications. In these 30 minutes, I will go through the process of building a Node server that can push data to multiple clients in real-time.  You will see how this can be easy using the socket.io library.&lt;/p&gt;
-</description>
-    </item>
-    <item>
-      <title>I Play the JavaScript by Matt McKegg</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</link>
-      <pubDate>Thu, 02 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</guid>
-      <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-left&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/mattmckegg.jpg&quot; alt=&quot;Matt McKegg&quot;&gt;
-&lt;/div&gt;
-
-&lt;p&gt;A JavaScript hacker and backyard musician and from Wellington, New Zealand. Lover of all things open and modular. I spend most of my time pressing buttons of various shapes, sizes and colours. Sometimes these buttons make sounds.&lt;/p&gt;
-&lt;p&gt;Matt has been making music with computers for about 10 years, but once he tried to move from bedroom composing to live performance, he got incredibly frustrated at how hard it was to play computer music live. He decided to start working on his own live electronic performance software written in JavaScript that would let me play the way he wanted to play. 3 years later, it’s finally starting to become a reality.&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Here is one of the Matt’s recent performances, for your viewing pleasure. &lt;/p&gt;
-&lt;iframe width=&quot;1280&quot; height=&quot;720&quot; src=&quot;https://www.youtube.com/embed/L2BVDJWHdy0?rel=0&amp;amp;showinfo=0&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;</description>
-    </item>
-    <item>
       <title>The Web Platform is the Universal Instrument by Ben Michel</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-ben-michel/</link>
       <pubDate>Thu, 02 Jun 2016 17:00:00 -0700</pubDate>
@@ -5240,6 +5335,40 @@ In this talk, you will learn about the power of WebSockets and how they can (and
 </description>
     </item>
     <item>
+      <title>I Play the JavaScript by Matt McKegg</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</link>
+      <pubDate>Thu, 02 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-left&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/mattmckegg.jpg&quot; alt=&quot;Matt McKegg&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;A JavaScript hacker and backyard musician and from Wellington, New Zealand. Lover of all things open and modular. I spend most of my time pressing buttons of various shapes, sizes and colours. Sometimes these buttons make sounds.&lt;/p&gt;
+&lt;p&gt;Matt has been making music with computers for about 10 years, but once he tried to move from bedroom composing to live performance, he got incredibly frustrated at how hard it was to play computer music live. He decided to start working on his own live electronic performance software written in JavaScript that would let me play the way he wanted to play. 3 years later, it’s finally starting to become a reality.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Here is one of the Matt’s recent performances, for your viewing pleasure. &lt;/p&gt;
+&lt;iframe width=&quot;1280&quot; height=&quot;720&quot; src=&quot;https://www.youtube.com/embed/L2BVDJWHdy0?rel=0&amp;amp;showinfo=0&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;</description>
+    </item>
+    <item>
+      <title>The House Is Not On Fire - Building a home automation robot with Arduino, Raspberry Pi and Node.js by Artur Paikin</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</link>
+      <pubDate>Wed, 01 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-right&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/art-stida.jpg&quot; alt=&quot;Artur Paikin&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Artur describes himself as, “I’m a web developer and traveler. I write stories about my adventures in Russian and English on my site: &lt;a href=&quot;http://arturpaikin.com&quot;&gt;http://arturpaikin.com&lt;/a&gt; and run a small technology cooperative called &lt;a href=&quot;http://unebaguette.com&quot;&gt;Baguette&lt;/a&gt;, where I work on cool projects, currently building an ambitious next generation file uploader with &lt;a href=&quot;https://transloadit.com/&quot;&gt;Transloadit&lt;/a&gt;. I ride a &lt;a href=&quot;https://www.instagram.com/p/xC0qC2SSYb&quot;&gt;foldable bicycle&lt;/a&gt;, &lt;a href=&quot;http://unebaguette.com/web-course/&quot;&gt;teach&lt;/a&gt; web development and sometimes &lt;a href=&quot;https://www.instagram.com/p/4_6LO8ySVL/&quot;&gt;garden&lt;/a&gt; on the balcony.”&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Artur has built an open source home automation system called &lt;a href=&quot;https://github.com/arturi/kotihome&quot;&gt;Koti Home&lt;/a&gt; (Koti means home in Finnish language). It’s powered by an Arduino connected to Raspberry Pi, MQTT protocol for messaging, Node.js on the client and server, web sockets. You can interact with Koti robot via a React (like the cool kids do) control panel, Telegram Chat Bot and even your own voice.&lt;/p&gt;
+&lt;p&gt;Arthur will talk about how he’s turned this project into reality — the tech he used and the challenges he faced. From a blinking LED to a voice controlled home automation robot.&lt;/p&gt;
+</description>
+    </item>
+    <item>
       <title>Code First Docs How we Threw Out The Book &amp; Put Code First With Twilio Documentation by Jarod Reyes</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-jarod-reyes/</link>
       <pubDate>Wed, 01 Jun 2016 17:00:00 -0700</pubDate>
@@ -5261,23 +5390,6 @@ In this talk, you will learn about the power of WebSockets and how they can (and
 &lt;li&gt;Twitter: &lt;a href=&quot;https://twitter.com/jreyesdev&quot;&gt;@jreyesdev&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Github: &lt;a href=&quot;https://github.com/jarodreyes&quot;&gt;github.com/jarodreyes&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-</description>
-    </item>
-    <item>
-      <title>The House Is Not On Fire - Building a home automation robot with Arduino, Raspberry Pi and Node.js by Artur Paikin</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</link>
-      <pubDate>Wed, 01 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</guid>
-      <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-right&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/art-stida.jpg&quot; alt=&quot;Artur Paikin&quot;&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Artur describes himself as, “I’m a web developer and traveler. I write stories about my adventures in Russian and English on my site: &lt;a href=&quot;http://arturpaikin.com&quot;&gt;http://arturpaikin.com&lt;/a&gt; and run a small technology cooperative called &lt;a href=&quot;http://unebaguette.com&quot;&gt;Baguette&lt;/a&gt;, where I work on cool projects, currently building an ambitious next generation file uploader with &lt;a href=&quot;https://transloadit.com/&quot;&gt;Transloadit&lt;/a&gt;. I ride a &lt;a href=&quot;https://www.instagram.com/p/xC0qC2SSYb&quot;&gt;foldable bicycle&lt;/a&gt;, &lt;a href=&quot;http://unebaguette.com/web-course/&quot;&gt;teach&lt;/a&gt; web development and sometimes &lt;a href=&quot;https://www.instagram.com/p/4_6LO8ySVL/&quot;&gt;garden&lt;/a&gt; on the balcony.”&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Artur has built an open source home automation system called &lt;a href=&quot;https://github.com/arturi/kotihome&quot;&gt;Koti Home&lt;/a&gt; (Koti means home in Finnish language). It’s powered by an Arduino connected to Raspberry Pi, MQTT protocol for messaging, Node.js on the client and server, web sockets. You can interact with Koti robot via a React (like the cool kids do) control panel, Telegram Chat Bot and even your own voice.&lt;/p&gt;
-&lt;p&gt;Arthur will talk about how he’s turned this project into reality — the tech he used and the challenges he faced. From a blinking LED to a voice controlled home automation robot.&lt;/p&gt;
 </description>
     </item>
     <item>
