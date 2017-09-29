@@ -59,7 +59,7 @@ terraform {
   backend "gcs" {
     bucket  = "terraform-remote-states"
     path    = "dev/terraform.tfstate"
-    project = "sahas-codelab"
+    project = "thrashingcorecode"
   }
 }
 ```
@@ -154,3 +154,5 @@ So yup, that's an utter failure. Let's read this. The meat of this message boils
 I'm not exactly sure, at this point, what is using what permission and why the permission isn't available by creating the resource and using the same service account to write into that bucket, the resource, with the contents of the Terraform state unless I go set the bucket's permissions manually. Simply, this is odd and I'm convinced I'm missing something or maybe something really is just that crazy.
 
 If you've got any idea what's going on, ping me [@Adron](https://twitter.com/adron) if you would. I'd love to complete this automation without such a hacky fix. When I get all the pieces understood, figure out this issue, and fix it, I'll update this post ASAP with the end of this whole story!
+
+I've also posted a question on Stackoverflow to make providing an answer easier [here](https://stackoverflow.com/questions/46495146/my-terraform-backend-state-with-google-cloud-storage-buckets-is-created-oddly-t).

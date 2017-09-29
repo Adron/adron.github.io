@@ -52,7 +52,7 @@ terraform {
   backend &amp;quot;gcs&amp;quot; {
     bucket  = &amp;quot;terraform-remote-states&amp;quot;
     path    = &amp;quot;dev/terraform.tfstate&amp;quot;
-    project = &amp;quot;sahas-codelab&amp;quot;
+    project = &amp;quot;thrashingcorecode&amp;quot;
   }
 }
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The resource I’ve setup, at least for this example, is a super simple configuration to create a default network in GCP. That configuration looks like this.&lt;/p&gt;
@@ -118,6 +118,7 @@ partial configuration with the &amp;quot;-backend-config&amp;quot; flag to &amp;
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;So yup, that’s an utter failure. Let’s read this. The meat of this message boils down to &lt;em&gt;“terraform.backend: configuration cannot contain interpolations”&lt;/em&gt;. Ok, that I understand, the &lt;code&gt;credentials = &amp;quot;${file(&amp;quot;../../secrets/account-thrashingcode.json&amp;quot;)}&amp;quot;&lt;/code&gt; can’t be used in this particular configuration. That doesn’t fix the underlying issue.&lt;/p&gt;
 &lt;p&gt;I’m not exactly sure, at this point, what is using what permission and why the permission isn’t available by creating the resource and using the same service account to write into that bucket, the resource, with the contents of the Terraform state unless I go set the bucket’s permissions manually. Simply, this is odd and I’m convinced I’m missing something or maybe something really is just that crazy.&lt;/p&gt;
 &lt;p&gt;If you’ve got any idea what’s going on, ping me &lt;a href=&quot;https://twitter.com/adron&quot;&gt;@Adron&lt;/a&gt; if you would. I’d love to complete this automation without such a hacky fix. When I get all the pieces understood, figure out this issue, and fix it, I’ll update this post ASAP with the end of this whole story!&lt;/p&gt;
+&lt;p&gt;I’ve also posted a question on Stackoverflow to make providing an answer easier &lt;a href=&quot;https://stackoverflow.com/questions/46495146/my-terraform-backend-state-with-google-cloud-storage-buckets-is-created-oddly-t&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     <item>
@@ -5308,6 +5309,23 @@ it can be.&lt;/p&gt;
 </description>
     </item>
     <item>
+      <title>I Play the JavaScript by Matt McKegg</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</link>
+      <pubDate>Thu, 02 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-left&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/mattmckegg.jpg&quot; alt=&quot;Matt McKegg&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;A JavaScript hacker and backyard musician and from Wellington, New Zealand. Lover of all things open and modular. I spend most of my time pressing buttons of various shapes, sizes and colours. Sometimes these buttons make sounds.&lt;/p&gt;
+&lt;p&gt;Matt has been making music with computers for about 10 years, but once he tried to move from bedroom composing to live performance, he got incredibly frustrated at how hard it was to play computer music live. He decided to start working on his own live electronic performance software written in JavaScript that would let me play the way he wanted to play. 3 years later, it’s finally starting to become a reality.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Here is one of the Matt’s recent performances, for your viewing pleasure. &lt;/p&gt;
+&lt;iframe width=&quot;1280&quot; height=&quot;720&quot; src=&quot;https://www.youtube.com/embed/L2BVDJWHdy0?rel=0&amp;amp;showinfo=0&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;</description>
+    </item>
+    <item>
       <title>The Web Platform is the Universal Instrument by Ben Michel</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-ben-michel/</link>
       <pubDate>Thu, 02 Jun 2016 17:00:00 -0700</pubDate>
@@ -5333,23 +5351,6 @@ it can be.&lt;/p&gt;
 &lt;li&gt;Audience interaction with the exposed parameters of a live band’s instrumentation–via broadcast methods and microcontroller installations.”&lt;/li&gt;
 &lt;/ul&gt;
 </description>
-    </item>
-    <item>
-      <title>I Play the JavaScript by Matt McKegg</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</link>
-      <pubDate>Thu, 02 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</guid>
-      <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-left&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/mattmckegg.jpg&quot; alt=&quot;Matt McKegg&quot;&gt;
-&lt;/div&gt;
-
-&lt;p&gt;A JavaScript hacker and backyard musician and from Wellington, New Zealand. Lover of all things open and modular. I spend most of my time pressing buttons of various shapes, sizes and colours. Sometimes these buttons make sounds.&lt;/p&gt;
-&lt;p&gt;Matt has been making music with computers for about 10 years, but once he tried to move from bedroom composing to live performance, he got incredibly frustrated at how hard it was to play computer music live. He decided to start working on his own live electronic performance software written in JavaScript that would let me play the way he wanted to play. 3 years later, it’s finally starting to become a reality.&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Here is one of the Matt’s recent performances, for your viewing pleasure. &lt;/p&gt;
-&lt;iframe width=&quot;1280&quot; height=&quot;720&quot; src=&quot;https://www.youtube.com/embed/L2BVDJWHdy0?rel=0&amp;amp;showinfo=0&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;</description>
     </item>
     <item>
       <title>The House Is Not On Fire - Building a home automation robot with Arduino, Raspberry Pi and Node.js by Artur Paikin</title>
