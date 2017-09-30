@@ -156,3 +156,23 @@ I'm not exactly sure, at this point, what is using what permission and why the p
 If you've got any idea what's going on, ping me [@Adron](https://twitter.com/adron) if you would. I'd love to complete this automation without such a hacky fix. When I get all the pieces understood, figure out this issue, and fix it, I'll update this post ASAP with the end of this whole story!
 
 I've also posted a question on Stackoverflow to make providing an answer easier [here](https://stackoverflow.com/questions/46495146/my-terraform-backend-state-with-google-cloud-storage-buckets-is-created-oddly-t).
+
+**UPDATED:** ***SEPTEMBER 29, 2017***
+
+The Stackoverflow has the update with the answer I stumbled into. I feel I was being a bit of a dummy. The Google Cloud Storage Bucket is setup with the account that I used in the `connection.tf` file. But, the storage bucket needs an ACL, or Access Control List resource, created and assigned appropriately. I needed to add that to my configuration, which I did as shown below.
+
+```
+resource "google_storage_bucket" "blue-world-tf-state" {
+  name     = "blue-world-terraform-state"
+  location = "us-west1"
+}
+
+resource "google_storage_bucket_acl" "image-store-acl" {
+  bucket = "${google_storage_bucket.blue-world-tf-state.name}"
+  predefined_acl = "publicreadwrite"
+}
+```
+
+The first resource I'd setup before, the second is the specific ACL that I now have setup to allow my Terraform state files to be stored there as a central repository. So the mystery is resolved, albeit I still think there ought to be some "*give the storage bucket rights per the service account*" type of creation process. But there isn't, so at least once the practice is known, one can easily move forward with that practice in play. Cheers!
+
+**UPDATE FINI**

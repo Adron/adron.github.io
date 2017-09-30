@@ -191,6 +191,19 @@ partial configuration with the &quot;-backend-config&quot; flag to &quot;terrafo
 <p>I’m not exactly sure, at this point, what is using what permission and why the permission isn’t available by creating the resource and using the same service account to write into that bucket, the resource, with the contents of the Terraform state unless I go set the bucket’s permissions manually. Simply, this is odd and I’m convinced I’m missing something or maybe something really is just that&nbsp;crazy.</p>
 <p>If you’ve got any idea what’s going on, ping me <a href="https://twitter.com/adron">@Adron</a> if you would. I’d love to complete this automation without such a hacky fix. When I get all the pieces understood, figure out this issue, and fix it, I’ll update this post <span class="caps">ASAP</span> with the end of this whole&nbsp;story!</p>
 <p>I’ve also posted a question on Stackoverflow to make providing an answer easier <a href="https://stackoverflow.com/questions/46495146/my-terraform-backend-state-with-google-cloud-storage-buckets-is-created-oddly-t">here</a>.</p>
+<p><strong><span class="caps">UPDATED</span>:</strong> <strong><em><span class="caps">SEPTEMBER</span> 29,&nbsp;2017</em></strong></p>
+<p>The Stackoverflow has the update with the answer I stumbled into. I feel I was being a bit of a dummy. The Google Cloud Storage Bucket is setup with the account that I used in the <code>connection.tf</code> file. But, the storage bucket needs an <span class="caps">ACL</span>, or Access Control List resource, created and assigned appropriately. I needed to add that to my configuration, which I did as shown&nbsp;below.</p>
+<pre><code>resource &quot;google_storage_bucket&quot; &quot;blue-world-tf-state&quot; {
+  name     = &quot;blue-world-terraform-state&quot;
+  location = &quot;us-west1&quot;
+}
+
+resource &quot;google_storage_bucket_acl&quot; &quot;image-store-acl&quot; {
+  bucket = &quot;${google_storage_bucket.blue-world-tf-state.name}&quot;
+  predefined_acl = &quot;publicreadwrite&quot;
+}
+</code></pre><p>The first resource I’d setup before, the second is the specific <span class="caps">ACL</span> that I now have setup to allow my Terraform state files to be stored there as a central repository. So the mystery is resolved, albeit I still think there ought to be some “<em>give the storage bucket rights per the service account</em>“ type of creation process. But there isn’t, so at least once the practice is known, one can easily move forward with that practice in play.&nbsp;Cheers!</p>
+<p><strong><span class="caps">UPDATE</span>&nbsp;FINI</strong></p>
 </section>
                 </article>
                 <!-- End of Blog Page-->
