@@ -6,6 +6,8 @@ template: article.jade
 ---
 **UPDATE INLINE BELOW -** ***SEPTEMBER 29, 2017***
 
+[Article Code/Config Repository](https://github.com/Adron/terraform-gcs-state)
+
 I've started this process by setting up two stages for execution. The initial Terraform execution which will create the Google Cloud Storage (GCS) bucket and then the Terraform stage that will then init that bucket for Terraform State and then create a simple resource.
 
 For phase 1 I have created a simple *connetion.tf* file that has the provider information in it.
