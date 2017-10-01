@@ -5,9 +5,38 @@
     <atom:link href="http://adron.github.io/feed.xml" rel="self" type="application/rss+xml"></atom:link>
     <link>http://adron.github.io</link>
     <description>Coder, Messenger, Recon, Infrastructure, Ops</description>
-    <pubDate>Sat, 30 Sep 2017 08:23:34 -0700</pubDate>
+    <pubDate>Mon, 02 Oct 2017 08:37:20 -0700</pubDate>
     <generator>Wintersmith - https://github.com/jnordberg/wintersmith</generator>
     <language>en</language>
+    <item>
+      <title>Thrashing Code Metal Monday for Week of October 2nd 2017</title>
+      <link>http://adron.github.io/articles/thrashing-code-metal-monday-10-02-2017/</link>
+      <pubDate>Mon, 02 Oct 2017 08:37:20 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/thrashing-code-metal-monday-10-02-2017/</guid>
+      <author></author>
+      <description>&lt;p&gt;Ah, this one has the soul and groove that the Swedes have been bringing to the show lately. A little &lt;a href=&quot;http://www.ghost-official.com/&quot;&gt;Ghost B.C.&lt;/a&gt; (or simply Ghost these days) and &lt;a href=&quot;https://www.facebook.com/thegreatdiscord/&quot;&gt;The Great Discord&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;In addition I’ve got a new Metal Monday Coding Challenge plus one solution to a previous Metal Monday Coding Challenge.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/-0Ao4t_fe0I&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/UEKcl8MzWLQ&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;p&gt;With the mind freed, let’s dive into a coding challenge.&lt;/p&gt;
+&lt;h2 id=&quot;2-sum&quot;&gt;2 Sum&lt;/h2&gt;
+&lt;p&gt;Given an array of integers, return indices of the two numbers such that they add up to a specific target.&lt;/p&gt;
+&lt;p&gt;Work through the solution so that each input would have exactly one solution and do not use the same element twice.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Example:
+Given nums = [2, 7, 11, 15], target = 9,&lt;/p&gt;
+&lt;p&gt;Because nums[0] + nums[1] = 2 + 7 = 9,
+return [0, 1].&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Now here’s the twist. Provide at least 2 or more ways in which you solve the problem, in individual repos, that all build via simple README.md instructions. Minimal download, minimal dependencies, one just needs to be able to run it as easily as possible. You knew I couldn’t just make it a simple coding solution, there had to be some odd thing added.&lt;/p&gt;
+&lt;p&gt;As for the victory prize, suggest something you think would be a well deserved victory prize for such repositories!&lt;/p&gt;
+&lt;p&gt;After all that building and thinking, time to finish off Metal Monday with a little Amon Amarth.&lt;/p&gt;
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/55OJ17cHeJA&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;
+</description>
+    </item>
     <item>
       <title>The Developer Advocates - Observations on Microsoft's New Competence</title>
       <link>http://adron.github.io/articles/the-developer-advocate-observations-of-microsofts-new-competence/</link>
@@ -35,7 +64,7 @@
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;The team has to be skilled at a variety of complementing technologies. If someone knows X, and the next person knows X, and nobody knows Y, then the team is going to be fairly weak and likely broken in representing and providing value around Y, and in some sense even around X. At this point the Developer Advocates that have been introduced have some pretty extensive skillsets around key technologies that the Microsoft Technical Evangelists have traditionally been extremely weak in. This current team has some skills in the Windows space, but there’s been a big focus in filling the massive skills gap around Linux, cloud technology (ironic there’s traditionally been such a gap on the cloud team), non-MS languages like Go, distributed systems, data analysis and intelligent (or data science or whatever one may call these roles), and more. The Advocate team (also not called evangelists anymore, finally) is finally in a good position to actually start doing advocacy around actual cloud technology. I’m excited for the potential of the prospects!&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;The third thing that has stood out, is that they’ve hired people that know how to do the &lt;em&gt;advocacy&lt;/em&gt; thing already. They’re not trying to define or redefine it on Microsoft’s terms but instead have brought people onboard that are already natural advocates of things they find interesting. Take Erik St Martin (&lt;a href=&quot;https://twitter.com/erikstmartin&quot;&gt;@erikstmartin&lt;/a&gt;) for example; co-authored a book, “&lt;a href=&quot;https://www.manning.com/books/go-in-action&quot;&gt;Go in Action&lt;/a&gt;“ with Brian Ketelson (&lt;a href=&quot;https://twitter.com/bketelson&quot;&gt;@bketelson&lt;/a&gt;), co-hosts &lt;a href=&quot;https://twitter.com/gotimefm&quot;&gt;Go Time FM&lt;/a&gt;. That brings up another great example with Brian Ketelson. Both of these guys are hug advocates in their own right, without connection to any specific big company or what not. These are the types of people that bring huge strength to a team with already proven ability to delivery. Then there’s Jesse Frazelle, but seriously, I really don’t even need to mention the work she’s done with containers (cough cough, docker, etc). Another person you should be watching is Anthony Chu (&lt;a href=&quot;https://twitter.com/nthonyChu&quot;&gt;@nthonyChu&lt;/a&gt;), who’s been a steady Azure and great technologies advocate over the years, also &lt;a href=&quot;https://anthonychu.ca/post/joining-microsoft-cloud-developer-advocate/&quot;&gt;joined up&lt;/a&gt;. You can read more about the individual team members &lt;a href=&quot;http://adron.github.io/articles/the-developer-advocate-observations-of-microsofts-new-competence/&quot;&gt;here&lt;/a&gt;, and I hear through the secret grapevine that there are more en route to join. Simply put, Microsoft isn’t pulling their punches!&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;The third thing that has stood out, is that they’ve hired people that know how to do the &lt;em&gt;advocacy&lt;/em&gt; thing already. They’re not trying to define or redefine it on Microsoft’s terms but instead have brought people onboard that are already natural advocates of things they find interesting. Take Erik St Martin (&lt;a href=&quot;https://twitter.com/erikstmartin&quot;&gt;@erikstmartin&lt;/a&gt;) for example; co-authored a book, “&lt;a href=&quot;https://www.manning.com/books/go-in-action&quot;&gt;Go in Action&lt;/a&gt;“ with Brian Ketelsen (&lt;a href=&quot;https://twitter.com/bketelsen&quot;&gt;@bketelsen&lt;/a&gt;), co-hosts &lt;a href=&quot;https://twitter.com/gotimefm&quot;&gt;Go Time FM&lt;/a&gt;. That brings up another great example with Brian Ketelsen. Both of these guys are hug advocates in their own right, without connection to any specific big company or what not. These are the types of people that bring huge strength to a team with already proven ability to delivery. Then there’s Jesse Frazelle, but seriously, I really don’t even need to mention the work she’s done with containers (cough cough, docker, etc). Another person you should be watching is Anthony Chu (&lt;a href=&quot;https://twitter.com/nthonyChu&quot;&gt;@nthonyChu&lt;/a&gt;), who’s been a steady Azure and great technologies advocate over the years, also &lt;a href=&quot;https://anthonychu.ca/post/joining-microsoft-cloud-developer-advocate/&quot;&gt;joined up&lt;/a&gt;. You can read more about the individual team members &lt;a href=&quot;http://adron.github.io/articles/the-developer-advocate-observations-of-microsofts-new-competence/&quot;&gt;here&lt;/a&gt;, and I hear through the secret grapevine that there are more en route to join. Simply put, Microsoft isn’t pulling their punches!&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;Before a lot of the Microsoft team had been formed into the epic legion it is today, there were a number of articles pointing to this rebirth into a newly relevant organization. One that was solid is Ars Technica’s “&lt;a href=&quot;https://arstechnica.com/information-technology/2017/05/microsofts-renewed-embrace-of-developers-developers-developers-developers/&quot;&gt;Microsoft’s renewed embrace of developers, developers, developers, developers&lt;/a&gt;“ by Peter Bright (&lt;a href=&quot;https://twitter.com/drpizza&quot;&gt;@drpizza&lt;/a&gt;). One of the first, as anyone who reads &amp;amp; subscribes to [Red Monk] analysis would suspect, was published by James Governor (&lt;a href=&quot;https://twitter.com/monkchips&quot;&gt;@monkchips&lt;/a&gt;) with “&lt;a href=&quot;http://redmonk.com/jgovernor/2017/09/06/on-hiring-jessie-frazelle-microsofts-developer-advocacy-hot-streak-continues/&quot;&gt;On Hiring Jesse Frazelle: Microsoft’s Developer Advocacy Hot Streak Continues&lt;/a&gt;“. The writing has been on the proverbial wall.&lt;/p&gt;
@@ -5201,27 +5230,6 @@ export TF_VAR_password=&amp;quot;someSecretPassword&amp;quot;
 </description>
     </item>
     <item>
-      <title>How to Electron by Blaine Schmeisser</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-blaine-schmeisser/</link>
-      <pubDate>Sun, 05 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-blaine-schmeisser/</guid>
-      <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-blaine-schmeisser/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-left&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-blaine-schmeisser/blainesch.jpg&quot; alt=&quot;Blaine Schmeisser&quot;&gt;
-&lt;/div&gt;
-
-&lt;p&gt;I’m happy to introduce Blaine Schmeisser. He’s a recent Portland transplant currently working as a Senior Software Engineer at New Relic. He has a passion for building and shipping software and an advocate for pair programming. Outside of tech, Blaine spends his free time with his dog and maintains a simplistic, eco-friendly lifestyle.&lt;/p&gt;
-&lt;p&gt;Blaine’s “How to Electron” answers questions you have about building user interface applications with JavaScript. Have you ever wanted to build desktop apps with web technology you already know? If you’ve never heard of Electron or just want to learn more about it, this talk will cover what Electron is and how to utilize it to create powerful tools like Atom and Slack. You will learn the history of Electron, how to get started, the trade-offs of picking various boiler plates, and the unique Electron specific APIs that are vital to being a Electron developer.&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;GitHub: &lt;a href=&quot;https://github.com/blainesch&quot;&gt;https://github.com/blainesch&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Twitter: &lt;a href=&quot;https://twitter.com/blainesch&quot;&gt;https://twitter.com/blainesch&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Website: &lt;a href=&quot;http://blainesch.com&quot;&gt;http://blainesch.com&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-    </item>
-    <item>
       <title>Demystifying TypeScript Decorators by James Churchill</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-james-churchill/</link>
       <pubDate>Sun, 05 Jun 2016 17:00:00 -0700</pubDate>
@@ -5241,6 +5249,27 @@ export TF_VAR_password=&amp;quot;someSecretPassword&amp;quot;
 &lt;li&gt;Blog: &lt;a href=&quot;http://smashdev.com&quot;&gt;http://smashdev.com&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Github: &lt;a href=&quot;http://github.com/smashdevcode&quot;&gt;http://github.com/smashdevcode&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Twitter: &lt;a href=&quot;http://twitter.com/SmashDev&quot;&gt;http://twitter.com/SmashDev&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    <item>
+      <title>How to Electron by Blaine Schmeisser</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-blaine-schmeisser/</link>
+      <pubDate>Sun, 05 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-blaine-schmeisser/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-blaine-schmeisser/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-left&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-blaine-schmeisser/blainesch.jpg&quot; alt=&quot;Blaine Schmeisser&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;I’m happy to introduce Blaine Schmeisser. He’s a recent Portland transplant currently working as a Senior Software Engineer at New Relic. He has a passion for building and shipping software and an advocate for pair programming. Outside of tech, Blaine spends his free time with his dog and maintains a simplistic, eco-friendly lifestyle.&lt;/p&gt;
+&lt;p&gt;Blaine’s “How to Electron” answers questions you have about building user interface applications with JavaScript. Have you ever wanted to build desktop apps with web technology you already know? If you’ve never heard of Electron or just want to learn more about it, this talk will cover what Electron is and how to utilize it to create powerful tools like Atom and Slack. You will learn the history of Electron, how to get started, the trade-offs of picking various boiler plates, and the unique Electron specific APIs that are vital to being a Electron developer.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;GitHub: &lt;a href=&quot;https://github.com/blainesch&quot;&gt;https://github.com/blainesch&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Twitter: &lt;a href=&quot;https://twitter.com/blainesch&quot;&gt;https://twitter.com/blainesch&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Website: &lt;a href=&quot;http://blainesch.com&quot;&gt;http://blainesch.com&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>
@@ -5305,6 +5334,23 @@ In this talk I would be covering the following:&lt;/p&gt;
 </description>
     </item>
     <item>
+      <title>WebSockets Bring Light at the End of the Tunnel by Joel Lord</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</link>
+      <pubDate>Fri, 03 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-left&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/joel-lord.jpg&quot; alt=&quot;Joel Lord&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;As a Development Manager, Joel’s motivation and proven technical prowess makes him a key member of Spiria’s software development team. With a degree in computational astrophysics, his interests eventually made their way to software and Web design. Today, his knowledge of JavaScript lets him to support a variety of projects on both the front end and back end. As we move into the age of the Internet of Things, Joel is ready with his passion for programming node bots and experimenting with gadgets.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Joel is going to speak on Web Sockets and tunnels of light… or to describe it more specifically more and more, people seem to be obsessed with real-time data.  But what does real-time mean in the world of REST servers and one-way communication?  Most modern web applications are now either displaying a snapshot of data at a given time or use a polling mechanism to update series of data at a given interval.
+In this talk, you will learn about the power of WebSockets and how they can (and should!) be used in your modern web applications. In these 30 minutes, I will go through the process of building a Node server that can push data to multiple clients in real-time.  You will see how this can be easy using the socket.io library.&lt;/p&gt;
+</description>
+    </item>
+    <item>
       <title>MMOWAM - Build Server-less Games with a DSN by Josh Marinacci</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-josh-marinacci/</link>
       <pubDate>Fri, 03 Jun 2016 17:00:00 -0700</pubDate>
@@ -5342,21 +5388,21 @@ it can be.&lt;/p&gt;
 </description>
     </item>
     <item>
-      <title>WebSockets Bring Light at the End of the Tunnel by Joel Lord</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</link>
-      <pubDate>Fri, 03 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</guid>
+      <title>I Play the JavaScript by Matt McKegg</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</link>
+      <pubDate>Thu, 02 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</guid>
       <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;div class=&quot;image float-left&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/joel-lord.jpg&quot; alt=&quot;Joel Lord&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/mattmckegg.jpg&quot; alt=&quot;Matt McKegg&quot;&gt;
 &lt;/div&gt;
 
-&lt;p&gt;As a Development Manager, Joel’s motivation and proven technical prowess makes him a key member of Spiria’s software development team. With a degree in computational astrophysics, his interests eventually made their way to software and Web design. Today, his knowledge of JavaScript lets him to support a variety of projects on both the front end and back end. As we move into the age of the Internet of Things, Joel is ready with his passion for programming node bots and experimenting with gadgets.&lt;/p&gt;
+&lt;p&gt;A JavaScript hacker and backyard musician and from Wellington, New Zealand. Lover of all things open and modular. I spend most of my time pressing buttons of various shapes, sizes and colours. Sometimes these buttons make sounds.&lt;/p&gt;
+&lt;p&gt;Matt has been making music with computers for about 10 years, but once he tried to move from bedroom composing to live performance, he got incredibly frustrated at how hard it was to play computer music live. He decided to start working on his own live electronic performance software written in JavaScript that would let me play the way he wanted to play. 3 years later, it’s finally starting to become a reality.&lt;/p&gt;
 &lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Joel is going to speak on Web Sockets and tunnels of light… or to describe it more specifically more and more, people seem to be obsessed with real-time data.  But what does real-time mean in the world of REST servers and one-way communication?  Most modern web applications are now either displaying a snapshot of data at a given time or use a polling mechanism to update series of data at a given interval.
-In this talk, you will learn about the power of WebSockets and how they can (and should!) be used in your modern web applications. In these 30 minutes, I will go through the process of building a Node server that can push data to multiple clients in real-time.  You will see how this can be easy using the socket.io library.&lt;/p&gt;
-</description>
+&lt;p&gt;Here is one of the Matt’s recent performances, for your viewing pleasure. &lt;/p&gt;
+&lt;iframe width=&quot;1280&quot; height=&quot;720&quot; src=&quot;https://www.youtube.com/embed/L2BVDJWHdy0?rel=0&amp;amp;showinfo=0&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;</description>
     </item>
     <item>
       <title>The Web Platform is the Universal Instrument by Ben Michel</title>
@@ -5384,23 +5430,6 @@ In this talk, you will learn about the power of WebSockets and how they can (and
 &lt;li&gt;Audience interaction with the exposed parameters of a live band’s instrumentation–via broadcast methods and microcontroller installations.”&lt;/li&gt;
 &lt;/ul&gt;
 </description>
-    </item>
-    <item>
-      <title>I Play the JavaScript by Matt McKegg</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</link>
-      <pubDate>Thu, 02 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</guid>
-      <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-left&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/mattmckegg.jpg&quot; alt=&quot;Matt McKegg&quot;&gt;
-&lt;/div&gt;
-
-&lt;p&gt;A JavaScript hacker and backyard musician and from Wellington, New Zealand. Lover of all things open and modular. I spend most of my time pressing buttons of various shapes, sizes and colours. Sometimes these buttons make sounds.&lt;/p&gt;
-&lt;p&gt;Matt has been making music with computers for about 10 years, but once he tried to move from bedroom composing to live performance, he got incredibly frustrated at how hard it was to play computer music live. He decided to start working on his own live electronic performance software written in JavaScript that would let me play the way he wanted to play. 3 years later, it’s finally starting to become a reality.&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Here is one of the Matt’s recent performances, for your viewing pleasure. &lt;/p&gt;
-&lt;iframe width=&quot;1280&quot; height=&quot;720&quot; src=&quot;https://www.youtube.com/embed/L2BVDJWHdy0?rel=0&amp;amp;showinfo=0&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;</description>
     </item>
     <item>
       <title>Code First Docs How we Threw Out The Book &amp; Put Code First With Twilio Documentation by Jarod Reyes</title>
