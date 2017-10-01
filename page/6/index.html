@@ -91,22 +91,6 @@
                   <div class="blog-grid">
                     <div class="row">
                       <div class="col-md-12 col-sm-12">
-                        <h3 class="blog-grid-title"><a href="/articles/git-editors/">Four Quick Git Tips (AKA Things I Always Forget and Have to Look Up)</a></h3>
-                        <p class="blog-grid-excerpt"><p>Are you ever working in git, then all of a sudden you do a pull or push and boom, you’ve got a request to make a merge text file. Often this pops up as <span class="caps">VI</span> or Nano on Linux. But it can depend based on what editor is actually set. Did you know you could set the editor? Obviously you can right? Here’s the details on getting that done in&nbsp;git.</p>
-<p>
-                          <p class="more"><a href="/articles/git-editors/">more</a></p>
-                        </p>
-                        <div class="blog-grid-meta"><span class="blog-grid-date">03. May 2017</span></div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End of Blog List-->
-                </div>
-                <div class="col-md-12 col-sm-12">
-                  <!-- Blog List-->
-                  <div class="blog-grid">
-                    <div class="row">
-                      <div class="col-md-12 col-sm-12">
                         <h3 class="blog-grid-title"><a href="/articles/peloton/">Riding in the Peloton</a></h3>
                         <p class="blog-grid-excerpt"><div class="image float-right">
     <a href="http://pelotontech.io"><img src="/articles/peloton/peloton.png" alt="Peloton Tech.IO"></a>
@@ -140,6 +124,38 @@
                           <p class="more"><a href="/articles/thrashing-code-metal-monday-03-13-2017/">more</a></p>
                         </p>
                         <div class="blog-grid-meta"><span class="blog-grid-date">13. March 2017</span></div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- End of Blog List-->
+                </div>
+                <div class="col-md-12 col-sm-12">
+                  <!-- Blog List-->
+                  <div class="blog-grid">
+                    <div class="row">
+                      <div class="col-md-12 col-sm-12">
+                        <h3 class="blog-grid-title"><a href="/articles/cooking-golang/">A Go UUID Solution - Cooking Go - Issue 001</a></h3>
+                        <p class="blog-grid-excerpt"><div class="image float-right">
+    <img src="/articles/cooking-golang/golang-mascot.png" alt="Go Mascot">
+</div>
+
+<p>Want a <span class="caps">UUID</span> generator for your Go code? It’s likely you’ll need one sometime. Well here’s a short code snippet and a review of one of the available UUID libraries&nbsp;available.</p>
+<p>The library is avaliable at <a href="https://github.com/satori/go.uuid">https://github.com/satori/go.uuid</a>.</p>
+<p>With test coverage this library supports the following <span class="caps">UUID</span> types. I’ll elaborate on what each of these types are after a code snippet or&nbsp;two.</p>
+<ul>
+<li>Version 1, based on timestamp and <span class="caps">MAC</span> address (RFC&nbsp;4122)</li>
+<li>Version 2, based on timestamp, <span class="caps">MAC</span> address and POSIX UID/GID (DCE&nbsp;1.1)</li>
+<li>Version 3, based on <span class="caps">MD5</span> hashing (RFC&nbsp;4122)</li>
+<li>Version 4, based on random numbers (<span class="caps">RFC</span>&nbsp;4122)</li>
+<li>Version 5, based on <span class="caps">SHA</span>-1 hashing (RFC&nbsp;4122)</li>
+</ul>
+<p>First step. Get the&nbsp;library.</p>
+<pre><code class="lang-shell-script">go get github.com/satori/go.uuid
+</code></pre>
+<p>
+                          <p class="more"><a href="/articles/cooking-golang/">more</a></p>
+                        </p>
+                        <div class="blog-grid-meta"><span class="blog-grid-date">12. March 2017</span></div>
                       </div>
                     </div>
                   </div>
