@@ -5,9 +5,38 @@
     <atom:link href="http://adron.github.io/feed.xml" rel="self" type="application/rss+xml"></atom:link>
     <link>http://adron.github.io</link>
     <description>Coder, Messenger, Recon, Infrastructure, Ops</description>
-    <pubDate>Sat, 30 Sep 2017 08:23:34 -0700</pubDate>
+    <pubDate>Mon, 02 Oct 2017 08:37:20 -0700</pubDate>
     <generator>Wintersmith - https://github.com/jnordberg/wintersmith</generator>
     <language>en</language>
+    <item>
+      <title>Thrashing Code Metal Monday for Week of October 2nd 2017</title>
+      <link>http://adron.github.io/articles/thrashing-code-metal-monday-10-02-2017/</link>
+      <pubDate>Mon, 02 Oct 2017 08:37:20 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/thrashing-code-metal-monday-10-02-2017/</guid>
+      <author></author>
+      <description>&lt;p&gt;Ah, this one has the soul and groove that the Swedes have been bringing to the show lately. A little &lt;a href=&quot;http://www.ghost-official.com/&quot;&gt;Ghost B.C.&lt;/a&gt; (or simply Ghost these days) and &lt;a href=&quot;https://www.facebook.com/thegreatdiscord/&quot;&gt;The Great Discord&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;In addition I’ve got a new Metal Monday Coding Challenge and Wednesday I’ll have some answers to the first &lt;a href=&quot;http://adron.github.io/articles/thrashing-code-metal-monday-09-18-2017/&quot;&gt;Metal Monday Coding Challenge&lt;/a&gt;. If you’ve not solved it, or attempted to put the information together necessary for that problem to be solved do so now! &lt;strong&gt;&lt;em&gt;I WILL PAY THE VICTOR WITH A SOLID ANSWER $100.00!!&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/-0Ao4t_fe0I&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/UEKcl8MzWLQ&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;p&gt;With the mind freed, let’s dive into a coding challenge.&lt;/p&gt;
+&lt;h2 id=&quot;2-sum&quot;&gt;2 Sum&lt;/h2&gt;
+&lt;p&gt;Given an array of integers, return indices of the two numbers such that they add up to a specific target.&lt;/p&gt;
+&lt;p&gt;Work through the solution so that each input would have exactly one solution and do not use the same element twice.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Example:
+Given nums = [2, 7, 11, 15], target = 9,&lt;/p&gt;
+&lt;p&gt;Because nums[0] + nums[1] = 2 + 7 = 9,
+return [0, 1].&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Now here’s the twist. Provide at least 2 or more ways in which you solve the problem, in individual repos, that all build via simple README.md instructions. Minimal download, minimal dependencies, one just needs to be able to run it as easily as possible. You knew I couldn’t just make it a simple coding solution, there had to be some odd thing added.&lt;/p&gt;
+&lt;p&gt;As for the victory prize, suggest something you think would be a well deserved victory prize for such repositories!&lt;/p&gt;
+&lt;p&gt;After all that building and thinking, time to finish off Metal Monday with a little Amon Amarth.&lt;/p&gt;
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/55OJ17cHeJA&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;
+</description>
+    </item>
     <item>
       <title>The Developer Advocates - Observations on Microsoft's New Competence</title>
       <link>http://adron.github.io/articles/the-developer-advocate-observations-of-microsofts-new-competence/</link>
