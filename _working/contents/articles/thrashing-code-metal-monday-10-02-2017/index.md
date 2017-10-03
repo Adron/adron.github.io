@@ -28,9 +28,9 @@ Work through the solution so that each input would have exactly one solution and
 > Because nums[0] + nums[1] = 2 + 7 = 9,
 > return [0, 1].
 
-Now here's the twist. Provide at least 2 or more ways in which you solve the problem, in individual repos, that all build via simple README.md instructions. Minimal download, minimal dependencies, one just needs to be able to run it as easily as possible. You knew I couldn't just make it a simple coding solution, there had to be some odd thing added.
+Now here's the twist. Provide at least 2 (or 3!) or more ways in which you solve the problem, in individual repos, that all build via simple README.md instructions. Minimal download, minimal dependencies, one just needs to be able to run it as easily as possible. You knew I couldn't just make it a simple coding solution, there had to be some odd thing added.
 
-As for the victory prize, suggest something you think would be a well deserved victory prize for such repositories!
+As for the victory prize, suggest something you think would be a well deserved victory prize for such repositories! In a future blog entry I'll provide some of my own answers to this, with solid builds for each!
 
 After all that building and thinking, time to finish off Metal Monday with a little Amon Amarth.
 
