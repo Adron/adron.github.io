@@ -8,7 +8,6 @@ This page links to my history of speaking via presentations, workshops, or other
 
 **Upcoming Presentations**
 
-* [Infrastructure as Code and Containers](/talks/infrastructure-code-containers/) on October 3rd, 2017.  RSVP @ [Meetup](https://www.meetup.com/mscloud/events/243273397/).
 * [The Joy of Coding](/talks/joy-of-coding/) on October 5th, 2017. RSVP @ [Meetup](https://www.meetup.com/WVSE-meetup/events/241117362/).
 * Inception, Workflow, to $Deployed$ on October 12th, 2017. RSVP # [Meetup](https://www.meetup.com/ssdevelopers/events/243669995/).
 * [Inception, Workflow, to $Deployed$ Removing Chaos and Noise From Your Dev Stack](/talks/inception-workflow-deployed/) on November 7th, 2017. RSVP @ [Meetup](https://www.meetup.com/NET-Developers-Association-Westside/events/242573016/).
@@ -16,6 +15,7 @@ This page links to my history of speaking via presentations, workshops, or other
 
 **Past Presentations**
 
+* [Infrastructure as Code and Containers](/talks/infrastructure-code-containers/) on October 3rd, 2017.  RSVP @ [Meetup](https://www.meetup.com/mscloud/events/243273397/).
 * [Terraform/Packer/Atlas @ The Orange Retailer](/talks/terraform-packer-atlas-at-big-orange)
 * [Pelotech Share Out](https://www.meetup.com/Peloton-Technology-Share-Out/events/239488795/) - A review of things accomplished with Terraform, Packer, and Atlas from HashiCorp.
 * [Moving Enterprise Practices and Development to Open Source](/talks/Moving-Enterprise-Practices-and-Development-to-Open-Source) at [O'Reilly Architecture Conference](http://conferences.oreilly.com/software-architecture/engineering-business-eu).
