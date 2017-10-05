@@ -10,7 +10,7 @@ Ok, previously I'd had a few Metal Monday posts. I'm officially kicking that off
 
 <span class="more"></span>
 
-First off is ***Unleash the Archers***. I've posted them once before but they've ended up, deservingly, back on my playlist a lot. The band - ALL OF THE BAND - are amazing musicians.
+First off is ***Unleash the Archers***. I've posted some of their material once before but they've ended up, deservingly, back on my playlist a lot. The band - ALL OF THE BAND - are amazing musicians.
 
 <div class="image float-right">
   <iframe src="https://open.spotify.com/embed/track/2SSjG3f820oZL5zd43RzTi" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
