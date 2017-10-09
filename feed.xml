@@ -5,9 +5,44 @@
     <atom:link href="http://adron.github.io/feed.xml" rel="self" type="application/rss+xml"></atom:link>
     <link>http://adron.github.io</link>
     <description>Coder, Messenger, Recon, Infrastructure, Ops</description>
-    <pubDate>Mon, 02 Oct 2017 08:37:20 -0700</pubDate>
+    <pubDate>Mon, 09 Oct 2017 04:21:06 -0700</pubDate>
     <generator>Wintersmith - https://github.com/jnordberg/wintersmith</generator>
     <language>en</language>
+    <item>
+      <title>Thrashing Code Metal Monday for Week of October 9th 2017</title>
+      <link>http://adron.github.io/articles/thrashing-code-metal-monday-10-09-2017/</link>
+      <pubDate>Mon, 09 Oct 2017 04:21:06 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/thrashing-code-metal-monday-10-09-2017/</guid>
+      <author></author>
+      <description>&lt;div class=&quot;image float-right&quot;&gt;
+  &lt;iframe src=&quot;https://open.spotify.com/embed/track/47YfeXei5KhIb05ZqHMW5D&quot; width=&quot;300&quot; height=&quot;380&quot; frameborder=&quot;0&quot; allowtransparency=&quot;true&quot;&gt;&lt;/iframe&gt;&lt;br&gt;&lt;/div&gt;
+
+&lt;p&gt;Alright, this Thrashing Code Metal Monday is going hard core sideways, with something a little different.&lt;/p&gt;
+&lt;p&gt;First up, which will give you a solid 10 minutes plus of wake up, is &lt;a href=&quot;https://open.spotify.com/track/47YfeXei5KhIb05ZqHMW5D&quot;&gt;Driving Spain up a Wall&lt;/a&gt; by the creative smash you in the face band &lt;a href=&quot;https://en.wikipedia.org/wiki/City_of_Caterpillar&quot;&gt;City of Caterpillar&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-left&quot;&gt;
+  &lt;iframe src=&quot;https://open.spotify.com/embed/track/0n6rmQ41Iba0FNE5oAJGqm&quot; width=&quot;300&quot; height=&quot;380&quot; frameborder=&quot;0&quot; allowtransparency=&quot;true&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Next up is a another kick ass band with &lt;a href=&quot;https://badbrains.com/&quot;&gt;Bad Brains&lt;/a&gt;. Get a taste of early stuff and later material, like one I dig is Rise. Check it out.&lt;/p&gt;
+&lt;p&gt;For the last two bands gonna dive in hard core to some local bands that’ll ruffle the feathers. Get woke, thrashed, and don’t brick your code.&lt;/p&gt;
+&lt;p&gt;Band &amp;gt; &lt;strong&gt;&lt;em&gt;Mace&lt;/em&gt;&lt;/strong&gt;, check out the &lt;a href=&quot;https://macehc.bandcamp.com/album/demo&quot;&gt;demo&lt;/a&gt;, &lt;a href=&quot;https://macehc.bandcamp.com/album/tour-tape&quot;&gt;tour tape&lt;/a&gt;, and other hard core on their &lt;a href=&quot;https://macehc.bandcamp.com/&quot;&gt;site&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Band &amp;gt; &lt;strong&gt;&lt;em&gt;Firewalker&lt;/em&gt;&lt;/strong&gt;, laying out some boot stomping with their &lt;a href=&quot;https://firewalkerhc.bandcamp.com/album/demo&quot;&gt;demo&lt;/a&gt;, &lt;a href=&quot;https://firewalkerhc.bandcamp.com/album/summer-16-promo-tape&quot;&gt;summer-promo tape&lt;/a&gt;, and &lt;a href=&quot;https://firewalkerhc.bandcamp.com/album/firewalker&quot;&gt;Firewalker&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Now that you’re awake. I’m going to throw out an extremely easy challenge this week.&lt;/p&gt;
+&lt;h1 id=&quot;code-challenge&quot;&gt;Code Challenge&lt;/h1&gt;
+&lt;p&gt;Given an unsorted array of integers, find the length of longest continuous increasing subsequence.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Example 1:&lt;/strong&gt;
+Input: [1,3,5,4,7]&lt;/p&gt;
+&lt;p&gt;Output: 3&lt;/p&gt;
+&lt;p&gt;Explanation: The longest continuous increasing subsequence is [1,3,5], its length is 3.&lt;/p&gt;
+&lt;p&gt;Even though [1,3,5,7] is also an increasing subsequence, it’s not a continuous one where 5 and 7 are separated by 4.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Example 2:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Input: [2,2,2,2,2]&lt;/p&gt;
+&lt;p&gt;Output: 1&lt;/p&gt;
+&lt;p&gt;Explanation: The longest continuous increasing subsequence is [2], its length is 1.&lt;/p&gt;
+&lt;p&gt;Also, I’ll be posting a link list of code challenges and answers I’ve posted on subsequent Thrashing Code Metal Monday posts. So answers are forthcoming, the first code challenge was just a bit bigger than I’d originally expected (it’s taken me a couple of days to finally write it all up!)&lt;/p&gt;
+</description>
+    </item>
     <item>
       <title>Thrashing Code Metal Monday for Week of October 2nd 2017</title>
       <link>http://adron.github.io/articles/thrashing-code-metal-monday-10-02-2017/</link>
@@ -385,7 +420,7 @@ export TF_VAR_aws_region=&amp;quot;us-west-2&amp;quot;
       <description>&lt;p&gt;Ok, previously I’d had a few Metal Monday posts. I’m officially kicking that off again with an extra kicker. Coding problems… but likely not the easy kind. So first, here’s some tunes to thrash the mind awake. Then read on for the coding challenge.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;/articles/thrashing-code-metal-monday-09-18-2017/unleash-the-archers.png&quot; alt=&quot;Unleash the Archers&quot;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;First off is &lt;strong&gt;&lt;em&gt;Unleash the Archers&lt;/em&gt;&lt;/strong&gt;. I’ve posted them once before but they’ve ended up, deservingly, back on my playlist a lot. The band - ALL OF THE BAND - are amazing musicians.&lt;/p&gt;
+&lt;p&gt;First off is &lt;strong&gt;&lt;em&gt;Unleash the Archers&lt;/em&gt;&lt;/strong&gt;. I’ve posted some of their material once before but they’ve ended up, deservingly, back on my playlist a lot. The band - ALL OF THE BAND - are amazing musicians.&lt;/p&gt;
 &lt;div class=&quot;image float-right&quot;&gt;
   &lt;iframe src=&quot;https://open.spotify.com/embed/track/2SSjG3f820oZL5zd43RzTi&quot; width=&quot;300&quot; height=&quot;380&quot; frameborder=&quot;0&quot; allowtransparency=&quot;true&quot;&gt;&lt;/iframe&gt;
 &lt;/div&gt;
@@ -5274,36 +5309,6 @@ export TF_VAR_password=&amp;quot;someSecretPassword&amp;quot;
 </description>
     </item>
     <item>
-      <title>Modern Javascript Frameworks - Introduction to Ember.JS and Ember-CLI by Suchita Doshi</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-suchita-doshi/</link>
-      <pubDate>Sat, 04 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-suchita-doshi/</guid>
-      <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-suchita-doshi/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-right&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-suchita-doshi/suchita-doshi.jpg&quot; alt=&quot;Suchita Doshi&quot;&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Suchita is UI Lead for the analytics module of Yahoo Admanager Plus team and Core member of Emberjs group @Yahoo, Speaker at Women Who code organization (Introduction To Emberjs/Ember CLI), Conducted Webinar for the TenXList members on EmberJS. She’s passionate about improving developers ergonomics and a hardcore “cricket” fan.&lt;/p&gt;
-&lt;p&gt;In other Suchita news, she’s opening bats-woman for the Bay Area Cricket Association team! 😀&lt;/p&gt;
-&lt;p&gt;Suchita describes her talk as “There will never be a “one size fits all” approach to web development. If you want your application to be minimally interactive, then server side rendered HTML would be the way to go, else, if it were a more interactive application, then client side framework would benefit you.
-Why not use just JQuery instead of adopting these Modern Javascript Frameworks? Think about it! If your application has interactivity on the lighter side, then JQuery would work well, but as soon as you introduce more states in your application, it would then become messier and heavier on the DOM. You would need to use the ‘data-‘ attributes to store the data in your DOM and also remember how to map them with the triggered events.&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Here is where client side frameworks come to the rescue. I have worked on several client side frameworks like Backbone.js, Ember.js. Few of the many features I love about Ember.js are the two-way data binding, Computed Properties, the run loop, convention over configuration nature, ease of handling routing and many more.
-In this talk I would be covering the following:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Introduction to Emberjs and why Ember&lt;/li&gt;
-&lt;li&gt;How Ember js makes a difference&lt;/li&gt;
-&lt;li&gt;Ember convention over configuration nature&lt;/li&gt;
-&lt;li&gt;Introduction to Ember routes, components and templates&lt;/li&gt;
-&lt;li&gt;Introduction to Ember CLI&lt;/li&gt;
-&lt;li&gt;Computed Properties&lt;/li&gt;
-&lt;li&gt;Live Demo on how it’s really intuitive in a couple of non-trivial scenarios.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;So basically my goal is to attract more developers to adapt modern javascript frameworks and make a difference in the way complex apps are built.”&lt;/p&gt;
-</description>
-    </item>
-    <item>
       <title>The SAM Pattern - a distributed system view of Front-End architectures by Jean-Jacques Dubray</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-jean-jacques-dubray/</link>
       <pubDate>Sat, 04 Jun 2016 17:00:00 -0700</pubDate>
@@ -5331,6 +5336,36 @@ and challenges the complexity of frameworks like Google’s Angular or Facebook�
 which suggest creating view-specific APIs, per platform, app, versions of an app…&lt;/p&gt;
 &lt;p&gt;We’ll start by reviewing some of the key challenges of modern UX and Front-End Architectures. We will then present the
 key concepts of SAM and walk the audience through some node.js code samples (including server-side TimeTravel).&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>Modern Javascript Frameworks - Introduction to Ember.JS and Ember-CLI by Suchita Doshi</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-suchita-doshi/</link>
+      <pubDate>Sat, 04 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-suchita-doshi/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-suchita-doshi/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-right&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-suchita-doshi/suchita-doshi.jpg&quot; alt=&quot;Suchita Doshi&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Suchita is UI Lead for the analytics module of Yahoo Admanager Plus team and Core member of Emberjs group @Yahoo, Speaker at Women Who code organization (Introduction To Emberjs/Ember CLI), Conducted Webinar for the TenXList members on EmberJS. She’s passionate about improving developers ergonomics and a hardcore “cricket” fan.&lt;/p&gt;
+&lt;p&gt;In other Suchita news, she’s opening bats-woman for the Bay Area Cricket Association team! 😀&lt;/p&gt;
+&lt;p&gt;Suchita describes her talk as “There will never be a “one size fits all” approach to web development. If you want your application to be minimally interactive, then server side rendered HTML would be the way to go, else, if it were a more interactive application, then client side framework would benefit you.
+Why not use just JQuery instead of adopting these Modern Javascript Frameworks? Think about it! If your application has interactivity on the lighter side, then JQuery would work well, but as soon as you introduce more states in your application, it would then become messier and heavier on the DOM. You would need to use the ‘data-‘ attributes to store the data in your DOM and also remember how to map them with the triggered events.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Here is where client side frameworks come to the rescue. I have worked on several client side frameworks like Backbone.js, Ember.js. Few of the many features I love about Ember.js are the two-way data binding, Computed Properties, the run loop, convention over configuration nature, ease of handling routing and many more.
+In this talk I would be covering the following:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Introduction to Emberjs and why Ember&lt;/li&gt;
+&lt;li&gt;How Ember js makes a difference&lt;/li&gt;
+&lt;li&gt;Ember convention over configuration nature&lt;/li&gt;
+&lt;li&gt;Introduction to Ember routes, components and templates&lt;/li&gt;
+&lt;li&gt;Introduction to Ember CLI&lt;/li&gt;
+&lt;li&gt;Computed Properties&lt;/li&gt;
+&lt;li&gt;Live Demo on how it’s really intuitive in a couple of non-trivial scenarios.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;So basically my goal is to attract more developers to adapt modern javascript frameworks and make a difference in the way complex apps are built.”&lt;/p&gt;
 </description>
     </item>
     <item>
