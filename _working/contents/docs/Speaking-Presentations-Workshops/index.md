@@ -8,14 +8,15 @@ This page links to my history of speaking via presentations, workshops, or other
 
 **Upcoming Presentations**
 
-* [The Joy of Coding](/talks/joy-of-coding/) on October 5th, 2017. RSVP @ [Meetup](https://www.meetup.com/WVSE-meetup/events/241117362/).
 * Inception, Workflow, to $Deployed$ on October 12th, 2017. RSVP # [Meetup](https://www.meetup.com/ssdevelopers/events/243669995/).
-* [Inception, Workflow, to $Deployed$ Removing Chaos and Noise From Your Dev Stack](/talks/inception-workflow-deployed/) on November 7th, 2017. RSVP @ [Meetup](https://www.meetup.com/NET-Developers-Association-Westside/events/242573016/).
+* [Inception, Workflow, to $Deployed$ Removing Chaos and Noise From Your Dev Stack](/talks/inception-workflow-deployed/) on November 6th, 2017 in Redmond, Building 34 at Microsoft. RSVP @ [Meetup](https://www.meetup.com/NET-Developers-Association-Eastside/events/242573024/).
+* [Inception, Workflow, to $Deployed$ Removing Chaos and Noise From Your Dev Stack](/talks/inception-workflow-deployed/) on November 7th, 2017 in Seattle, at Parametric. RSVP @ [Meetup](https://www.meetup.com/NET-Developers-Association-Westside/events/242573016/).
 * [Automated Environment Spinup & CI/CD Practices: Inception, Workflow, Deployment](/talks/cicd-in-30-minutes-or-less/) on January 18th, 2017 & [Meetup](https://www.meetup.com/CloudTalk/events/243522258/).
 
 **Past Presentations**
 
-* [Infrastructure as Code and Containers](/talks/infrastructure-code-containers/) on October 3rd, 2017.  RSVP @ [Meetup](https://www.meetup.com/mscloud/events/243273397/).
+* [The Joy of Coding](/talks/joy-of-coding/) on October 5th, 2017. RSVP @ [Meetup Page](https://www.meetup.com/WVSE-meetup/events/241117362/).
+* [Infrastructure as Code and Containers](/talks/infrastructure-code-containers/) on October 3rd, 2017. [Meetup Page](https://www.meetup.com/mscloud/events/243273397/).
 * [Terraform/Packer/Atlas @ The Orange Retailer](/talks/terraform-packer-atlas-at-big-orange)
 * [Pelotech Share Out](https://www.meetup.com/Peloton-Technology-Share-Out/events/239488795/) - A review of things accomplished with Terraform, Packer, and Atlas from HashiCorp.
 * [Moving Enterprise Practices and Development to Open Source](/talks/Moving-Enterprise-Practices-and-Development-to-Open-Source) at [O'Reilly Architecture Conference](http://conferences.oreilly.com/software-architecture/engineering-business-eu).
