@@ -265,9 +265,19 @@ func TestGimmeTheDeadspacePercent(t *testing.T) {
     &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; result
 }
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Did I do it right? Whew, I’ll check it a bit later, but happy for someone else to point out an error. Overall though, this is my first brutally long rough draft of code with a few unit tests.&lt;/p&gt;
+&lt;p&gt;Did I do it right? Here’s the &lt;a href=&quot;https://github.com/Adron/thrashing-code-answers-09-18-2017&quot;&gt;Github Repo&lt;/a&gt;! Whew, I’ll check it a bit later, but happy for someone else to point out an error or code mishap! Overall though, this is my first brutally long rough draft of code with a few unit tests and this whole blog entry written!&lt;/p&gt;
 &lt;p&gt;I’m also interested in what else you think should go into this mix. I’m likely to turn this into a CLI just for fun and would like to add additional complexities into it, so that when I implment the CLI it can create the actual story of what this tells us about a roadway. So get out your urban planner, car counting, road nerd glasses and let me know what your thoughts are.&lt;/p&gt;
 &lt;p&gt;Until next code challenge, or ya know whenever, happy coding!&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;References Collection:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/Adron/thrashing-code-answers-09-18-2017&quot;&gt;Github Repo&lt;/a&gt; (of this code)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.portlandoregon.gov/transportation/article/554181&quot;&gt;State of Parking&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.portlandoregon.gov/transportation/article/547703&quot;&gt;Public Parking in The City of Portland&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.portlandoregon.gov/transportation/68834&quot;&gt;PBOT page with many of the above and other links&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.portlandoregon.gov/transportation/article/547325&quot;&gt;Central City Parking Occupancy and Turnover Analysis&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.seattle.gov/transportation/pdf/SeattleParkingStudyFinalReport.pdf&quot;&gt;Seattle Parking Management Study&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.seattle.gov/transportation/parking/docs/SDOT_PbPP_FinRpt.pdf&quot;&gt;Performance Based Parking&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </description>
     </item>
     <item>

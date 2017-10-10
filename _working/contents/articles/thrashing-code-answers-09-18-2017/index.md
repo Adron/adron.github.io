@@ -276,8 +276,18 @@ func GimmeTheSolutionAlready(storage float64, transport float64, deadspace float
 }
 ```
 
-Did I do it right? Whew, I'll check it a bit later, but happy for someone else to point out an error. Overall though, this is my first brutally long rough draft of code with a few unit tests.
+Did I do it right? Here's the [Github Repo](https://github.com/Adron/thrashing-code-answers-09-18-2017)! Whew, I'll check it a bit later, but happy for someone else to point out an error or code mishap! Overall though, this is my first brutally long rough draft of code with a few unit tests and this whole blog entry written!
 
 I'm also interested in what else you think should go into this mix. I'm likely to turn this into a CLI just for fun and would like to add additional complexities into it, so that when I implment the CLI it can create the actual story of what this tells us about a roadway. So get out your urban planner, car counting, road nerd glasses and let me know what your thoughts are.
 
 Until next code challenge, or ya know whenever, happy coding!
+
+**References Collection:**
+
+* [Github Repo](https://github.com/Adron/thrashing-code-answers-09-18-2017) (of this code)
+* [State of Parking](https://www.portlandoregon.gov/transportation/article/554181)
+* [Public Parking in The City of Portland](https://www.portlandoregon.gov/transportation/article/547703)
+* [PBOT page with many of the above and other links](https://www.portlandoregon.gov/transportation/68834)
+* [Central City Parking Occupancy and Turnover Analysis](https://www.portlandoregon.gov/transportation/article/547325)
+* [Seattle Parking Management Study](http://www.seattle.gov/transportation/pdf/SeattleParkingStudyFinalReport.pdf)
+* [Performance Based Parking](https://www.seattle.gov/transportation/parking/docs/SDOT_PbPP_FinRpt.pdf)
