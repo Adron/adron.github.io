@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Adron's Composite Code</title>
+    <meta name="description" content="">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="alternate" href="/feed.xml" type="application/rss+xml" title="Coder, Messenger, Recon, Infrastructure, Ops">
+    <link rel="icon" type="image/png" href="/img/favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/img/favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/img/favicons/favicon-96x96.png" sizes="96x96">
+    <link rel="apple-touch-icon" sizes="57x57" href="/img/favicons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/img/favicons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/img/favicons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/img/favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/img/favicons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/img/favicons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/img/favicons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/img/favicons/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/favicons/apple-touch-icon-180x180.png">
+    <link rel="stylesheet" href="/css/custom.css">
+    <link rel="stylesheet" href="/css/style.min.css">
+    <script src="/js/modernizr.js"></script>
+  </head>
+  <body class="article-detail">
+    <!--[if lt IE 8]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <div class="header header-over large">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 col-sm-6 col-xs-6">
+            <!-- Logo Image--><a href="/index.html" class="logo-image logo-animated"><img src="/img/logos/logo.png" alt="logo"></a>
+            <!-- End of Logo Image-->
+          </div>
+          <div class="col-md-9 col-sm-6 col-xs-6">
+            <!-- Menu-->
+            <nav class="right helper">
+              <ul class="menu sf-menu js-menu">
+                <li><a href="/docs/thrashing-code-news/">Thrashing Code News</a></li>
+                <li><a href="#">Conf - Meetup - Events</a>
+                  <ul>
+                    <li><a href="/docs/Speaking-Presentations-Workshops/">Speaking - Presentations - Workshops</a></li>
+                    <li><a href="/docs/calendar">Calendar of Engagements</a></li>
+                  </ul>
+                </li>
+                <li><a href="/docs/documentation/">Docs</a></li>
+                <li><a href="#">Contact</a>
+                  <ul>
+                    <li><a href="/docs/contact">Message</a></li>
+                    <li><a href="/docs/job-talk/">Hire</a></li>
+                  </ul>
+                </li>
+                <li><a href="/docs/about/">About</a></li>
+              </ul>
+            </nav>
+            <!-- End of Menu-->
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="header-back header-back-simple header-back-small">
+      <div class="header-back-container">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <!-- Page Info-->
+              <div class="page-info page-info-simple">
+                <h1>The Three States of Roadways</h1>
+                <p class="author">Written by <span class="author">Adron Hall</span> and published on <span>October, 04 of 2017.</span>
+                </p>
+                <div class="nav"><a href="/">« Home</a></div>
+              </div>
+              <!-- End Page Info-->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="content">
+      <div class="container">
+        <div class="layout with-right-sidebar js-layout">
+          <div class="row">
+            <div class="col-md-9">
+              <div class="main-content">
+                <!-- Blog Page-->
+                <article class="article">
+                  <section class="content"><p>A few weeks ago I posed a code challenge that was extremely open ended. It left a lot of elements to the imagination of the reader of the problem to research, determine, or just make up. In that same sense, here is the question that I posed on <a href="/articles/thrashing-code-metal-monday-09-18-2017/">Monday, September the 18<span class="ord">th</span></a>. The code challenge as I was saying wasn’t some simple, solve it in 5 minutes, type of thing. This was something where we humans actually have real problems to solve in the world. So here we go, this is going to get seriously intense (and long cuz’ I’m gonna describe every bit of my process). I’ll start with a quick recap of the&nbsp;problem.</p>
+<blockquote>
+<p>Given that roadways have three primary functions they’re used for: <em>active transport</em>, <em>storage or parking</em>, and <em>nil or no use</em>. Solve for what percentage of time a roadway experiences each. Details are further elaborated on&nbsp;here:</p>
+<p>Ask: Well what type of road is it, how many lanes, how many parking spots? What is the&nbsp;layout?</p>
+<p>Answer: Here are three types of roads specifically to solve for in a first attempt. These are specified just to have a starting&nbsp;point.</p>
+</blockquote>
+<p><strong><span class="caps">NOTE</span>:</strong> I added pictures of the road types by using <a href="https://streetmix.net/">Street Mix</a>. If you’re interested in road alignments then this tool might consume a few hours of your day, so&nbsp;beware!</p>
+<p><span class="more"></span></p>
+<div class="image float-right">
+    <a href="https://streetmix.net/"><img src="/articles/thrashing-code-answers-09-18-2017/country-road.png" alt="Country Road"></a>
+</div>
+
+<blockquote>
+<ul>
+<li>Country roadway: Two lanes, no parking spaces, and no area to pull off on. Each lane has a capacity of ~800-1200 cars per hour. Traffic on the particular road is about 8000 per&nbsp;day.</li>
+</ul>
+</blockquote>
+<p><strong>Note:</strong> I added a tram to the picture, but it is not there for calculation reasons. It’s there merely because I wanted to have a tram there. The focus on this is still entirely the public roadway to the left of the&nbsp;tram.)</p>
+<div class="image float-right">
+    <a href="https://streetmix.net/"><img src="/articles/thrashing-code-answers-09-18-2017/city-arterial.png" alt="City Arterial"></a>
+</div>
+
+<blockquote>
+<ul>
+<li>City arterial, 6-lanes: Two lanes each way, one lane parking on each side. Each lane has a theoretical capacity of about ~700-1000 cars per hour (that lane changing brings down the number). Traffic usually is about 12,000 per&nbsp;day.</li>
+</ul>
+</blockquote>
+<div class="image float-right">
+    <a href="https://streetmix.net/"><img src="/articles/thrashing-code-answers-09-18-2017/neighborhood-street.png" alt="Neighborhood Street"></a>
+</div>
+
+<p><strong><span class="caps">NOTE</span>:</strong> The travel lane in the center, even though it has an arrow for one way, is actually bi-directional. It’s very similar to a lot of the older town center organized neighborhoods as seen in Brooklyn in New York, in Ballard or a number of other neighborhoods in Seattle, and many in Portland. Almost every major <span class="caps">US</span> city has neighborhoods with small streets like this, often an indicator of a time when it wasn’t assumed you put your person property (a car) in the road and the road was actually considered public domain by the general populace. But I digress, back to the coding&nbsp;problem.</p>
+<blockquote>
+<ul>
+<li>Neighborhood street, 3-lanes: Single travel lane in the center, one parking lane on either side. Ability to move about ~500 cars per hour but only experiences about ~1500 cars per&nbsp;day.</li>
+</ul>
+<p>The challenge here far exceeds merely some algorithm to solve for X, but instead ponders what would need to be included to find transport use (driving or in movement), storage (parked car), and no car, no movement, and nobody parked anywhere to be seen (and empty&nbsp;road).</p>
+</blockquote>
+<h2 id="my-solution">My&nbsp;Solution</h2>
+<p>Key known things at this&nbsp;point.</p>
+<ol>
+<li>There are three roads we want to solve for: country roadway, city arterial, and neighborhood&nbsp;street.</li>
+<li>Respectively each has ~800-1200 cars per hour, ~700-1000 cars per hour, and the last specifically has ~500 cars per hour capacity but only about ~1500 per&nbsp;day.</li>
+<li>Respectively each has 2 lanes, 6 lanes, and 3 lanes. Along with this a few other facts here and&nbsp;there.</li>
+<li>We have no idea how many cars can park on or near one of these roads. We need to determine&nbsp;that.</li>
+<li>We have no idea when these cars arrive or are not arriving. So maybe we’ll just determine how long it takes for them to go&nbsp;by.</li>
+</ol>
+<p>Let’s just set some scope and guidelines for making these&nbsp;calculations.</p>
+<ol>
+<li>The roadways we’ll measure will be for exactly 1&nbsp;kilometer.</li>
+<li>The roadways, for initial simplicity of creating a solution, will not have any interruptive side roads, lights, stop signs, or such, but will just be merely 1 kilometer long without&nbsp;interruptions.</li>
+<li>For parked cars, I’m going to say the average length of a car is equal to a Toyota Camry. That used to be one of the most sold cars in the <span class="caps">US</span>, and is a pretty in between size. It’s not a huge truck, but it also isn’t a Mini Cooper! The dimensions for a 2017 Toyota Camry are 191″ L x 72″ W x 58″ H. Let’s imagine that in the front and rear of the car we need at least some space, so I’ll calculate that at half a meter in front and half a meter in back. So 191 inches is 4.851 meters (<em>that’s based on 39.3701 inches per meter</em>), plus the space in front and back, gives us 5.851 meters. For the width, the Camry is 72 inches giving us 1.828 meters width, and a height of 58 inches doesn’t really matter in these calculations. In summary, our parking places will need to be 1.828 meters wide by 5.851 meters in&nbsp;length.</li>
+<li>I wrote the capacity of each roadway per hour, and for these calculations I’ll continue to assume the capacity per hour is what the road actually&nbsp;experiences.</li>
+<li>For the time period to determine parked, moving, or empty space, I’ll start working with a 24 hour&nbsp;period.</li>
+</ol>
+<p>That gives me a few points now to really start working with. Let’s also make the following&nbsp;rules:</p>
+<ul>
+<li>I’ll refer to parking, or storage of a car on the road simply as storage or <strong><em>S</em></strong> from now&nbsp;on.</li>
+<li>For a moving car, truck, bus, or other vehicle in use for transport I’ll refer to simply as transport, transporting, or <strong><em>T</em></strong>.</li>
+<li>For road space that is not in use and has no vehicles, I’ll call that dead space, or <strong><em>D</em></strong>.</li>
+</ul>
+<p>Now let’s work with this added information combined with the assumptions I’ve drawn&nbsp;up.</p>
+<h2 id="s-storage">S |&nbsp;Storage</h2>
+<p><strong>S</strong> should be easy to determine as I only need to determine what can fit on the side of a road. The <em>country road</em> is easy, since there is no parking. The other two I wrote there is a lane of parking on each side of the street. For those two, that would be 1 kilometer divided by the 5.851 meters, then multipled by 2 since there are two sides to the road. There are a thousand meters in a kilometer so our initial work looks like&nbsp;this.</p>
+<p>S = 1000 / 5.851 *&nbsp;2.</p>
+<p>Which gives us 170.910955392 parking spaces per side, I’ll round down just to have a clean 170 spots per roadside, giving us 340 parking sports per kilometer of roadway. This should suffice on both of the roads listed&nbsp;above.</p>
+<p>I also added time above, because time is fundamental element to determine the actual metrics above, but that leaves me with a question of how frequently to spaces&nbsp;rotate.</p>
+<p><strong><em><span class="caps">TO</span> THE&nbsp;GOOGLES</em></strong></p>
+<p>I did some research here about parking in various cities to get an idea for turnover rate. I specifically searched for <code>parking turnover in seattle</code> and <code>parking turnover in portland</code>. Holy smokes I hit the jackpot of data right off with those. My google-fu is on point. If you ever were curious if someone was actually thinking about where, when, how, and what we can park, rest assured there is a massive amount of thought that goes into&nbsp;it.</p>
+<p><strong>Portland&nbsp;Links:</strong></p>
+<ul>
+<li><a href="https://www.portlandoregon.gov/transportation/article/554181">State of&nbsp;Parking</a></li>
+<li><a href="https://www.portlandoregon.gov/transportation/article/547703">Public Parking in The City of&nbsp;Portland</a></li>
+<li><a href="https://www.portlandoregon.gov/transportation/68834"><span class="caps">PBOT</span> page with many of the above and other&nbsp;links</a></li>
+<li><a href="https://www.portlandoregon.gov/transportation/article/547325">Central City Parking Occupancy and Turnover&nbsp;Analysis</a></li>
+</ul>
+<p><strong>Seattle&nbsp;Links:</strong></p>
+<ul>
+<li><a href="http://www.seattle.gov/transportation/pdf/SeattleParkingStudyFinalReport.pdf">Seattle Parking Management&nbsp;Study</a></li>
+<li><a href="https://www.seattle.gov/transportation/parking/docs/SDOT_PbPP_FinRpt.pdf">Performance Based&nbsp;Parking</a></li>
+</ul>
+<p>I then went about reading through them all and then realized, this is vastly more complex then it needs to be for the immediate moment. With that conclusion, I realized it ought to just be a variable and I’ll make one up upon executing the&nbsp;function.</p>
+<p>There’s one more thing that just popped into my head, to help get an actual measurement of things I’d also need to know what percent of the spots stay empty over time. I’ll measure the number of parking spots empty per hour. This is so we can also determine later how much empty parking lends to unused roadway&nbsp;space.</p>
+<p>With that, here we&nbsp;go.</p>
+<ul>
+<li>Time Being Measured in Hours =&nbsp;T</li>
+<li>Parking Space (Length in meters) =&nbsp;P</li>
+<li>Roadway Distance (Length in meters) =&nbsp;R</li>
+<li>Turnover Rate (Cars Parked Per Hour) =&nbsp;H</li>
+<li>Empty Spots (Average # Per Hour) =&nbsp;E</li>
+</ul>
+<p>Where S is the total time cars are parked in parking spots on the&nbsp;roadway.</p>
+<pre><code>S = ((R / P) - E) * H * T
+</code></pre><h2 id="t-transport-transporting">T | Transport /&nbsp;Transporting</h2>
+<p>Whew, I’ve got <strong>S</strong>, next up is <strong>T</strong> for the number of vehicles moving by per hour. I actually provided the cars per hour on the roadway, but that leaves us to determine how much of the roadway is actually being used to move that number of cars. Let’s try to get a decent ballpark&nbsp;figure.</p>
+<p>For the <em>country road</em> I stated that it has 8000 cars per day. For the <em>arterial road</em> the route has about 12,000 per day, and for the <em>neighborhood street</em> there are only about 1500. I also stated the throughput of each road, so let’s use the country road as an example and work from&nbsp;that.</p>
+<p>I originally stated a 800-1200 cars per hour, with 8000 traveling through the road per day. A day is 24 hours of course. Let’s work with the idea we’re getting maximum throughput of 1200 cars per hour. If there is 8000 cars per day, at 1200 per hour, we could divide the total per day by the hours like 8000 / 1200 = hours it takes to have 8000 cars travel the road. Which in this case, is 6.666666666 hours. How&nbsp;devilish!</p>
+<p>The equation then looks something like&nbsp;this.</p>
+<ul>
+<li>The total cars traversing the road =&nbsp;D</li>
+<li>The total cars that can travel through the road per hour =&nbsp;H</li>
+</ul>
+<p>Where T is the total hours in which transporting is being&nbsp;done.</p>
+<pre><code>T = D / H
+</code></pre><h2 id="d-dead-space">D | Dead&nbsp;Space</h2>
+<p>Alright, so this equation is going to take into account the time left and is going to also get super tricky. More on its trickiness after I post the solution though. For now, soffice to say the total dead space is the remainder hours when cars aren’t traversing and also the dead time of cars not parked. At least, that’s what I’ll go with for&nbsp;now.</p>
+<ul>
+<li>Transport or Transporting (the result of the above T equation) =&nbsp;T</li>
+<li>Empty parking spots per hour, value available from determinant in the S equation as =&nbsp;E</li>
+</ul>
+<p>Where D is the hours of dead space on the&nbsp;road.</p>
+<pre><code>D = T + E
+</code></pre><p>Alright it’s time to sling some code now that the pieces are&nbsp;collected.</p>
+<h1 id="code-"><span class="caps">CODE</span>!</h1>
+<p>First things first, I’m going to put in place a test for each of these functions that I’ll need. These tests are by no means a paramount example of testing, nor do they test much of anything besides the extreme happy path, but they’ll be perfect for getting started to verify the functions we’ll write. The tests also will provide the basis in which to extend past these calculations in the future and really start to extrapolate this into a project that <em>gasp</em> may be a real usable&nbsp;thing.</p>
+<p>I’ve created a <code>thrashed.go</code> and <code>thrashed_test.go</code> file for this initial bit of coding. The first test I’ve added in the test file is the test for what I’ll call the Storage&nbsp;function.</p>
+<pre><code class="lang-javascript">func TestStorage(test *testing.T) {
+
+    <span class="keyword">var</span> t float32 = <span class="number">24</span>    <span class="comment">/* 24 hours in a day. */</span>
+    <span class="keyword">var</span> p float32 = <span class="number">5.851</span> <span class="comment">/* Meters a parking space needs to be */</span>
+    <span class="keyword">var</span> r float32 = <span class="number">1000</span>  <span class="comment">/* Meters of roadway distance in calculation */</span>
+    <span class="keyword">var</span> h float32 = <span class="number">1.8</span>   <span class="comment">/* Cars parked per hour in a single parking spot. */</span>
+    <span class="keyword">var</span> e float32 = <span class="number">8</span>     <span class="comment">/* Empty parking spots per hour for the measured distance. */</span>
+
+    <span class="keyword">if</span> Storage(t, p, r, h, e) != <span class="number">7037.753</span> {
+        test.Error(<span class="string">"Failure to determine correct storage result."</span>)
+    }
+}
+</code></pre>
+<p>I’m a big fan of tests being a good source of documentation and how to use a set of functions or libraries. With that in mind I’ve added a few comments to define what each variable is. In the <code>thrashed.go</code> file I dive into implementing the calculation for&nbsp;storage.</p>
+<pre><code class="lang-javascript">func Storage(TimeBeingMeasured float32, ParkingSpace float32, RoadwayDistance float32, TurnoverRate float32, EmptySpots float32) float32 {
+    <span class="keyword">return</span> ((RoadwayDistance / ParkingSpace) - EmptySpots) * TurnoverRate * TimeBeingMeasured
+}
+</code></pre>
+<p>I’m not happy with this example, as I wrote out every variable so that they’re self descriptive. But it leaves the function signature a bit long. Even though it won’t be self descriptive, I’m going to turn these into acronyms for now. Late I’ll resolve the naming problem, because it’s a road block otherwise and as we all know, naming stuff is hard. For now, just for now, I’m going to refactor the storage function to look like&nbsp;this.</p>
+<pre><code class="lang-javascript">func Storage(tbm float32, ps float32, rd float32, tr float32, es float32) float32 {
+    <span class="keyword">return</span> ((rd / ps) - es) * tr * tbm
+}
+</code></pre>
+<p>Am I happier with that? Not really, but it at least fits on the screen. Anyway, on to the next metric to measure. Following good practice, a test&nbsp;first.</p>
+<pre><code class="lang-javascript">func TestTransport(t *testing.T) {
+
+    <span class="keyword">var</span> d int = <span class="number">8000</span> <span class="comment">/* Total cars traveling the roadway for the test time frame. */</span>
+    <span class="keyword">var</span> h int = <span class="number">1200</span> <span class="comment">/* The number of cars that can travel the roadway per hour. */</span>
+
+    result := Transport(d, h)
+
+    fmt.Println(result)
+
+    <span class="keyword">if</span> result != <span class="number">6.6666665</span> {
+        t.Error(<span class="string">"Failure to determine correct transportation throughput."</span>)
+    }
+}
+</code></pre>
+<p>Then I implement it with&nbsp;this.</p>
+<pre><code class="lang-javascript">func Transport(TotalCars int, CarsPerHour int) float32 {
+    <span class="keyword">return</span> float32(TotalCars) / float32(CarsPerHour)
+}
+</code></pre>
+<p>Now for the dead space&nbsp;test.</p>
+<pre><code class="lang-javascript">func TestDeadSpace(test *testing.T) {
+    <span class="keyword">var</span> t int = <span class="number">23</span> <span class="comment">/* Transport or transporting (the result of the "Transport" equation). */</span>
+    <span class="keyword">var</span> e int = <span class="number">2</span>  <span class="comment">/* Empty parking sports per hour. This value is what would be the same \
+    as the E value in the Storage function. */</span>
+
+    result := DeadSpace(t, e)
+    <span class="keyword">if</span> result != <span class="number">25</span> {
+        test.Error(<span class="string">"Nope that isn't the correct amount of dead space."</span>)
+    }
+}
+</code></pre>
+<p>Then implementation of&nbsp;it.</p>
+<pre><code class="lang-javascript">func DeadSpace(t int, e int) int {
+    <span class="keyword">return</span> t + e
+}
+</code></pre>
+<p>With those functions in place I can now, finally, after all this work move toward an initial answer! Now I’m going to write a set of tests, one for each of the percentages that are requested in the original code challenge. One test for the storage, transport, and dead space percentages. For these tests, I’m doing a nice easy split of storage, transport, and dead space; 50, 75, and 75. That was I can calculate it out in my head if need&nbsp;be.</p>
+<pre><code class="lang-javascript">func TestGimmeTheStoragePercent(t *testing.T) {
+    <span class="attr">result</span> := GimmeTheSolutionAlready(<span class="number">50</span>, <span class="number">75</span>, <span class="number">75</span>)
+
+    <span class="keyword">if</span> result[<span class="number">0</span>] != <span class="number">25</span> {
+        t.Error(<span class="string">"The storage percentage is not correct."</span>)
+    }
+}
+
+func TestGimmeTheTransportPercent(t *testing.T) {
+    <span class="attr">result</span> := GimmeTheSolutionAlready(<span class="number">50</span>, <span class="number">75</span>, <span class="number">75</span>)
+
+    <span class="keyword">if</span> result[<span class="number">1</span>] != <span class="number">37.5</span> {
+        t.Error(<span class="string">"The transport percentage is not correct."</span>)
+    }
+}
+
+func TestGimmeTheDeadspacePercent(t *testing.T) {
+    <span class="attr">result</span> := GimmeTheSolutionAlready(<span class="number">50</span>, <span class="number">75</span>, <span class="number">75</span>)
+
+    <span class="keyword">if</span> result[<span class="number">2</span>] != <span class="number">37.5</span> {
+        t.Error(<span class="string">"The dead space percentage is not correct."</span>)
+    }
+}
+</code></pre>
+<p>My implementation that I then put together looks like&nbsp;this.</p>
+<pre><code class="lang-javascript">func GimmeTheSolutionAlready(storage float64, transport float64, deadspace float64) []float64 {
+    <span class="keyword">var</span> quotient = (storage + transport + deadspace) / <span class="number">100</span>
+    <span class="keyword">var</span> storagePercent = storage / quotient
+    <span class="keyword">var</span> transportPercent = transport / quotient
+    <span class="keyword">var</span> deadspacePercent = deadspace / quotient
+
+    <span class="keyword">var</span> result []float64
+    result = append(result, storagePercent)
+    result = append(result, transportPercent)
+    result = append(result, deadspacePercent)
+
+    <span class="keyword">return</span> result
+}
+</code></pre>
+<p>Did I do it right? Whew, I’ll check it a bit later, but happy for someone else to point out an error. Overall though, this is my first brutally long rough draft of code with a few unit&nbsp;tests.</p>
+<p>I’m also interested in what else you think should go into this mix. I’m likely to turn this into a <span class="caps">CLI</span> just for fun and would like to add additional complexities into it, so that when I implment the CLI it can create the actual story of what this tells us about a roadway. So get out your urban planner, car counting, road nerd glasses and let me know what your thoughts&nbsp;are.</p>
+<p>Until next code challenge, or ya know whenever, happy&nbsp;coding!</p>
+</section>
+                </article>
+                <!-- End of Blog Page-->
+              </div>
+            </div>
+            <div class="col-md-3 hidden-sm hidden-xs">
+              <div class="sidebar js-sidebar-fixed">
+                <!-- Vertical Menu-->
+                <div class="widget">
+                  <!-- Search-->
+                  <div class="search">
+                    <form action="https://google.com/search" method="get">
+                      <input type="hidden" name="sitesearch" value="http://blog.adron.me">
+                      <input type="text" name="q" placeholder="search" class="search-input form-control"><i class="fa fa-search search-icon"></i>
+                    </form>
+                  </div>
+                  <!-- End of Search-->
+                </div>
+                <div class="widget">
+                  <h3 class="widget-title">Keyword Search</h3>
+                  <!-- Tags-->
+                  <ul class="tags">
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=terraform">terraform</a></li>
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=kubernetes">kubernetes</a></li>
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=immutable+infrastructure">immutable infrastructure</a></li>
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=html">html</a></li>
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=javascript">javascript</a></li>
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=ubuntu">ubuntu</a></li>
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=node pdx">node pdx</a></li>
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=.NET fringe">.net fringe</a></li>
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=videos">videos</a></li>
+                  </ul>
+                  <!-- End of Tags-->
+                </div>
+                <nav class="menu-vertical-wrapper">
+                  <ul data-prepend-to=".js-layout" data-select="Menu" class="menu-vertical js-menu-vertical">
+                    <li><a href="#">About</a>
+                      <ul>
+                        <li><a href="/docs/about/">Me, Adron</a></li>
+                        <li><a href="#">My Hobbies</a>
+                          <ul>
+                            <li><a href="http://photos.adron.me">My Photos</a></li>
+                          </ul>
+                        </li>
+                        <li><a href="/docs/Speaking-Presentations-Workshops">My Presentations</a></li>
+                        <li><a href="/docs/documentation/">Collection of Docs & Notes</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </nav>
+                <div class="widget">
+                  <h3 class="widget-title">Photos</h3>
+                  <!-- Photos-->
+                  <ul class="widget-recommended-products">
+                    <!-- Photos-->
+                    <li class="widget-recommended-product"><img src="/img/photos/IMG_1836.jpg" alt="Jon Oropeza" class="widget-recommended-product-img"><a href="http://photos.adron.me/Software/Meetups-N-Conferences/Conferences/Node-PDX-2016/i-D9qFQ6m" class="widget-recommended-product-link">
+                        <h5 class="widget-recommended-product-link-title">Node PDX 2016<i class="fa fa-angle-right"></i></h5>
+                        <p class="widget-recommended-product-link-description">Jon Oropeza @ Node PDX 2016</p></a></li>
+                    <!-- End of Recommended product Item-->
+                    <!-- Recommended product Item-->
+                    <li class="widget-recommended-product"><img src="/img/photos/IMG_1812.jpg" alt="Liz Abinante" class="widget-recommended-product-img"><a href="http://photos.adron.me/Software/Meetups-N-Conferences/Conferences/Node-PDX-2016/i-g2m2hgP" class="widget-recommended-product-link">
+                        <h5 class="widget-recommended-product-link-title">Node PDX 2016<i class="fa fa-angle-right"></i></h5>
+                        <p class="widget-recommended-product-link-description">Liz Abinante @ Node PDX 2016</p></a></li>
+                    <!-- End of Recommended product Item-->
+                    <!-- Recommended product Item-->
+                    <li class="widget-recommended-product"><img src="/img/photos/IMG_5709.jpg" alt="Praha hlavní nádraží" class="widget-recommended-product-img"><a href="http://photos.adron.me/Travels-N-Traversings/Across-the-Pond-2016-Travels/September-Krakow/Week-4-Prague/i-62ZPsPb" class="widget-recommended-product-link">
+                        <h5 class="widget-recommended-product-link-title">Prague (Praha)<i class="fa fa-angle-right"></i></h5>
+                        <p class="widget-recommended-product-link-description">Praha hlavní nádraží</p></a></li>
+                    <!-- End of photos row one-->
+                  </ul>
+                  <ul class="widget-recommended-products">
+                    <!-- Photos-->
+                    <li class="widget-recommended-product"><img src="/img/photos/IMG_4417.jpg" alt="St Mary's Basilica" class="widget-recommended-product-img"><a href="http://photos.adron.me/Travels-N-Traversings/Across-the-Pond-2016-Travels/September-Krakow/Krakow/i-KnZf6pK/A" class="widget-recommended-product-link">
+                        <h5 class="widget-recommended-product-link-title">St Mary's Basilica<i class="fa fa-angle-right"></i></h5>
+                        <p class="widget-recommended-product-link-description">Bazylika Mariacka in Rynek Główny.</p></a></li>
+                    <!-- End of Recommended product Item-->
+                    <!-- Recommended product Item-->
+                    <li class="widget-recommended-product"><img src="/img/photos/VSC_03.png" alt="Visual Studio Code" class="widget-recommended-product-img"><a href="http://photos.adron.me/Software/Software-Development/Visual-Studio-Things/i-LLW7WcD/A" class="widget-recommended-product-link">
+                        <h5 class="widget-recommended-product-link-title">Visual Studio Code<i class="fa fa-angle-right"></i></h5>
+                        <p class="widget-recommended-product-link-description">Images from a review of Visual Studio Code.</p></a></li>
+                    <!-- End of Recommended product Item-->
+                    <!-- Recommended product Item-->
+                    <li class="widget-recommended-product"><img src="/img/photos/-home-adronhall-Pictures-Selection_002.png - Shutter_003.png" alt="" class="widget-recommended-product-img"><a href="http://photos.adron.me/Software/Software-Development/Ubuntu/i-CQsQ4zj/A" class="widget-recommended-product-link">
+                        <h5 class="widget-recommended-product-link-title">Mono Develop & WebStorm<i class="fa fa-angle-right"></i></h5>
+                        <p class="widget-recommended-product-link-description">Working through Mono Develop & WebStorm.</p></a>
+                      <!-- End of photos row two-->
+                    </li>
+                  </ul>
+                  <!-- End Photos-->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="nav"><a href="/">« Home</a></div>
+      </div>
+    </div>
+    <script src="/js/all.js"></script>
+    <script src="/js/custom.js"></script>
+    <!-- Google Tag Manager-->
+    <noscript>
+      <iframe src="//www.googletagmanager.com/ns.html?id=GTM-KMMZX2" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <script>
+      console.log(document.getElementById("search-google"));
+      console.log(document.getElementById("search-google").innerText);
+      
+      var searchBox = document.getElementById("search-google");
+      
+      function googleSearch(search_string) {
+        alert(search_string);
+      }
+      
+      document.getElementById("search-google").addEventListener("onClick", function () {
+        alert(document.getElementById("search-google").innerHTML);
+      });
+      
+      document.getElementById("search-google").addEventListener("onClick", function () {
+        googleSearch(document.getElementById("search-google").innerHTML)
+      });
+      
+    </script>
+    <script>
+      (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+                  (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+      })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+      ga('create', 'UA-39158070-6', 'auto');
+      ga('send', 'pageview');
+    </script>
+  </body>
+</html>
