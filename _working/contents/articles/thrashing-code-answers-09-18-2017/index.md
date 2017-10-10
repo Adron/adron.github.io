@@ -12,11 +12,17 @@ A few weeks ago I posed a code challenge that was extremely open ended. It left 
 
 > Answer: Here are three types of roads specifically to solve for in a first attempt. These are specified just to have a starting point.
 
+**NOTE:** I added pictures of the road types by using [Street Mix](https://streetmix.net/). If you're interested in road alignments then this tool might consume a few hours of your day, so beware!
+
+<span class="more"></span>
+
 <div class="image float-right">
     [![Country Road](country-road.png)](https://streetmix.net/)
 </div>
 
 > * Country roadway: Two lanes, no parking spaces, and no area to pull off on. Each lane has a capacity of ~800-1200 cars per hour. Traffic on the particular road is about 8000 per day.
+
+**Note:** I added a tram to the picture, but it is not there for calculation reasons. It's there merely because I wanted to have a tram there. The focus on this is still entirely the public roadway to the left of the tram.)
 
 <div class="image float-right">
     [![City Arterial](city-arterial.png)](https://streetmix.net/)
@@ -28,11 +34,11 @@ A few weeks ago I posed a code challenge that was extremely open ended. It left 
     [![Neighborhood Street](neighborhood-street.png)](https://streetmix.net/)
 </div>
 
+**NOTE:** The travel lane in the center, even though it has an arrow for one way, is actually bi-directional. It's very similar to a lot of the older town center organized neighborhoods as seen in Brooklyn in New York, in Ballard or a number of other neighborhoods in Seattle, and many in Portland. Almost every major US city has neighborhoods with small streets like this, often an indicator of a time when it wasn't assumed you put your person property (a car) in the road and the road was actually considered public domain by the general populace. But I digress, back to the coding problem.
+
 > * Neighborhood street, 3-lanes: Single travel lane in the center, one parking lane on either side. Ability to move about ~500 cars per hour but only experiences about ~1500 cars per day.
 
 > The challenge here far exceeds merely some algorithm to solve for X, but instead ponders what would need to be included to find transport use (driving or in movement), storage (parked car), and no car, no movement, and nobody parked anywhere to be seen (and empty road).
-
-<span class="more"></span>
 
 ## My Solution
 
@@ -50,7 +56,7 @@ Let's just set some scope and guidelines for making these calculations.
 2. The roadways, for initial simplicity of creating a solution, will not have any interruptive side roads, lights, stop signs, or such, but will just be merely 1 kilometer long without interruptions.
 3. For parked cars, I'm going to say the average length of a car is equal to a Toyota Camry. That used to be one of the most sold cars in the US, and is a pretty in between size. It's not a huge truck, but it also isn't a Mini Cooper! The dimensions for a 2017 Toyota Camry are 191″ L x 72″ W x 58″ H. Let's imagine that in the front and rear of the car we need at least some space, so I'll calculate that at half a meter in front and half a meter in back. So 191 inches is 4.851 meters (*that's based on 39.3701 inches per meter*), plus the space in front and back, gives us 5.851 meters. For the width, the Camry is 72 inches giving us 1.828 meters width, and a height of 58 inches doesn't really matter in these calculations. In summary, our parking places will need to be 1.828 meters wide by 5.851 meters in length.
 4. I wrote the capacity of each roadway per hour, and for these calculations I'll continue to assume the capacity per hour is what the road actually experiences.
-5. For the time period to determine parked, moving, or empty space, I'll start working with a 12 hour period. I'll just assume we're talking about a 12 hour period that is inclusive of the work day.
+5. For the time period to determine parked, moving, or empty space, I'll start working with a 24 hour period.
 
 That gives me a few points now to really start working with. Let's also make the following rules:
 
@@ -92,26 +98,186 @@ There's one more thing that just popped into my head, to help get an actual meas
 
 With that, here we go.
 
-Time Being Measured in Hours= T
-Parking Space (Length in meters) = P
-Roadway Distance (Length in meters) = R
-Turnover Rate (Cars Parked Per Hour) = H
-Empty Spots (Average # Per Hour) = E
+* Time Being Measured in Hours = T
+* Parking Space (Length in meters) = P
+* Roadway Distance (Length in meters) = R
+* Turnover Rate (Cars Parked Per Hour) = H
+* Empty Spots (Average # Per Hour) = E
+
+Where S is the total time cars are parked in parking spots on the roadway.
 
 ```
-S = ((P / R) - E) * H * T
+S = ((R / P) - E) * H * T
 ```
 
 ## T | Transport / Transporting
 
 Whew, I've got **S**, next up is **T** for the number of vehicles moving by per hour. I actually provided the cars per hour on the roadway, but that leaves us to determine how much of the roadway is actually being used to move that number of cars. Let's try to get a decent ballpark figure.
 
-For the *country road* I stated that it has 8000 cars per day, which for 12 hours would theoretically be half that right? I didn't state which time what capacity of cars came through, so let's just go with 4000 for 12 hours.
+For the *country road* I stated that it has 8000 cars per day. For the *arterial road* the route has about 12,000 per day, and for the *neighborhood street* there are only about 1500. I also stated the throughput of each road, so let's use the country road as an example and work from that.
 
-For the other two roads, I didn't state a total, just the capacity of the roadway to have cars move through the space.
+I originally stated a 800-1200 cars per hour, with 8000 traveling through the road per day. A day is 24 hours of course. Let's work with the idea we're getting maximum throughput of 1200 cars per hour. If there is 8000 cars per day, at 1200 per hour, we could divide the total per day by the hours like 8000 / 1200 = hours it takes to have 8000 cars travel the road. Which in this case, is 6.666666666 hours. How devilish!
+
+The equation then looks something like this.
+
+* The total cars traversing the road = D
+* The total cars that can travel through the road per hour = H
+
+Where T is the total hours in which transporting is being done.
+
+```
+T = D / H
+```
 
 ## D | Dead Space
 
+Alright, so this equation is going to take into account the time left and is going to also get super tricky. More on its trickiness after I post the solution though. For now, soffice to say the total dead space is the remainder hours when cars aren't traversing and also the dead time of cars not parked. At least, that's what I'll go with for now.
 
+* Transport or Transporting (the result of the above T equation) = T
+* Empty parking spots per hour, value available from determinant in the S equation as = E
 
-https://thinkgrowth.org/https-medium-com-mrogati-bobross-2bc000f0d4bd
+Where D is the hours of dead space on the road.
+
+```
+D = T + E
+```
+
+Alright it's time to sling some code now that the pieces are collected.
+
+# CODE!
+
+First things first, I'm going to put in place a test for each of these functions that I'll need. These tests are by no means a paramount example of testing, nor do they test much of anything besides the extreme happy path, but they'll be perfect for getting started to verify the functions we'll write. The tests also will provide the basis in which to extend past these calculations in the future and really start to extrapolate this into a project that *gasp* may be a real usable thing.
+
+I've created a `thrashed.go` and `thrashed_test.go` file for this initial bit of coding. The first test I've added in the test file is the test for what I'll call the Storage function.
+
+``` javascript
+func TestStorage(test *testing.T) {
+
+	var t float32 = 24    /* 24 hours in a day. */
+	var p float32 = 5.851 /* Meters a parking space needs to be */
+	var r float32 = 1000  /* Meters of roadway distance in calculation */
+	var h float32 = 1.8   /* Cars parked per hour in a single parking spot. */
+	var e float32 = 8     /* Empty parking spots per hour for the measured distance. */
+
+	if Storage(t, p, r, h, e) != 7037.753 {
+		test.Error("Failure to determine correct storage result.")
+	}
+}
+```
+
+I'm a big fan of tests being a good source of documentation and how to use a set of functions or libraries. With that in mind I've added a few comments to define what each variable is. In the `thrashed.go` file I dive into implementing the calculation for storage.
+
+``` javascript
+func Storage(TimeBeingMeasured float32, ParkingSpace float32, RoadwayDistance float32, TurnoverRate float32, EmptySpots float32) float32 {
+	return ((RoadwayDistance / ParkingSpace) - EmptySpots) * TurnoverRate * TimeBeingMeasured
+}
+```
+
+I'm not happy with this example, as I wrote out every variable so that they're self descriptive. But it leaves the function signature a bit long. Even though it won't be self descriptive, I'm going to turn these into acronyms for now. Late I'll resolve the naming problem, because it's a road block otherwise and as we all know, naming stuff is hard. For now, just for now, I'm going to refactor the storage function to look like this.
+
+``` javascript
+func Storage(tbm float32, ps float32, rd float32, tr float32, es float32) float32 {
+	return ((rd / ps) - es) * tr * tbm
+}
+```
+
+Am I happier with that? Not really, but it at least fits on the screen. Anyway, on to the next metric to measure. Following good practice, a test first.
+
+``` javascript
+func TestTransport(t *testing.T) {
+
+	var d int = 8000 /* Total cars traveling the roadway for the test time frame. */
+	var h int = 1200 /* The number of cars that can travel the roadway per hour. */
+
+	result := Transport(d, h)
+
+	fmt.Println(result)
+
+	if result != 6.6666665 {
+		t.Error("Failure to determine correct transportation throughput.")
+	}
+}
+```
+
+Then I implement it with this.
+
+``` javascript
+func Transport(TotalCars int, CarsPerHour int) float32 {
+	return float32(TotalCars) / float32(CarsPerHour)
+}
+```
+
+Now for the dead space test.
+
+``` javascript
+func TestDeadSpace(test *testing.T) {
+	var t int = 23 /* Transport or transporting (the result of the "Transport" equation). */
+	var e int = 2  /* Empty parking sports per hour. This value is what would be the same \
+	as the E value in the Storage function. */
+
+	result := DeadSpace(t, e)
+	if result != 25 {
+		test.Error("Nope that isn't the correct amount of dead space.")
+	}
+}
+```
+
+Then implementation of it.
+
+``` javascript
+func DeadSpace(t int, e int) int {
+	return t + e
+}
+```
+
+With those functions in place I can now, finally, after all this work move toward an initial answer! Now I'm going to write a set of tests, one for each of the percentages that are requested in the original code challenge. One test for the storage, transport, and dead space percentages. For these tests, I'm doing a nice easy split of storage, transport, and dead space; 50, 75, and 75. That was I can calculate it out in my head if need be.
+
+``` javascript
+func TestGimmeTheStoragePercent(t *testing.T) {
+	result := GimmeTheSolutionAlready(50, 75, 75)
+
+	if result[0] != 25 {
+		t.Error("The storage percentage is not correct.")
+	}
+}
+
+func TestGimmeTheTransportPercent(t *testing.T) {
+	result := GimmeTheSolutionAlready(50, 75, 75)
+
+	if result[1] != 37.5 {
+		t.Error("The transport percentage is not correct.")
+	}
+}
+
+func TestGimmeTheDeadspacePercent(t *testing.T) {
+	result := GimmeTheSolutionAlready(50, 75, 75)
+
+	if result[2] != 37.5 {
+		t.Error("The dead space percentage is not correct.")
+	}
+}
+```
+
+My implementation that I then put together looks like this.
+
+``` javascript
+func GimmeTheSolutionAlready(storage float64, transport float64, deadspace float64) []float64 {
+	var quotient = (storage + transport + deadspace) / 100
+	var storagePercent = storage / quotient
+	var transportPercent = transport / quotient
+	var deadspacePercent = deadspace / quotient
+
+	var result []float64
+	result = append(result, storagePercent)
+	result = append(result, transportPercent)
+	result = append(result, deadspacePercent)
+
+	return result
+}
+```
+
+Did I do it right? Whew, I'll check it a bit later, but happy for someone else to point out an error. Overall though, this is my first brutally long rough draft of code with a few unit tests.
+
+I'm also interested in what else you think should go into this mix. I'm likely to turn this into a CLI just for fun and would like to add additional complexities into it, so that when I implment the CLI it can create the actual story of what this tells us about a roadway. So get out your urban planner, car counting, road nerd glasses and let me know what your thoughts are.
+
+Until next code challenge, or ya know whenever, happy coding!
