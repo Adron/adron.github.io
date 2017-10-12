@@ -5,11 +5,10 @@ date: 2017-08-11:15:40:03
 template: talk.jade
 ---
 ## Inception, Workflow, to $Deployed$
-*@ [TBD](#) Coming Soon!*
 
-Removing Chaos and Noise From Your Dev Stack to GSD!
+*Removing Chaos and Noise From Your Dev Stack to GSD!*
 
-[RSVP here!](https://www.meetup.com/NET-Developers-Association-Westside/events/242573016/)
+[RSVP here](https://www.meetup.com/NET-Developers-Association-Westside/events/242573016/) for the Seattle evening talk and [RSVP here](https://www.meetup.com/NET-Developers-Association-Eastside/events/242573024/) for the Redmond Microsoft Campus evening talk.
 
 Using a range of tools (Terraform, Azure, Rancher, Docker, etc) I'll show the full build of a dev stack in just a few short minutes in Azure. Then I'll take everyone for a whirlwind tour of development within one of these lean built stacks, using various languages and stacks. I'll wrap up with new app and service deployment into this automated environment to show the entire workflow of the cycle. In the end, this will be a working example of how to use the leanest, meanest technology to date for rapid, high quality development.
 
