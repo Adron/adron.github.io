@@ -22,6 +22,10 @@ Because I know you love some Disney Frozen and heavy music, here's a treat for y
 
 # Code Challenge
 
+<div class="image float-right">
+  ![ML4ALL Mascot](ml4all-mascot.png)
+</div>
+
 This is a crazy reverse engineering challenge. Take a look at some of these resources and determine how to find the price and price trend of Seattle housing prices.
 
 * [All-Transactions House Price Index for Seattle-Bellevue-Everett, WA](https://fred.stlouisfed.org/series/ATNHPIUS42644Q)
