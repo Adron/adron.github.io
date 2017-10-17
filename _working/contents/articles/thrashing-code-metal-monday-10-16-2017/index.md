@@ -6,15 +6,15 @@ template: article.jade
 ---
 It's not Monday anymore, but we still need some heavy music to debug to. Late better than never, here's the fire.
 
+Flip this around to some In This Moment with a flashback to the... ya know, previous decades.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/EH6myRjE848?rel=0" frameborder="0" allowfullscreen></iframe>
+
 <span class="more"></span>
 
 A little more hard core to sprinkle on it.
 
 <iframe src="https://open.spotify.com/embed/track/1tiDez6W6mey8GnrfjXTIU" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
-
-Then flip that around to some In This Moment with a flashback to the... ya know, previous decades.
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/EH6myRjE848?rel=0" frameborder="0" allowfullscreen></iframe>
 
 Because I know you love some Disney Frozen and heavy music, here's a treat for ya.
 
