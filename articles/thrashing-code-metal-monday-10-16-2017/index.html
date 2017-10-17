@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="/css/style.min.css">
     <script src="/js/modernizr.js"></script>
   </head>
-  <body>
+  <body class="article-detail">
     <!--[if lt IE 8]>
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -67,8 +67,10 @@
             <div class="col-md-12">
               <!-- Page Info-->
               <div class="page-info page-info-simple">
-                <h1>Adron's Composite Code</h1>
-                <h2 class="description">Coder, Messenger, Recon, Infrastructure, Ops</h2>
+                <h1>Thrashing Code Metal Monday for Week of October 16th 2017</h1>
+                <p class="author">Written by <span class="author">Adron Hall</span> and published on <span>October, 17 of 2017.</span>
+                </p>
+                <div class="nav"><a href="/">« Home</a></div>
               </div>
               <!-- End Page Info-->
             </div>
@@ -83,100 +85,33 @@
             <div class="col-md-9">
               <div class="main-content">
                 <!-- Blog Page-->
-                <div class="blog">
-                  <div class="row"></div>
-                </div>
-                <div class="col-md-12 col-sm-12">
-                  <!-- Blog List-->
-                  <div class="blog-grid">
-                    <div class="row">
-                      <div class="col-md-12 col-sm-12">
-                        <h3 class="blog-grid-title"><a href="/articles/cooking-golang/">A Go UUID Solution - Cooking Go - Issue 001</a></h3>
-                        <p class="blog-grid-excerpt"><div class="image float-right">
-    <img src="/articles/cooking-golang/golang-mascot.png" alt="Go Mascot">
-</div>
+                <article class="article">
+                  <section class="content"><p>It’s not Monday anymore, but we still need some heavy music to debug to. Late better than never, here’s the&nbsp;fire.</p>
+<p><span class="more"></span></p>
+<p>A little more hard core to sprinkle on&nbsp;it.</p>
+<iframe src="https://open.spotify.com/embed/track/1tiDez6W6mey8GnrfjXTIU" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
 
-<p>Want a <span class="caps">UUID</span> generator for your Go code? It’s likely you’ll need one sometime. Well here’s a short code snippet and a review of one of the available UUID libraries&nbsp;available.</p>
-<p>The library is avaliable at <a href="https://github.com/satori/go.uuid">https://github.com/satori/go.uuid</a>.</p>
-<p>With test coverage this library supports the following <span class="caps">UUID</span> types. I’ll elaborate on what each of these types are after a code snippet or&nbsp;two.</p>
+<p>Then flip that around to some In This Moment with a flashback to the… ya know, previous&nbsp;decades.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/EH6myRjE848?rel=0" frameborder="0" allowfullscreen></iframe>
+
+<p>Because I know you love some Disney Frozen and heavy music, here’s a treat for&nbsp;ya.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/HtkGluLhnGU?rel=0" frameborder="0" allowfullscreen></iframe>
+
+<h1 id="code-challenge">Code&nbsp;Challenge</h1>
+<p>This is a crazy reverse engineering challenge. Take a look at some of these resources and determine how to find the price and price trend of Seattle housing&nbsp;prices.</p>
 <ul>
-<li>Version 1, based on timestamp and <span class="caps">MAC</span> address (RFC&nbsp;4122)</li>
-<li>Version 2, based on timestamp, <span class="caps">MAC</span> address and POSIX UID/GID (DCE&nbsp;1.1)</li>
-<li>Version 3, based on <span class="caps">MD5</span> hashing (RFC&nbsp;4122)</li>
-<li>Version 4, based on random numbers (<span class="caps">RFC</span>&nbsp;4122)</li>
-<li>Version 5, based on <span class="caps">SHA</span>-1 hashing (RFC&nbsp;4122)</li>
+<li><a href="https://fred.stlouisfed.org/series/ATNHPIUS42644Q">All-Transactions House Price Index for Seattle-Bellevue-Everett,&nbsp;<span class="caps">WA</span></a></li>
+<li><a href="https://www.redfin.com/blog/data-center">Redfin Housing&nbsp;Prices</a></li>
+<li><a href="https://www.trulia.com/home_prices/Washington/Seattle-heat_map/">Trulia Heat Map of Seattle area housing&nbsp;prices</a></li>
 </ul>
-<p>First step. Get the&nbsp;library.</p>
-<pre><code class="lang-shell-script">go get github.com/satori/go.uuid
-</code></pre>
-<p>
-                          <p class="more"><a href="/articles/cooking-golang/">more</a></p>
-                        </p>
-                        <div class="blog-grid-meta"><span class="blog-grid-date">12. March 2017</span></div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End of Blog List-->
-                </div>
-                <div class="col-md-12 col-sm-12">
-                  <!-- Blog List-->
-                  <div class="blog-grid">
-                    <div class="row">
-                      <div class="col-md-12 col-sm-12">
-                        <h3 class="blog-grid-title"><a href="/articles/thrashing-code-metal-monday-03-07-2017/">Thrashing Code Metal Monday for Week of March 6th 2017, on Tuesday the 7th!</a></h3>
-                        <p class="blog-grid-excerpt"><p>Obviously it isn’t Monday. But sometimes you go to a show on Sunday and you’re recovering on Monday and writing a blog entry just isn’t a priority. But in that vein, here’s the line up for the Bound by the Road Tour I dived into the pit for this last&nbsp;Sunday!</p>
-<p><img src="/articles/thrashing-code-metal-monday-03-07-2017/dd.jpg" alt="Devil Driver"></p>
-<p>K’atun &gt; <a href="https://www.facebook.com/pg/katunband">https://www.facebook.com/pg/katunband</a></p>
-<iframe width="300" height="56" src="https://embed.spotify.com/follow/1/?uri=spotify%3Aartist%3A21XgrFZKhmE6A7U1Om95eU&amp;size=detail&amp;theme=dark" scrolling="no" frameborder="0" style="border:none; overflow:hidden;" allowtransparency="true"></iframe>
-
-<iframe width="300" height="56" src="https://embed.spotify.com/follow/1/?uri=spotify%3Aartist%3A1CToivUVH4hS9CXlYOSFgb&amp;size=detail&amp;theme=dark" scrolling="no" frameborder="0" style="border:none; overflow:hidden;" allowtransparency="true"></iframe>
-
-<p>
-                          <p class="more"><a href="/articles/thrashing-code-metal-monday-03-07-2017/">more</a></p>
-                        </p>
-                        <div class="blog-grid-meta"><span class="blog-grid-date">07. March 2017</span></div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End of Blog List-->
-                </div>
-                <div class="col-md-12 col-sm-12">
-                  <!-- Blog List-->
-                  <div class="blog-grid">
-                    <div class="row">
-                      <div class="col-md-12 col-sm-12">
-                        <h3 class="blog-grid-title"><a href="/articles/want-a-what-golang/">Golang Execution on OS-X vs. Linux</a></h3>
-                        <p class="blog-grid-excerpt"><p>Recently I was dorking about with some Go code on <span class="caps">OS</span>-X. Just working with it via iTerm 2 and using some basic <code>go run whateverthefile.go</code> commands and displaying results out the the shell. All was well, and then I dived into some code that used so Go Routines. The code looked something like&nbsp;this.</p>
-<pre><code class="lang-javascript">package main
-
-<span class="keyword">import</span> (
-    <span class="string">"time"</span>
-    <span class="string">"fmt"</span>
-)
-
-func say(s string) {
-    <span class="keyword">for</span> i := <span class="number">0</span>; i&lt;<span class="number">5</span>; i++ {
-        time.Sleep(<span class="number">2</span> * time.Second)
-        fmt.Println(s)
-    }
-}
-
-func main() {
-    go say(<span class="string">"1. First thread is running."</span>)
-    go say(<span class="string">"  2. Second thread is running."</span>)
-    say(<span class="string">"    3. Thread is running in main."</span>)
-    fmt.Println(<span class="string">"Ended."</span>)
-}
-</code></pre>
-<p>
-                          <p class="more"><a href="/articles/want-a-what-golang/">more</a></p>
-                        </p>
-                        <div class="blog-grid-meta"><span class="blog-grid-date">26. February 2017</span></div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End of Blog List-->
-                </div>
+<p>Basically determine what the average housing price is and determine an algorithm that you’ll use to determine the growth for the&nbsp;year.</p>
+<h2 id="winner-will-win-"><span class="caps">WINNER</span> WILL&nbsp;WIN!</h2>
+<p>If you provide this in a repo (F#, Go, JavaScript, Haskell, Clojure, Rust, whatever your choice) the top solution (like the top 2 if that many try) will get a ticket to <a href="http://ml4all.org/"><span class="caps">ML4ALL</span></a>!</p>
+<h2 id="another-winner-will-win-"><span class="caps">ANOTHER</span> WINNER WILL&nbsp;WIN!</h2>
+<p>If you offer up a machine learning solution (algorithm choice, gathering of data, etc, python, or R, or whatever) you’ll also get a ticket to <a href="http://ml4all.org/"><span class="caps">ML4ALL</span></a>!</p>
+<p>All the luck to ya. Hacking&nbsp;time!</p>
+</section>
+                </article>
                 <!-- End of Blog Page-->
               </div>
             </div>
@@ -269,8 +204,7 @@ func main() {
             </div>
           </div>
         </div>
-        <div class="nav"><a href="/page/7/">« Newer</a>&nbsp;<a href="/page/9/">Previous »</a>
-        </div>
+        <div class="nav"><a href="/">« Home</a></div>
       </div>
     </div>
     <script src="/js/all.js"></script>
