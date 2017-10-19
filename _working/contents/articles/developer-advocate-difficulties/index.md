@@ -22,11 +22,7 @@ There are a number of words for an *ideal* developer advocate; effective, mentor
 
 Let's tackle some of the characteristics that make a good developer advocate. Some things on this list aren't things you'll read about on the corporate approved descriptions, this list is more about the real aspects of developer advocacy.
 
-<div class="image float-right">
-    ![Developer Advocate Racoon](devadv.png)
-</div>
-
-1. Having a **Thick Skin** & the respective **Grace** to deal with it. Sometimes someone is going to be in a poor mood and will imply via questioning that you have no clue what you are doing. These people are derailments waiting to happen. Have you ever seen an oil train derail? It's catastrophically horrible and these question askers are wedging a spike to cause the derailment into your talk.
+1. Having a **thick skin** & the respective **grace** to deal with it. Sometimes someone is going to be in a poor mood and will imply via questioning that you have no clue what you are doing. These people are derailments waiting to happen. Have you ever seen an oil train derail? It's catastrophically horrible and these question askers are wedging a spike to cause the derailment into your talk.
 
 2. Having actual **technical chops** combined with an **entertaining** style of presentation, interaction with others, and overall pleasant person. This ability is one of those things where the saying "*you can't make all the people happy all of the time, but you might be able to make some people happy some of the time*" becomes prescient. Some people are pissed or envious that they're even listening to you (no seriously, there are people that feel this way). These people are not the people as an advocate you'll be able to make happy today, but everybody else are apt candidates to learn from you, show them a new tech or help them get to a next step in their efforts. These are the people you want to advocate to, the pissed and envious just ignore and move on. Basically, just ignore *Gamergate* cry babies as best you can and move onward with actually helping people learn new and better ways to develop technology and to use the technology you're advocating.
 
@@ -44,7 +40,7 @@ Summary for *Developer Advocate Work* is that this can be a hugely rewarding job
 
 ## Eternal Conflict State
 
-You may ponder, "Adron, you just wrote about a lot of the characteristics requirements of a developer advocate and they sure sounded like a lot of eternal conflict states!" You're right! One has a lot to deal with as a developer advocate, and there's more!
+You may ponder, "Adron, you just wrote about a lot of the characteristic requirements of a developer advocate and they sure sounded like a lot of eternal conflict states!" You're right! One has a lot to deal with as a developer advocate, and there's more!
 
 1. **Team value** is always questioned and rarely understood by anybody. As an advocate, you can test out the difficulty of understanding this by asking, "what value do I provide the company?" and then "what value do I provide the tech community?" The answers that come from that will show how difficult it is to determine what a developer advocates value is to both. It's a hard question to answer, and company's often screw up developer advocacy in many ways. Determining this value for yourself as a developer advocate and the company determining how you do or don't provide value is a tough and stressful question to answer. It's also a question that will often come up almost every quarter. Be prepared for this eternal conflict state.
 
