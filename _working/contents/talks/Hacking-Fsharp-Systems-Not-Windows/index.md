@@ -7,7 +7,7 @@ template: talk.jade
 ## Hacking Fsharp Systems Not Windows
 ### *on 2015-09-05*
 
-The basic idea behind this talk is to bring everybody through a quick history of Visual Studio Code, Atom and other editors in relation to F# development and take a look at .NET's compatibility across operating systems. I'll be giving this <a href="http://devday.pl/" target="_blank">presentation at Dev Day Poland in Krakow on September the 18th</a>.
+The basic idea behind this talk is to bring everybody through a quick history of Visual Studio Code, Atom and other editors in relation to F# development and take a look at .NET's compatibility across operating systems. I gave this presentation at Dev Day Poland in Krakow on September the 18th, albeit the site has been taken down and doesn't seem to be archived anywhere. :(
 
 ## Prerequisites to Follow Along & Other Details
 
@@ -28,5 +28,4 @@ The basic idea behind this talk is to bring everybody through a quick history 
 
 ## Presentation Collateral
 
-* **Demo Code: Just checkout the <a href="https://github.com/Adron/sharpdev" target="_blank">sharpdev repository</a>.**
 * **Slides:</strong> <a href="https://speakerdeck.com/adron/hacking-f-number-on-systems-not-windows" target="_blank">https://speakerdeck.com/adron/hacking-f-number-on-systems-not-windows</a>**
