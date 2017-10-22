@@ -63,7 +63,7 @@ Using Terraform to build a Kubernetes cluster is pretty minimalistic. First, as 
 
 In the [.gitignore](https://github.com/Adron/our_new_world/blob/master/.gitignore) I add just a few items. Some are specific to my setup that I have and IntelliJ. The contents of the file looks like this. I've included comments in my .gitignore so that one can easily make sense of what I'm ignoring.
 
-```
+``` javascript
 # A silly MacOS/OS-X hidden file that is the bane of all repos.
 .DS_Store
 
@@ -134,7 +134,7 @@ output "gcp_cluster_name" {
 
 In the terraform.tfvars file I have the following assigned. Obviously you wouldn't want to keep your production Linux username and passwords in this file, but for this example I've set them up here as the repository sample code can only be run against your own GCP org service, so remember, if you run this you've got public facing default linux account credentials exposed right here!
 
-```
+``` javascript
 cluster_name = "ournewworld"
 gcp_cluster_count = 1
 linux_admin_username = "frankie"
@@ -143,7 +143,7 @@ linux_admin_password = "supersecretpassword"
 
 Now for the meat of this effort. The [kubernetes.tf](https://github.com/Adron/our_new_world/blob/master/kubernetes.tf) file. The way I've set this file up is as shown.
 
-```
+``` javascript
 resource "google_container_cluster" "gcp_kubernetes" {
   name               = "${var.cluster_name}"
   zone               = "us-west1-a"
@@ -175,3 +175,70 @@ resource "google_container_cluster" "gcp_kubernetes" {
   }
 }
 ```
+
+With all that setup I can now run the three commands to get everything built. The first command is `terraform init`. This is new with the latest releases of Terraform, which pulls down any of the respective providers that a Terraform execution will need. In this particular project it pulls down the GCP Provider. This command only needs to be run the first time before `terraform plan` or `terraform apply` are run, if you've deleted your `.terraform` directory, or if you've added configuration for something like *Azure*, *Amazon Web Services*, or *Github* that needs a new provider.
+
+![Terraform Initialization](terraform-init.png)
+
+Now to ensure and determine what will be built, I'll run `terraform plan`.
+
+![Terraform Plan](terraform-plan.png)
+
+Since everything looks good, time to execute with `terraform apply`. This will display output similar to the `terraform plan` command but for creating the command, and then you'll see the countdown begin as it waits for instances to start up and networking to be configured and routed.
+
+![Terraform Apply](terraform-apply.png)
+
+While waiting for this to build you can also click back and forth and watch firewall rules, networking, external IP addresses, and instances start to appears in the Google Cloud Platform Console. When it completes, we can see the results, which I'll step through here with some added notes about what is or isn't happening and then wrap up with a destruction of the Kubernetes cluster. Keep reading until the end, because there are some important caveats about things that might or might not be destroyed during clean up. It's important to ensure you've got a plan to review the cluster after it is destroyed to make sure resources and the respective costs aren't still there.
+
+### Compute Engine View
+
+In the console click on the compute engine option.
+
+![Compute Engine](gcp-console-compute-engine.png)
+
+I'll start with the Compute Engine view. I can see the individual virtual machine instances here and their respective zones.
+
+![Compute Engine View](gcp-console-01.png)
+
+Looking at the Terraform file confiugration I can see that the initial zone to create the cluster in was used, which is *us-west1-a* inside the *us-west1* region. The next two instances are in the respective *additional_zones* that I marked up in the Terraform configuration.
+
+``` javascript
+additional_zones = [
+  "us-west1-b",
+  "us-west1-c",
+]
+```
+
+You could even add additional zones here too. Terraform during creation will create an additional virtual machine instance to add to the Kubernetes cluster for each increment that *initial_node_count* is set to. Currently I set mine to a variable so I could set it and other things in my terraform.tfvars file. Right now I have it set to 1 so that one virtual machine instance will be created in the initial zone and in each of the designated *additional_zones*.
+
+Beyond the VM instances view click on the *Instance groups*, *Instance templates*, and *Disks* to seem more items setup for each of the instances in the respective deployed zones.
+
+If I bump my virtual machine instance count up to 2, I get 6 virtual machine instances. I did this, and took a screenshot of those instances running. You can see that there are two instances in each zone now.
+
+![Instance Count Set at 2](gcp-console-2instances-01.png)
+
+#### Instance groups
+
+Note that an instance group is setup for each zone, so this group kind of organizes all the instances in that zone.
+
+![Compute Engine Instance Groups](gcp-console-02.png)
+
+#### Instance Templates
+
+Like the instance groups, there is one template per zone. If I setup 1 virtual machine instance or 10 in the zone, I'll have one template that describes the instances that are created.
+
+![Compute Engine Instance Templates](gcp-console-03.png)
+
+![Compute Engine Disks](gcp-console-04.png)
+
+To SSH into any of these virtual machine instances, the easiest way is to navigate into one of the views for the instances, such as under the VM instances section, and click on the SSH button for the instance.
+
+![Starting SSH](gcp-console-05.png)
+
+Then a screen will pop up showing the session starting. This will take 10-20 seconds sometimes so don't assume it's broken. Then a browser based standard looking SSH terminal will be running against the instance.
+
+![SSH Starting](ssh-window-01.png)
+
+![SSH Prompt](ssh-window-02.png)
+
+This comes in handy if any of the instances ends up having issues down the line. Of all the providers GCP has made connecting to instances and such with this and tools like gcloud extremely easy and quick.
