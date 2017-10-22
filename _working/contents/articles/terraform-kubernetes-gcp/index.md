@@ -242,3 +242,35 @@ Then a screen will pop up showing the session starting. This will take 10-20 sec
 ![SSH Prompt](ssh-window-02.png)
 
 This comes in handy if any of the instances ends up having issues down the line. Of all the providers GCP has made connecting to instances and such with this and tools like gcloud extremely easy and quick.
+
+### Container Engine View
+
+In this view we have cluster specific information to check out.
+
+![Compute Engine](gcp-console-container-clusters.png)
+
+Once the cluster view comes up there sits the single cluster that is built. If there are additional, they display here just like instances or other resources on other screens. It's all pretty standard and well laid out in Google Cloud Platform fashion.
+
+![GCP Container Engine Console View](gcp-console-05.png)
+
+The first thing to note, in my not so humble opinion, is the *Connect* button. This, like on so many other areas of the console, has immediate, quick, easy ways to connect to the cluster.
+
+![GCP Container Engine Console View](gcp-console-06.png)
+
+Gaining access to the cluster that is now created with the commands available is quick. The little button in the top right hand corner copies the command to the copy paste buffer. The two commands execute as shown.
+
+```
+gcloud container clusters get-credentials ournewworld --zone us-west1-a --project thrashingcorecode
+```
+
+and then
+
+```
+kubectl proxy
+```
+
+![GCP Container Engine Console View](gcp-console-07.png)
+
+With the URI posted after execution of `kubectl proxy` I can check out the active dashboard of the container cluster at [127.0.0.1:8001/ui](http://127.0.0.1:8001/ui/).
+
+![]()
