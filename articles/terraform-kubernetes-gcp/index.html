@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Adron's Composite Code</title>
+    <meta name="description" content="">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="alternate" href="/feed.xml" type="application/rss+xml" title="Coder, Messenger, Recon, Infrastructure, Ops">
+    <link rel="icon" type="image/png" href="/img/favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/img/favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/img/favicons/favicon-96x96.png" sizes="96x96">
+    <link rel="apple-touch-icon" sizes="57x57" href="/img/favicons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/img/favicons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/img/favicons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/img/favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/img/favicons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/img/favicons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/img/favicons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/img/favicons/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/favicons/apple-touch-icon-180x180.png">
+    <link rel="stylesheet" href="/css/custom.css">
+    <link rel="stylesheet" href="/css/style.min.css">
+    <script src="/js/modernizr.js"></script>
+  </head>
+  <body class="article-detail">
+    <!--[if lt IE 8]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <div class="header header-over large">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 col-sm-6 col-xs-6">
+            <!-- Logo Image--><a href="/index.html" class="logo-image logo-animated"><img src="/img/logos/logo.png" alt="logo"></a>
+            <!-- End of Logo Image-->
+          </div>
+          <div class="col-md-9 col-sm-6 col-xs-6">
+            <!-- Menu-->
+            <nav class="right helper">
+              <ul class="menu sf-menu js-menu">
+                <li><a href="/docs/thrashing-code-news/">Thrashing Code News</a></li>
+                <li><a href="#">Conf - Meetup - Events</a>
+                  <ul>
+                    <li><a href="/docs/Speaking-Presentations-Workshops/">Speaking - Presentations - Workshops</a></li>
+                    <li><a href="/docs/calendar">Calendar of Engagements</a></li>
+                  </ul>
+                </li>
+                <li><a href="/docs/documentation/">Docs</a></li>
+                <li><a href="#">Contact</a>
+                  <ul>
+                    <li><a href="/docs/contact">Message</a></li>
+                    <li><a href="/docs/job-talk/">Hire</a></li>
+                  </ul>
+                </li>
+                <li><a href="/docs/about/">About</a></li>
+              </ul>
+            </nav>
+            <!-- End of Menu-->
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="header-back header-back-simple header-back-small">
+      <div class="header-back-container">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <!-- Page Info-->
+              <div class="page-info page-info-simple">
+                <h1>Build a Kubernetes Cluster on Google Cloud Platform with Terraform</h1>
+                <p class="author">Written by <span class="author">Adron Hall</span> and published on <span>October, 19 of 2017.</span>
+                </p>
+                <div class="nav"><a href="/">« Home</a></div>
+              </div>
+              <!-- End Page Info-->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="content">
+      <div class="container">
+        <div class="layout with-right-sidebar js-layout">
+          <div class="row">
+            <div class="col-md-9">
+              <div class="main-content">
+                <!-- Blog Page-->
+                <article class="article">
+                  <section class="content"><div class="image float-right">
+    <img src="/articles/terraform-kubernetes-gcp/terraform.png" alt="Terraform">
+</div>
+
+<p>In this blog entry I’m going to detail the exact configuration and cover in some additional details the collateral resources you can expect to find once the configuration is executed against with Terraform. For the repository to this write up, I create <em><a href="https://github.com/Adron/our_new_world">our_new_world</a></em> available on&nbsp;Github.</p>
+<p>A lot of this material I wrote about with <a href="/articles/setting-up-gcp-container-cluster/">Setting up a <span class="caps">GCP</span> Container Cluster - Part I</a> and <a href="/articles/setting-up-gcp-container-cluster-part-2/">Setting up a <span class="caps">GCP</span> Container Cluster - Part II</a>. I had started on a Part 3 around setting up Drone.io on a Kubernetes/<span class="caps">GCP</span> Container Cluster but stopped midway through with other demands. This post is a more up to date post of all those things plus more. With this post completed I’ve stepped back into getting Drone.io setup and am now <em>finally</em> finishing that blog entry! <em>#win</em>!</p>
+<p>First things first, locally you’ll want to have the respective <span class="caps">CLI</span> tools installed for Google Cloud Platform, Terraform, and&nbsp;Kubernetes.</p>
+<p><span class="more"></span></p>
+<ul>
+<li><a href="https://cloud.google.com/sdk/downloads">Install the gcloud <span class="caps">CLI</span></a> and get it configured with <a href="https://cloud.google.com/sdk/gcloud/reference/init">gcloud&nbsp;init</a></li>
+<li><a href="https://www.terraform.io/intro/getting-started/install.html">Install the latest&nbsp;Terraform</a></li>
+<li>With gcloud <span class="caps">CLI</span> installed you can then easily install kubectl with <code>gcloud components install kubectl</code> command.</li>
+</ul>
+<p>Now that all the prerequisites are covered, let’s dive into the specifics of&nbsp;setup.</p>
+<div class="image float-right">
+    <img src="/articles/terraform-kubernetes-gcp/gcp.png" alt="Google Cloud Platform">
+</div>
+
+<p>If you take a look at the Google Cloud Platform Console, it’s easy to get a before and after view of what is and will be built in the environment. The specific areas where infrastructure will be built out for Kubernetes are in the following areas, which I’ve taken a few screenshots of just to show what the empty console looks like. Again, it’s helpful to see a before and after view, it helps to understand all the pieces that are being put into&nbsp;place.</p>
+<p>The first view is of the Google Compute Engine page, which currently on this account in this organization I have no instances&nbsp;running.</p>
+<p><img src="/articles/terraform-kubernetes-gcp/gcp-01.png" alt="GCP Console"></p>
+<p>This view shows the container engines running. Basically this screen will show any Kubernetes clusters running, Google just opted for the super generic Google Container Engine as a title with Kubernetes nowhere to be seen.&nbsp;Yet.</p>
+<p><img src="/articles/terraform-kubernetes-gcp/gcp-02.png" alt="GCP Console"></p>
+<p>Here I have one ephemeral <span class="caps">IP</span> address, which honestly will disappear in a moment once I delete that forwarding&nbsp;rule.</p>
+<p><img src="/articles/terraform-kubernetes-gcp/gcp-03.png" alt="GCP Console"></p>
+<p>These four firewall rules are the default. The account starts out with these, and there isn’t any specific reason to change them at this point. We’ll see a number of additional firewall settings in a&nbsp;moment.</p>
+<p><img src="/articles/terraform-kubernetes-gcp/gcp-04.png" alt="GCP Console"></p>
+<p>Load balancers, again, currently empty but we’ll see resources here&nbsp;shortly.</p>
+<p><img src="/articles/terraform-kubernetes-gcp/gcp-05.png" alt="GCP Console"></p>
+<p>Alright, that’s basically an audit of the screens where we’ll see the meat of resources built. It’s time to get the configurations built&nbsp;now.</p>
+<h2 id="time-to-terraform-our-new-world">Time to Terraform Our New&nbsp;World</h2>
+<p>Using Terraform to build a Kubernetes cluster is pretty minimalistic. First, as I always do I add a few files the way I like to organize my Terraform configuration project. These files&nbsp;include:</p>
+<ul>
+<li>.gitignore - for the requisite things I won’t want to go into the&nbsp;repository.</li>
+<li>connections.tf - for the connection to&nbsp;<span class="caps">GCP</span>.</li>
+<li>kubernetes.tf - for the configuration defining the characteristics of the Kubernetes cluster I’m working toward getting&nbsp;built.</li>
+<li><span class="caps">README</span>.md - cuz <strong><em>docs first</em></strong>. No seriously, I don’t jest, write the damned&nbsp;docs!</li>
+<li>terraform.tfvars - for assigning variables created in&nbsp;variables.tf.</li>
+<li>variables.tf - for declaring and adding doc/descriptions for the variables I&nbsp;use.</li>
+</ul>
+<p>In the <a href="https://github.com/Adron/our_new_world/blob/master/.gitignore">.gitignore</a> I add just a few items. Some are specific to my setup that I have and IntelliJ. The contents of the file looks like this. I’ve included comments in my .gitignore so that one can easily make sense of what I’m&nbsp;ignoring.</p>
+<pre><code class="lang-javascript"># A silly MacOS/OS-X hidden file that is the bane of all repos.
+.DS_Store
+
+# .idea is the user setting configuration directory for IntelliJ, or more generally Jetbrains IDE Products.
+.idea
+.terraform
+</code></pre>
+<p>The next file I write up is the <a href="https://github.com/Adron/our_new_world/blob/master/connections.tf">connections.tf</a>&nbsp;file.</p>
+<pre><code class="lang-javascript">provider <span class="string">"google"</span> {
+  credentials = <span class="string">"${file("</span>../secrets/account.json<span class="string">")}"</span>
+  project     = <span class="string">"thrashingcorecode"</span>
+  region      = <span class="string">"us-west1"</span>
+}
+</code></pre>
+<p>The path <code>../secrets/account.json</code> is where I place my account.json file with keys and such, to keep it out of the repository. For more on this practice check out my post <em><a href="/articles/terraform-kubernetes-gcp/">Quick Start Connections With Terraform and Kubernetes</a></em> and <em><a href="http://blog.adron.me/articles/working-with-google-compute-engine/">Working With Google Compute Engine (<span class="caps">GCE</span>) using Terraform (with a load of Bash Scripts Too)</a></em>&nbsp;posts.</p>
+<p>The project in <span class="caps">GCP</span> is called <em>thrashingcorecode</em>, which whatever you’ve named yours you can always find right up toward the top of the <span class="caps">GCP</span>&nbsp;Console.</p>
+<p><img src="/articles/terraform-kubernetes-gcp/console-bar.png" alt="GCP Top Navigation Bar"></p>
+<p>Then the region is set to us-west1 which is the data centers that are located, most reasonably to my current geographic area, in The Dalles, Oregon. These data centers also tend to have a lot of the latest and greatest hardware, so they provide a little bit more <em>oompf</em>!</p>
+<p>The next file I setup is the <a href="https://github.com/Adron/our_new_world/blob/master/README.md"><span class="caps">README</span>.md</a>, which you can just check out in the repository <a href="https://github.com/Adron/our_new_world/blob/master/README.md">here</a>.</p>
+<p>Now I setup the <a href="https://github.com/Adron/our_new_world/blob/master/variables.tf">variables.tf</a> and the <a href="https://github.com/Adron/our_new_world/blob/master/terraform.tfvars">terraform.tfvars</a> files. The variables.tf includes the following input and output variables&nbsp;declared.</p>
+<pre><code class="lang-javascript"><span class="comment">// General Variables</span>
+
+variable <span class="string">"linux_admin_username"</span> {
+  type        = <span class="string">"string"</span>
+  description = <span class="string">"User name for authentication to the Kubernetes linux agent virtual machines in the cluster."</span>
+}
+
+variable <span class="string">"linux_admin_password"</span> {
+  type =<span class="string">"string"</span>
+  description = <span class="string">"The password for the Linux admin account."</span>
+}
+
+<span class="comment">// <span class="caps">GCP</span> Variables</span>
+variable <span class="string">"gcp_cluster_count"</span> {
+  type = <span class="string">"string"</span>
+  description = <span class="string">"Count of cluster instances to start."</span>
+}
+
+variable <span class="string">"cluster_name"</span> {
+  type = <span class="string">"string"</span>
+  description = <span class="string">"Cluster name for the <span class="caps">GCP</span> Cluster."</span>
+}
+
+<span class="comment">// <span class="caps">GCP</span> Outputs</span>
+output <span class="string">"gcp_cluster_endpoint"</span> {
+  value = <span class="string">"${google_container_cluster.gcp_kubernetes.endpoint}"</span>
+}
+
+output <span class="string">"gcp_ssh_command"</span> {
+  value = <span class="string">"ssh ${var.linux_admin_username}@${google_container_cluster.gcp_kubernetes.endpoint}"</span>
+}
+
+output <span class="string">"gcp_cluster_name"</span> {
+  value = <span class="string">"${google_container_cluster.gcp_kubernetes.name}"</span>
+}
+</code></pre>
+<p>In the terraform.tfvars file I have the following assigned. Obviously you wouldn’t want to keep your production Linux username and passwords in this file, but for this example I’ve set them up here as the repository sample code can only be run against your own <span class="caps">GCP</span> org service, so remember, if you run this you’ve got public facing default linux account credentials exposed right&nbsp;here!</p>
+<pre><code class="lang-javascript">cluster_name = <span class="string">"ournewworld"</span>
+gcp_cluster_count = <span class="number">1</span>
+linux_admin_username = <span class="string">"frankie"</span>
+linux_admin_password = <span class="string">"supersecretpassword"</span>
+</code></pre>
+<p>Now for the meat of this effort. The <a href="https://github.com/Adron/our_new_world/blob/master/kubernetes.tf">kubernetes.tf</a> file. The way I’ve set this file up is as&nbsp;shown.</p>
+<pre><code class="lang-javascript">resource <span class="string">"google_container_cluster"</span> <span class="string">"gcp_kubernetes"</span> {
+  name               = <span class="string">"${var.cluster_name}"</span>
+  zone               = <span class="string">"us-west1-a"</span>
+  initial_node_count = <span class="string">"${var.gcp_cluster_count}"</span>
+
+  additional_zones = [
+    <span class="string">"us-west1-b"</span>,
+    <span class="string">"us-west1-c"</span>,
+  ]
+
+  master_auth {
+    username = <span class="string">"${var.linux_admin_username}"</span>
+    password = <span class="string">"${var.linux_admin_password}}"</span>
+  }
+
+  node_config {
+    oauth_scopes = [
+      <span class="string">"https://www.googleapis.com/auth/compute"</span>,
+      <span class="string">"https://www.googleapis.com/auth/devstorage.read_only"</span>,
+      <span class="string">"https://www.googleapis.com/auth/logging.write"</span>,
+      <span class="string">"https://www.googleapis.com/auth/monitoring"</span>,
+    ]
+
+    labels {
+      <span class="keyword">this</span>-is-<span class="keyword">for</span> = <span class="string">"dev-cluster"</span>
+    }
+
+    tags = [<span class="string">"dev"</span>, <span class="string">"work"</span>]
+  }
+}
+</code></pre>
+<p>With all that setup I can now run the three commands to get everything built. The first command is <code>terraform init</code>. This is new with the latest releases of Terraform, which pulls down any of the respective providers that a Terraform execution will need. In this particular project it pulls down the <span class="caps">GCP</span> Provider. This command only needs to be run the first time before <code>terraform plan</code> or <code>terraform apply</code> are run, if you’ve deleted your <code>.terraform</code> directory, or if you’ve added configuration for something like <em>Azure</em>, <em>Amazon Web Services</em>, or <em>Github</em> that needs a new&nbsp;provider.</p>
+<p><img src="/articles/terraform-kubernetes-gcp/terraform-init.png" alt="Terraform Initialization"></p>
+<p>Now to ensure and determine what will be built, I’ll run <code>terraform plan</code>.</p>
+<p><img src="/articles/terraform-kubernetes-gcp/terraform-plan.png" alt="Terraform Plan"></p>
+<p>Since everything looks good, time to execute with <code>terraform apply</code>. This will display output similar to the <code>terraform plan</code> command but for creating the command, and then you’ll see the countdown begin as it waits for instances to start up and networking to be configured and&nbsp;routed.</p>
+<p><img src="/articles/terraform-kubernetes-gcp/terraform-apply.png" alt="Terraform Apply"></p>
+<p>While waiting for this to build you can also click back and forth and watch firewall rules, networking, external <span class="caps">IP</span> addresses, and instances start to appears in the Google Cloud Platform Console. When it completes, we can see the results, which I’ll step through here with some added notes about what is or isn’t happening and then wrap up with a destruction of the Kubernetes cluster. Keep reading until the end, because there are some important caveats about things that might or might not be destroyed during clean up. It’s important to ensure you’ve got a plan to review the cluster after it is destroyed to make sure resources and the respective costs aren’t still&nbsp;there.</p>
+<h3 id="compute-engine-view">Compute Engine&nbsp;View</h3>
+<p>In the console click on the compute engine&nbsp;option.</p>
+<p><img src="/articles/terraform-kubernetes-gcp/gcp-console-compute-engine.png" alt="Compute Engine"></p>
+<p>I’ll start with the Compute Engine view. I can see the individual virtual machine instances here and their respective&nbsp;zones.</p>
+<p><img src="/articles/terraform-kubernetes-gcp/gcp-console-01.png" alt="Compute Engine View"></p>
+<p>Looking at the Terraform file confiugration I can see that the initial zone to create the cluster in was used, which is <em>us-west1-a</em> inside the <em>us-west1</em> region. The next two instances are in the respective <em>additional_zones</em> that I marked up in the Terraform&nbsp;configuration.</p>
+<pre><code class="lang-javascript">additional_zones = [
+  <span class="string">"us-west1-b"</span>,
+  <span class="string">"us-west1-c"</span>,
+]
+</code></pre>
+<p>You could even add additional zones here too. Terraform during creation will create an additional virtual machine instance to add to the Kubernetes cluster for each increment that <em>initial_node_count</em> is set to. Currently I set mine to a variable so I could set it and other things in my terraform.tfvars file. Right now I have it set to 1 so that one virtual machine instance will be created in the initial zone and in each of the designated <em>additional_zones</em>.</p>
+<p>Beyond the <span class="caps">VM</span> instances view click on the <em>Instance groups</em>, <em>Instance templates</em>, and <em>Disks</em> to seem more items setup for each of the instances in the respective deployed&nbsp;zones.</p>
+<p>If I bump my virtual machine instance count up to 2, I get 6 virtual machine instances. I did this, and took a screenshot of those instances running. You can see that there are two instances in each zone&nbsp;now.</p>
+<p><img src="/articles/terraform-kubernetes-gcp/gcp-console-2instances-01.png" alt="Instance Count Set at 2"></p>
+<h4 id="instance-groups">Instance&nbsp;groups</h4>
+<p>Note that an instance group is setup for each zone, so this group kind of organizes all the instances in that&nbsp;zone.</p>
+<p><img src="/articles/terraform-kubernetes-gcp/gcp-console-02.png" alt="Compute Engine Instance Groups"></p>
+<h4 id="instance-templates">Instance&nbsp;Templates</h4>
+<p>Like the instance groups, there is one template per zone. If I setup 1 virtual machine instance or 10 in the zone, I’ll have one template that describes the instances that are&nbsp;created.</p>
+<p><img src="/articles/terraform-kubernetes-gcp/gcp-console-03.png" alt="Compute Engine Instance Templates"></p>
+<p><img src="/articles/terraform-kubernetes-gcp/gcp-console-04.png" alt="Compute Engine Disks"></p>
+<p>To <span class="caps">SSH</span> into any of these virtual machine instances, the easiest way is to navigate into one of the views for the instances, such as under the VM instances section, and click on the SSH button for the&nbsp;instance.</p>
+<p><img src="/articles/terraform-kubernetes-gcp/gcp-console-05.png" alt="Starting SSH"></p>
+<p>Then a screen will pop up showing the session starting. This will take 10-20 seconds sometimes so don’t assume it’s broken. Then a browser based standard looking <span class="caps">SSH</span> terminal will be running against the&nbsp;instance.</p>
+<p><img src="/articles/terraform-kubernetes-gcp/ssh-window-01.png" alt="SSH Starting"></p>
+<p><img src="/articles/terraform-kubernetes-gcp/ssh-window-02.png" alt="SSH Prompt"></p>
+<p>This comes in handy if any of the instances ends up having issues down the line. Of all the providers <span class="caps">GCP</span> has made connecting to instances and such with this and tools like gcloud extremely easy and&nbsp;quick.</p>
+<h3 id="container-engine-view">Container Engine&nbsp;View</h3>
+<p>In this view we have cluster specific information to check&nbsp;out.</p>
+<p><img src="/articles/terraform-kubernetes-gcp/gcp-console-container-clusters.png" alt="Compute Engine"></p>
+<p>Once the cluster view comes up there sits the single cluster that is built. If there are additional, they display here just like instances or other resources on other screens. It’s all pretty standard and well laid out in Google Cloud Platform&nbsp;fashion.</p>
+<p><img src="/articles/terraform-kubernetes-gcp/gcp-console-05.png" alt="GCP Container Engine Console View"></p>
+<p>The first thing to note, in my not so humble opinion, is the <em>Connect</em> button. This, like on so many other areas of the console, has immediate, quick, easy ways to connect to the&nbsp;cluster.</p>
+<p><img src="/articles/terraform-kubernetes-gcp/gcp-console-06.png" alt="GCP Container Engine Console View"></p>
+<p>Gaining access to the cluster that is now created with the commands available is quick. The little button in the top right hand corner copies the command to the copy paste buffer. The two commands execute as&nbsp;shown.</p>
+<pre><code>gcloud container clusters get-credentials ournewworld --zone us-west1-a --project thrashingcorecode
+</code></pre><p>and&nbsp;then</p>
+<pre><code>kubectl proxy
+</code></pre><p><img src="/articles/terraform-kubernetes-gcp/gcp-console-07.png" alt="GCP Container Engine Console View"></p>
+<p>With the <span class="caps">URI</span> posted after execution of <code>kubectl proxy</code> I can check out the active dashboard rendered for the container cluster at <a href="http://127.0.0.1:8001/ui/">127.0.0.1:8001/ui</a>.</p>
+<p><strong><span class="caps">IMPORTANT</span> NOTE:</strong> If the <code>kubectl</code> version isn’t up to an appropriate parity version with the server then it may not render this page ok. To ensure that the version is at parity, run a <code>kubectl version</code> to see what versions are in place. I recently went through troubleshooting this scenario which rendered a blank page. After trial and error it came down to version differences on server and client <code>kubectl</code>.</p>
+<p><img src="/articles/terraform-kubernetes-gcp/Kubernetes_Dashboard.png" alt="Kubernetes"></p>
+<p>I’ll dive into more of the dashboard and related things in a later post. For now I’m going to keep moving forward and focus on the remaining resources built, in&nbsp;networking.</p>
+<h3 id="vpc-network"><span class="caps">VPC</span>&nbsp;Network</h3>
+<p><img src="/articles/terraform-kubernetes-gcp/gcp-console-08.png" alt="Kubernetes Console"></p>
+<p>Once the networking view renders there are several key tabs on the left hand side; <em>External <span class="caps">IP</span> addresses</em>, <em>Firewall rules</em>, and <em>Routes</em>.</p>
+<p><img src="/articles/terraform-kubernetes-gcp/gcp-console-09.png" alt="Kubernetes Console Networking"></p>
+<h4 id="external-ip-addresses">External <span class="caps">IP</span>&nbsp;Addresses</h4>
+<p>Setting and using external <span class="caps">IP</span> addresses allow for routing to the various Kubernetes nodes. Several ephemeral IP addresses are created and displayed in this section for each of the Kubernetes nodes. For more information check out the documentation on <a href="https://cloud.google.com/compute/docs/ip-addresses/reserve-static-internal-ip-address">reserving a static external <span class="caps">IP</span> address</a> and <a href="https://cloud.google.com/compute/docs/ip-addresses/reserve-static-internal-ip-address">reserving an internal <span class="caps">IP</span> address</a>.</p>
+<p><img src="/articles/terraform-kubernetes-gcp/gcp-console-11.png" alt="Kubernetes Console"></p>
+<h4 id="firewall-rules">Firewall&nbsp;Rules</h4>
+<p>In this section there are several new rules added for the cluster. For more information specific to <span class="caps">GCP</span> firewall rules check out the documentation about <a href="https://cloud.google.com/compute/docs/vpc/firewalls">firewall rules</a>.</p>
+<p><img src="/articles/terraform-kubernetes-gcp/gcp-console-12.png" alt="Kubernetes Console"></p>
+<h4 id="routes">Routes</h4>
+<p>Routes are used to setup paths mapping an <span class="caps">IP</span> range to a destination. Routes setup a VPC Networks where to send packets for a particular IP address. For more information about documentation <a href="https://cloud.google.com/compute/docs/vpc/routes">route details</a>.</p>
+<p><img src="/articles/terraform-kubernetes-gcp/gcp-console-13.png" alt="Kubernetes Console"></p>
+<p>Each of these sections have new resources built and added as shown above. More than a few convention based assumptions are made with&nbsp;Terraform.</p>
+<h3 id="next-steps-">Next&nbsp;steps…</h3>
+<p>In my next post I’ll dive into some things to setup once you’ve got your Kubernetes cluster. Setting up users, getting a continuous integration and delivery build started, and more. I’ll also be writing up another entry, similar to this for <span class="caps">AWS</span> and Azure Cloud Providers. If you’d like to see Kubernetes setup and a tour of the setup with Terraform beyond the big three, let me know and I’ll add that to the queue. Once we get past that there are a number of additional Kubernetes, containers, and dev specific posts that I’ll have coming up. Stay tuned, subscribe to the <a href="/articles/terraform-kubernetes-gcp/">blog feed</a> or follow <a href="https://twitter.com/ThrashingCode">@ThrashingCode</a> for new blog&nbsp;posts.</p>
+<p><strong>Resources:</strong></p>
+<ul>
+<li><a href="https://github.com/Adron/our_new_world">Github Repo&nbsp;our_new_world</a></li>
+<li><a href="https://www.terraform.io/docs/providers/google/r/container_cluster.html">Terraform Google Cloud Platform Provider Container Cluster&nbsp;Resource</a></li>
+<li><a href="https://cloud.google.com/container-engine/docs/clusters/operations"><span class="caps">GCP</span> Container Cluster&nbsp;Operations</a></li>
+<li><a href="https://cloud.google.com/container-engine/docs/concepts/cluster-architecture"><span class="caps">GCP</span> Container Cluster&nbsp;Architecture</a></li>
+</ul>
+</section>
+                </article>
+                <!-- End of Blog Page-->
+              </div>
+            </div>
+            <div class="col-md-3 hidden-sm hidden-xs">
+              <div class="sidebar js-sidebar-fixed">
+                <!-- Vertical Menu-->
+                <div class="widget">
+                  <!-- Search-->
+                  <div class="search">
+                    <form action="https://google.com/search" method="get">
+                      <input type="hidden" name="sitesearch" value="http://blog.adron.me">
+                      <input type="text" name="q" placeholder="search" class="search-input form-control"><i class="fa fa-search search-icon"></i>
+                    </form>
+                  </div>
+                  <!-- End of Search-->
+                </div>
+                <div class="widget">
+                  <h3 class="widget-title">Keyword Search</h3>
+                  <!-- Tags-->
+                  <ul class="tags">
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=terraform">terraform</a></li>
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=kubernetes">kubernetes</a></li>
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=immutable+infrastructure">immutable infrastructure</a></li>
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=html">html</a></li>
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=javascript">javascript</a></li>
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=ubuntu">ubuntu</a></li>
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=node pdx">node pdx</a></li>
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=.NET fringe">.net fringe</a></li>
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=videos">videos</a></li>
+                  </ul>
+                  <!-- End of Tags-->
+                </div>
+                <nav class="menu-vertical-wrapper">
+                  <ul data-prepend-to=".js-layout" data-select="Menu" class="menu-vertical js-menu-vertical">
+                    <li><a href="#">About</a>
+                      <ul>
+                        <li><a href="/docs/about/">Me, Adron</a></li>
+                        <li><a href="#">My Hobbies</a>
+                          <ul>
+                            <li><a href="http://photos.adron.me">My Photos</a></li>
+                          </ul>
+                        </li>
+                        <li><a href="/docs/Speaking-Presentations-Workshops">My Presentations</a></li>
+                        <li><a href="/docs/documentation/">Collection of Docs & Notes</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </nav>
+                <div class="widget">
+                  <h3 class="widget-title">Photos</h3>
+                  <!-- Photos-->
+                  <ul class="widget-recommended-products">
+                    <!-- Photos-->
+                    <li class="widget-recommended-product"><img src="/img/photos/IMG_1836.jpg" alt="Jon Oropeza" class="widget-recommended-product-img"><a href="http://photos.adron.me/Software/Meetups-N-Conferences/Conferences/Node-PDX-2016/i-D9qFQ6m" class="widget-recommended-product-link">
+                        <h5 class="widget-recommended-product-link-title">Node PDX 2016<i class="fa fa-angle-right"></i></h5>
+                        <p class="widget-recommended-product-link-description">Jon Oropeza @ Node PDX 2016</p></a></li>
+                    <!-- End of Recommended product Item-->
+                    <!-- Recommended product Item-->
+                    <li class="widget-recommended-product"><img src="/img/photos/IMG_1812.jpg" alt="Liz Abinante" class="widget-recommended-product-img"><a href="http://photos.adron.me/Software/Meetups-N-Conferences/Conferences/Node-PDX-2016/i-g2m2hgP" class="widget-recommended-product-link">
+                        <h5 class="widget-recommended-product-link-title">Node PDX 2016<i class="fa fa-angle-right"></i></h5>
+                        <p class="widget-recommended-product-link-description">Liz Abinante @ Node PDX 2016</p></a></li>
+                    <!-- End of Recommended product Item-->
+                    <!-- Recommended product Item-->
+                    <li class="widget-recommended-product"><img src="/img/photos/IMG_5709.jpg" alt="Praha hlavní nádraží" class="widget-recommended-product-img"><a href="http://photos.adron.me/Travels-N-Traversings/Across-the-Pond-2016-Travels/September-Krakow/Week-4-Prague/i-62ZPsPb" class="widget-recommended-product-link">
+                        <h5 class="widget-recommended-product-link-title">Prague (Praha)<i class="fa fa-angle-right"></i></h5>
+                        <p class="widget-recommended-product-link-description">Praha hlavní nádraží</p></a></li>
+                    <!-- End of photos row one-->
+                  </ul>
+                  <ul class="widget-recommended-products">
+                    <!-- Photos-->
+                    <li class="widget-recommended-product"><img src="/img/photos/IMG_4417.jpg" alt="St Mary's Basilica" class="widget-recommended-product-img"><a href="http://photos.adron.me/Travels-N-Traversings/Across-the-Pond-2016-Travels/September-Krakow/Krakow/i-KnZf6pK/A" class="widget-recommended-product-link">
+                        <h5 class="widget-recommended-product-link-title">St Mary's Basilica<i class="fa fa-angle-right"></i></h5>
+                        <p class="widget-recommended-product-link-description">Bazylika Mariacka in Rynek Główny.</p></a></li>
+                    <!-- End of Recommended product Item-->
+                    <!-- Recommended product Item-->
+                    <li class="widget-recommended-product"><img src="/img/photos/VSC_03.png" alt="Visual Studio Code" class="widget-recommended-product-img"><a href="http://photos.adron.me/Software/Software-Development/Visual-Studio-Things/i-LLW7WcD/A" class="widget-recommended-product-link">
+                        <h5 class="widget-recommended-product-link-title">Visual Studio Code<i class="fa fa-angle-right"></i></h5>
+                        <p class="widget-recommended-product-link-description">Images from a review of Visual Studio Code.</p></a></li>
+                    <!-- End of Recommended product Item-->
+                    <!-- Recommended product Item-->
+                    <li class="widget-recommended-product"><img src="/img/photos/-home-adronhall-Pictures-Selection_002.png - Shutter_003.png" alt="" class="widget-recommended-product-img"><a href="http://photos.adron.me/Software/Software-Development/Ubuntu/i-CQsQ4zj/A" class="widget-recommended-product-link">
+                        <h5 class="widget-recommended-product-link-title">Mono Develop & WebStorm<i class="fa fa-angle-right"></i></h5>
+                        <p class="widget-recommended-product-link-description">Working through Mono Develop & WebStorm.</p></a>
+                      <!-- End of photos row two-->
+                    </li>
+                  </ul>
+                  <!-- End Photos-->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="nav"><a href="/">« Home</a></div>
+      </div>
+    </div>
+    <script src="/js/all.js"></script>
+    <script src="/js/custom.js"></script>
+    <!-- Google Tag Manager-->
+    <noscript>
+      <iframe src="//www.googletagmanager.com/ns.html?id=GTM-KMMZX2" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <script>
+      console.log(document.getElementById("search-google"));
+      console.log(document.getElementById("search-google").innerText);
+      
+      var searchBox = document.getElementById("search-google");
+      
+      function googleSearch(search_string) {
+        alert(search_string);
+      }
+      
+      document.getElementById("search-google").addEventListener("onClick", function () {
+        alert(document.getElementById("search-google").innerHTML);
+      });
+      
+      document.getElementById("search-google").addEventListener("onClick", function () {
+        googleSearch(document.getElementById("search-google").innerHTML)
+      });
+      
+    </script>
+    <script>
+      (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+                  (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+      })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+      ga('create', 'UA-39158070-6', 'auto');
+      ga('send', 'pageview');
+    </script>
+  </body>
+</html>
