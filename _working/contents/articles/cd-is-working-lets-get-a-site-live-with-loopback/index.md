@@ -12,7 +12,7 @@ Since it has been more than a few weeks let's do a quick recap of the previous p
 
 3. [Starting a Basic Loopback API & Continuous Integration](http://compositecode.wordpress.com/2015/04/08/__2-got-our-kanban-lets-start-a-basic-loopback-api/) - Getting the skeleton of the API application setup and the continuous integration services running.</li>
 
-4. [Going the Full Mile, Continuous Delivery](http://compositecode.wordpress.com/2015/06/05/__3-going-the-full-mile-continuous-delivery/) - Here the team got the full continuous delivery process setup for ongoing development efforts.
+4. [Going the Full Mile, Continuous Delivery](/articles/going-the-full-mile-continuous-delivery/) - Here the team got the full continuous delivery process setup for ongoing development efforts.
 
 In this article of the series I work with some of my cohort to get initial parts of the application deployed to production. For the first part of this, let's get some of the work that [Norda](https://github.com/NordaLlah) has done into the project and get it running on the client side.
 
@@ -184,6 +184,6 @@ As you can see a bulk of the page is favicon and logo related nonsense while abo
 
 <img src="http://photos.adron.me/Software/Software-Development/Work-Flow-of-JavaScript/i-nbjH27Z/0/O/2015-09-07_08-07-29%20-%202.png" alt="The registration page." width="851" height="545" />
 
-Once that page is up we can then commit to the production branch as outlined in the <a href="http://compositecode.com/2015/06/05/__3-going-the-full-mile-continuous-delivery/" target="_blank" rel="noopener">previous blog entry</a>.
+Once that page is up we can then commit to the production branch as outlined in the <a href="http://compositecode.wordpress.com/2015/06/05/__3-going-the-full-mile-continuous-delivery/" target="_blank" rel="noopener">previous blog entry</a>.
 
-<em>btw</em> - If you're curious (especially if you've read the intro blog entry about the <a href="http://compositecode.com/2015/04/06/introducing-the-team/" target="_blank" rel="noopener">mock team</a>), you might be wondering where and who and how did I create this gorgeous theme? Well, I didn't, I actually purchased this sweet theme from <a href="http://themeforest.net/" target="_blank" rel="noopener">Theme Forrest</a>. The specific theme is <a href="http://themeforest.net/item/se7en-bootstrap-3-responsive-admin-template/5423243" target="_blank" rel="noopener">se7en</a>.
+<em>btw</em> - If you're curious (especially if you've read the intro blog entry about the <a href="http://compositecode.wordpress.com/2015/04/06/introducing-the-team/" target="_blank" rel="noopener">mock team</a>), you might be wondering where and who and how did I create this gorgeous theme? Well, I didn't, I actually purchased this sweet theme from <a href="http://themeforest.net/" target="_blank" rel="noopener">Theme Forrest</a>. The specific theme is <a href="http://themeforest.net/item/se7en-bootstrap-3-responsive-admin-template/5423243" target="_blank" rel="noopener">se7en</a>.

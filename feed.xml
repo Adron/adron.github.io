@@ -5784,27 +5784,6 @@ export TF_VAR_password=&amp;quot;someSecretPassword&amp;quot;
 </description>
     </item>
     <item>
-      <title>How to Electron by Blaine Schmeisser</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-blaine-schmeisser/</link>
-      <pubDate>Sun, 05 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-blaine-schmeisser/</guid>
-      <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-blaine-schmeisser/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-left&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-blaine-schmeisser/blainesch.jpg&quot; alt=&quot;Blaine Schmeisser&quot;&gt;
-&lt;/div&gt;
-
-&lt;p&gt;I’m happy to introduce Blaine Schmeisser. He’s a recent Portland transplant currently working as a Senior Software Engineer at New Relic. He has a passion for building and shipping software and an advocate for pair programming. Outside of tech, Blaine spends his free time with his dog and maintains a simplistic, eco-friendly lifestyle.&lt;/p&gt;
-&lt;p&gt;Blaine’s “How to Electron” answers questions you have about building user interface applications with JavaScript. Have you ever wanted to build desktop apps with web technology you already know? If you’ve never heard of Electron or just want to learn more about it, this talk will cover what Electron is and how to utilize it to create powerful tools like Atom and Slack. You will learn the history of Electron, how to get started, the trade-offs of picking various boiler plates, and the unique Electron specific APIs that are vital to being a Electron developer.&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;GitHub: &lt;a href=&quot;https://github.com/blainesch&quot;&gt;https://github.com/blainesch&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Twitter: &lt;a href=&quot;https://twitter.com/blainesch&quot;&gt;https://twitter.com/blainesch&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Website: &lt;a href=&quot;http://blainesch.com&quot;&gt;http://blainesch.com&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-    </item>
-    <item>
       <title>Demystifying TypeScript Decorators by James Churchill</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-james-churchill/</link>
       <pubDate>Sun, 05 Jun 2016 17:00:00 -0700</pubDate>
@@ -5824,6 +5803,27 @@ export TF_VAR_password=&amp;quot;someSecretPassword&amp;quot;
 &lt;li&gt;Blog: &lt;a href=&quot;http://smashdev.com&quot;&gt;http://smashdev.com&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Github: &lt;a href=&quot;http://github.com/smashdevcode&quot;&gt;http://github.com/smashdevcode&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Twitter: &lt;a href=&quot;http://twitter.com/SmashDev&quot;&gt;http://twitter.com/SmashDev&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    <item>
+      <title>How to Electron by Blaine Schmeisser</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-blaine-schmeisser/</link>
+      <pubDate>Sun, 05 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-blaine-schmeisser/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-blaine-schmeisser/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-left&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-blaine-schmeisser/blainesch.jpg&quot; alt=&quot;Blaine Schmeisser&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;I’m happy to introduce Blaine Schmeisser. He’s a recent Portland transplant currently working as a Senior Software Engineer at New Relic. He has a passion for building and shipping software and an advocate for pair programming. Outside of tech, Blaine spends his free time with his dog and maintains a simplistic, eco-friendly lifestyle.&lt;/p&gt;
+&lt;p&gt;Blaine’s “How to Electron” answers questions you have about building user interface applications with JavaScript. Have you ever wanted to build desktop apps with web technology you already know? If you’ve never heard of Electron or just want to learn more about it, this talk will cover what Electron is and how to utilize it to create powerful tools like Atom and Slack. You will learn the history of Electron, how to get started, the trade-offs of picking various boiler plates, and the unique Electron specific APIs that are vital to being a Electron developer.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;GitHub: &lt;a href=&quot;https://github.com/blainesch&quot;&gt;https://github.com/blainesch&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Twitter: &lt;a href=&quot;https://twitter.com/blainesch&quot;&gt;https://twitter.com/blainesch&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Website: &lt;a href=&quot;http://blainesch.com&quot;&gt;http://blainesch.com&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>
@@ -5888,23 +5888,6 @@ In this talk I would be covering the following:&lt;/p&gt;
 </description>
     </item>
     <item>
-      <title>WebSockets Bring Light at the End of the Tunnel by Joel Lord</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</link>
-      <pubDate>Fri, 03 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</guid>
-      <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-left&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/joel-lord.jpg&quot; alt=&quot;Joel Lord&quot;&gt;
-&lt;/div&gt;
-
-&lt;p&gt;As a Development Manager, Joel’s motivation and proven technical prowess makes him a key member of Spiria’s software development team. With a degree in computational astrophysics, his interests eventually made their way to software and Web design. Today, his knowledge of JavaScript lets him to support a variety of projects on both the front end and back end. As we move into the age of the Internet of Things, Joel is ready with his passion for programming node bots and experimenting with gadgets.&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Joel is going to speak on Web Sockets and tunnels of light… or to describe it more specifically more and more, people seem to be obsessed with real-time data.  But what does real-time mean in the world of REST servers and one-way communication?  Most modern web applications are now either displaying a snapshot of data at a given time or use a polling mechanism to update series of data at a given interval.
-In this talk, you will learn about the power of WebSockets and how they can (and should!) be used in your modern web applications. In these 30 minutes, I will go through the process of building a Node server that can push data to multiple clients in real-time.  You will see how this can be easy using the socket.io library.&lt;/p&gt;
-</description>
-    </item>
-    <item>
       <title>MMOWAM - Build Server-less Games with a DSN by Josh Marinacci</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-josh-marinacci/</link>
       <pubDate>Fri, 03 Jun 2016 17:00:00 -0700</pubDate>
@@ -5939,6 +5922,23 @@ it can be.&lt;/p&gt;
 &lt;li&gt;show number of players&lt;/li&gt;
 &lt;li&gt;start when 4 players in? one player hit’s start? let all player see total count as well and status of the other players&lt;/li&gt;
 &lt;/ul&gt;
+</description>
+    </item>
+    <item>
+      <title>WebSockets Bring Light at the End of the Tunnel by Joel Lord</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</link>
+      <pubDate>Fri, 03 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-left&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/joel-lord.jpg&quot; alt=&quot;Joel Lord&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;As a Development Manager, Joel’s motivation and proven technical prowess makes him a key member of Spiria’s software development team. With a degree in computational astrophysics, his interests eventually made their way to software and Web design. Today, his knowledge of JavaScript lets him to support a variety of projects on both the front end and back end. As we move into the age of the Internet of Things, Joel is ready with his passion for programming node bots and experimenting with gadgets.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Joel is going to speak on Web Sockets and tunnels of light… or to describe it more specifically more and more, people seem to be obsessed with real-time data.  But what does real-time mean in the world of REST servers and one-way communication?  Most modern web applications are now either displaying a snapshot of data at a given time or use a polling mechanism to update series of data at a given interval.
+In this talk, you will learn about the power of WebSockets and how they can (and should!) be used in your modern web applications. In these 30 minutes, I will go through the process of building a Node server that can push data to multiple clients in real-time.  You will see how this can be easy using the socket.io library.&lt;/p&gt;
 </description>
     </item>
     <item>
@@ -5986,6 +5986,23 @@ it can be.&lt;/p&gt;
 &lt;iframe width=&quot;1280&quot; height=&quot;720&quot; src=&quot;https://www.youtube.com/embed/L2BVDJWHdy0?rel=0&amp;amp;showinfo=0&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;</description>
     </item>
     <item>
+      <title>The House Is Not On Fire - Building a home automation robot with Arduino, Raspberry Pi and Node.js by Artur Paikin</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</link>
+      <pubDate>Wed, 01 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-right&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/art-stida.jpg&quot; alt=&quot;Artur Paikin&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Artur describes himself as, “I’m a web developer and traveler. I write stories about my adventures in Russian and English on my site: &lt;a href=&quot;http://arturpaikin.com&quot;&gt;http://arturpaikin.com&lt;/a&gt; and run a small technology cooperative called &lt;a href=&quot;http://unebaguette.com&quot;&gt;Baguette&lt;/a&gt;, where I work on cool projects, currently building an ambitious next generation file uploader with &lt;a href=&quot;https://transloadit.com/&quot;&gt;Transloadit&lt;/a&gt;. I ride a &lt;a href=&quot;https://www.instagram.com/p/xC0qC2SSYb&quot;&gt;foldable bicycle&lt;/a&gt;, &lt;a href=&quot;http://unebaguette.com/web-course/&quot;&gt;teach&lt;/a&gt; web development and sometimes &lt;a href=&quot;https://www.instagram.com/p/4_6LO8ySVL/&quot;&gt;garden&lt;/a&gt; on the balcony.”&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Artur has built an open source home automation system called &lt;a href=&quot;https://github.com/arturi/kotihome&quot;&gt;Koti Home&lt;/a&gt; (Koti means home in Finnish language). It’s powered by an Arduino connected to Raspberry Pi, MQTT protocol for messaging, Node.js on the client and server, web sockets. You can interact with Koti robot via a React (like the cool kids do) control panel, Telegram Chat Bot and even your own voice.&lt;/p&gt;
+&lt;p&gt;Arthur will talk about how he’s turned this project into reality — the tech he used and the challenges he faced. From a blinking LED to a voice controlled home automation robot.&lt;/p&gt;
+</description>
+    </item>
+    <item>
       <title>Code First Docs How we Threw Out The Book &amp; Put Code First With Twilio Documentation by Jarod Reyes</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-jarod-reyes/</link>
       <pubDate>Wed, 01 Jun 2016 17:00:00 -0700</pubDate>
@@ -6007,23 +6024,6 @@ it can be.&lt;/p&gt;
 &lt;li&gt;Twitter: &lt;a href=&quot;https://twitter.com/jreyesdev&quot;&gt;@jreyesdev&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Github: &lt;a href=&quot;https://github.com/jarodreyes&quot;&gt;github.com/jarodreyes&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-</description>
-    </item>
-    <item>
-      <title>The House Is Not On Fire - Building a home automation robot with Arduino, Raspberry Pi and Node.js by Artur Paikin</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</link>
-      <pubDate>Wed, 01 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</guid>
-      <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-right&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/art-stida.jpg&quot; alt=&quot;Artur Paikin&quot;&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Artur describes himself as, “I’m a web developer and traveler. I write stories about my adventures in Russian and English on my site: &lt;a href=&quot;http://arturpaikin.com&quot;&gt;http://arturpaikin.com&lt;/a&gt; and run a small technology cooperative called &lt;a href=&quot;http://unebaguette.com&quot;&gt;Baguette&lt;/a&gt;, where I work on cool projects, currently building an ambitious next generation file uploader with &lt;a href=&quot;https://transloadit.com/&quot;&gt;Transloadit&lt;/a&gt;. I ride a &lt;a href=&quot;https://www.instagram.com/p/xC0qC2SSYb&quot;&gt;foldable bicycle&lt;/a&gt;, &lt;a href=&quot;http://unebaguette.com/web-course/&quot;&gt;teach&lt;/a&gt; web development and sometimes &lt;a href=&quot;https://www.instagram.com/p/4_6LO8ySVL/&quot;&gt;garden&lt;/a&gt; on the balcony.”&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Artur has built an open source home automation system called &lt;a href=&quot;https://github.com/arturi/kotihome&quot;&gt;Koti Home&lt;/a&gt; (Koti means home in Finnish language). It’s powered by an Arduino connected to Raspberry Pi, MQTT protocol for messaging, Node.js on the client and server, web sockets. You can interact with Koti robot via a React (like the cool kids do) control panel, Telegram Chat Bot and even your own voice.&lt;/p&gt;
-&lt;p&gt;Arthur will talk about how he’s turned this project into reality — the tech he used and the challenges he faced. From a blinking LED to a voice controlled home automation robot.&lt;/p&gt;
 </description>
     </item>
     <item>
@@ -7333,7 +7333,7 @@ The &lt;a href=&quot;https://marketplace.visualstudio.com/#VSCode&quot; target=&
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://compositecode.wordpress.com/2015/04/08/__2-got-our-kanban-lets-start-a-basic-loopback-api/&quot;&gt;Starting a Basic Loopback API &amp;amp; Continuous Integration&lt;/a&gt; - Getting the skeleton of the API application setup and the continuous integration services running.&lt;/li&gt;&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://compositecode.wordpress.com/2015/06/05/__3-going-the-full-mile-continuous-delivery/&quot;&gt;Going the Full Mile, Continuous Delivery&lt;/a&gt; - Here the team got the full continuous delivery process setup for ongoing development efforts.&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://adron.github.io/articles/going-the-full-mile-continuous-delivery/&quot;&gt;Going the Full Mile, Continuous Delivery&lt;/a&gt; - Here the team got the full continuous delivery process setup for ongoing development efforts.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;In this article of the series I work with some of my cohort to get initial parts of the application deployed to production. For the first part of this, let’s get some of the work that &lt;a href=&quot;https://github.com/NordaLlah&quot;&gt;Norda&lt;/a&gt; has done into the project and get it running on the client side.&lt;/p&gt;
@@ -7484,8 +7484,84 @@ Of course, you can add any static HTML you like–this is just an example.&lt;/b
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;As you can see a bulk of the page is favicon and logo related nonsense while about a 1/3rd of the screen is actually the HTML for the form itself. What that looks like when rendered is something like this.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;http://photos.adron.me/Software/Software-Development/Work-Flow-of-JavaScript/i-nbjH27Z/0/O/2015-09-07_08-07-29%20-%202.png&quot; alt=&quot;The registration page.&quot; width=&quot;851&quot; height=&quot;545&quot; /&gt;&lt;/p&gt;
-&lt;p&gt;Once that page is up we can then commit to the production branch as outlined in the &lt;a href=&quot;http://compositecode.com/2015/06/05/__3-going-the-full-mile-continuous-delivery/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;previous blog entry&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;btw&lt;/em&gt; - If you’re curious (especially if you’ve read the intro blog entry about the &lt;a href=&quot;http://compositecode.com/2015/04/06/introducing-the-team/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;mock team&lt;/a&gt;), you might be wondering where and who and how did I create this gorgeous theme? Well, I didn’t, I actually purchased this sweet theme from &lt;a href=&quot;http://themeforest.net/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Theme Forrest&lt;/a&gt;. The specific theme is &lt;a href=&quot;http://themeforest.net/item/se7en-bootstrap-3-responsive-admin-template/5423243&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;se7en&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Once that page is up we can then commit to the production branch as outlined in the &lt;a href=&quot;http://compositecode.wordpress.com/2015/06/05/__3-going-the-full-mile-continuous-delivery/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;previous blog entry&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;btw&lt;/em&gt; - If you’re curious (especially if you’ve read the intro blog entry about the &lt;a href=&quot;http://compositecode.wordpress.com/2015/04/06/introducing-the-team/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;mock team&lt;/a&gt;), you might be wondering where and who and how did I create this gorgeous theme? Well, I didn’t, I actually purchased this sweet theme from &lt;a href=&quot;http://themeforest.net/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Theme Forrest&lt;/a&gt;. The specific theme is &lt;a href=&quot;http://themeforest.net/item/se7en-bootstrap-3-responsive-admin-template/5423243&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;se7en&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>__3 &quot;Going the Full Mile, Continuous Delivery.&quot;</title>
+      <link>http://adron.github.io/articles/going-the-full-mile-continuous-delivery/</link>
+      <pubDate>Tue, 01 Sep 2015 01:04:28 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/going-the-full-mile-continuous-delivery/</guid>
+      <author></author>
+      <description>&lt;p&gt;In the last few issues of this series, the team has done the following:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://adron.github.io/articles/introducing-the-thrashing-code-team-and-projects/&quot;&gt;Introducing the Thrashing Code Team &amp;amp; Projects&lt;/a&gt; - Know who’s working on what and what the projects are.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;“&lt;a href=&quot;http://compositecode.wordpress.com/2015/04/07/__1-getting-started-kanban-first-steps-for-a-sharing-app/&quot;&gt;Getting Started, Kanban &amp;amp; First Steps for a Sharing App&lt;/a&gt;“ - Getting the kanban put together and the team involved.&lt;/li&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;“&lt;a href=&quot;http://compositecode.wordpress.com/2015/04/08/__2-got-our-kanban-lets-start-a-basic-loopback-api/&quot;&gt;Starting a Basic Loopback API &amp;amp; Continuous Integration&lt;/a&gt;“ - Getting the skeleton of the API application setup and the continuous integration services running.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;In this issue of the series Keartida is continuing with setup and configuration of the next step, getting to a basic continuous delivery of services with a basic AWS Elastic Beanstalk setup.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;h2 id=&quot;aws-elastic-beanstalk&quot;&gt;AWS Elastic Beanstalk&lt;/h2&gt;
+&lt;p&gt;Let’s talk a little bit about the solutions and working with teams in the solutions before diving into Keartida’s efforts. With each of the SaaS solutions that I’ve pointed out in the last couple of entries each has a specific connection, integration, or reliance on Github. This is, of course perfect so that each part works seamlessly together. AWS has it’s own user management system which also needs to be taken into account.&lt;/p&gt;
+&lt;h2&gt;In CodeShip&lt;/h2&gt;
+
+&lt;p&gt;It’s easy to add members to a build, which I covered in the &lt;a href=&quot;http://compositecode.wordpress.com/2015/04/08/__2-got-our-kanban-lets-start-a-basic-loopback-api/&quot;&gt;previous entry in this series&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;In Waffle.io&lt;/h2&gt;
+
+&lt;p&gt;Waffle.io actually is pretty simple. Simply sign in with your github account and you’re in with an account. But to access certain projects one does have to setup and share the respective kanban boards. The way to do this with Waffle.io is to actually setup users based on the github permissions setup for the user for the particular project.&lt;/p&gt;
+&lt;h2&gt;In AWS&lt;/h2&gt;
+
+&lt;p&gt;To get users setup in AWS is a little differently. What we need to setup a full build and delivery of the application to AWS is to get the user’s key pair. Let’s take a look at setting up a &lt;em&gt;group&lt;/em&gt; and a &lt;em&gt;user&lt;/em&gt; in Amazon for this purpose. In this case I am going to create a user for deployment purposes.&lt;/p&gt;
+&lt;p&gt;On the main AWS Dashboard here, click on &lt;em&gt;Identity &amp;amp; Access Management&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://photos.adron.me/Software/Software-Development/Work-Flow-of-JavaScript/i-kTRDb7N/0/L/AWS_Management_Console-L.png&quot; alt=&quot;AWS&quot; width=&quot;800&quot; height=&quot;577&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;On that page there are several options listed on the left hand side. Click on the &lt;em&gt;Groups&lt;/em&gt; and then click on the &lt;em&gt;Create New Group&lt;/em&gt; button. After that a wizard will come up.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://photos.adron.me/Software/Software-Development/Work-Flow-of-JavaScript/i-WNbhDjT/0/L/IAM_Management_Console_01-L.png&quot; alt=&quot;Groups&quot; width=&quot;800&quot; height=&quot;263&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Enter the group name and click next.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://photos.adron.me/Software/Software-Development/Work-Flow-of-JavaScript/i-t4fHMQ8/0/L/IAM_Management_Console_02-L.png&quot; alt=&quot;Group Name&quot; width=&quot;800&quot; height=&quot;545&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;In the Attach Policy step, slect the S3 Full Access and Elastic Beanstalk Full Access policies for this account.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://photos.adron.me/Software/Software-Development/Work-Flow-of-JavaScript/i-mCLGMwG/0/L/IAM_Management_Console_04-L.png&quot; alt=&quot;Selecting Policies&quot; width=&quot;800&quot; height=&quot;541&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Once the appropriate polices are selected to be attached, click on next step, review and then add the group. Then select the group that was just created and click on the&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://photos.adron.me/Software/Software-Development/Work-Flow-of-JavaScript/i-NvP2v8w/0/L/IAM_Management_Console_06-L.png&quot; alt=&quot;Add Users to Group&quot; width=&quot;800&quot; height=&quot;452&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Once the appropriate user is added, then the parts to wrap up the delivery part of the deployment are all set. Back to what Keartida was working on!&lt;/p&gt;
+&lt;h2&gt;Keartida Deploys coder-swap&lt;/h2&gt;
+
+&lt;p&gt;First step, Keartida logged into the AWS management console.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://photos.adron.me/Software/Software-Development/Work-Flow-of-JavaScript/i-wds45X3/0/L/AWS%20-%20Elastic%20Beanstalk%2001-L.png&quot; alt=&quot;AWS Management Console&quot; width=&quot;791&quot; height=&quot;600&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Since this is the first Elastic Beanstalk Application that Keartida has deployed, when she clicks on Elastic Beanstalk this screen appears.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://photos.adron.me/Software/Software-Development/Work-Flow-of-JavaScript/i-BFx2kdV/0/L/AWS%20-%20Elastic%20Beanstalk%2002-L.png&quot; alt=&quot;Welcome to Elastic Beanstalk&quot; width=&quot;791&quot; height=&quot;600&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;From here, she selected Node.js from the drop down and Launch Now. From there a quick wizard appears and let her enter the name of the application and a description.&lt;/p&gt;
+&lt;p&gt;&lt;img class=&quot;&quot; src=&quot;http://photos.adron.me/Software/Software-Development/Work-Flow-of-JavaScript/i-qQS5rpx/0/O/AWS%20-%20Elastic%20Beanstalk%2004.png&quot; alt=&quot;Creating the first Node.js Application&quot; width=&quot;960&quot; height=&quot;728&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;The application starts being created.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://photos.adron.me/Software/Software-Development/Work-Flow-of-JavaScript/i-sFFk5Qq/0/O/AWS%20-%20Elastic%20Beanstalk%2003%20-%20Broken%20EBS.png&quot; alt=&quot;Creating the Application.&quot; width=&quot;960&quot; height=&quot;728&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;When this is created, the funny thing is the wizard creates a application environment name that causes problems. Keartida and I found this out the hard way, and figured out it is best to just delete this application and create an application and an environment name that works better.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://photos.adron.me/Software/Software-Development/Work-Flow-of-JavaScript/i-WCd2pM3/0/O/AWS%20-%20Elastic%20Beanstalk%2003%20-%20Broken%20EBS%20-%20Delete%20it.png&quot; alt=&quot;Deleting the Application With the Odd Naming&quot; width=&quot;960&quot; height=&quot;728&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;So this time going back she created the application space specifically and went through the various steps to create the application.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://photos.adron.me/Software/Software-Development/Work-Flow-of-JavaScript/i-CTs7bgB/0/O/AWS%20-%20Elastic%20Beanstalk%2007.png&quot; alt=&quot;Creating a new environment.&quot; width=&quot;960&quot; height=&quot;728&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://photos.adron.me/Software/Software-Development/Work-Flow-of-JavaScript/i-9wXhM25/0/O/AWS%20-%20Elastic%20Beanstalk%2008.png&quot; alt=&quot;Creating a load balanced, auto-scaled elastic beanstalk application&quot; width=&quot;960&quot; height=&quot;728&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://photos.adron.me/Software/Software-Development/Work-Flow-of-JavaScript/i-TvCRtjZ/0/O/AWS%20-%20Elastic%20Beanstalk%2009.png&quot; alt=&quot;Basic Settings&quot; width=&quot;960&quot; height=&quot;728&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://photos.adron.me/Software/Software-Development/Work-Flow-of-JavaScript/i-KcZr38c/0/O/AWS%20-%20Elastic%20Beanstalk%2010.png&quot; alt=&quot;More Settings.&quot; width=&quot;960&quot; height=&quot;728&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Keep clicking next and then…&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://photos.adron.me/Software/Software-Development/Work-Flow-of-JavaScript/i-HxSMThZ/0/O/AWS%20-%20Elastic%20Beanstalk%2012.png&quot; alt=&quot;Then let the beanstalk start.&quot; width=&quot;960&quot; height=&quot;728&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Now that this is started Keartida logged into CodeShip to setup the final deployment steps for good builds to deploy directly to this beanstalk application.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://photos.adron.me/Software/Software-Development/Work-Flow-of-JavaScript/i-Lq2BbxR/0/L/AWS%20-%20Elastic%20Beanstalk%2013-L.png&quot; alt=&quot;CodeShip Builds and Where to find Deployments&quot; width=&quot;800&quot; height=&quot;521&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Once Keartida clicked on Deployment she had options to pick what to deploy to. One of the options is of course Elastic Beanstalk.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://photos.adron.me/Software/Software-Development/Work-Flow-of-JavaScript/i-rjjqjcM/0/L/AWS%20-%20Elastic%20Beanstalk%2014-L.png&quot; alt=&quot;Selecting a Branch and What to Deploy To&quot; width=&quot;800&quot; height=&quot;521&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://photos.adron.me/Software/Software-Development/Work-Flow-of-JavaScript/i-hGMDZQN/0/O/AWS%20-%20Elastic%20Beanstalk%2015.png&quot; alt=&quot;Selecting Elastic Beanstalk to deploy to&quot; width=&quot;1118&quot; height=&quot;728&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;The next screen provides options to select branches of the build to deploy with and related information.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://photos.adron.me/Software/Software-Development/Work-Flow-of-JavaScript/i-fSNmnkL/0/L/AWS%20-%20Elastic%20Beanstalk%2017-L.png&quot; alt=&quot;Set the Elastic Beanstalk Parameters&quot; width=&quot;800&quot; height=&quot;521&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Keartida set the key ID and access key. After that she selected the US West 2 data center, the environment and application names, and the S3 bucket. She retrieved the S3 bucket name by navigating into the S3 service and finding the name on the management console as shown.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://photos.adron.me/Software/Software-Development/Work-Flow-of-JavaScript/i-K55rPgD/0/L/AWS%20-%20Elastic%20Beanstalk%2016-L.png&quot; alt=&quot;S3 Buckets&quot; width=&quot;800&quot; height=&quot;521&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Once all the parameters were entered Keartida then clicked on create and CodeShip then shows the settings saved as shown below.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://photos.adron.me/Software/Software-Development/Work-Flow-of-JavaScript/i-XPTC4pr/0/L/AWS%20-%20Elastic%20Beanstalk%2019-L.png&quot; alt=&quot;Saved Settings&quot; width=&quot;800&quot; height=&quot;521&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;After that Keartida created the production branch and pushed it to github. There the build started as shown and began the deploy to AWS Elastic Beanstalk.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://photos.adron.me/Software/Software-Development/Work-Flow-of-JavaScript/i-MC5kCgs/0/L/AWS%20-%20Elastic%20Beanstalk%2020-L.png&quot; alt=&quot;Beanstalk Deploy starts after the build&quot; width=&quot;800&quot; height=&quot;489&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Finally once the deployment is detected to have successfully been pushed out and launched in AWS Elastic Beanstalk a message will appear and the build will go green.&lt;/p&gt;
+&lt;p&gt;&lt;img class=&quot;&quot; src=&quot;http://photos.adron.me/Software/Software-Development/Work-Flow-of-JavaScript/i-Jsm98gw/0/L/AWS%20-%20Elastic%20Beanstalk%2021-L.png&quot; alt=&quot;Deployment Successful!&quot; width=&quot;800&quot; height=&quot;489&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Now, after Keartida completed this it’s time to really dive into the workflow of development. Next up, we’ll get a basic site and API services up and running.&lt;/p&gt;
 </description>
     </item>
     <item>
@@ -7574,6 +7650,45 @@ Of course, you can add any static HTML you like–this is just an example.&lt;/b
 &lt;p&gt;Overall, a spectacular laptop in MOST ways. However that keyboard is a serious problem for most people. I can imagine most people will NOT want to deal with the keyboard. I’m ok with it, but I don’t mind typing with hands up and off the resting points on the laptop. If Dell can fix this I’d give it a 100% buy suggestion, but with the keyboard as buggy and flaky as it is, I give the laptop at 60% buy suggestion. If you’re looking for a machine with Ubuntu out of the box, I’d probably aim for a Lenovo until Dell fixes the keyboard situation. Then I’d even suggest this machine over the Lenovo options.&lt;/p&gt;
 &lt;p&gt;…and among all things, I’d still suggest running Linux on a MBA or MBP over any of these - the machines are just more solid in manufacturing quality, durability, and the tech (i.e. battery, screen, etc) are still tops in many ways. But if you don’t want to feed the Apple Nation’s Piggy Bank, dump them and go with this Dell or maybe a Lenovo option.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Happy hacking and cheers!&lt;/em&gt;&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>__0 &quot;Introducing the Thrashing Code Team &amp; Projects&quot;</title>
+      <link>http://adron.github.io/articles/introducing-the-thrashing-code-team-and-projects/</link>
+      <pubDate>Sun, 05 Apr 2015 18:15:15 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/introducing-the-thrashing-code-team-and-projects/</guid>
+      <author></author>
+      <description>&lt;p&gt;In the coming months as I put together technical training material, I’ve created a fictitious team that is made up of the following members. I’ve detailed their roles and provided photos of these individuals, that act as NPCs in creating projects for the training material. To add character to the narrative I’ll be discussing these roles as if from the perspective of these NPCs that are filling the particular roles.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Meet…&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;div class=&quot;image float-right&quot;&gt; &lt;a href=&quot;https://github.com/Keartida&quot;&gt;&lt;img src=&quot;/articles/introducing-the-thrashing-code-team-and-projects/keartida.jpg&quot; alt=&quot;Keartida&quot;&gt;&lt;/a&gt;&lt;/div&gt; She is handling the role of Senior Software Developer for the projects coming up. She’ll be working through the code using pair programming, test driven development, and behavior driven development approaches with the team. She’s a master of algorithms and can think through a problem in remarkably short order. She also has a love affair with math, with scientific methods being icing on the cake.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;div class=&quot;image float-right&quot;&gt;&lt;a href=&quot;https://github.com/NordaLlah&quot;&gt;&lt;img src=&quot;/articles/introducing-the-thrashing-code-team-and-projects/nordallah.jpg&quot; alt=&quot;Norda Llah&quot;&gt;&lt;/a&gt;&lt;/div&gt; She’ll be handling the graphic design, user experience, and related user interface wrangling for the projects. She’ll also be working through the workflow to bring the project collateral into source control and provide top tier interface components for the project. Norda has won more than a few art contests, sketch competitions, and other competitive forms of art creation - a somewhat unique and inspired approach to her work.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;div class=&quot;image float-right&quot;&gt;&lt;a href=&quot;https://github.com/Etart&quot;&gt;&lt;img src=&quot;/articles/introducing-the-thrashing-code-team-and-projects/etart.jpg&quot; alt=&quot;Etart Sechro&quot;&gt;&lt;/a&gt;&lt;/div&gt; He’ll be handling the data science, data analysis, structure, data diagrams, related design and database tooling that will be implemented. If it’s a relation database, key value store, graph database, geo mapping store, or whatever else might come up, Etart is going to be the key mover for the data aspects of the projects. He’s also a huge fan of high quality suits. If it’s quality, he’s the man who likes to ensure it will be achieved.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;div class=&quot;image float-right&quot;&gt;&lt;a href=&quot;https://github.com/OiElffaw&quot;&gt;&lt;img src=&quot;/articles/introducing-the-thrashing-code-team-and-projects/oi.jpg&quot; alt=&quot;Oi Elffaw&quot;&gt;&lt;/a&gt;&lt;/div&gt; Oi will be handling the wrangling of all us cats working on the project. He’s the project manager and organizer of efforts, but more importantly he’ll be clearing roadblocks and making sure the team can move forward without interruption. Having gotten plenty of things done in the military, he know’s how to get roadblocks removed, nothing like bureaucracy to learn the inroads of road clearing.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;div class=&quot;image float-right&quot;&gt;&lt;a href=&quot;https://github.com/NitsirkNaizom&quot;&gt;&lt;img src=&quot;/articles/introducing-the-thrashing-code-team-and-projects/nitsirk.jpg&quot; alt=&quot;Nitsirk Naizom&quot;&gt;&lt;/a&gt;&lt;/div&gt; She’s the captain of this ship. She’s complete and total awesomeness. She’ll be commanding and bringing in the business for the project, and making sure company partnerships align right with the projects and the whole host of things that a CEO takes care of.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/adron&quot;&gt;Adron&lt;/a&gt; Well that’s me…  I’m not really an NPC, but I’ll of course be playing the part of programmer and puppet master to all of these characters that I’ve created to build out the &lt;a href=&quot;https://github.com/ThrashingCode&quot;&gt;Thrashing Code Organization&lt;/a&gt; (a real and fictitious company).&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;project-em-wookie-flika-em-&quot;&gt;Project “&lt;em&gt;Wookie Flika&lt;/em&gt;“&lt;/h2&gt;
+&lt;blockquote&gt;
+
+&lt;a href=&quot;https://github.com/ThrashingCode/wookie-flika&quot;&gt;&lt;img class=&quot;alignright&quot; src=&quot;http://photos.adron.me/photos/i-L4Fc5vd/0/O/i-L4Fc5vd.png&quot; alt=&quot;&quot; width=&quot;256&quot; height=&quot;256&quot; /&gt;&lt;/a&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;h2&gt;Project “&lt;em&gt;Coder Swap&lt;/em&gt;“&lt;/h2&gt;&lt;/p&gt;
+&lt;p&gt;&lt;blockquote&gt;&lt;a href=&quot;https://github.com/ThrashingCode/coder-swap&quot;&gt;&lt;img class=&quot;alignright&quot; src=&quot;http://photos.adron.me/photos/i-Jc4Lnkv/0/O/i-Jc4Lnkv.png&quot; alt=&quot;&quot; width=&quot;128&quot; height=&quot;128&quot; /&gt;&lt;/a&gt;More about this soon, as this series will be covering the team (i.e. the Thrashing Code Team) that I’ve just introduced. So stay tuned, subscribe, &lt;a href=&quot;https://twitter.com/adron&quot; target=&quot;_blank&quot;&gt;follow me on twitter&lt;/a&gt; and onward we go. I’ll be looking for people to help out with some parts of this project over time. For example, I’d love to have an Erlang, Go, and related stacks fronting some API end points over time. But more on that as we go…  if you’d like to help out though, ping me on twitter or email me and we’ll sync up. Maybe we’ll put together some non-NPCs to build some of this.&lt;/blockquote&gt;
+&lt;em&gt;Cheers!&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;References:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+    &lt;li&gt;&lt;strong&gt;NPC&lt;/strong&gt; - NPC stands for &lt;strong&gt;N&lt;/strong&gt;on-&lt;strong&gt;P&lt;/strong&gt;layer &lt;strong&gt;C&lt;/strong&gt;haracter or &lt;strong&gt;N&lt;/strong&gt;on-&lt;strong&gt;P&lt;/strong&gt;laying &lt;strong&gt;C&lt;/strong&gt;haracter. An NPC is a character in a RPG, or Role-Playing Game, that the person leading the game controls. Specifically it is any character in the game that the other people playing the game do not control. These other players control their own characters, which are referred to as player characters.&lt;/li&gt;
+    &lt;li&gt;The index for this and all upcoming articles in this &lt;a href=&quot;http://compositecode.wordpress.com/documentation-for/thrashing-code-projects/&quot;&gt;&lt;em&gt;Thrashing Code Projects article series&lt;/em&gt; will be available for reference on this page&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
 </description>
     </item>
     <item>
