@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Adron's Composite Code</title>
+    <meta name="description" content="">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="alternate" href="/feed.xml" type="application/rss+xml" title="Coder, Messenger, Recon, Infrastructure, Ops">
+    <link rel="icon" type="image/png" href="/img/favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/img/favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/img/favicons/favicon-96x96.png" sizes="96x96">
+    <link rel="apple-touch-icon" sizes="57x57" href="/img/favicons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/img/favicons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/img/favicons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/img/favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/img/favicons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/img/favicons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/img/favicons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/img/favicons/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/favicons/apple-touch-icon-180x180.png">
+    <link rel="stylesheet" href="/css/custom.css">
+    <link rel="stylesheet" href="/css/style.min.css">
+    <script src="/js/modernizr.js"></script>
+  </head>
+  <body class="article-detail">
+    <!--[if lt IE 8]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <div class="header header-over large">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 col-sm-6 col-xs-6">
+            <!-- Logo Image--><a href="/index.html" class="logo-image logo-animated"><img src="/img/logos/logo.png" alt="logo"></a>
+            <!-- End of Logo Image-->
+          </div>
+          <div class="col-md-9 col-sm-6 col-xs-6">
+            <!-- Menu-->
+            <nav class="right helper">
+              <ul class="menu sf-menu js-menu">
+                <li><a href="/docs/thrashing-code-news/">Thrashing Code News</a></li>
+                <li><a href="#">Conf - Meetup - Events</a>
+                  <ul>
+                    <li><a href="/docs/Speaking-Presentations-Workshops/">Speaking - Presentations - Workshops</a></li>
+                    <li><a href="/docs/calendar">Calendar of Engagements</a></li>
+                  </ul>
+                </li>
+                <li><a href="/docs/documentation/">Docs</a></li>
+                <li><a href="#">Contact</a>
+                  <ul>
+                    <li><a href="/docs/contact">Message</a></li>
+                    <li><a href="/docs/job-talk/">Hire</a></li>
+                  </ul>
+                </li>
+                <li><a href="/docs/about/">About</a></li>
+              </ul>
+            </nav>
+            <!-- End of Menu-->
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="header-back header-back-simple header-back-small">
+      <div class="header-back-container">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <!-- Page Info-->
+              <div class="page-info page-info-simple">
+                <h1>A Small Rant About Being IDE-Dependent</h1>
+                <p class="author">Written by <span class="author">Adron Hall</span> and published on <span>September, 15 of 2015.</span>
+                </p>
+                <div class="nav"><a href="/">« Home</a></div>
+              </div>
+              <!-- End Page Info-->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="content">
+      <div class="container">
+        <div class="layout with-right-sidebar js-layout">
+          <div class="row">
+            <div class="col-md-9">
+              <div class="main-content">
+                <!-- Blog Page-->
+                <article class="article">
+                  <section class="content"><p>{Sort of a&nbsp;Rant}</p>
+<p>I recently saw this&nbsp;tweet.</p>
+<p><blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">You can&#39;t create a project in visual studio code? This seems like an odd&nbsp;decision</p>&mdash; gregyoung (@gregyoung) <a href="https://twitter.com/gregyoung/status/643741277977210880?ref_src=twsrc%5Etfw">September 15, 2015</a></blockquote></p>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<p>I responded with this&nbsp;tweet.</p>
+<p><blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr"><a href="https://twitter.com/gregyoung?ref_src=twsrc%5Etfw">@gregyoung</a> yeah, projects being a tightly coupled dependency to the <span class="caps">IDE</span> needs to be ripped from the minds. <a href="https://twitter.com/hashtag/yeoman?src=hash&amp;ref_src=twsrc%5Etfw">#yeoman</a></p>&mdash; Λdrøn @ ¯_(ツ)_/¯ (@Adron) <a href="https://twitter.com/Adron/status/643742088987836416?ref_src=twsrc%5Etfw">September 15, 2015</a></blockquote></p>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<p>Now I need to describe some context around this response real quick. Here are the key points behind this tweet from my context in the software development&nbsp;industry.</p>
+<p><span class="more"></span></p>
+<ol>
+<li><p>I’m not a .<span class="caps">NET</span> Developer. I’m a software developer, or application programming, coder, hacker or more accurately I’m a solutions developer. I don’t tie myself to one stack. I’ve developed with C# <span class="amp">&amp;</span> <span class="caps">VB</span>.NET with Visual Studio. I’ve done C++ and VB 4. I’ve done VBA and all sorts of other things in the Microsoft space on Windows and for the web with Windows technology. About 5 years ago I completely dropped that operating system dependency and have been free of it for those 5 years. I doubt I ever want to couple an application up to that monstrous operating system again, it is far to limiting and has no significant selling point&nbsp;anymore.</li></p>
+</li>
+<li><p>In addition to the .<span class="caps">NET</span> code I’ve written over the years I’ve also built a few dozen Erlang Applications (wish I’d known about Elixir at the time), built a ton of Node.js based API and web applications, and have even done some Ruby on Rails and Sinatra. These languages and tooling stacks really introduced me to reality I longed for. A clean, fast, understandable reality. A reality with configuration files that are readable and convention that gives me real power to get things done and move on to the next business need. These stacks gave me the ability to focus more on code and business and research value and less on building the tool stack up just to get one single deployment out the door. Since, I’ve not looked back, because the heavy handed stacks of legacy Java, .NET, and related things have only laid heavily on small business and startups trying to add business value. In the lands I live in, that is San Francisco to Vancouver BC and the cities in between, Java and .NET can generally take a hike. Because businesses have things to do, namely make money or commit to getting research done and not piddling around building a tool stack&nbsp;up.</p>
+</li>
+</ol>
+<p>So how was this new reality created? It isn’t a new one, really the new reality was this heavy handed <span class="caps">IDE</span> universe of fat editors that baby a developer through every step. They create laziness in thinking and do NOT encourage a lean, efficient, simple way to get an application built and running. It doesn’t have to be this way. A small amount of developer discipline, or dare I say craftsmanship, and most of these fat IDEs and tightly coupled projects with massive XML files for configuration in their unreadable catastrophofuck of spaghetti can just go&nbsp;away.</p>
+<p>Atom, Sublime, and other editors before that harnessed this clean, lean, and fast approach to software development. A Node.js Project only needs one file and one command to start a&nbsp;project.</p>
+<pre><code>npm init
+</code></pre><p>A Ruby on Rails Project is about the&nbsp;same.</p>
+<p><code>rails new path/to/your/new/application</code></p>
+<p>That’s it, and <span class="caps">BOOM</span> you’ve got an application project base to start&nbsp;from.</p>
+<p>Beyond that however, using a tool like Yeoman opens up a very Unix style way of doing something. Yeoman has a purpose, to build scaffolding for applications. That is its job and it does that job well. It has a pluggable architecture to enable you to build all sorts of scaffold packaging that you want. Hell, you can even create projects with the bloated and unreadable <span class="caps">XML</span> blight that pervades many project types out there from enterprisey&nbsp;platforms.</p>
+<p>Take a look at <a href="http://yeoman.io/" target="_blank" rel="noopener">Yeoman</a>, it is well worth a look. This is a tool that allows us to keep our tooling, what we do use, loosely coupled so we don’t have a massive bloated (5+ <span class="caps">GB</span>) installation of nonsense to put on our machines. Anybody on any platform can load up Yeoman, and grab an editor like Atom, Submlime, Visual Studio Code (not to be confused with the bloated Visual Studio) and just start&nbsp;coding!</p>
+<p>Take a look at some of the generators that yeoman will build projects for you with -&gt; <a href="http://yeoman.io/generators/">http://yeoman.io/generators/</a> There are over 1500! No more need to tightly couple this into an <span class="caps">IDE</span>. Just provide a yeoman plugin in your editor of choice. Boom, all the features you need without the tight coupling in editor! Win, win, win, win, and&nbsp;win!</p>
+<p>As a bit more of my rant about bloated editors, and don’t get me wrong, I love some of the features of the largesse of some like Visual Studio and WebStorm. But one huge rant I have is the absolutely zero motivation or vested interest that a community has to add features, bug fix, or do anything in relation to editors like Visual Studio or WebStorm. <span class="caps">ZERO</span> reason to help, only to file complaints or maybe file a bug complaint. That’s cool, I’m glad that the editors exist but this model isn’t the future. It’s slowly dying and having tightly coupled, slow, massively bloated editors isn’t going to be sustainable. They don’t adapt to new stacks, languages, or even existing&nbsp;ones.</p>
+<p>Meanwhile, Atom, Sublime, and even Visual Studio Code and other lean editors have plugin and various adaptar patterns that allow one to add support for new languages, stacks, frameworks, and related tooling and not have tight coupling to that thing. This gives these editors the ability to add features and capabilities for stacks at a dramatically faster rate than the traditional fat&nbsp;IDEs.</p>
+<p>This is the same idea toward tooling that is used in patterns that a software developer ought to know. Think of patterns like seperation of concerns and loose coupling, don’t tie yourself into an untenable and frustrating toolchain. Keep it loosely coupled and I promise, your life will get easier and that evening beer will come a little bit&nbsp;sooner.</p>
+<p>{Sort of a&nbsp;Rant::End}</p>
+<p>…and this is why I say, do <span class="caps">NOT</span> tie project creation into an editor. Instead keep things loosely coupled and let’s move into the&nbsp;future.</p>
+</section>
+                </article>
+                <!-- End of Blog Page-->
+              </div>
+            </div>
+            <div class="col-md-3 hidden-sm hidden-xs">
+              <div class="sidebar js-sidebar-fixed">
+                <!-- Vertical Menu-->
+                <div class="widget">
+                  <!-- Search-->
+                  <div class="search">
+                    <form action="https://google.com/search" method="get">
+                      <input type="hidden" name="sitesearch" value="http://blog.adron.me">
+                      <input type="text" name="q" placeholder="search" class="search-input form-control"><i class="fa fa-search search-icon"></i>
+                    </form>
+                  </div>
+                  <!-- End of Search-->
+                </div>
+                <div class="widget">
+                  <h3 class="widget-title">Keyword Search</h3>
+                  <!-- Tags-->
+                  <ul class="tags">
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=terraform">terraform</a></li>
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=kubernetes">kubernetes</a></li>
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=immutable+infrastructure">immutable infrastructure</a></li>
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=html">html</a></li>
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=javascript">javascript</a></li>
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=ubuntu">ubuntu</a></li>
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=node pdx">node pdx</a></li>
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=.NET fringe">.net fringe</a></li>
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=videos">videos</a></li>
+                  </ul>
+                  <!-- End of Tags-->
+                </div>
+                <nav class="menu-vertical-wrapper">
+                  <ul data-prepend-to=".js-layout" data-select="Menu" class="menu-vertical js-menu-vertical">
+                    <li><a href="#">About</a>
+                      <ul>
+                        <li><a href="/docs/about/">Me, Adron</a></li>
+                        <li><a href="#">My Hobbies</a>
+                          <ul>
+                            <li><a href="http://photos.adron.me">My Photos</a></li>
+                          </ul>
+                        </li>
+                        <li><a href="/docs/Speaking-Presentations-Workshops">My Presentations</a></li>
+                        <li><a href="/docs/documentation/">Collection of Docs & Notes</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </nav>
+                <div class="widget">
+                  <h3 class="widget-title">Photos</h3>
+                  <!-- Photos-->
+                  <ul class="widget-recommended-products">
+                    <!-- Photos-->
+                    <li class="widget-recommended-product"><img src="/img/photos/IMG_1836.jpg" alt="Jon Oropeza" class="widget-recommended-product-img"><a href="http://photos.adron.me/Software/Meetups-N-Conferences/Conferences/Node-PDX-2016/i-D9qFQ6m" class="widget-recommended-product-link">
+                        <h5 class="widget-recommended-product-link-title">Node PDX 2016<i class="fa fa-angle-right"></i></h5>
+                        <p class="widget-recommended-product-link-description">Jon Oropeza @ Node PDX 2016</p></a></li>
+                    <!-- End of Recommended product Item-->
+                    <!-- Recommended product Item-->
+                    <li class="widget-recommended-product"><img src="/img/photos/IMG_1812.jpg" alt="Liz Abinante" class="widget-recommended-product-img"><a href="http://photos.adron.me/Software/Meetups-N-Conferences/Conferences/Node-PDX-2016/i-g2m2hgP" class="widget-recommended-product-link">
+                        <h5 class="widget-recommended-product-link-title">Node PDX 2016<i class="fa fa-angle-right"></i></h5>
+                        <p class="widget-recommended-product-link-description">Liz Abinante @ Node PDX 2016</p></a></li>
+                    <!-- End of Recommended product Item-->
+                    <!-- Recommended product Item-->
+                    <li class="widget-recommended-product"><img src="/img/photos/IMG_5709.jpg" alt="Praha hlavní nádraží" class="widget-recommended-product-img"><a href="http://photos.adron.me/Travels-N-Traversings/Across-the-Pond-2016-Travels/September-Krakow/Week-4-Prague/i-62ZPsPb" class="widget-recommended-product-link">
+                        <h5 class="widget-recommended-product-link-title">Prague (Praha)<i class="fa fa-angle-right"></i></h5>
+                        <p class="widget-recommended-product-link-description">Praha hlavní nádraží</p></a></li>
+                    <!-- End of photos row one-->
+                  </ul>
+                  <ul class="widget-recommended-products">
+                    <!-- Photos-->
+                    <li class="widget-recommended-product"><img src="/img/photos/IMG_4417.jpg" alt="St Mary's Basilica" class="widget-recommended-product-img"><a href="http://photos.adron.me/Travels-N-Traversings/Across-the-Pond-2016-Travels/September-Krakow/Krakow/i-KnZf6pK/A" class="widget-recommended-product-link">
+                        <h5 class="widget-recommended-product-link-title">St Mary's Basilica<i class="fa fa-angle-right"></i></h5>
+                        <p class="widget-recommended-product-link-description">Bazylika Mariacka in Rynek Główny.</p></a></li>
+                    <!-- End of Recommended product Item-->
+                    <!-- Recommended product Item-->
+                    <li class="widget-recommended-product"><img src="/img/photos/VSC_03.png" alt="Visual Studio Code" class="widget-recommended-product-img"><a href="http://photos.adron.me/Software/Software-Development/Visual-Studio-Things/i-LLW7WcD/A" class="widget-recommended-product-link">
+                        <h5 class="widget-recommended-product-link-title">Visual Studio Code<i class="fa fa-angle-right"></i></h5>
+                        <p class="widget-recommended-product-link-description">Images from a review of Visual Studio Code.</p></a></li>
+                    <!-- End of Recommended product Item-->
+                    <!-- Recommended product Item-->
+                    <li class="widget-recommended-product"><img src="/img/photos/-home-adronhall-Pictures-Selection_002.png - Shutter_003.png" alt="" class="widget-recommended-product-img"><a href="http://photos.adron.me/Software/Software-Development/Ubuntu/i-CQsQ4zj/A" class="widget-recommended-product-link">
+                        <h5 class="widget-recommended-product-link-title">Mono Develop & WebStorm<i class="fa fa-angle-right"></i></h5>
+                        <p class="widget-recommended-product-link-description">Working through Mono Develop & WebStorm.</p></a>
+                      <!-- End of photos row two-->
+                    </li>
+                  </ul>
+                  <!-- End Photos-->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="nav"><a href="/">« Home</a></div>
+      </div>
+    </div>
+    <script src="/js/all.js"></script>
+    <script src="/js/custom.js"></script>
+    <!-- Google Tag Manager-->
+    <noscript>
+      <iframe src="//www.googletagmanager.com/ns.html?id=GTM-KMMZX2" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <script>
+      console.log(document.getElementById("search-google"));
+      console.log(document.getElementById("search-google").innerText);
+      
+      var searchBox = document.getElementById("search-google");
+      
+      function googleSearch(search_string) {
+        alert(search_string);
+      }
+      
+      document.getElementById("search-google").addEventListener("onClick", function () {
+        alert(document.getElementById("search-google").innerHTML);
+      });
+      
+      document.getElementById("search-google").addEventListener("onClick", function () {
+        googleSearch(document.getElementById("search-google").innerHTML)
+      });
+      
+    </script>
+    <script>
+      (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+                  (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+      })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+      ga('create', 'UA-39158070-6', 'auto');
+      ga('send', 'pageview');
+    </script>
+  </body>
+</html>

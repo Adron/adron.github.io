@@ -5,9 +5,187 @@
     <atom:link href="http://adron.github.io/feed.xml" rel="self" type="application/rss+xml"></atom:link>
     <link>http://adron.github.io</link>
     <description>Coder, Messenger, Recon, Infrastructure, Ops</description>
-    <pubDate>Tue, 17 Oct 2017 01:52:59 -0700</pubDate>
+    <pubDate>Thu, 19 Oct 2017 12:20:39 -0700</pubDate>
     <generator>Wintersmith - https://github.com/jnordberg/wintersmith</generator>
     <language>en</language>
+    <item>
+      <title>Build a Kubernetes Cluster on Google Cloud Platform with Terraform</title>
+      <link>http://adron.github.io/articles/terraform-kubernetes-gcp/</link>
+      <pubDate>Thu, 19 Oct 2017 12:20:39 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/terraform-kubernetes-gcp/</guid>
+      <author></author>
+      <description>&lt;div class=&quot;image float-right&quot;&gt;
+    &lt;img src=&quot;/articles/terraform-kubernetes-gcp/terraform.png&quot; alt=&quot;Terraform&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;In this blog entry I’m going to detail the exact configuration and cover in some additional details the collateral resources you can expect to find once the configuration is executed against with Terraform.&lt;/p&gt;
+&lt;p&gt;A lot of this material I wrote about with &lt;a href=&quot;http://adron.github.io/articles/setting-up-gcp-container-cluster/&quot;&gt;Setting up a GCP Container Cluster - Part I&lt;/a&gt; and &lt;a href=&quot;http://adron.github.io/articles/setting-up-gcp-container-cluster-part-2/&quot;&gt;Setting up a GCP Container Cluster - Part II&lt;/a&gt;. I had started on a Part 3 around setting up Drone.io on a Kubernetes/GCP Container Cluster but stopped midway through with other demands. This post is a more up to date post of all those things plus more. With this post completed I’ve stepped back into getting Drone.io setup and am now &lt;em&gt;finally&lt;/em&gt; finishing that blog entry! &lt;em&gt;#win&lt;/em&gt;!&lt;/p&gt;
+&lt;p&gt;First things first, locally you’ll want to have the respective CLI tools installed for Google Cloud Platform, Terraform, and Kubernetes.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://cloud.google.com/sdk/downloads&quot;&gt;Install the gcloud CLI&lt;/a&gt; and get it configured with &lt;a href=&quot;https://cloud.google.com/sdk/gcloud/reference/init&quot;&gt;gcloud init&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.terraform.io/intro/getting-started/install.html&quot;&gt;Install the latest Terraform&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;With gcloud CLI installed you can then easily install kubectl with &lt;code&gt;gcloud components install kubectl&lt;/code&gt; command.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Now that all the prerequisites are covered, let’s dive into the specifics of setup.&lt;/p&gt;
+&lt;div class=&quot;image float-right&quot;&gt;
+    &lt;img src=&quot;/articles/terraform-kubernetes-gcp/gcp.png&quot; alt=&quot;Google Cloud Platform&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;If you take a look at the Google Cloud Platform Console, it’s easy to get a before and after view of what is and will be built in the environment. The specific areas where infrastructure will be built out for Kubernetes are in the following areas, which I’ve taken a few screenshots of just to show what the empty console looks like. Again, it’s helpful to see a before and after view, it helps to understand all the pieces that are being put into place.&lt;/p&gt;
+&lt;p&gt;The first view is of the Google Compute Engine page, which currently on this account in this organization I have no instances running.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/terraform-kubernetes-gcp/gcp-01.png&quot; alt=&quot;GCP Console&quot;&gt;&lt;/p&gt;
+&lt;p&gt;This view shows the container engines running. Basically this screen will show any Kubernetes clusters running, Google just opted for the super generic Google Container Engine as a title with Kubernetes nowhere to be seen. Yet.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/terraform-kubernetes-gcp/gcp-02.png&quot; alt=&quot;GCP Console&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Here I have one ephemeral IP address, which honestly will disappear in a moment once I delete that forwarding rule.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/terraform-kubernetes-gcp/gcp-03.png&quot; alt=&quot;GCP Console&quot;&gt;&lt;/p&gt;
+&lt;p&gt;These four firewall rules are the default. The account starts out with these, and there isn’t any specific reason to change them at this point. We’ll see a number of additional firewall settings in a moment.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/terraform-kubernetes-gcp/gcp-04.png&quot; alt=&quot;GCP Console&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Load balancers, again, currently empty but we’ll see resources here shortly.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/terraform-kubernetes-gcp/gcp-05.png&quot; alt=&quot;GCP Console&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Alright, that’s basically an audit of the screens where we’ll see the meat of resources built. It’s time to get the configurations built now.&lt;/p&gt;
+&lt;h2 id=&quot;time-to-terraform-our-new-world&quot;&gt;Time to Terraform Our New World&lt;/h2&gt;
+&lt;p&gt;Using Terraform to build a Kubernetes cluster is pretty minimalistic. First, as I always do I add a few files the way I like to organize my Terraform configuration project. These files include:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;.gitignore - for the requisite things I won’t want to go into the repository.&lt;/li&gt;
+&lt;li&gt;connections.tf - for the connection to GCP.&lt;/li&gt;
+&lt;li&gt;kubernetes.tf - for the configuration defining the characteristics of the Kubernetes cluster I’m working toward getting built.&lt;/li&gt;
+&lt;li&gt;README.md - cuz &lt;strong&gt;&lt;em&gt;docs first&lt;/em&gt;&lt;/strong&gt;. No seriously, I don’t jest, write the damned docs!&lt;/li&gt;
+&lt;li&gt;terraform.tfvars - for assigning variables created in variables.tf.&lt;/li&gt;
+&lt;li&gt;variables.tf - for declaring and adding doc/descriptions for the variables I use.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In the &lt;a href=&quot;https://github.com/Adron/our_new_world/blob/master/.gitignore&quot;&gt;.gitignore&lt;/a&gt; I add just a few items. Some are specific to my setup that I have and IntelliJ. The contents of the file looks like this. I’ve included comments in my .gitignore so that one can easily make sense of what I’m ignoring.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;# A silly MacOS/OS-X hidden file that is the bane of all repos.
+.DS_Store
+
+# .idea is the user setting configuration directory for IntelliJ, or more generally Jetbrains IDE Products.
+.idea
+.terraform
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The next file I write up is the &lt;a href=&quot;https://github.com/Adron/our_new_world/blob/master/connections.tf&quot;&gt;connections.tf&lt;/a&gt; file.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;provider &lt;span class=&quot;string&quot;&gt;&quot;google&quot;&lt;/span&gt; {
+  credentials = &lt;span class=&quot;string&quot;&gt;&quot;${file(&quot;&lt;/span&gt;../secrets/account.json&lt;span class=&quot;string&quot;&gt;&quot;)}&quot;&lt;/span&gt;
+  project     = &lt;span class=&quot;string&quot;&gt;&quot;thrashingcorecode&quot;&lt;/span&gt;
+  region      = &lt;span class=&quot;string&quot;&gt;&quot;us-west1&quot;&lt;/span&gt;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The path &lt;code&gt;../secrets/account.json&lt;/code&gt; is where I place my account.json file with keys and such, to keep it out of the repository. For more on this practice check out my post &lt;em&gt;&lt;a href=&quot;http://adron.github.io/articles/terraform-kubernetes-gcp/&quot;&gt;Quick Start Connections With Terraform and Kubernetes&lt;/a&gt;&lt;/em&gt; and &lt;em&gt;&lt;a href=&quot;http://blog.adron.me/articles/working-with-google-compute-engine/&quot;&gt;Working With Google Compute Engine (GCE) using Terraform (with a load of Bash Scripts Too)&lt;/a&gt;&lt;/em&gt; posts.&lt;/p&gt;
+&lt;p&gt;The project in GCP is called &lt;em&gt;thrashingcorecode&lt;/em&gt;, which whatever you’ve named yours you can always find right up toward the top of the GCP Console.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/terraform-kubernetes-gcp/console-bar.png&quot; alt=&quot;GCP Top Navigation Bar&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Then the region is set to us-west1 which is the data centers that are located, most reasonably to my current geographic area, in The Dalles, Oregon. These data centers also tend to have a lot of the latest and greatest hardware, so they provide a little bit more &lt;em&gt;oompf&lt;/em&gt;!&lt;/p&gt;
+&lt;p&gt;The next file I setup is the &lt;a href=&quot;https://github.com/Adron/our_new_world/blob/master/README.md&quot;&gt;README.md&lt;/a&gt;, which you can just check out in the repository &lt;a href=&quot;https://github.com/Adron/our_new_world/blob/master/README.md&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Now I setup the &lt;a href=&quot;https://github.com/Adron/our_new_world/blob/master/variables.tf&quot;&gt;variables.tf&lt;/a&gt; and the &lt;a href=&quot;https://github.com/Adron/our_new_world/blob/master/terraform.tfvars&quot;&gt;terraform.tfvars&lt;/a&gt; files. The variables.tf includes the following input and output variables declared.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// General Variables&lt;/span&gt;
+
+variable &lt;span class=&quot;string&quot;&gt;&quot;linux_admin_username&quot;&lt;/span&gt; {
+  type        = &lt;span class=&quot;string&quot;&gt;&quot;string&quot;&lt;/span&gt;
+  description = &lt;span class=&quot;string&quot;&gt;&quot;User name for authentication to the Kubernetes linux agent virtual machines in the cluster.&quot;&lt;/span&gt;
+}
+
+variable &lt;span class=&quot;string&quot;&gt;&quot;linux_admin_password&quot;&lt;/span&gt; {
+  type =&lt;span class=&quot;string&quot;&gt;&quot;string&quot;&lt;/span&gt;
+  description = &lt;span class=&quot;string&quot;&gt;&quot;The password for the Linux admin account.&quot;&lt;/span&gt;
+}
+
+&lt;span class=&quot;comment&quot;&gt;// GCP Variables&lt;/span&gt;
+variable &lt;span class=&quot;string&quot;&gt;&quot;gcp_cluster_count&quot;&lt;/span&gt; {
+  type = &lt;span class=&quot;string&quot;&gt;&quot;string&quot;&lt;/span&gt;
+  description = &lt;span class=&quot;string&quot;&gt;&quot;Count of cluster instances to start.&quot;&lt;/span&gt;
+}
+
+variable &lt;span class=&quot;string&quot;&gt;&quot;cluster_name&quot;&lt;/span&gt; {
+  type = &lt;span class=&quot;string&quot;&gt;&quot;string&quot;&lt;/span&gt;
+  description = &lt;span class=&quot;string&quot;&gt;&quot;Cluster name for the GCP Cluster.&quot;&lt;/span&gt;
+}
+
+&lt;span class=&quot;comment&quot;&gt;// GCP Outputs&lt;/span&gt;
+output &lt;span class=&quot;string&quot;&gt;&quot;gcp_cluster_endpoint&quot;&lt;/span&gt; {
+  value = &lt;span class=&quot;string&quot;&gt;&quot;${google_container_cluster.gcp_kubernetes.endpoint}&quot;&lt;/span&gt;
+}
+
+output &lt;span class=&quot;string&quot;&gt;&quot;gcp_ssh_command&quot;&lt;/span&gt; {
+  value = &lt;span class=&quot;string&quot;&gt;&quot;ssh ${var.linux_admin_username}@${google_container_cluster.gcp_kubernetes.endpoint}&quot;&lt;/span&gt;
+}
+
+output &lt;span class=&quot;string&quot;&gt;&quot;gcp_cluster_name&quot;&lt;/span&gt; {
+  value = &lt;span class=&quot;string&quot;&gt;&quot;${google_container_cluster.gcp_kubernetes.name}&quot;&lt;/span&gt;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;In the terraform.tfvars file I have the following assigned. Obviously you wouldn’t want to keep your production Linux username and passwords in this file, but for this example I’ve set them up here as the repository sample code can only be run against your own GCP org service, so remember, if you run this you’ve got public facing default linux account credentials exposed right here!&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;cluster_name = &lt;span class=&quot;string&quot;&gt;&quot;ournewworld&quot;&lt;/span&gt;
+gcp_cluster_count = &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;
+linux_admin_username = &lt;span class=&quot;string&quot;&gt;&quot;frankie&quot;&lt;/span&gt;
+linux_admin_password = &lt;span class=&quot;string&quot;&gt;&quot;supersecretpassword&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now for the meat of this effort. The &lt;a href=&quot;https://github.com/Adron/our_new_world/blob/master/kubernetes.tf&quot;&gt;kubernetes.tf&lt;/a&gt; file. The way I’ve set this file up is as shown.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;resource &lt;span class=&quot;string&quot;&gt;&quot;google_container_cluster&quot;&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&quot;gcp_kubernetes&quot;&lt;/span&gt; {
+  name               = &lt;span class=&quot;string&quot;&gt;&quot;${var.cluster_name}&quot;&lt;/span&gt;
+  zone               = &lt;span class=&quot;string&quot;&gt;&quot;us-west1-a&quot;&lt;/span&gt;
+  initial_node_count = &lt;span class=&quot;string&quot;&gt;&quot;${var.gcp_cluster_count}&quot;&lt;/span&gt;
+
+  additional_zones = [
+    &lt;span class=&quot;string&quot;&gt;&quot;us-west1-b&quot;&lt;/span&gt;,
+    &lt;span class=&quot;string&quot;&gt;&quot;us-west1-c&quot;&lt;/span&gt;,
+  ]
+
+  master_auth {
+    username = &lt;span class=&quot;string&quot;&gt;&quot;${var.linux_admin_username}&quot;&lt;/span&gt;
+    password = &lt;span class=&quot;string&quot;&gt;&quot;${var.linux_admin_password}}&quot;&lt;/span&gt;
+  }
+
+  node_config {
+    oauth_scopes = [
+      &lt;span class=&quot;string&quot;&gt;&quot;https://www.googleapis.com/auth/compute&quot;&lt;/span&gt;,
+      &lt;span class=&quot;string&quot;&gt;&quot;https://www.googleapis.com/auth/devstorage.read_only&quot;&lt;/span&gt;,
+      &lt;span class=&quot;string&quot;&gt;&quot;https://www.googleapis.com/auth/logging.write&quot;&lt;/span&gt;,
+      &lt;span class=&quot;string&quot;&gt;&quot;https://www.googleapis.com/auth/monitoring&quot;&lt;/span&gt;,
+    ]
+
+    labels {
+      &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;-is-&lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; = &lt;span class=&quot;string&quot;&gt;&quot;dev-cluster&quot;&lt;/span&gt;
+    }
+
+    tags = [&lt;span class=&quot;string&quot;&gt;&quot;dev&quot;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&quot;work&quot;&lt;/span&gt;]
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;With all that setup I can now run the three commands to get everything built. The first command is &lt;code&gt;terraform init&lt;/code&gt;. This is new with the latest releases of Terraform, which pulls down any of the respective providers that a Terraform execution will need. In this particular project it pulls down the GCP Provider. This command only needs to be run the first time before &lt;code&gt;terraform plan&lt;/code&gt; or &lt;code&gt;terraform apply&lt;/code&gt; are run, if you’ve deleted your &lt;code&gt;.terraform&lt;/code&gt; directory, or if you’ve added configuration for something like &lt;em&gt;Azure&lt;/em&gt;, &lt;em&gt;Amazon Web Services&lt;/em&gt;, or &lt;em&gt;Github&lt;/em&gt; that needs a new provider.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/terraform-kubernetes-gcp/terraform-init.png&quot; alt=&quot;Terraform Initialization&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Now to ensure and determine what will be built, I’ll run &lt;code&gt;terraform plan&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/terraform-kubernetes-gcp/terraform-plan.png&quot; alt=&quot;Terraform Plan&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Since everything looks good, time to execute with &lt;code&gt;terraform apply&lt;/code&gt;. This will display output similar to the &lt;code&gt;terraform plan&lt;/code&gt; command but for creating the command, and then you’ll see the countdown begin as it waits for instances to start up and networking to be configured and routed.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/terraform-kubernetes-gcp/terraform-apply.png&quot; alt=&quot;Terraform Apply&quot;&gt;&lt;/p&gt;
+&lt;p&gt;While waiting for this to build you can also click back and forth and watch firewall rules, networking, external IP addresses, and instances start to appears in the Google Cloud Platform Console. When it completes, we can see the results, which I’ll step through here with some added notes about what is or isn’t happening and then wrap up with a destruction of the Kubernetes cluster. Keep reading until the end, because there are some important caveats about things that might or might not be destroyed during clean up. It’s important to ensure you’ve got a plan to review the cluster after it is destroyed to make sure resources and the respective costs aren’t still there.&lt;/p&gt;
+&lt;h3 id=&quot;compute-engine-view&quot;&gt;Compute Engine View&lt;/h3&gt;
+&lt;p&gt;In the console click on the compute engine option.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/terraform-kubernetes-gcp/gcp-console-compute-engine.png&quot; alt=&quot;Compute Engine&quot;&gt;&lt;/p&gt;
+&lt;p&gt;I’ll start with the Compute Engine view. I can see the individual virtual machine instances here and their respective zones.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/terraform-kubernetes-gcp/gcp-console-01.png&quot; alt=&quot;Compute Engine View&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Looking at the Terraform file confiugration I can see that the initial zone to create the cluster in was used, which is &lt;em&gt;us-west1-a&lt;/em&gt; inside the &lt;em&gt;us-west1&lt;/em&gt; region. The next two instances are in the respective &lt;em&gt;additional_zones&lt;/em&gt; that I marked up in the Terraform configuration.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;additional_zones = [
+  &lt;span class=&quot;string&quot;&gt;&quot;us-west1-b&quot;&lt;/span&gt;,
+  &lt;span class=&quot;string&quot;&gt;&quot;us-west1-c&quot;&lt;/span&gt;,
+]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;You could even add additional zones here too. Terraform during creation will create an additional virtual machine instance to add to the Kubernetes cluster for each increment that &lt;em&gt;initial_node_count&lt;/em&gt; is set to. Currently I set mine to a variable so I could set it and other things in my terraform.tfvars file. Right now I have it set to 1 so that one virtual machine instance will be created in the initial zone and in each of the designated &lt;em&gt;additional_zones&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Beyond the VM instances view click on the &lt;em&gt;Instance groups&lt;/em&gt;, &lt;em&gt;Instance templates&lt;/em&gt;, and &lt;em&gt;Disks&lt;/em&gt; to seem more items setup for each of the instances in the respective deployed zones.&lt;/p&gt;
+&lt;p&gt;If I bump my virtual machine instance count up to 2, I get 6 virtual machine instances. I did this, and took a screenshot of those instances running. You can see that there are two instances in each zone now.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/terraform-kubernetes-gcp/gcp-console-2instances-01.png&quot; alt=&quot;Instance Count Set at 2&quot;&gt;&lt;/p&gt;
+&lt;h4 id=&quot;instance-groups&quot;&gt;Instance groups&lt;/h4&gt;
+&lt;p&gt;Note that an instance group is setup for each zone, so this group kind of organizes all the instances in that zone.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/terraform-kubernetes-gcp/gcp-console-02.png&quot; alt=&quot;Compute Engine Instance Groups&quot;&gt;&lt;/p&gt;
+&lt;h4 id=&quot;instance-templates&quot;&gt;Instance Templates&lt;/h4&gt;
+&lt;p&gt;Like the instance groups, there is one template per zone. If I setup 1 virtual machine instance or 10 in the zone, I’ll have one template that describes the instances that are created.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/terraform-kubernetes-gcp/gcp-console-03.png&quot; alt=&quot;Compute Engine Instance Templates&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/terraform-kubernetes-gcp/gcp-console-04.png&quot; alt=&quot;Compute Engine Disks&quot;&gt;&lt;/p&gt;
+&lt;p&gt;To SSH into any of these virtual machine instances, the easiest way is to navigate into one of the views for the instances, such as under the VM instances section, and click on the SSH button for the instance.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/terraform-kubernetes-gcp/gcp-console-05.png&quot; alt=&quot;Starting SSH&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Then a screen will pop up showing the session starting. This will take 10-20 seconds sometimes so don’t assume it’s broken. Then a browser based standard looking SSH terminal will be running against the instance.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/terraform-kubernetes-gcp/ssh-window-01.png&quot; alt=&quot;SSH Starting&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/terraform-kubernetes-gcp/ssh-window-02.png&quot; alt=&quot;SSH Prompt&quot;&gt;&lt;/p&gt;
+&lt;p&gt;This comes in handy if any of the instances ends up having issues down the line. Of all the providers GCP has made connecting to instances and such with this and tools like gcloud extremely easy and quick.&lt;/p&gt;
+</description>
+    </item>
     <item>
       <title>Thrashing Code Metal Monday for Week of October 16th 2017</title>
       <link>http://adron.github.io/articles/thrashing-code-metal-monday-10-16-2017/</link>
@@ -2460,17 +2638,17 @@ n
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;I then ran &lt;code&gt;glide get github.com/icrowley/fake&lt;/code&gt; to get the fake library I would need. The &lt;code&gt;glide.yaml&lt;/code&gt; and &lt;code&gt;glide.lock&lt;/code&gt; looked like this after I pulled in this library.&lt;/p&gt;
 &lt;p&gt;glide.yaml&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;lang-yaml&quot;&gt;&lt;span class=&quot;attr&quot;&gt;package:&lt;/span&gt; github.com/adron/datadiluvium
+&lt;pre&gt;&lt;code class=&quot;lang-yaml&quot;&gt;&lt;span class=&quot;attr&quot;&gt;package:&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;github.com/adron/datadiluvium&lt;/span&gt;
 &lt;span class=&quot;attr&quot;&gt;import:&lt;/span&gt;
-&lt;span class=&quot;attr&quot;&gt;- package:&lt;/span&gt; github.com/icrowley/fake
+&lt;span class=&quot;attr&quot;&gt;- package:&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;github.com/icrowley/fake&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;glide.lock&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;lang-yaml&quot;&gt;&lt;span class=&quot;attr&quot;&gt;hash:&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;fd78ca8369405d5998e65ea4cfce94c6599e878c36fec39b85fd385552392d7
-&lt;span class=&quot;attr&quot;&gt;updated:&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;2017&lt;/span&gt;&lt;span class=&quot;bullet&quot;&gt;-01&lt;/span&gt;&lt;span class=&quot;bullet&quot;&gt;-09&lt;/span&gt;T01:&lt;span class=&quot;number&quot;&gt;04&lt;/span&gt;:&lt;span class=&quot;number&quot;&gt;18.134993358&lt;/span&gt;&lt;span class=&quot;bullet&quot;&gt;-08&lt;/span&gt;:&lt;span class=&quot;number&quot;&gt;00&lt;/span&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-yaml&quot;&gt;&lt;span class=&quot;attr&quot;&gt;hash:&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;string&quot;&gt;fd78ca8369405d5998e65ea4cfce94c6599e878c36fec39b85fd385552392d7&lt;/span&gt;
+&lt;span class=&quot;attr&quot;&gt;updated:&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;2017&lt;/span&gt;&lt;span class=&quot;bullet&quot;&gt;-01&lt;/span&gt;&lt;span class=&quot;bullet&quot;&gt;-09&lt;/span&gt;&lt;span class=&quot;attr&quot;&gt;T01:04:18.134993358-08:00&lt;/span&gt;
 &lt;span class=&quot;attr&quot;&gt;imports:&lt;/span&gt;
-&lt;span class=&quot;attr&quot;&gt;- name:&lt;/span&gt; github.com/icrowley/fake
-&lt;span class=&quot;attr&quot;&gt;  version:&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;84&lt;/span&gt;bff6d01560fb0b5a396ba29534e93fd00d09c6
-&lt;span class=&quot;attr&quot;&gt;testImports:&lt;/span&gt; []
+&lt;span class=&quot;attr&quot;&gt;- name:&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;github.com/icrowley/fake&lt;/span&gt;
+&lt;span class=&quot;attr&quot;&gt;  version:&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;84&lt;/span&gt;&lt;span class=&quot;string&quot;&gt;bff6d01560fb0b5a396ba29534e93fd00d09c6&lt;/span&gt;
+&lt;span class=&quot;attr&quot;&gt;testImports:&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;[]&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;If you’re curious about the hash, and related properties of this file check out the glide &lt;a href=&quot;https://github.com/Masterminds/glide/blob/master/README.md&quot;&gt;README.md&lt;/a&gt;, it’s useful in understanding what’s stored here.&lt;/p&gt;
 &lt;p&gt;At this point, it was time to actually sling some Go code! At this point, I do indeed mean sling some too. Splat!&lt;/p&gt;
@@ -5538,6 +5716,29 @@ export TF_VAR_password=&amp;quot;someSecretPassword&amp;quot;
 </description>
     </item>
     <item>
+      <title>Demystifying TypeScript Decorators by James Churchill</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-james-churchill/</link>
+      <pubDate>Sun, 05 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-james-churchill/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-james-churchill/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-right&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-james-churchill/james-churchill-nyc.jpg&quot; alt=&quot;James Churchill&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Portlander James has worked extensively with a variety of technologies, including ASP.NET MVC, SQL Server, JavaScript, TypeScript, Knockout.js, and AngularJS. James, a self-confessed geek, enjoys talking about programming and learning new technologies. He recently joined the Treehouse team as a teacher and is excited to have the opportunity to help beginners become developers.&lt;/p&gt;
+&lt;p&gt;James also enjoys participating in the greater Cascadian Developer Community, presenting talks in Portland, Seattle, Salt Lake City, Boise, Eugene, Salem, and Hood River. Last April, James started and co-organized the Portland TypeScript Meetup (&lt;a href=&quot;http://typescriptpdx.com/&quot;&gt;http://typescriptpdx.com/&lt;/a&gt; which is an awesome meetup, come check it out sometime!).&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;When he is not working, he can be found skiing with his wife and kids, remodeling the house, playing music with his band, or hanging out in the yard with his chickens.&lt;/p&gt;
+&lt;p&gt;In “Demystifying TypeScript Decorators” will show us TypeScript decorators, based on the ES2016 decorator proposal and introduced as part of TypeScript 1.5, provide developers with a way to modify a JavaScript class, property, method, or method parameter using a convenient declarative syntax. We’ll start this session by creating our own decorator, to see firsthand how they work. Then, we’ll take a look at how decorators can be used in a variety of settings.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Blog: &lt;a href=&quot;http://smashdev.com&quot;&gt;http://smashdev.com&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Github: &lt;a href=&quot;http://github.com/smashdevcode&quot;&gt;http://github.com/smashdevcode&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Twitter: &lt;a href=&quot;http://twitter.com/SmashDev&quot;&gt;http://twitter.com/SmashDev&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    <item>
       <title>How to Electron by Blaine Schmeisser</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-blaine-schmeisser/</link>
       <pubDate>Sun, 05 Jun 2016 17:00:00 -0700</pubDate>
@@ -5559,26 +5760,33 @@ export TF_VAR_password=&amp;quot;someSecretPassword&amp;quot;
 </description>
     </item>
     <item>
-      <title>Demystifying TypeScript Decorators by James Churchill</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-james-churchill/</link>
-      <pubDate>Sun, 05 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-james-churchill/</guid>
+      <title>The SAM Pattern - a distributed system view of Front-End architectures by Jean-Jacques Dubray</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-jean-jacques-dubray/</link>
+      <pubDate>Sat, 04 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-jean-jacques-dubray/</guid>
       <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-james-churchill/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-right&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-james-churchill/james-churchill-nyc.jpg&quot; alt=&quot;James Churchill&quot;&gt;
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-jean-jacques-dubray/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-left&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-jean-jacques-dubray/jj-sized.png&quot; alt=&quot;Jean-Jacques Dubray&quot;&gt;
 &lt;/div&gt;
 
-&lt;p&gt;Portlander James has worked extensively with a variety of technologies, including ASP.NET MVC, SQL Server, JavaScript, TypeScript, Knockout.js, and AngularJS. James, a self-confessed geek, enjoys talking about programming and learning new technologies. He recently joined the Treehouse team as a teacher and is excited to have the opportunity to help beginners become developers.&lt;/p&gt;
-&lt;p&gt;James also enjoys participating in the greater Cascadian Developer Community, presenting talks in Portland, Seattle, Salt Lake City, Boise, Eugene, Salem, and Hood River. Last April, James started and co-organized the Portland TypeScript Meetup (&lt;a href=&quot;http://typescriptpdx.com/&quot;&gt;http://typescriptpdx.com/&lt;/a&gt; which is an awesome meetup, come check it out sometime!).&lt;/p&gt;
+&lt;p&gt;Jean-Jacques Dubray is the founder of &lt;a href=&quot;http://xgen.io&quot;&gt;xgen.io&lt;/a&gt; and &lt;a href=&quot;http://www.gliiph.com&quot;&gt;gliiph&lt;/a&gt;. He has been building Service Oriented Architectures,
+and API platforms for the last 15 years. He is a former member of the research staff at HRL and earned his Ph.D. from
+the University of Provence (Luminy campus), home of the Prolog language. He is the inventor of the &lt;a href=&quot;http://www.xgenio.com/bolt-introduction.pdf&quot;&gt;BOLT methodology&lt;/a&gt; and the SAM pattern.&lt;/p&gt;
+&lt;p&gt;In his talk Jean-Jacques Dubray presents that Web Applications are rapidly becoming sophisticated distributed systems. When you look at a Facebook page or a Netflix catalog,
+the number of components interacting with each other requires complex synchronization and state management capabilities, reaching
+the limits of the MVC pattern.&lt;/p&gt;
 &lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;When he is not working, he can be found skiing with his wife and kids, remodeling the house, playing music with his band, or hanging out in the yard with his chickens.&lt;/p&gt;
-&lt;p&gt;In “Demystifying TypeScript Decorators” will show us TypeScript decorators, based on the ES2016 decorator proposal and introduced as part of TypeScript 1.5, provide developers with a way to modify a JavaScript class, property, method, or method parameter using a convenient declarative syntax. We’ll start this session by creating our own decorator, to see firsthand how they work. Then, we’ll take a look at how decorators can be used in a variety of settings.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Blog: &lt;a href=&quot;http://smashdev.com&quot;&gt;http://smashdev.com&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Github: &lt;a href=&quot;http://github.com/smashdevcode&quot;&gt;http://github.com/smashdevcode&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Twitter: &lt;a href=&quot;http://twitter.com/SmashDev&quot;&gt;http://twitter.com/SmashDev&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;In the last couple of years, several reactive architectures have started to get some interest (React, Cycle.js, ELM) without
+generating significant traction (compared to established frameworks like Angular), while struggling to position effects in their
+programming model. A new reactive, functional pattern, the State-Action-Model pattern (SAM) was introduced in early 2016 on the
+foundation of TLA+ semantics.&lt;/p&gt;
+&lt;p&gt;The pattern, which is unapologetically driven by simplicity, promotes a clear delineation between the business logic and the view
+and challenges the complexity of frameworks like Google’s Angular or Facebook’s React/Redux.&lt;/p&gt;
+&lt;p&gt;SAM’s unidirectional flow is also challenging interactive patterns like BFF (Back-End for Front-End) or the Vertical Slice Pattern
+which suggest creating view-specific APIs, per platform, app, versions of an app…&lt;/p&gt;
+&lt;p&gt;We’ll start by reviewing some of the key challenges of modern UX and Front-End Architectures. We will then present the
+key concepts of SAM and walk the audience through some node.js code samples (including server-side TimeTravel).&lt;/p&gt;
 </description>
     </item>
     <item>
@@ -5612,33 +5820,20 @@ In this talk I would be covering the following:&lt;/p&gt;
 </description>
     </item>
     <item>
-      <title>The SAM Pattern - a distributed system view of Front-End architectures by Jean-Jacques Dubray</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-jean-jacques-dubray/</link>
-      <pubDate>Sat, 04 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-jean-jacques-dubray/</guid>
+      <title>WebSockets Bring Light at the End of the Tunnel by Joel Lord</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</link>
+      <pubDate>Fri, 03 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</guid>
       <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-jean-jacques-dubray/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;div class=&quot;image float-left&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-jean-jacques-dubray/jj-sized.png&quot; alt=&quot;Jean-Jacques Dubray&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/joel-lord.jpg&quot; alt=&quot;Joel Lord&quot;&gt;
 &lt;/div&gt;
 
-&lt;p&gt;Jean-Jacques Dubray is the founder of &lt;a href=&quot;http://xgen.io&quot;&gt;xgen.io&lt;/a&gt; and &lt;a href=&quot;http://www.gliiph.com&quot;&gt;gliiph&lt;/a&gt;. He has been building Service Oriented Architectures,
-and API platforms for the last 15 years. He is a former member of the research staff at HRL and earned his Ph.D. from
-the University of Provence (Luminy campus), home of the Prolog language. He is the inventor of the &lt;a href=&quot;http://www.xgenio.com/bolt-introduction.pdf&quot;&gt;BOLT methodology&lt;/a&gt; and the SAM pattern.&lt;/p&gt;
-&lt;p&gt;In his talk Jean-Jacques Dubray presents that Web Applications are rapidly becoming sophisticated distributed systems. When you look at a Facebook page or a Netflix catalog,
-the number of components interacting with each other requires complex synchronization and state management capabilities, reaching
-the limits of the MVC pattern.&lt;/p&gt;
+&lt;p&gt;As a Development Manager, Joel’s motivation and proven technical prowess makes him a key member of Spiria’s software development team. With a degree in computational astrophysics, his interests eventually made their way to software and Web design. Today, his knowledge of JavaScript lets him to support a variety of projects on both the front end and back end. As we move into the age of the Internet of Things, Joel is ready with his passion for programming node bots and experimenting with gadgets.&lt;/p&gt;
 &lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;In the last couple of years, several reactive architectures have started to get some interest (React, Cycle.js, ELM) without
-generating significant traction (compared to established frameworks like Angular), while struggling to position effects in their
-programming model. A new reactive, functional pattern, the State-Action-Model pattern (SAM) was introduced in early 2016 on the
-foundation of TLA+ semantics.&lt;/p&gt;
-&lt;p&gt;The pattern, which is unapologetically driven by simplicity, promotes a clear delineation between the business logic and the view
-and challenges the complexity of frameworks like Google’s Angular or Facebook’s React/Redux.&lt;/p&gt;
-&lt;p&gt;SAM’s unidirectional flow is also challenging interactive patterns like BFF (Back-End for Front-End) or the Vertical Slice Pattern
-which suggest creating view-specific APIs, per platform, app, versions of an app…&lt;/p&gt;
-&lt;p&gt;We’ll start by reviewing some of the key challenges of modern UX and Front-End Architectures. We will then present the
-key concepts of SAM and walk the audience through some node.js code samples (including server-side TimeTravel).&lt;/p&gt;
+&lt;p&gt;Joel is going to speak on Web Sockets and tunnels of light… or to describe it more specifically more and more, people seem to be obsessed with real-time data.  But what does real-time mean in the world of REST servers and one-way communication?  Most modern web applications are now either displaying a snapshot of data at a given time or use a polling mechanism to update series of data at a given interval.
+In this talk, you will learn about the power of WebSockets and how they can (and should!) be used in your modern web applications. In these 30 minutes, I will go through the process of building a Node server that can push data to multiple clients in real-time.  You will see how this can be easy using the socket.io library.&lt;/p&gt;
 </description>
     </item>
     <item>
@@ -5676,23 +5871,6 @@ it can be.&lt;/p&gt;
 &lt;li&gt;show number of players&lt;/li&gt;
 &lt;li&gt;start when 4 players in? one player hit’s start? let all player see total count as well and status of the other players&lt;/li&gt;
 &lt;/ul&gt;
-</description>
-    </item>
-    <item>
-      <title>WebSockets Bring Light at the End of the Tunnel by Joel Lord</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</link>
-      <pubDate>Fri, 03 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</guid>
-      <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-left&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/joel-lord.jpg&quot; alt=&quot;Joel Lord&quot;&gt;
-&lt;/div&gt;
-
-&lt;p&gt;As a Development Manager, Joel’s motivation and proven technical prowess makes him a key member of Spiria’s software development team. With a degree in computational astrophysics, his interests eventually made their way to software and Web design. Today, his knowledge of JavaScript lets him to support a variety of projects on both the front end and back end. As we move into the age of the Internet of Things, Joel is ready with his passion for programming node bots and experimenting with gadgets.&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Joel is going to speak on Web Sockets and tunnels of light… or to describe it more specifically more and more, people seem to be obsessed with real-time data.  But what does real-time mean in the world of REST servers and one-way communication?  Most modern web applications are now either displaying a snapshot of data at a given time or use a polling mechanism to update series of data at a given interval.
-In this talk, you will learn about the power of WebSockets and how they can (and should!) be used in your modern web applications. In these 30 minutes, I will go through the process of building a Node server that can push data to multiple clients in real-time.  You will see how this can be easy using the socket.io library.&lt;/p&gt;
 </description>
     </item>
     <item>
@@ -5740,23 +5918,6 @@ In this talk, you will learn about the power of WebSockets and how they can (and
 </description>
     </item>
     <item>
-      <title>The House Is Not On Fire - Building a home automation robot with Arduino, Raspberry Pi and Node.js by Artur Paikin</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</link>
-      <pubDate>Wed, 01 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</guid>
-      <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-right&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/art-stida.jpg&quot; alt=&quot;Artur Paikin&quot;&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Artur describes himself as, “I’m a web developer and traveler. I write stories about my adventures in Russian and English on my site: &lt;a href=&quot;http://arturpaikin.com&quot;&gt;http://arturpaikin.com&lt;/a&gt; and run a small technology cooperative called &lt;a href=&quot;http://unebaguette.com&quot;&gt;Baguette&lt;/a&gt;, where I work on cool projects, currently building an ambitious next generation file uploader with &lt;a href=&quot;https://transloadit.com/&quot;&gt;Transloadit&lt;/a&gt;. I ride a &lt;a href=&quot;https://www.instagram.com/p/xC0qC2SSYb&quot;&gt;foldable bicycle&lt;/a&gt;, &lt;a href=&quot;http://unebaguette.com/web-course/&quot;&gt;teach&lt;/a&gt; web development and sometimes &lt;a href=&quot;https://www.instagram.com/p/4_6LO8ySVL/&quot;&gt;garden&lt;/a&gt; on the balcony.”&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Artur has built an open source home automation system called &lt;a href=&quot;https://github.com/arturi/kotihome&quot;&gt;Koti Home&lt;/a&gt; (Koti means home in Finnish language). It’s powered by an Arduino connected to Raspberry Pi, MQTT protocol for messaging, Node.js on the client and server, web sockets. You can interact with Koti robot via a React (like the cool kids do) control panel, Telegram Chat Bot and even your own voice.&lt;/p&gt;
-&lt;p&gt;Arthur will talk about how he’s turned this project into reality — the tech he used and the challenges he faced. From a blinking LED to a voice controlled home automation robot.&lt;/p&gt;
-</description>
-    </item>
-    <item>
       <title>Code First Docs How we Threw Out The Book &amp; Put Code First With Twilio Documentation by Jarod Reyes</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-jarod-reyes/</link>
       <pubDate>Wed, 01 Jun 2016 17:00:00 -0700</pubDate>
@@ -5778,6 +5939,23 @@ In this talk, you will learn about the power of WebSockets and how they can (and
 &lt;li&gt;Twitter: &lt;a href=&quot;https://twitter.com/jreyesdev&quot;&gt;@jreyesdev&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Github: &lt;a href=&quot;https://github.com/jarodreyes&quot;&gt;github.com/jarodreyes&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+</description>
+    </item>
+    <item>
+      <title>The House Is Not On Fire - Building a home automation robot with Arduino, Raspberry Pi and Node.js by Artur Paikin</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</link>
+      <pubDate>Wed, 01 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-right&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/art-stida.jpg&quot; alt=&quot;Artur Paikin&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Artur describes himself as, “I’m a web developer and traveler. I write stories about my adventures in Russian and English on my site: &lt;a href=&quot;http://arturpaikin.com&quot;&gt;http://arturpaikin.com&lt;/a&gt; and run a small technology cooperative called &lt;a href=&quot;http://unebaguette.com&quot;&gt;Baguette&lt;/a&gt;, where I work on cool projects, currently building an ambitious next generation file uploader with &lt;a href=&quot;https://transloadit.com/&quot;&gt;Transloadit&lt;/a&gt;. I ride a &lt;a href=&quot;https://www.instagram.com/p/xC0qC2SSYb&quot;&gt;foldable bicycle&lt;/a&gt;, &lt;a href=&quot;http://unebaguette.com/web-course/&quot;&gt;teach&lt;/a&gt; web development and sometimes &lt;a href=&quot;https://www.instagram.com/p/4_6LO8ySVL/&quot;&gt;garden&lt;/a&gt; on the balcony.”&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Artur has built an open source home automation system called &lt;a href=&quot;https://github.com/arturi/kotihome&quot;&gt;Koti Home&lt;/a&gt; (Koti means home in Finnish language). It’s powered by an Arduino connected to Raspberry Pi, MQTT protocol for messaging, Node.js on the client and server, web sockets. You can interact with Koti robot via a React (like the cool kids do) control panel, Telegram Chat Bot and even your own voice.&lt;/p&gt;
+&lt;p&gt;Arthur will talk about how he’s turned this project into reality — the tech he used and the challenges he faced. From a blinking LED to a voice controlled home automation robot.&lt;/p&gt;
 </description>
     </item>
     <item>
@@ -7009,6 +7187,45 @@ The &lt;a href=&quot;https://marketplace.visualstudio.com/#VSCode&quot; target=&
 &lt;script async src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;</description>
     </item>
     <item>
+      <title>A Small Rant About Being IDE-Dependent</title>
+      <link>http://adron.github.io/articles/a-rant-on-ide-dependency/</link>
+      <pubDate>Mon, 14 Sep 2015 17:36:14 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/a-rant-on-ide-dependency/</guid>
+      <author></author>
+      <description>&lt;p&gt;{Sort of a Rant}&lt;/p&gt;
+&lt;p&gt;I recently saw this tweet.&lt;/p&gt;
+&lt;p&gt;&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;en&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;You can&amp;#39;t create a project in visual studio code? This seems like an odd decision&lt;/p&gt;&amp;mdash; gregyoung (@gregyoung) &lt;a href=&quot;https://twitter.com/gregyoung/status/643741277977210880?ref_src=twsrc%5Etfw&quot;&gt;September 15, 2015&lt;/a&gt;&lt;/blockquote&gt;&lt;/p&gt;
+&lt;script async src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;I responded with this tweet.&lt;/p&gt;
+&lt;p&gt;&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;en&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;&lt;a href=&quot;https://twitter.com/gregyoung?ref_src=twsrc%5Etfw&quot;&gt;@gregyoung&lt;/a&gt; yeah, projects being a tightly coupled dependency to the IDE needs to be ripped from the minds. &lt;a href=&quot;https://twitter.com/hashtag/yeoman?src=hash&amp;amp;ref_src=twsrc%5Etfw&quot;&gt;#yeoman&lt;/a&gt;&lt;/p&gt;&amp;mdash; Λdrøn @ ¯_(ツ)_/¯ (@Adron) &lt;a href=&quot;https://twitter.com/Adron/status/643742088987836416?ref_src=twsrc%5Etfw&quot;&gt;September 15, 2015&lt;/a&gt;&lt;/blockquote&gt;&lt;/p&gt;
+&lt;script async src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;Now I need to describe some context around this response real quick. Here are the key points behind this tweet from my context in the software development industry.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;I’m not a .NET Developer. I’m a software developer, or application programming, coder, hacker or more accurately I’m a solutions developer. I don’t tie myself to one stack. I’ve developed with C# &amp;amp; VB.NET with Visual Studio. I’ve done C++ and VB 4. I’ve done VBA and all sorts of other things in the Microsoft space on Windows and for the web with Windows technology. About 5 years ago I completely dropped that operating system dependency and have been free of it for those 5 years. I doubt I ever want to couple an application up to that monstrous operating system again, it is far to limiting and has no significant selling point anymore.&lt;/li&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;In addition to the .NET code I’ve written over the years I’ve also built a few dozen Erlang Applications (wish I’d known about Elixir at the time), built a ton of Node.js based API and web applications, and have even done some Ruby on Rails and Sinatra. These languages and tooling stacks really introduced me to reality I longed for. A clean, fast, understandable reality. A reality with configuration files that are readable and convention that gives me real power to get things done and move on to the next business need. These stacks gave me the ability to focus more on code and business and research value and less on building the tool stack up just to get one single deployment out the door. Since, I’ve not looked back, because the heavy handed stacks of legacy Java, .NET, and related things have only laid heavily on small business and startups trying to add business value. In the lands I live in, that is San Francisco to Vancouver BC and the cities in between, Java and .NET can generally take a hike. Because businesses have things to do, namely make money or commit to getting research done and not piddling around building a tool stack up.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;So how was this new reality created? It isn’t a new one, really the new reality was this heavy handed IDE universe of fat editors that baby a developer through every step. They create laziness in thinking and do NOT encourage a lean, efficient, simple way to get an application built and running. It doesn’t have to be this way. A small amount of developer discipline, or dare I say craftsmanship, and most of these fat IDEs and tightly coupled projects with massive XML files for configuration in their unreadable catastrophofuck of spaghetti can just go away.&lt;/p&gt;
+&lt;p&gt;Atom, Sublime, and other editors before that harnessed this clean, lean, and fast approach to software development. A Node.js Project only needs one file and one command to start a project.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;npm init
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;A Ruby on Rails Project is about the same.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;rails new path/to/your/new/application&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;That’s it, and BOOM you’ve got an application project base to start from.&lt;/p&gt;
+&lt;p&gt;Beyond that however, using a tool like Yeoman opens up a very Unix style way of doing something. Yeoman has a purpose, to build scaffolding for applications. That is its job and it does that job well. It has a pluggable architecture to enable you to build all sorts of scaffold packaging that you want. Hell, you can even create projects with the bloated and unreadable XML blight that pervades many project types out there from enterprisey platforms.&lt;/p&gt;
+&lt;p&gt;Take a look at &lt;a href=&quot;http://yeoman.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Yeoman&lt;/a&gt;, it is well worth a look. This is a tool that allows us to keep our tooling, what we do use, loosely coupled so we don’t have a massive bloated (5+ GB) installation of nonsense to put on our machines. Anybody on any platform can load up Yeoman, and grab an editor like Atom, Submlime, Visual Studio Code (not to be confused with the bloated Visual Studio) and just start coding!&lt;/p&gt;
+&lt;p&gt;Take a look at some of the generators that yeoman will build projects for you with -&amp;gt; &lt;a href=&quot;http://yeoman.io/generators/&quot;&gt;http://yeoman.io/generators/&lt;/a&gt; There are over 1500! No more need to tightly couple this into an IDE. Just provide a yeoman plugin in your editor of choice. Boom, all the features you need without the tight coupling in editor! Win, win, win, win, and win!&lt;/p&gt;
+&lt;p&gt;As a bit more of my rant about bloated editors, and don’t get me wrong, I love some of the features of the largesse of some like Visual Studio and WebStorm. But one huge rant I have is the absolutely zero motivation or vested interest that a community has to add features, bug fix, or do anything in relation to editors like Visual Studio or WebStorm. ZERO reason to help, only to file complaints or maybe file a bug complaint. That’s cool, I’m glad that the editors exist but this model isn’t the future. It’s slowly dying and having tightly coupled, slow, massively bloated editors isn’t going to be sustainable. They don’t adapt to new stacks, languages, or even existing ones.&lt;/p&gt;
+&lt;p&gt;Meanwhile, Atom, Sublime, and even Visual Studio Code and other lean editors have plugin and various adaptar patterns that allow one to add support for new languages, stacks, frameworks, and related tooling and not have tight coupling to that thing. This gives these editors the ability to add features and capabilities for stacks at a dramatically faster rate than the traditional fat IDEs.&lt;/p&gt;
+&lt;p&gt;This is the same idea toward tooling that is used in patterns that a software developer ought to know. Think of patterns like seperation of concerns and loose coupling, don’t tie yourself into an untenable and frustrating toolchain. Keep it loosely coupled and I promise, your life will get easier and that evening beer will come a little bit sooner.&lt;/p&gt;
+&lt;p&gt;{Sort of a Rant::End}&lt;/p&gt;
+&lt;p&gt;…and this is why I say, do NOT tie project creation into an editor. Instead keep things loosely coupled and let’s move into the future.&lt;/p&gt;
+</description>
+    </item>
+    <item>
       <title>Don't Learn to Code, That's Just Nonsense...  Learn Instead!</title>
       <link>http://adron.github.io/articles/dont-learn-to-code-learn-to-learn/</link>
       <pubDate>Thu, 10 Sep 2015 19:07:47 -0700</pubDate>
@@ -7032,6 +7249,175 @@ The &lt;a href=&quot;https://marketplace.visualstudio.com/#VSCode&quot; target=&
 &lt;h2 id=&quot;summarized&quot;&gt;Summarized&lt;/h2&gt;
 &lt;p&gt;These two skills will give you far more of an advantage in life then merely learning to program or taking classes or going to school to learn to program/code/hack/whatever. So do yourself a favor, don’t get suckered by the “&lt;em&gt;Learn programming and get a good job QUICK!&lt;/em&gt;“ nonsense. If you gain the two skills I mentioned and get your brain sorted, you’ll do much better than merely learning to program and you’ll thank yourself in the future!&lt;/p&gt;
 &lt;p&gt;I can promise you that!  :)&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>__4 &quot;CD Is Working, Let's Get a Site Live with Loopback!&quot;</title>
+      <link>http://adron.github.io/articles/cd-is-working-lets-get-a-site-live-with-loopback/</link>
+      <pubDate>Sun, 06 Sep 2015 17:42:17 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/cd-is-working-lets-get-a-site-live-with-loopback/</guid>
+      <author></author>
+      <description>&lt;p&gt;Since it has been more than a few weeks let’s do a quick recap of the previous posts in this series.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://compositecode.wordpress.com/2015/04/06/introducing-the-team/&quot;&gt;Introducing the Thrashing Code Team and Projects&lt;/a&gt; - Know who’s working on what and what the projects are.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://compositecode.wordpress.com/2015/04/07/__1-getting-started-kanban-first-steps-for-a-sharing-app/&quot;&gt;Getting Started, Kanban &amp;amp; First Steps for a Sharing App&lt;/a&gt; - Getting the kanban put together and the team involved.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://compositecode.wordpress.com/2015/04/08/__2-got-our-kanban-lets-start-a-basic-loopback-api/&quot;&gt;Starting a Basic Loopback API &amp;amp; Continuous Integration&lt;/a&gt; - Getting the skeleton of the API application setup and the continuous integration services running.&lt;/li&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://compositecode.wordpress.com/2015/06/05/__3-going-the-full-mile-continuous-delivery/&quot;&gt;Going the Full Mile, Continuous Delivery&lt;/a&gt; - Here the team got the full continuous delivery process setup for ongoing development efforts.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;In this article of the series I work with some of my cohort to get initial parts of the application deployed to production. For the first part of this, let’s get some of the work that &lt;a href=&quot;https://github.com/NordaLlah&quot;&gt;Norda&lt;/a&gt; has done into the project and get it running on the client side.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;h2&gt;Client Side&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://photos.adron.me/Software/Software-Development/Work-Flow-of-JavaScript/i-TQ6gRPT/0/O/2015-08-22_15-24-48.png&quot; alt=&quot;client directory of the loopback project.&quot;&gt;&lt;/p&gt;
+&lt;p&gt;The first thing I needed was to get a static page setup. This page would then be used to submit an email to the server side that would then deal with whatever processing that I would have for the email message confirmation and related actions.&lt;/p&gt;
+&lt;p&gt;In Loopback, it is very easy to setup a static page. I just needed a simple index.html page so I created an empty one in the client directory of the project.&lt;/p&gt;
+&lt;p&gt;The first thing I did was literally put an index.html file with the words “this should work” in the client directory of the project. But after some tweaking and adding in Norda’s work the team ended up with the following.&lt;/p&gt;
+&lt;p&gt;The next thing to do is setup the Loopback.io framework to host a static site page.&lt;/p&gt;
+&lt;h3&gt;Static Page via Loopback.io&lt;/h3&gt;
+
+&lt;p&gt;This part of the article is taken pretty much straight out of the&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://docs.strongloop.com/display/public/LB/Add+a+static+web+page&quot;&gt;static page hosting Strongloop Loopback.io Documentation&lt;/a&gt;.&lt;/p&gt;
+&lt;blockquote&gt;Applications typically need to serve static content such as HTML and CSS files, client JavaScript files, images, and so on.  It’s very easy to do this with the default scaffolded LoopBack application.  You’re going to configure the application to serve any files in the &lt;code&gt;/client&lt;/code&gt; directory as static assets.
+
+First, you have to disable the default route handler for the root URL.   Remember back in &lt;a class=&quot;unresolved&quot; href=&quot;https://docs.strongloop.com/display/public/LB/Add+a+static+web+page#&quot;&gt;Create a simple API&lt;/a&gt; (you have been following along, haven’t you?) when you loaded the application root URL, &lt;a class=&quot;external-link&quot; href=&quot;http://localhost:3000/&quot; rel=&quot;nofollow&quot;&gt;http://localhost:3000/&lt;/a&gt;, you saw the application respond with a simple status message such as this:
+&lt;pre&gt;{“started”:”2014-11-20T21:59:47.155Z”,”uptime”:42.054}&lt;/pre&gt;
+This happens because by default the scaffolded application has a boot script named &lt;code&gt;root.js&lt;/code&gt; that sets up route-handling middleware for the root route (“/“):
+
+&lt;b&gt;server/boot/root.js&lt;/b&gt;
+
+&lt;code&gt;javascript
+module.exports = function(server) {  // Install a `/` route that returns server status
+  var router = server.loopback.Router();
+  router.get(&amp;#39;/&amp;#39;, server.loopback.status());
+  server.use(router);
+};&lt;/code&gt;
+
+This code says that for any GET request to the root URI (“/“), the application will return the results of &lt;code&gt;&lt;a class=&quot;external-link&quot; href=&quot;http://apidocs.strongloop.com/loopback/#loopbackstatus&quot; rel=&quot;nofollow&quot;&gt;loopback.status()&lt;/a&gt;&lt;/code&gt;.
+
+To make your application serve static content you need to disable this script.  &lt;strong&gt;Either delete it or just rename it&lt;/strong&gt; to something without a &lt;code&gt;.js&lt;/code&gt; ending (that ensures the application won’t execute it).
+&lt;h2&gt;Define static middleware&lt;/h2&gt;
+Next, you need to define static middleware to serve files in the &lt;code&gt;/client&lt;/code&gt; directory.
+
+Edit &lt;code&gt;server/middleware.json&lt;/code&gt;.  Look for the “files” entry:
+
+&lt;code&gt;javascript
+...
+  &amp;quot;files&amp;quot;: {
+  },
+...&lt;/code&gt;
+
+&lt;b&gt;server/middleware.json&lt;/b&gt;
+
+Add the following:
+
+&lt;code&gt;javascript
+...
+  &amp;quot;files&amp;quot;: {
+    &amp;quot;loopback#static&amp;quot;: {
+      &amp;quot;params&amp;quot;: &amp;quot;$!../client&amp;quot;
+    }
+  },
+...&lt;/code&gt;
+
+These lines define &lt;em&gt;&lt;a href=&quot;https://docs.strongloop.com/display/LB/Defining+middleware#Definingmiddleware-Staticmiddleware&quot;&gt;static middleware&lt;/a&gt;&lt;/em&gt; that makes the application serve files in the &lt;code&gt;/client&lt;/code&gt; directory as static content.  The &lt;code&gt;$!&lt;/code&gt; characters indicate that the path is relative to the location of &lt;code&gt;middleware.json&lt;/code&gt;.
+&lt;h2 id=&quot;Addastaticwebpage-AddanHTMLfile&quot;&gt;Add an HTML file&lt;/h2&gt;
+Now, the application will serve any files you put in the &lt;code&gt;/client&lt;/code&gt; directory as static (client-side) content.  So, to see it in action, add an HTML file to &lt;code&gt;/client&lt;/code&gt;.  For example, add a file named &lt;code&gt;index.html&lt;/code&gt; with this content:
+
+&lt;b&gt;/client/index.html&lt;/b&gt;
+
+&lt;code&gt;javascript
+&amp;lt;head&amp;gt;
+    &amp;lt;title&amp;gt;LoopBack&amp;lt;/title&amp;gt;
+&amp;lt;/head&amp;gt;
+&amp;lt;body&amp;gt;
+&amp;lt;h1&amp;gt;Whatevs&amp;lt;/h1&amp;gt;
+Some static content...  but just look at the big HTML file below!  :)
+
+&amp;lt;/body&amp;gt;&lt;/code&gt;
+
+Of course, you can add any static HTML you like–this is just an example.&lt;/blockquote&gt;
+
+&lt;div class=&quot;image float-right&quot;&gt;
+&lt;a href=&quot;https://github.com/ThrashingCode/coder-swap&quot;&gt;&lt;img src=&quot;http://photos.adron.me/Software/Software-Development/Work-Flow-of-JavaScript/i-57TRrsf/0/S/ms-icon-310x310-S.png&quot; alt=&quot;The Logo&quot;&gt;&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;graphic-assets&quot;&gt;Graphic Assets&lt;/h3&gt;
+&lt;p&gt;Norda setup the project with a number of assets for the current page creation as well as future pages the site will need. The theme is a high quality theme, with the Coder Swap Logo added at respective key locations. The following are the graphics assets included in the project under the &lt;a href=&quot;https://github.com/Adron/coder-swap/tree/registration-page/client&quot;&gt;client directory here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The key files that are included that will be used for our first site we deploy are the various favicon, logo, and related images. You can see those in the root of the client directory. There are a whole bunch of them because of the funky mobile design requirements.&lt;/p&gt;
+&lt;h3 id=&quot;index-html&quot;&gt;Index.html&lt;/h3&gt;
+&lt;p&gt;The first page I’ve setup is a simple sign up page, with no real functionality. Just something to get started with to build off of. The code for that page looks like this.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;&amp;lt;!DOCTYPE html&amp;gt;
+&amp;lt;html&amp;gt;
+&amp;lt;head&amp;gt;
+    &amp;lt;title&amp;gt;
+        Code Swap - Notify Me!
+    &amp;lt;/title&amp;gt;
+        &amp;lt;link href=&quot;http://fonts.googleapis.com/css?family=Lato:100,300,400,700&quot; media=&quot;all&quot; rel=&quot;stylesheet&quot;
+          type=&quot;text/css&quot;/&amp;gt;
+        &amp;lt;link href=&quot;stylesheets/bootstrap.min.css&quot; media=&quot;all&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;/&amp;gt;
+        &amp;lt;link href=&quot;stylesheets/font-awesome.min.css&quot; media=&quot;all&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;/&amp;gt;
+        &amp;lt;link href=&quot;stylesheets/se7en-font.css&quot; media=&quot;all&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;/&amp;gt;
+        &amp;lt;link href=&quot;stylesheets/style.css&quot; media=&quot;all&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;/&amp;gt;
+        &amp;lt;link rel=&quot;shortcut icon&quot; href=&quot;favicon.ico&quot;&amp;gt;
+        &amp;lt;link rel=&quot;apple-touch-icon&quot; sizes=&quot;57x57&quot; href=&quot;apple-icon-57x57.png&quot;&amp;gt;
+        &amp;lt;link rel=&quot;apple-icon&quot; sizes=&quot;114x114&quot; href=&quot;apple-icon-114x114.png&quot;&amp;gt;
+        &amp;lt;link rel=&quot;apple-icon&quot; sizes=&quot;72x72&quot; href=&quot;apple-icon-72x72.png&quot;&amp;gt;
+        &amp;lt;link rel=&quot;apple-icon&quot; sizes=&quot;144x144&quot; href=&quot;apple-icon-144x144.png&quot;&amp;gt;
+        &amp;lt;link rel=&quot;apple-icon&quot; sizes=&quot;60x60&quot; href=&quot;apple-icon-60x60.png&quot;&amp;gt;
+        &amp;lt;link rel=&quot;apple-icon&quot; sizes=&quot;120x120&quot; href=&quot;apple-icon-120x120.png&quot;&amp;gt;
+        &amp;lt;link rel=&quot;apple-icon&quot; sizes=&quot;76x76&quot; href=&quot;apple-icon-76x76.png&quot;&amp;gt;
+        &amp;lt;link rel=&quot;apple-icon&quot; sizes=&quot;152x152&quot; href=&quot;apple-icon-152x152.png&quot;&amp;gt;
+        &amp;lt;link rel=&quot;apple-icon&quot; sizes=&quot;180x180&quot; href=&quot;apple-touch-icon-180x180.png&quot;&amp;gt;
+        &amp;lt;link rel=&quot;icon&quot; type=&quot;image/png&quot; href=&quot;favicon-192x192.png&quot; sizes=&quot;192x192&quot;&amp;gt;
+        &amp;lt;link rel=&quot;icon&quot; type=&quot;image/png&quot; href=&quot;favicon-160x160.png&quot; sizes=&quot;160x160&quot;&amp;gt;
+        &amp;lt;link rel=&quot;icon&quot; type=&quot;image/png&quot; href=&quot;favicon-96x96.png&quot; sizes=&quot;96x96&quot;&amp;gt;
+        &amp;lt;link rel=&quot;icon&quot; type=&quot;image/png&quot; href=&quot;favicon-16x16.png&quot; sizes=&quot;16x16&quot;&amp;gt;
+        &amp;lt;link rel=&quot;icon&quot; type=&quot;image/png&quot; href=&quot;favicon-32x32.png&quot; sizes=&quot;32x32&quot;&amp;gt;
+    &amp;lt;meta name=&quot;msapplication-TileColor&quot; content=&quot;#ffffff&quot;&amp;gt;
+    &amp;lt;meta name=&quot;msapplication-TileImage&quot; content=&quot;mstile-144x144.png&quot;&amp;gt;
+    &amp;lt;meta name=&quot;msapplication-config&quot; content=&quot;browserconfig.xml&quot;&amp;gt;
+
+    &amp;lt;script src=&quot;http://code.jquery.com/jquery-1.10.2.min.js&quot; type=&quot;text/javascript&quot;&amp;gt;&amp;lt;/script&amp;gt;
+    &amp;lt;script src=&quot;http://code.jquery.com/ui/1.10.3/jquery-ui.js&quot; type=&quot;text/javascript&quot;&amp;gt;&amp;lt;/script&amp;gt;
+    &amp;lt;script src=&quot;javascripts/bootstrap.min.js&quot; type=&quot;text/javascript&quot;&amp;gt;&amp;lt;/script&amp;gt;
+    &amp;lt;script src=&quot;javascripts/modernizr.custom.js&quot; type=&quot;text/javascript&quot;&amp;gt;&amp;lt;/script&amp;gt;
+    &amp;lt;script src=&quot;javascripts/main.js&quot; type=&quot;text/javascript&quot;&amp;gt;&amp;lt;/script&amp;gt;
+    &amp;lt;meta content=&quot;width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no&quot; name=&quot;viewport&quot;&amp;gt;
+&amp;lt;/head&amp;gt;
+&amp;lt;body class=&quot;login2&quot;&amp;gt;
+&amp;lt;!-- Registration Screen --&amp;gt;
+&amp;lt;div class=&quot;login-wrapper&quot;&amp;gt;
+    &amp;lt;a href=&quot;./&quot;&amp;gt;
+        &amp;lt;img width=&quot;100&quot;
+             height=&quot;30&quot;
+             src=&quot;images/logo-login@2x.png&quot;/&amp;gt;
+    &amp;lt;/a&amp;gt;
+    &amp;lt;form&amp;gt;
+&amp;lt;div class=&quot;form-group&quot;&amp;gt;
+&amp;lt;div class=&quot;input-group&quot;&amp;gt;
+                &amp;lt;span class=&quot;input-group-addon&quot;&amp;gt;
+                    &amp;lt;i class=&quot;fa fa-envelope&quot;&amp;gt;&amp;lt;/i&amp;gt;
+                &amp;lt;/span&amp;gt;
+                &amp;lt;input class=&quot;form-control&quot;
+                       type=&quot;text&quot;
+                       value=&quot;Enter your email address&quot;&amp;gt;&amp;lt;/div&amp;gt;
+&amp;lt;/div&amp;gt;
+&amp;lt;input class=&quot;btn btn-lg btn-primary btn-block&quot;
+               type=&quot;submit&quot;
+               value=&quot;Register for updates!&quot;&amp;gt;
+    &amp;lt;/form&amp;gt;&amp;lt;/div&amp;gt;
+&amp;lt;!-- End Registration Screen --&amp;gt;
+&amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;As you can see a bulk of the page is favicon and logo related nonsense while about a 1/3rd of the screen is actually the HTML for the form itself. What that looks like when rendered is something like this.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://photos.adron.me/Software/Software-Development/Work-Flow-of-JavaScript/i-nbjH27Z/0/O/2015-09-07_08-07-29%20-%202.png&quot; alt=&quot;The registration page.&quot; width=&quot;851&quot; height=&quot;545&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Once that page is up we can then commit to the production branch as outlined in the &lt;a href=&quot;http://compositecode.com/2015/06/05/__3-going-the-full-mile-continuous-delivery/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;previous blog entry&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;btw&lt;/em&gt; - If you’re curious (especially if you’ve read the intro blog entry about the &lt;a href=&quot;http://compositecode.com/2015/04/06/introducing-the-team/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;mock team&lt;/a&gt;), you might be wondering where and who and how did I create this gorgeous theme? Well, I didn’t, I actually purchased this sweet theme from &lt;a href=&quot;http://themeforest.net/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Theme Forrest&lt;/a&gt;. The specific theme is &lt;a href=&quot;http://themeforest.net/item/se7en-bootstrap-3-responsive-admin-template/5423243&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;se7en&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     <item>
