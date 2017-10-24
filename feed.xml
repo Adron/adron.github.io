@@ -5,20 +5,49 @@
     <atom:link href="http://adron.github.io/feed.xml" rel="self" type="application/rss+xml"></atom:link>
     <link>http://adron.github.io</link>
     <description>Coder, Messenger, Recon, Infrastructure, Ops</description>
-    <pubDate>Thu, 19 Oct 2017 12:20:39 -0700</pubDate>
+    <pubDate>Mon, 23 Oct 2017 13:12:26 -0700</pubDate>
     <generator>Wintersmith - https://github.com/jnordberg/wintersmith</generator>
     <language>en</language>
     <item>
+      <title>Thrashing Code Metal Monday for Week of October 23rd 2017</title>
+      <link>http://adron.github.io/articles/thrashing-code-metal-monday-10-23-2017/</link>
+      <pubDate>Mon, 23 Oct 2017 13:12:26 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/thrashing-code-metal-monday-10-23-2017/</guid>
+      <author></author>
+      <description>&lt;p&gt;This has been a ridiculously productive Monday. I’ve got a lot of communications kicked off and some continued on a number of key points of business. I’ve also been involved with editing, writing, and getting a number blog entries posted today besides this one.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://blog.adron.me/articles/terraform-kubernetes-gcp/&quot;&gt;Build a Kubernetes Cluster on Google Cloud Platform with Terraform&lt;/a&gt; - even though I wrapped it up last night I saved it for a final edit run this morning. That published super early.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://medium.com/@adron/speaking-follow-up-and-improving-a5e5d205d2af&quot;&gt;Speaking, Follow Up, and Improving&lt;/a&gt; - Next up was this post where I outlined my mission when presenting, and what I aim to accomplish with every presentation I give.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.pelo.tech/blog/2017/10/19/full-stack-c-services-restgrpc-apollo-graphql-and-reactjs&quot;&gt;A Modern Cross-Platform approach to µServices in .NET&lt;/a&gt; - Then I did a final edit pass on and worked with Joachim @ &lt;a href=&quot;https://pelo.tech&quot;&gt;Pelotech&lt;/a&gt; to get this article published. He’s got some really great material coming on the tail of this one too. C#, REST Services, microservice style implementation, GRPC, graphql, reactjs, and more.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://medium.com/@adron/big-ole-invisible-freight-railroads-lets-talk-volumes-5f159d563194&quot;&gt;Big Ole Invisible Freight Railroads (Let’s Talk Volumes)&lt;/a&gt; - In my search for freight shipments data, I wrote a piece on my efforts to find, and eventually fumble through not finding the granularity of data that I needed.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Now I’m kicking back and chilling for a few on the couch and it was just time for some relaxing metal tunes. These are different then the ones I often post, which tend toward waking up and kicking off Monday with attitude. But before diving into the metal this grand Monday, let’s talk about a code challenge shall we?&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;h2 id=&quot;code-challenge&quot;&gt;Code challenge&lt;/h2&gt;
+&lt;p&gt;Alright, imagine a recent problem where &lt;a href=&quot;https://en.wikipedia.org/wiki/Currying&quot;&gt;currying&lt;/a&gt; is in play. Then combine that with a problem with which you would use an &lt;a href=&quot;https://en.wikipedia.org/wiki/Anonymous_function&quot;&gt;anonymous function&lt;/a&gt; to solve a problem.&lt;/p&gt;
+&lt;p&gt;Now using one language, implement a sample of each in that one language and post a gist. Rewards this week are a Thrashing Code sticker plus one beverage of your choice. I’ll actually send you ONE beverage of your choice. Ok, I won’t sent you &lt;a href=&quot;https://www.reservebar.com/glenmorangie-pride-1981-single-malt-whisky&quot;&gt;Glenmorangie Pride from 81&lt;/a&gt;, but something like a 6 pack of &lt;a href=&quot;https://www.beeradvocate.com/beer/profile/5504/17055/&quot;&gt;Black Boss Porter&lt;/a&gt; or your choice &lt;a href=&quot;http://drinkviso.com/&quot;&gt;Viso&lt;/a&gt; if that’s your thing. It’s easy, take a stab at it!&lt;/p&gt;
+&lt;p&gt;Now for your listening pleasure, some grand, relaxing, chill evening metal.&lt;/p&gt;
+&lt;iframe src=&quot;https://open.spotify.com/embed/album/0jhRwpvbLhqVoS5mJAduhm&quot; width=&quot;300&quot; height=&quot;380&quot; frameborder=&quot;0&quot; allowtransparency=&quot;true&quot;&gt;&lt;/iframe&gt;
+
+&lt;iframe src=&quot;https://open.spotify.com/embed/album/3AglitukJSID7M51tDEDdH&quot; width=&quot;300&quot; height=&quot;380&quot; frameborder=&quot;0&quot; allowtransparency=&quot;true&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;…and I like to work in threes, so here’s that third gem…&lt;/p&gt;
+&lt;iframe src=&quot;https://open.spotify.com/embed/album/6YK1e5fsBWxVWePBgdOY5w&quot; width=&quot;300&quot; height=&quot;380&quot; frameborder=&quot;0&quot; allowtransparency=&quot;true&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;Until next time, happy code thrashing!&lt;/p&gt;
+</description>
+    </item>
+    <item>
       <title>Build a Kubernetes Cluster on Google Cloud Platform with Terraform</title>
       <link>http://adron.github.io/articles/terraform-kubernetes-gcp/</link>
-      <pubDate>Thu, 19 Oct 2017 12:20:39 -0700</pubDate>
+      <pubDate>Mon, 23 Oct 2017 00:20:39 -0700</pubDate>
       <guid isPermaLink="true">http://adron.github.io/articles/terraform-kubernetes-gcp/</guid>
       <author></author>
       <description>&lt;div class=&quot;image float-right&quot;&gt;
     &lt;img src=&quot;/articles/terraform-kubernetes-gcp/terraform.png&quot; alt=&quot;Terraform&quot;&gt;
 &lt;/div&gt;
 
-&lt;p&gt;In this blog entry I’m going to detail the exact configuration and cover in some additional details the collateral resources you can expect to find once the configuration is executed against with Terraform.&lt;/p&gt;
+&lt;p&gt;In this blog entry I’m going to detail the exact configuration and cover in some additional details the collateral resources you can expect to find once the configuration is executed against with Terraform. For the repository to this write up, I create &lt;em&gt;&lt;a href=&quot;https://github.com/Adron/our_new_world&quot;&gt;our_new_world&lt;/a&gt;&lt;/em&gt; available on Github.&lt;/p&gt;
 &lt;p&gt;A lot of this material I wrote about with &lt;a href=&quot;http://adron.github.io/articles/setting-up-gcp-container-cluster/&quot;&gt;Setting up a GCP Container Cluster - Part I&lt;/a&gt; and &lt;a href=&quot;http://adron.github.io/articles/setting-up-gcp-container-cluster-part-2/&quot;&gt;Setting up a GCP Container Cluster - Part II&lt;/a&gt;. I had started on a Part 3 around setting up Drone.io on a Kubernetes/GCP Container Cluster but stopped midway through with other demands. This post is a more up to date post of all those things plus more. With this post completed I’ve stepped back into getting Drone.io setup and am now &lt;em&gt;finally&lt;/em&gt; finishing that blog entry! &lt;em&gt;#win&lt;/em&gt;!&lt;/p&gt;
 &lt;p&gt;First things first, locally you’ll want to have the respective CLI tools installed for Google Cloud Platform, Terraform, and Kubernetes.&lt;/p&gt;
 &lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
@@ -184,6 +213,45 @@ linux_admin_password = &lt;span class=&quot;string&quot;&gt;&quot;supersecretpas
 &lt;p&gt;&lt;img src=&quot;/articles/terraform-kubernetes-gcp/ssh-window-01.png&quot; alt=&quot;SSH Starting&quot;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;/articles/terraform-kubernetes-gcp/ssh-window-02.png&quot; alt=&quot;SSH Prompt&quot;&gt;&lt;/p&gt;
 &lt;p&gt;This comes in handy if any of the instances ends up having issues down the line. Of all the providers GCP has made connecting to instances and such with this and tools like gcloud extremely easy and quick.&lt;/p&gt;
+&lt;h3 id=&quot;container-engine-view&quot;&gt;Container Engine View&lt;/h3&gt;
+&lt;p&gt;In this view we have cluster specific information to check out.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/terraform-kubernetes-gcp/gcp-console-container-clusters.png&quot; alt=&quot;Compute Engine&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Once the cluster view comes up there sits the single cluster that is built. If there are additional, they display here just like instances or other resources on other screens. It’s all pretty standard and well laid out in Google Cloud Platform fashion.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/terraform-kubernetes-gcp/gcp-console-05.png&quot; alt=&quot;GCP Container Engine Console View&quot;&gt;&lt;/p&gt;
+&lt;p&gt;The first thing to note, in my not so humble opinion, is the &lt;em&gt;Connect&lt;/em&gt; button. This, like on so many other areas of the console, has immediate, quick, easy ways to connect to the cluster.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/terraform-kubernetes-gcp/gcp-console-06.png&quot; alt=&quot;GCP Container Engine Console View&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Gaining access to the cluster that is now created with the commands available is quick. The little button in the top right hand corner copies the command to the copy paste buffer. The two commands execute as shown.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;gcloud container clusters get-credentials ournewworld --zone us-west1-a --project thrashingcorecode
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;and then&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;kubectl proxy
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&quot;/articles/terraform-kubernetes-gcp/gcp-console-07.png&quot; alt=&quot;GCP Container Engine Console View&quot;&gt;&lt;/p&gt;
+&lt;p&gt;With the URI posted after execution of &lt;code&gt;kubectl proxy&lt;/code&gt; I can check out the active dashboard rendered for the container cluster at &lt;a href=&quot;http://127.0.0.1:8001/ui/&quot;&gt;127.0.0.1:8001/ui&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;IMPORTANT NOTE:&lt;/strong&gt; If the &lt;code&gt;kubectl&lt;/code&gt; version isn’t up to an appropriate parity version with the server then it may not render this page ok. To ensure that the version is at parity, run a &lt;code&gt;kubectl version&lt;/code&gt; to see what versions are in place. I recently went through troubleshooting this scenario which rendered a blank page. After trial and error it came down to version differences on server and client &lt;code&gt;kubectl&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/terraform-kubernetes-gcp/Kubernetes_Dashboard.png&quot; alt=&quot;Kubernetes&quot;&gt;&lt;/p&gt;
+&lt;p&gt;I’ll dive into more of the dashboard and related things in a later post. For now I’m going to keep moving forward and focus on the remaining resources built, in networking.&lt;/p&gt;
+&lt;h3 id=&quot;vpc-network&quot;&gt;VPC Network&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/terraform-kubernetes-gcp/gcp-console-08.png&quot; alt=&quot;Kubernetes Console&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Once the networking view renders there are several key tabs on the left hand side; &lt;em&gt;External IP addresses&lt;/em&gt;, &lt;em&gt;Firewall rules&lt;/em&gt;, and &lt;em&gt;Routes&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/terraform-kubernetes-gcp/gcp-console-09.png&quot; alt=&quot;Kubernetes Console Networking&quot;&gt;&lt;/p&gt;
+&lt;h4 id=&quot;external-ip-addresses&quot;&gt;External IP Addresses&lt;/h4&gt;
+&lt;p&gt;Setting and using external IP addresses allow for routing to the various Kubernetes nodes. Several ephemeral IP addresses are created and displayed in this section for each of the Kubernetes nodes. For more information check out the documentation on &lt;a href=&quot;https://cloud.google.com/compute/docs/ip-addresses/reserve-static-internal-ip-address&quot;&gt;reserving a static external IP address&lt;/a&gt; and &lt;a href=&quot;https://cloud.google.com/compute/docs/ip-addresses/reserve-static-internal-ip-address&quot;&gt;reserving an internal IP address&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/terraform-kubernetes-gcp/gcp-console-11.png&quot; alt=&quot;Kubernetes Console&quot;&gt;&lt;/p&gt;
+&lt;h4 id=&quot;firewall-rules&quot;&gt;Firewall Rules&lt;/h4&gt;
+&lt;p&gt;In this section there are several new rules added for the cluster. For more information specific to GCP firewall rules check out the documentation about &lt;a href=&quot;https://cloud.google.com/compute/docs/vpc/firewalls&quot;&gt;firewall rules&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/terraform-kubernetes-gcp/gcp-console-12.png&quot; alt=&quot;Kubernetes Console&quot;&gt;&lt;/p&gt;
+&lt;h4 id=&quot;routes&quot;&gt;Routes&lt;/h4&gt;
+&lt;p&gt;Routes are used to setup paths mapping an IP range to a destination. Routes setup a VPC Networks where to send packets for a particular IP address. For more information about documentation &lt;a href=&quot;https://cloud.google.com/compute/docs/vpc/routes&quot;&gt;route details&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/terraform-kubernetes-gcp/gcp-console-13.png&quot; alt=&quot;Kubernetes Console&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Each of these sections have new resources built and added as shown above. More than a few convention based assumptions are made with Terraform.&lt;/p&gt;
+&lt;h3 id=&quot;next-steps-&quot;&gt;Next steps…&lt;/h3&gt;
+&lt;p&gt;In my next post I’ll dive into some things to setup once you’ve got your Kubernetes cluster. Setting up users, getting a continuous integration and delivery build started, and more. I’ll also be writing up another entry, similar to this for AWS and Azure Cloud Providers. If you’d like to see Kubernetes setup and a tour of the setup with Terraform beyond the big three, let me know and I’ll add that to the queue. Once we get past that there are a number of additional Kubernetes, containers, and dev specific posts that I’ll have coming up. Stay tuned, subscribe to the &lt;a href=&quot;http://adron.github.io/articles/terraform-kubernetes-gcp/&quot;&gt;blog feed&lt;/a&gt; or follow &lt;a href=&quot;https://twitter.com/ThrashingCode&quot;&gt;@ThrashingCode&lt;/a&gt; for new blog posts.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Resources:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/Adron/our_new_world&quot;&gt;Github Repo our_new_world&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.terraform.io/docs/providers/google/r/container_cluster.html&quot;&gt;Terraform Google Cloud Platform Provider Container Cluster Resource&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://cloud.google.com/container-engine/docs/clusters/operations&quot;&gt;GCP Container Cluster Operations&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://cloud.google.com/container-engine/docs/concepts/cluster-architecture&quot;&gt;GCP Container Cluster Architecture&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </description>
     </item>
     <item>
@@ -5716,6 +5784,27 @@ export TF_VAR_password=&amp;quot;someSecretPassword&amp;quot;
 </description>
     </item>
     <item>
+      <title>How to Electron by Blaine Schmeisser</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-blaine-schmeisser/</link>
+      <pubDate>Sun, 05 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-blaine-schmeisser/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-blaine-schmeisser/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-left&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-blaine-schmeisser/blainesch.jpg&quot; alt=&quot;Blaine Schmeisser&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;I’m happy to introduce Blaine Schmeisser. He’s a recent Portland transplant currently working as a Senior Software Engineer at New Relic. He has a passion for building and shipping software and an advocate for pair programming. Outside of tech, Blaine spends his free time with his dog and maintains a simplistic, eco-friendly lifestyle.&lt;/p&gt;
+&lt;p&gt;Blaine’s “How to Electron” answers questions you have about building user interface applications with JavaScript. Have you ever wanted to build desktop apps with web technology you already know? If you’ve never heard of Electron or just want to learn more about it, this talk will cover what Electron is and how to utilize it to create powerful tools like Atom and Slack. You will learn the history of Electron, how to get started, the trade-offs of picking various boiler plates, and the unique Electron specific APIs that are vital to being a Electron developer.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;GitHub: &lt;a href=&quot;https://github.com/blainesch&quot;&gt;https://github.com/blainesch&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Twitter: &lt;a href=&quot;https://twitter.com/blainesch&quot;&gt;https://twitter.com/blainesch&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Website: &lt;a href=&quot;http://blainesch.com&quot;&gt;http://blainesch.com&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    <item>
       <title>Demystifying TypeScript Decorators by James Churchill</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-james-churchill/</link>
       <pubDate>Sun, 05 Jun 2016 17:00:00 -0700</pubDate>
@@ -5735,27 +5824,6 @@ export TF_VAR_password=&amp;quot;someSecretPassword&amp;quot;
 &lt;li&gt;Blog: &lt;a href=&quot;http://smashdev.com&quot;&gt;http://smashdev.com&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Github: &lt;a href=&quot;http://github.com/smashdevcode&quot;&gt;http://github.com/smashdevcode&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Twitter: &lt;a href=&quot;http://twitter.com/SmashDev&quot;&gt;http://twitter.com/SmashDev&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-    </item>
-    <item>
-      <title>How to Electron by Blaine Schmeisser</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-blaine-schmeisser/</link>
-      <pubDate>Sun, 05 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-blaine-schmeisser/</guid>
-      <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-blaine-schmeisser/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-left&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-blaine-schmeisser/blainesch.jpg&quot; alt=&quot;Blaine Schmeisser&quot;&gt;
-&lt;/div&gt;
-
-&lt;p&gt;I’m happy to introduce Blaine Schmeisser. He’s a recent Portland transplant currently working as a Senior Software Engineer at New Relic. He has a passion for building and shipping software and an advocate for pair programming. Outside of tech, Blaine spends his free time with his dog and maintains a simplistic, eco-friendly lifestyle.&lt;/p&gt;
-&lt;p&gt;Blaine’s “How to Electron” answers questions you have about building user interface applications with JavaScript. Have you ever wanted to build desktop apps with web technology you already know? If you’ve never heard of Electron or just want to learn more about it, this talk will cover what Electron is and how to utilize it to create powerful tools like Atom and Slack. You will learn the history of Electron, how to get started, the trade-offs of picking various boiler plates, and the unique Electron specific APIs that are vital to being a Electron developer.&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;GitHub: &lt;a href=&quot;https://github.com/blainesch&quot;&gt;https://github.com/blainesch&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Twitter: &lt;a href=&quot;https://twitter.com/blainesch&quot;&gt;https://twitter.com/blainesch&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Website: &lt;a href=&quot;http://blainesch.com&quot;&gt;http://blainesch.com&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>
@@ -5874,23 +5942,6 @@ it can be.&lt;/p&gt;
 </description>
     </item>
     <item>
-      <title>I Play the JavaScript by Matt McKegg</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</link>
-      <pubDate>Thu, 02 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</guid>
-      <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-left&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/mattmckegg.jpg&quot; alt=&quot;Matt McKegg&quot;&gt;
-&lt;/div&gt;
-
-&lt;p&gt;A JavaScript hacker and backyard musician and from Wellington, New Zealand. Lover of all things open and modular. I spend most of my time pressing buttons of various shapes, sizes and colours. Sometimes these buttons make sounds.&lt;/p&gt;
-&lt;p&gt;Matt has been making music with computers for about 10 years, but once he tried to move from bedroom composing to live performance, he got incredibly frustrated at how hard it was to play computer music live. He decided to start working on his own live electronic performance software written in JavaScript that would let me play the way he wanted to play. 3 years later, it’s finally starting to become a reality.&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Here is one of the Matt’s recent performances, for your viewing pleasure. &lt;/p&gt;
-&lt;iframe width=&quot;1280&quot; height=&quot;720&quot; src=&quot;https://www.youtube.com/embed/L2BVDJWHdy0?rel=0&amp;amp;showinfo=0&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;</description>
-    </item>
-    <item>
       <title>The Web Platform is the Universal Instrument by Ben Michel</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-ben-michel/</link>
       <pubDate>Thu, 02 Jun 2016 17:00:00 -0700</pubDate>
@@ -5916,6 +5967,23 @@ it can be.&lt;/p&gt;
 &lt;li&gt;Audience interaction with the exposed parameters of a live band’s instrumentation–via broadcast methods and microcontroller installations.”&lt;/li&gt;
 &lt;/ul&gt;
 </description>
+    </item>
+    <item>
+      <title>I Play the JavaScript by Matt McKegg</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</link>
+      <pubDate>Thu, 02 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-left&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/mattmckegg.jpg&quot; alt=&quot;Matt McKegg&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;A JavaScript hacker and backyard musician and from Wellington, New Zealand. Lover of all things open and modular. I spend most of my time pressing buttons of various shapes, sizes and colours. Sometimes these buttons make sounds.&lt;/p&gt;
+&lt;p&gt;Matt has been making music with computers for about 10 years, but once he tried to move from bedroom composing to live performance, he got incredibly frustrated at how hard it was to play computer music live. He decided to start working on his own live electronic performance software written in JavaScript that would let me play the way he wanted to play. 3 years later, it’s finally starting to become a reality.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Here is one of the Matt’s recent performances, for your viewing pleasure. &lt;/p&gt;
+&lt;iframe width=&quot;1280&quot; height=&quot;720&quot; src=&quot;https://www.youtube.com/embed/L2BVDJWHdy0?rel=0&amp;amp;showinfo=0&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;</description>
     </item>
     <item>
       <title>Code First Docs How we Threw Out The Book &amp; Put Code First With Twilio Documentation by Jarod Reyes</title>

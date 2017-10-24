@@ -1,14 +1,14 @@
 ---
 title: Build a Kubernetes Cluster on Google Cloud Platform with Terraform
 author: Adron Hall
-date: 2017-10-19 19:20:39
+date: 2017-10-23 07:20:39
 template: article.jade
 ---
 <div class="image float-right">
     ![Terraform](terraform.png)
 </div>
 
-In this blog entry I'm going to detail the exact configuration and cover in some additional details the collateral resources you can expect to find once the configuration is executed against with Terraform.
+In this blog entry I'm going to detail the exact configuration and cover in some additional details the collateral resources you can expect to find once the configuration is executed against with Terraform. For the repository to this write up, I create *[our_new_world](https://github.com/Adron/our_new_world)* available on Github.
 
 A lot of this material I wrote about with [Setting up a GCP Container Cluster - Part I](/articles/setting-up-gcp-container-cluster/) and [Setting up a GCP Container Cluster - Part II](/articles/setting-up-gcp-container-cluster-part-2/). I had started on a Part 3 around setting up Drone.io on a Kubernetes/GCP Container Cluster but stopped midway through with other demands. This post is a more up to date post of all those things plus more. With this post completed I've stepped back into getting Drone.io setup and am now *finally* finishing that blog entry! *#win*!
 
@@ -242,3 +242,78 @@ Then a screen will pop up showing the session starting. This will take 10-20 sec
 ![SSH Prompt](ssh-window-02.png)
 
 This comes in handy if any of the instances ends up having issues down the line. Of all the providers GCP has made connecting to instances and such with this and tools like gcloud extremely easy and quick.
+
+### Container Engine View
+
+In this view we have cluster specific information to check out.
+
+![Compute Engine](gcp-console-container-clusters.png)
+
+Once the cluster view comes up there sits the single cluster that is built. If there are additional, they display here just like instances or other resources on other screens. It's all pretty standard and well laid out in Google Cloud Platform fashion.
+
+![GCP Container Engine Console View](gcp-console-05.png)
+
+The first thing to note, in my not so humble opinion, is the *Connect* button. This, like on so many other areas of the console, has immediate, quick, easy ways to connect to the cluster.
+
+![GCP Container Engine Console View](gcp-console-06.png)
+
+Gaining access to the cluster that is now created with the commands available is quick. The little button in the top right hand corner copies the command to the copy paste buffer. The two commands execute as shown.
+
+```
+gcloud container clusters get-credentials ournewworld --zone us-west1-a --project thrashingcorecode
+```
+
+and then
+
+```
+kubectl proxy
+```
+
+![GCP Container Engine Console View](gcp-console-07.png)
+
+With the URI posted after execution of `kubectl proxy` I can check out the active dashboard rendered for the container cluster at [127.0.0.1:8001/ui](http://127.0.0.1:8001/ui/).
+
+**IMPORTANT NOTE:** If the `kubectl` version isn't up to an appropriate parity version with the server then it may not render this page ok. To ensure that the version is at parity, run a `kubectl version` to see what versions are in place. I recently went through troubleshooting this scenario which rendered a blank page. After trial and error it came down to version differences on server and client `kubectl`.
+
+![Kubernetes](Kubernetes_Dashboard.png)
+
+I'll dive into more of the dashboard and related things in a later post. For now I'm going to keep moving forward and focus on the remaining resources built, in networking.
+
+### VPC Network
+
+![Kubernetes Console](gcp-console-08.png)
+
+Once the networking view renders there are several key tabs on the left hand side; *External IP addresses*, *Firewall rules*, and *Routes*.
+
+![Kubernetes Console Networking](gcp-console-09.png)
+
+#### External IP Addresses
+
+Setting and using external IP addresses allow for routing to the various Kubernetes nodes. Several ephemeral IP addresses are created and displayed in this section for each of the Kubernetes nodes. For more information check out the documentation on [reserving a static external IP address](https://cloud.google.com/compute/docs/ip-addresses/reserve-static-internal-ip-address) and [reserving an internal IP address](https://cloud.google.com/compute/docs/ip-addresses/reserve-static-internal-ip-address).
+
+![Kubernetes Console](gcp-console-11.png)
+
+#### Firewall Rules
+
+In this section there are several new rules added for the cluster. For more information specific to GCP firewall rules check out the documentation about [firewall rules](https://cloud.google.com/compute/docs/vpc/firewalls).
+
+![Kubernetes Console](gcp-console-12.png)
+
+#### Routes
+
+Routes are used to setup paths mapping an IP range to a destination. Routes setup a VPC Networks where to send packets for a particular IP address. For more information about documentation [route details](https://cloud.google.com/compute/docs/vpc/routes).
+
+![Kubernetes Console](gcp-console-13.png)
+
+Each of these sections have new resources built and added as shown above. More than a few convention based assumptions are made with Terraform.
+
+### Next steps...
+
+In my next post I'll dive into some things to setup once you've got your Kubernetes cluster. Setting up users, getting a continuous integration and delivery build started, and more. I'll also be writing up another entry, similar to this for AWS and Azure Cloud Providers. If you'd like to see Kubernetes setup and a tour of the setup with Terraform beyond the big three, let me know and I'll add that to the queue. Once we get past that there are a number of additional Kubernetes, containers, and dev specific posts that I'll have coming up. Stay tuned, subscribe to the [blog feed]() or follow [@ThrashingCode](https://twitter.com/ThrashingCode) for new blog posts.
+
+**Resources:**
+
+* [Github Repo our_new_world](https://github.com/Adron/our_new_world)
+* [Terraform Google Cloud Platform Provider Container Cluster Resource](https://www.terraform.io/docs/providers/google/r/container_cluster.html)
+* [GCP Container Cluster Operations](https://cloud.google.com/container-engine/docs/clusters/operations)
+* [GCP Container Cluster Architecture](https://cloud.google.com/container-engine/docs/concepts/cluster-architecture)

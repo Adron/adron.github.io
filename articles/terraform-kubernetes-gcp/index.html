@@ -68,7 +68,7 @@
               <!-- Page Info-->
               <div class="page-info page-info-simple">
                 <h1>Build a Kubernetes Cluster on Google Cloud Platform with Terraform</h1>
-                <p class="author">Written by <span class="author">Adron Hall</span> and published on <span>October, 19 of 2017.</span>
+                <p class="author">Written by <span class="author">Adron Hall</span> and published on <span>October, 23 of 2017.</span>
                 </p>
                 <div class="nav"><a href="/">« Home</a></div>
               </div>
@@ -90,7 +90,7 @@
     <img src="/articles/terraform-kubernetes-gcp/terraform.png" alt="Terraform">
 </div>
 
-<p>In this blog entry I’m going to detail the exact configuration and cover in some additional details the collateral resources you can expect to find once the configuration is executed against with&nbsp;Terraform.</p>
+<p>In this blog entry I’m going to detail the exact configuration and cover in some additional details the collateral resources you can expect to find once the configuration is executed against with Terraform. For the repository to this write up, I create <em><a href="https://github.com/Adron/our_new_world">our_new_world</a></em> available on&nbsp;Github.</p>
 <p>A lot of this material I wrote about with <a href="/articles/setting-up-gcp-container-cluster/">Setting up a <span class="caps">GCP</span> Container Cluster - Part I</a> and <a href="/articles/setting-up-gcp-container-cluster-part-2/">Setting up a <span class="caps">GCP</span> Container Cluster - Part II</a>. I had started on a Part 3 around setting up Drone.io on a Kubernetes/<span class="caps">GCP</span> Container Cluster but stopped midway through with other demands. This post is a more up to date post of all those things plus more. With this post completed I’ve stepped back into getting Drone.io setup and am now <em>finally</em> finishing that blog entry! <em>#win</em>!</p>
 <p>First things first, locally you’ll want to have the respective <span class="caps">CLI</span> tools installed for Google Cloud Platform, Terraform, and&nbsp;Kubernetes.</p>
 <p><span class="more"></span></p>
@@ -256,6 +256,45 @@ linux_admin_password = <span class="string">"supersecretpassword"</span>
 <p><img src="/articles/terraform-kubernetes-gcp/ssh-window-01.png" alt="SSH Starting"></p>
 <p><img src="/articles/terraform-kubernetes-gcp/ssh-window-02.png" alt="SSH Prompt"></p>
 <p>This comes in handy if any of the instances ends up having issues down the line. Of all the providers <span class="caps">GCP</span> has made connecting to instances and such with this and tools like gcloud extremely easy and&nbsp;quick.</p>
+<h3 id="container-engine-view">Container Engine&nbsp;View</h3>
+<p>In this view we have cluster specific information to check&nbsp;out.</p>
+<p><img src="/articles/terraform-kubernetes-gcp/gcp-console-container-clusters.png" alt="Compute Engine"></p>
+<p>Once the cluster view comes up there sits the single cluster that is built. If there are additional, they display here just like instances or other resources on other screens. It’s all pretty standard and well laid out in Google Cloud Platform&nbsp;fashion.</p>
+<p><img src="/articles/terraform-kubernetes-gcp/gcp-console-05.png" alt="GCP Container Engine Console View"></p>
+<p>The first thing to note, in my not so humble opinion, is the <em>Connect</em> button. This, like on so many other areas of the console, has immediate, quick, easy ways to connect to the&nbsp;cluster.</p>
+<p><img src="/articles/terraform-kubernetes-gcp/gcp-console-06.png" alt="GCP Container Engine Console View"></p>
+<p>Gaining access to the cluster that is now created with the commands available is quick. The little button in the top right hand corner copies the command to the copy paste buffer. The two commands execute as&nbsp;shown.</p>
+<pre><code>gcloud container clusters get-credentials ournewworld --zone us-west1-a --project thrashingcorecode
+</code></pre><p>and&nbsp;then</p>
+<pre><code>kubectl proxy
+</code></pre><p><img src="/articles/terraform-kubernetes-gcp/gcp-console-07.png" alt="GCP Container Engine Console View"></p>
+<p>With the <span class="caps">URI</span> posted after execution of <code>kubectl proxy</code> I can check out the active dashboard rendered for the container cluster at <a href="http://127.0.0.1:8001/ui/">127.0.0.1:8001/ui</a>.</p>
+<p><strong><span class="caps">IMPORTANT</span> NOTE:</strong> If the <code>kubectl</code> version isn’t up to an appropriate parity version with the server then it may not render this page ok. To ensure that the version is at parity, run a <code>kubectl version</code> to see what versions are in place. I recently went through troubleshooting this scenario which rendered a blank page. After trial and error it came down to version differences on server and client <code>kubectl</code>.</p>
+<p><img src="/articles/terraform-kubernetes-gcp/Kubernetes_Dashboard.png" alt="Kubernetes"></p>
+<p>I’ll dive into more of the dashboard and related things in a later post. For now I’m going to keep moving forward and focus on the remaining resources built, in&nbsp;networking.</p>
+<h3 id="vpc-network"><span class="caps">VPC</span>&nbsp;Network</h3>
+<p><img src="/articles/terraform-kubernetes-gcp/gcp-console-08.png" alt="Kubernetes Console"></p>
+<p>Once the networking view renders there are several key tabs on the left hand side; <em>External <span class="caps">IP</span> addresses</em>, <em>Firewall rules</em>, and <em>Routes</em>.</p>
+<p><img src="/articles/terraform-kubernetes-gcp/gcp-console-09.png" alt="Kubernetes Console Networking"></p>
+<h4 id="external-ip-addresses">External <span class="caps">IP</span>&nbsp;Addresses</h4>
+<p>Setting and using external <span class="caps">IP</span> addresses allow for routing to the various Kubernetes nodes. Several ephemeral IP addresses are created and displayed in this section for each of the Kubernetes nodes. For more information check out the documentation on <a href="https://cloud.google.com/compute/docs/ip-addresses/reserve-static-internal-ip-address">reserving a static external <span class="caps">IP</span> address</a> and <a href="https://cloud.google.com/compute/docs/ip-addresses/reserve-static-internal-ip-address">reserving an internal <span class="caps">IP</span> address</a>.</p>
+<p><img src="/articles/terraform-kubernetes-gcp/gcp-console-11.png" alt="Kubernetes Console"></p>
+<h4 id="firewall-rules">Firewall&nbsp;Rules</h4>
+<p>In this section there are several new rules added for the cluster. For more information specific to <span class="caps">GCP</span> firewall rules check out the documentation about <a href="https://cloud.google.com/compute/docs/vpc/firewalls">firewall rules</a>.</p>
+<p><img src="/articles/terraform-kubernetes-gcp/gcp-console-12.png" alt="Kubernetes Console"></p>
+<h4 id="routes">Routes</h4>
+<p>Routes are used to setup paths mapping an <span class="caps">IP</span> range to a destination. Routes setup a VPC Networks where to send packets for a particular IP address. For more information about documentation <a href="https://cloud.google.com/compute/docs/vpc/routes">route details</a>.</p>
+<p><img src="/articles/terraform-kubernetes-gcp/gcp-console-13.png" alt="Kubernetes Console"></p>
+<p>Each of these sections have new resources built and added as shown above. More than a few convention based assumptions are made with&nbsp;Terraform.</p>
+<h3 id="next-steps-">Next&nbsp;steps…</h3>
+<p>In my next post I’ll dive into some things to setup once you’ve got your Kubernetes cluster. Setting up users, getting a continuous integration and delivery build started, and more. I’ll also be writing up another entry, similar to this for <span class="caps">AWS</span> and Azure Cloud Providers. If you’d like to see Kubernetes setup and a tour of the setup with Terraform beyond the big three, let me know and I’ll add that to the queue. Once we get past that there are a number of additional Kubernetes, containers, and dev specific posts that I’ll have coming up. Stay tuned, subscribe to the <a href="/articles/terraform-kubernetes-gcp/">blog feed</a> or follow <a href="https://twitter.com/ThrashingCode">@ThrashingCode</a> for new blog&nbsp;posts.</p>
+<p><strong>Resources:</strong></p>
+<ul>
+<li><a href="https://github.com/Adron/our_new_world">Github Repo&nbsp;our_new_world</a></li>
+<li><a href="https://www.terraform.io/docs/providers/google/r/container_cluster.html">Terraform Google Cloud Platform Provider Container Cluster&nbsp;Resource</a></li>
+<li><a href="https://cloud.google.com/container-engine/docs/clusters/operations"><span class="caps">GCP</span> Container Cluster&nbsp;Operations</a></li>
+<li><a href="https://cloud.google.com/container-engine/docs/concepts/cluster-architecture"><span class="caps">GCP</span> Container Cluster&nbsp;Architecture</a></li>
+</ul>
 </section>
                 </article>
                 <!-- End of Blog Page-->
