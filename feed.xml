@@ -5,13 +5,42 @@
     <atom:link href="http://adron.github.io/feed.xml" rel="self" type="application/rss+xml"></atom:link>
     <link>http://adron.github.io</link>
     <description>Coder, Messenger, Recon, Infrastructure, Ops</description>
-    <pubDate>Thu, 19 Oct 2017 12:20:39 -0700</pubDate>
+    <pubDate>Mon, 23 Oct 2017 13:12:26 -0700</pubDate>
     <generator>Wintersmith - https://github.com/jnordberg/wintersmith</generator>
     <language>en</language>
     <item>
+      <title>Thrashing Code Metal Monday for Week of October 23rd 2017</title>
+      <link>http://adron.github.io/articles/thrashing-code-metal-monday-10-23-2017/</link>
+      <pubDate>Mon, 23 Oct 2017 13:12:26 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/thrashing-code-metal-monday-10-23-2017/</guid>
+      <author></author>
+      <description>&lt;p&gt;This has been a ridiculously productive Monday. I’ve got a lot of communications kicked off and some continued on a number of key points of business. I’ve also been involved with editing, writing, and getting a number blog entries posted today besides this one.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://blog.adron.me/articles/terraform-kubernetes-gcp/&quot;&gt;Build a Kubernetes Cluster on Google Cloud Platform with Terraform&lt;/a&gt; - even though I wrapped it up last night I saved it for a final edit run this morning. That published super early.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://medium.com/@adron/speaking-follow-up-and-improving-a5e5d205d2af&quot;&gt;Speaking, Follow Up, and Improving&lt;/a&gt; - Next up was this post where I outlined my mission when presenting, and what I aim to accomplish with every presentation I give.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.pelo.tech/blog/2017/10/19/full-stack-c-services-restgrpc-apollo-graphql-and-reactjs&quot;&gt;A Modern Cross-Platform approach to µServices in .NET&lt;/a&gt; - Then I did a final edit pass on and worked with Joachim @ &lt;a href=&quot;https://pelo.tech&quot;&gt;Pelotech&lt;/a&gt; to get this article published. He’s got some really great material coming on the tail of this one too. C#, REST Services, microservice style implementation, GRPC, graphql, reactjs, and more.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://medium.com/@adron/big-ole-invisible-freight-railroads-lets-talk-volumes-5f159d563194&quot;&gt;Big Ole Invisible Freight Railroads (Let’s Talk Volumes)&lt;/a&gt; - In my search for freight shipments data, I wrote a piece on my efforts to find, and eventually fumble through not finding the granularity of data that I needed.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Now I’m kicking back and chilling for a few on the couch and it was just time for some relaxing metal tunes. These are different then the ones I often post, which tend toward waking up and kicking off Monday with attitude. But before diving into the metal this grand Monday, let’s talk about a code challenge shall we?&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;h2 id=&quot;code-challenge&quot;&gt;Code challenge&lt;/h2&gt;
+&lt;p&gt;Alright, imagine a recent problem where &lt;a href=&quot;https://en.wikipedia.org/wiki/Currying&quot;&gt;currying&lt;/a&gt; is in play. Then combine that with a problem with which you would use an &lt;a href=&quot;https://en.wikipedia.org/wiki/Anonymous_function&quot;&gt;anonymous function&lt;/a&gt; to solve a problem.&lt;/p&gt;
+&lt;p&gt;Now using one language, implement a sample of each in that one language and post a gist. Rewards this week are a Thrashing Code sticker plus one beverage of your choice. I’ll actually send you ONE beverage of your choice. Ok, I won’t sent you &lt;a href=&quot;https://www.reservebar.com/glenmorangie-pride-1981-single-malt-whisky&quot;&gt;Glenmorangie Pride from 81&lt;/a&gt;, but something like a 6 pack of &lt;a href=&quot;https://www.beeradvocate.com/beer/profile/5504/17055/&quot;&gt;Black Boss Porter&lt;/a&gt; or your choice &lt;a href=&quot;http://drinkviso.com/&quot;&gt;Viso&lt;/a&gt; if that’s your thing. It’s easy, take a stab at it!&lt;/p&gt;
+&lt;p&gt;Now for your listening pleasure, some grand, relaxing, chill evening metal.&lt;/p&gt;
+&lt;iframe src=&quot;https://open.spotify.com/embed/album/0jhRwpvbLhqVoS5mJAduhm&quot; width=&quot;300&quot; height=&quot;380&quot; frameborder=&quot;0&quot; allowtransparency=&quot;true&quot;&gt;&lt;/iframe&gt;
+
+&lt;iframe src=&quot;https://open.spotify.com/embed/album/3AglitukJSID7M51tDEDdH&quot; width=&quot;300&quot; height=&quot;380&quot; frameborder=&quot;0&quot; allowtransparency=&quot;true&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;…and I like to work in threes, so here’s that third gem…&lt;/p&gt;
+&lt;iframe src=&quot;https://open.spotify.com/embed/album/6YK1e5fsBWxVWePBgdOY5w&quot; width=&quot;300&quot; height=&quot;380&quot; frameborder=&quot;0&quot; allowtransparency=&quot;true&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;Until next time, happy code thrashing!&lt;/p&gt;
+</description>
+    </item>
+    <item>
       <title>Build a Kubernetes Cluster on Google Cloud Platform with Terraform</title>
       <link>http://adron.github.io/articles/terraform-kubernetes-gcp/</link>
-      <pubDate>Thu, 19 Oct 2017 12:20:39 -0700</pubDate>
+      <pubDate>Mon, 23 Oct 2017 00:20:39 -0700</pubDate>
       <guid isPermaLink="true">http://adron.github.io/articles/terraform-kubernetes-gcp/</guid>
       <author></author>
       <description>&lt;div class=&quot;image float-right&quot;&gt;
@@ -5913,6 +5942,23 @@ it can be.&lt;/p&gt;
 </description>
     </item>
     <item>
+      <title>I Play the JavaScript by Matt McKegg</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</link>
+      <pubDate>Thu, 02 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-left&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/mattmckegg.jpg&quot; alt=&quot;Matt McKegg&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;A JavaScript hacker and backyard musician and from Wellington, New Zealand. Lover of all things open and modular. I spend most of my time pressing buttons of various shapes, sizes and colours. Sometimes these buttons make sounds.&lt;/p&gt;
+&lt;p&gt;Matt has been making music with computers for about 10 years, but once he tried to move from bedroom composing to live performance, he got incredibly frustrated at how hard it was to play computer music live. He decided to start working on his own live electronic performance software written in JavaScript that would let me play the way he wanted to play. 3 years later, it’s finally starting to become a reality.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Here is one of the Matt’s recent performances, for your viewing pleasure. &lt;/p&gt;
+&lt;iframe width=&quot;1280&quot; height=&quot;720&quot; src=&quot;https://www.youtube.com/embed/L2BVDJWHdy0?rel=0&amp;amp;showinfo=0&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;</description>
+    </item>
+    <item>
       <title>The Web Platform is the Universal Instrument by Ben Michel</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-ben-michel/</link>
       <pubDate>Thu, 02 Jun 2016 17:00:00 -0700</pubDate>
@@ -5938,23 +5984,6 @@ it can be.&lt;/p&gt;
 &lt;li&gt;Audience interaction with the exposed parameters of a live band’s instrumentation–via broadcast methods and microcontroller installations.”&lt;/li&gt;
 &lt;/ul&gt;
 </description>
-    </item>
-    <item>
-      <title>I Play the JavaScript by Matt McKegg</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</link>
-      <pubDate>Thu, 02 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</guid>
-      <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-left&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/mattmckegg.jpg&quot; alt=&quot;Matt McKegg&quot;&gt;
-&lt;/div&gt;
-
-&lt;p&gt;A JavaScript hacker and backyard musician and from Wellington, New Zealand. Lover of all things open and modular. I spend most of my time pressing buttons of various shapes, sizes and colours. Sometimes these buttons make sounds.&lt;/p&gt;
-&lt;p&gt;Matt has been making music with computers for about 10 years, but once he tried to move from bedroom composing to live performance, he got incredibly frustrated at how hard it was to play computer music live. He decided to start working on his own live electronic performance software written in JavaScript that would let me play the way he wanted to play. 3 years later, it’s finally starting to become a reality.&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Here is one of the Matt’s recent performances, for your viewing pleasure. &lt;/p&gt;
-&lt;iframe width=&quot;1280&quot; height=&quot;720&quot; src=&quot;https://www.youtube.com/embed/L2BVDJWHdy0?rel=0&amp;amp;showinfo=0&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;</description>
     </item>
     <item>
       <title>Code First Docs How we Threw Out The Book &amp; Put Code First With Twilio Documentation by Jarod Reyes</title>

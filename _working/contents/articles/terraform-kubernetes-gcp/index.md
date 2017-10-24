@@ -1,7 +1,7 @@
 ---
 title: Build a Kubernetes Cluster on Google Cloud Platform with Terraform
 author: Adron Hall
-date: 2017-10-19 19:20:39
+date: 2017-10-23 07:20:39
 template: article.jade
 ---
 <div class="image float-right">
