@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="/css/style.min.css">
     <script src="/js/modernizr.js"></script>
   </head>
-  <body>
+  <body class="article-detail">
     <!--[if lt IE 8]>
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -67,8 +67,10 @@
             <div class="col-md-12">
               <!-- Page Info-->
               <div class="page-info page-info-simple">
-                <h1>Adron's Composite Code</h1>
-                <h2 class="description">Coder, Messenger, Recon, Infrastructure, Ops</h2>
+                <h1>Thrashing Code Metal Monday for Week of October 30th 2017</h1>
+                <p class="author">Written by <span class="author">Adron Hall</span> and published on <span>October, 30 of 2017.</span>
+                </p>
+                <div class="nav"><a href="/">« Home</a></div>
               </div>
               <!-- End Page Info-->
             </div>
@@ -83,75 +85,36 @@
             <div class="col-md-9">
               <div class="main-content">
                 <!-- Blog Page-->
-                <div class="blog">
-                  <div class="row"></div>
-                </div>
-                <div class="col-md-12 col-sm-12">
-                  <!-- Blog List-->
-                  <div class="blog-grid">
-                    <div class="row">
-                      <div class="col-md-12 col-sm-12">
-                        <h3 class="blog-grid-title"><a href="/articles/all-that-tech-sitrep-elastic-meetup-quote-center-updates/">All That Tech SitRep - Elastic Meetup and Quote Center Updates</a></h3>
-                        <p class="blog-grid-excerpt"><div class="image float-right">
-    <img src="/articles/all-that-tech-sitrep-elastic-meetup-quote-center-updates/qc_377x285.png" alt="Quote Center">
+                <article class="article">
+                  <section class="content"><div class="image float-right">
+<iframe src="https://open.spotify.com/embed/track/1m9uKIXsCb9nFFKNDPKuBP" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
 </div>
 
-<p>I started working with the Quote Center (<span class="caps">QC</span>) back in November, and wrote about it in “<a href="http://compositecode.com/2015/10/31/after-816-days/">After 816 Days I’m Taking a Job!</a>“ Now that I’m a few months into the effort, it’s <strong><em>sitrep</em></strong> time. Sitrep, btw is military speak&nbsp;for</p>
-<p><em>S</em> ituational <em>R</em>&nbsp;eport.</p>
-<p>The three core priorities I have at Quote Center in my role are: Community Contributions, Site Reliability, and Talent&nbsp;Recon.</p>
-
-                          <p class="more"><a href="/articles/all-that-tech-sitrep-elastic-meetup-quote-center-updates/">more</a></p>
-                        </p>
-                        <div class="blog-grid-meta"><span class="blog-grid-date">26. January 2016</span></div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End of Blog List-->
-                </div>
-                <div class="col-md-12 col-sm-12">
-                  <!-- Blog List-->
-                  <div class="blog-grid">
-                    <div class="row">
-                      <div class="col-md-12 col-sm-12">
-                        <h3 class="blog-grid-title"><a href="/articles/docker-tips-n-tricks-vmware-fusion/">Docker Tips n' Tricks - Using Vmware Fusion</a></h3>
-                        <p class="blog-grid-excerpt"><p>In this article I’m going to cover a few steps in getting started with VMware and Docker instead of the default VirtualBox and Docker. The basic prerequisites for this&nbsp;are:</p>
+<p>I’ll start with some tunes today. It seems like a good day for a swashbuckling adventure, especially with Halloween tomorrow and all. With the tunes rocking, let’s talk upcoming meetups real quick, then the code challenge and two additional epic tunes to get some coding done&nbsp;to.</p>
 <ul>
-<li><p>VMware Fusion &gt;= v8.x <img src="/articles/docker-tips-n-tricks-vmware-fusion/vmware-fusion.png" alt="VMware Fusion 8.1.0"></p>
+<li><p><a href="https://www.meetup.com/BallardTechHH/events/237787094/">Ballard Happy Hour</a> is @ 5:30pm this Tuesday @ <a href="https://www.google.com/maps/place/Ballard+Beer+Company/@47.6689494,-122.3864897,17z/data=!4m13!1m7!3m6!1s0x549015c5e180c76b:0xc471e67540ce0239!2s2050+NW+Market+St,+Seattle,+WA+98107!3b1!8m2!3d47.6689494!4d-122.384301!3m4!1s0x549015c5e18581a5:0xef3a1fd5ec7a26b!8m2!3d47.668843!4d-122.3842715?hl=en">Ballard Beer&nbsp;Company</a></p>
 </li>
-<li><p>Docker Toolbox w/ Docker<code>shell-script$ docker --version
-Docker version 1.9.0, build 76d6bc9</code></p>
+<li><p><a href="https://www.meetup.com/Pelo-Technology-Share-Out/events/244321597/">Seattle Geek Lunch</a> @ noon @ <a href="https://www.google.com/maps/place/Kigo+Kitchen/@47.6015953,-122.3366801,17z/data=!3m1!4b1!4m5!3m4!1s0x54906abaad799b7d:0x76899de962b1b653!8m2!3d47.6015953!4d-122.3344915?hl=en">Kigo Kitchen Pioneer&nbsp;Square</a></p>
+</li>
+<li><p><a href="https://www.meetup.com/Seattle-CoffeeOps/events/243985521/">Chat about Dev+Ops over Morning Coffee/Tea</a> @ 8am @ <a href="https://www.google.com/maps/place/Chef+Software,+Inc./@47.6021758,-122.3381707,17z/data=!4m13!1m7!3m6!1s0x54906aaffc113ae7:0xa3f5e2e1b40bd3e8!2s619+Western+Ave,+Seattle,+WA+98104!3b1!8m2!3d47.6021758!4d-122.335982!3m4!1s0x54906ab1d0063ac1:0x8fa8c8c312405e50!8m2!3d47.6021894!4d-122.3359318?hl=en">Chef Software</a>.</p>
 </li>
 </ul>
-<p>
-                          <p class="more"><a href="/articles/docker-tips-n-tricks-vmware-fusion/">more</a></p>
-                        </p>
-                        <div class="blog-grid-meta"><span class="blog-grid-date">02. January 2016</span></div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End of Blog List-->
-                </div>
-                <div class="col-md-12 col-sm-12">
-                  <!-- Blog List-->
-                  <div class="blog-grid">
-                    <div class="row">
-                      <div class="col-md-12 col-sm-12">
-                        <h3 class="blog-grid-title"><a href="/articles/elasticsearch-beats-learning-in-portland/">Elasticsearch, Beats, and Learning in Portland</a></h3>
-                        <p class="blog-grid-excerpt"><p>Recently I attended the <a href="http://compositecode.com/2015/12/03/elasticon-tour-2015-in-seattle/" target="_blank">Elasticon Tour Stop in Seattle</a> with <a href="https://twitter.com/thebigscaryguy" target="_blank">@thebigscaryguy</a> <span class="amp">&amp;</span> the Elastic Team we have at the Home Depot Quote Center. I have always dug <a href="https://www.elastic.co/products/elasticsearch" target="_blank">Elastic Search</a> a bit and after the tour stop <span class="amp">&amp;</span> some research I was very interested in <a href="https://www.elastic.co/products/beats" target="_blank">Beats</a> too. After that we decided we’d help to kick start the <a href="http://www.meetup.com/The-Portlandia-ElasticSearch-Meetup-Group/" target="_blank">Portland Elastic Meetup</a> again. So I reached out, as usual, via twitter first for a pulse on&nbsp;interest.</p>
-<p><blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Hey Portlanders! Who uses or is interested in Elastic Search, Beats, Kibana or other Elastic related&nbsp;tech?</p>&mdash; Λdrøn (@Adron) <a href="https://twitter.com/Adron/status/674358248611307520">December 8, 2015</a></blockquote></p>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<p>Also to mention, next week I’ll be presenting with <a href="https://twitter.com/Lenadroid">@Lenadroid</a> at the .<span class="caps">NET</span> Developer’s Association meetups in <a href="https://www.meetup.com/NET-Developers-Association-Westside/events/242573016/">downtown Seattle @ Parametric Portfolio Associates</a> and in <a href="https://www.meetup.com/NET-Developers-Association-Eastside/events/242573024/">Redmond at Microsoft Building 34</a>. I hope you’ll join us there for the presentation and chats&nbsp;after.</p>
+<p><span class="more"></span></p>
+<h2 id="code-challenge">Code&nbsp;Challenge</h2>
+<p>Have you ever eaten at a <a href="https://www.jimmyjohns.com/">Jimmy John’s</a>? If you have, or you’ve ordered from them and you live in a city you’ve likely received delivery via a <a href="/articles/thrashing-code-metal-monday-10-30-2017/">bike messenger</a>. For more details, here’s a&nbsp;video.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/iYKBgfFpd8A" frameborder="0" allowfullscreen></iframe>
 
-<p>I got some immediate interest in a few tweets from <a href="https://twitter.com/WardCunningham" target="_blank">@WardCunningham</a> <a href="https://twitter.com/tweetcaco" target="_blank">@tweetcaco</a> and others that made me think, “<em>yup, definitely something worth pursuing!</em>“</p>
-<p><em><strong>Next&nbsp;Steps…</strong></em></p>
-<p>
-                          <p class="more"><a href="/articles/elasticsearch-beats-learning-in-portland/">more</a></p>
-                        </p>
-                        <div class="blog-grid-meta"><span class="blog-grid-date">18. December 2015</span></div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End of Blog List-->
-                </div>
+<p>However, out in the burbs where people tend to be auto-dependent, your Jimmy John’s is also more auto-dependent. Determine the variables needed to determine delivery rate of a bike messenger versus a car messenger. Then based on those variables write algorithms to determine who will be the most efficient deliverer of sandwiches per&nbsp;hour.</p>
+<h3 id="victor-will-get-">Victor will&nbsp;get…</h3>
+<p>The winner of this challenge will get a week worth of Jimmy John sandwiches of their&nbsp;choice.</p>
+<p>Alright… last&nbsp;tunes.</p>
+<p>Insomnium is brutally heavy and intricately amazing. Then follow that up with a good dose of SuidAkrA, with the inspirational attack of Lion of&nbsp;Darcania!</p>
+<iframe src="https://open.spotify.com/embed/track/4bOX3KfGgQE1GkxxJ3OUtI" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
+
+<iframe src="https://open.spotify.com/embed/track/7EHmEnTHesQEf4LA02WK7U" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
+</section>
+                </article>
                 <!-- End of Blog Page-->
               </div>
             </div>
@@ -244,8 +207,7 @@ Docker version 1.9.0, build 76d6bc9</code></p>
             </div>
           </div>
         </div>
-        <div class="nav"><a href="/page/33/">« Newer</a>&nbsp;<a href="/page/35/">Previous »</a>
-        </div>
+        <div class="nav"><a href="/">« Home</a></div>
       </div>
     </div>
     <script src="/js/all.js"></script>
