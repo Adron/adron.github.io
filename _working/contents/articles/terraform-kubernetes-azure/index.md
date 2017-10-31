@@ -20,13 +20,8 @@ First things first, locally you’ll want to have the respective CLI tools insta
 
 Dive in time!
 
-Alright, first let's take a look at the before, before we look at the after. In Azure, the user interface is very tablet oriented with a sideways scroll. Some people love it, some adamantly despise it. I'm kind of in the, "enjoy it but wouldn't use it for work" camp. But it's rather nice looking to show a demo, elaborate on where and what is located where within the cloud service, and provides a nice way to visualize resources.
-
-
-
-
-
-
-<div class="image float-right">
-    ![Streamsets](streamset2.jpg)
+<div class="image float-left">
+    ![Azure](Azure.png)
 </div>
+
+Alright, first let's take a look at the before, before we look at the after. In Azure, the user interface is very tablet oriented with a sideways scroll. Some people love it, some adamantly despise it. I'm kind of in the, "enjoy it but wouldn't use it for work" camp. But it's rather nice looking to show a demo, elaborate on where and what is located where within the cloud service, and provides a nice way to visualize resources.
