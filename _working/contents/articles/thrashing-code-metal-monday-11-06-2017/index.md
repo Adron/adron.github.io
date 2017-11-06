@@ -18,6 +18,9 @@ No code challenge today, but a reminder that the following code challenges are s
 * [The "Curry & Anonymous Function It... Challenge"](/articles/thrashing-code-metal-monday-10-23-2017/)
 * [The "House Prices in Seattle Madness" Challenge](/articles/thrashing-code-metal-monday-10-16-2017/)
 * [The "2 Sum, 2 Sum, But Does it Build?" Challenge](/articles/thrashing-code-metal-monday-10-09-2017/)
-<div class="image float-right">
-    ![Streamsets](streamset2.jpg)
-</div>
+
+To wake you up, a single selection today.
+
+<iframe src="https://embed.spotify.com/?uri=spotify%3Atrack%3A5H2Fhi4c89jNCkcmbCMihq" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
+
+Cheers!
