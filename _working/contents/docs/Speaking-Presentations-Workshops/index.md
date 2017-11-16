@@ -8,12 +8,12 @@ This page links to my history of speaking via presentations, workshops, or other
 
 **Upcoming Presentations**
 
-* [Inception, Workflow, to $Deployed$ Removing Chaos and Noise From Your Dev Stack](/talks/inception-workflow-deployed/) on November 6th, 2017 in Redmond, Building 34 at Microsoft. RSVP @ [Meetup](https://www.meetup.com/NET-Developers-Association-Eastside/events/242573024/).
-* [Inception, Workflow, to $Deployed$ Removing Chaos and Noise From Your Dev Stack](/talks/inception-workflow-deployed/) on November 7th, 2017 in Seattle, at Parametric. RSVP @ [Meetup](https://www.meetup.com/NET-Developers-Association-Westside/events/242573016/).
 * [Automated Environment Spinup & CI/CD Practices: Inception, Workflow, Deployment](/talks/cicd-in-30-minutes-or-less/) on January 18th, 2017 & [Meetup](https://www.meetup.com/CloudTalk/events/243522258/).
 
 **Past Presentations**
 
+* [Inception, Workflow, to $Deployed$ Removing Chaos and Noise From Your Dev Stack](/talks/inception-workflow-deployed/) on November 6th, 2017 in Redmond, Building 34 at Microsoft.  [Meetup](https://www.meetup.com/NET-Developers-Association-Eastside/events/242573024/).
+* [Inception, Workflow, to $Deployed$ Removing Chaos and Noise From Your Dev Stack](/talks/inception-workflow-deployed/) on November 7th, 2017 in Seattle, at Parametric.  [Meetup](https://www.meetup.com/NET-Developers-Association-Westside/events/242573016/).
 * [Inception, Workflow, and Coding](/talks/inception-workflow-coding/) on October 12th, 2017. [Meetup](https://www.meetup.com/ssdevelopers/events/243669995/).
 * [The Joy of Coding](/talks/joy-of-coding/) on October 5th, 2017. [Meetup Page](https://www.meetup.com/WVSE-meetup/events/241117362/).
 * [Infrastructure as Code and Containers](/talks/infrastructure-code-containers/) on October 3rd, 2017. [Meetup Page](https://www.meetup.com/mscloud/events/243273397/).
