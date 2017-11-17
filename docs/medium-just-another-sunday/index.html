@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Adron's Composite Code</title>
+    <meta name="description" content="">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="alternate" href="/feed.xml" type="application/rss+xml" title="Coder, Messenger, Recon, Infrastructure, Ops">
+    <link rel="icon" type="image/png" href="/img/favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/img/favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/img/favicons/favicon-96x96.png" sizes="96x96">
+    <link rel="apple-touch-icon" sizes="57x57" href="/img/favicons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/img/favicons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/img/favicons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/img/favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/img/favicons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/img/favicons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/img/favicons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/img/favicons/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/favicons/apple-touch-icon-180x180.png">
+    <link rel="stylesheet" href="/css/custom.css">
+    <link rel="stylesheet" href="/css/style.min.css">
+    <script src="/js/modernizr.js"></script>
+  </head>
+  <body class="article-detail">
+    <!--[if lt IE 8]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <div class="header header-over large">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 col-sm-6 col-xs-6">
+            <!-- Logo Image--><a href="/index.html" class="logo-image logo-animated"><img src="/img/logos/logo.png" alt="logo"></a>
+            <!-- End of Logo Image-->
+          </div>
+          <div class="col-md-9 col-sm-6 col-xs-6">
+            <!-- Menu-->
+            <nav class="right helper">
+              <ul class="menu sf-menu js-menu">
+                <li><a href="/docs/thrashing-code-news/">Thrashing Code News</a></li>
+                <li><a href="#">Conf - Meetup - Events</a>
+                  <ul>
+                    <li><a href="/docs/Speaking-Presentations-Workshops/">Speaking - Presentations - Workshops</a></li>
+                    <li><a href="/docs/calendar">Calendar of Engagements</a></li>
+                  </ul>
+                </li>
+                <li><a href="/docs/documentation/">Docs</a></li>
+                <li><a href="#">Contact</a>
+                  <ul>
+                    <li><a href="/docs/contact">Message</a></li>
+                    <li><a href="/docs/job-talk/">Hire</a></li>
+                  </ul>
+                </li>
+                <li><a href="/docs/about/">About</a></li>
+              </ul>
+            </nav>
+            <!-- End of Menu-->
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="header-back header-back-simple header-back-small">
+      <div class="header-back-container">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <!-- Page Info-->
+              <div class="page-info page-info-simple">
+                <h1>Just Another Sunday</h1>
+                <div class="nav"> «<a href="/"> Home</a></div>
+              </div>
+              <!-- End Page Info-->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="content">
+      <div class="container">
+        <div class="layout with-right-sidebar js-layout">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="main-content">
+                <!-- Blog Page-->
+                <docs class="article">
+                  <section class="content"><p><a href="https://medium.com/@adron/just-another-sunday-ea73bf759f3">original post on&nbsp;Medium</a></p>
+<p>I sit here at the moment watching two Kubernetes Clusters build. One is building on Azure and one on Google Cloud Platform (<span class="caps">GCP</span>). I’ve got a presentation coming up this <a href="http://blog.adron.me/talks/infrastructure-code-containers/">Tuesday</a> and <a href="http://blog.adron.me/talks/joy-of-coding/">Thursday</a>, both I’ll be digging into Kubernetes, Terraform, and a number of other technologies. Those are the two hot technologies for the talks though. Albeit, the continuous integration, languages, and tooling that Terraform builds via configuration and Kubernetes runs in containers is what is actually the meat of this whole sandwich. Which is where I ponder what all of this goo is that wires together things in this virtual programmatic realm in which I’ll build something on top&nbsp;of.</p>
+<p>It seems messy from inception. But then of course, all programming and related ecosystem elements in which programming takes place is a messy bag of&nbsp;guts.</p>
+<p>Here I sit then, waiting the rather unknown pseudo random amount of time for the Kubernetes Clusters to finish building. A few moments pass and sure enough, as always, very inconsistent build times. The Azure Kubernetes Cluster took 7 minutes to build and the <span class="caps">GCP</span> Kubernetes Cluster took just 4 minutes. Last night the Azure cluster was taking 20 minutes or more while the GCP cluster was consuming about 3–4 minutes to build. I’m not sure, as I’ve not dug into the matter deep enough, but something seems awry within the way Azure needs to build out its instances, networking, and related cluster mechanisms. I’m not surprised though, Azure has always behaved and felt slow and cumbersome during the build out of infrastructure. GCP on the other hand clearly comes from Google’s thoroughbred engineering focus on things. It generally builds in a much smaller range of time, consuming much less time&nbsp;overall.</p>
+<p>As I build all of this, to work out what will and won’t be in the demo, I find myself next fiddling with presentation material. I really don’t even like to have presentation material, I’d much rather have an interesting enough talk and respective code, samples, and demo to just show the whole thing. Presentation slide decks always fell like, and almost always are, just a crutch for the inability to form ideas, show concepts, or otherwise actually engage the audience around what is being presented. It’s a frustrating dichotomy to say the least. Eventually, with these latest efforts, I actually intend to get down to two slides: one for my information when ending the talk, the requisite contact information and such, then two would be the intro slide with a fancy title for whatever the meat of the talk will be&nbsp;about.</p>
+<p>All of this work however is going to be interrupted by the dramatically more important bike ride I’ll take later to clear my thoughts and get the blood flowing through my veins. As things go, I actually dislike sitting still for more than a few hours. I like to chunk my time into brackets, get the work done, and then go for a ride, walk, or something to get my mind cleared back up. I hear it’s healthier for us humans too, but I’ve not set the research to memory to make that&nbsp;argument.</p>
+<p>Until later…&nbsp;fini.</p>
+</section>
+                </docs>
+                <!-- End of Blog Page-->
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="nav"><a href="/">« Home</a></div>
+      </div>
+    </div>
+    <script src="/js/all.js"></script>
+    <script src="/js/custom.js"></script>
+    <!-- Google Tag Manager-->
+    <noscript>
+      <iframe src="//www.googletagmanager.com/ns.html?id=GTM-KMMZX2" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <script>
+      console.log(document.getElementById("search-google"));
+      console.log(document.getElementById("search-google").innerText);
+      
+      var searchBox = document.getElementById("search-google");
+      
+      function googleSearch(search_string) {
+          alert(search_string);
+      }
+      
+      document.getElementById("search-google").addEventListener("onClick", function () {
+          alert(document.getElementById("search-google").innerHTML);
+      });
+      
+      document.getElementById("search-google").addEventListener("onClick", function () {
+          googleSearch(document.getElementById("search-google").innerHTML)
+      });
+      
+    </script>
+    <script>
+      (function (i, s, o, g, r, a, m) {
+          i['GoogleAnalyticsObject'] = r;
+          i[r] = i[r] || function () {
+                      (i[r].q = i[r].q || []).push(arguments)
+                  }, i[r].l = 1 * new Date();
+          a = s.createElement(o),
+                  m = s.getElementsByTagName(o)[0];
+          a.async = 1;
+          a.src = g;
+          m.parentNode.insertBefore(a, m)
+      })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+      ga('create', 'UA-39158070-6', 'auto');
+      ga('send', 'pageview');
+    </script>
+  </body>
+</html>
