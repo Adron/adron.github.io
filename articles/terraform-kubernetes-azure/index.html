@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Adron's Composite Code</title>
+    <title>Adron's Thrashing Code</title>
     <meta name="description" content="">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="alternate" href="/feed.xml" type="application/rss+xml" title="Coder, Messenger, Recon, Infrastructure, Ops">
+    <link rel="alternate" href="/feed.xml" type="application/rss+xml" title="Coder, Messenger, Recon, Infrastructure, Ops, &amp; A Sprinkling of Metal">
     <link rel="icon" type="image/png" href="/img/favicons/favicon-16x16.png" sizes="16x16">
     <link rel="icon" type="image/png" href="/img/favicons/favicon-32x32.png" sizes="32x32">
     <link rel="icon" type="image/png" href="/img/favicons/favicon-96x96.png" sizes="96x96">
@@ -38,13 +38,14 @@
             <!-- Menu-->
             <nav class="right helper">
               <ul class="menu sf-menu js-menu">
-                <li><a href="/docs/thrashing-code-news/">Thrashing Code News</a></li>
                 <li><a href="#">Conf - Meetup - Events</a>
                   <ul>
                     <li><a href="/docs/Speaking-Presentations-Workshops/">Speaking - Presentations - Workshops</a></li>
                     <li><a href="/docs/calendar">Calendar of Engagements</a></li>
                   </ul>
                 </li>
+                <li><a href="/docs/thrashing-code-news/">Thrashing Code News</a></li>
+                <li><a href="/docs/medium-_TOC_/">Medium</a></li>
                 <li><a href="/docs/documentation/">Docs</a></li>
                 <li><a href="#">Contact</a>
                   <ul>
@@ -68,7 +69,7 @@
               <!-- Page Info-->
               <div class="page-info page-info-simple">
                 <h1>Build a Kubernetes Cluster on Azure with Terraform</h1>
-                <p class="author">Written by <span class="author">Adron Hall</span> and published on <span>October, 24 of 2017.</span>
+                <p class="author">Written by <span class="author">Adron Hall</span> and published on <span>November, 15 of 2017.</span>
                 </p>
                 <div class="nav"><a href="/">« Home</a></div>
               </div>
@@ -87,10 +88,10 @@
                 <!-- Blog Page-->
                 <article class="article">
                   <section class="content"><div class="image float-right">
-    <img src="/articles/terraform-kubernetes-azure/terraform.png" alt="Terraform">
+    <img src="/articles/terraform-kubernetes-azure/Azure.png" alt="Azure">
 </div>
 
-<p>In the previous post I wrote about building a Kubernetes Cluster with Terraform, I covered the bases of building a cluster in Google Cloud Platform. Today I’m going to tackle the Azure Platform. There are a lot of similarities being the same task, but there are some differences which I’ll take a look&nbsp;at.</p>
+<p>In the previous post I wrote about building a Kubernetes Cluster with Terraform, I covered the bases of building a cluster in Google Cloud Platform. Today I’m going to tackle the Azure Platform. There are a lot of similarities being the same task, but there are some differences which I’ll take a look at. The repository to this write up is located in <em><a href="https://github.com/Adron/another_new_world">another_new_world</a></em> on&nbsp;Github.</p>
 <p>First things first, locally you’ll want to have the respective <span class="caps">CLI</span> tools installed for Azure, Terraform, and&nbsp;Kubernetes.</p>
 <p><span class="more"></span></p>
 <ul>
@@ -99,11 +100,21 @@
 <li>With Azure <span class="caps">CLI</span> installed you can then easily install kubectl with <code>az acs kubernetes install-cli [--client-version] [--install-location]</code> command.</li>
 </ul>
 <p>Dive in&nbsp;time!</p>
-<div class="image float-left">
-    <img src="/articles/terraform-kubernetes-azure/Azure.png" alt="Azure">
+<div class="image float-right">
+    <img src="/articles/terraform-kubernetes-azure/terraform.png" alt="Terraform">
 </div>
 
 <p>Alright, first let’s take a look at the before, before we look at the after. In Azure, the user interface is very tablet oriented with a sideways scroll. Some people love it, some adamantly despise it. I’m kind of in the, “enjoy it but wouldn’t use it for work” camp. But it’s rather nice looking to show a demo, elaborate on where and what is located where within the cloud service, and provides a nice way to visualize&nbsp;resources.</p>
+<p>Let’s take a look at what we start with before building anything. The initial dashboard as one would expect, is&nbsp;empty.</p>
+<p><img src="/articles/terraform-kubernetes-azure/azure-empty-01.png" alt="Azure"></p>
+<p><img src="/articles/terraform-kubernetes-azure/azure-empty-02.png" alt="Azure"></p>
+<p><img src="/articles/terraform-kubernetes-azure/azure-empty-03.png" alt="Azure"></p>
+<p><img src="/articles/terraform-kubernetes-azure/azure-empty-04.png" alt="Azure"></p>
+<p>Alright. That’s the starting point, so let’s get started on building out a Kubernetes Cluster using&nbsp;Terraform.</p>
+<p><strong>References:</strong></p>
+<ul>
+<li><a href="/articles/terraform-kubernetes-azure/">Github&nbsp;Repo</a></li>
+</ul>
 </section>
                 </article>
                 <!-- End of Blog Page-->
