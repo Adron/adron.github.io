@@ -92,24 +92,6 @@
                   <div class="blog-grid">
                     <div class="row">
                       <div class="col-md-12 col-sm-12">
-                        <h3 class="blog-grid-title"><a href="/articles/hashiconf-trip-day-2-part-II/">HashiConf Trip Day 2 - Part II - Reception and Speakers Dinner</a></h3>
-                        <p class="blog-grid-excerpt"><p><img src="/articles/hashiconf-trip-day-2-part-II/03-up-the-hill.jpg" alt="Up the Hill"></p>
-<p>Before diving in to day 3 of my trip, I need to do justice to the awesome reception, speakers dinner, and conversations of the night&nbsp;before.</p>
-<p>After arriving and synching up with Evan on our presentation, I wandered around the <a href="http://meritagecollection.com/meritageresort/">Meritage</a> for a little while and just explored what was around. The resort had several bars, a bowling alley, coffee shop, and a host of other amenities along with their endless supply of wine. The views around the vineyard, up on the view point atop the hill next to the resort was very&nbsp;nice.</p>
-<p>
-                          <p class="more"><a href="/articles/hashiconf-trip-day-2-part-II/">more</a></p>
-                        </p>
-                        <div class="blog-grid-meta"><span class="blog-grid-date">07. September 2016</span></div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End of Blog List-->
-                </div>
-                <div class="col-md-12 col-sm-12">
-                  <!-- Blog List-->
-                  <div class="blog-grid">
-                    <div class="row">
-                      <div class="col-md-12 col-sm-12">
                         <h3 class="blog-grid-title"><a href="/articles/hashiconf-trip-day-2/">HashiConf Trip Day 2 - A Bus Ride, Napa Valley City Center, Italian, Coffee, and Terraform Notes</a></h3>
                         <p class="blog-grid-excerpt"><p>Almost to Napa, but not yet. The train pulled in and I detrained. I will admit, I know of nothing about Martinez, California except for two things: It’s a stop on the way to Jack London Square (<span class="caps">AKA</span> Oakland) and thus San Francisco and it’s got a lot of knarly looking industrial plants spewing stuff into the air. Poisonous, I’ve no idea, but I know the one’s just west of the city (or town?) are. I enjoyed the ghost fleet at mooring, the sun rising from the east, and the smooth roll of the train. Now I was standing here ready to be on my way to&nbsp;Napa.</p>
 <p><img src="/articles/hashiconf-trip-day-2/napa-valley.jpg" alt="Napa Valley"></p>
@@ -145,6 +127,50 @@
                           <p class="more"><a href="/articles/hashiconf-trip-day-1/">more</a></p>
                         </p>
                         <div class="blog-grid-meta"><span class="blog-grid-date">05. September 2016</span></div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- End of Blog List-->
+                </div>
+                <div class="col-md-12 col-sm-12">
+                  <!-- Blog List-->
+                  <div class="blog-grid">
+                    <div class="row">
+                      <div class="col-md-12 col-sm-12">
+                        <h3 class="blog-grid-title"><a href="/articles/how-ya-linux-0001-generate-regenerate-ssh-key/">Generate or Regenerate gcloud ssh Keys - How Ya Linux Series - 0001</a></h3>
+                        <p class="blog-grid-excerpt"><p>Sometimes while working with the various ssh keys you have you might need to regenerate them. Specifically I ran into this need while working with some Google Cloud Platform (<span class="caps">GCP</span>) instances with Terraform and GCP’s <em>gcloud</em> <span class="caps">CLI</span> tool. Generally, when you start working with the <em>gcloud</em> <span class="caps">CLI</span> it will, upon need if it doesn’t exist, create a key for you. When it does so it sticks the key it generates in the <code>~/.ssh/</code> directory and names the key <code>google_compute_engine</code>. To create a new ssh key pair here, navigate to the <code>~/.ssh/</code> directory and issue the following&nbsp;command.</p>
+<pre><code class="lang-shell-script">sudo ssh-keygen -t rsa -f ~/.ssh/google_compute_engine -C you_fancy_username@whatever.com
+</code></pre>
+<p>Once that is command is executed, a few moments later and a few prompts later you’ll have a new&nbsp;key.</p>
+<pre><code class="lang-shell-script">13:16 $ sudo ssh-keygen -t rsa -f ~/.ssh/google_compute_engine -C adron_hall@homedepot.comPassword:
+Generating public/private rsa key pair.
+/Users/axh6454/.ssh/google_compute_engine already exists.
+Overwrite (y/n)? y
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /Users/axh6454/.ssh/google_compute_engine.
+Your public key has been saved in /Users/axh6454/.ssh/google_compute_engine.pub.
+The key fingerprint is:
+SHA256:8xHVr19EdgPxLr2nWAkuZa8exMdEqbHNzoBxlHhFkZM adron_hall@ataplace.com
+The key&#39;s randomart image is:
++---[RSA 2048]----+
+|           ooBB= |
+|          o.=.E.+|
+|          .= *.*o|
+|          .o+o= o|
+|        S . *=o= |
+|         o * +=.o|
+|          o o +oo|
+|           . = .o|
+|           .+ .  |
++----[SHA256]-----+
+✔ ~/.ssh
+13:16 $
+</code></pre>
+<p>That’s it. Sort of. For <span class="caps">GCP</span> be sure to check out the docs on managing ssh keys. There are docs on <a href="https://cloud.google.com/sdk/gcloud/reference/compute/config-ssh"><code>gcloud compute config-ssh</code></a> and <a href="https://cloud.google.com/compute/docs/instances/adding-removing-ssh-keys">Adding and Removing <span class="caps">SSH</span> keys</a>.</p>
+
+                        </p>
+                        <div class="blog-grid-meta"><span class="blog-grid-date">26. August 2016</span></div>
                       </div>
                     </div>
                   </div>
