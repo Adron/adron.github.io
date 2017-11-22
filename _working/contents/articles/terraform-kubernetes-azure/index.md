@@ -165,7 +165,32 @@ Now run a `terraform plan` to determine the change diff.
 
 ![Terraform Plan](terraform-plan.png)
 
-Everything looks good, so I'm clear to run `terraform apply`.
+Everything looks good, so I'm clear to run `terraform apply`. Note I changed from a Linux machine, did a git pull of the repo for state, and then actually ran `terraform apply`. This is one of the huge advantages of using configuration based immutable infrastructure and respective git based workflow for your infrastructure. I needed to displace to a new location, and I was able to easily do that and continue writing this blog entry!
+
+![Terraform Plan](terraform-apply.png)
+
+After about 6-10 minutes the Kubernetes cluster will be created in Azure. The output variable `get_credentials_command` will print out the Azure CLI command something like this.
+
+```
+get_credentials_command = az acs kubernetes get-credentials --name="bluekubyhouse" --resource-group="zuragroup"
+```
+
+Now if I'm authenticated to Azure and have an unexpired working token I can issue this command then commence to work with az at the command line against the Kubernetes Cluster.
+
+```
+az login
+az acs kubernetes get-credentials --name="bluekubyhouse" --resource-group="zuragroup"
+```
+
+Once this command is issued, then a proxy for the local admin site can be started with the following command.
+
+```
+az acs kubernetes browse --ssh-key-file ~/.ssh/id_rsa --name="bluekubyhouse" --resource-group="zuragroup"
+```
+
+The user interface is then available at [127.0.0.1:8001/ui](http://127.0.0.1:8001/ui)
+
+That's it for this round. More observations, ideas, and opinions (cuz I've got a load of those!) coming in the near future. Cheers!
 
 **References:**
 

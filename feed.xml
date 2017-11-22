@@ -5,9 +5,159 @@
     <atom:link href="http://adron.github.io/feed.xml" rel="self" type="application/rss+xml"></atom:link>
     <link>http://adron.github.io</link>
     <description>Coder, Messenger, Recon, Infrastructure, Ops, &amp; A Sprinkling of Metal</description>
-    <pubDate>Mon, 06 Nov 2017 11:02:26 -0800</pubDate>
+    <pubDate>Wed, 15 Nov 2017 12:00:14 -0800</pubDate>
     <generator>Wintersmith - https://github.com/jnordberg/wintersmith</generator>
     <language>en</language>
+    <item>
+      <title>Build a Kubernetes Cluster on Azure with Terraform</title>
+      <link>http://adron.github.io/articles/terraform-kubernetes-azure/</link>
+      <pubDate>Wed, 15 Nov 2017 12:00:14 -0800</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/terraform-kubernetes-azure/</guid>
+      <author></author>
+      <description>&lt;div class=&quot;image float-right&quot;&gt;
+    &lt;img src=&quot;/articles/terraform-kubernetes-azure/Azure.png&quot; alt=&quot;Azure&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;In the previous post I wrote about building a Kubernetes Cluster with Terraform, I covered the bases of building a cluster in Google Cloud Platform. Today I’m going to tackle the Azure Platform. There are a lot of similarities being the same task, but there are some differences which I’ll take a look at. The repository to this write up is located in &lt;em&gt;&lt;a href=&quot;https://github.com/Adron/another_new_world&quot;&gt;another_new_world&lt;/a&gt;&lt;/em&gt; on Github.&lt;/p&gt;
+&lt;p&gt;First things first, locally you’ll want to have the respective CLI tools installed for Azure, Terraform, and Kubernetes.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Install the &lt;a href=&quot;https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest&quot;&gt;Azure CLI&lt;/a&gt; and get it configured with &lt;code&gt;az configure&lt;/code&gt; command.&lt;/li&gt;
+&lt;li&gt;Install the latest &lt;a href=&quot;https://www.terraform.io/intro/getting-started/install.html&quot;&gt;Terraform&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;With Azure CLI installed you can then easily install kubectl with &lt;code&gt;az acs kubernetes install-cli [--client-version] [--install-location]&lt;/code&gt; command.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Dive in time!&lt;/p&gt;
+&lt;div class=&quot;image float-right&quot;&gt;
+    &lt;img src=&quot;http://adron.github.io/articles/terraform-kubernetes-azure/terraform.png&quot; alt=&quot;Terraform&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Alright, first let’s take a look at the before, before we look at the after. In Azure, the user interface is very tablet oriented with a sideways scroll. Some people love it, some adamantly despise it. I’m kind of in the, “enjoy it but wouldn’t use it for work” camp. But it’s rather nice looking to show a demo, elaborate on where and what is located where within the cloud service, and provides a nice way to visualize resources.&lt;/p&gt;
+&lt;p&gt;Let’s take a look at what we start with before building anything. The initial dashboard as one would expect, empty.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/terraform-kubernetes-azure/azure-empty-01.png&quot; alt=&quot;Azure&quot;&gt;&lt;/p&gt;
+&lt;p&gt;If you click on the all resources button on the left hand menu. Hover over to see which is which, or the three bars to see the descriptions displayed for all of the icons. Here we can view any and all resources created. This is an extremely useful view to get an idea of all the resources that are setup and running.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/terraform-kubernetes-azure/azure-empty-02.png&quot; alt=&quot;Azure&quot;&gt;&lt;/p&gt;
+&lt;p&gt;The organizational structures of Azure’s Resource Groups can be found here, and is another section to note. Many resources can be grouped per Resource Group, per the meaning of the word itself.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/terraform-kubernetes-azure/azure-empty-03.png&quot; alt=&quot;Azure&quot;&gt;&lt;/p&gt;
+&lt;p&gt;It is also a good idea, if using Azure, the familiarize yourself with the screens, tabs, menus, and other related collateral that popup on the sides. Remember, when navigating this interface that it was designed for touch screens and tablet like devices, and everything will make sense. At least, it will make more sense, when trying to navigate and find various properties and features.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/terraform-kubernetes-azure/azure-empty-04.png&quot; alt=&quot;Azure&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Alright. That’s the starting point, so let’s get started on building out a Kubernetes Cluster using Terraform. The first thing we’ll need is to setup our Azure connection for Terraform. I’ve created this in a file called &lt;code&gt;connections.tf&lt;/code&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;provider &lt;span class=&quot;string&quot;&gt;&quot;azurerm&quot;&lt;/span&gt; {
+  subscription_id = &lt;span class=&quot;string&quot;&gt;&quot;${var.subscription_id}&quot;&lt;/span&gt;
+  client_id = &lt;span class=&quot;string&quot;&gt;&quot;${var.client_id}&quot;&lt;/span&gt;
+  client_secret = &lt;span class=&quot;string&quot;&gt;&quot;${var.client_secret}&quot;&lt;/span&gt;
+  tenant_id = &lt;span class=&quot;string&quot;&gt;&quot;${var.tenant_id}&quot;&lt;/span&gt;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The next thing I need now is a resource for an Azure Resource Group. That configuration looks like this.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;resource &lt;span class=&quot;string&quot;&gt;&quot;azurerm_resource_group&quot;&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&quot;zura_resource_group&quot;&lt;/span&gt; {
+  name     = &lt;span class=&quot;string&quot;&gt;&quot;zuragroup&quot;&lt;/span&gt;
+  location = &lt;span class=&quot;string&quot;&gt;&quot;West US&quot;&lt;/span&gt;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;I added the above resource group to a file called &lt;code&gt;kubernetes.tf&lt;/code&gt; in the &lt;a href=&quot;https://github.com/Adron/another_new_world&quot;&gt;repository&lt;/a&gt;. Setting the name to what I wanted and assigning it to the West US location. After that I then added the Kubernetes configuration.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;resource &lt;span class=&quot;string&quot;&gt;&quot;azurerm_container_service&quot;&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&quot;bluekuby&quot;&lt;/span&gt; {
+  name                   = &lt;span class=&quot;string&quot;&gt;&quot;bluekubyhouse&quot;&lt;/span&gt;
+  location               = &lt;span class=&quot;string&quot;&gt;&quot;${azurerm_resource_group.zura_resource_group.location}&quot;&lt;/span&gt;
+  resource_group_name    = &lt;span class=&quot;string&quot;&gt;&quot;${azurerm_resource_group.zura_resource_group.name}&quot;&lt;/span&gt;
+  orchestration_platform = &lt;span class=&quot;string&quot;&gt;&quot;Kubernetes&quot;&lt;/span&gt;
+
+  master_profile {
+    count      = &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;
+    dns_prefix = &lt;span class=&quot;string&quot;&gt;&quot;${var.azure_cluster_prefix}&quot;&lt;/span&gt;
+  }
+
+  linux_profile {
+    admin_username = &lt;span class=&quot;string&quot;&gt;&quot;${var.linux_admin_username}&quot;&lt;/span&gt;
+
+    ssh_key {
+      key_data = &lt;span class=&quot;string&quot;&gt;&quot;${var.ssh_key}&quot;&lt;/span&gt;
+    }
+  }
+
+  agent_pool_profile {
+    name       = &lt;span class=&quot;string&quot;&gt;&quot;default&quot;&lt;/span&gt;
+    count      = &lt;span class=&quot;string&quot;&gt;&quot;${var.azure_node_count}&quot;&lt;/span&gt;
+    dns_prefix = &lt;span class=&quot;string&quot;&gt;&quot;kuby.house&quot;&lt;/span&gt;
+    vm_size    = &lt;span class=&quot;string&quot;&gt;&quot;Standard_A0&quot;&lt;/span&gt;
+  }
+
+  service_principal {
+    client_id     = &lt;span class=&quot;string&quot;&gt;&quot;${var.client_id}&quot;&lt;/span&gt;
+    client_secret = &lt;span class=&quot;string&quot;&gt;&quot;${var.client_secret}&quot;&lt;/span&gt;
+  }
+
+  diagnostics_profile {
+    enabled = &lt;span class=&quot;literal&quot;&gt;false&lt;/span&gt;
+  }
+
+  tags {
+    Environment = &lt;span class=&quot;string&quot;&gt;&quot;Production&quot;&lt;/span&gt;
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;In this file I setup the &lt;code&gt;location&lt;/code&gt; and &lt;code&gt;resource_group_name&lt;/code&gt; to the respective resource group parameters &lt;code&gt;location&lt;/code&gt; and &lt;code&gt;name&lt;/code&gt;. The &lt;code&gt;dns_prefix&lt;/code&gt; for the &lt;code&gt;master_profile&lt;/code&gt; I set to a variable called &lt;code&gt;azure_cluster_prefix&lt;/code&gt; which I’ll create and set in a &lt;code&gt;variables.tf&lt;/code&gt; file and the respective &lt;code&gt;terraform.tfvars&lt;/code&gt; file. The ssh key data is set to the &lt;code&gt;ssh_key&lt;/code&gt; variable, a variable I’ll declare in the &lt;code&gt;variables.tf&lt;/code&gt; file but assign via environment variable.&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;terraform.tf&lt;/code&gt; file then looks like this.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;variable &lt;span class=&quot;string&quot;&gt;&quot;linux_admin_username&quot;&lt;/span&gt; {
+  type        = &lt;span class=&quot;string&quot;&gt;&quot;string&quot;&lt;/span&gt;
+  description = &lt;span class=&quot;string&quot;&gt;&quot;Linux admin username.&quot;&lt;/span&gt;
+}
+
+variable &lt;span class=&quot;string&quot;&gt;&quot;ssh_key&quot;&lt;/span&gt; {
+  type        = &lt;span class=&quot;string&quot;&gt;&quot;string&quot;&lt;/span&gt;
+  description = &lt;span class=&quot;string&quot;&gt;&quot;SSH Key for Kubernetes Clusters.&quot;&lt;/span&gt;
+}
+
+&lt;span class=&quot;comment&quot;&gt;// Azure Variables&lt;/span&gt;
+variable &lt;span class=&quot;string&quot;&gt;&quot;azure_node_count&quot;&lt;/span&gt; {
+  type        = &lt;span class=&quot;string&quot;&gt;&quot;string&quot;&lt;/span&gt;
+  description = &lt;span class=&quot;string&quot;&gt;&quot;Count of cluster instances to start.&quot;&lt;/span&gt;
+}
+
+variable &lt;span class=&quot;string&quot;&gt;&quot;azure_cluster_prefix&quot;&lt;/span&gt; {
+  type        = &lt;span class=&quot;string&quot;&gt;&quot;string&quot;&lt;/span&gt;
+  description = &lt;span class=&quot;string&quot;&gt;&quot;The prefix for the Azure cluster.&quot;&lt;/span&gt;
+}
+
+&lt;span class=&quot;comment&quot;&gt;// Secrets variables&lt;/span&gt;
+variable &lt;span class=&quot;string&quot;&gt;&quot;subscription_id&quot;&lt;/span&gt; {}
+variable &lt;span class=&quot;string&quot;&gt;&quot;client_id&quot;&lt;/span&gt; {}
+variable &lt;span class=&quot;string&quot;&gt;&quot;client_secret&quot;&lt;/span&gt; {}
+variable &lt;span class=&quot;string&quot;&gt;&quot;tenant_id&quot;&lt;/span&gt; {}
+
+&lt;span class=&quot;comment&quot;&gt;// Output variables&lt;/span&gt;
+output &lt;span class=&quot;string&quot;&gt;&quot;get_credentials_command&quot;&lt;/span&gt; {
+  value = &lt;span class=&quot;string&quot;&gt;&quot;az acs kubernetes get-credentials --name=\&quot;${azurerm_container_service.bluekuby.name}\&quot; --resource-group=\&quot;${azurerm_resource_group.zura_resource_group.name}\&quot;&quot;&lt;/span&gt;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Note that I added an output variable that would take pertinent data and provide the get-credential command for azure, to connect and work with the Kubernetes cluster once it is created.&lt;/p&gt;
+&lt;p&gt;The secret variables are also assigned via environment variables to keep any secrets out of the repository.&lt;/p&gt;
+&lt;p&gt;Last, I created a &lt;code&gt;terraform.tfvars&lt;/code&gt; file with the following.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// Azure Variables&lt;/span&gt;
+azure_node_count = &lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;
+azure_cluster_prefix = &lt;span class=&quot;string&quot;&gt;&quot;fancyclusters&quot;&lt;/span&gt;
+linux_admin_username = &lt;span class=&quot;string&quot;&gt;&quot;frank&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now I can run &lt;code&gt;terraform init&lt;/code&gt; to pull in dependencies for the provider. In this case, the command will pull in the azurerm provider.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/terraform-kubernetes-azure/terraform-init.png&quot; alt=&quot;Terraform Init&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Now run a &lt;code&gt;terraform plan&lt;/code&gt; to determine the change diff.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/terraform-kubernetes-azure/terraform-plan.png&quot; alt=&quot;Terraform Plan&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Everything looks good, so I’m clear to run &lt;code&gt;terraform apply&lt;/code&gt;. Note I changed from a Linux machine, did a git pull of the repo for state, and then actually ran &lt;code&gt;terraform apply&lt;/code&gt;. This is one of the huge advantages of using configuration based immutable infrastructure and respective git based workflow for your infrastructure. I needed to displace to a new location, and I was able to easily do that and continue writing this blog entry!&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/terraform-kubernetes-azure/terraform-apply.png&quot; alt=&quot;Terraform Plan&quot;&gt;&lt;/p&gt;
+&lt;p&gt;After about 6-10 minutes the Kubernetes cluster will be created in Azure. The output variable &lt;code&gt;get_credentials_command&lt;/code&gt; will print out the Azure CLI command something like this.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;get_credentials_command = az acs kubernetes get-credentials --name=&amp;quot;bluekubyhouse&amp;quot; --resource-group=&amp;quot;zuragroup&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Now if I’m authenticated to Azure and have an unexpired working token I can issue this command then commence to work with az at the command line against the Kubernetes Cluster.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;az login
+az acs kubernetes get-credentials --name=&amp;quot;bluekubyhouse&amp;quot; --resource-group=&amp;quot;zuragroup&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Once this command is issued, then a proxy for the local admin site can be started with the following command.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;az acs kubernetes browse --ssh-key-file ~/.ssh/id_rsa --name=&amp;quot;bluekubyhouse&amp;quot; --resource-group=&amp;quot;zuragroup&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The user interface is then available at &lt;a href=&quot;http://127.0.0.1:8001/ui&quot;&gt;127.0.0.1:8001/ui&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;That’s it for this round. More observations, ideas, and opinions (cuz I’ve got a load of those!) coming in the near future. Cheers!&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;References:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/Adron/another_new_world&quot;&gt;Github Repo&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
     <item>
       <title>Chaos, Presentations, and Thrashing Code Metal Monday for November, 6th 2017</title>
       <link>http://adron.github.io/articles/thrashing-code-metal-monday-11-06-2017/</link>
@@ -6002,23 +6152,6 @@ it can be.&lt;/p&gt;
 </description>
     </item>
     <item>
-      <title>I Play the JavaScript by Matt McKegg</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</link>
-      <pubDate>Thu, 02 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</guid>
-      <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-left&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/mattmckegg.jpg&quot; alt=&quot;Matt McKegg&quot;&gt;
-&lt;/div&gt;
-
-&lt;p&gt;A JavaScript hacker and backyard musician and from Wellington, New Zealand. Lover of all things open and modular. I spend most of my time pressing buttons of various shapes, sizes and colours. Sometimes these buttons make sounds.&lt;/p&gt;
-&lt;p&gt;Matt has been making music with computers for about 10 years, but once he tried to move from bedroom composing to live performance, he got incredibly frustrated at how hard it was to play computer music live. He decided to start working on his own live electronic performance software written in JavaScript that would let me play the way he wanted to play. 3 years later, it’s finally starting to become a reality.&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Here is one of the Matt’s recent performances, for your viewing pleasure. &lt;/p&gt;
-&lt;iframe width=&quot;1280&quot; height=&quot;720&quot; src=&quot;https://www.youtube.com/embed/L2BVDJWHdy0?rel=0&amp;amp;showinfo=0&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;</description>
-    </item>
-    <item>
       <title>The Web Platform is the Universal Instrument by Ben Michel</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-ben-michel/</link>
       <pubDate>Thu, 02 Jun 2016 17:00:00 -0700</pubDate>
@@ -6046,21 +6179,21 @@ it can be.&lt;/p&gt;
 </description>
     </item>
     <item>
-      <title>The House Is Not On Fire - Building a home automation robot with Arduino, Raspberry Pi and Node.js by Artur Paikin</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</link>
-      <pubDate>Wed, 01 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</guid>
+      <title>I Play the JavaScript by Matt McKegg</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</link>
+      <pubDate>Thu, 02 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-matt-mckegg/</guid>
       <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-right&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/art-stida.jpg&quot; alt=&quot;Artur Paikin&quot;&gt;
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-left&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/mattmckegg.jpg&quot; alt=&quot;Matt McKegg&quot;&gt;
 &lt;/div&gt;
 
-&lt;p&gt;Artur describes himself as, “I’m a web developer and traveler. I write stories about my adventures in Russian and English on my site: &lt;a href=&quot;http://arturpaikin.com&quot;&gt;http://arturpaikin.com&lt;/a&gt; and run a small technology cooperative called &lt;a href=&quot;http://unebaguette.com&quot;&gt;Baguette&lt;/a&gt;, where I work on cool projects, currently building an ambitious next generation file uploader with &lt;a href=&quot;https://transloadit.com/&quot;&gt;Transloadit&lt;/a&gt;. I ride a &lt;a href=&quot;https://www.instagram.com/p/xC0qC2SSYb&quot;&gt;foldable bicycle&lt;/a&gt;, &lt;a href=&quot;http://unebaguette.com/web-course/&quot;&gt;teach&lt;/a&gt; web development and sometimes &lt;a href=&quot;https://www.instagram.com/p/4_6LO8ySVL/&quot;&gt;garden&lt;/a&gt; on the balcony.”&lt;/p&gt;
+&lt;p&gt;A JavaScript hacker and backyard musician and from Wellington, New Zealand. Lover of all things open and modular. I spend most of my time pressing buttons of various shapes, sizes and colours. Sometimes these buttons make sounds.&lt;/p&gt;
+&lt;p&gt;Matt has been making music with computers for about 10 years, but once he tried to move from bedroom composing to live performance, he got incredibly frustrated at how hard it was to play computer music live. He decided to start working on his own live electronic performance software written in JavaScript that would let me play the way he wanted to play. 3 years later, it’s finally starting to become a reality.&lt;/p&gt;
 &lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Artur has built an open source home automation system called &lt;a href=&quot;https://github.com/arturi/kotihome&quot;&gt;Koti Home&lt;/a&gt; (Koti means home in Finnish language). It’s powered by an Arduino connected to Raspberry Pi, MQTT protocol for messaging, Node.js on the client and server, web sockets. You can interact with Koti robot via a React (like the cool kids do) control panel, Telegram Chat Bot and even your own voice.&lt;/p&gt;
-&lt;p&gt;Arthur will talk about how he’s turned this project into reality — the tech he used and the challenges he faced. From a blinking LED to a voice controlled home automation robot.&lt;/p&gt;
-</description>
+&lt;p&gt;Here is one of the Matt’s recent performances, for your viewing pleasure. &lt;/p&gt;
+&lt;iframe width=&quot;1280&quot; height=&quot;720&quot; src=&quot;https://www.youtube.com/embed/L2BVDJWHdy0?rel=0&amp;amp;showinfo=0&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;</description>
     </item>
     <item>
       <title>Code First Docs How we Threw Out The Book &amp; Put Code First With Twilio Documentation by Jarod Reyes</title>
@@ -6084,6 +6217,23 @@ it can be.&lt;/p&gt;
 &lt;li&gt;Twitter: &lt;a href=&quot;https://twitter.com/jreyesdev&quot;&gt;@jreyesdev&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Github: &lt;a href=&quot;https://github.com/jarodreyes&quot;&gt;github.com/jarodreyes&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+</description>
+    </item>
+    <item>
+      <title>The House Is Not On Fire - Building a home automation robot with Arduino, Raspberry Pi and Node.js by Artur Paikin</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</link>
+      <pubDate>Wed, 01 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-right&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/art-stida.jpg&quot; alt=&quot;Artur Paikin&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Artur describes himself as, “I’m a web developer and traveler. I write stories about my adventures in Russian and English on my site: &lt;a href=&quot;http://arturpaikin.com&quot;&gt;http://arturpaikin.com&lt;/a&gt; and run a small technology cooperative called &lt;a href=&quot;http://unebaguette.com&quot;&gt;Baguette&lt;/a&gt;, where I work on cool projects, currently building an ambitious next generation file uploader with &lt;a href=&quot;https://transloadit.com/&quot;&gt;Transloadit&lt;/a&gt;. I ride a &lt;a href=&quot;https://www.instagram.com/p/xC0qC2SSYb&quot;&gt;foldable bicycle&lt;/a&gt;, &lt;a href=&quot;http://unebaguette.com/web-course/&quot;&gt;teach&lt;/a&gt; web development and sometimes &lt;a href=&quot;https://www.instagram.com/p/4_6LO8ySVL/&quot;&gt;garden&lt;/a&gt; on the balcony.”&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Artur has built an open source home automation system called &lt;a href=&quot;https://github.com/arturi/kotihome&quot;&gt;Koti Home&lt;/a&gt; (Koti means home in Finnish language). It’s powered by an Arduino connected to Raspberry Pi, MQTT protocol for messaging, Node.js on the client and server, web sockets. You can interact with Koti robot via a React (like the cool kids do) control panel, Telegram Chat Bot and even your own voice.&lt;/p&gt;
+&lt;p&gt;Arthur will talk about how he’s turned this project into reality — the tech he used and the challenges he faced. From a blinking LED to a voice controlled home automation robot.&lt;/p&gt;
 </description>
     </item>
     <item>

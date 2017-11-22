@@ -105,15 +105,129 @@
 </div>
 
 <p>Alright, first let’s take a look at the before, before we look at the after. In Azure, the user interface is very tablet oriented with a sideways scroll. Some people love it, some adamantly despise it. I’m kind of in the, “enjoy it but wouldn’t use it for work” camp. But it’s rather nice looking to show a demo, elaborate on where and what is located where within the cloud service, and provides a nice way to visualize&nbsp;resources.</p>
-<p>Let’s take a look at what we start with before building anything. The initial dashboard as one would expect, is&nbsp;empty.</p>
+<p>Let’s take a look at what we start with before building anything. The initial dashboard as one would expect,&nbsp;empty.</p>
 <p><img src="/articles/terraform-kubernetes-azure/azure-empty-01.png" alt="Azure"></p>
+<p>If you click on the all resources button on the left hand menu. Hover over to see which is which, or the three bars to see the descriptions displayed for all of the icons. Here we can view any and all resources created. This is an extremely useful view to get an idea of all the resources that are setup and&nbsp;running.</p>
 <p><img src="/articles/terraform-kubernetes-azure/azure-empty-02.png" alt="Azure"></p>
+<p>The organizational structures of Azure’s Resource Groups can be found here, and is another section to note. Many resources can be grouped per Resource Group, per the meaning of the word&nbsp;itself.</p>
 <p><img src="/articles/terraform-kubernetes-azure/azure-empty-03.png" alt="Azure"></p>
+<p>It is also a good idea, if using Azure, the familiarize yourself with the screens, tabs, menus, and other related collateral that popup on the sides. Remember, when navigating this interface that it was designed for touch screens and tablet like devices, and everything will make sense. At least, it will make more sense, when trying to navigate and find various properties and&nbsp;features.</p>
 <p><img src="/articles/terraform-kubernetes-azure/azure-empty-04.png" alt="Azure"></p>
-<p>Alright. That’s the starting point, so let’s get started on building out a Kubernetes Cluster using&nbsp;Terraform.</p>
+<p>Alright. That’s the starting point, so let’s get started on building out a Kubernetes Cluster using Terraform. The first thing we’ll need is to setup our Azure connection for Terraform. I’ve created this in a file called <code>connections.tf</code>.</p>
+<pre><code class="lang-javascript">provider <span class="string">"azurerm"</span> {
+  subscription_id = <span class="string">"${var.subscription_id}"</span>
+  client_id = <span class="string">"${var.client_id}"</span>
+  client_secret = <span class="string">"${var.client_secret}"</span>
+  tenant_id = <span class="string">"${var.tenant_id}"</span>
+}
+</code></pre>
+<p>The next thing I need now is a resource for an Azure Resource Group. That configuration looks like&nbsp;this.</p>
+<pre><code class="lang-javascript">resource <span class="string">"azurerm_resource_group"</span> <span class="string">"zura_resource_group"</span> {
+  name     = <span class="string">"zuragroup"</span>
+  location = <span class="string">"West <span class="caps">US</span>"</span>
+}
+</code></pre>
+<p>I added the above resource group to a file called <code>kubernetes.tf</code> in the <a href="https://github.com/Adron/another_new_world">repository</a>. Setting the name to what I wanted and assigning it to the West <span class="caps">US</span> location. After that I then added the Kubernetes&nbsp;configuration.</p>
+<pre><code class="lang-javascript">resource <span class="string">"azurerm_container_service"</span> <span class="string">"bluekuby"</span> {
+  name                   = <span class="string">"bluekubyhouse"</span>
+  location               = <span class="string">"${azurerm_resource_group.zura_resource_group.location}"</span>
+  resource_group_name    = <span class="string">"${azurerm_resource_group.zura_resource_group.name}"</span>
+  orchestration_platform = <span class="string">"Kubernetes"</span>
+
+  master_profile {
+    count      = <span class="number">1</span>
+    dns_prefix = <span class="string">"${var.azure_cluster_prefix}"</span>
+  }
+
+  linux_profile {
+    admin_username = <span class="string">"${var.linux_admin_username}"</span>
+
+    ssh_key {
+      key_data = <span class="string">"${var.ssh_key}"</span>
+    }
+  }
+
+  agent_pool_profile {
+    name       = <span class="string">"default"</span>
+    count      = <span class="string">"${var.azure_node_count}"</span>
+    dns_prefix = <span class="string">"kuby.house"</span>
+    vm_size    = <span class="string">"Standard_A0"</span>
+  }
+
+  service_principal {
+    client_id     = <span class="string">"${var.client_id}"</span>
+    client_secret = <span class="string">"${var.client_secret}"</span>
+  }
+
+  diagnostics_profile {
+    enabled = <span class="literal">false</span>
+  }
+
+  tags {
+    Environment = <span class="string">"Production"</span>
+  }
+}
+</code></pre>
+<p>In this file I setup the <code>location</code> and <code>resource_group_name</code> to the respective resource group parameters <code>location</code> and <code>name</code>. The <code>dns_prefix</code> for the <code>master_profile</code> I set to a variable called <code>azure_cluster_prefix</code> which I’ll create and set in a <code>variables.tf</code> file and the respective <code>terraform.tfvars</code> file. The ssh key data is set to the <code>ssh_key</code> variable, a variable I’ll declare in the <code>variables.tf</code> file but assign via environment&nbsp;variable.</p>
+<p>The <code>terraform.tf</code> file then looks like&nbsp;this.</p>
+<pre><code class="lang-javascript">variable <span class="string">"linux_admin_username"</span> {
+  type        = <span class="string">"string"</span>
+  description = <span class="string">"Linux admin username."</span>
+}
+
+variable <span class="string">"ssh_key"</span> {
+  type        = <span class="string">"string"</span>
+  description = <span class="string">"<span class="caps">SSH</span> Key for Kubernetes Clusters."</span>
+}
+
+<span class="comment">// Azure Variables</span>
+variable <span class="string">"azure_node_count"</span> {
+  type        = <span class="string">"string"</span>
+  description = <span class="string">"Count of cluster instances to start."</span>
+}
+
+variable <span class="string">"azure_cluster_prefix"</span> {
+  type        = <span class="string">"string"</span>
+  description = <span class="string">"The prefix for the Azure cluster."</span>
+}
+
+<span class="comment">// Secrets variables</span>
+variable <span class="string">"subscription_id"</span> {}
+variable <span class="string">"client_id"</span> {}
+variable <span class="string">"client_secret"</span> {}
+variable <span class="string">"tenant_id"</span> {}
+
+<span class="comment">// Output variables</span>
+output <span class="string">"get_credentials_command"</span> {
+  value = <span class="string">"az acs kubernetes get-credentials --name=\"${azurerm_container_service.bluekuby.name}\" --resource-group=\"${azurerm_resource_group.zura_resource_group.name}\""</span>
+}
+</code></pre>
+<p>Note that I added an output variable that would take pertinent data and provide the get-credential command for azure, to connect and work with the Kubernetes cluster once it is&nbsp;created.</p>
+<p>The secret variables are also assigned via environment variables to keep any secrets out of the&nbsp;repository.</p>
+<p>Last, I created a <code>terraform.tfvars</code> file with the&nbsp;following.</p>
+<pre><code class="lang-javascript"><span class="comment">// Azure Variables</span>
+azure_node_count = <span class="number">3</span>
+azure_cluster_prefix = <span class="string">"fancyclusters"</span>
+linux_admin_username = <span class="string">"frank"</span>
+</code></pre>
+<p>Now I can run <code>terraform init</code> to pull in dependencies for the provider. In this case, the command will pull in the azurerm&nbsp;provider.</p>
+<p><img src="/articles/terraform-kubernetes-azure/terraform-init.png" alt="Terraform Init"></p>
+<p>Now run a <code>terraform plan</code> to determine the change&nbsp;diff.</p>
+<p><img src="/articles/terraform-kubernetes-azure/terraform-plan.png" alt="Terraform Plan"></p>
+<p>Everything looks good, so I’m clear to run <code>terraform apply</code>. Note I changed from a Linux machine, did a git pull of the repo for state, and then actually ran <code>terraform apply</code>. This is one of the huge advantages of using configuration based immutable infrastructure and respective git based workflow for your infrastructure. I needed to displace to a new location, and I was able to easily do that and continue writing this blog&nbsp;entry!</p>
+<p><img src="/articles/terraform-kubernetes-azure/terraform-apply.png" alt="Terraform Plan"></p>
+<p>After about 6-10 minutes the Kubernetes cluster will be created in Azure. The output variable <code>get_credentials_command</code> will print out the Azure <span class="caps">CLI</span> command something like&nbsp;this.</p>
+<pre><code>get_credentials_command = az acs kubernetes get-credentials --name=&quot;bluekubyhouse&quot; --resource-group=&quot;zuragroup&quot;
+</code></pre><p>Now if I’m authenticated to Azure and have an unexpired working token I can issue this command then commence to work with az at the command line against the Kubernetes&nbsp;Cluster.</p>
+<pre><code>az login
+az acs kubernetes get-credentials --name=&quot;bluekubyhouse&quot; --resource-group=&quot;zuragroup&quot;
+</code></pre><p>Once this command is issued, then a proxy for the local admin site can be started with the following&nbsp;command.</p>
+<pre><code>az acs kubernetes browse --ssh-key-file ~/.ssh/id_rsa --name=&quot;bluekubyhouse&quot; --resource-group=&quot;zuragroup&quot;
+</code></pre><p>The user interface is then available at <a href="http://127.0.0.1:8001/ui">127.0.0.1:8001/ui</a></p>
+<p>That’s it for this round. More observations, ideas, and opinions (cuz I’ve got a load of those!) coming in the near future.&nbsp;Cheers!</p>
 <p><strong>References:</strong></p>
 <ul>
-<li><a href="/articles/terraform-kubernetes-azure/">Github&nbsp;Repo</a></li>
+<li><a href="https://github.com/Adron/another_new_world">Github&nbsp;Repo</a></li>
 </ul>
 </section>
                 </article>
