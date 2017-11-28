@@ -13,6 +13,9 @@ Here's the actual character for a few fo the keys below. On the right I've inclu
 * Command:  ⌘
 * Option:  ⌥
 * Control: ^
+* Shift: ⇧
+* Control: ⌃
+* Caps Locks: ⇪
 
 * `Ctrl + a` moves the cursor to the beginning of all text at the command line.
 * `Ctrl + e` moves the cursor to the end of all the text at the command line.
