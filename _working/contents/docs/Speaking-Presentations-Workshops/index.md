@@ -8,10 +8,11 @@ This page links to my history of speaking via presentations, workshops, or other
 
 **Upcoming Presentations**
 
-* [Automated Environment Spinup & CI/CD Practices: Inception, Workflow, Deployment](/talks/cicd-in-30-minutes-or-less/) on January 18th, 2017 & [Meetup](https://www.meetup.com/CloudTalk/events/243522258/).
+* [Automated Environment Spinup & CI/CD Practices: Inception, Workflow, Deployment](/talks/cicd-in-30-minutes-or-less/) on January 18th, 2017. RSVP @  [Meetup](https://www.meetup.com/CloudTalk/events/243522258/).
 
 **Past Presentations**
 
+* [Terraforming your Development (me) + Adopting Kx Technology(Conner McNicholas)](/talks/terraform-tonight/) at [Seattle Scalability](https://www.meetup.com/Seattle-Scalability-Meetup/) on November 29th, 2017 in Seattle at [Galvanize](https://www.galvanize.com/seattle).
 * [Inception, Workflow, to $Deployed$ Removing Chaos and Noise From Your Dev Stack](/talks/inception-workflow-deployed/) on November 6th, 2017 in Redmond, Building 34 at Microsoft.  [Meetup](https://www.meetup.com/NET-Developers-Association-Eastside/events/242573024/).
 * [Inception, Workflow, to $Deployed$ Removing Chaos and Noise From Your Dev Stack](/talks/inception-workflow-deployed/) on November 7th, 2017 in Seattle, at Parametric.  [Meetup](https://www.meetup.com/NET-Developers-Association-Westside/events/242573016/).
 * [Inception, Workflow, and Coding](/talks/inception-workflow-coding/) on October 12th, 2017. [Meetup](https://www.meetup.com/ssdevelopers/events/243669995/).
