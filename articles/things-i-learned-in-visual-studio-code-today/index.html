@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="/css/style.min.css">
     <script src="/js/modernizr.js"></script>
   </head>
-  <body>
+  <body class="article-detail">
     <!--[if lt IE 8]>
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -68,8 +68,10 @@
             <div class="col-md-12">
               <!-- Page Info-->
               <div class="page-info page-info-simple">
-                <h1>Adron's Thrashing Code</h1>
-                <h2 class="description">Coder, Messenger, Recon, Infrastructure, Ops, &amp; A Sprinkling of Metal</h2>
+                <h1>A Few Things I Learned Today in Visual Studio Code</h1>
+                <p class="author">Written by <span class="author">Adron Hall</span> and published on <span>December, 03 of 2017.</span>
+                </p>
+                <div class="nav"><a href="/">« Home</a></div>
               </div>
               <!-- End Page Info-->
             </div>
@@ -84,63 +86,29 @@
             <div class="col-md-9">
               <div class="main-content">
                 <!-- Blog Page-->
-                <div class="blog">
-                  <div class="row"></div>
-                </div>
-                <div class="col-md-12 col-sm-12">
-                  <!-- Blog List-->
-                  <div class="blog-grid">
-                    <div class="row">
-                      <div class="col-md-12 col-sm-12">
-                        <h3 class="blog-grid-title"><a href="/articles/working-with-google-compute-engine/">Working With Google Compute Engine (GCE) using Terraform (With a load of Bash Scripts too)</a></h3>
-                        <p class="blog-grid-excerpt"><p><strong>Mission:</strong> I wanted to setup an instance, that I could install various things on and prepare it to act as a Terraformer or central server within <span class="caps">GCE</span> to spawn instances, setup networks, and generally manage the network autonomously of any local scripts or junk I have on my local computer. To set this up, I would of course have to launch it from my local computer, so there’s a whole range of things I’d need to have execute. To accomplish this, here’s what I&nbsp;did.</p>
-
-                          <p class="more"><a href="/articles/working-with-google-compute-engine/">more</a></p>
-                        </p>
-                        <div class="blog-grid-meta"><span class="blog-grid-date">12. June 2016</span></div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End of Blog List-->
-                </div>
-                <div class="col-md-12 col-sm-12">
-                  <!-- Blog List-->
-                  <div class="blog-grid">
-                    <div class="row">
-                      <div class="col-md-12 col-sm-12">
-                        <h3 class="blog-grid-title"><a href="/articles/how-ya-linux-0000-Startup-things/">Startup Things - How Ya Linux Series - 0000</a></h3>
-                        <p class="blog-grid-excerpt"><div class="image float-right">
-    <img src="/articles/how-ya-linux-0000-Startup-things/penguinbash.jpg" alt="Penguin Bash">
-</div>
-
-<p>When Linux starts up (or most Unix variants or <span class="caps">OS</span>-X for that matter, which is after all a kind of Unix variant) there are particular scrips that execute. The key two are ~/.bash_profile and ~./bashrc. When you log in the ~/.bash_profile executes and when you startup a shell then the ~/.bashrc&nbsp;executes.</p>
-<p>These two files are standard executable script files, so any bash will do. For instance, some of the bash script I end up in my ~/.bash_profile includes a git prompt, as shown&nbsp;below.</p>
-<p>
-                          <p class="more"><a href="/articles/how-ya-linux-0000-Startup-things/">more</a></p>
-                        </p>
-                        <div class="blog-grid-meta"><span class="blog-grid-date">11. June 2016</span></div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End of Blog List-->
-                </div>
-                <div class="col-md-12 col-sm-12">
-                  <!-- Blog List-->
-                  <div class="blog-grid">
-                    <div class="row">
-                      <div class="col-md-12 col-sm-12">
-                        <h3 class="blog-grid-title"><a href="/articles/node-pdx-2016/">The Short Story of Node PDX, and Node PDX 2016</a></h3>
-                        <p class="blog-grid-excerpt"><p>Some of you may know the story, but I’ll tell it again for those that don’t. In 2012 Troy Howard (<a href="https://twitter.com/thoward37">@thoward37</a>) and I were sitting at the Side Door hacking on some project code. We started talking about where and what was up with the Node.js project, community, and asking ourselves what the future of that was. You see, we’d toyed about with the technology here and there but we hadn’t really done anything with&nbsp;it.</p>
-<p>We continued our coding, enjoying a tasty locally brewed beer, frothy and good. After a reasonable amount of said tasty beer, we started discussing a way to get up to speed faster on Node.js. In our infinitely wise and slightly intoxicated minds we both thought, “Hey, let’s throw a conference!”. We immediately started discussing this idea and a number of decisions were&nbsp;made…</p>
-<p>
-                          <p class="more"><a href="/articles/node-pdx-2016/">more</a></p>
-                        </p>
-                        <div class="blog-grid-meta"><span class="blog-grid-date">08. June 2016</span></div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End of Blog List-->
-                </div>
+                <article class="article">
+                  <section class="content"><p>I opened up Visual Studio Code today with an intent to use it for all my editing, documenting, and coding today. My priorities today, on a day I’ve taken off from <em>work</em>, is to work on my upcoming <em>Terraform Course</em>, a little Go coding, and also a few general tasks and notes. While I work on these priorities, you dear reader, get the benefit of my random notes.&nbsp;;)</p>
+<p><span class="more"></span></p>
+<h2 id="shortcut-keys">Shortcut&nbsp;Keys</h2>
+<p>There are a few shortcut keys I’ve used so frequently it has become paramount to remember them. Otherwise it’s just wasteful trying to look them up over and&nbsp;over.</p>
+<h3 id="mac-os">Mac&nbsp;<span class="caps">OS</span></h3>
+<ul>
+<li><strong>Word Wrap</strong> <code>⌥ + z</code> that’s the option key plus the letter <code>z</code>.</li>
+<li><strong>Zen Mode</strong> [ <code>⌘ + k</code> ] then <code>z</code> which involves pressing the command key and then <code>z</code>, then releasing those now that the command key plus <code>z</code> state has been initiated. With the <span class="caps">IDE</span> in this state, then press <code>z</code> and Zen Mode will begin. This is a beautiful experience once you get the shortcut keys down and really want to just look at code, content, or whatever you’re thinking&nbsp;through.</li>
+<li><strong>Explorer</strong> <code>⌘ + b</code> that is the command key plus the letter <code>b</code> key. This brings up the explorer, in Zen Mode or regular&nbsp;mode.</li>
+<li><strong>Console</strong> <code>⌘ + j</code> that is the command key plus the letter <code>j</code> key. This brings up the section of the <span class="caps">IDE</span> that has the <em>problems</em>, <em>output</em>, <em>debug console</em>, and <em>terminal</em>, with the <em>debug console</em> in&nbsp;focus.</li>
+<li><strong>Terminal</strong> <code>^ + ` </code> which is the control key plus the tilde or back tick key and this brings up the previously stated panel, with the <em>terminal</em> in focus. Be prepared for this to take a second or two when first opening, as the engine underneath has to initiate a terminal session and is sometimes a bit clunky in&nbsp;starting.</li>
+</ul>
+<h3 id="linux">Linux</h3>
+<ul>
+<li><strong>Word Wrap</strong> <code>Alt + z</code></li>
+<li><strong>Zen Mode</strong> [ <code>Ctrl + k</code> ] then <code>z</code>. As the Mac version of the shortcut command, <code>Ctrl + k</code> initiates the <span class="caps">IDE</span> state, release those keys and then press <code>z</code> puts the <span class="caps">IDE</span> into Zen&nbsp;Mode.</li>
+<li><strong>Explorer</strong> <code>Ctrl + b</code> brings up the&nbsp;explorer.</li>
+<li><strong>Console</strong> <code>Ctrl + j</code> this brings up the console with the <em>problems</em>, <em>output</em>, <em>debug console</em>, and <em>terminal</em>, with the <em>debug console</em> in&nbsp;focus.</li>
+<li><strong>Terminal</strong> <code>Ctrl + ` </code> which is the control key plus the tilde or back tick key. See above for&nbsp;specifics.</li>
+</ul>
+</section>
+                </article>
                 <!-- End of Blog Page-->
               </div>
             </div>
@@ -233,8 +201,7 @@
             </div>
           </div>
         </div>
-        <div class="nav"><a href="/page/25/">« Newer</a>&nbsp;<a href="/page/27/">Previous »</a>
-        </div>
+        <div class="nav"><a href="/">« Home</a></div>
       </div>
     </div>
     <script src="/js/all.js"></script>
