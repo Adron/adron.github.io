@@ -5,9 +5,62 @@
     <atom:link href="http://adron.github.io/feed.xml" rel="self" type="application/rss+xml"></atom:link>
     <link>http://adron.github.io</link>
     <description>Coder, Messenger, Recon, Infrastructure, Ops, &amp; A Sprinkling of Metal</description>
-    <pubDate>Tue, 05 Dec 2017 14:09:28 -0600</pubDate>
+    <pubDate>Wed, 06 Dec 2017 02:57:22 -0600</pubDate>
     <generator>Wintersmith - https://github.com/jnordberg/wintersmith</generator>
     <language>en</language>
+    <item>
+      <title>Good Morning KubeCon?</title>
+      <link>http://adron.github.io/articles/kubecon-dayone-keynotes/</link>
+      <pubDate>Wed, 06 Dec 2017 02:57:22 -0600</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/kubecon-dayone-keynotes/</guid>
+      <author></author>
+      <description>&lt;div class=&quot;image float-right&quot;&gt;
+    &lt;img src=&quot;/articles/kubecon-dayone-keynotes/kubelogo-wide.png&quot; alt=&quot;KubeCon Logo&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;I hope you’re having a good morning so far. KubeCon has kicked off in full force like the pro-conference that it is. With 4k+ people in attendance the crowds are distinctive, even among a city like Austin. The conference lit off the day with an absurdly early registration time of 7am, and a continental breakfast of some fruit and pastries.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;h2 id=&quot;keynote-s-&quot;&gt;Keynote(s)&lt;/h2&gt;
+&lt;h3 id=&quot;-dan-kohn-https-twitter-com-dankohn1-&quot;&gt;&lt;a href=&quot;https://twitter.com/dankohn1&quot;&gt;Dan Kohn&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;The keynotes this morning kicked off at 9am. &lt;a href=&quot;https://twitter.com/dankohn1&quot;&gt;Dan Kohn&lt;/a&gt;, the executive director of the Cloud Native Computing Foundation (CNCF), started off the keynote session. He started off with a simple story about communities building. Outlining a quote from Tim Hockin, “existing time for boring infrastructure”. This really wraps up so much of everything happening in this space these days.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;“Exciting time for boring infrastructure.”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Dan continued, pointing out that Linux is one of the largest projects on Github and probably one of &lt;em&gt;the&lt;/em&gt;, if not &lt;em&gt;the&lt;/em&gt; most important project on Github. Kubernetes is in the top 10 on Github too, as Jim Zemlin said, “Kubernetes is the Linux of the Cloud”. The commit and member involvement in Kubernetes. The growth of the KubeCon event and how this event in Austin is 4x the last 4 KubeCon events! Huge growth.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;“Kubernetes is the Linux of the Cloud” - Jim Zemlin&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Dan then introduced an unexpected speaker from Alibaba that elaborated on the massive scale of Alibaba, its leading position in China, and other projects Alibaba is doing with Kubernetes.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;NOTE: Diveristy Scholarship&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;The US failed to provide visas for 4 of the diversity scholarship recipients. However they’ve been offered to attend the Copenhagen event, which in the end the US has taken more more hit because of our poor immmigration and border control rules in the United States. Something that needs to be modernized, and I’m sure we’ll keep losing out for years to come until national leadership has the spine to fix this. But I digress, onward with the keynote.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;-michelle-noorali-https-twitter-com-michellenoorali-&quot;&gt;&lt;a href=&quot;https://twitter.com/michellenoorali&quot;&gt;Michelle Noorali&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Michelle Noorali, Senior Software Engineer at Microsoft, then was introduced and came out to provide information on Special Interest Groups (SIGs), the deep dive sessions, techincal salons, and hallway tracks, and more details.&lt;/p&gt;
+&lt;p&gt;She continued to give us the story of KubeCon, Kubernetes, and the distinct history of how the rise of microservices, cloud, and container technology has changed the landscape of infrastructure and related technology. This is something important as the story isn’t always clear, but the story is a fundamental detail that informs and provides a more clearly defined path to where we’re all going with this technology.&lt;/p&gt;
+&lt;p&gt;Next Michelle dove into some specifics about the Workloads API coming in Kubernetes 1.9. For one it’ll be stable. Another is Windows Server container support beta, which I guess is stable - I haven’t used it and am curious who is, I’d love to talk!&lt;/p&gt;
+&lt;p&gt;Michelle then introduced Tom Wilkie to talk about observability and &lt;a href=&quot;https://prometheus.io&quot;&gt;Prometheus&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Next up she introduced &lt;a href=&quot;https://twitter.com/edsiper&quot;&gt;Eduardo Silva&lt;/a&gt; to discuss &lt;a href=&quot;https://www.fluentd.org&quot;&gt;fluentd&lt;/a&gt; and announce the v1.0 release. Highlights include multi-process workers, sub-second time resolution, native TLS/SSL, otimized protocol buffers, and improved Fluentd protocol buffers. He continued and elaborated on the data streaming options, and flowing to technology like &lt;a href=&quot;https://kafka.apache.org&quot;&gt;Kafka&lt;/a&gt;. Also, fluentd has been ported to Windows finally so Windows Server users can now natively use fluentd.&lt;/p&gt;
+&lt;p&gt;Reliability? What’s that? &lt;a href=&quot;https://twitter.com/olix0r&quot;&gt;Oliver Gould&lt;/a&gt; then introduced by Michelle to talk about &lt;a href=&quot;https://linkerd.io&quot;&gt;linkerd&lt;/a&gt; and give us some insight to the progress of the tool. Oliver then introduced &lt;a href=&quot;https://github.com/runconduit&quot;&gt;Conduit&lt;/a&gt; too, and then gave us a demo of it working.&lt;/p&gt;
+&lt;p&gt;Michelle then came back around to wrap up her section of the keynote and cover some additional projects within the CNCF; grpc, envoy, and such.&lt;/p&gt;
+&lt;h3 id=&quot;-imad-sousou-https-twitter-com-imadsousou-&quot;&gt;&lt;a href=&quot;https://twitter.com/imadsousou&quot;&gt;Imad Sousou&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Next up Imad Sousou came out to talk about introducing container runtimes at Intel.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;NOTE: Just for your information, Intel isn’t just processor chips.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Intel have thousands of software developers actually working on a lot of various software projects. Intel is also a company that has a fairly large number of people working on open source projects.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Imad then elaborated on &lt;a href=&quot;https://katacontainers.io&quot;&gt;Kata containers&lt;/a&gt; that are hardware accelerated containers that use virtualization technology.&lt;/p&gt;
+&lt;h3 id=&quot;-diane-marsh-https-twitter-com-dmarsh-&quot;&gt;&lt;a href=&quot;https://twitter.com/dmarsh&quot;&gt;Diane Marsh&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Diane Marsh of Netflix came out next to discuss the importance of culture of building these tools, and what happens with these tools. The core of the talk focused around tools Spinnaker, Asgard - &lt;em&gt;namely continuous delivery&lt;/em&gt; - and other Netflix OSS and how culture plays a part. She detailed how Netflix culture affected how people accepted and were able to use Asgard or Spinnaker. For instance, the culture at Netflix is one of freedom, and many companies don’t have this level of maturity. Netflix has this level of freedom, to deploy, because of a very strong level of trust.&lt;/p&gt;
+&lt;h3 id=&quot;-adrian-cockroft-https-twitter-com-adrianco-&quot;&gt;&lt;a href=&quot;https://twitter.com/adrianco&quot;&gt;Adrian Cockroft&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Finally to wrap up the morning keynote, Adrian Cockroft came out to show us a few things. Leading of with cloud native principles; immutable code deployments, high utilization with aggressive efficiency by turning things off, pay as you go, no waiting globally deployed and distributed models. At AWS he’s working to increase the contributions AWS makes, working with CNCF (which they’ve joined), pushing cloud native, and integrating CNCF components (all those projects) into AWS.&lt;/p&gt;
+&lt;p&gt;Some of the projects AWS is involved in include; &lt;a href=&quot;http://adron.github.io/articles/kubecon-dayone-keynotes/&quot;&gt;containerd&lt;/a&gt;, kubernetes installers and security, and CNI, the &lt;a href=&quot;https://github.com/containernetworking/cni&quot;&gt;Container Networking Interface&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Adrian also noted, importantly, that all AWS work with Kubernetes is upstreamed to Kubernetes itself and not a fork of the project. They’re working toward making all integration at all levels within AWS. Some of the work even include work and partnerships with Heptio around authentication for IAM within AWS. Lots of good things, and a lot of high integrity work!&lt;/p&gt;
+&lt;p&gt;Beyond Kubernetes and other elements Adrian’s teams are working on integrations with SPIFFE, HashiCorp Vault, and other open source tooling. I for one am pretty excited aobut these tools coming online at AWS as it’ll make my life easier to get some great things deployed and enabling customers and groups I work with! “Much excite, much wow” as the internet would say.&lt;/p&gt;
+&lt;p&gt;Adrian then dove into Fargate, discussed how it folds in with EKS, and how the integration is going to work.&lt;/p&gt;
+&lt;p&gt;For now, that’s that for the keynote.&lt;/p&gt;
+</description>
+    </item>
     <item>
       <title>KubeCon - Arrival, Flight, and Scheduling</title>
       <link>http://adron.github.io/articles/kubecon-arrival-schedule-etc/</link>
@@ -6098,6 +6151,36 @@ export TF_VAR_password=&amp;quot;someSecretPassword&amp;quot;
 </description>
     </item>
     <item>
+      <title>Modern Javascript Frameworks - Introduction to Ember.JS and Ember-CLI by Suchita Doshi</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-suchita-doshi/</link>
+      <pubDate>Sat, 04 Jun 2016 19:00:00 -0500</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-suchita-doshi/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-suchita-doshi/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-right&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-suchita-doshi/suchita-doshi.jpg&quot; alt=&quot;Suchita Doshi&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Suchita is UI Lead for the analytics module of Yahoo Admanager Plus team and Core member of Emberjs group @Yahoo, Speaker at Women Who code organization (Introduction To Emberjs/Ember CLI), Conducted Webinar for the TenXList members on EmberJS. She’s passionate about improving developers ergonomics and a hardcore “cricket” fan.&lt;/p&gt;
+&lt;p&gt;In other Suchita news, she’s opening bats-woman for the Bay Area Cricket Association team! 😀&lt;/p&gt;
+&lt;p&gt;Suchita describes her talk as “There will never be a “one size fits all” approach to web development. If you want your application to be minimally interactive, then server side rendered HTML would be the way to go, else, if it were a more interactive application, then client side framework would benefit you.
+Why not use just JQuery instead of adopting these Modern Javascript Frameworks? Think about it! If your application has interactivity on the lighter side, then JQuery would work well, but as soon as you introduce more states in your application, it would then become messier and heavier on the DOM. You would need to use the ‘data-‘ attributes to store the data in your DOM and also remember how to map them with the triggered events.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Here is where client side frameworks come to the rescue. I have worked on several client side frameworks like Backbone.js, Ember.js. Few of the many features I love about Ember.js are the two-way data binding, Computed Properties, the run loop, convention over configuration nature, ease of handling routing and many more.
+In this talk I would be covering the following:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Introduction to Emberjs and why Ember&lt;/li&gt;
+&lt;li&gt;How Ember js makes a difference&lt;/li&gt;
+&lt;li&gt;Ember convention over configuration nature&lt;/li&gt;
+&lt;li&gt;Introduction to Ember routes, components and templates&lt;/li&gt;
+&lt;li&gt;Introduction to Ember CLI&lt;/li&gt;
+&lt;li&gt;Computed Properties&lt;/li&gt;
+&lt;li&gt;Live Demo on how it’s really intuitive in a couple of non-trivial scenarios.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;So basically my goal is to attract more developers to adapt modern javascript frameworks and make a difference in the way complex apps are built.”&lt;/p&gt;
+</description>
+    </item>
+    <item>
       <title>The SAM Pattern - a distributed system view of Front-End architectures by Jean-Jacques Dubray</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-jean-jacques-dubray/</link>
       <pubDate>Sat, 04 Jun 2016 19:00:00 -0500</pubDate>
@@ -6128,33 +6211,20 @@ key concepts of SAM and walk the audience through some node.js code samples (inc
 </description>
     </item>
     <item>
-      <title>Modern Javascript Frameworks - Introduction to Ember.JS and Ember-CLI by Suchita Doshi</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-suchita-doshi/</link>
-      <pubDate>Sat, 04 Jun 2016 19:00:00 -0500</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-suchita-doshi/</guid>
+      <title>WebSockets Bring Light at the End of the Tunnel by Joel Lord</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</link>
+      <pubDate>Fri, 03 Jun 2016 19:00:00 -0500</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</guid>
       <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-suchita-doshi/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-right&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-suchita-doshi/suchita-doshi.jpg&quot; alt=&quot;Suchita Doshi&quot;&gt;
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-left&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/joel-lord.jpg&quot; alt=&quot;Joel Lord&quot;&gt;
 &lt;/div&gt;
 
-&lt;p&gt;Suchita is UI Lead for the analytics module of Yahoo Admanager Plus team and Core member of Emberjs group @Yahoo, Speaker at Women Who code organization (Introduction To Emberjs/Ember CLI), Conducted Webinar for the TenXList members on EmberJS. She’s passionate about improving developers ergonomics and a hardcore “cricket” fan.&lt;/p&gt;
-&lt;p&gt;In other Suchita news, she’s opening bats-woman for the Bay Area Cricket Association team! 😀&lt;/p&gt;
-&lt;p&gt;Suchita describes her talk as “There will never be a “one size fits all” approach to web development. If you want your application to be minimally interactive, then server side rendered HTML would be the way to go, else, if it were a more interactive application, then client side framework would benefit you.
-Why not use just JQuery instead of adopting these Modern Javascript Frameworks? Think about it! If your application has interactivity on the lighter side, then JQuery would work well, but as soon as you introduce more states in your application, it would then become messier and heavier on the DOM. You would need to use the ‘data-‘ attributes to store the data in your DOM and also remember how to map them with the triggered events.&lt;/p&gt;
+&lt;p&gt;As a Development Manager, Joel’s motivation and proven technical prowess makes him a key member of Spiria’s software development team. With a degree in computational astrophysics, his interests eventually made their way to software and Web design. Today, his knowledge of JavaScript lets him to support a variety of projects on both the front end and back end. As we move into the age of the Internet of Things, Joel is ready with his passion for programming node bots and experimenting with gadgets.&lt;/p&gt;
 &lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Here is where client side frameworks come to the rescue. I have worked on several client side frameworks like Backbone.js, Ember.js. Few of the many features I love about Ember.js are the two-way data binding, Computed Properties, the run loop, convention over configuration nature, ease of handling routing and many more.
-In this talk I would be covering the following:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Introduction to Emberjs and why Ember&lt;/li&gt;
-&lt;li&gt;How Ember js makes a difference&lt;/li&gt;
-&lt;li&gt;Ember convention over configuration nature&lt;/li&gt;
-&lt;li&gt;Introduction to Ember routes, components and templates&lt;/li&gt;
-&lt;li&gt;Introduction to Ember CLI&lt;/li&gt;
-&lt;li&gt;Computed Properties&lt;/li&gt;
-&lt;li&gt;Live Demo on how it’s really intuitive in a couple of non-trivial scenarios.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;So basically my goal is to attract more developers to adapt modern javascript frameworks and make a difference in the way complex apps are built.”&lt;/p&gt;
+&lt;p&gt;Joel is going to speak on Web Sockets and tunnels of light… or to describe it more specifically more and more, people seem to be obsessed with real-time data.  But what does real-time mean in the world of REST servers and one-way communication?  Most modern web applications are now either displaying a snapshot of data at a given time or use a polling mechanism to update series of data at a given interval.
+In this talk, you will learn about the power of WebSockets and how they can (and should!) be used in your modern web applications. In these 30 minutes, I will go through the process of building a Node server that can push data to multiple clients in real-time.  You will see how this can be easy using the socket.io library.&lt;/p&gt;
 </description>
     </item>
     <item>
@@ -6192,23 +6262,6 @@ it can be.&lt;/p&gt;
 &lt;li&gt;show number of players&lt;/li&gt;
 &lt;li&gt;start when 4 players in? one player hit’s start? let all player see total count as well and status of the other players&lt;/li&gt;
 &lt;/ul&gt;
-</description>
-    </item>
-    <item>
-      <title>WebSockets Bring Light at the End of the Tunnel by Joel Lord</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</link>
-      <pubDate>Fri, 03 Jun 2016 19:00:00 -0500</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</guid>
-      <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-left&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/joel-lord.jpg&quot; alt=&quot;Joel Lord&quot;&gt;
-&lt;/div&gt;
-
-&lt;p&gt;As a Development Manager, Joel’s motivation and proven technical prowess makes him a key member of Spiria’s software development team. With a degree in computational astrophysics, his interests eventually made their way to software and Web design. Today, his knowledge of JavaScript lets him to support a variety of projects on both the front end and back end. As we move into the age of the Internet of Things, Joel is ready with his passion for programming node bots and experimenting with gadgets.&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Joel is going to speak on Web Sockets and tunnels of light… or to describe it more specifically more and more, people seem to be obsessed with real-time data.  But what does real-time mean in the world of REST servers and one-way communication?  Most modern web applications are now either displaying a snapshot of data at a given time or use a polling mechanism to update series of data at a given interval.
-In this talk, you will learn about the power of WebSockets and how they can (and should!) be used in your modern web applications. In these 30 minutes, I will go through the process of building a Node server that can push data to multiple clients in real-time.  You will see how this can be easy using the socket.io library.&lt;/p&gt;
 </description>
     </item>
     <item>
@@ -6256,6 +6309,23 @@ In this talk, you will learn about the power of WebSockets and how they can (and
 </description>
     </item>
     <item>
+      <title>The House Is Not On Fire - Building a home automation robot with Arduino, Raspberry Pi and Node.js by Artur Paikin</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</link>
+      <pubDate>Wed, 01 Jun 2016 19:00:00 -0500</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-right&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/art-stida.jpg&quot; alt=&quot;Artur Paikin&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Artur describes himself as, “I’m a web developer and traveler. I write stories about my adventures in Russian and English on my site: &lt;a href=&quot;http://arturpaikin.com&quot;&gt;http://arturpaikin.com&lt;/a&gt; and run a small technology cooperative called &lt;a href=&quot;http://unebaguette.com&quot;&gt;Baguette&lt;/a&gt;, where I work on cool projects, currently building an ambitious next generation file uploader with &lt;a href=&quot;https://transloadit.com/&quot;&gt;Transloadit&lt;/a&gt;. I ride a &lt;a href=&quot;https://www.instagram.com/p/xC0qC2SSYb&quot;&gt;foldable bicycle&lt;/a&gt;, &lt;a href=&quot;http://unebaguette.com/web-course/&quot;&gt;teach&lt;/a&gt; web development and sometimes &lt;a href=&quot;https://www.instagram.com/p/4_6LO8ySVL/&quot;&gt;garden&lt;/a&gt; on the balcony.”&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Artur has built an open source home automation system called &lt;a href=&quot;https://github.com/arturi/kotihome&quot;&gt;Koti Home&lt;/a&gt; (Koti means home in Finnish language). It’s powered by an Arduino connected to Raspberry Pi, MQTT protocol for messaging, Node.js on the client and server, web sockets. You can interact with Koti robot via a React (like the cool kids do) control panel, Telegram Chat Bot and even your own voice.&lt;/p&gt;
+&lt;p&gt;Arthur will talk about how he’s turned this project into reality — the tech he used and the challenges he faced. From a blinking LED to a voice controlled home automation robot.&lt;/p&gt;
+</description>
+    </item>
+    <item>
       <title>Code First Docs How we Threw Out The Book &amp; Put Code First With Twilio Documentation by Jarod Reyes</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-jarod-reyes/</link>
       <pubDate>Wed, 01 Jun 2016 19:00:00 -0500</pubDate>
@@ -6277,23 +6347,6 @@ In this talk, you will learn about the power of WebSockets and how they can (and
 &lt;li&gt;Twitter: &lt;a href=&quot;https://twitter.com/jreyesdev&quot;&gt;@jreyesdev&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Github: &lt;a href=&quot;https://github.com/jarodreyes&quot;&gt;github.com/jarodreyes&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-</description>
-    </item>
-    <item>
-      <title>The House Is Not On Fire - Building a home automation robot with Arduino, Raspberry Pi and Node.js by Artur Paikin</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</link>
-      <pubDate>Wed, 01 Jun 2016 19:00:00 -0500</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-artur-paikin/</guid>
-      <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-right&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/art-stida.jpg&quot; alt=&quot;Artur Paikin&quot;&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Artur describes himself as, “I’m a web developer and traveler. I write stories about my adventures in Russian and English on my site: &lt;a href=&quot;http://arturpaikin.com&quot;&gt;http://arturpaikin.com&lt;/a&gt; and run a small technology cooperative called &lt;a href=&quot;http://unebaguette.com&quot;&gt;Baguette&lt;/a&gt;, where I work on cool projects, currently building an ambitious next generation file uploader with &lt;a href=&quot;https://transloadit.com/&quot;&gt;Transloadit&lt;/a&gt;. I ride a &lt;a href=&quot;https://www.instagram.com/p/xC0qC2SSYb&quot;&gt;foldable bicycle&lt;/a&gt;, &lt;a href=&quot;http://unebaguette.com/web-course/&quot;&gt;teach&lt;/a&gt; web development and sometimes &lt;a href=&quot;https://www.instagram.com/p/4_6LO8ySVL/&quot;&gt;garden&lt;/a&gt; on the balcony.”&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Artur has built an open source home automation system called &lt;a href=&quot;https://github.com/arturi/kotihome&quot;&gt;Koti Home&lt;/a&gt; (Koti means home in Finnish language). It’s powered by an Arduino connected to Raspberry Pi, MQTT protocol for messaging, Node.js on the client and server, web sockets. You can interact with Koti robot via a React (like the cool kids do) control panel, Telegram Chat Bot and even your own voice.&lt;/p&gt;
-&lt;p&gt;Arthur will talk about how he’s turned this project into reality — the tech he used and the challenges he faced. From a blinking LED to a voice controlled home automation robot.&lt;/p&gt;
 </description>
     </item>
     <item>
