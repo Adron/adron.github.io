@@ -37,4 +37,3 @@ Today Tigera annuonced new product features and capabilities around securing Kub
 [Craig McLuckie](https://twitter.com/cmcluck)
 
 To wrap up the keynote, Kelsey introduced [Craig McLuckie](https://twitter.com/cmcluck) of [Heptio](https://www.heptio.com/). Craig came out to talk about the road ahead, and also talk about the community itself. He spoke of developer productivity, multi-cloud, and the complexity of enterprise use of... well... anything.
-
