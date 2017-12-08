@@ -6238,23 +6238,6 @@ In this talk I would be covering the following:&lt;/p&gt;
 </description>
     </item>
     <item>
-      <title>WebSockets Bring Light at the End of the Tunnel by Joel Lord</title>
-      <link>http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</link>
-      <pubDate>Fri, 03 Jun 2016 19:00:00 -0500</pubDate>
-      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</guid>
-      <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-left&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/joel-lord.jpg&quot; alt=&quot;Joel Lord&quot;&gt;
-&lt;/div&gt;
-
-&lt;p&gt;As a Development Manager, Joel’s motivation and proven technical prowess makes him a key member of Spiria’s software development team. With a degree in computational astrophysics, his interests eventually made their way to software and Web design. Today, his knowledge of JavaScript lets him to support a variety of projects on both the front end and back end. As we move into the age of the Internet of Things, Joel is ready with his passion for programming node bots and experimenting with gadgets.&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Joel is going to speak on Web Sockets and tunnels of light… or to describe it more specifically more and more, people seem to be obsessed with real-time data.  But what does real-time mean in the world of REST servers and one-way communication?  Most modern web applications are now either displaying a snapshot of data at a given time or use a polling mechanism to update series of data at a given interval.
-In this talk, you will learn about the power of WebSockets and how they can (and should!) be used in your modern web applications. In these 30 minutes, I will go through the process of building a Node server that can push data to multiple clients in real-time.  You will see how this can be easy using the socket.io library.&lt;/p&gt;
-</description>
-    </item>
-    <item>
       <title>MMOWAM - Build Server-less Games with a DSN by Josh Marinacci</title>
       <link>http://adron.github.io/articles/node-pdx-2016-speaker-josh-marinacci/</link>
       <pubDate>Fri, 03 Jun 2016 19:00:00 -0500</pubDate>
@@ -6289,6 +6272,23 @@ it can be.&lt;/p&gt;
 &lt;li&gt;show number of players&lt;/li&gt;
 &lt;li&gt;start when 4 players in? one player hit’s start? let all player see total count as well and status of the other players&lt;/li&gt;
 &lt;/ul&gt;
+</description>
+    </item>
+    <item>
+      <title>WebSockets Bring Light at the End of the Tunnel by Joel Lord</title>
+      <link>http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</link>
+      <pubDate>Fri, 03 Jun 2016 19:00:00 -0500</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/node-pdx-2016-speaker-joel-lord/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-left&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-joel-lord/joel-lord.jpg&quot; alt=&quot;Joel Lord&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;As a Development Manager, Joel’s motivation and proven technical prowess makes him a key member of Spiria’s software development team. With a degree in computational astrophysics, his interests eventually made their way to software and Web design. Today, his knowledge of JavaScript lets him to support a variety of projects on both the front end and back end. As we move into the age of the Internet of Things, Joel is ready with his passion for programming node bots and experimenting with gadgets.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Joel is going to speak on Web Sockets and tunnels of light… or to describe it more specifically more and more, people seem to be obsessed with real-time data.  But what does real-time mean in the world of REST servers and one-way communication?  Most modern web applications are now either displaying a snapshot of data at a given time or use a polling mechanism to update series of data at a given interval.
+In this talk, you will learn about the power of WebSockets and how they can (and should!) be used in your modern web applications. In these 30 minutes, I will go through the process of building a Node server that can push data to multiple clients in real-time.  You will see how this can be easy using the socket.io library.&lt;/p&gt;
 </description>
     </item>
     <item>
