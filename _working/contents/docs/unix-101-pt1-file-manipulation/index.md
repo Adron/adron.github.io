@@ -1,3 +1,10 @@
+---
+title: Linux (*nix) 101 Topics - File Manipulation
+author: Adron Hall
+date: 2016-07-02:17:45:26
+template: doc.jade
+---
+
 * `ls` This command lists the files in a directory, and with certain switches will list permissions, size, date craeted, and various other information. The `ls` has a number of switches, which I've shown in the following examples.
 
 **Examples:**
