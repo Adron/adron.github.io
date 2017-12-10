@@ -92,7 +92,17 @@
 <script src="https://gist.github.com/Adron/025d88548527d107c272e836ab9e0cc6.js"></script>
 
 <p>Longform Git Branch Tracking&nbsp;Commands.</p>
-<script src="https://gist.github.com/Adron/d9c6fc041f01f1b298bbea9793de3bb3.js"></script></section>
+<script src="https://gist.github.com/Adron/d9c6fc041f01f1b298bbea9793de3bb3.js"></script>
+
+<p>How to free up space when the boot disk gets full form kernal installations and&nbsp;such.</p>
+<p>First find&nbsp;packages.</p>
+<pre><code>dpkg -l linux-image*
+</code></pre><p>Identify the kernal version in&nbsp;use.</p>
+<pre><code>uname -r
+</code></pre><p>Delete the old&nbsp;kernals.</p>
+<p>sudo apt-get remove linux-image-4.4.0-{101,103}-server
+sudo apt-get remove&nbsp;linux-image-4.8.0-{36,56,58}-server</p>
+</section>
                 </docs>
                 <!-- End of Blog Page-->
               </div>
