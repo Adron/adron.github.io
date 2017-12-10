@@ -19,8 +19,16 @@ template: doc.jade
         <li class="is-folder">OS -
             <span class="file-tree-description">Operating Systems</span>
             <ul>
-                <li class="is-folder">Linux -
+                <li class="is-folder">Linux / Unix -
                     <span class="file-tree-description">Ubuntu, Debian, CentOS, Etc</span>
+                    <ul>
+                        <li class="is-folder">Unix/Linux 101 Series -
+                            <span class="file-tree-description"></span>
+                            <ul>
+                                <li class="is-file">[Part 1 - File and Directory Manipulation](../../docs/unix-101-pt1-file-manipulation)</li>
+                            </ul>
+                        </li>
+                    </ul>
                     <ul>
                         <li class="is-folder">Terminals & Bash -
                             <span class="file-tree-description">JavaScript libraries</span>
