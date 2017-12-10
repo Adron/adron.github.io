@@ -1,15 +1,4 @@
----
-title: Unix 101 Part 1 - File Manipulation
-author: Adron Hall
-date: 2017-12-10:03:19:57
-template: doc.jade
----
-# Linux (`*`nix) 101 Topics - File Manipulatio
-
-## `ls`, `mv`, `rm`, `cp`, `mkdir`, `rmdir`
-
 * `ls` This command lists the files in a directory, and with certain switches will list permissions, size, date craeted, and various other information. The `ls` has a number of switches, which I've shown in the following examples.
-
 
 **Examples:**
 
@@ -55,22 +44,14 @@ some-markdown.md      empty-file.txt
 
 Here's the specifics for some of the most commonly used switches with `ls`.
 
--a 
-    all files (include files with . prefix)
--l 
-    long detail (provide file statistics)
--t 
-    order by creation time
--u 
-    sort by access time (or show when last accessed together with -l)
--S 
-    order by size
--r 
-    reverse order
--s 
-    show filesizes
--h 
-    "human readble"; show filesizes in kilobytes and megabytes (-h can be used together with -l or -s)
+-a  all files (include files with . prefix)
+-l  long detail (provide file statistics)
+-t  order by creation time
+-u  sort by access time (or show when last accessed together with -l)
+-S  order by size
+-r  reverse order
+-s  show filesizes
+-h  "human readble"; show filesizes in kilobytes and megabytes (-h can be used together with -l or -s)
 
 * `mv` this moves a file from one location to another, or can be used to rename a file. Use `mv -i` to prevent overwriting files with move.
 
