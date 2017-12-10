@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Adron's Thrashing Code</title>
+    <meta name="description" content="">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="alternate" href="/feed.xml" type="application/rss+xml" title="Coder, Messenger, Recon, Infrastructure, Ops, &amp; A Sprinkling of Metal">
+    <link rel="icon" type="image/png" href="/img/favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/img/favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/img/favicons/favicon-96x96.png" sizes="96x96">
+    <link rel="apple-touch-icon" sizes="57x57" href="/img/favicons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/img/favicons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/img/favicons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/img/favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/img/favicons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/img/favicons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/img/favicons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/img/favicons/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/favicons/apple-touch-icon-180x180.png">
+    <link rel="stylesheet" href="/css/custom.css">
+    <link rel="stylesheet" href="/css/style.min.css">
+    <script src="/js/modernizr.js"></script>
+  </head>
+  <body class="article-detail">
+    <!--[if lt IE 8]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <div class="header header-over large">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 col-sm-6 col-xs-6">
+            <!-- Logo Image--><a href="/index.html" class="logo-image logo-animated"><img src="/img/logos/logo.png" alt="logo"></a>
+            <!-- End of Logo Image-->
+          </div>
+          <div class="col-md-9 col-sm-6 col-xs-6">
+            <!-- Menu-->
+            <nav class="right helper">
+              <ul class="menu sf-menu js-menu">
+                <li><a href="/docs/thrashing-code-news/">Thrashing Code News</a></li>
+                <li><a href="#">Conf - Meetup - Events</a>
+                  <ul>
+                    <li><a href="/docs/Speaking-Presentations-Workshops/">Speaking - Presentations - Workshops</a></li>
+                    <li><a href="/docs/calendar">Calendar of Engagements</a></li>
+                  </ul>
+                </li>
+                <li><a href="/docs/documentation/">Docs</a></li>
+                <li><a href="#">Contact</a>
+                  <ul>
+                    <li><a href="/docs/contact">Message</a></li>
+                    <li><a href="/docs/job-talk/">Hire</a></li>
+                  </ul>
+                </li>
+                <li><a href="/docs/about/">About</a></li>
+              </ul>
+            </nav>
+            <!-- End of Menu-->
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="header-back header-back-simple header-back-small">
+      <div class="header-back-container">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <!-- Page Info-->
+              <div class="page-info page-info-simple">
+                <h1>Unix 101 Part 1 - File Manipulation</h1>
+                <div class="nav"> «<a href="/"> Home</a></div>
+              </div>
+              <!-- End Page Info-->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="content">
+      <div class="container">
+        <div class="layout with-right-sidebar js-layout">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="main-content">
+                <!-- Blog Page-->
+                <docs class="article">
+                  <section class="content"><h1 id="linux-nix-101-topics-file-manipulatio">Linux (<code>*</code>nix) 101 Topics - File&nbsp;Manipulatio</h1>
+<h2 id="-ls-mv-rm-cp-mkdir-rmdir-"><code>ls</code>, <code>mv</code>, <code>rm</code>, <code>cp</code>, <code>mkdir</code>, <code>rmdir</code></h2>
+<ul>
+<li><code>ls</code> This command lists the files in a directory, and with certain switches will list permissions, size, date craeted, and various other information. The <code>ls</code> has a number of switches, which I’ve shown in the following&nbsp;examples.</li>
+</ul>
+<p><strong>Examples:</strong></p>
+<pre><code>adrons@workstation-machine$ ls
+a-directory-here  some-file         the-new-filename.txt
+empty-file.txt    some-markdown.md
+adrons@workstation-machine$ ls -a
+.   a-directory-here  .gitignore     some-file         the-new-filename.txt
+..  empty-file.txt    .hidden-file1  some-markdown.md
+adrons@workstation-machine$ ls -la
+total 12
+drwxrwxr-x  3 adron adron 4096 Dec 10 02:58 .
+drwxrwxr-x 19 adron adron 4096 Dec 10 02:47 ..
+drwxrwxr-x  2 adron adron 4096 Dec 10 02:48 a-directory-here
+-rw-rw-r--  1 adron adron    0 Dec 10 02:55 empty-file.txt
+-rw-rw-r--  1 adron adron    0 Dec 10 02:58 .gitignore
+-rw-rw-r--  1 adron adron    0 Dec 10 02:58 .hidden-file1
+-rw-rw-r--  1 adron adron    0 Dec 10 02:58 some-file
+-rw-rw-r--  1 adron adron    0 Dec 10 02:54 some-markdown.md
+-rw-rw-r--  1 adron adron    0 Dec 10 02:55 the-new-filename.txt
+adrons@workstation-machine$ ls -l
+total 4
+drwxrwxr-x 2 adron adron 4096 Dec 10 02:48 a-directory-here
+-rw-rw-r-- 1 adron adron    0 Dec 10 02:55 empty-file.txt
+-rw-rw-r-- 1 adron adron    0 Dec 10 02:58 some-file.txt
+-rw-rw-r-- 1 adron adron    0 Dec 10 02:54 some-markdown.md
+-rw-rw-r-- 1 adron adron    0 Dec 10 02:55 the-new-filename.txt
+adrons@workstation-machine$ ls -t
+some-file.txt         empty-file.txt    a-directory-here
+the-new-filename.txt  some-markdown.md
+adrons@workstation-machine$ ls -u
+some-file.txt   the-new-filename.txt  a-directory-here
+empty-file.txt  some-markdown.md
+adrons@workstation-machine$ ls -s
+total 4
+4 a-directory-here  0 some-file.txt     0 the-new-filename.txt
+0 empty-file.txt    0 some-markdown.md
+adrons@workstation-machine$ ls -r
+the-new-filename.txt  some-file.txt   a-directory-here
+some-markdown.md      empty-file.txt
+</code></pre><p>Here’s the specifics for some of the most commonly used switches with <code>ls</code>.</p>
+<p>-a 
+    all files (include files with . prefix)
+-l 
+    long detail (provide file statistics)
+-t 
+    order by creation time
+-u 
+    sort by access time (or show when last accessed together with -l)
+-S 
+    order by size
+-r 
+    reverse order
+-s 
+    show filesizes
+-h 
+    “human readble”; show filesizes in kilobytes and megabytes (-h can be used together with -l or&nbsp;-s)</p>
+<ul>
+<li><code>mv</code> this moves a file from one location to another, or can be used to rename a file. Use <code>mv -i</code> to prevent overwriting files with&nbsp;move.</li>
+</ul>
+<p><strong>Examples:</strong></p>
+<pre><code>adrons@workstation-machine$ ls
+a-directory-here  some-file         the-new-filename.txt
+empty-file.txt    some-markdown.md
+adrons@workstation-machine$ mv some-file some-file.txt
+adrons@workstation-machine$ ls
+a-directory-here  some-file.txt     the-new-filename.txt
+empty-file.txt    some-markdown.md
+adrons@workstation-machine$
+</code></pre><ul>
+<li><code>rm</code> this command removes a file. Use <code>rm -i</code> for interactive prompt to confirm&nbsp;deletions.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<pre><code>adrons@workstation-machine$ ls
+a-directory-here  some-file.txt     the-new-filename.txt
+empty-file.txt    some-markdown.md
+adrons@workstation-machine$ rm some-file.txt 
+adrons@workstation-machine$ rm some-markdown.md 
+adrons@workstation-machine$ ls
+a-directory-here  empty-file.txt  the-new-filename.txt
+</code></pre><ul>
+<li><code>touch</code> this will create an empty file named whatever the passed in value&nbsp;is.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<pre><code>adrons@workstation-machine$ touch empty-file.txt
+adrons@workstation-machine$ touch some-markdown.md
+adrons@workstation-machine$ ls -a
+.  ..  a-directory-here  empty-file.txt  some-markdown.md
+</code></pre><ul>
+<li><code>cp</code> this command copies a file X to Y. Use <code>cp -i</code> to prevent overwriting files when&nbsp;copying.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<pre><code>adrons@workstation-machine$ touch empty-file.txt
+adrons@workstation-machine$ cp empty-file.txt the-new-filename.txt
+adrons@workstation-machine$ ls -a
+.  ..  a-directory-here  empty-file.txt  the-new-filename.txt
+</code></pre><ul>
+<li><code>mkdir</code> this command creates a specified&nbsp;directory.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<pre><code>mkdir some-directory-name-here
+</code></pre><ul>
+<li><code>rmdir</code> this command removes the specified&nbsp;directory.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<pre><code>adrons@workstation-machine$ rmdir simplepath/
+adrons@workstation-machine$ ls -a
+.  ..  a-directory-here
+</code></pre><ul>
+<li><p><code>df</code> reports the amount of free disk space available on each partition. <code>df -h</code> Reports disk usage in human readable format with block-sizes in Kilo, Mega, <span class="amp">&amp;</span> Gigabytes. <code>df -P /usr/src</code> provides information for that particular&nbsp;path.</p>
+</li>
+<li><p><code>du</code> this command reports disk usage. The <code>du</code> command descends directories from the path the command is executed at. <code>du -k</code> usually lists the directories in&nbsp;kilobytes.</p>
+</li>
+</ul>
+<p><strong>Examples:</strong></p>
+<pre><code>adrons@workstation-machine$ mkdir simplepath
+adrons@workstation-machine$ ls -a
+.  ..  a-directory-here  simplepath
+adrons@workstation-machine$ du 
+4    ./a-directory-here
+4    ./simplepath
+12    .
+adrons@workstation-machine$ df ./simplepath/
+Filesystem                  1K-blocks      Used Available Use% Mounted on
+/dev/mapper/ubuntu--vg-root 927428120 332217068 548077356  38% /
+adrons@workstation-machine$ df -h ./simplepath/
+Filesystem                   Size  Used Avail Use% Mounted on
+/dev/mapper/ubuntu--vg-root  885G  317G  523G  38% /
+adrons@workstation-machine$
+</code></pre></section>
+                </docs>
+                <!-- End of Blog Page-->
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="nav"><a href="/">« Home</a></div>
+      </div>
+    </div>
+    <script src="/js/all.js"></script>
+    <script src="/js/custom.js"></script>
+    <!-- Google Tag Manager-->
+    <noscript>
+      <iframe src="//www.googletagmanager.com/ns.html?id=GTM-KMMZX2" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <script>
+      console.log(document.getElementById("search-google"));
+      console.log(document.getElementById("search-google").innerText);
+      
+      var searchBox = document.getElementById("search-google");
+      
+      function googleSearch(search_string) {
+          alert(search_string);
+      }
+      
+      document.getElementById("search-google").addEventListener("onClick", function () {
+          alert(document.getElementById("search-google").innerHTML);
+      });
+      
+      document.getElementById("search-google").addEventListener("onClick", function () {
+          googleSearch(document.getElementById("search-google").innerHTML)
+      });
+      
+    </script>
+    <script>
+      (function (i, s, o, g, r, a, m) {
+          i['GoogleAnalyticsObject'] = r;
+          i[r] = i[r] || function () {
+                      (i[r].q = i[r].q || []).push(arguments)
+                  }, i[r].l = 1 * new Date();
+          a = s.createElement(o),
+                  m = s.getElementsByTagName(o)[0];
+          a.async = 1;
+          a.src = g;
+          m.parentNode.insertBefore(a, m)
+      })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+      ga('create', 'UA-39158070-6', 'auto');
+      ga('send', 'pageview');
+    </script>
+  </body>
+</html>
