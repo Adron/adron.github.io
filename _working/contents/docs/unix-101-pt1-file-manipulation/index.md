@@ -6,7 +6,7 @@ template: doc.jade
 ---
 The following is a list of the rudimentary commands for Linux and Unix to copy, move, list, review, and otherwise manage and maintain the files and directories on the Linux or Unix machine.
 
-* `ls` This command lists the files in a directory, and with certain switches will list permissions, size, date craeted, and various other information. The `ls` has a number of switches, which I've shown in the following examples.
+* The `ls` command lists the files in a directory, and with certain switches will list permissions, size, date craeted, and various other information. The `ls` has a number of switches, which I've shown in the following examples.
 
 **Examples:**
 
