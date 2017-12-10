@@ -149,9 +149,9 @@ adrons@workstation-machine$ ls
 a-directory-here  some-file.txt     the-new-filename.txt
 empty-file.txt    some-markdown.md
 adrons@workstation-machine$
-</code></pre><ul>
-<li><code>rm</code> this command removes a file. Use <code>rm -i</code> for interactive prompt to confirm&nbsp;deletions.</li>
-</ul>
+</code></pre><blockquote>
+<p><code>rm</code> this command removes a file. Use <code>rm -i</code> for interactive prompt to confirm&nbsp;deletions.</p>
+</blockquote>
 <p><strong>Example:</strong></p>
 <pre><code>adrons@workstation-machine$ ls
 a-directory-here  some-file.txt     the-new-filename.txt
@@ -160,40 +160,38 @@ adrons@workstation-machine$ rm some-file.txt
 adrons@workstation-machine$ rm some-markdown.md 
 adrons@workstation-machine$ ls
 a-directory-here  empty-file.txt  the-new-filename.txt
-</code></pre><ul>
-<li><code>touch</code> this will create an empty file named whatever the passed in value&nbsp;is.</li>
-</ul>
+</code></pre><blockquote>
+<p><code>touch</code> this will create an empty file named whatever the passed in value&nbsp;is.</p>
+</blockquote>
 <p><strong>Example:</strong></p>
 <pre><code>adrons@workstation-machine$ touch empty-file.txt
 adrons@workstation-machine$ touch some-markdown.md
 adrons@workstation-machine$ ls -a
 .  ..  a-directory-here  empty-file.txt  some-markdown.md
-</code></pre><ul>
-<li><code>cp</code> this command copies a file X to Y. Use <code>cp -i</code> to prevent overwriting files when&nbsp;copying.</li>
-</ul>
+</code></pre><blockquote>
+<p><code>cp</code> this command copies a file X to Y. Use <code>cp -i</code> to prevent overwriting files when&nbsp;copying.</p>
+</blockquote>
 <p><strong>Example:</strong></p>
 <pre><code>adrons@workstation-machine$ touch empty-file.txt
 adrons@workstation-machine$ cp empty-file.txt the-new-filename.txt
 adrons@workstation-machine$ ls -a
 .  ..  a-directory-here  empty-file.txt  the-new-filename.txt
-</code></pre><ul>
-<li><code>mkdir</code> this command creates a specified&nbsp;directory.</li>
-</ul>
+</code></pre><blockquote>
+<p><code>mkdir</code> this command creates a specified&nbsp;directory.</p>
+</blockquote>
 <p><strong>Example:</strong></p>
 <pre><code>mkdir some-directory-name-here
-</code></pre><ul>
-<li><code>rmdir</code> this command removes the specified&nbsp;directory.</li>
-</ul>
+</code></pre><blockquote>
+<p><code>rmdir</code> this command removes the specified&nbsp;directory.</p>
+</blockquote>
 <p><strong>Example:</strong></p>
 <pre><code>adrons@workstation-machine$ rmdir simplepath/
 adrons@workstation-machine$ ls -a
 .  ..  a-directory-here
-</code></pre><ul>
-<li><p><code>df</code> reports the amount of free disk space available on each partition. <code>df -h</code> Reports disk usage in human readable format with block-sizes in Kilo, Mega, <span class="amp">&amp;</span> Gigabytes. <code>df -P /usr/src</code> provides information for that particular&nbsp;path.</p>
-</li>
-<li><p><code>du</code> this command reports disk usage. The <code>du</code> command descends directories from the path the command is executed at. <code>du -k</code> usually lists the directories in&nbsp;kilobytes.</p>
-</li>
-</ul>
+</code></pre><blockquote>
+<p><code>df</code> reports the amount of free disk space available on each partition. <code>df -h</code> Reports disk usage in human readable format with block-sizes in Kilo, Mega, <span class="amp">&amp;</span> Gigabytes. <code>df -P /usr/src</code> provides information for that particular&nbsp;path.</p>
+<p><code>du</code> this command reports disk usage. The <code>du</code> command descends directories from the path the command is executed at. <code>du -k</code> usually lists the directories in&nbsp;kilobytes.</p>
+</blockquote>
 <p><strong>Examples:</strong></p>
 <pre><code>adrons@workstation-machine$ mkdir simplepath
 adrons@workstation-machine$ ls -a

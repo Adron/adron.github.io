@@ -76,7 +76,7 @@ empty-file.txt    some-markdown.md
 adrons@workstation-machine$ 
 ```
 
-* `rm` this command removes a file. Use `rm -i` for interactive prompt to confirm deletions.
+> `rm` this command removes a file. Use `rm -i` for interactive prompt to confirm deletions.
 
 **Example:**
 
@@ -90,7 +90,7 @@ adrons@workstation-machine$ ls
 a-directory-here  empty-file.txt  the-new-filename.txt
 ```
 
-* `touch` this will create an empty file named whatever the passed in value is.
+> `touch` this will create an empty file named whatever the passed in value is.
 
 **Example:**
 
@@ -101,7 +101,7 @@ adrons@workstation-machine$ ls -a
 .  ..  a-directory-here  empty-file.txt  some-markdown.md
 ```
 
-* `cp` this command copies a file X to Y. Use `cp -i` to prevent overwriting files when copying.
+> `cp` this command copies a file X to Y. Use `cp -i` to prevent overwriting files when copying.
 
 **Example:**
 
@@ -112,7 +112,7 @@ adrons@workstation-machine$ ls -a
 .  ..  a-directory-here  empty-file.txt  the-new-filename.txt
 ```
 
-* `mkdir` this command creates a specified directory.
+> `mkdir` this command creates a specified directory.
 
 **Example:**
 
@@ -120,7 +120,7 @@ adrons@workstation-machine$ ls -a
 mkdir some-directory-name-here
 ```
 
-* `rmdir` this command removes the specified directory.
+> `rmdir` this command removes the specified directory.
 
 **Example:**
 
@@ -130,9 +130,9 @@ adrons@workstation-machine$ ls -a
 .  ..  a-directory-here
 ```
 
-* `df` reports the amount of free disk space available on each partition. `df -h` Reports disk usage in human readable format with block-sizes in Kilo, Mega, & Gigabytes. `df -P /usr/src` provides information for that particular path.
+> `df` reports the amount of free disk space available on each partition. `df -h` Reports disk usage in human readable format with block-sizes in Kilo, Mega, & Gigabytes. `df -P /usr/src` provides information for that particular path.
 
-* `du` this command reports disk usage. The `du` command descends directories from the path the command is executed at. `du -k` usually lists the directories in kilobytes.
+> `du` this command reports disk usage. The `du` command descends directories from the path the command is executed at. `du -k` usually lists the directories in kilobytes.
 
 **Examples:**
 
