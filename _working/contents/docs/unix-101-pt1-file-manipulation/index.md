@@ -4,6 +4,7 @@ author: Adron Hall
 date: 2016-07-02:17:45:26
 template: doc.jade
 ---
+The following is a list of the rudimentary commands for Linux and Unix to copy, move, list, review, and otherwise manage and maintain the files and directories on the Linux or Unix machine.
 
 * `ls` This command lists the files in a directory, and with certain switches will list permissions, size, date craeted, and various other information. The `ls` has a number of switches, which I've shown in the following examples.
 
@@ -49,16 +50,16 @@ the-new-filename.txt  some-file.txt   a-directory-here
 some-markdown.md      empty-file.txt
 ```
 
-Here's the specifics for some of the most commonly used switches with `ls`.
+Here are some of the most commonly used switches with `ls`.
 
--a  all files (include files with . prefix)
--l  long detail (provide file statistics)
--t  order by creation time
--u  sort by access time (or show when last accessed together with -l)
--S  order by size
--r  reverse order
--s  show filesizes
--h  "human readble"; show filesizes in kilobytes and megabytes (-h can be used together with -l or -s)
+* -a  all files (include files with . prefix)
+* -l  long detail (provide file statistics)
+* -t  order by creation time
+* -u  sort by access time (or show when last accessed together with -l)
+* -S  order by size
+* -r  reverse order
+* -s  show filesizes
+* -h  "human readble"; show filesizes in kilobytes and megabytes (-h can be used together with -l or -s)
 
 * `mv` this moves a file from one location to another, or can be used to rename a file. Use `mv -i` to prevent overwriting files with move.
 

@@ -84,7 +84,8 @@
               <div class="main-content">
                 <!-- Blog Page-->
                 <docs class="article">
-                  <section class="content"><ul>
+                  <section class="content"><p>The following is a list of the rudimentary commands for Linux and Unix to copy, move, list, review, and otherwise manage and maintain the files and directories on the Linux or Unix&nbsp;machine.</p>
+<ul>
 <li><code>ls</code> This command lists the files in a directory, and with certain switches will list permissions, size, date craeted, and various other information. The <code>ls</code> has a number of switches, which I’ve shown in the following&nbsp;examples.</li>
 </ul>
 <p><strong>Examples:</strong></p>
@@ -125,17 +126,19 @@ total 4
 adrons@workstation-machine$ ls -r
 the-new-filename.txt  some-file.txt   a-directory-here
 some-markdown.md      empty-file.txt
-</code></pre><p>Here’s the specifics for some of the most commonly used switches with <code>ls</code>.</p>
-<p>-a  all files (include files with . prefix)
--l  long detail (provide file statistics)
--t  order by creation time
--u  sort by access time (or show when last accessed together with -l)
--S  order by size
--r  reverse order
--s  show filesizes
--h  “human readble”; show filesizes in kilobytes and megabytes (-h can be used together with -l or&nbsp;-s)</p>
+</code></pre><p>Here are some of the most commonly used switches with <code>ls</code>.</p>
 <ul>
-<li><code>mv</code> this moves a file from one location to another, or can be used to rename a file. Use <code>mv -i</code> to prevent overwriting files with&nbsp;move.</li>
+<li>-a  all files (include files with .&nbsp;prefix)</li>
+<li>-l  long detail (provide file&nbsp;statistics)</li>
+<li>-t  order by creation&nbsp;time</li>
+<li>-u  sort by access time (or show when last accessed together with&nbsp;-l)</li>
+<li>-S  order by&nbsp;size</li>
+<li>-r  reverse&nbsp;order</li>
+<li>-s  show&nbsp;filesizes</li>
+<li><p>-h  “human readble”; show filesizes in kilobytes and megabytes (-h can be used together with -l or&nbsp;-s)</p>
+</li>
+<li><p><code>mv</code> this moves a file from one location to another, or can be used to rename a file. Use <code>mv -i</code> to prevent overwriting files with&nbsp;move.</p>
+</li>
 </ul>
 <p><strong>Examples:</strong></p>
 <pre><code>adrons@workstation-machine$ ls
