@@ -275,4 +275,4 @@ var viewCmd = &cobra.Command{
 }
 ```
 
-Alright, that's done. On to next steps.
+Alright, that's done. On to next steps. I'll need 
