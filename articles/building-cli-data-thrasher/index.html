@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Adron's Thrashing Code</title>
+    <meta name="description" content="">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="alternate" href="/feed.xml" type="application/rss+xml" title="Coder, Messenger, Recon, Infrastructure, Ops, &amp; A Sprinkling of Metal">
+    <link rel="icon" type="image/png" href="/img/favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/img/favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/img/favicons/favicon-96x96.png" sizes="96x96">
+    <link rel="apple-touch-icon" sizes="57x57" href="/img/favicons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/img/favicons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/img/favicons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/img/favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/img/favicons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/img/favicons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/img/favicons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/img/favicons/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/favicons/apple-touch-icon-180x180.png">
+    <link rel="stylesheet" href="/css/custom.css">
+    <link rel="stylesheet" href="/css/style.min.css">
+    <script src="/js/modernizr.js"></script>
+  </head>
+  <body class="article-detail">
+    <!--[if lt IE 8]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <div class="header header-over large">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 col-sm-6 col-xs-6">
+            <!-- Logo Image--><a href="/index.html" class="logo-image logo-animated"><img src="/img/logos/logo.png" alt="logo"></a>
+            <!-- End of Logo Image-->
+          </div>
+          <div class="col-md-9 col-sm-6 col-xs-6">
+            <!-- Menu-->
+            <nav class="right helper">
+              <ul class="menu sf-menu js-menu">
+                <li><a href="#">Conf - Meetup - Events</a>
+                  <ul>
+                    <li><a href="/docs/Speaking-Presentations-Workshops/">Speaking - Presentations - Workshops</a></li>
+                    <li><a href="/docs/calendar">Calendar of Engagements</a></li>
+                  </ul>
+                </li>
+                <li><a href="/docs/thrashing-code-news/">Thrashing Code News</a></li>
+                <li><a href="/docs/medium-_TOC_/">Medium</a></li>
+                <li><a href="/docs/documentation/">Docs</a></li>
+                <li><a href="#">Contact</a>
+                  <ul>
+                    <li><a href="/docs/contact">Message</a></li>
+                    <li><a href="/docs/job-talk/">Hire</a></li>
+                  </ul>
+                </li>
+                <li><a href="/docs/about/">About</a></li>
+              </ul>
+            </nav>
+            <!-- End of Menu-->
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="header-back header-back-simple header-back-small">
+      <div class="header-back-container">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <!-- Page Info-->
+              <div class="page-info page-info-simple">
+                <h1>Building a Data Thrashing CLI Tool in Go</h1>
+                <p class="author">Written by <span class="author">Adron Hall</span> and published on <span>December, 31 of 2017.</span>
+                </p>
+                <div class="nav"><a href="/">« Home</a></div>
+              </div>
+              <!-- End Page Info-->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="content">
+      <div class="container">
+        <div class="layout with-right-sidebar js-layout">
+          <div class="row">
+            <div class="col-md-9">
+              <div class="main-content">
+                <!-- Blog Page-->
+                <article class="article">
+                  <section class="content"><p>I need a tool just to do some testing. I figured I’d throw one together real quick in Go with a few libraries out there to get the job done. The following, is that quick project. Eventually I’ll create the services that will run in some containers I’ll throw into a Kubernetes cluster, but for now, it’s all <span class="caps">CLI</span>. The first thing I’ll need is&nbsp;Cobra.</p>
+<div class="image float-right">
+    <a href="https://github.com/spf13/cobra"><img src="/articles/building-cli-data-thrasher/cobra.png" alt="Cobra CLI"></a>
+</div>
+
+<p><span class="more"></span></p>
+<div class="image float-right">
+    <a href="https://github.com/golang/dep"><img src="/articles/building-cli-data-thrasher/DigbyShadows.png" alt="Digby Shadows"></a>
+</div>
+
+<p>Before Cobra, there was one prerequisite that I already installed. I had the Go <code>dep</code> command installed for dependency management. You can install or upgrade your <code>dep</code> with brew, with the following&nbsp;commands.</p>
+<pre><code>brew install dep
+brew upgrade dep
+</code></pre><p>If you’re not using MacOS and brew, you can just use the standard go get route and run <code>go get -u github.com/golang/dep/cmd/dep</code>. The first command at that point to start managing dependencies within the root directory of your project is <code>dep init</code>. More on that in a&nbsp;minute.</p>
+<p>First I need to insure I have the Cobra <span class="caps">CLI</span> to use to generate out the initial code for the CLI itself. To get Cobra installed use the standard go get for this too with <code>go get -u github.com/spf13/cobra/cobra</code>. Now I can type <code>cobra init github.com/adron/thrasher</code> to generate the initial skeleton of my&nbsp;<span class="caps">CLI</span>.</p>
+<p><img src="/articles/building-cli-data-thrasher/cobra-init-blueland-cli.png" alt="cobra init"></p>
+<p>The folder is now generated in my Go directory, under the standard convention <em>/src/github.com/adron/blueland-cli/</em>. Now I navigate into that directory and get some of the command stubs started. I want the following commands available with my&nbsp;<span class="caps">CLI</span>.</p>
+<pre><code>thrasher thrash
+</code></pre><p>This command I’ll use to start calls of generated data against an <span class="caps">API</span> end&nbsp;point.</p>
+<pre><code>thrasher config set
+</code></pre><p>This command can be used to set the end point in which to send data&nbsp;to.</p>
+<pre><code>thrasher config view
+</code></pre><p>This command can be used to check what the <span class="caps">URI</span> is that the requests will be sent&nbsp;against.</p>
+<pre><code>thrasher config verify
+</code></pre><p>This command can be used to verify that the configured <span class="caps">URI</span> is set&nbsp;appropriately.</p>
+<p>At this point, this seems to be all I’ll need. The commands I’ll issue to get these are as&nbsp;follows.</p>
+<pre><code>cobra add thrash
+cobra add config
+cobra add set -p &#39;configCmd&#39;
+cobra add view -p &#39;configCmd&#39;
+cobra add verify -p &#39;configCmd&#39;
+</code></pre><p>To test these commands out, verifying the skeleton code is in place, build the <span class="caps">CLI</span> with a simple <code>go build</code> in the root. The result looks like&nbsp;this.</p>
+<pre><code>$ go build
+$ ./thrasher thrashthrash called
+$ ./thrasher configconfig called
+$ ./thrasher config set
+set called
+$ ./thrasher config view
+view called
+$ ./thrasher config verify
+verify called
+$
+</code></pre><p>Now a quick <code>git init</code> and addition of a <em>.gitignore</em> file with he following&nbsp;contents.</p>
+<pre><code># Binaries for programs and plugins
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Test binary, build with `go test -c`
+*.test
+
+# Output of the go coverage tool, specifically when used with LiteIDE
+*.out
+
+.idea
+.DS_Store
+</code></pre><p>Wrapping that up I added the code to the repository <a href="https://github.com/Adron/thrasher">here</a>.</p>
+<p>Next thing I setup the project with the dependencies I have so far. Using <code>dep</code> that included the <code>dep init</code> command. That looks something like this on the first pull of&nbsp;dependencies.</p>
+<p><img src="/articles/building-cli-data-thrasher/adding-dependencies.png" alt="Adding Dependencies"></p>
+<p>When I ran this command, <code>dep</code> completed the folowing&nbsp;actions.</p>
+<ol>
+<li>Looked for existing dependency management files to&nbsp;convert.</li>
+<li>Checked if the dependencies use <code>dep</code>.</li>
+<li>Identified the&nbsp;dependencies.</li>
+<li>Backed up the existing vendor directory if it existed to <em>_vendor-<span class="caps">TIMESTAMP</span>/</em></li>
+<li>Picked the highest compatible version for each&nbsp;dependency.</li>
+<li>Generated Gopkg.toml (the manifest) and Gopkg.lock&nbsp;files.</li>
+<li>Installed the dependencies in <em>vendor/</em>.</li>
+</ol>
+<p>For more information on <code>dep</code> check out the project <a href="https://github.com/golang/dep"><span class="caps">README</span>.md</a>.</p>
+<p>The next dependency I’ll add is <em><a href="https://github.com/bxcodec/faker">faker</a></em> with the following <code>dep</code> command.</p>
+<pre><code>dep ensure -add github.com/bxcodec/faker
+</code></pre><p>Now I’m ready to get started with some actual implementation. First let’s setup the configuration. This is a simple single setting that needs to be set, or retrieved from a configuration setting. Here’s the basic flow for the&nbsp;configuration.</p>
+<h2 id="managing-configuration">Managing&nbsp;Configuration</h2>
+<p>The <span class="caps">CLI</span> starts with one of two states. It either has a testing URI that the CLI will execute tests against or it doesn’t. The CLI need to check for this every time a command is executed. If it doesn’t have or can’t find the configuration a message should appear stating what is missing and then exit out. If the configuration information exists then we can continue&nbsp;forward.</p>
+<div class="image float-right">
+    <a href="https://github.com/spf13/viper"><img src="/articles/building-cli-data-thrasher/viper.png" alt="Viper Project"></a>
+</div>
+
+<p>For this, I did a quick search and realized that I would likely benefit from using the <a href="https://github.com/spf13/viper">Viper Project</a>. This project is already included with the Cobra Project so I can just dive right in. Which is exactly what I’ll do now, <em>but</em> I must add that I’ll elaborate more extensively on what all has been generated for us after a little code is&nbsp;written.</p>
+<p>First I’ll open up the main <span class="caps">CLI</span> code that I’ll use just to try out some fake data examples. The generated code file that Cobra built for me looks like what is below. It’s located where Cobra generates it, inside the <em>cmd</em> directory of the project, in a file called <em>root.go</em>.</p>
+<pre><code class="lang-javascript"><span class="comment">// Copyright © 2017 Adron Hall &lt;adronhall@gmail.com&gt;</span>
+<span class="comment">//</span>
+<span class="comment">// Licensed under the Apache License, Version 2.0 (the "License");</span>
+<span class="comment">// you may not use this file except in compliance with the License.</span>
+<span class="comment">// You may obtain a copy of the License at</span>
+<span class="comment">//</span>
+<span class="comment">//     http://www.apache.org/licenses/<span class="caps">LICENSE</span>-2.0</span>
+<span class="comment">//</span>
+<span class="comment">// Unless required by applicable law or agreed to in writing, software</span>
+<span class="comment">// distributed under the License is distributed on an "<span class="caps">AS</span> IS" BASIS,</span>
+<span class="comment">// <span class="caps">WITHOUT</span> WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span>
+<span class="comment">// See the License for the specific language governing permissions and</span>
+<span class="comment">// limitations under the License.</span>
+
+package cmd
+
+<span class="keyword">import</span> (
+    <span class="string">"fmt"</span>
+    <span class="string">"os"</span>
+
+    homedir <span class="string">"github.com/mitchellh/go-homedir"</span>
+    <span class="string">"github.com/spf13/cobra"</span>
+    <span class="string">"github.com/spf13/viper"</span>
+)
+
+<span class="keyword">var</span> cfgFile string
+
+<span class="comment">// RootCmd represents the base command when called without any subcommands</span>
+<span class="keyword">var</span> RootCmd = &amp;cobra.Command{
+    <span class="attr">Use</span>:   <span class="string">"thrasher"</span>,
+    <span class="attr">Short</span>: <span class="string">"This <span class="caps">CLI</span> is built around testing API end points by submitting data, "</span> +
+        <span class="string">"etc, generated at time of testing."</span>,
+    <span class="attr">Long</span>: <span class="string">`This <span class="caps">CLI</span> is built around sending randomly generated data at API end points for testing.
+The idea is for the data to be issued against end points using various HTTP verbs such as GET, POST, or others.
+
+For example a similar command using curl.
+  curl -d "param1=value1&amp;param2=value2" -X POST http://localhost:3000/data
+  curl -d "param1=value1&amp;param2=value2" -H "Content-Type: application/x-www-form-urlencoded" -X POST http://localhost:3000/data`</span>,
+}
+
+<span class="comment">// Execute adds all child commands to the root command and sets flags appropriately.</span>
+<span class="comment">// This is called by main.main(). It only needs to happen once to the rootCmd.</span>
+func Execute() {
+    <span class="keyword">if</span> err := RootCmd.Execute(); err != nil {
+        fmt.Println(err)
+        os.Exit(<span class="number">1</span>)
+    }
+}
+
+func init() { 
+    cobra.OnInitialize(initConfig)
+
+    <span class="comment">// Here you will define your flags and configuration settings.</span>
+    <span class="comment">// Cobra supports persistent flags, which, if defined here,</span>
+    <span class="comment">// will be global for your application.</span>
+    RootCmd.PersistentFlags().StringVar(&amp;cfgFile, <span class="string">"config"</span>, <span class="string">""</span>, <span class="string">"config file (default is $<span class="caps">HOME</span>/.thrasher.yaml)"</span>)
+
+    <span class="comment">// Cobra also supports local flags, which will only run</span>
+    <span class="comment">// when this action is called directly.</span>
+    RootCmd.Flags().BoolP(<span class="string">"toggle"</span>, <span class="string">"t"</span>, <span class="literal">false</span>, <span class="string">"Help message for toggle"</span>)
+}
+
+<span class="comment">// initConfig reads in config file and <span class="caps">ENV</span> variables if set.</span>
+func initConfig() {
+    <span class="keyword">if</span> cfgFile != <span class="string">""</span> {
+        <span class="comment">// Use config file from the flag.</span>
+        viper.SetConfigFile(cfgFile)
+    } <span class="keyword">else</span> {
+        <span class="comment">// Find home directory.</span>
+        home, <span class="attr">err</span> := homedir.Dir()
+        <span class="keyword">if</span> err != nil {
+            fmt.Println(err)
+            os.Exit(<span class="number">1</span>)
+        }
+
+        <span class="comment">// Search config in home directory with name ".thrasher" (without extension).</span>
+        viper.AddConfigPath(home)
+        viper.SetConfigName(<span class="string">".thrasher"</span>)
+    }
+
+    viper.AutomaticEnv() <span class="comment">// read in environment variables that match</span>
+
+    <span class="comment">// If a config file is found, read it in.</span>
+    <span class="keyword">if</span> err := viper.ReadInConfig(); err == nil {
+        fmt.Println(<span class="string">"Using config file:"</span>, viper.ConfigFileUsed())
+    }
+}
+</code></pre>
+<p>In this file there’s a number of things to notice, but again, I’ll get back to that. For now, I went ahead and added some code in the <code>init</code> function to initialize and set a default for the environment variable. The <code>init</code> function now looks like&nbsp;this.</p>
+<pre><code class="lang-javascript">func init() { 
+    cobra.OnInitialize(initConfig)
+
+    defaultUri := <span class="string">"localhost:3000"</span>
+    viper.SetEnvPrefix(<span class="string">"thrasher"</span>)  <span class="comment">// Uppercased automatically? Maybe just make it uppercase?</span>
+    viper.BindEnv(<span class="string">"uri"</span>)
+
+    uri := viper.Get(<span class="string">"uri"</span>)
+
+    <span class="keyword">if</span> uri == nil {
+        os.Setenv(<span class="string">"THRASHER_URI"</span>, defaultUri)
+        fmt.Printf(<span class="string">"Set environment variable THRASHER_URI to %s.\n\n"</span>, defaultUri)
+    }
+
+    <span class="comment">// Here you will define your flags and configuration settings.</span>
+    <span class="comment">// Cobra supports persistent flags, which, if defined here,</span>
+    <span class="comment">// will be global for your application.</span>
+    RootCmd.PersistentFlags().StringVar(&amp;cfgFile, <span class="string">"config"</span>, <span class="string">""</span>, <span class="string">"config file (default is $<span class="caps">HOME</span>/.thrasher.yaml)"</span>)
+
+    <span class="comment">// Cobra also supports local flags, which will only run</span>
+    <span class="comment">// when this action is called directly.</span>
+    RootCmd.Flags().BoolP(<span class="string">"toggle"</span>, <span class="string">"t"</span>, <span class="literal">false</span>, <span class="string">"Help message for toggle"</span>)
+}
+</code></pre>
+<p>Using Viper I set an environment variable prefix to <em>thrasher</em>. This means that any environment variables I set with a prefix of <em>thrasher</em> will be picked up as environment variables specifically for my application. I then set a bind to the environment variable I want to name <em>uri</em>. This will give me the value of the environment variable named <em>uri</em>. To set this value I’ll need to actually set the value <em>THRASHER_URI</em> since the Viper library automatically uppercases the environment variables. It’s all just slightly confusing, but in the end I end up with an environment variable that I can set in my <em>~/.bashrc</em> or <em>~/.bash_profile</em> settings locally and if I don’t set it, the if control structure will set the environment variable <em>THRASHER_URI</em> for me to the default that I’ve set in code <em>localhost:3000</em>.</p>
+<p>Also notice in the code above, the generated section shows a config file default location for <code>$HOME/.thrasher.yaml</code>. Currently I’m not using this default, but it’s setup that way by&nbsp;convention.</p>
+<p>I’ll want to be able to find out what my configuration setting is for the environment variable using the <code>thrasher config view</code> command. To do this, I add a few lines of code in the <em>view.go</em> file. Inside the <em>view.go</em> file there is the variable assigned to the pointer location of the command, which I’ve edited to print out the evnironment variable that is set for the&nbsp;<span class="caps">URI</span>.</p>
+<pre><code class="lang-javascript"><span class="keyword">var</span> viewCmd = &amp;cobra.Command{
+    <span class="attr">Use</span>:   <span class="string">"view"</span>,
+    <span class="attr">Short</span>: <span class="string">"The view command is used to retrieve the configuration settings."</span>,
+    <span class="attr">Long</span>: <span class="string">`The view command can be used to retrieve and view the configuration
+        settings that the thrasher <span class="caps">CLI</span> currently has active and in use.`</span>,
+    <span class="attr">Run</span>: func(cmd *cobra.Command, args []string) {
+        <span class="attr">uri</span> := viper.Get(<span class="string">"uri"</span>)
+        fmt.Printf(<span class="string">"Current <span class="caps">URI</span> to issue commands and data against is %s."</span>, uri)
+    },
+}
+</code></pre>
+<p>Alright, view is setup, now I want to setup verify. In verify I want the uri checked, an <span class="caps">HTTP</span> get issued against the URI for verification, and a respective response from the API end point. If that doesn’t come back, and an error occurs I want to handle the issues that might come&nbsp;up.</p>
+<p>The first bit of code I’ll add is getting the <span class="caps">URI</span> path with viper and issuing a get request against the URI end point. I’ll add this to the verify command pointer&nbsp;func.</p>
+<pre><code class="lang-javascript">uri := viper.GetString(<span class="string">"uri"</span>)
+resp, <span class="attr">err</span> := http.Get(uri)
+</code></pre>
+<p>I want some of the body to display, so I’ve written a small function to handle the processing and return of some of the body. That code looks like&nbsp;this.</p>
+<pre><code class="lang-javascript">func keepTopVariableLines(s string, n int) string {
+    <span class="attr">bodyResult</span> := strings.Join(strings.Split(s, <span class="string">"\n"</span>)[:n], <span class="string">"\n"</span>)
+    <span class="keyword">return</span> strings.Replace(bodyResult, <span class="string">"\r"</span>, <span class="string">""</span>, <span class="number">-1</span>)
+}
+</code></pre>
+<p>Now I’ll add some error and if else logic to display appropriate messages, display of response, and related&nbsp;information.</p>
+<pre><code class="lang-javascript"><span class="keyword">if</span> err != nil {
+    fmt.Printf(<span class="string">"Configured <span class="caps">URI</span> has errors: \n\n%s"</span>, err)
+} <span class="keyword">else</span> {
+    defer resp.Body.Close()
+
+    body, <span class="attr">err</span> := ioutil.ReadAll(resp.Body)
+
+    <span class="keyword">if</span> err != nil {
+        fmt.Printf(<span class="string">"Response body caused error: %s"</span>, err)
+    } <span class="keyword">else</span> {
+        fmt.Println(<span class="string">"Get:\n"</span>, keepTopVariableLines(string(body), <span class="number">2</span>))
+        fmt.Println(<span class="string">"\n\nURI has been retrieved, <span class="caps">URI</span> verified.\n\n"</span>)
+    }
+}
+</code></pre>
+<p>Now, I’ve got all the pieces for verify in place. The completed keeptTopVaribleLines and verify command pointer func look like this&nbsp;now.</p>
+<pre><code class="lang-javascript">func keepTopVariableLines(s string, n int) string {
+    <span class="attr">bodyResult</span> := strings.Join(strings.Split(s, <span class="string">"\n"</span>)[:n], <span class="string">"\n"</span>)
+    <span class="keyword">return</span> strings.Replace(bodyResult, <span class="string">"\r"</span>, <span class="string">""</span>, <span class="number">-1</span>)
+}
+
+<span class="comment">// verifyCmd represents the verify command</span>
+<span class="keyword">var</span> verifyCmd = &amp;cobra.Command{
+    <span class="attr">Use</span>:   <span class="string">"verify"</span>,
+    <span class="attr">Short</span>: <span class="string">"Verify will test the <span class="caps">URI</span> end point with a get call issued."</span>,
+    <span class="attr">Long</span>: <span class="string">`Verify will test the <span class="caps">URI</span> end point with an HTTP get call request against the end point.`</span>,
+    <span class="attr">Run</span>: func(cmd *cobra.Command, args []string) {
+        fmt.Println(<span class="string">"verify called"</span>)
+
+        uri := viper.GetString(<span class="string">"uri"</span>)
+        resp, <span class="attr">err</span> := http.Get(uri)
+
+        <span class="keyword">if</span> err != nil {
+            fmt.Printf(<span class="string">"Configured <span class="caps">URI</span> has errors: \n\n%s"</span>, err)
+        } <span class="keyword">else</span> {
+            defer resp.Body.Close()
+
+            body, <span class="attr">err</span> := ioutil.ReadAll(resp.Body)
+
+            <span class="keyword">if</span> err != nil {
+                fmt.Printf(<span class="string">"Response body caused error: %s"</span>, err)
+            } <span class="keyword">else</span> {
+                fmt.Println(<span class="string">"Get:\n"</span>, keepTopVariableLines(string(body), <span class="number">3</span>))
+                fmt.Println(<span class="string">"\n\nURI has been retrieved, <span class="caps">URI</span> verified.\n\n"</span>)
+            }
+        }
+    },
+}
+</code></pre>
+<p>Alright. Now with a quick <code>go build</code> this will give me a partially functioning <span class="caps">CLI</span>&nbsp;tool.</p>
+<p><img src="/articles/building-cli-data-thrasher/cli-part-1.png" alt="CLI Part 1 Result"></p>
+<p>In the next post I’ll wrap this up and get some of the data generation to post data against the end point. For now, happy Go hacking. Any questions, ping me via the Twitters <a href="https://twitter.com/Adron">@Adron</a>.</p>
+</section>
+                </article>
+                <!-- End of Blog Page-->
+              </div>
+            </div>
+            <div class="col-md-3 hidden-sm hidden-xs">
+              <div class="sidebar js-sidebar-fixed">
+                <!-- Vertical Menu-->
+                <div class="widget">
+                  <!-- Search-->
+                  <div class="search">
+                    <form action="https://google.com/search" method="get">
+                      <input type="hidden" name="sitesearch" value="http://blog.adron.me">
+                      <input type="text" name="q" placeholder="search" class="search-input form-control"><i class="fa fa-search search-icon"></i>
+                    </form>
+                  </div>
+                  <!-- End of Search-->
+                </div>
+                <div class="widget">
+                  <h3 class="widget-title">Keyword Search</h3>
+                  <!-- Tags-->
+                  <ul class="tags">
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=terraform">terraform</a></li>
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=kubernetes">kubernetes</a></li>
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=immutable+infrastructure">immutable infrastructure</a></li>
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=html">html</a></li>
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=javascript">javascript</a></li>
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=ubuntu">ubuntu</a></li>
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=node pdx">node pdx</a></li>
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=.NET fringe">.net fringe</a></li>
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=videos">videos</a></li>
+                  </ul>
+                  <!-- End of Tags-->
+                </div>
+                <nav class="menu-vertical-wrapper">
+                  <ul data-prepend-to=".js-layout" data-select="Menu" class="menu-vertical js-menu-vertical">
+                    <li><a href="#">About</a>
+                      <ul>
+                        <li><a href="/docs/about/">Me, Adron</a></li>
+                        <li><a href="#">My Hobbies</a>
+                          <ul>
+                            <li><a href="http://photos.adron.me">My Photos</a></li>
+                          </ul>
+                        </li>
+                        <li><a href="/docs/Speaking-Presentations-Workshops">My Presentations</a></li>
+                        <li><a href="/docs/documentation/">Collection of Docs & Notes</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </nav>
+                <div class="widget">
+                  <h3 class="widget-title">Photos</h3>
+                  <!-- Photos-->
+                  <ul class="widget-recommended-products">
+                    <!-- Photos-->
+                    <li class="widget-recommended-product"><img src="/img/photos/IMG_1836.jpg" alt="Jon Oropeza" class="widget-recommended-product-img"><a href="http://photos.adron.me/Software/Meetups-N-Conferences/Conferences/Node-PDX-2016/i-D9qFQ6m" class="widget-recommended-product-link">
+                        <h5 class="widget-recommended-product-link-title">Node PDX 2016<i class="fa fa-angle-right"></i></h5>
+                        <p class="widget-recommended-product-link-description">Jon Oropeza @ Node PDX 2016</p></a></li>
+                    <!-- End of Recommended product Item-->
+                    <!-- Recommended product Item-->
+                    <li class="widget-recommended-product"><img src="/img/photos/IMG_1812.jpg" alt="Liz Abinante" class="widget-recommended-product-img"><a href="http://photos.adron.me/Software/Meetups-N-Conferences/Conferences/Node-PDX-2016/i-g2m2hgP" class="widget-recommended-product-link">
+                        <h5 class="widget-recommended-product-link-title">Node PDX 2016<i class="fa fa-angle-right"></i></h5>
+                        <p class="widget-recommended-product-link-description">Liz Abinante @ Node PDX 2016</p></a></li>
+                    <!-- End of Recommended product Item-->
+                    <!-- Recommended product Item-->
+                    <li class="widget-recommended-product"><img src="/img/photos/IMG_5709.jpg" alt="Praha hlavní nádraží" class="widget-recommended-product-img"><a href="http://photos.adron.me/Travels-N-Traversings/Across-the-Pond-2016-Travels/September-Krakow/Week-4-Prague/i-62ZPsPb" class="widget-recommended-product-link">
+                        <h5 class="widget-recommended-product-link-title">Prague (Praha)<i class="fa fa-angle-right"></i></h5>
+                        <p class="widget-recommended-product-link-description">Praha hlavní nádraží</p></a></li>
+                    <!-- End of photos row one-->
+                  </ul>
+                  <ul class="widget-recommended-products">
+                    <!-- Photos-->
+                    <li class="widget-recommended-product"><img src="/img/photos/IMG_4417.jpg" alt="St Mary's Basilica" class="widget-recommended-product-img"><a href="http://photos.adron.me/Travels-N-Traversings/Across-the-Pond-2016-Travels/September-Krakow/Krakow/i-KnZf6pK/A" class="widget-recommended-product-link">
+                        <h5 class="widget-recommended-product-link-title">St Mary's Basilica<i class="fa fa-angle-right"></i></h5>
+                        <p class="widget-recommended-product-link-description">Bazylika Mariacka in Rynek Główny.</p></a></li>
+                    <!-- End of Recommended product Item-->
+                    <!-- Recommended product Item-->
+                    <li class="widget-recommended-product"><img src="/img/photos/VSC_03.png" alt="Visual Studio Code" class="widget-recommended-product-img"><a href="http://photos.adron.me/Software/Software-Development/Visual-Studio-Things/i-LLW7WcD/A" class="widget-recommended-product-link">
+                        <h5 class="widget-recommended-product-link-title">Visual Studio Code<i class="fa fa-angle-right"></i></h5>
+                        <p class="widget-recommended-product-link-description">Images from a review of Visual Studio Code.</p></a></li>
+                    <!-- End of Recommended product Item-->
+                    <!-- Recommended product Item-->
+                    <li class="widget-recommended-product"><img src="/img/photos/-home-adronhall-Pictures-Selection_002.png - Shutter_003.png" alt="" class="widget-recommended-product-img"><a href="http://photos.adron.me/Software/Software-Development/Ubuntu/i-CQsQ4zj/A" class="widget-recommended-product-link">
+                        <h5 class="widget-recommended-product-link-title">Mono Develop & WebStorm<i class="fa fa-angle-right"></i></h5>
+                        <p class="widget-recommended-product-link-description">Working through Mono Develop & WebStorm.</p></a>
+                      <!-- End of photos row two-->
+                    </li>
+                  </ul>
+                  <!-- End Photos-->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="nav"><a href="/">« Home</a></div>
+      </div>
+    </div>
+    <script src="/js/all.js"></script>
+    <script src="/js/custom.js"></script>
+    <!-- Google Tag Manager-->
+    <noscript>
+      <iframe src="//www.googletagmanager.com/ns.html?id=GTM-KMMZX2" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <script>
+      console.log(document.getElementById("search-google"));
+      console.log(document.getElementById("search-google").innerText);
+      
+      var searchBox = document.getElementById("search-google");
+      
+      function googleSearch(search_string) {
+        alert(search_string);
+      }
+      
+      document.getElementById("search-google").addEventListener("onClick", function () {
+        alert(document.getElementById("search-google").innerHTML);
+      });
+      
+      document.getElementById("search-google").addEventListener("onClick", function () {
+        googleSearch(document.getElementById("search-google").innerHTML)
+      });
+      
+    </script>
+    <script>
+      (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+                  (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+      })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+      ga('create', 'UA-39158070-6', 'auto');
+      ga('send', 'pageview');
+    </script>
+  </body>
+</html>

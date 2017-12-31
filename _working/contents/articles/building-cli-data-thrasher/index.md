@@ -1,7 +1,7 @@
 ---
 title: Building a Data Thrashing CLI Tool in Go
 author: Adron Hall
-date: 2017-12-28 19:26:58
+date: 2017-12-31 12:28:58
 template: article.jade
 ---
 I need a tool just to do some testing. I figured I'd throw one together real quick in Go with a few libraries out there to get the job done. The following, is that quick project. Eventually I'll create the services that will run in some containers I'll throw into a Kubernetes cluster, but for now, it's all CLI. The first thing I'll need is Cobra.
@@ -169,16 +169,14 @@ var cfgFile string
 // RootCmd represents the base command when called without any subcommands
 var RootCmd = &cobra.Command{
 	Use:   "thrasher",
-	Short: "A brief description of your application",
-	Long: `A longer description that spans multiple lines and likely contains
-examples and usage of using your application. For example:
+	Short: "This CLI is built around testing API end points by submitting data, " +
+		"etc, generated at time of testing.",
+	Long: `This CLI is built around sending randomly generated data at API end points for testing.
+The idea is for the data to be issued against end points using various HTTP verbs such as GET, POST, or others.
 
-Cobra is a CLI library for Go that empowers applications.
-This application is a tool to generate the needed files
-to quickly create a Cobra application.`,
-	// Uncomment the following line if your bare application
-	// has an action associated with it:
-	//	Run: func(cmd *cobra.Command, args []string) { },
+For example a similar command using curl.
+  curl -d "param1=value1&param2=value2" -X POST http://localhost:3000/data
+  curl -d "param1=value1&param2=value2" -H "Content-Type: application/x-www-form-urlencoded" -X POST http://localhost:3000/data`,
 }
 
 // Execute adds all child commands to the root command and sets flags appropriately.
@@ -260,6 +258,8 @@ func init() {
 
 Using Viper I set an environment variable prefix to *thrasher*. This means that any environment variables I set with a prefix of *thrasher* will be picked up as environment variables specifically for my application. I then set a bind to the environment variable I want to name *uri*. This will give me the value of the environment variable named *uri*. To set this value I'll need to actually set the value *THRASHER_URI* since the Viper library automatically uppercases the environment variables. It's all just slightly confusing, but in the end I end up with an environment variable that I can set in my *~/.bashrc* or *~/.bash_profile* settings locally and if I don't set it, the if control structure will set the environment variable *THRASHER_URI* for me to the default that I've set in code *localhost:3000*.
 
+Also notice in the code above, the generated section shows a config file default location for `$HOME/.thrasher.yaml`. Currently I'm not using this default, but it's setup that way by convention.
+
 I'll want to be able to find out what my configuration setting is for the environment variable using the `thrasher config view` command. To do this, I add a few lines of code in the *view.go* file. Inside the *view.go* file there is the variable assigned to the pointer location of the command, which I've edited to print out the evnironment variable that is set for the URI.
 
 ``` javascript
@@ -275,4 +275,82 @@ var viewCmd = &cobra.Command{
 }
 ```
 
-Alright, that's done. On to next steps. I'll need 
+Alright, view is setup, now I want to setup verify. In verify I want the uri checked, an HTTP get issued against the URI for verification, and a respective response from the API end point. If that doesn't come back, and an error occurs I want to handle the issues that might come up.
+
+The first bit of code I'll add is getting the URI path with viper and issuing a get request against the URI end point. I'll add this to the verify command pointer func.
+
+``` javascript
+uri := viper.GetString("uri")
+resp, err := http.Get(uri)
+```
+
+I want some of the body to display, so I've written a small function to handle the processing and return of some of the body. That code looks like this.
+
+``` javascript
+func keepTopVariableLines(s string, n int) string {
+	bodyResult := strings.Join(strings.Split(s, "\n")[:n], "\n")
+	return strings.Replace(bodyResult, "\r", "", -1)
+}
+```
+
+Now I'll add some error and if else logic to display appropriate messages, display of response, and related information.
+
+``` javascript
+if err != nil {
+	fmt.Printf("Configured URI has errors: \n\n%s", err)
+} else {
+	defer resp.Body.Close()
+
+	body, err := ioutil.ReadAll(resp.Body)
+
+	if err != nil {
+		fmt.Printf("Response body caused error: %s", err)
+	} else {
+		fmt.Println("Get:\n", keepTopVariableLines(string(body), 2))
+		fmt.Println("\n\nURI has been retrieved, URI verified.\n\n")
+	}
+}
+```
+
+Now, I've got all the pieces for verify in place. The completed keeptTopVaribleLines and verify command pointer func look like this now.
+
+``` javascript
+func keepTopVariableLines(s string, n int) string {
+	bodyResult := strings.Join(strings.Split(s, "\n")[:n], "\n")
+	return strings.Replace(bodyResult, "\r", "", -1)
+}
+
+// verifyCmd represents the verify command
+var verifyCmd = &cobra.Command{
+	Use:   "verify",
+	Short: "Verify will test the URI end point with a get call issued.",
+	Long: `Verify will test the URI end point with an HTTP get call request against the end point.`,
+	Run: func(cmd *cobra.Command, args []string) {
+		fmt.Println("verify called")
+
+		uri := viper.GetString("uri")
+		resp, err := http.Get(uri)
+
+		if err != nil {
+			fmt.Printf("Configured URI has errors: \n\n%s", err)
+		} else {
+			defer resp.Body.Close()
+
+			body, err := ioutil.ReadAll(resp.Body)
+
+			if err != nil {
+				fmt.Printf("Response body caused error: %s", err)
+			} else {
+				fmt.Println("Get:\n", keepTopVariableLines(string(body), 3))
+				fmt.Println("\n\nURI has been retrieved, URI verified.\n\n")
+			}
+		}
+	},
+}
+```
+
+Alright. Now with a quick `go build` this will give me a partially functioning CLI tool.
+
+![CLI Part 1 Result](cli-part-1.png)
+
+In the next post I'll wrap this up and get some of the data generation to post data against the end point. For now, happy Go hacking. Any questions, ping me via the Twitters [@Adron](https://twitter.com/Adron).
