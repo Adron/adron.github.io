@@ -4,7 +4,9 @@ author: Adron Hall
 date: 2017-12-31 12:28:58
 template: article.jade
 ---
-I need a tool just to do some testing. I figured I'd throw one together real quick in Go with a few libraries out there to get the job done. The following, is that quick project. Eventually I'll create the services that will run in some containers I'll throw into a Kubernetes cluster, but for now, it's all CLI. The first thing I'll need is Cobra.
+I need a tool just to do some testing against an API end point. I figured I'd throw one together real quick in Go.  With a few libraries it's just a few steps to get the job done. The following is that project. Eventually I'll create the services that will run in some containers I'll throw into a Kubernetes cluster, but for now, it's all CLI. Onward.
+
+The first thing I'll need is Cobra.
 
 <div class="image float-right">
     [![Cobra CLI](cobra.png)](https://github.com/spf13/cobra)
@@ -354,3 +356,8 @@ Alright. Now with a quick `go build` this will give me a partially functioning C
 ![CLI Part 1 Result](cli-part-1.png)
 
 In the next post I'll wrap this up and get some of the data generation to post data against the end point. For now, happy Go hacking. Any questions, ping me via the Twitters [@Adron](https://twitter.com/Adron).
+
+**Posts for this series.**
+
+* This post "[Building a Data Thrashing CLI Tool in Go](/articles/building-cli-data-thrasher/)"
+* Next Post... will be posted soon.

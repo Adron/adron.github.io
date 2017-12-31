@@ -14,7 +14,8 @@
       <pubDate>Sun, 31 Dec 2017 04:28:58 -0800</pubDate>
       <guid isPermaLink="true">http://adron.github.io/articles/building-cli-data-thrasher/</guid>
       <author></author>
-      <description>&lt;p&gt;I need a tool just to do some testing. I figured I’d throw one together real quick in Go with a few libraries out there to get the job done. The following, is that quick project. Eventually I’ll create the services that will run in some containers I’ll throw into a Kubernetes cluster, but for now, it’s all CLI. The first thing I’ll need is Cobra.&lt;/p&gt;
+      <description>&lt;p&gt;I need a tool just to do some testing against an API end point. I figured I’d throw one together real quick in Go.  With a few libraries it’s just a few steps to get the job done. The following is that project. Eventually I’ll create the services that will run in some containers I’ll throw into a Kubernetes cluster, but for now, it’s all CLI. Onward.&lt;/p&gt;
+&lt;p&gt;The first thing I’ll need is Cobra.&lt;/p&gt;
 &lt;div class=&quot;image float-right&quot;&gt;
     &lt;a href=&quot;https://github.com/spf13/cobra&quot;&gt;&lt;img src=&quot;/articles/building-cli-data-thrasher/cobra.png&quot; alt=&quot;Cobra CLI&quot;&gt;&lt;/a&gt;
 &lt;/div&gt;
@@ -287,6 +288,11 @@ resp, &lt;span class=&quot;attr&quot;&gt;err&lt;/span&gt; := http.Get(uri)
 &lt;p&gt;Alright. Now with a quick &lt;code&gt;go build&lt;/code&gt; this will give me a partially functioning CLI tool.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;/articles/building-cli-data-thrasher/cli-part-1.png&quot; alt=&quot;CLI Part 1 Result&quot;&gt;&lt;/p&gt;
 &lt;p&gt;In the next post I’ll wrap this up and get some of the data generation to post data against the end point. For now, happy Go hacking. Any questions, ping me via the Twitters &lt;a href=&quot;https://twitter.com/Adron&quot;&gt;@Adron&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Posts for this series.&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;This post “&lt;a href=&quot;http://adron.github.io/articles/building-cli-data-thrasher/&quot;&gt;Building a Data Thrashing CLI Tool in Go&lt;/a&gt;“&lt;/li&gt;
+&lt;li&gt;Next Post… will be posted soon.&lt;/li&gt;
+&lt;/ul&gt;
 </description>
     </item>
     <item>
