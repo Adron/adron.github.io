@@ -360,4 +360,4 @@ In the next post I'll wrap this up and get some of the data generation to post d
 **Posts for this series.**
 
 * This post "[Building a Data Thrashing CLI Tool in Go](/articles/building-cli-data-thrasher/)"
-* Next Post... will be posted soon.
+* Part 2 - "[Building a Data Thrashing CLI Tool in Go, Data Generation](/articles/building-cli-data-thrasher-part-duex/)"
