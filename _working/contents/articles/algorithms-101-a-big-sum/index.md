@@ -244,3 +244,5 @@ Both of the solutions work and provide the desired result. However, one is refac
 If you've got a quick second, ping me [@Adron] if you've got suggestions, other refactoring, or other thoughts about this algorithm. I'm always open to a critical editorialization.
 
 In the meantime, happy hacking!
+
+References: The [repository](https://github.com/Adron/algorithms-101-a-big-sum) for this code I've written here is available on Github @ [algorithms-101-a-big-sum](https://github.com/Adron/algorithms-101-a-big-sum)
