@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="/css/style.min.css">
     <script src="/js/modernizr.js"></script>
   </head>
-  <body>
+  <body class="article-detail">
     <!--[if lt IE 8]>
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -68,8 +68,10 @@
             <div class="col-md-12">
               <!-- Page Info-->
               <div class="page-info page-info-simple">
-                <h1>Adron's Thrashing Code</h1>
-                <h2 class="description">Coder, Messenger, Recon, Infrastructure, Ops, &amp; A Sprinkling of Metal</h2>
+                <h1>Algorithms 101 - Big Sums</h1>
+                <p class="author">Written by <span class="author">Adron Hall</span> and published on <span>January, 06 of 2018.</span>
+                </p>
+                <div class="nav"><a href="/">« Home</a></div>
               </div>
               <!-- End Page Info-->
             </div>
@@ -84,79 +86,188 @@
             <div class="col-md-9">
               <div class="main-content">
                 <!-- Blog Page-->
-                <div class="blog">
-                  <div class="row"></div>
-                </div>
-                <div class="col-md-12 col-sm-12">
-                  <!-- Blog List-->
-                  <div class="blog-grid">
-                    <div class="row">
-                      <div class="col-md-12 col-sm-12">
-                        <h3 class="blog-grid-title"><a href="/articles/terraform-kubernetes-azure/">Build a Kubernetes Cluster on Azure with Terraform</a></h3>
-                        <p class="blog-grid-excerpt"><div class="image float-right">
-    <img src="/articles/terraform-kubernetes-azure/Azure.png" alt="Azure">
-</div>
+                <article class="article">
+                  <section class="content"><p>I’ve been practicing up on some algorithms with Go per my <a href="https://medium.com/@adron/resolutions-for-2018-99570995bf8">Resolutions for 2018</a> item “Write More Code, Build Patterns, Algorithms”. Here’s a few of the ones I took a quick review of, from the algorithm&nbsp;perspective.</p>
+<p>The first algorithm I took a dive into is a big sum problem. Part of the reason is I wanted a refresher on how Go deals with various integer data types. Easier to set it to memory if I play around with the data types versus just simply reading up on the&nbsp;specifics.</p>
+<p><span class="more"></span></p>
+<h2 id="big-sum-">Big&nbsp;Sum!</h2>
+<p>Imagine being given an array of integers of size <em>N</em>. The task is to get the sum of the elements of the array and print each sum out. The added caveat is that each of the integers may be&nbsp;large.</p>
+<h3 id="input-sample-input">Input <span class="amp">&amp;</span> Sample&nbsp;Input</h3>
+<p>The first line of the input consists of an integer <em>N</em>. The next line contains <em>N</em> space-seperated integers in the array. Sample input would look something like&nbsp;this.</p>
+<pre><code>3
+1230983459 90232478345 2349432014
+</code></pre><p>or</p>
+<pre><code>6
+982734503 2938563459 100032400 9202345873 701346892 2345010900
+</code></pre><h3 id="output-sample-output">Output <span class="amp">&amp;</span> Sample&nbsp;Output</h3>
+<p>Print a single value equal to the sum of the elements in the&nbsp;array.</p>
+<p>Sample output for the first example&nbsp;input.</p>
+<pre><code>93812893818
+</code></pre><p>Sample output for the second example&nbsp;input.</p>
+<pre><code>16270034027
+</code></pre><h2 id="the-solution">The&nbsp;Solution</h2>
+<p>Alright. Down to the task. The first thing I’ll need is to setup getting the input into the application, a little standard input. For that I’ll need to use the standard Go “fmt” library. In my main.go file I go ahead and create the start of the&nbsp;code.</p>
+<pre><code class="lang-javascript">package main
 
-<p>In the previous post I wrote about building a Kubernetes Cluster with Terraform, I covered the bases of building a cluster in Google Cloud Platform. Today I’m going to tackle the Azure Platform. There are a lot of similarities being the same task, but there are some differences which I’ll take a look at. The repository to this write up is located in <em><a href="https://github.com/Adron/another_new_world">another_new_world</a></em> on&nbsp;Github.</p>
-<p>First things first, locally you’ll want to have the respective <span class="caps">CLI</span> tools installed for Azure, Terraform, and&nbsp;Kubernetes.</p>
-<p>
-                          <p class="more"><a href="/articles/terraform-kubernetes-azure/">more</a></p>
-                        </p>
-                        <div class="blog-grid-meta"><span class="blog-grid-date">15. November 2017</span></div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End of Blog List-->
-                </div>
-                <div class="col-md-12 col-sm-12">
-                  <!-- Blog List-->
-                  <div class="blog-grid">
-                    <div class="row">
-                      <div class="col-md-12 col-sm-12">
-                        <h3 class="blog-grid-title"><a href="/articles/thrashing-code-metal-monday-11-06-2017/">Chaos, Presentations, and Thrashing Code Metal Monday for November, 6th 2017</a></h3>
-                        <p class="blog-grid-excerpt"><div class="image float-right">
-    <img src="/articles/thrashing-code-metal-monday-11-06-2017/terraform.png" alt="Terraform">
-</div>
+<span class="keyword">import</span> (
+    <span class="string">"fmt"</span>
+)
+</code></pre>
+<p>Next I’ll write up the input for the index count, which is the first value passed&nbsp;in.</p>
+<pre><code class="lang-javascript">func main() {
+    <span class="keyword">var</span> arraySizeCount int64
 
-<p>This week I’ve got two talks with Lena (<a href="https://twitter.com/lenadroid">@Lenadroid</a>) lined up today and tomorrow with titled “<a href="http://blog.adron.me/talks/inception-workflow-deployed/">Inception, Workflow, to $Deployed$</a>“. Tonight’s <a href="https://www.meetup.com/NET-Developers-Association-Eastside/events/242573024/">.netda</a> is at <a href="https://www.microsoft.com">Microsoft</a> in Building 34 and tomorrow will be in downtown Seattle at <a href="https://www.meetup.com/NET-Developers-Association-Westside/events/242573016/">Parametric Portfolio Associates</a>. Hope to see you there, and for&nbsp;monday…</p>
-<p>
-                          <p class="more"><a href="/articles/thrashing-code-metal-monday-11-06-2017/">more</a></p>
-                        </p>
-                        <div class="blog-grid-meta"><span class="blog-grid-date">06. November 2017</span></div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End of Blog List-->
-                </div>
-                <div class="col-md-12 col-sm-12">
-                  <!-- Blog List-->
-                  <div class="blog-grid">
-                    <div class="row">
-                      <div class="col-md-12 col-sm-12">
-                        <h3 class="blog-grid-title"><a href="/articles/thrashing-code-metal-monday-10-30-2017/">Thrashing Code Metal Monday for Week of October 30th 2017</a></h3>
-                        <p class="blog-grid-excerpt"><div class="image float-right">
-<iframe src="https://open.spotify.com/embed/track/1m9uKIXsCb9nFFKNDPKuBP" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
-</div>
+    _, <span class="attr">err</span> := fmt.Scanf(<span class="string">"%d"</span>, &amp;arraySizeCount)
+}
+</code></pre>
+<p>Now that I know the size of the array of data I’ll be scraping up, I’ll setup the array to put that data in. I’ll add the next line of code just below the previous&nbsp;additions.</p>
+<pre><code class="lang-javascript">data := make([]int64, arraySizeCount)
+</code></pre>
+<p>With data now setup as the array I’ll need, I can step through the data that is retreived from input and put values in the&nbsp;array. </p>
+<pre><code class="lang-javascript"><span class="keyword">for</span> i := range data {
+    _, err = fmt.Scanf(<span class="string">"%d"</span>, &amp;data[i])
+}
+</code></pre>
+<p>Next I’ll need a variable for the total sum of the values in the array. I’ll create that and then also step through the range of values in the array, adding them while I&nbsp;go.</p>
+<pre><code class="lang-javascript"><span class="keyword">var</span> totalSum int64 = <span class="number">0</span>
 
-<p>I’ll start with some tunes today. It seems like a good day for a swashbuckling adventure, especially with Halloween tomorrow and all. With the tunes rocking, let’s talk upcoming meetups real quick, then the code challenge and two additional epic tunes to get some coding done&nbsp;to.</p>
-<ul>
-<li><p><a href="https://www.meetup.com/BallardTechHH/events/237787094/">Ballard Happy Hour</a> is @ 5:30pm this Tuesday @ <a href="https://www.google.com/maps/place/Ballard+Beer+Company/@47.6689494,-122.3864897,17z/data=!4m13!1m7!3m6!1s0x549015c5e180c76b:0xc471e67540ce0239!2s2050+NW+Market+St,+Seattle,+WA+98107!3b1!8m2!3d47.6689494!4d-122.384301!3m4!1s0x549015c5e18581a5:0xef3a1fd5ec7a26b!8m2!3d47.668843!4d-122.3842715?hl=en">Ballard Beer&nbsp;Company</a></p>
-</li>
-<li><p><a href="https://www.meetup.com/Pelo-Technology-Share-Out/events/244321597/">Seattle Geek Lunch</a> @ noon @ <a href="https://www.google.com/maps/place/Kigo+Kitchen/@47.6015953,-122.3366801,17z/data=!3m1!4b1!4m5!3m4!1s0x54906abaad799b7d:0x76899de962b1b653!8m2!3d47.6015953!4d-122.3344915?hl=en">Kigo Kitchen Pioneer&nbsp;Square</a></p>
-</li>
-<li><p><a href="https://www.meetup.com/Seattle-CoffeeOps/events/243985521/">Chat about Dev+Ops over Morning Coffee/Tea</a> @ 8am @ <a href="https://www.google.com/maps/place/Chef+Software,+Inc./@47.6021758,-122.3381707,17z/data=!4m13!1m7!3m6!1s0x54906aaffc113ae7:0xa3f5e2e1b40bd3e8!2s619+Western+Ave,+Seattle,+WA+98104!3b1!8m2!3d47.6021758!4d-122.335982!3m4!1s0x54906ab1d0063ac1:0x8fa8c8c312405e50!8m2!3d47.6021894!4d-122.3359318?hl=en">Chef Software</a>.</p>
-</li>
-</ul>
-<p>Also to mention, next week I’ll be presenting with <a href="https://twitter.com/Lenadroid">@Lenadroid</a> at the .<span class="caps">NET</span> Developer’s Association meetups in <a href="https://www.meetup.com/NET-Developers-Association-Westside/events/242573016/">downtown Seattle @ Parametric Portfolio Associates</a> and in <a href="https://www.meetup.com/NET-Developers-Association-Eastside/events/242573024/">Redmond at Microsoft Building 34</a>. I hope you’ll join us there for the presentation and chats&nbsp;after.</p>
-<p>
-                          <p class="more"><a href="/articles/thrashing-code-metal-monday-10-30-2017/">more</a></p>
-                        </p>
-                        <div class="blog-grid-meta"><span class="blog-grid-date">30. October 2017</span></div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End of Blog List-->
-                </div>
+<span class="keyword">for</span> _, <span class="attr">v</span> := range data {
+    totalSum += v
+}
+</code></pre>
+<p>The final step involves an error catch, I’ll print out the error, then display the value of the sum. That solves the algorithm in a short bit of&nbsp;code.</p>
+<pre><code class="lang-javascript"><span class="keyword">if</span> err != nil {
+    fmt.Print(err)
+}
+
+fmt.Printf(<span class="string">"%d\n"</span>, totalSum)
+</code></pre>
+<p>All of the code together only amounts to 29 lines of code. One additional thing I could do, that might make it more readable is to break out the input phase and output phase of the function. The code currently looks like&nbsp;this.</p>
+<pre><code class="lang-javascript">package main
+
+<span class="keyword">import</span> (
+    <span class="string">"fmt"</span>
+)
+
+func main() {
+    <span class="keyword">var</span> arraySizeCount int64
+
+    _, <span class="attr">err</span> := fmt.Scanf(<span class="string">"%d"</span>, &amp;arraySizeCount)
+
+    data := make([]int64, arraySizeCount)
+
+    <span class="keyword">for</span> i := range data {
+        _, err = fmt.Scanf(<span class="string">"%d"</span>, &amp;data[i])
+    }
+
+    <span class="keyword">var</span> totalSum int64 = <span class="number">0</span>
+
+    <span class="keyword">for</span> _, <span class="attr">v</span> := range data {
+        totalSum += v
+    }
+
+    <span class="keyword">if</span> err != nil {
+        fmt.Print(err)
+    }
+
+    fmt.Printf(<span class="string">"%d\n"</span>, totalSum)
+}
+</code></pre>
+<h3 id="a-refactoring-">A&nbsp;Refactoring?</h3>
+<p>As I start to refactor this code, as I mentioned, the existing code is only 29 lines of code. But I’m going to break it out into two functions; I’ll call one <code>SumTotal</code> and one <code>DataRead</code>. My <code>SumTotal</code> function will take a list of 64 bit integer data types and return a single total 64 bit&nbsp;integer.</p>
+<pre><code class="lang-javascript">func SumTotal(list []int64) int64 {
+    <span class="keyword">var</span> totalSum int64 = <span class="number">0</span>
+
+    <span class="keyword">for</span> _, <span class="attr">v</span> := range list {
+        totalSum += v
+    }
+
+    <span class="keyword">return</span> totalSum
+}
+</code></pre>
+<p>The <code>DataRead</code> function will have a 64 integer paramter and an error result. The function definition will look like <code>func DataRead() ([]int64, error) {}</code>. The function itself I’ll have take in and get the input and also have it build the array. I get to work on that and pull the functionality out of the existing 29 lines of code into the function, which I end up with a function that looks like&nbsp;this.</p>
+<pre><code class="lang-javascript">func DataRead() ([]int64, error) {
+    <span class="keyword">var</span> length int64
+
+    _, <span class="attr">err</span> := fmt.Scanf(<span class="string">"%d"</span>, &amp;length)
+    <span class="keyword">if</span> err != nil {
+        <span class="keyword">return</span> nil, err
+    }
+
+    data := make([]int64, length)
+
+    <span class="keyword">for</span> i := range data {
+        _, <span class="attr">err</span> := fmt.Scanf(<span class="string">"%d"</span>, &amp;data[i])
+        <span class="keyword">if</span> err != nil {
+            <span class="keyword">return</span> nil, err
+        }
+    }
+
+    <span class="keyword">return</span> data, nil
+}
+</code></pre>
+<p>Now I just go ahead and wipe out what is in the <code>main</code> function of the code and replace it with the few lines to call the respective input, and lass it to the respective processor and finalize that by printing out the&nbsp;results.</p>
+<pre><code class="lang-javascript">func main() {
+    data, <span class="attr">err</span> := DataRead()
+    <span class="keyword">if</span> err != nil {
+        fmt.Print(err)
+    }
+
+    fmt.Printf(<span class="string">"%d\n"</span>, SumTotal(data))
+}
+</code></pre>
+<p>Now the whole file of code looks like this, which leaves one with a few&nbsp;questions.</p>
+<pre><code class="lang-javascript">package main
+
+<span class="keyword">import</span> (
+    <span class="string">"fmt"</span>
+)
+
+func main() {
+    data, <span class="attr">err</span> := DataRead()
+    <span class="keyword">if</span> err != nil {
+        fmt.Print(err)
+    }
+
+    fmt.Printf(<span class="string">"%d\n"</span>, SumTotal(data))
+}
+
+func SumTotal(list []int64) int64 {
+    <span class="keyword">var</span> totalSum int64 = <span class="number">0</span>
+
+    <span class="keyword">for</span> _, <span class="attr">v</span> := range list {
+        totalSum += v
+    }
+
+    <span class="keyword">return</span> totalSum
+}
+
+
+func DataRead() ([]int64, error) {
+    <span class="keyword">var</span> length int64
+
+    _, <span class="attr">err</span> := fmt.Scanf(<span class="string">"%d"</span>, &amp;length)
+    <span class="keyword">if</span> err != nil {
+        <span class="keyword">return</span> nil, err
+    }
+
+    data := make([]int64, length)
+
+    <span class="keyword">for</span> i := range data {
+        _, <span class="attr">err</span> := fmt.Scanf(<span class="string">"%d"</span>, &amp;data[i])
+        <span class="keyword">if</span> err != nil {
+            <span class="keyword">return</span> nil, err
+        }
+    }
+
+    <span class="keyword">return</span> data, nil
+}
+</code></pre>
+<p>Both of the solutions work and provide the desired result. However, one is refactored into input and output functions, with the main function minimized. In this particular situation does it even matter? One might say it’s good to practice refactoring, but in the end did the refactored solution end up better in some way? I could argue that the latter is easier to read. I could say that the first solution was easier to read, since it was so much shorter. The argument could fall either way, but in the end it’s a quick, simple, introductory algorithm and some simple&nbsp;refactoring.</p>
+<p>If you’ve got a quick second, ping me [@Adron] if you’ve got suggestions, other refactoring, or other thoughts about this algorithm. I’m always open to a critical&nbsp;editorialization.</p>
+<p>In the meantime, happy&nbsp;hacking!</p>
+</section>
+                </article>
                 <!-- End of Blog Page-->
               </div>
             </div>
@@ -249,8 +360,7 @@
             </div>
           </div>
         </div>
-        <div class="nav"><a href="/page/2/">« Newer</a>&nbsp;<a href="/page/4/">Previous »</a>
-        </div>
+        <div class="nav"><a href="/">« Home</a></div>
       </div>
     </div>
     <script src="/js/all.js"></script>

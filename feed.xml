@@ -5,9 +5,196 @@
     <atom:link href="http://adron.github.io/feed.xml" rel="self" type="application/rss+xml"></atom:link>
     <link>http://adron.github.io</link>
     <description>Coder, Messenger, Recon, Infrastructure, Ops, &amp; A Sprinkling of Metal</description>
-    <pubDate>Sun, 31 Dec 2017 04:28:58 -0800</pubDate>
+    <pubDate>Sat, 06 Jan 2018 01:14:33 -0800</pubDate>
     <generator>Wintersmith - https://github.com/jnordberg/wintersmith</generator>
     <language>en</language>
+    <item>
+      <title>Algorithms 101 - Big Sums</title>
+      <link>http://adron.github.io/articles/algorithms-101-a-big-sum/</link>
+      <pubDate>Sat, 06 Jan 2018 01:14:33 -0800</pubDate>
+      <guid isPermaLink="true">http://adron.github.io/articles/algorithms-101-a-big-sum/</guid>
+      <author></author>
+      <description>&lt;p&gt;I’ve been practicing up on some algorithms with Go per my &lt;a href=&quot;https://medium.com/@adron/resolutions-for-2018-99570995bf8&quot;&gt;Resolutions for 2018&lt;/a&gt; item “Write More Code, Build Patterns, Algorithms”. Here’s a few of the ones I took a quick review of, from the algorithm perspective.&lt;/p&gt;
+&lt;p&gt;The first algorithm I took a dive into is a big sum problem. Part of the reason is I wanted a refresher on how Go deals with various integer data types. Easier to set it to memory if I play around with the data types versus just simply reading up on the specifics.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;h2 id=&quot;big-sum-&quot;&gt;Big Sum!&lt;/h2&gt;
+&lt;p&gt;Imagine being given an array of integers of size &lt;em&gt;N&lt;/em&gt;. The task is to get the sum of the elements of the array and print each sum out. The added caveat is that each of the integers may be large.&lt;/p&gt;
+&lt;h3 id=&quot;input-sample-input&quot;&gt;Input &amp;amp; Sample Input&lt;/h3&gt;
+&lt;p&gt;The first line of the input consists of an integer &lt;em&gt;N&lt;/em&gt;. The next line contains &lt;em&gt;N&lt;/em&gt; space-seperated integers in the array. Sample input would look something like this.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;3
+1230983459 90232478345 2349432014
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;or&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;6
+982734503 2938563459 100032400 9202345873 701346892 2345010900
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;output-sample-output&quot;&gt;Output &amp;amp; Sample Output&lt;/h3&gt;
+&lt;p&gt;Print a single value equal to the sum of the elements in the array.&lt;/p&gt;
+&lt;p&gt;Sample output for the first example input.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;93812893818
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Sample output for the second example input.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;16270034027
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;the-solution&quot;&gt;The Solution&lt;/h2&gt;
+&lt;p&gt;Alright. Down to the task. The first thing I’ll need is to setup getting the input into the application, a little standard input. For that I’ll need to use the standard Go “fmt” library. In my main.go file I go ahead and create the start of the code.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;package main
+
+&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; (
+    &lt;span class=&quot;string&quot;&gt;&quot;fmt&quot;&lt;/span&gt;
+)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Next I’ll write up the input for the index count, which is the first value passed in.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;func main() {
+    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; arraySizeCount int64
+
+    _, &lt;span class=&quot;attr&quot;&gt;err&lt;/span&gt; := fmt.Scanf(&lt;span class=&quot;string&quot;&gt;&quot;%d&quot;&lt;/span&gt;, &amp;amp;arraySizeCount)
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now that I know the size of the array of data I’ll be scraping up, I’ll setup the array to put that data in. I’ll add the next line of code just below the previous additions.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;data := make([]int64, arraySizeCount)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;With data now setup as the array I’ll need, I can step through the data that is retreived from input and put values in the array. &lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; i := range data {
+    _, err = fmt.Scanf(&lt;span class=&quot;string&quot;&gt;&quot;%d&quot;&lt;/span&gt;, &amp;amp;data[i])
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Next I’ll need a variable for the total sum of the values in the array. I’ll create that and then also step through the range of values in the array, adding them while I go.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; totalSum int64 = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;
+
+&lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; _, &lt;span class=&quot;attr&quot;&gt;v&lt;/span&gt; := range data {
+    totalSum += v
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The final step involves an error catch, I’ll print out the error, then display the value of the sum. That solves the algorithm in a short bit of code.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; err != nil {
+    fmt.Print(err)
+}
+
+fmt.Printf(&lt;span class=&quot;string&quot;&gt;&quot;%d\n&quot;&lt;/span&gt;, totalSum)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;All of the code together only amounts to 29 lines of code. One additional thing I could do, that might make it more readable is to break out the input phase and output phase of the function. The code currently looks like this.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;package main
+
+&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; (
+    &lt;span class=&quot;string&quot;&gt;&quot;fmt&quot;&lt;/span&gt;
+)
+
+func main() {
+    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; arraySizeCount int64
+
+    _, &lt;span class=&quot;attr&quot;&gt;err&lt;/span&gt; := fmt.Scanf(&lt;span class=&quot;string&quot;&gt;&quot;%d&quot;&lt;/span&gt;, &amp;amp;arraySizeCount)
+
+    data := make([]int64, arraySizeCount)
+
+    &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; i := range data {
+        _, err = fmt.Scanf(&lt;span class=&quot;string&quot;&gt;&quot;%d&quot;&lt;/span&gt;, &amp;amp;data[i])
+    }
+
+    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; totalSum int64 = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;
+
+    &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; _, &lt;span class=&quot;attr&quot;&gt;v&lt;/span&gt; := range data {
+        totalSum += v
+    }
+
+    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; err != nil {
+        fmt.Print(err)
+    }
+
+    fmt.Printf(&lt;span class=&quot;string&quot;&gt;&quot;%d\n&quot;&lt;/span&gt;, totalSum)
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&quot;a-refactoring-&quot;&gt;A Refactoring?&lt;/h3&gt;
+&lt;p&gt;As I start to refactor this code, as I mentioned, the existing code is only 29 lines of code. But I’m going to break it out into two functions; I’ll call one &lt;code&gt;SumTotal&lt;/code&gt; and one &lt;code&gt;DataRead&lt;/code&gt;. My &lt;code&gt;SumTotal&lt;/code&gt; function will take a list of 64 bit integer data types and return a single total 64 bit integer.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;func SumTotal(list []int64) int64 {
+    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; totalSum int64 = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;
+
+    &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; _, &lt;span class=&quot;attr&quot;&gt;v&lt;/span&gt; := range list {
+        totalSum += v
+    }
+
+    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; totalSum
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The &lt;code&gt;DataRead&lt;/code&gt; function will have a 64 integer paramter and an error result. The function definition will look like &lt;code&gt;func DataRead() ([]int64, error) {}&lt;/code&gt;. The function itself I’ll have take in and get the input and also have it build the array. I get to work on that and pull the functionality out of the existing 29 lines of code into the function, which I end up with a function that looks like this.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;func DataRead() ([]int64, error) {
+    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; length int64
+
+    _, &lt;span class=&quot;attr&quot;&gt;err&lt;/span&gt; := fmt.Scanf(&lt;span class=&quot;string&quot;&gt;&quot;%d&quot;&lt;/span&gt;, &amp;amp;length)
+    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; err != nil {
+        &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; nil, err
+    }
+
+    data := make([]int64, length)
+
+    &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; i := range data {
+        _, &lt;span class=&quot;attr&quot;&gt;err&lt;/span&gt; := fmt.Scanf(&lt;span class=&quot;string&quot;&gt;&quot;%d&quot;&lt;/span&gt;, &amp;amp;data[i])
+        &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; err != nil {
+            &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; nil, err
+        }
+    }
+
+    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; data, nil
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now I just go ahead and wipe out what is in the &lt;code&gt;main&lt;/code&gt; function of the code and replace it with the few lines to call the respective input, and lass it to the respective processor and finalize that by printing out the results.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;func main() {
+    data, &lt;span class=&quot;attr&quot;&gt;err&lt;/span&gt; := DataRead()
+    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; err != nil {
+        fmt.Print(err)
+    }
+
+    fmt.Printf(&lt;span class=&quot;string&quot;&gt;&quot;%d\n&quot;&lt;/span&gt;, SumTotal(data))
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now the whole file of code looks like this, which leaves one with a few questions.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;package main
+
+&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; (
+    &lt;span class=&quot;string&quot;&gt;&quot;fmt&quot;&lt;/span&gt;
+)
+
+func main() {
+    data, &lt;span class=&quot;attr&quot;&gt;err&lt;/span&gt; := DataRead()
+    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; err != nil {
+        fmt.Print(err)
+    }
+
+    fmt.Printf(&lt;span class=&quot;string&quot;&gt;&quot;%d\n&quot;&lt;/span&gt;, SumTotal(data))
+}
+
+func SumTotal(list []int64) int64 {
+    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; totalSum int64 = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;
+
+    &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; _, &lt;span class=&quot;attr&quot;&gt;v&lt;/span&gt; := range list {
+        totalSum += v
+    }
+
+    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; totalSum
+}
+
+
+func DataRead() ([]int64, error) {
+    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; length int64
+
+    _, &lt;span class=&quot;attr&quot;&gt;err&lt;/span&gt; := fmt.Scanf(&lt;span class=&quot;string&quot;&gt;&quot;%d&quot;&lt;/span&gt;, &amp;amp;length)
+    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; err != nil {
+        &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; nil, err
+    }
+
+    data := make([]int64, length)
+
+    &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; i := range data {
+        _, &lt;span class=&quot;attr&quot;&gt;err&lt;/span&gt; := fmt.Scanf(&lt;span class=&quot;string&quot;&gt;&quot;%d&quot;&lt;/span&gt;, &amp;amp;data[i])
+        &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; err != nil {
+            &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; nil, err
+        }
+    }
+
+    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; data, nil
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Both of the solutions work and provide the desired result. However, one is refactored into input and output functions, with the main function minimized. In this particular situation does it even matter? One might say it’s good to practice refactoring, but in the end did the refactored solution end up better in some way? I could argue that the latter is easier to read. I could say that the first solution was easier to read, since it was so much shorter. The argument could fall either way, but in the end it’s a quick, simple, introductory algorithm and some simple refactoring.&lt;/p&gt;
+&lt;p&gt;If you’ve got a quick second, ping me [@Adron] if you’ve got suggestions, other refactoring, or other thoughts about this algorithm. I’m always open to a critical editorialization.&lt;/p&gt;
+&lt;p&gt;In the meantime, happy hacking!&lt;/p&gt;
+</description>
+    </item>
     <item>
       <title>Building a Data Thrashing CLI Tool in Go</title>
       <link>http://adron.github.io/articles/building-cli-data-thrasher/</link>
@@ -291,7 +478,7 @@ resp, &lt;span class=&quot;attr&quot;&gt;err&lt;/span&gt; := http.Get(uri)
 &lt;p&gt;&lt;strong&gt;Posts for this series.&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;This post “&lt;a href=&quot;http://adron.github.io/articles/building-cli-data-thrasher/&quot;&gt;Building a Data Thrashing CLI Tool in Go&lt;/a&gt;“&lt;/li&gt;
-&lt;li&gt;Next Post… will be posted soon.&lt;/li&gt;
+&lt;li&gt;Part 2 - “&lt;a href=&quot;http://adron.github.io/articles/building-cli-data-thrasher-part-duex/&quot;&gt;Building a Data Thrashing CLI Tool in Go, Data Generation&lt;/a&gt;“&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>
