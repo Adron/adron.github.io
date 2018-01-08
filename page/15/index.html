@@ -92,32 +92,27 @@
                   <div class="blog-grid">
                     <div class="row">
                       <div class="col-md-12 col-sm-12">
-                        <h3 class="blog-grid-title"><a href="/articles/talking-through-ci-cd/">Talking Through Managed or Baked In House Continuous Integration (CI) and Delivery (CD)</a></h3>
-                        <p class="blog-grid-excerpt"><p>Ok, we have several different scenarios and let’s say you’re the boss. In each of these scenarios we can assume that <span class="caps">CI</span> <span class="amp">&amp;</span> <span class="caps">CD</span> are going to be mandatory to achieve the team’s greatest potential to deliver. So the question I’ll be attacking is, do we roll our own with Drone.io, TeamCity, continuous integration and delivery or do we get more advantage from utilizing a managed solution like CircleCI, Codeship, or related offerings. The following are the scenarios in relation to team size and project that you’re heading&nbsp;up:</p>
+                        <h3 class="blog-grid-title"><a href="/articles/aws-beanstalk-worker-with-node-js-and-sqs/">AWS Beanstalk Worker with Node.js and SQS</a></h3>
+                        <p class="blog-grid-excerpt"><div class="image float-right">
+    <img src="/articles/aws-beanstalk-worker-with-node-js-and-sqs/amazon-sqs_200x200.png" alt="Amazon SQS">
+</div>
 
-                          <p class="more"><a href="/articles/talking-through-ci-cd/">more</a></p>
-                        </p>
-                        <div class="blog-grid-meta"><span class="blog-grid-date">26. January 2017</span></div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End of Blog List-->
-                </div>
-                <div class="col-md-12 col-sm-12">
-                  <!-- Blog List-->
-                  <div class="blog-grid">
-                    <div class="row">
-                      <div class="col-md-12 col-sm-12">
-                        <h3 class="blog-grid-title"><a href="/articles/drone-io/">Introduction to Drone.io</a></h3>
-                        <p class="blog-grid-excerpt"><ul>
-<li><strong>Research <span class="amp">&amp;</span> Learn</strong>: <a href="https://github.com/drone/drone">Drone.io Github Repo</a>, <a href="http://try.drone.io/">Trying Drone.io</a>, and <a href="http://readme.drone.io/">Drone.io Docs</a>.</li>
-<li><strong>Objective</strong>: What Drone.io is and getting&nbsp;started.</li>
+<ul>
+<li><em>Part 1</em> – <a href="/articles/setting-up-an-aws-sqs-queue-for-use-with-node-js-beanstalk-worker-instances">Setting up an <span class="caps">AWS</span> SQS Queue for Use With Node.js Beanstalk Worker&nbsp;Instances</a></li>
+<li><em>Part 2</em> – <a href="/articles/hapijs-aws-worker-publish/">Setting up a Hapi.js App that sends work to a Node.js <span class="caps">AWS</span> Worker via&nbsp;SQS</a></li>
+<li><em>Part 3</em> – <a href="/articles/aws-beanstalk-worker-with-node-js-and-sqs/"><span class="caps">AWS</span> Beanstalk Worker with Node.js and SQS</a> (This is the current article you’re reading&nbsp;now)</li>
 </ul>
-<p>I’ve dived into a new effort to figure out <a href="http://try.drone.io/">Drone.io</a>, get it running, and if plausible contribute in some way to the project. This was kick started yesterday while I was speaking with Joachim (T <a href="https://twitter.com/lindyhop">@lindyhop</a> &amp;&amp; G <a href="https://github.com/josmo">@josmo</a>) about some projects we’re working on. We discussed the design of Drone.io, how we’re using it on some projects internally here <a href="https://twitter.com/PelotonTechio">@PelotonTechio</a>. I will, and others will be posting more on what we’re doing with Drone.io later, but for now, I’ve put together this introduction to what Drone.io is, and getting started with&nbsp;it.</p>
+<p>First I created a project for the node.js worker. The first steps for this are identical to that of creating the Hapi.js site that publishes messages to the queue. Go through these three steps for the worker and then I’ll continue from&nbsp;there.</p>
+<ul>
+<li>First <a href="/articles/hapijs-aws-worker-publish#webapplication">create the web application</a> which will act as our worker service. I gave mine the name of <a href="https://github.com/Adron/testing-aws-sqs-worker">testing-aws-sqs-worker</a>, the site publishing to the queue I called <a href="https://github.com/Adron/testing-aws-sqs-site">testing-aws-sqs-site</a>.</li>
+<li>Next <a href="/articles/hapijs-aws-worker-publish/#mocha">add dependencies needed</a>, like&nbsp;mocha.</li>
+<li>Finally make sure the <a href="/articles/hapijs-aws-worker-publish/#aws"><span class="caps">AWS</span> environment variables</a> are set&nbsp;appropriately.</li>
+</ul>
+<p><em>…and now on to the security, configuration and worker specific parts of this&nbsp;series…</em></p>
 <p>
-                          <p class="more"><a href="/articles/drone-io/">more</a></p>
+                          <p class="more"><a href="/articles/aws-beanstalk-worker-with-node-js-and-sqs/">more</a></p>
                         </p>
-                        <div class="blog-grid-meta"><span class="blog-grid-date">25. January 2017</span></div>
+                        <div class="blog-grid-meta"><span class="blog-grid-date">19. November 2014</span></div>
                       </div>
                     </div>
                   </div>
@@ -128,24 +123,146 @@
                   <div class="blog-grid">
                     <div class="row">
                       <div class="col-md-12 col-sm-12">
-                        <h3 class="blog-grid-title"><a href="/articles/data-diluvium-getting-started/">The Data Diluvium, Getting Started</a></h3>
-                        <p class="blog-grid-excerpt"><p>Welcome to the first of more than a few blog entries on Data Diluvium. Data Diluvium is a project I’ve started focused around generating data for the purposes of testing, capacity, or whatever other needs might&nbsp;arise.</p>
-<p>Definition of <strong><em>data</em></strong></p>
-<ol>
-<li>:  factual information (as measurements or statistics) used as a basis for reasoning, discussion, or calculation <the data is plentiful and easily available — H. A. Gleason, Jr.> <comprehensive data on economic growth have been published — N. H. Jacoby></li>
-<li>:  information output by a sensing device or organ that includes both useful and irrelevant or redundant information and must be processed to be&nbsp;meaningful</li>
-<li>:  information in numerical form that can be digitally transmitted or&nbsp;processed</li>
-</ol>
-<p>Definition of <strong><em>deluge</em></strong> which is the English version of the latin <strong><em>diluvium</em></strong>.</p>
-<ol>
-<li>a :  an overflowing of the land by water. b :  a drenching rain “a deluge causing mudslides in the&nbsp;area”.</li>
-<li>:  an overwhelming amount or number <received a deluge of angry phone calls></li>
-</ol>
-<p>…thus <strong><em>Data Diluvium</em></strong>.</p>
+                        <h3 class="blog-grid-title"><a href="/articles/hapijs-aws-worker-publish/">Setting up a Hapi.js App that sends work to a Node.js AWS Worker via SQS</a></h3>
+                        <p class="blog-grid-excerpt"><div class="image float-right">
+  <img src="/articles/hapijs-aws-worker-publish/SDKs-copy_nodeJS-200x2100.png" alt="Node.js SDK">
+</div>
+
+<ul>
+<li><em>Part 1</em> – <a href="/articles/setting-up-an-aws-sqs-queue-for-use-with-node-js-beanstalk-worker-instances">Setting up an <span class="caps">AWS</span> SQS Queue for Use With Node.js Beanstalk Worker&nbsp;Instances</a></li>
+<li><em>Part 2</em> – <a href="/articles/hapijs-aws-worker-publish/">Setting up a Hapi.js App that sends work to a Node.js <span class="caps">AWS</span> Worker via SQS</a> (This is the current article you’re reading&nbsp;now)</li>
+<li><em>Part 3</em> – <a href="/articles/aws-beanstalk-worker-with-node-js-and-sqs/"><span class="caps">AWS</span> Beanstalk Worker with Node.js and&nbsp;SQS</a></li>
+</ul>
+<p><a name="webapplication"></a></p>
+<p>First I created a project for the node.js web application. This just used the simple <code>npm init</code> command and I stepped through the prompts for name, version, description, entry point, and so&nbsp;on.</p>
+<pre><code class="lang-shell-script">$ npm init
+This utility will walk you through creating a package.json file.
+It only covers the most common items, and tries to guess sane defaults.
+
+See `npm help json` for definitive documentation on these fields
+and exactly what they do.
+
+Use `npm install &amp;pkg&amp; --save` afterwards to install a package and
+save it as a dependency in the package.json file.
+
+Press ^C at any time to quit.
+name: (testing-aws-sqs-site)
+version: (0.0.0) 0.0.1
+description: This project that will feed data to the queue for the AWS SQS sample.
+entry point: (index.js) server.js
+test command: mocha
+git repository: (https://github.com/Adron/testing-aws-sqs-site.git)
+keywords: aws, sqs, elastic, elastic beanstalk, queue, worker
+author: Adron Hall
+license: (ISC) Apache 2.0
+</code></pre>
 <p>
-                          <p class="more"><a href="/articles/data-diluvium-getting-started/">more</a></p>
+                          <p class="more"><a href="/articles/hapijs-aws-worker-publish/">more</a></p>
                         </p>
-                        <div class="blog-grid-meta"><span class="blog-grid-date">23. January 2017</span></div>
+                        <div class="blog-grid-meta"><span class="blog-grid-date">07. November 2014</span></div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- End of Blog List-->
+                </div>
+                <div class="col-md-12 col-sm-12">
+                  <!-- Blog List-->
+                  <div class="blog-grid">
+                    <div class="row">
+                      <div class="col-md-12 col-sm-12">
+                        <h3 class="blog-grid-title"><a href="/articles/setting-up-an-aws-sqs-queue-for-use-with-node-js-beanstalk-worker-instances/">Setting up an AWS SQS Queue for Use With Node.js Beanstalk Worker Instances</a></h3>
+                        <p class="blog-grid-excerpt"><div class="image float-right">
+    <img src="/articles/setting-up-an-aws-sqs-queue-for-use-with-node-js-beanstalk-worker-instances/Amazon-SQS_200x200.png" alt="Amazon SQS">
+</div>
+
+<ul>
+<li><em>Part 1</em> – <a href="/articles/setting-up-an-aws-sqs-queue-for-use-with-node-js-beanstalk-worker-instances">Setting up an <span class="caps">AWS</span> SQS Queue for Use With Node.js Beanstalk Worker Instances</a> (This is the current article you’re reading&nbsp;now)</li>
+<li><em>Part 2</em> – <a href="/articles/hapijs-aws-worker-publish/">Setting up a Hapi.js App that sends work to a Node.js <span class="caps">AWS</span> Worker via&nbsp;SQS</a></li>
+<li><em>Part 3</em> – <a href="/articles/aws-beanstalk-worker-with-node-js-and-sqs/"><span class="caps">AWS</span> Beanstalk Worker with Node.js and&nbsp;SQS</a></li>
+</ul>
+<p>Before diving straight in, I’m going to outline the specific goals and what I am using to accomplish these goals. The goal is to have a simple web application, that will get some element of data posted to a queue. The queue will then have data that a worker service needs to then process. As I step through each of these requirements I’ll determine the actual push and pull mechanisms that will get the job&nbsp;done.</p>
+<p>
+                          <p class="more"><a href="/articles/setting-up-an-aws-sqs-queue-for-use-with-node-js-beanstalk-worker-instances/">more</a></p>
+                        </p>
+                        <div class="blog-grid-meta"><span class="blog-grid-date">06. November 2014</span></div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- End of Blog List-->
+                </div>
+                <div class="col-md-12 col-sm-12">
+                  <!-- Blog List-->
+                  <div class="blog-grid">
+                    <div class="row">
+                      <div class="col-md-12 col-sm-12">
+                        <h3 class="blog-grid-title"><a href="/articles/bashit/">Bashit... Just a Custom Bash Prompt Setup for Git</a></h3>
+                        <p class="blog-grid-excerpt"><p>I use git. I’m honestly shocked when someone doesn’t use git (<em>or at least some <span class="caps">DVCS</span></em>) these days. It just seems somewhat draconian to use any of the legacy source control systems (<em>albeit there are some rare exceptions, like game development graphics collateral</em>). I was reminded of something by the great hands on session that Pamela Ocampo <a href="https://twitter.com/pmocampo">@pmocampo</a> and Rachel <a href="https://twitter.com/raychatter" target="_blank">@raychatter</a> gave at <a href="http://opensourcebridge.org/" target="_blank"><span class="caps">OS</span> Bridge</a> titled “<a href="http://opensourcebridge.org/sessions/1378" target="_blank">NerdCred++; How to Customize your Bash Prompt</a>“.</p>
+<p>
+                          <p class="more"><a href="/articles/bashit/">more</a></p>
+                        </p>
+                        <div class="blog-grid-meta"><span class="blog-grid-date">09. October 2014</span></div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- End of Blog List-->
+                </div>
+                <div class="col-md-12 col-sm-12">
+                  <!-- Blog List-->
+                  <div class="blog-grid">
+                    <div class="row">
+                      <div class="col-md-12 col-sm-12">
+                        <h3 class="blog-grid-title"><a href="/articles/working-in-34c-wintersmith-customization-and-github-hosting/">Working in -34c Wintersmith Customization and Github Hosting</a></h3>
+                        <p class="blog-grid-excerpt"><p>Getting Wintersmith customized, building and deployed to Github and a domain name pointed takes a few extra steps. So let’s&nbsp;roll…</p>
+<div class="image float-right">
+    <a href="http://wintersmith.io/"><img src="/articles/working-in-34c-wintersmith-customization-and-github-hosting/wintersmith-01.png" alt="Wintersmith Icon 1"></a>
+</div>
+
+<p>
+                          <p class="more"><a href="/articles/working-in-34c-wintersmith-customization-and-github-hosting/">more</a></p>
+                        </p>
+                        <div class="blog-grid-meta"><span class="blog-grid-date">19. February 2014</span></div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- End of Blog List-->
+                </div>
+                <div class="col-md-12 col-sm-12">
+                  <!-- Blog List-->
+                  <div class="blog-grid">
+                    <div class="row">
+                      <div class="col-md-12 col-sm-12">
+                        <h3 class="blog-grid-title"><a href="/articles/wintersmith-creating-documentation/">Wintersmith Creating Documentation</a></h3>
+                        <p class="blog-grid-excerpt"><p>I set out a few days ago to put together a documentation site. I had a few criteria for this&nbsp;site:</p>
+<ol>
+<li><p>A static site that I could push to Github to use with their github pages&nbsp;feature.</p>
+</li>
+<li><p>The static site is generated from&nbsp;markdown.</p>
+</li>
+<li><p>It just works. It’s easy to get it into a workflow without breaking the tool or breaking a solid&nbsp;workflow.</p>
+</li>
+</ol>
+<p>That was it, what I’d consider some pretty straight forward criteria. However it wasn’t that easy, until it was. Here’s a few of the issues I ran through on the way to getting a solid tool with a solid workflow working together. Beware however if you have fickle reading eyes, the following is a rant about what does and does not&nbsp;work.</p>
+<p>
+                          <p class="more"><a href="/articles/wintersmith-creating-documentation/">more</a></p>
+                        </p>
+                        <div class="blog-grid-meta"><span class="blog-grid-date">17. February 2014</span></div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- End of Blog List-->
+                </div>
+                <div class="col-md-12 col-sm-12">
+                  <!-- Blog List-->
+                  <div class="blog-grid">
+                    <div class="row">
+                      <div class="col-md-12 col-sm-12">
+                        <h3 class="blog-grid-title"><a href="/articles/my-top-4-ideal-dev-shop-product-characteristics-yours/">My Top 4 Ideal Dev Shop Product Characteristics and Yours?</a></h3>
+                        <p class="blog-grid-excerpt"><p>What is an ideal software project? What is an ideal delivery cycle? What is an ideal culture? From a client’s perspective do they see the team as a sluggish liability or is the development team proactive and looking for the next strategic or tactical step to&nbsp;take?</p>
+<p>Ideally, I see the development team as a group that should be leading a company with technology. If a team isn’t doing that, they’re likely to be running the risk of appearing as a liability and risk. Often these are the types of teams that are often outsourced or off-shored because it seems easier to the clients or&nbsp;management.</p>
+<p>
+                          <p class="more"><a href="/articles/my-top-4-ideal-dev-shop-product-characteristics-yours/">more</a></p>
+                        </p>
+                        <div class="blog-grid-meta"><span class="blog-grid-date">22. October 2011</span></div>
                       </div>
                     </div>
                   </div>
@@ -243,7 +360,7 @@
             </div>
           </div>
         </div>
-        <div class="nav"><a href="/page/14/">« Newer</a>&nbsp;<a href="/page/16/">Previous »</a>
+        <div class="nav"><a href="/page/14/">« Newer</a>
         </div>
       </div>
     </div>

@@ -1,26 +1,26 @@
 {
-  "locals": {
-    "url": "http://adron.github.io",
-    "name": "Adron's Thrashing Code",
-    "owner": "Adron Hall",
-    "description": "Coder, Messenger, Recon, Infrastructure, Ops, & A Sprinkling of Metal"
-  },
-  "plugins": [
-    "./plugins/paginator.coffee"
-  ],
-  "require": {
-    "moment": "moment",
-    "_": "underscore",
-    "typogr": "typogr"
-  },
-  "jade": {
-    "pretty": true
-  },
-  "markdown": {
-    "smartLists": true,
-    "smartypants": true
-  },
-  "paginator": {
-    "perPage": 3
-  }
+    "locals": {
+        "url": "http://blog.adron.me",
+        "name": "Adron's Thrashing Code",
+        "owner": "Adron Hall",
+        "description": "Coder, Messenger, Recon, Infrastructure, Ops, & A Sprinkling of Metal"
+    },
+    "plugins": [
+        "./plugins/paginator.coffee"
+    ],
+    "require": {
+        "moment": "moment",
+        "_": "underscore",
+        "typogr": "typogr"
+    },
+    "jade": {
+        "pretty": true
+    },
+    "markdown": {
+        "smartLists": true,
+        "smartypants": true
+    },
+    "paginator": {
+        "perPage": 9
+    }
 }
