@@ -199,10 +199,10 @@ package cmd
 
 <span class="comment">// RootCmd represents the base command when called without any subcommands</span>
 <span class="keyword">var</span> RootCmd = &amp;cobra.Command{
-    <span class="attr">Use</span>:   <span class="string">"thrasher"</span>,
-    <span class="attr">Short</span>: <span class="string">"This <span class="caps">CLI</span> is built around testing API end points by submitting data, "</span> +
+    Use:   <span class="string">"thrasher"</span>,
+    Short: <span class="string">"This <span class="caps">CLI</span> is built around testing API end points by submitting data, "</span> +
         <span class="string">"etc, generated at time of testing."</span>,
-    <span class="attr">Long</span>: <span class="string">`This <span class="caps">CLI</span> is built around sending randomly generated data at API end points for testing.
+    Long: <span class="string">`This <span class="caps">CLI</span> is built around sending randomly generated data at API end points for testing.
 The idea is for the data to be issued against end points using various HTTP verbs such as GET, POST, or others.
 
 For example a similar command using curl.
@@ -239,7 +239,7 @@ func initConfig() {
         viper.SetConfigFile(cfgFile)
     } <span class="keyword">else</span> {
         <span class="comment">// Find home directory.</span>
-        home, <span class="attr">err</span> := homedir.Dir()
+        home, err := homedir.Dir()
         <span class="keyword">if</span> err != nil {
             fmt.Println(err)
             os.Exit(<span class="number">1</span>)
@@ -287,12 +287,12 @@ func initConfig() {
 <p>Also notice in the code above, the generated section shows a config file default location for <code>$HOME/.thrasher.yaml</code>. Currently I’m not using this default, but it’s setup that way by&nbsp;convention.</p>
 <p>I’ll want to be able to find out what my configuration setting is for the environment variable using the <code>thrasher config view</code> command. To do this, I add a few lines of code in the <em>view.go</em> file. Inside the <em>view.go</em> file there is the variable assigned to the pointer location of the command, which I’ve edited to print out the evnironment variable that is set for the&nbsp;<span class="caps">URI</span>.</p>
 <pre><code class="lang-javascript"><span class="keyword">var</span> viewCmd = &amp;cobra.Command{
-    <span class="attr">Use</span>:   <span class="string">"view"</span>,
-    <span class="attr">Short</span>: <span class="string">"The view command is used to retrieve the configuration settings."</span>,
-    <span class="attr">Long</span>: <span class="string">`The view command can be used to retrieve and view the configuration
+    Use:   <span class="string">"view"</span>,
+    Short: <span class="string">"The view command is used to retrieve the configuration settings."</span>,
+    Long: <span class="string">`The view command can be used to retrieve and view the configuration
         settings that the thrasher <span class="caps">CLI</span> currently has active and in use.`</span>,
-    <span class="attr">Run</span>: func(cmd *cobra.Command, args []string) {
-        <span class="attr">uri</span> := viper.Get(<span class="string">"uri"</span>)
+    Run: func(cmd *cobra.Command, args []string) {
+        uri := viper.Get(<span class="string">"uri"</span>)
         fmt.Printf(<span class="string">"Current <span class="caps">URI</span> to issue commands and data against is %s."</span>, uri)
     },
 }
@@ -300,11 +300,11 @@ func initConfig() {
 <p>Alright, view is setup, now I want to setup verify. In verify I want the uri checked, an <span class="caps">HTTP</span> get issued against the URI for verification, and a respective response from the API end point. If that doesn’t come back, and an error occurs I want to handle the issues that might come&nbsp;up.</p>
 <p>The first bit of code I’ll add is getting the <span class="caps">URI</span> path with viper and issuing a get request against the URI end point. I’ll add this to the verify command pointer&nbsp;func.</p>
 <pre><code class="lang-javascript">uri := viper.GetString(<span class="string">"uri"</span>)
-resp, <span class="attr">err</span> := http.Get(uri)
+resp, err := http.Get(uri)
 </code></pre>
 <p>I want some of the body to display, so I’ve written a small function to handle the processing and return of some of the body. That code looks like&nbsp;this.</p>
 <pre><code class="lang-javascript">func keepTopVariableLines(s string, n int) string {
-    <span class="attr">bodyResult</span> := strings.Join(strings.Split(s, <span class="string">"\n"</span>)[:n], <span class="string">"\n"</span>)
+    bodyResult := strings.Join(strings.Split(s, <span class="string">"\n"</span>)[:n], <span class="string">"\n"</span>)
     <span class="keyword">return</span> strings.Replace(bodyResult, <span class="string">"\r"</span>, <span class="string">""</span>, <span class="number">-1</span>)
 }
 </code></pre>
@@ -314,7 +314,7 @@ resp, <span class="attr">err</span> := http.Get(uri)
 } <span class="keyword">else</span> {
     defer resp.Body.Close()
 
-    body, <span class="attr">err</span> := ioutil.ReadAll(resp.Body)
+    body, err := ioutil.ReadAll(resp.Body)
 
     <span class="keyword">if</span> err != nil {
         fmt.Printf(<span class="string">"Response body caused error: %s"</span>, err)
@@ -326,27 +326,27 @@ resp, <span class="attr">err</span> := http.Get(uri)
 </code></pre>
 <p>Now, I’ve got all the pieces for verify in place. The completed keeptTopVaribleLines and verify command pointer func look like this&nbsp;now.</p>
 <pre><code class="lang-javascript">func keepTopVariableLines(s string, n int) string {
-    <span class="attr">bodyResult</span> := strings.Join(strings.Split(s, <span class="string">"\n"</span>)[:n], <span class="string">"\n"</span>)
+    bodyResult := strings.Join(strings.Split(s, <span class="string">"\n"</span>)[:n], <span class="string">"\n"</span>)
     <span class="keyword">return</span> strings.Replace(bodyResult, <span class="string">"\r"</span>, <span class="string">""</span>, <span class="number">-1</span>)
 }
 
 <span class="comment">// verifyCmd represents the verify command</span>
 <span class="keyword">var</span> verifyCmd = &amp;cobra.Command{
-    <span class="attr">Use</span>:   <span class="string">"verify"</span>,
-    <span class="attr">Short</span>: <span class="string">"Verify will test the <span class="caps">URI</span> end point with a get call issued."</span>,
-    <span class="attr">Long</span>: <span class="string">`Verify will test the <span class="caps">URI</span> end point with an HTTP get call request against the end point.`</span>,
-    <span class="attr">Run</span>: func(cmd *cobra.Command, args []string) {
+    Use:   <span class="string">"verify"</span>,
+    Short: <span class="string">"Verify will test the <span class="caps">URI</span> end point with a get call issued."</span>,
+    Long: <span class="string">`Verify will test the <span class="caps">URI</span> end point with an HTTP get call request against the end point.`</span>,
+    Run: func(cmd *cobra.Command, args []string) {
         fmt.Println(<span class="string">"verify called"</span>)
 
         uri := viper.GetString(<span class="string">"uri"</span>)
-        resp, <span class="attr">err</span> := http.Get(uri)
+        resp, err := http.Get(uri)
 
         <span class="keyword">if</span> err != nil {
             fmt.Printf(<span class="string">"Configured <span class="caps">URI</span> has errors: \n\n%s"</span>, err)
         } <span class="keyword">else</span> {
             defer resp.Body.Close()
 
-            body, <span class="attr">err</span> := ioutil.ReadAll(resp.Body)
+            body, err := ioutil.ReadAll(resp.Body)
 
             <span class="keyword">if</span> err != nil {
                 fmt.Printf(<span class="string">"Response body caused error: %s"</span>, err)

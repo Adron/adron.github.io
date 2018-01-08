@@ -136,21 +136,21 @@
 <li><p><em>codeship-services.yml</em> - This is the file that will list out any of the services that need built to run the build. I only need a single service for the Go service. I added the following configuration to the file for creation of the&nbsp;service.</p>
 <pre><code class="lang-yaml"><span class="attr">  datadiluvium:</span>
 <span class="attr">    build:</span>
-<span class="attr">      image:</span> <span class="string">golang</span>
-<span class="attr">      dockerfile_path:</span> <span class="string">Dockerfile</span>
+<span class="attr">      image:</span> golang
+<span class="attr">      dockerfile_path:</span> Dockerfile
 </code></pre>
 <p>  I don’t have a Dockerfile just yet, but I’ll add that shortly. I named the image <em>golang</em> to match the image used from Docker&nbsp;hub.</p>
 </li>
 <li><p><em>codeship-steps.yml</em> - This file lists out the steps that will be run for the build. At this point I want to have three steps run: <code>go clean</code>, <code>go test .</code>, and <code>go build</code>. This in turn cleans the build, runs the tests, and then executes a new clean build. To have these steps execute during the build I added the following configuration to the codeship-steps.yml&nbsp;file.</p>
-<pre><code class="lang-yaml"><span class="attr">  - name:</span> <span class="string">sailing</span>
-<span class="attr">    service:</span> <span class="string">datadiluvium</span>
-<span class="attr">    command:</span> <span class="string">go</span> <span class="string">clean</span>
-<span class="attr">  - name:</span> <span class="string">sailing_tests</span>
-<span class="attr">    service:</span> <span class="string">datadiluvium</span>
-<span class="attr">    command:</span> <span class="string">go</span> <span class="string">test</span> <span class="string">.</span>
-<span class="attr">  - name:</span> <span class="string">sailing_build</span>
-<span class="attr">    service:</span> <span class="string">datadiluvium</span>
-<span class="attr">    command:</span> <span class="string">go</span> <span class="string">build</span>
+<pre><code class="lang-yaml"><span class="attr">  - name:</span> sailing
+<span class="attr">    service:</span> datadiluvium
+<span class="attr">    command:</span> go clean
+<span class="attr">  - name:</span> sailing_tests
+<span class="attr">    service:</span> datadiluvium
+<span class="attr">    command:</span> go test .
+<span class="attr">  - name:</span> sailing_build
+<span class="attr">    service:</span> datadiluvium
+<span class="attr">    command:</span> go build
 </code></pre>
 </li>
 </ul>
@@ -160,12 +160,12 @@
 
 <span class="keyword"><span class="caps">ENV</span></span> <span class="caps">GOPATH</span> /go
 
-<span class="keyword"><span class="caps">RUN</span></span><span class="bash"> mkdir /app &amp;&amp; \
+<span class="keyword"><span class="caps">RUN</span></span> <span class="bash">mkdir /app &amp;&amp; \
     apk add --update curl &amp;&amp; \
     rm -rf /var/cache/apk/*
 </span>
-<span class="keyword"><span class="caps">ADD</span></span><span class="bash"> . /app/
-</span><span class="keyword"><span class="caps">WORKDIR</span></span><span class="bash"> /app</span>
+<span class="keyword"><span class="caps">ADD</span></span> <span class="bash">. /app/
+</span><span class="keyword"><span class="caps">WORKDIR</span></span> <span class="bash">/app</span>
 </code></pre>
 <p>With those files in place, I can now run a local build with <code>jet steps</code>.</p>
 <pre><code class="lang-shell-script">$ jet steps

@@ -174,13 +174,13 @@ npm install good --save
 <span class="keyword">var</span> server = <span class="keyword">new</span> Hapi.Server(process.env.<span class="caps">PORT</span> || <span class="number">3000</span>);
 
 server.route({
-  <span class="attr">method</span>: <span class="string">'<span class="caps">POST</span>'</span>,
-  <span class="attr">path</span>: <span class="string">'/hi'</span>,
-  <span class="attr">handler</span>: <span class="function"><span class="keyword">function</span> (<span class="params">request, reply</span>) </span>{
+  method: <span class="string">'<span class="caps">POST</span>'</span>,
+  path: <span class="string">'/hi'</span>,
+  handler: <span class="function"><span class="keyword">function</span> (<span class="params">request, reply</span>) </span>{
     <span class="caps">AWS</span>.config.update({
-      <span class="attr">accessKeyId</span>: process.env.AWS_ACCESS_KEY_ID,
-      <span class="attr">secretAccessKey</span>: process.env.AWS_SECRET_KEY,
-      <span class="attr">region</span>: awsRegion
+      accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+      secretAccessKey: process.env.AWS_SECRET_KEY,
+      region: awsRegion
     });
     sqs = <span class="keyword">new</span> <span class="caps">AWS</span>.SQS();
 

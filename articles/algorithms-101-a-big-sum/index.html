@@ -117,7 +117,7 @@
 <pre><code class="lang-javascript">func main() {
     <span class="keyword">var</span> arraySizeCount int64
 
-    _, <span class="attr">err</span> := fmt.Scanf(<span class="string">"%d"</span>, &amp;arraySizeCount)
+    _, err := fmt.Scanf(<span class="string">"%d"</span>, &amp;arraySizeCount)
 }
 </code></pre>
 <p>Now that I know the size of the array of data I’ll be scraping up, I’ll setup the array to put that data in. I’ll add the next line of code just below the previous&nbsp;additions.</p>
@@ -131,7 +131,7 @@
 <p>Next I’ll need a variable for the total sum of the values in the array. I’ll create that and then also step through the range of values in the array, adding them while I&nbsp;go.</p>
 <pre><code class="lang-javascript"><span class="keyword">var</span> totalSum int64 = <span class="number">0</span>
 
-<span class="keyword">for</span> _, <span class="attr">v</span> := range data {
+<span class="keyword">for</span> _, v := range data {
     totalSum += v
 }
 </code></pre>
@@ -152,7 +152,7 @@ fmt.Printf(<span class="string">"%d\n"</span>, totalSum)
 func main() {
     <span class="keyword">var</span> arraySizeCount int64
 
-    _, <span class="attr">err</span> := fmt.Scanf(<span class="string">"%d"</span>, &amp;arraySizeCount)
+    _, err := fmt.Scanf(<span class="string">"%d"</span>, &amp;arraySizeCount)
 
     data := make([]int64, arraySizeCount)
 
@@ -162,7 +162,7 @@ func main() {
 
     <span class="keyword">var</span> totalSum int64 = <span class="number">0</span>
 
-    <span class="keyword">for</span> _, <span class="attr">v</span> := range data {
+    <span class="keyword">for</span> _, v := range data {
         totalSum += v
     }
 
@@ -178,7 +178,7 @@ func main() {
 <pre><code class="lang-javascript">func SumTotal(list []int64) int64 {
     <span class="keyword">var</span> totalSum int64 = <span class="number">0</span>
 
-    <span class="keyword">for</span> _, <span class="attr">v</span> := range list {
+    <span class="keyword">for</span> _, v := range list {
         totalSum += v
     }
 
@@ -189,7 +189,7 @@ func main() {
 <pre><code class="lang-javascript">func DataRead() ([]int64, error) {
     <span class="keyword">var</span> length int64
 
-    _, <span class="attr">err</span> := fmt.Scanf(<span class="string">"%d"</span>, &amp;length)
+    _, err := fmt.Scanf(<span class="string">"%d"</span>, &amp;length)
     <span class="keyword">if</span> err != nil {
         <span class="keyword">return</span> nil, err
     }
@@ -197,7 +197,7 @@ func main() {
     data := make([]int64, length)
 
     <span class="keyword">for</span> i := range data {
-        _, <span class="attr">err</span> := fmt.Scanf(<span class="string">"%d"</span>, &amp;data[i])
+        _, err := fmt.Scanf(<span class="string">"%d"</span>, &amp;data[i])
         <span class="keyword">if</span> err != nil {
             <span class="keyword">return</span> nil, err
         }
@@ -208,7 +208,7 @@ func main() {
 </code></pre>
 <p>Now I just go ahead and wipe out what is in the <code>main</code> function of the code and replace it with the few lines to call the respective input, and lass it to the respective processor and finalize that by printing out the&nbsp;results.</p>
 <pre><code class="lang-javascript">func main() {
-    data, <span class="attr">err</span> := DataRead()
+    data, err := DataRead()
     <span class="keyword">if</span> err != nil {
         fmt.Print(err)
     }
@@ -224,7 +224,7 @@ func main() {
 )
 
 func main() {
-    data, <span class="attr">err</span> := DataRead()
+    data, err := DataRead()
     <span class="keyword">if</span> err != nil {
         fmt.Print(err)
     }
@@ -235,7 +235,7 @@ func main() {
 func SumTotal(list []int64) int64 {
     <span class="keyword">var</span> totalSum int64 = <span class="number">0</span>
 
-    <span class="keyword">for</span> _, <span class="attr">v</span> := range list {
+    <span class="keyword">for</span> _, v := range list {
         totalSum += v
     }
 
@@ -246,7 +246,7 @@ func SumTotal(list []int64) int64 {
 func DataRead() ([]int64, error) {
     <span class="keyword">var</span> length int64
 
-    _, <span class="attr">err</span> := fmt.Scanf(<span class="string">"%d"</span>, &amp;length)
+    _, err := fmt.Scanf(<span class="string">"%d"</span>, &amp;length)
     <span class="keyword">if</span> err != nil {
         <span class="keyword">return</span> nil, err
     }
@@ -254,7 +254,7 @@ func DataRead() ([]int64, error) {
     data := make([]int64, length)
 
     <span class="keyword">for</span> i := range data {
-        _, <span class="attr">err</span> := fmt.Scanf(<span class="string">"%d"</span>, &amp;data[i])
+        _, err := fmt.Scanf(<span class="string">"%d"</span>, &amp;data[i])
         <span class="keyword">if</span> err != nil {
             <span class="keyword">return</span> nil, err
         }
@@ -264,7 +264,7 @@ func DataRead() ([]int64, error) {
 }
 </code></pre>
 <p>Both of the solutions work and provide the desired result. However, one is refactored into input and output functions, with the main function minimized. In this particular situation does it even matter? One might say it’s good to practice refactoring, but in the end did the refactored solution end up better in some way? I could argue that the latter is easier to read. I could say that the first solution was easier to read, since it was so much shorter. The argument could fall either way, but in the end it’s a quick, simple, introductory algorithm and some simple&nbsp;refactoring.</p>
-<p>If you’ve got a quick second, ping me [@Adron] if you’ve got suggestions, other refactoring, or other thoughts about this algorithm. I’m always open to a critical&nbsp;editorialization.</p>
+<p>If you’ve got a quick second, ping me <a href="https://twitter.com/Adron">@Adron</a> if you’ve got suggestions, other refactoring, or other thoughts about this algorithm. I’m always open to a critical&nbsp;editorialization.</p>
 <p>In the meantime, happy&nbsp;hacking!</p>
 <p>References: The <a href="https://github.com/Adron/algorithms-101-a-big-sum">repository</a> for this code I’ve written here is available on Github @ <a href="https://github.com/Adron/algorithms-101-a-big-sum">algorithms-101-a-big-sum</a></p>
 </section>

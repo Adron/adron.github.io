@@ -241,7 +241,7 @@ func DataRead() ([]int64, error) {
 
 Both of the solutions work and provide the desired result. However, one is refactored into input and output functions, with the main function minimized. In this particular situation does it even matter? One might say it's good to practice refactoring, but in the end did the refactored solution end up better in some way? I could argue that the latter is easier to read. I could say that the first solution was easier to read, since it was so much shorter. The argument could fall either way, but in the end it's a quick, simple, introductory algorithm and some simple refactoring.
 
-If you've got a quick second, ping me [@Adron] if you've got suggestions, other refactoring, or other thoughts about this algorithm. I'm always open to a critical editorialization.
+If you've got a quick second, ping me [@Adron](https://twitter.com/Adron) if you've got suggestions, other refactoring, or other thoughts about this algorithm. I'm always open to a critical editorialization.
 
 In the meantime, happy hacking!
 
