@@ -30,31 +30,55 @@ The first line is an integer, *q*, denoting the number of queries. The subsequen
 
 Each query should have a result displayed that is the integer denoting the minimum cost of making town centers accessible to all the citizens.
 
-The following example includes two queries (denoted by the first line having a 2). The subsequent queries then have a definition line of [3,2,2,1] and [6,6,2,5] respectively. Then below those query definition lines are the road definitions between the cities, and respectively the town centers.
+The following example includes three queries (denoted by the first line having a 3). The subsequent queries then have a definition line of [3,2,2,1] and [6,6,2,5] respectively. Then below those query definition lines are the road definitions between the cities, and respectively the town centers.
 
 **Sample**
 
 ```
-2
+3
 3 3 2 1
 1 2
 3 1
 2 3
-6 6 2 5
-1 3
-3 4
-2 4
-1 2
-2 3
-5 6
-```
-
-## The Output
+7 5 2 5
 
 ```
-4
-12
+
+Alright, this one is kind of an oddball set of elements to resolve.  Here's how I've worked through these samples. I've drawn out the three examples so that there is a visual understanding of where the cities are also.
+
+
+
+
+
+
+**Sample Output**
+
+```
 ```
 
-Alright, so here's how I've worked through these samples.
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+Observation 
+We can't build new roads in HackerLand; we can only repair existing ones; however, when repairing roads, we need to be cognizant that there is no guarantee that each and every city is connected, meaning the graph may be disconnected and groups of cities will form. For example, a group of  cities might be connected to each other, but not connected to  other cities that are only connected to one another. We'll call each of these groups components, and in order to solve the whole problem we'll need to solve the components individually.
+
+Observation 
+Each component needs at least one library. Without a library in one of the component's cities, there is no way for the cities in the component to access a library.
+
+Conclusion
+With these observations taken into account, there are two ways to assemble a component:
+
+A library must exist in at least one city, so  roads must be repaired (where  is the number of cities in the component).
+A library must exist in every city in a component, meaning that no roads need to be repaired. We choose this option when the cost of building a library is less than the cost of repairing a road.
+The minimum cost for each component will either be  when we repair roads, or  when we build a library in each city. Choosing the option that is smallest and summing it with all of the other smallest options for each component yields the value of the cheapest solution. If the cost for repairing a road and building a library are the same, the two approaches will be equal (meaning both options are equally valid).
