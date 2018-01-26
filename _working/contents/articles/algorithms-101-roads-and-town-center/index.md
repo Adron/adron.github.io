@@ -41,6 +41,11 @@ The following example includes three queries (denoted by the first line having a
 3 1
 2 3
 7 5 2 5
+1 2
+2 3
+3 4
+5 6
+6 7
 
 ```
 
