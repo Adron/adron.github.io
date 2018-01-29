@@ -56,5 +56,6 @@ The following example includes two queries (denoted by the first line having a 2
 12
 ```
 
-Alright, so here's how I've worked through these samples.
+Alright, so here's how I've worked through these samples. In the sample there are two queries and having two queries I'll get two responses, one for each. The Nation contains 3 cities connected by 3 roads, the cost of a town centers is 2 and the road cost is 1. These are the cheapest roads and town centers on the entire planet full of nations, a great win for us all! The least expensive way to get access to town centers in all of the cities in the first nation is to build or repair two of the roads. That is, I'll build a town center in the city of Lenia, then repair the road from Lenia to Odessa, then the road from Odessa to Krakow. That makes a total cost of 2 + 1 + 1 = 4.
 
+In the second example...
