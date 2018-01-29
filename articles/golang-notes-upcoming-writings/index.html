@@ -115,8 +115,8 @@
 }
 
 func TestAverage(t *testing.T) {
-  <span class="keyword">for</span> _, pair := range testAverages {
-    v := Average(pair.values)
+  <span class="keyword">for</span> _, <span class="attr">pair</span> := range testAverages {
+    <span class="attr">v</span> := Average(pair.values)
     <span class="keyword">if</span> v != pair.result {
       t.Error(
         <span class="string">"For"</span>, pair.values,
@@ -129,8 +129,8 @@ func TestAverage(t *testing.T) {
 </code></pre>
 <p>At this point, following this <span class="caps">TDD</span> style approach, the build fails without the <code>Average</code> func implemented. I continued forward and implement the function as shown&nbsp;below.</p>
 <pre><code class="lang-javascript">func Average(xs []float64) float64 {
-  total := float64(<span class="number">0</span>)
-  <span class="keyword">for</span> _, x := range xs {
+  <span class="attr">total</span> := float64(<span class="number">0</span>)
+  <span class="keyword">for</span> _, <span class="attr">x</span> := range xs {
     total += x
   }
   <span class="keyword">return</span> total / float64(len(xs))

@@ -265,7 +265,7 @@
 </code></pre>
 <p>With those functions in place I can now, finally, after all this work move toward an initial answer! Now I’m going to write a set of tests, one for each of the percentages that are requested in the original code challenge. One test for the storage, transport, and dead space percentages. For these tests, I’m doing a nice easy split of storage, transport, and dead space; 50, 75, and 75. That was I can calculate it out in my head if need&nbsp;be.</p>
 <pre><code class="lang-javascript">func TestGimmeTheStoragePercent(t *testing.T) {
-    result := GimmeTheSolutionAlready(<span class="number">50</span>, <span class="number">75</span>, <span class="number">75</span>)
+    <span class="attr">result</span> := GimmeTheSolutionAlready(<span class="number">50</span>, <span class="number">75</span>, <span class="number">75</span>)
 
     <span class="keyword">if</span> result[<span class="number">0</span>] != <span class="number">25</span> {
         t.Error(<span class="string">"The storage percentage is not correct."</span>)
@@ -273,7 +273,7 @@
 }
 
 func TestGimmeTheTransportPercent(t *testing.T) {
-    result := GimmeTheSolutionAlready(<span class="number">50</span>, <span class="number">75</span>, <span class="number">75</span>)
+    <span class="attr">result</span> := GimmeTheSolutionAlready(<span class="number">50</span>, <span class="number">75</span>, <span class="number">75</span>)
 
     <span class="keyword">if</span> result[<span class="number">1</span>] != <span class="number">37.5</span> {
         t.Error(<span class="string">"The transport percentage is not correct."</span>)
@@ -281,7 +281,7 @@ func TestGimmeTheTransportPercent(t *testing.T) {
 }
 
 func TestGimmeTheDeadspacePercent(t *testing.T) {
-    result := GimmeTheSolutionAlready(<span class="number">50</span>, <span class="number">75</span>, <span class="number">75</span>)
+    <span class="attr">result</span> := GimmeTheSolutionAlready(<span class="number">50</span>, <span class="number">75</span>, <span class="number">75</span>)
 
     <span class="keyword">if</span> result[<span class="number">2</span>] != <span class="number">37.5</span> {
         t.Error(<span class="string">"The dead space percentage is not correct."</span>)

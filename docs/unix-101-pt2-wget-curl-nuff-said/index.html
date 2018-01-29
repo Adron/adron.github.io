@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Adron's Thrashing Code</title>
+    <meta name="description" content="">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="alternate" href="/feed.xml" type="application/rss+xml" title="Coder, Messenger, Recon, Infrastructure, Ops, &amp; A Sprinkling of Metal">
+    <link rel="icon" type="image/png" href="/img/favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/img/favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/img/favicons/favicon-96x96.png" sizes="96x96">
+    <link rel="apple-touch-icon" sizes="57x57" href="/img/favicons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/img/favicons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/img/favicons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/img/favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/img/favicons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/img/favicons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/img/favicons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/img/favicons/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/favicons/apple-touch-icon-180x180.png">
+    <link rel="stylesheet" href="/css/custom.css">
+    <link rel="stylesheet" href="/css/style.min.css">
+    <script src="/js/modernizr.js"></script>
+  </head>
+  <body class="article-detail">
+    <!--[if lt IE 8]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <div class="header header-over large">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 col-sm-6 col-xs-6">
+            <!-- Logo Image--><a href="/index.html" class="logo-image logo-animated"><img src="/img/logos/logo.png" alt="logo"></a>
+            <!-- End of Logo Image-->
+          </div>
+          <div class="col-md-9 col-sm-6 col-xs-6">
+            <!-- Menu-->
+            <nav class="right helper">
+              <ul class="menu sf-menu js-menu">
+                <li><a href="/docs/thrashing-code-news/">Thrashing Code News</a></li>
+                <li><a href="#">Conf - Meetup - Events</a>
+                  <ul>
+                    <li><a href="/docs/Speaking-Presentations-Workshops/">Speaking - Presentations - Workshops</a></li>
+                    <li><a href="/docs/calendar">Calendar of Engagements</a></li>
+                  </ul>
+                </li>
+                <li><a href="/docs/documentation/">Docs</a></li>
+                <li><a href="#">Contact</a>
+                  <ul>
+                    <li><a href="/docs/contact">Message</a></li>
+                    <li><a href="/docs/job-talk/">Hire</a></li>
+                  </ul>
+                </li>
+                <li><a href="/docs/about/">About</a></li>
+              </ul>
+            </nav>
+            <!-- End of Menu-->
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="header-back header-back-simple header-back-small">
+      <div class="header-back-container">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <!-- Page Info-->
+              <div class="page-info page-info-simple">
+                <h1>Linux (*nix) 101 Topics - wget and curl</h1>
+                <div class="nav"> «<a href="/"> Home</a></div>
+              </div>
+              <!-- End Page Info-->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="content">
+      <div class="container">
+        <div class="layout with-right-sidebar js-layout">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="main-content">
+                <!-- Blog Page-->
+                <docs class="article">
+                  <section class="content"><p>The following documentation is something I’ve put together detailing some basic definition, history, and usage of the commands <code>wget</code> and <code>curl</code>.</p>
+<blockquote>
+<p><code>wget</code> or <span class="caps">GNU</span> Wget, is a program that retrieves web server content via HTTP, HTTPS, and FTP. It includes features around recursive download, link conversion for offline viewing, and proxy support. It appeared in 1996 and quickly became widely used on Unix systems and because a regular program distributed on various Linux distributions. Wget has also been ported to Windows, OS-X/MacOS, OpenVMS, HP-UX, MorphOS, and&nbsp;AmigaOS.</p>
+</blockquote>
+<p><strong>Examples:</strong></p>
+<p>The following are some examples of <code>wget</code> usage to download&nbsp;content.</p>
+<p>The following commamnd downloads the content located at <a href="http://blog.adron.me">http://blog.adron.me</a> into a file called index.html. This download is done via http, as the <span class="caps">URI</span> path would&nbsp;suggest.</p>
+<p><code>wget http://blog.adron.me/</code></p>
+<p>The <code>wget</code> command can be used for <span class="caps">FTP</span> too, as this example shows getting a file from an FTP&nbsp;server.</p>
+<p><code>wget ftp://ftp.gnu.org/pub/gnu/wget/wget-latest.tar.gz</code></p>
+<p>One interesting technique with <span class="caps">FTP</span> is globbing, which works to download a specific type of file from a particular&nbsp;location.</p>
+<p><code>wget -e robots=off -r -l 1 --no-parent -A .gif ftp://myftp.adron.me/dir/</code></p>
+<p>If you download the site at the first example, one will notice upon viewing index.html that the references to images, css, and other collateral don’t line up to their respective paths. To fix this <code>wget</code> can be used to remap the images, style sheets, and other collateral to align correctly with the following&nbsp;command.</p>
+<p><code>wget -p -k http://blog.adron.me/</code></p>
+<p>Now when viewing the index.html page the various assets should display&nbsp;appropriately. </p>
+<p>The following command takes things to the next level, and will download the entire content of <code>http://blog.adron.me/</code>, which beware, may take you a while if you try to run&nbsp;it.</p>
+<p><code>wget -r -l 0 http://blog.adron.me/</code></p>
+<p>For more information on <code>wget</code> check out the <span class="caps">GNU</span> <a href="https://www.gnu.org/software/wget/manual/">documentation here</a>. For the above examples and more information regarding the history and definition of wget, check out the <a href="https://en.wikipedia.org/wiki/Wget">Wikipedia Article</a>. There are a lot of powerful features of <code>wget</code>, so for whatever need around downloading you have it likely has options for what you&nbsp;need.</p>
+<blockquote>
+<p><code>curl</code> is a free open source tool used for command line use and scripting in the transfer of data. <code>curl</code> is both a library and <span class="caps">CLI</span> tool, which is most commonly cased as cURL, and includes the libcurl and cURL products produced by the cURL&nbsp;Project.</p>
+</blockquote>
+<p>The library libcurl is a portable library that can be used on most systems including; <span class="caps">AIX</span>, AmigaOS, Android, BeOS, BlackBerry, FreeBSD, Solaris, Unix, Windows, and many&nbsp;others.</p>
+<p>cURL is the command line tool, executed as <code>curl</code>, for getting or sending files usig <span class="caps">URL</span>&nbsp;syntax.</p>
+<p><strong>Examples:</strong></p>
+<p>An example of <code>curl</code> usage is as&nbsp;follows.</p>
+<p><code>curl blog.adron.me</code></p>
+<p>This downloads the content directly as standard output to the command line. To download the content into a file, like index.html, use the -O&nbsp;switch.</p>
+<p><code>curl -O index.html blog.adron.me</code></p>
+<p>For more on <code>curl</code> check out this <a href="https://curl.haxx.se">page</a> and the <a href="https://curl.haxx.se/docs/manpage.html">documentation</a>.</p>
+</section>
+                </docs>
+                <!-- End of Blog Page-->
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="nav"><a href="/">« Home</a></div>
+      </div>
+    </div>
+    <script src="/js/all.js"></script>
+    <script src="/js/custom.js"></script>
+    <!-- Google Tag Manager-->
+    <noscript>
+      <iframe src="//www.googletagmanager.com/ns.html?id=GTM-KMMZX2" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <script>
+      console.log(document.getElementById("search-google"));
+      console.log(document.getElementById("search-google").innerText);
+      
+      var searchBox = document.getElementById("search-google");
+      
+      function googleSearch(search_string) {
+          alert(search_string);
+      }
+      
+      document.getElementById("search-google").addEventListener("onClick", function () {
+          alert(document.getElementById("search-google").innerHTML);
+      });
+      
+      document.getElementById("search-google").addEventListener("onClick", function () {
+          googleSearch(document.getElementById("search-google").innerHTML)
+      });
+      
+    </script>
+    <script>
+      (function (i, s, o, g, r, a, m) {
+          i['GoogleAnalyticsObject'] = r;
+          i[r] = i[r] || function () {
+                      (i[r].q = i[r].q || []).push(arguments)
+                  }, i[r].l = 1 * new Date();
+          a = s.createElement(o),
+                  m = s.getElementsByTagName(o)[0];
+          a.async = 1;
+          a.src = g;
+          m.parentNode.insertBefore(a, m)
+      })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+      ga('create', 'UA-39158070-6', 'auto');
+      ga('send', 'pageview');
+    </script>
+  </body>
+</html>

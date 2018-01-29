@@ -68,8 +68,8 @@
             <div class="col-md-12">
               <!-- Page Info-->
               <div class="page-info page-info-simple">
-                <h1>I Want a Go CLI</h1>
-                <p class="author">Written by <span class="author">Adron Hall</span> and published on <span>October, 25 of 2016.</span>
+                <h1>Logitech M331 Silent Mouse</h1>
+                <p class="author">Written by <span class="author">Adron Hall</span> and published on <span>January, 29 of 2018.</span>
                 </p>
                 <div class="nav"><a href="/">« Home</a></div>
               </div>
@@ -87,80 +87,70 @@
               <div class="main-content">
                 <!-- Blog Page-->
                 <article class="article">
-                  <section class="content"><div class="image float-left">
-    <img src="/articles/want-a-golang-cli/united-airlines-boeing-777.jpg" alt="United Airlines Boeing 777">
-</div>
-
-<p>I sat in seat 20B on United Airlines Flight <span class="caps">UA</span> 949, enjoying the roominess of the Boeing 777 in service on this route between London (LHR) and San Francisco (SFO). At this time I decided it was time to hack together a <a href="https://golang.org/">Go</a> <a href="https://en.wikipedia.org/wiki/Command-line_interface"><span class="caps">CLI</span></a>&nbsp;Project.</p>
-<p><strong>Mission:</strong> Create a Command Line Interface (<span class="caps">CLI</span>) that takes some flags, basic user input, and prints out&nbsp;something.</p>
+                  <section class="content"><p>Recently I was playing Transport Fever. If you’re unaware of this epic, nerd, god game and you like those types of games, you should definitely check it out. If you’re not into those, just suffice it to say that there is a lot of mouse clicking in the game. During the last few weeks when I startup the game and navigate about building my railroad empire a certain someone else noticed that the mouse clicking increases&nbsp;exponentially.</p>
+<p>I thought to myself, “we need a solution to this!” I began searching for a silent mouse, first using a little Google-fu, but also a quick query on Twitter among the Twitterverse. Quickly a result came back that looked like it would work out in <a href="https://www.logitech.com/en-sg/product/m331-silent-plus">Logitech’s M331 Silent Mouse</a>&nbsp;product.</p>
+<p><a href="http://photos.adron.me/Software/Reviews/Logitech-M331/"><img src="https://photos.smugmug.com/Software/Reviews/Logitech-M331/i-PCvgQVJ/0/bc53a06e/X2/2018012614415063-IMG_3772-X2.jpg" alt="Logitech M331"></a></p>
 <p><span class="more"></span></p>
-<div class="image float-right">
-    <img src="/articles/want-a-golang-cli/golang-mascot.png" alt="Go Language Mascot">
-</div>
-
-<p>I quickly threw together just a simple “hi” <span class="caps">CLI</span>&nbsp;App.</p>
-<pre><code class="lang-javascript">package main
-
-<span class="keyword">import</span> <span class="string">"fmt"</span>
-
-func main() {
-    fmt.Println(<span class="string">"Hi"</span>)
-}
-</code></pre>
-<p>Then I ran that just to make sure I had Go installed properly and all&nbsp;that.</p>
-<pre><code class="lang-shell-script">go run hi-cli.go
-</code></pre>
-<p>That’s super boring, so first things first, let’s take some input from the command line and print it back out to the screen. I’ll start by passing a few parameters along with the hi-cli&nbsp;call.</p>
-<pre><code class="lang-javascript">package main
-
-<span class="keyword">import</span> (
-    <span class="string">"bufio"</span>
-    <span class="string">"fmt"</span>
-    <span class="string">"os"</span>
-)
-
-func main() {
-    <span class="attr">reader</span> := bufio.NewReader(os.Stdin)
-    fmt.Print(<span class="string">"Enter text: "</span>)
-    text, <span class="attr">_</span> := reader.ReadString(<span class="string">'\n'</span>)
-    fmt.Println(text)
-}
-</code></pre>
-<p>What this bit of code gives me looks like this when I execute it&nbsp;now.</p>
-<p><img src="/articles/want-a-golang-cli/hi-cli-01.png" alt="Running hi-cli.go"></p>
-<p>A quick few notes if you’re not familiar with Go. The := is a reassignment (or assignment) and declaration operator. It’s actually equivalent to the following&nbsp;statement.</p>
-<pre><code class="lang-javascript"><span class="keyword">var</span> reader = bufio.NewReader(os.Stdin)
-</code></pre>
-<p>So that’s the notion behind the :=&nbsp;syntax.</p>
-<p>Ok, so now I wanted some other features to the cli. The first is the ability to pass in some flags. There is a library for that, simply called <em>flag</em> which I’ll add. I added that to the import&nbsp;list.</p>
-<p>One of the really cool features of the flag library is that it will auto-generate flag help documentation. To display the flag documentation pass the -h flag. For instance, to see the flag documentation type in <code>go run hi-cli.go -h</code>. However, I need to actually add some flags with their appropriate descriptions and actually use them somewhere. So I’ve edited my go code file as&nbsp;shown.</p>
-<pre><code class="lang-javascript">func main() {
-  <span class="attr">wordFlag</span> := flag.String(<span class="string">"wordly"</span>, <span class="string">"the-word"</span>, <span class="string">"A string value."</span>)
-  numberFlag := flag.Int(<span class="string">"numeraly"</span>, <span class="number">42012</span>, <span class="string">"An integer value."</span>)
-  booleanFlag := flag.Bool(<span class="string">"booly"</span>, <span class="literal">true</span>, <span class="string">"A boolean value."</span>)
-  nameFlag := flag.String(<span class="string">"yourname"</span>, <span class="string">"Person With No Name"</span>, <span class="string">"Put your name here."</span>)
-
-  flag.Parse()
-
-  <span class="keyword">var</span> reader = bufio.NewReader(os.Stdin)
-  fmt.Print(<span class="string">"Hello, "</span> + *nameFlag + <span class="string">", please enter some text: "</span>)
-  text, <span class="attr">_</span> := reader.ReadString(<span class="string">'\n'</span>)
-  fmt.Println(text)
-
-  fmt.Println(<span class="string">"word: "</span>, *wordFlag)
-  fmt.Println(<span class="string">"numb: "</span>, *numberFlag)
-  fmt.Println(<span class="string">"fork: "</span>, *booleanFlag)
-}
-</code></pre>
-<p>Now I can ask for help with the <code>go run hi-cli.go -h</code> and I get the&nbsp;following.</p>
-<p><img src="/articles/want-a-golang-cli/hi-cli-02.png" alt="Running hi-cli.go"></p>
-<p>That’s what I expected, so now I’m going to test out the different flags I set. So I go ahead and set each of the flags just to see. My command reads nice and long as <code>go run hi-cli.go -booly=false -wordly=testing -numeraly=909 -yourname=&quot;Adron Hall&quot;</code>.</p>
-<p><img src="/articles/want-a-golang-cli/hi-cli-03.png" alt="Running hi-cli.go"></p>
-<p>Again, everything I expected. Based on the mission I set out at the beginning of this entry, mission is accomplished. So until next time, happy&nbsp;hacking.</p>
-<p><strong>References:</strong></p>
+<p>Alright, here’s the rundown on what it does well and what it does not do well. For context, here are the specs for the&nbsp;mouse.</p>
+<h5 id="dimensions"><span class="caps">DIMENSIONS</span></h5>
 <ul>
-<li><a href="https://github.com/Adron/golang-cli">Github&nbsp;Repo</a></li>
-<li><a href="https://golang.org/">Go language&nbsp;site</a></li>
+<li>Mouse (height x width x depth): 105.4 mm x 67.9 mm x 38.4&nbsp;mm</li>
+<li><p>Weight: 91.0&nbsp;g</p>
+</li>
+<li><p>Nano receiver (height x width x depth): 14.4 mm x 18.7 mm x 6.1&nbsp;mm</p>
+</li>
+<li>Weight: 1.8&nbsp;g</li>
+</ul>
+<h5 id="system-requirements"><span class="caps">SYSTEM</span>&nbsp;REQUIREMENTS</h5>
+<ul>
+<li>Windows® 10 or later, Windows 8, Windows <span class="caps">RT</span>, Windows&nbsp;7</li>
+<li>Mac <span class="caps">OS</span> X 10.5 or&nbsp;later</li>
+<li>Chrome&nbsp;<span class="caps">OS</span>™</li>
+<li>Linux Kernel&nbsp;2.6+2</li>
+<li><span class="caps">USB</span>&nbsp;port</li>
+</ul>
+<h5 id="technical-specifications"><span class="caps">TECHNICAL</span>&nbsp;SPECIFICATIONS</h5>
+<ul>
+<li>Connection Type: 2.4GHz wireless&nbsp;connection</li>
+<li>Wireless range: 10 meters&nbsp;2</li>
+<li>Connect / Power: Yes, on/off&nbsp;switch</li>
+<li>Battery Details: 1 x&nbsp;<span class="caps">AA</span></li>
+<li>Battery Life (not rechargeable): 24&nbsp;months1</li>
+<li><span class="caps">DPI</span> (Min/Max):&nbsp;1000±</li>
+<li>Sensor technology: Yes, 2D,&nbsp;mechanical</li>
+<li>Sensor resolution: 1000&nbsp;dpi</li>
+<li>Scroll Wheel:&nbsp;Yes</li>
+<li>Number of buttons:&nbsp;3</li>
+<li>Standard and Special Buttons: Middle&nbsp;click</li>
+</ul>
+<p>A few pictures to give you a good idea of what it’s like close&nbsp;up.</p>
+<p><a href="http://photos.adron.me/Software/Reviews/Logitech-M331/"><img src="https://photos.smugmug.com/Software/Reviews/Logitech-M331/i-kgKq95R/0/a4df6e70/XL/2018012614415063-IMG_3773-XL.jpg" alt="The Side"></a></p>
+<p><a href="http://photos.adron.me/Software/Reviews/Logitech-M331/"><img src="https://photos.smugmug.com/Software/Reviews/Logitech-M331/i-XTTmRrs/0/480339ab/XL/2018012614415063-IMG_3771-XL.jpg" alt="A View"></a></p>
+<p><a href="http://photos.adron.me/Software/Reviews/Logitech-M331/"><img src="https://photos.smugmug.com/Software/Reviews/Logitech-M331/i-kSMGKQm/0/1609cada/L/2018012614415063-IMG_3774-L.jpg" alt="On"></a></p>
+<p><a href="http://photos.adron.me/Software/Reviews/Logitech-M331/"><img src="https://photos.smugmug.com/Software/Reviews/Logitech-M331/i-5Jb53XP/0/f325676d/L/2018012614415063-IMG_3775-L.jpg" alt="Off"></a></p>
+<p><a href="http://photos.adron.me/Software/Reviews/Logitech-M331/"><img src="https://photos.smugmug.com/Software/Reviews/Logitech-M331/i-dB5g3j2/0/38b03222/X4/2018012614415063-IMG_3776-X4.jpg" alt="Batteries, Meh"></a></p>
+<p>That’s the technical details and a thorough view, so here are a few of the things that I’ve used the mouse&nbsp;for;</p>
+<ul>
+<li>Working in PicMonkey (to edit the photos for this blog&nbsp;entry)</li>
+<li>Played about 75 minutes of Transport&nbsp;Fever.</li>
+<li>Work with Visual Studio Code and IntelliJ to edit some Terraform&nbsp;configurations.</li>
+<li>Execute a lot of bash scripts, and issue terminal commands in a variety of terminal&nbsp;windows.</li>
+<li>Worked on scrolling <span class="amp">&amp;</span> reading through a lot of documentation related to Honeycomb.io, HashiCorp, and&nbsp;others.</li>
+</ul>
+<p><strong><em>Observations</em></strong></p>
+<p>It may be important to note, this mouse is being used to complement and <em>sort of</em> replace my Razer Krait mouse which has been an epic, all around, general purpose, bad ass, amazing mouse for more years than I’m going to count. This mouse is the baseline I’m using as a reference when speaking about this new&nbsp;mouse.</p>
+<p>Downsides</p>
+<ul>
+<li>Bluetooth, no wire, means sometimes flaky&nbsp;behavior.</li>
+<li>When moving extremely quick, that wireless nature leaves the mouse cursor lagging&nbsp;sometimes.</li>
+<li>Batteries. Nuff’&nbsp;said.</li>
+</ul>
+<p>Positives</p>
+<ul>
+<li>The mouse, when the bluetooth isn’t being flaky, is extremely&nbsp;smooth.</li>
+<li>The mouse clicks are barely audible, but not 100%&nbsp;silent.</li>
+<li>The feel of the mouse when moving is physically&nbsp;precise.</li>
+<li>The wheel on the mouse I absolutely love. Easy to be quick or slow and precise with&nbsp;it.</li>
 </ul>
 </section>
                 </article>
