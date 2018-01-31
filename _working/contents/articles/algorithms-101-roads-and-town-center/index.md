@@ -1,5 +1,5 @@
 ---
-title: Algorithm 101 Roads & Town Centers
+title: Algorithms 101 Roads & Town Centers
 author: Adron Hall
 date: 2018-01-31 21:19:38
 template: article.jade
