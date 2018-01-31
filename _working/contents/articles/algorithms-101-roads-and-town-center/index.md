@@ -117,6 +117,12 @@ This third dataset has three island areas. The first has 6 cities with 6 roads. 
 
 For the island with two cities will need at least one town center. But with the prices increased let's take a look to be sure. If I replace one town center, we'll say in Tupelo, and rebuild the road that would be c<sub>town center</sub> of 3 and road cost of 4 giving a total cost of 7. But if I rebuild a town center in San Francisco and Tupelo, that would only be 6. The previous plus this solution gives me three town centers at a cost of 5.
 
+Now considering the last island segment I have 6 cities, and a number of roads that in some cases connect just one city. For the stretch that connects Legoland and York I could rebuild a town center in York, then the road [1,5] and [1,2] which would give Lenia, Legoland, and York direct access to a town center. The total would be 3 + 4 + 4 = 11 for a single town center and two roads. Then looking at things, the cheap scenario would be to rebuild a town center in Odessa and road [3,4] and [3,9] for another 11 total. Overall for this island of cities within the nation I'll have 4 roads rebuilt with 2 town centers, for a total of 22 cost.
+
+Adding that together for the entire nation of Dataset 3, that's 22 + 5 + 3, giving a total cost for direct access to town centers of 30 cost.
+
+The question now is, what's the best algorithm to solve all of this. I'm going to make this algorithm a two parter, because this is such a whopper of a problem to lay out that I'll give readers a chance 
+
 **Sample Output**
 
 With each of these resolved, the output of the algorithm should print to stdout with the following results.
@@ -124,15 +130,7 @@ With each of these resolved, the output of the algorithm should print to stdout 
 ```
 8
 9
+30
 ```
 
-
-trash.
-
-Observation We can’t build new roads in HackerLand; we can only repair existing ones; however, when repairing roads, we need to be cognizant that there is no guarantee that each and every city is connected, meaning the graph may be disconnected and groups of cities will form. For example, a group of cities might be connected to each other, but not connected to other cities that are only connected to one another. We’ll call each of these groups components, and in order to solve the whole problem we’ll need to solve the components individually.
-
-Observation Each component needs at least one library. Without a library in one of the component’s cities, there is no way for the cities in the component to access a library.
-
-Conclusion With these observations taken into account, there are two ways to assemble a component:
-
-A library must exist in at least one city, so roads must be repaired (where is the number of cities in the component). A library must exist in every city in a component, meaning that no roads need to be repaired. We choose this option when the cost of building a library is less than the cost of repairing a road. The minimum cost for each component will either be when we repair roads, or when we build a library in each city. Choosing the option that is smallest and summing it with all of the other smallest options for each component yields the value of the cheapest solution. If the cost for repairing a road and building a library are the same, the two approaches will be equal (meaning both options are equally valid).
+So... what's your take on this one. If you build a solution, I'll blog it and post in my solution post in a few days. Let me know and we'll sync up on it and talk about what an ideal solution might look like. Ping me [@Adron](https://twitter.com/Adron).
