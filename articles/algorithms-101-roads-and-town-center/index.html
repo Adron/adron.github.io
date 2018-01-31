@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Adron's Thrashing Code</title>
+    <meta name="description" content="">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="alternate" href="/feed.xml" type="application/rss+xml" title="Coder, Messenger, Recon, Infrastructure, Ops, &amp; A Sprinkling of Metal">
+    <link rel="icon" type="image/png" href="/img/favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/img/favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/img/favicons/favicon-96x96.png" sizes="96x96">
+    <link rel="apple-touch-icon" sizes="57x57" href="/img/favicons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/img/favicons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/img/favicons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/img/favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/img/favicons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/img/favicons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/img/favicons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/img/favicons/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/favicons/apple-touch-icon-180x180.png">
+    <link rel="stylesheet" href="/css/custom.css">
+    <link rel="stylesheet" href="/css/style.min.css">
+    <script src="/js/modernizr.js"></script>
+  </head>
+  <body class="article-detail">
+    <!--[if lt IE 8]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <div class="header header-over large">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 col-sm-6 col-xs-6">
+            <!-- Logo Image--><a href="/index.html" class="logo-image logo-animated"><img src="/img/logos/logo.png" alt="logo"></a>
+            <!-- End of Logo Image-->
+          </div>
+          <div class="col-md-9 col-sm-6 col-xs-6">
+            <!-- Menu-->
+            <nav class="right helper">
+              <ul class="menu sf-menu js-menu">
+                <li><a href="#">Conf - Meetup - Events</a>
+                  <ul>
+                    <li><a href="/docs/Speaking-Presentations-Workshops/">Speaking - Presentations - Workshops</a></li>
+                    <li><a href="/docs/calendar">Calendar of Engagements</a></li>
+                  </ul>
+                </li>
+                <li><a href="/docs/thrashing-code-news/">Thrashing Code News</a></li>
+                <li><a href="/docs/medium-_TOC_/">Medium</a></li>
+                <li><a href="/docs/documentation/">Docs</a></li>
+                <li><a href="#">Contact</a>
+                  <ul>
+                    <li><a href="/docs/contact">Message</a></li>
+                    <li><a href="/docs/job-talk/">Hire</a></li>
+                  </ul>
+                </li>
+                <li><a href="/docs/about/">About</a></li>
+              </ul>
+            </nav>
+            <!-- End of Menu-->
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="header-back header-back-simple header-back-small">
+      <div class="header-back-container">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <!-- Page Info-->
+              <div class="page-info page-info-simple">
+                <h1>Algorithm 101 Roads &amp; Town Centers</h1>
+                <p class="author">Written by <span class="author">Adron Hall</span> and published on <span>January, 31 of 2018.</span>
+                </p>
+                <div class="nav"><a href="/">« Home</a></div>
+              </div>
+              <!-- End Page Info-->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="content">
+      <div class="container">
+        <div class="layout with-right-sidebar js-layout">
+          <div class="row">
+            <div class="col-md-9">
+              <div class="main-content">
+                <!-- Blog Page-->
+                <article class="article">
+                  <section class="content"><p>Alright, there’s this one algorithm that I’ve solved before. I’ve always found it to be a rather fun little exercise to work out. It popped into my head recently and I wanted to recollect how the logic of it went, but my Google-fu wasn’t so great. In the end, I didn’t find the algorithm problem statement but I’ve recollected it as best as I could from memory. If you know what the name of this challenge is I’d love to know what it’s called or if I’ve put it back together correctly. Ping me <a href="https://twitter.com/Adron">@Adron</a>.</p>
+<p>So the story goes something like this. There once were some nations with a number of cities in each nation. Every citizen has access to every city and every city has a town center for all the citizens to enjoy. Recently the roads were damaged from a lack of maintenance work, ya know, like in real life. Meanwhile there was a revolution that led to catastrophic war that destroyed all the town centers in the nations. So now none of the cities have reachable town centers or functional working town centers anymore! The citizens of the world are angry at the nations and demand immediate fixes to their roads and town centers, with a priority on the town centers! The leaders have decided that the roads shall be repaired and have hired me (you) to&nbsp;assist!</p>
+<p>The nation has n cities, we’ll number 1 to n. The cities have two way roads, totalling m roads. A citizen has access to the town center if: their city contains a town center and their city has a road to travel from their city with a town center to another city with a town&nbsp;center.</p>
+<p>The following is a map of one great nation of cities with currently impassable roads that must be&nbsp;repaired.</p>
+<p><img src="/articles/algorithms-101-roads-and-town-center/nation.png" alt="Nation"></p>
+<p><span class="more"></span></p>
+<p>The cost of road repair is c<sub>road</sub> and to build a town center is c<sub>town center</sub>. To start off with, you’re given q queries, where each query consists of a map of the nation and the value of c<sub>road</sub> and c<sub>town center</sub>. For each of the queries the minimum cost of a town center accessible to all the citizens should be printed on a&nbsp;line.</p>
+<h2 id="the-input">The&nbsp;Input</h2>
+<p>The first line is an integer, <em>q</em>, denoting the number of queries. The subsequent lines describe the queries in a particular format. Each query is basically formatted like&nbsp;this:</p>
+<ul>
+<li><p>The first line of each set for a query will have four integers describing the number of cities <em>n</em>, the number of roads, <em>m</em>, and the cost to build a town center c<sub>town center</sub>, and the cost to repair a road c<sub>road</sub>. Each integer is space&nbsp;seperated.</p>
+</li>
+<li><p>Each line following that will have two integers describing a road for use between cities <em>u<sub>i</sub></em> and <em>v<sub>i</sub></em>. Each integer is space&nbsp;seperated.</p>
+</li>
+</ul>
+<h2 id="the-output">The&nbsp;Output</h2>
+<p>Each query should have a result displayed that is the integer denoting the minimum cost of making town centers accessible to all the&nbsp;citizens.</p>
+<p>The following example includes three queries (denoted by the first line having a 3). The subsequent queries then have a definition line of [6,4,2,1], [2,2,2,2], and [6,6,2,5] respectively. Then below those query definition lines are the road definitions between the cities, and respectively the town&nbsp;centers.</p>
+<p><strong>Sample&nbsp;Input</strong></p>
+<pre><code>3
+6 4 2 1
+1 2
+2 3
+4 5
+5 6
+7 6 2 1
+1 2
+2 3
+3 4
+2 4
+5 6
+6 7
+9 7 3 4
+1 2
+1 5
+2 4
+2 3
+3 9
+6 8
+</code></pre><p>Alright, this one has a nubmer of elements to resolve. Here’s how I’ve worked through these three samples to get answers. I’ve drawn out the three examples so that there is a visual understanding of where the cities are&nbsp;also.</p>
+<p>The first nation described by the section [6 4 2 1] would look something like this based on the road data of [1,2], [2,3], [4,5], and&nbsp;[5,6].</p>
+<p><img src="/articles/algorithms-101-roads-and-town-center/cities-1.png" alt="City 1"></p>
+<p>The next nation in section [7,6,2,1] would look like this with the road data of [1,2], [2,3], [3,4], [2,4], [5,6], and&nbsp;[6,7].</p>
+<p><img src="/articles/algorithms-101-roads-and-town-center/cities-2.png" alt="City 2"></p>
+<p>The last nation defined as [9,7,3,4] with road data of [1,2], [1,5], [2,4], [2,3], [3,9], and [6,8] looks like&nbsp;this.</p>
+<p><img src="/articles/algorithms-101-roads-and-town-center/cities-3.png" alt="City 3"></p>
+<p><strong>Observations and&nbsp;Solutions</strong></p>
+<p><em>Dataset&nbsp;1</em></p>
+<p>Here’s how I worked these out. In the first example there are n=6 cities, m=4 roads connecting those cities, with the price of building a town center set at c<sub>town center</sub> = 2 and the price to repair a road set at c<sub>road</sub> = 1. To meet the requirement of having access to a town center in every city, I could acheive this through several options, which I can then pick the cheapest from those&nbsp;options.</p>
+<p>Rebuild the roads and build one town center in each connected part of the nation. In this scenario that would included 4 roads at 1 cost each, and one town center in each island of the nation at 2 cost each. The total would&nbsp;equal</p>
+<p>roads x c<sub>road</sub> =&nbsp;total</p>
+<p>4 x 1 = 4 to rebuild the&nbsp;roads.</p>
+<p>cities x c<sub>town center</sub> =&nbsp;total</p>
+<p>2 x 2 =&nbsp;4</p>
+<p>total c<sub>road</sub> + total c<sub>town center</sub> = combined&nbsp;total.</p>
+<p>4 + 4 =&nbsp;8</p>
+<p>The next option would be to possible just rebuild town centers in each city and not rebuild the roads. This is quick to determine the cost of, as it just requires calculating the town center&nbsp;cost.</p>
+<p>cities x c<sub>town center</sub> =&nbsp;total</p>
+<p>6 x 2 =&nbsp;12</p>
+<p>Out of the two solutions, the cheapest is to go with option one, rebuilding the roads and building one town center for access in each of the island segments of the&nbsp;nation.</p>
+<p><em>Dataset&nbsp;2</em></p>
+<p>Alright, the next data set shows a city of 7 cities, among two islands, and 6 roads connecting those cities. Just a quick look, I’m guessing this one will work out the same as the first one. Working through I could build town centers in each&nbsp;city.</p>
+<p>cities x c<sub>town center</sub> =&nbsp;total</p>
+<p>7 x 2 =&nbsp;14</p>
+<p>But I could also rebuild road [1,2], [2,4], and [2,3] on the left island with a single town center build, which would mean I need one town center and three roads for island one. The second I could build one town center in Tupelo and then rebuild road [5,6] and [6,7]. Total is two town centers and five&nbsp;roads.</p>
+<p>Town centers would cost 2 x 2 = 4. The roads would be 5 x 1 = 5, adding 5 and 4 gives a total of 9 to rebuild enough so that all cities can regain access to a town&nbsp;center.</p>
+<p><em>Dataset&nbsp;3</em></p>
+<p>This third dataset has three island areas. The first has 6 cities with 6 roads. The next island has 2 cities and 1 road, and then final island has one city with no roads. This last city, Solace, just needs a town center built to gain access to a town&nbsp;center.</p>
+<p>For the island with two cities will need at least one town center. But with the prices increased let’s take a look to be sure. If I replace one town center, we’ll say in Tupelo, and rebuild the road that would be c<sub>town center</sub> of 3 and road cost of 4 giving a total cost of 7. But if I rebuild a town center in San Francisco and Tupelo, that would only be 6. The previous plus this solution gives me three town centers at a cost of&nbsp;5.</p>
+<p>Now considering the last island segment I have 6 cities, and a number of roads that in some cases connect just one city. For the stretch that connects Legoland and York I could rebuild a town center in York, then the road [1,5] and [1,2] which would give Lenia, Legoland, and York direct access to a town center. The total would be 3 + 4 + 4 = 11 for a single town center and two roads. Then looking at things, the cheap scenario would be to rebuild a town center in Odessa and road [3,4] and [3,9] for another 11 total. Overall for this island of cities within the nation I’ll have 4 roads rebuilt with 2 town centers, for a total of 22&nbsp;cost.</p>
+<p>Adding that together for the entire nation of Dataset 3, that’s 22 + 5 + 3, giving a total cost for direct access to town centers of 30&nbsp;cost.</p>
+<p>The question now is, what’s the best algorithm to solve all of this. I’m going to make this algorithm a two parter, because this is such a whopper of a problem to lay out that I’ll give readers a&nbsp;chance </p>
+<p><strong>Sample&nbsp;Output</strong></p>
+<p>With each of these resolved, the output of the algorithm should print to stdout with the following&nbsp;results.</p>
+<pre><code>8
+9
+30
+</code></pre><p>So…what’s your take on this one. If you build a solution, I’ll add it to my blog post in a few days. Let me know and we’ll sync up on it and talk about what an ideal solution might look like. Ping me <a href="https://twitter.com/Adron">@Adron</a>.</p>
+<p>Also, with any involvement in coding <span class="amp">&amp;</span> hacks I’ll send a <a href="https://twitter.com/ThrashingCode/status/958799254901768192">Thrashing Code</a> sticker, kudos, and next beer is on&nbsp;me!</p>
+<p><blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Join the mailing list for summaries and upcoming events of coding awesome. More coming soon too!  <a href="https://t.co/vHiHu2WIke">https://t.co/vHiHu2WIke</a> <a href="https://t.co/Vmj63VHwz9">pic.twitter.com/Vmj63VHwz9</a></p>&mdash; Thrashing Code (@ThrashingCode) <a href="https://twitter.com/ThrashingCode/status/958799254901768192?ref_src=twsrc%5Etfw">January 31, 2018</a></blockquote></p>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</section>
+                </article>
+                <!-- End of Blog Page-->
+              </div>
+            </div>
+            <div class="col-md-3 hidden-sm hidden-xs">
+              <div class="sidebar js-sidebar-fixed">
+                <!-- Vertical Menu-->
+                <div class="widget">
+                  <!-- Search-->
+                  <div class="search">
+                    <form action="https://google.com/search" method="get">
+                      <input type="hidden" name="sitesearch" value="http://blog.adron.me">
+                      <input type="text" name="q" placeholder="search" class="search-input form-control"><i class="fa fa-search search-icon"></i>
+                    </form>
+                  </div>
+                  <!-- End of Search-->
+                </div>
+                <div class="widget">
+                  <h3 class="widget-title">Keyword Search</h3>
+                  <!-- Tags-->
+                  <ul class="tags">
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=terraform">terraform</a></li>
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=kubernetes">kubernetes</a></li>
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=immutable+infrastructure">immutable infrastructure</a></li>
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=html">html</a></li>
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=javascript">javascript</a></li>
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=ubuntu">ubuntu</a></li>
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=node pdx">node pdx</a></li>
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=.NET fringe">.net fringe</a></li>
+                    <li class="tag-item"><a href="https://www.google.com/search?sitesearch=http%3A%2F%2Fblog.adron.me&amp;q=videos">videos</a></li>
+                  </ul>
+                  <!-- End of Tags-->
+                </div>
+                <nav class="menu-vertical-wrapper">
+                  <ul data-prepend-to=".js-layout" data-select="Menu" class="menu-vertical js-menu-vertical">
+                    <li><a href="#">About</a>
+                      <ul>
+                        <li><a href="/docs/about/">Me, Adron</a></li>
+                        <li><a href="#">My Hobbies</a>
+                          <ul>
+                            <li><a href="http://photos.adron.me">My Photos</a></li>
+                          </ul>
+                        </li>
+                        <li><a href="/docs/Speaking-Presentations-Workshops">My Presentations</a></li>
+                        <li><a href="/docs/documentation/">Collection of Docs & Notes</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </nav>
+                <div class="widget">
+                  <h3 class="widget-title">Photos</h3>
+                  <!-- Photos-->
+                  <ul class="widget-recommended-products">
+                    <!-- Photos-->
+                    <li class="widget-recommended-product"><img src="/img/photos/IMG_1836.jpg" alt="Jon Oropeza" class="widget-recommended-product-img"><a href="http://photos.adron.me/Software/Meetups-N-Conferences/Conferences/Node-PDX-2016/i-D9qFQ6m" class="widget-recommended-product-link">
+                        <h5 class="widget-recommended-product-link-title">Node PDX 2016<i class="fa fa-angle-right"></i></h5>
+                        <p class="widget-recommended-product-link-description">Jon Oropeza @ Node PDX 2016</p></a></li>
+                    <!-- End of Recommended product Item-->
+                    <!-- Recommended product Item-->
+                    <li class="widget-recommended-product"><img src="/img/photos/IMG_1812.jpg" alt="Liz Abinante" class="widget-recommended-product-img"><a href="http://photos.adron.me/Software/Meetups-N-Conferences/Conferences/Node-PDX-2016/i-g2m2hgP" class="widget-recommended-product-link">
+                        <h5 class="widget-recommended-product-link-title">Node PDX 2016<i class="fa fa-angle-right"></i></h5>
+                        <p class="widget-recommended-product-link-description">Liz Abinante @ Node PDX 2016</p></a></li>
+                    <!-- End of Recommended product Item-->
+                    <!-- Recommended product Item-->
+                    <li class="widget-recommended-product"><img src="/img/photos/IMG_5709.jpg" alt="Praha hlavní nádraží" class="widget-recommended-product-img"><a href="http://photos.adron.me/Travels-N-Traversings/Across-the-Pond-2016-Travels/September-Krakow/Week-4-Prague/i-62ZPsPb" class="widget-recommended-product-link">
+                        <h5 class="widget-recommended-product-link-title">Prague (Praha)<i class="fa fa-angle-right"></i></h5>
+                        <p class="widget-recommended-product-link-description">Praha hlavní nádraží</p></a></li>
+                    <!-- End of photos row one-->
+                  </ul>
+                  <ul class="widget-recommended-products">
+                    <!-- Photos-->
+                    <li class="widget-recommended-product"><img src="/img/photos/IMG_4417.jpg" alt="St Mary's Basilica" class="widget-recommended-product-img"><a href="http://photos.adron.me/Travels-N-Traversings/Across-the-Pond-2016-Travels/September-Krakow/Krakow/i-KnZf6pK/A" class="widget-recommended-product-link">
+                        <h5 class="widget-recommended-product-link-title">St Mary's Basilica<i class="fa fa-angle-right"></i></h5>
+                        <p class="widget-recommended-product-link-description">Bazylika Mariacka in Rynek Główny.</p></a></li>
+                    <!-- End of Recommended product Item-->
+                    <!-- Recommended product Item-->
+                    <li class="widget-recommended-product"><img src="/img/photos/VSC_03.png" alt="Visual Studio Code" class="widget-recommended-product-img"><a href="http://photos.adron.me/Software/Software-Development/Visual-Studio-Things/i-LLW7WcD/A" class="widget-recommended-product-link">
+                        <h5 class="widget-recommended-product-link-title">Visual Studio Code<i class="fa fa-angle-right"></i></h5>
+                        <p class="widget-recommended-product-link-description">Images from a review of Visual Studio Code.</p></a></li>
+                    <!-- End of Recommended product Item-->
+                    <!-- Recommended product Item-->
+                    <li class="widget-recommended-product"><img src="/img/photos/-home-adronhall-Pictures-Selection_002.png - Shutter_003.png" alt="" class="widget-recommended-product-img"><a href="http://photos.adron.me/Software/Software-Development/Ubuntu/i-CQsQ4zj/A" class="widget-recommended-product-link">
+                        <h5 class="widget-recommended-product-link-title">Mono Develop & WebStorm<i class="fa fa-angle-right"></i></h5>
+                        <p class="widget-recommended-product-link-description">Working through Mono Develop & WebStorm.</p></a>
+                      <!-- End of photos row two-->
+                    </li>
+                  </ul>
+                  <!-- End Photos-->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="nav"><a href="/">« Home</a></div>
+      </div>
+    </div>
+    <script src="/js/all.js"></script>
+    <script src="/js/custom.js"></script>
+    <!-- Google Tag Manager-->
+    <noscript>
+      <iframe src="//www.googletagmanager.com/ns.html?id=GTM-KMMZX2" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <script>
+      console.log(document.getElementById("search-google"));
+      console.log(document.getElementById("search-google").innerText);
+      
+      var searchBox = document.getElementById("search-google");
+      
+      function googleSearch(search_string) {
+        alert(search_string);
+      }
+      
+      document.getElementById("search-google").addEventListener("onClick", function () {
+        alert(document.getElementById("search-google").innerHTML);
+      });
+      
+      document.getElementById("search-google").addEventListener("onClick", function () {
+        googleSearch(document.getElementById("search-google").innerHTML)
+      });
+      
+    </script>
+    <script>
+      (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+                  (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+      })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+      ga('create', 'UA-39158070-6', 'auto');
+      ga('send', 'pageview');
+    </script>
+  </body>
+</html>

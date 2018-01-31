@@ -185,17 +185,17 @@ n
 </code></pre>
 <p>I then ran <code>glide get github.com/icrowley/fake</code> to get the fake library I would need. The <code>glide.yaml</code> and <code>glide.lock</code> looked like this after I pulled in this&nbsp;library.</p>
 <p>glide.yaml</p>
-<pre><code class="lang-yaml"><span class="attr">package:</span> <span class="string">github.com/adron/datadiluvium</span>
+<pre><code class="lang-yaml"><span class="attr">package:</span> github.com/adron/datadiluvium
 <span class="attr">import:</span>
-<span class="attr">- package:</span> <span class="string">github.com/icrowley/fake</span>
+<span class="attr">- package:</span> github.com/icrowley/fake
 </code></pre>
 <p>glide.lock</p>
-<pre><code class="lang-yaml"><span class="attr">hash:</span> <span class="number">2</span><span class="string">fd78ca8369405d5998e65ea4cfce94c6599e878c36fec39b85fd385552392d7</span>
-<span class="attr">updated:</span> <span class="number">2017</span><span class="bullet">-01</span><span class="bullet">-09</span><span class="attr">T01:04:18.134993358-08:00</span>
+<pre><code class="lang-yaml"><span class="attr">hash:</span> <span class="number">2</span>fd78ca8369405d5998e65ea4cfce94c6599e878c36fec39b85fd385552392d7
+<span class="attr">updated:</span> <span class="number">2017</span><span class="bullet">-01</span><span class="bullet">-09</span>T01:<span class="number">04</span>:<span class="number">18.134993358</span><span class="bullet">-08</span>:<span class="number">00</span>
 <span class="attr">imports:</span>
-<span class="attr">- name:</span> <span class="string">github.com/icrowley/fake</span>
-<span class="attr">  version:</span> <span class="number">84</span><span class="string">bff6d01560fb0b5a396ba29534e93fd00d09c6</span>
-<span class="attr">testImports:</span> <span class="string">[]</span>
+<span class="attr">- name:</span> github.com/icrowley/fake
+<span class="attr">  version:</span> <span class="number">84</span>bff6d01560fb0b5a396ba29534e93fd00d09c6
+<span class="attr">testImports:</span> []
 </code></pre>
 <p>If you’re curious about the hash, and related properties of this file check out the glide <a href="https://github.com/Masterminds/glide/blob/master/README.md"><span class="caps">README</span>.md</a>, it’s useful in understanding what’s stored&nbsp;here.</p>
 <p>At this point, it was time to actually sling some Go code! At this point, I do indeed mean sling some too.&nbsp;Splat!</p>

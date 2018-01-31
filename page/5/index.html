@@ -92,6 +92,43 @@
                   <div class="blog-grid">
                     <div class="row">
                       <div class="col-md-12 col-sm-12">
+                        <h3 class="blog-grid-title"><a href="/articles/want-a-what-golang/">Golang Execution on OS-X vs. Linux</a></h3>
+                        <p class="blog-grid-excerpt"><p>Recently I was dorking about with some Go code on <span class="caps">OS</span>-X. Just working with it via iTerm 2 and using some basic <code>go run whateverthefile.go</code> commands and displaying results out the the shell. All was well, and then I dived into some code that used so Go Routines. The code looked something like&nbsp;this.</p>
+<pre><code class="lang-javascript">package main
+
+<span class="keyword">import</span> (
+    <span class="string">"time"</span>
+    <span class="string">"fmt"</span>
+)
+
+func say(s string) {
+    <span class="keyword">for</span> i := <span class="number">0</span>; i&lt;<span class="number">5</span>; i++ {
+        time.Sleep(<span class="number">2</span> * time.Second)
+        fmt.Println(s)
+    }
+}
+
+func main() {
+    go say(<span class="string">"1. First thread is running."</span>)
+    go say(<span class="string">"  2. Second thread is running."</span>)
+    say(<span class="string">"    3. Thread is running in main."</span>)
+    fmt.Println(<span class="string">"Ended."</span>)
+}
+</code></pre>
+<p>
+                          <p class="more"><a href="/articles/want-a-what-golang/">more</a></p>
+                        </p>
+                        <div class="blog-grid-meta"><span class="blog-grid-date">26. February 2017</span></div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- End of Blog List-->
+                </div>
+                <div class="col-md-12 col-sm-12">
+                  <!-- Blog List-->
+                  <div class="blog-grid">
+                    <div class="row">
+                      <div class="col-md-12 col-sm-12">
                         <h3 class="blog-grid-title"><a href="/articles/thrashing-code-metal-monday-02-20-2017/">Thrashing Code Metal Monday for Week of February 20th, 2017</a></h3>
                         <p class="blog-grid-excerpt"><p><img src="/articles/thrashing-code-metal-monday-02-20-2017/eluveitie.jpeg" alt="Eluveitie"></p>
 <p>It’s a holiday, but the thrashing never stops. Here’s some tunes that I’ve had on during my recent <a href="https://twitter.com/search?q=%23golang">#golang</a>&nbsp;experiments.</p>
@@ -247,26 +284,6 @@
                           <p class="more"><a href="/articles/talking-through-ci-cd/">more</a></p>
                         </p>
                         <div class="blog-grid-meta"><span class="blog-grid-date">26. January 2017</span></div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End of Blog List-->
-                </div>
-                <div class="col-md-12 col-sm-12">
-                  <!-- Blog List-->
-                  <div class="blog-grid">
-                    <div class="row">
-                      <div class="col-md-12 col-sm-12">
-                        <h3 class="blog-grid-title"><a href="/articles/drone-io/">Introduction to Drone.io</a></h3>
-                        <p class="blog-grid-excerpt"><ul>
-<li><strong>Research <span class="amp">&amp;</span> Learn</strong>: <a href="https://github.com/drone/drone">Drone.io Github Repo</a>, <a href="http://try.drone.io/">Trying Drone.io</a>, and <a href="http://readme.drone.io/">Drone.io Docs</a>.</li>
-<li><strong>Objective</strong>: What Drone.io is and getting&nbsp;started.</li>
-</ul>
-<p>I’ve dived into a new effort to figure out <a href="http://try.drone.io/">Drone.io</a>, get it running, and if plausible contribute in some way to the project. This was kick started yesterday while I was speaking with Joachim (T <a href="https://twitter.com/lindyhop">@lindyhop</a> &amp;&amp; G <a href="https://github.com/josmo">@josmo</a>) about some projects we’re working on. We discussed the design of Drone.io, how we’re using it on some projects internally here <a href="https://twitter.com/PelotonTechio">@PelotonTechio</a>. I will, and others will be posting more on what we’re doing with Drone.io later, but for now, I’ve put together this introduction to what Drone.io is, and getting started with&nbsp;it.</p>
-<p>
-                          <p class="more"><a href="/articles/drone-io/">more</a></p>
-                        </p>
-                        <div class="blog-grid-meta"><span class="blog-grid-date">25. January 2017</span></div>
                       </div>
                     </div>
                   </div>

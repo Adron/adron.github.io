@@ -4,13 +4,13 @@ author: Adron Hall
 date: 2018-01-31 21:19:38
 template: article.jade
 ---
-Alright, there's this one algorithm that I've solved before. I've always found it to be a rather fun exercise to work out. It popped into my head recently and I wanted to recollect how it went, but my Google-fu wasn't so great. In the end, I didn't find the algorithm problem statement but I've recollected it as best as I could from memory. If you know what the name of this challenge is I'd love to know what it's called or if I've put it back together correctly. Ping me [@Adron](https://twitter.com/Adron).
+Alright, there's this one algorithm that I've solved before. I've always found it to be a rather fun little exercise to work out. It popped into my head recently and I wanted to recollect how the logic of it went, but my Google-fu wasn't so great. In the end, I didn't find the algorithm problem statement but I've recollected it as best as I could from memory. If you know what the name of this challenge is I'd love to know what it's called or if I've put it back together correctly. Ping me [@Adron](https://twitter.com/Adron).
 
-So the story goes something like this. There once was a nation with a number of cities. Every citizen has access to every city and every city has a town center for all the citizens to enjoy. Recently the roads were damaged from a lack of maintenance work, ya know, like in real life. So now none of the cities have reachable town centers anymore! The citizens are angry and demand immediate fixes to their roads! The leaders have decided that the roads shall be repaired, and have hired you to assist!
+So the story goes something like this. There once were some nations with a number of cities in each nation. Every citizen has access to every city and every city has a town center for all the citizens to enjoy. Recently the roads were damaged from a lack of maintenance work, ya know, like in real life. Meanwhile there was a revolution that led to catastrophic war that destroyed all the town centers in the nations. So now none of the cities have reachable town centers or functional working town centers anymore! The citizens of the world are angry at the nations and demand immediate fixes to their roads and town centers, with a priority on the town centers! The leaders have decided that the roads shall be repaired and have hired me (you) to assist!
 
 The nation has n cities, we'll number 1 to n. The cities have two way roads, totalling m roads. A citizen has access to the town center if: their city contains a town center and their city has a road to travel from their city with a town center to another city with a town center.
 
-The following is a map of this great nation of cities with currently impassable roads that must be repaired.
+The following is a map of one great nation of cities with currently impassable roads that must be repaired.
 
 ![Nation](nation.png)
 
@@ -133,4 +133,9 @@ With each of these resolved, the output of the algorithm should print to stdout 
 30
 ```
 
-So... what's your take on this one. If you build a solution, I'll blog it and post in my solution post in a few days. Let me know and we'll sync up on it and talk about what an ideal solution might look like. Ping me [@Adron](https://twitter.com/Adron).
+So...what's your take on this one. If you build a solution, I'll add it to my blog post in a few days. Let me know and we'll sync up on it and talk about what an ideal solution might look like. Ping me [@Adron](https://twitter.com/Adron).
+
+Also, with any involvement in coding & hacks I'll send a [Thrashing Code](https://twitter.com/ThrashingCode/status/958799254901768192) sticker, kudos, and next beer is on me!
+
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Join the mailing list for summaries and upcoming events of coding awesome. More coming soon too!  <a href="https://t.co/vHiHu2WIke">https://t.co/vHiHu2WIke</a> <a href="https://t.co/Vmj63VHwz9">pic.twitter.com/Vmj63VHwz9</a></p>&mdash; Thrashing Code (@ThrashingCode) <a href="https://twitter.com/ThrashingCode/status/958799254901768192?ref_src=twsrc%5Etfw">January 31, 2018</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
