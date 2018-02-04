@@ -8,7 +8,7 @@ This page links to my history of speaking via presentations, workshops, or other
 
 **Upcoming Presentations**
 
-* [Automated Environment Spinup & CI/CD Practices: Inception, Workflow, Deployment](/talks/cicd-in-30-minutes-or-less/) on January 18th, 2017. RSVP @  [Meetup](https://www.meetup.com/CloudTalk/events/243522258/).
+Currently none scheduled...
 
 **Past Presentations**
 
