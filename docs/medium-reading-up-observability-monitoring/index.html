@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Adron's Thrashing Code</title>
+    <meta name="description" content="">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="alternate" href="/feed.xml" type="application/rss+xml" title="Coder, Messenger, Recon, Infrastructure, Ops, &amp; A Sprinkling of Metal">
+    <link rel="icon" type="image/png" href="/img/favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/img/favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/img/favicons/favicon-96x96.png" sizes="96x96">
+    <link rel="apple-touch-icon" sizes="57x57" href="/img/favicons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/img/favicons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/img/favicons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/img/favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/img/favicons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/img/favicons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/img/favicons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/img/favicons/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/favicons/apple-touch-icon-180x180.png">
+    <link rel="stylesheet" href="/css/custom.css">
+    <link rel="stylesheet" href="/css/style.min.css">
+    <script src="/js/modernizr.js"></script>
+  </head>
+  <body class="article-detail">
+    <!--[if lt IE 8]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <div class="header header-over large">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 col-sm-6 col-xs-6">
+            <!-- Logo Image--><a href="/index.html" class="logo-image logo-animated"><img src="/img/logos/logo.png" alt="logo"></a>
+            <!-- End of Logo Image-->
+          </div>
+          <div class="col-md-9 col-sm-6 col-xs-6">
+            <!-- Menu-->
+            <nav class="right helper">
+              <ul class="menu sf-menu js-menu">
+                <li><a href="/docs/thrashing-code-news/">Thrashing Code News</a></li>
+                <li><a href="#">Conf - Meetup - Events</a>
+                  <ul>
+                    <li><a href="/docs/Speaking-Presentations-Workshops/">Speaking - Presentations - Workshops</a></li>
+                    <li><a href="/docs/calendar">Calendar of Engagements</a></li>
+                  </ul>
+                </li>
+                <li><a href="/docs/documentation/">Docs</a></li>
+                <li><a href="#">Contact</a>
+                  <ul>
+                    <li><a href="/docs/contact">Message</a></li>
+                    <li><a href="/docs/job-talk/">Hire</a></li>
+                  </ul>
+                </li>
+                <li><a href="/docs/about/">About</a></li>
+              </ul>
+            </nav>
+            <!-- End of Menu-->
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="header-back header-back-simple header-back-small">
+      <div class="header-back-container">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <!-- Page Info-->
+              <div class="page-info page-info-simple">
+                <h1>Reading Up on Observability and Monitoring</h1>
+                <div class="nav"> «<a href="/"> Home</a></div>
+              </div>
+              <!-- End Page Info-->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="content">
+      <div class="container">
+        <div class="layout with-right-sidebar js-layout">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="main-content">
+                <!-- Blog Page-->
+                <docs class="article">
+                  <section class="content"><p>In the next few weeks I’ll be doing some work for Honeycomb.io. In preparation I’ve been ramping up on a number of topics, namely the big one is the specific differences in things like observability and monitoring. The aside that makes this relatively easy, is I live and breath this space from a site reliability, apps, and services perspective. Not only am I fortunate in my situation to dive into this topic, I’m excited to do so as&nbsp;well.</p>
+<p>I started this research just checking out what material Honeycomb.io has available onsite and additionally what Charity Majors has written, or spoken about at conferences. The first two were easy to find with a simple Google search and checking out the Honeycomb.io Blog. For each of these materials I’ve provided a summary before each linked reference.&nbsp;Enjoy.</p>
+<h2 id="title-charity-majors-on-observability-and-understanding-the-operational-ramifications-of-a-system-https-www-infoq-com-articles-charity-majors-observability-failure-">Title: <a href="https://www.infoq.com/articles/charity-majors-observability-failure">Charity Majors on Observability and Understanding the Operational Ramifications of a&nbsp;System</a></h2>
+<p>This article is in interview form, with Daniel Bryant interviewer and Charity Majors the interviewee. When asked the&nbsp;question</p>
+<blockquote>
+<p>Can you explain a little about how operational and infrastructure monitoring has evolved over the last five years? How have cloud, containers, and new (old) modular architectures impacted&nbsp;monitoring?</p>
+</blockquote>
+<p>Charity goes on to lay out a&nbsp;stance.</p>
+<blockquote>
+<p>What’s interesting is that monitoring hasn’t really changed. Not in the past … 20&nbsp;years.</p>
+<p>You’ve still got metrics, dashboards, and logs. You’ve got much better ones! But monitoring is a very stable set of tools and techniques, with well known edge cases and best practices, all geared around monitoring and making sure the system is still in a known good&nbsp;state.</p>
+<p>However, I would argue that the health of the system no longer matters. We’ve entered an era where what matters is the health of each individual event, or each individual user’s experience, or each shopping cart’s experience (or other high cardinality dimensions). With distributed systems you don’t care about the health of the system, you care about the health of the event or the&nbsp;slice.</p>
+<p>This is why you’re seeing people talk about observability instead of monitoring, about unknown-unknowns instead of known-unknowns, and about distributed tracing, honeycomb, and other event-level tools aimed at describing the internal state of the system to external&nbsp;observers.</p>
+</blockquote>
+<p>Let’s elaborate for a moment. Monitoring not changing in the last 20 years is truth. I worked at WebTrends years ago, which was a company that was formed around basically taking logs files and churning through them to get reports out of them. In the process they became one of the first web analytics company. But even way back 20 years ago almost WebTrends was basically laying out what we deal with and have for monitoring. Starting with log files and on up through basic pinging of services, with related <span class="caps">APM</span> style monitoring. This has been and continues to be effectively the same thing, needed, but unchanging for&nbsp;decades.</p>
+<p>But jump over to her point about tracking events instead of worrying about the health of the overall system. Maybe stating “it no longer matters” is slightly hyperbolic, but she’s making a point, so don’t get derailed. The idea is we don’t actually care about the system, we care about what activity we’re trying to make possible; buying some food on Amazon, that rare book on a book finders site, issuing a search with esoteric terms, triggering a compute action of some sort, analyzing a flight path for an upcoming trip, or other event. In the end, I’d even add to the argument that we end users don’t even really care if it’s done by a computer or some magical sky pixie, the only thing that matters is we get the result of the event we’ve requested and that it is correct for us to take action&nbsp;on.</p>
+<p>We want the event, the correct result, and the rest is irrelevant in the grand scheme of the universe. This is an extremely important point she’s brought up and it is key in understanding the difference in monitoring — the combing of data to determine the state or well-being of a system — versus observability — the view into and understanding of the state of events within a&nbsp;system.</p>
+<p>Distributed systems also amplify, exacerbate with complexity, this intent to know the state of events versus the state of the system. Anybody who has dealt with any list of distributed systems, from Kubernetes to Riak to Cassandra to others, knows that the key is the event and data, as one may never really know when a system is under duress or what the state is of the entire system. Simply put, you cannot know the full state of a truly complex distributed system, and often if you do it still doesn’t tell you if your events are being performed accurately or at all. Sure, monitor it, but what we really need to know is what the data is, if it’s really the data we want, and the event the data is relevant to. This paradigm around distributed systems Charity also summarized up in an answer I found spot&nbsp;on.</p>
+<blockquote>
+<p>“Monitor everything”. Dude, you can’t. You <em>can’t</em>. People waste so much time doing this that they lose track of the critical path, and their important alerts drown in fluff and cruft. In the chaotic future we’re all hurtling toward, you actually have to have the discipline to have radically <em>fewer</em> paging alerts … not more. Request rate, latency, error rate, saturation. Maybe some end-to-end checks that stress critical Key Performance Indicator (<span class="caps">KPI</span>) code&nbsp;paths.</p>
+</blockquote>
+<p>That’s just a review of some of the discussion, definitely suggest reading&nbsp;more…</p>
+<p><a href="https://www.infoq.com/articles/charity-majors-observability-failure">Charity Majors on Observability and Understanding the Operational Ramifications of a&nbsp;System</a></p>
+<h2 id="title-monitoring-and-observability-https-medium-com-copyconstruct-monitoring-and-observability-8417d1952e1c-">Title: <a href="https://medium.com/@copyconstruct/monitoring-and-observability-8417d1952e1c">Monitoring and&nbsp;Observability</a></h2>
+<p>Next up I found an article by <a href="https://medium.com/@copyconstruct">Cindy Sridharan</a> (<a href="https://twitter.com/copyconstruct">@copyconstruct</a>). Cindy brings up an often snarky emoted statement, as per the&nbsp;tweet…</p>
+<p><blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr"><span class="caps">OH</span> - &quot;Observability - because devs don&#39;t like to do &quot;monitoring&quot; we need to package it in new nomenclature to make it palatable and&nbsp;trendy.&quot;</p>&mdash; Cindy Sridharan (@copyconstruct) <a href="https://twitter.com/copyconstruct/status/891066003844546560?ref_src=twsrc%5Etfw">July 28, 2017</a></blockquote></p>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<p>…because devs don’t like to do “monitoring”… oh&nbsp;really?</p>
+<p>Cindy writes a really great post, but before even diving into that, follow the thread of comments on that tweet. Some of them are pretty good. I’ve included a few&nbsp;gems.</p>
+<p><blockquote class="twitter-tweet" data-conversation="none" data-lang="en"><p lang="en" dir="ltr">disagree with the substance, but A+&nbsp;snark</p>&mdash; Charity Majors (@mipsytipsy) <a href="https://twitter.com/mipsytipsy/status/891588725829795840?ref_src=twsrc%5Etfw">July 30, 2017</a></blockquote></p>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<p>Yes, yes the snark gets a high&nbsp;rating.</p>
+<p><blockquote class="twitter-tweet" data-conversation="none" data-lang="en"><p lang="en" dir="ltr">It would be nice if everyone understood how to look at data. This is why we can&#39;t have nice&nbsp;things.</p>&mdash; Samantha Zeitlin (@SamanthaZeitlin) <a href="https://twitter.com/SamanthaZeitlin/status/891089379099238401?ref_src=twsrc%5Etfw">July 29, 2017</a></blockquote></p>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<p>If I were to cry of pity for people, this is one of the things I’d cry about for&nbsp;all.</p>
+<p>Cindy goes on to bring up three other articles that I also highly recommend. These posts are all over on the Twitter blog: <a href="https://blog.twitter.com/engineering/en_us/a/2013/observability-at-twitter.html">Observability at Twitter</a>, <a href="https://blog.twitter.com/engineering/en_us/a/2016/observability-at-twitter-technical-overview-part-i.html">Observability at Twitter: technical overview part 1</a>, and <a href="https://blog.twitter.com/engineering/en_us/a/2016/observability-at-twitter-technical-overview-part-ii.html">Observability at Twitter: technical overview part 2</a>. In this she points to the quote, “…observability is a superset of monitoring…” which is succinctly put. Again, so many great phrases describing observability versus what monitoring is. It seems like the nebulous snarky quotes like “Observability — because devs don’t like to do “monitoring” we need to package it in new nomenclature to make it palatable and trendy.” would just be laid to rest. But I digress, read Cindy’s article, it’s long and got great links, descriptions, and is well worth the&nbsp;read.</p>
+<h2 id="title-observability-vs-monitoring-is-it-about-active-vs-passive-or-dev-vs-ops-https-medium-com-steve-mushero-observability-vs-monitoring-is-it-about-active-vs-passive-or-dev-vs-ops-14b24ddf182f-">Title: <a href="https://medium.com/@steve.mushero/observability-vs-monitoring-is-it-about-active-vs-passive-or-dev-vs-ops-14b24ddf182f">Observability vs. Monitoring, is it about Active vs. Passive or Dev vs.&nbsp;Ops?</a></h2>
+<p>This post is by Steve Mushero, and starts off by referring to Cindy Sridharan’s post reviewed above. Steve posits the question in the title of the piece, which my first thought is that it isn’t vs. but complementary right? Reading throught the beginning of the post I get to another gem of a&nbsp;quote.</p>
+<p>I Monitor you, but you make yourself&nbsp;Observable.</p>
+<p>Onward in the piece Steve hits home some specific detailed&nbsp;points.</p>
+<blockquote>
+<p>For Observability, the system, code, developers, etc. are taking step to make things available to make the system more observable. This often starts with increasingly rich and structured logs, plus events or markers, <span class="caps">JMX</span> data points, and Etsy-style emitted metrics. Loved and tended to by Developers and the most modern&nbsp;Ops.</p>
+</blockquote>
+<p>…and…</p>
+<blockquote>
+<p>Observability elements, on the other hand, are often much detailed, more diverse, and used more for debugging, complex troubleshooting, performance analyses, and generally going&nbsp;‘deeper’.</p>
+</blockquote>
+<p>Both points are very interesting, the first getting into some details of what exactly observability and the second one a little obfuscated but driving home the idea behind observability versus just&nbsp;monitoring.</p>
+<p>Toward the end Steve writes, “In the end, we need them all, and what it’s called doesn’t matter much.” which I disagree with, but not wanting to delve into pedantic response I’ll hold off, but suffice it to say, words matter and have meanings that help us describe our world and communicate, so it does indeed matter what we call&nbsp;things.</p>
+<p>That’s it for my current reading up on observability and monitoring. As always, if you’ve found this useful (or just interesting) follow me Adron Hall here on Medium, or one of my other mediums depending on how you like to consume&nbsp;content.</p>
+</section>
+                </docs>
+                <!-- End of Blog Page-->
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="nav"><a href="/">« Home</a></div>
+      </div>
+    </div>
+    <script src="/js/all.js"></script>
+    <script src="/js/custom.js"></script>
+    <!-- Google Tag Manager-->
+    <noscript>
+      <iframe src="//www.googletagmanager.com/ns.html?id=GTM-KMMZX2" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <script>
+      console.log(document.getElementById("search-google"));
+      console.log(document.getElementById("search-google").innerText);
+      
+      var searchBox = document.getElementById("search-google");
+      
+      function googleSearch(search_string) {
+          alert(search_string);
+      }
+      
+      document.getElementById("search-google").addEventListener("onClick", function () {
+          alert(document.getElementById("search-google").innerHTML);
+      });
+      
+      document.getElementById("search-google").addEventListener("onClick", function () {
+          googleSearch(document.getElementById("search-google").innerHTML)
+      });
+      
+    </script>
+    <script>
+      (function (i, s, o, g, r, a, m) {
+          i['GoogleAnalyticsObject'] = r;
+          i[r] = i[r] || function () {
+                      (i[r].q = i[r].q || []).push(arguments)
+                  }, i[r].l = 1 * new Date();
+          a = s.createElement(o),
+                  m = s.getElementsByTagName(o)[0];
+          a.async = 1;
+          a.src = g;
+          m.parentNode.insertBefore(a, m)
+      })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+      ga('create', 'UA-39158070-6', 'auto');
+      ga('send', 'pageview');
+    </script>
+  </body>
+</html>
