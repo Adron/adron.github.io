@@ -4,13 +4,13 @@ author: Adron Hall
 date: 2018-03-13 19:18:11
 template: article.jade
 ---
-This is the first of a few posts around research I've done around observability over the last month. This post I'm specificaly focusing the details of what you do or don't get during ingest of data into systems used to build observable software. In this post I'm going to reference two specific tool & service providers: Elastic.co with Elasticsearch and Honeycomb.io.
+This is the first of a few posts around research I've done around observability over the last month. This post I'm specificaly focusing the details of what you do or don't get during ingest of data into systems that one would use to build observable software. In this post I'm going to reference specifically [Honeycomb.io]().
 
 <div class="image float-right">
     ![CLI Stuff](cli-stuff.gif)
 </div>
 
-For both of these I've created an individual simple CLI app for each to send data to the service providers: the **[data-writer-honeycomb](https://github.com/Adron/data-writer-honeycomb)** and **[data-wrtier-elasticsearch](https://github.com/Adron/data-writer-elasticsearch)** repositories. 
+For this effort I've created an individual simple CLI app to send data to Honeycomb: the **[data-writer-honeycomb](https://github.com/Adron/data-writer-honeycomb)** and **[data-wrtier-elasticsearch](https://github.com/Adron/data-writer-elasticsearch)** repositories. 
 
 Each record was created through data generation using a Go random generation library. I did this to ensure that no excessive record outliers were introduced. Using multiple threads, or Go Routines specifically, each record of randomly generated data is then sent to the respective provider. This was done to find the peak that one instance could send and get ingested by the provider system.
 
@@ -34,7 +34,7 @@ For the Honeycomb.io Account I simply signed up for the 5 GB Account.
 
 I created a simple type as shown below to generate and feed into the systems.
 
-``` javasceript
+``` javascript
 type logRecord struct {
     Time time.Time    `json:"time"`
     Version string    `json:"@version"`
@@ -81,6 +81,9 @@ type logRecord struct {
     Type string    `json:"type"`
 }
 ```
+
+With that setup I added the generator library and code, setup for a few go routines to launch threads, and start writing some data. The code file looked like this.
+
 
 
 
