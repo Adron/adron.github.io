@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="/css/style.min.css">
     <script src="/js/modernizr.js"></script>
   </head>
-  <body>
+  <body class="article-detail">
     <!--[if lt IE 8]>
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -68,8 +68,10 @@
             <div class="col-md-12">
               <!-- Page Info-->
               <div class="page-info page-info-simple">
-                <h1>Adron's Thrashing Code</h1>
-                <h2 class="description">Coder, Messenger, Recon, Infrastructure, Ops, &amp; A Sprinkling of Metal</h2>
+                <h1>Gaining a Systemic View of Immutable Infrastructure Tooling</h1>
+                <p class="author">Written by <span class="author">Adron Hall</span> and published on <span>March, 29 of 2018.</span>
+                </p>
+                <div class="nav"><a href="/">« Home</a></div>
               </div>
               <!-- End Page Info-->
             </div>
@@ -84,26 +86,36 @@
             <div class="col-md-9">
               <div class="main-content">
                 <!-- Blog Page-->
-                <div class="blog">
-                  <div class="row"></div>
-                </div>
-                <div class="col-md-12 col-sm-12">
-                  <!-- Blog List-->
-                  <div class="blog-grid">
-                    <div class="row">
-                      <div class="col-md-12 col-sm-12">
-                        <h3 class="blog-grid-title"><a href="/articles/my-top-4-ideal-dev-shop-product-characteristics-yours/">My Top 4 Ideal Dev Shop Product Characteristics and Yours?</a></h3>
-                        <p class="blog-grid-excerpt"><p>What is an ideal software project? What is an ideal delivery cycle? What is an ideal culture? From a client’s perspective do they see the team as a sluggish liability or is the development team proactive and looking for the next strategic or tactical step to&nbsp;take?</p>
-<p>Ideally, I see the development team as a group that should be leading a company with technology. If a team isn’t doing that, they’re likely to be running the risk of appearing as a liability and risk. Often these are the types of teams that are often outsourced or off-shored because it seems easier to the clients or&nbsp;management.</p>
-<p>
-                          <p class="more"><a href="/articles/my-top-4-ideal-dev-shop-product-characteristics-yours/">more</a></p>
-                        </p>
-                        <div class="blog-grid-meta"><span class="blog-grid-date">22. October 2011</span></div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End of Blog List-->
-                </div>
+                <article class="article">
+                  <section class="content"><p>I put together a few starter notes on things you should delve into and understand before working with infrastructure related tooling, like Ansible, Terraform, or similar tools. If you think I’ve missed any do ping me <a href="https://twitter.com/Adron">@Adron</a> and let me know your thoughts on other additions. The first starter items I’d list as the&nbsp;following. </p>
+<ul>
+<li>Computer Networking - Basic understanding of what an <span class="caps">IP</span> number is, how they’re assigned via DHCP vs. static, and related basic TCP/IP knowledge. Also it is helpful, yet not necessary to understand the idea behind CIDR ranges and related network concepts about addressing&nbsp;also.</li>
+<li>Basic Linux or Unix <span class="caps">CLI</span> Commands - Commands like; <code>ls</code>, <code>mv</code>, <code>rm</code>, <code>cp</code>, <code>mkdir</code>, <code>rmdir</code>, <code>wget</code>, <code>curl</code>, <code>ping</code>, <code>traceroute</code>, <code>ifconfig</code>, <code>nslookup</code>, <code>vi</code>, <code>kill</code>, <code>chown</code>, <code>whoami</code>, <code>su</code>, <code>chmod</code>, <code>chown</code>, <code>chroot</code>, <code>cat</code>, <code>env</code>, <code>echo</code> or <code>tail</code>. All these commands are’t used in the couse, but they’re fundamental for building and troubleshooting any infrastructure and related environments and systems in the&nbsp;future.</li>
+<li>Basic Scripting and Language Constructs - Things like if-then-else, while loops, and related programming constructs for use in scripting like Bash or&nbsp;Powershell.</li>
+</ul>
+<p><span class="more"></span></p>
+<p>With those basics covered, here are some of the things that help shape one getting a good understanding of what Terraform, Ansible, Chef, Puppet, and related tooling&nbsp;is.</p>
+<ul>
+<li>Ansible - <a href="https://www.ansible.com/">https://www.ansible.com/</a> - Ansible is a tool that helps provision, deploy, and apply compliance of infrastructure through configuration management. It was purchased by Red Hat and is now in their stable of&nbsp;tools.</li>
+<li>Puppet - <a href="https://puppet.com">https://puppet.com</a> - Puppet provides discovery, management of infrastructure, and mutable updates and changes to that infrastructure. It’s also important to note that Puppet is made up from a number of individual&nbsp;tools.</li>
+<li>Chef - <a href="https://www.chef.io">https://www.chef.io</a> - Chef is one of the leading companies that helped to start and push the DevOps narrative in the industry. It is a tool that provides a programmatic <span class="caps">DSL</span>, configuration, and related ways to create and manage one’s infrastructure. Chef, similarly to Puppet, is also made up of a number of individual tools, and the company itself continues to develop a number of tools within the&nbsp;space.</li>
+<li>CloudFormation - <a href="https://aws.amazon.com/cloudformation/">https://aws.amazon.com/cloudformation/</a> - <span class="caps">AWS</span> CloudFormation provides a way to desribe and provision infrastructure resources in AWS. This is used as the single source of truth for all the cloud resources when&nbsp;used.</li>
+</ul>
+<p>I talk about and use Terraform a <strong><span class="caps">LOT</span></strong> so let’s talk comparisons with these tools and Terraform for a moment. Terraform compares with configuration management tools like Chef and Puppet in it’s abstract use of provisioners to setup resources such as the network, instances, and other things within the cloud platform being deployed to. Since Terraform operates at this higher level abstraction of the platforms resources are deployed to. By doing this Terraform can be used with, or even similarly to Chef and Puppet. Complementing each other or working&nbsp;independetly.</p>
+<p>In comparison to CloudFormation the differences start out with the cross platform and multi-cloud platform capabilities of Terraform versus CloudFormation being limited to only <span class="caps">AWS</span>. Terraform also draws out a more stage based approach for each execution. This gives more control about where, when, and why Terraform can replace or be used in conjunction with CloudFormation or any of the tooling&nbsp;mentioned.</p>
+<h2 id="these-tools-immutable-infrastructure-">These Tools, Immutable&nbsp;Infrastructure?</h2>
+<p>With these tools, one key ideal among them is the pattern of immutable infrastrucutre. Defining immutable infrastructure in short is the idea you create and operate your infrastructure using the programming concept of immutability. Once you instantiate something it is never changed. It is replaced with another instance of make changes or ensure proper&nbsp;behavior.</p>
+<p>The affect and effect of immutable infrastructure provides stability, efficiency, and fidelity to your applications through automation and the use of successful patterns from software&nbsp;development.</p>
+<ul>
+<li><strong>Increasing operational complexity can be dealt with.</strong> With the complexity of distributed systems like Cassandra, Kubernetes, and others immutable infrastructure practices have become the defacto way to manage this extra complexity and volume of&nbsp;resources.</li>
+<li><strong>Snowflake components are removed.</strong> Mutable maintenance methods enable this idea of snowflake components like bespoke, hand crafted, and artisinal  servers and infrastructure. Immutable infrastructure eliminates the possibility of these outliers and increases repeatability within systems and&nbsp;infrastructure.</li>
+<li><strong>Increased threat identification <span class="amp">&amp;</span> mitigration of harm.</strong> With immutable infrastructure the number of knowns, at start and and completion of infrastructure usage increases as needed. Need debugging information, a single way to gather that can be provided, set by policy, and enforced with immutable infrastructure in a way that simply can’t be with artisinal&nbsp;infrastructure.</li>
+<li><strong>Integration and seemless continuous integration and deployment.</strong> With immutable infrastructure the enforcement of and enablement of integration and deployment of solutions is largely self-fulfilled. To deploy through automation requires integration and deployment, for immutable infrastructure automation for integration and deployment is needed, and in turn enables the&nbsp;other.</li>
+<li><strong>Reproducability is inherent in the system.</strong> The ability to take an environment and all of it’s nuances, recreate that enivronment among complex orchestration is flawless with immutable infrastructure. This gives us the ability to set audit points, track, and log data accordingly to the entire&nbsp;environment.</li>
+</ul>
+<p>That’s my wrap up for getting into and gaining a more holistic idea of what immutable infrastructure is and what tools work to help attain this level of infrastructure development and usage. Until next time, feel free to throw ideas at me via <a href="https://twitter.com/Adron">@Adron</a>!</p>
+</section>
+                </article>
                 <!-- End of Blog Page-->
               </div>
             </div>
@@ -196,8 +208,7 @@
             </div>
           </div>
         </div>
-        <div class="nav"><a href="/page/15/">« Newer</a>
-        </div>
+        <div class="nav"><a href="/">« Home</a></div>
       </div>
     </div>
     <script src="/js/all.js"></script>

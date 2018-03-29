@@ -5,9 +5,44 @@
     <atom:link href="http://blog.adron.me/feed.xml" rel="self" type="application/rss+xml"></atom:link>
     <link>http://blog.adron.me</link>
     <description>Coder, Messenger, Recon, Infrastructure, Ops, &amp; A Sprinkling of Metal</description>
-    <pubDate>Wed, 31 Jan 2018 13:19:38 -0800</pubDate>
+    <pubDate>Thu, 29 Mar 2018 07:20:15 -0700</pubDate>
     <generator>Wintersmith - https://github.com/jnordberg/wintersmith</generator>
     <language>en</language>
+    <item>
+      <title>Gaining a Systemic View of Immutable Infrastructure Tooling</title>
+      <link>http://blog.adron.me/articles/terraform-beginnning-notes/</link>
+      <pubDate>Thu, 29 Mar 2018 07:20:15 -0700</pubDate>
+      <guid isPermaLink="true">http://blog.adron.me/articles/terraform-beginnning-notes/</guid>
+      <author></author>
+      <description>&lt;p&gt;I put together a few starter notes on things you should delve into and understand before working with infrastructure related tooling, like Ansible, Terraform, or similar tools. If you think I’ve missed any do ping me &lt;a href=&quot;https://twitter.com/Adron&quot;&gt;@Adron&lt;/a&gt; and let me know your thoughts on other additions. The first starter items I’d list as the following. &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Computer Networking - Basic understanding of what an IP number is, how they’re assigned via DHCP vs. static, and related basic TCP/IP knowledge. Also it is helpful, yet not necessary to understand the idea behind CIDR ranges and related network concepts about addressing also.&lt;/li&gt;
+&lt;li&gt;Basic Linux or Unix CLI Commands - Commands like; &lt;code&gt;ls&lt;/code&gt;, &lt;code&gt;mv&lt;/code&gt;, &lt;code&gt;rm&lt;/code&gt;, &lt;code&gt;cp&lt;/code&gt;, &lt;code&gt;mkdir&lt;/code&gt;, &lt;code&gt;rmdir&lt;/code&gt;, &lt;code&gt;wget&lt;/code&gt;, &lt;code&gt;curl&lt;/code&gt;, &lt;code&gt;ping&lt;/code&gt;, &lt;code&gt;traceroute&lt;/code&gt;, &lt;code&gt;ifconfig&lt;/code&gt;, &lt;code&gt;nslookup&lt;/code&gt;, &lt;code&gt;vi&lt;/code&gt;, &lt;code&gt;kill&lt;/code&gt;, &lt;code&gt;chown&lt;/code&gt;, &lt;code&gt;whoami&lt;/code&gt;, &lt;code&gt;su&lt;/code&gt;, &lt;code&gt;chmod&lt;/code&gt;, &lt;code&gt;chown&lt;/code&gt;, &lt;code&gt;chroot&lt;/code&gt;, &lt;code&gt;cat&lt;/code&gt;, &lt;code&gt;env&lt;/code&gt;, &lt;code&gt;echo&lt;/code&gt; or &lt;code&gt;tail&lt;/code&gt;. All these commands are’t used in the couse, but they’re fundamental for building and troubleshooting any infrastructure and related environments and systems in the future.&lt;/li&gt;
+&lt;li&gt;Basic Scripting and Language Constructs - Things like if-then-else, while loops, and related programming constructs for use in scripting like Bash or Powershell.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;With those basics covered, here are some of the things that help shape one getting a good understanding of what Terraform, Ansible, Chef, Puppet, and related tooling is.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Ansible - &lt;a href=&quot;https://www.ansible.com/&quot;&gt;https://www.ansible.com/&lt;/a&gt; - Ansible is a tool that helps provision, deploy, and apply compliance of infrastructure through configuration management. It was purchased by Red Hat and is now in their stable of tools.&lt;/li&gt;
+&lt;li&gt;Puppet - &lt;a href=&quot;https://puppet.com&quot;&gt;https://puppet.com&lt;/a&gt; - Puppet provides discovery, management of infrastructure, and mutable updates and changes to that infrastructure. It’s also important to note that Puppet is made up from a number of individual tools.&lt;/li&gt;
+&lt;li&gt;Chef - &lt;a href=&quot;https://www.chef.io&quot;&gt;https://www.chef.io&lt;/a&gt; - Chef is one of the leading companies that helped to start and push the DevOps narrative in the industry. It is a tool that provides a programmatic DSL, configuration, and related ways to create and manage one’s infrastructure. Chef, similarly to Puppet, is also made up of a number of individual tools, and the company itself continues to develop a number of tools within the space.&lt;/li&gt;
+&lt;li&gt;CloudFormation - &lt;a href=&quot;https://aws.amazon.com/cloudformation/&quot;&gt;https://aws.amazon.com/cloudformation/&lt;/a&gt; - AWS CloudFormation provides a way to desribe and provision infrastructure resources in AWS. This is used as the single source of truth for all the cloud resources when used.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I talk about and use Terraform a &lt;strong&gt;LOT&lt;/strong&gt; so let’s talk comparisons with these tools and Terraform for a moment. Terraform compares with configuration management tools like Chef and Puppet in it’s abstract use of provisioners to setup resources such as the network, instances, and other things within the cloud platform being deployed to. Since Terraform operates at this higher level abstraction of the platforms resources are deployed to. By doing this Terraform can be used with, or even similarly to Chef and Puppet. Complementing each other or working independetly.&lt;/p&gt;
+&lt;p&gt;In comparison to CloudFormation the differences start out with the cross platform and multi-cloud platform capabilities of Terraform versus CloudFormation being limited to only AWS. Terraform also draws out a more stage based approach for each execution. This gives more control about where, when, and why Terraform can replace or be used in conjunction with CloudFormation or any of the tooling mentioned.&lt;/p&gt;
+&lt;h2 id=&quot;these-tools-immutable-infrastructure-&quot;&gt;These Tools, Immutable Infrastructure?&lt;/h2&gt;
+&lt;p&gt;With these tools, one key ideal among them is the pattern of immutable infrastrucutre. Defining immutable infrastructure in short is the idea you create and operate your infrastructure using the programming concept of immutability. Once you instantiate something it is never changed. It is replaced with another instance of make changes or ensure proper behavior.&lt;/p&gt;
+&lt;p&gt;The affect and effect of immutable infrastructure provides stability, efficiency, and fidelity to your applications through automation and the use of successful patterns from software development.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Increasing operational complexity can be dealt with.&lt;/strong&gt; With the complexity of distributed systems like Cassandra, Kubernetes, and others immutable infrastructure practices have become the defacto way to manage this extra complexity and volume of resources.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Snowflake components are removed.&lt;/strong&gt; Mutable maintenance methods enable this idea of snowflake components like bespoke, hand crafted, and artisinal  servers and infrastructure. Immutable infrastructure eliminates the possibility of these outliers and increases repeatability within systems and infrastructure.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Increased threat identification &amp;amp; mitigration of harm.&lt;/strong&gt; With immutable infrastructure the number of knowns, at start and and completion of infrastructure usage increases as needed. Need debugging information, a single way to gather that can be provided, set by policy, and enforced with immutable infrastructure in a way that simply can’t be with artisinal infrastructure.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Integration and seemless continuous integration and deployment.&lt;/strong&gt; With immutable infrastructure the enforcement of and enablement of integration and deployment of solutions is largely self-fulfilled. To deploy through automation requires integration and deployment, for immutable infrastructure automation for integration and deployment is needed, and in turn enables the other.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Reproducability is inherent in the system.&lt;/strong&gt; The ability to take an environment and all of it’s nuances, recreate that enivronment among complex orchestration is flawless with immutable infrastructure. This gives us the ability to set audit points, track, and log data accordingly to the entire environment.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;That’s my wrap up for getting into and gaining a more holistic idea of what immutable infrastructure is and what tools work to help attain this level of infrastructure development and usage. Until next time, feel free to throw ideas at me via &lt;a href=&quot;https://twitter.com/Adron&quot;&gt;@Adron&lt;/a&gt;!&lt;/p&gt;
+</description>
+    </item>
     <item>
       <title>Algorithms 101 Roads &amp; Town Centers</title>
       <link>http://blog.adron.me/articles/algorithms-101-roads-and-town-center/</link>
@@ -3693,17 +3728,17 @@ n
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;I then ran &lt;code&gt;glide get github.com/icrowley/fake&lt;/code&gt; to get the fake library I would need. The &lt;code&gt;glide.yaml&lt;/code&gt; and &lt;code&gt;glide.lock&lt;/code&gt; looked like this after I pulled in this library.&lt;/p&gt;
 &lt;p&gt;glide.yaml&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;lang-yaml&quot;&gt;&lt;span class=&quot;attr&quot;&gt;package:&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;github.com/adron/datadiluvium&lt;/span&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-yaml&quot;&gt;&lt;span class=&quot;attr&quot;&gt;package:&lt;/span&gt; github.com/adron/datadiluvium
 &lt;span class=&quot;attr&quot;&gt;import:&lt;/span&gt;
-&lt;span class=&quot;attr&quot;&gt;- package:&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;github.com/icrowley/fake&lt;/span&gt;
+&lt;span class=&quot;attr&quot;&gt;- package:&lt;/span&gt; github.com/icrowley/fake
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;glide.lock&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;lang-yaml&quot;&gt;&lt;span class=&quot;attr&quot;&gt;hash:&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;string&quot;&gt;fd78ca8369405d5998e65ea4cfce94c6599e878c36fec39b85fd385552392d7&lt;/span&gt;
-&lt;span class=&quot;attr&quot;&gt;updated:&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;2017&lt;/span&gt;&lt;span class=&quot;bullet&quot;&gt;-01&lt;/span&gt;&lt;span class=&quot;bullet&quot;&gt;-09&lt;/span&gt;&lt;span class=&quot;attr&quot;&gt;T01:04:18.134993358-08:00&lt;/span&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-yaml&quot;&gt;&lt;span class=&quot;attr&quot;&gt;hash:&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;fd78ca8369405d5998e65ea4cfce94c6599e878c36fec39b85fd385552392d7
+&lt;span class=&quot;attr&quot;&gt;updated:&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;2017&lt;/span&gt;&lt;span class=&quot;bullet&quot;&gt;-01&lt;/span&gt;&lt;span class=&quot;bullet&quot;&gt;-09&lt;/span&gt;T01:&lt;span class=&quot;number&quot;&gt;04&lt;/span&gt;:&lt;span class=&quot;number&quot;&gt;18.134993358&lt;/span&gt;&lt;span class=&quot;bullet&quot;&gt;-08&lt;/span&gt;:&lt;span class=&quot;number&quot;&gt;00&lt;/span&gt;
 &lt;span class=&quot;attr&quot;&gt;imports:&lt;/span&gt;
-&lt;span class=&quot;attr&quot;&gt;- name:&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;github.com/icrowley/fake&lt;/span&gt;
-&lt;span class=&quot;attr&quot;&gt;  version:&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;84&lt;/span&gt;&lt;span class=&quot;string&quot;&gt;bff6d01560fb0b5a396ba29534e93fd00d09c6&lt;/span&gt;
-&lt;span class=&quot;attr&quot;&gt;testImports:&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;[]&lt;/span&gt;
+&lt;span class=&quot;attr&quot;&gt;- name:&lt;/span&gt; github.com/icrowley/fake
+&lt;span class=&quot;attr&quot;&gt;  version:&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;84&lt;/span&gt;bff6d01560fb0b5a396ba29534e93fd00d09c6
+&lt;span class=&quot;attr&quot;&gt;testImports:&lt;/span&gt; []
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;If you’re curious about the hash, and related properties of this file check out the glide &lt;a href=&quot;https://github.com/Masterminds/glide/blob/master/README.md&quot;&gt;README.md&lt;/a&gt;, it’s useful in understanding what’s stored here.&lt;/p&gt;
 &lt;p&gt;At this point, it was time to actually sling some Go code! At this point, I do indeed mean sling some too. Splat!&lt;/p&gt;
@@ -6929,6 +6964,23 @@ In this talk, you will learn about the power of WebSockets and how they can (and
 </description>
     </item>
     <item>
+      <title>I Play the JavaScript by Matt McKegg</title>
+      <link>http://blog.adron.me/articles/node-pdx-2016-speaker-matt-mckegg/</link>
+      <pubDate>Thu, 02 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://blog.adron.me/articles/node-pdx-2016-speaker-matt-mckegg/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-left&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/mattmckegg.jpg&quot; alt=&quot;Matt McKegg&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;A JavaScript hacker and backyard musician and from Wellington, New Zealand. Lover of all things open and modular. I spend most of my time pressing buttons of various shapes, sizes and colours. Sometimes these buttons make sounds.&lt;/p&gt;
+&lt;p&gt;Matt has been making music with computers for about 10 years, but once he tried to move from bedroom composing to live performance, he got incredibly frustrated at how hard it was to play computer music live. He decided to start working on his own live electronic performance software written in JavaScript that would let me play the way he wanted to play. 3 years later, it’s finally starting to become a reality.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Here is one of the Matt’s recent performances, for your viewing pleasure. &lt;/p&gt;
+&lt;iframe width=&quot;1280&quot; height=&quot;720&quot; src=&quot;https://www.youtube.com/embed/L2BVDJWHdy0?rel=0&amp;amp;showinfo=0&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;</description>
+    </item>
+    <item>
       <title>The Web Platform is the Universal Instrument by Ben Michel</title>
       <link>http://blog.adron.me/articles/node-pdx-2016-speaker-ben-michel/</link>
       <pubDate>Thu, 02 Jun 2016 17:00:00 -0700</pubDate>
@@ -6956,21 +7008,21 @@ In this talk, you will learn about the power of WebSockets and how they can (and
 </description>
     </item>
     <item>
-      <title>I Play the JavaScript by Matt McKegg</title>
-      <link>http://blog.adron.me/articles/node-pdx-2016-speaker-matt-mckegg/</link>
-      <pubDate>Thu, 02 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://blog.adron.me/articles/node-pdx-2016-speaker-matt-mckegg/</guid>
+      <title>The House Is Not On Fire - Building a home automation robot with Arduino, Raspberry Pi and Node.js by Artur Paikin</title>
+      <link>http://blog.adron.me/articles/node-pdx-2016-speaker-artur-paikin/</link>
+      <pubDate>Wed, 01 Jun 2016 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://blog.adron.me/articles/node-pdx-2016-speaker-artur-paikin/</guid>
       <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-left&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-matt-mckegg/mattmckegg.jpg&quot; alt=&quot;Matt McKegg&quot;&gt;
+      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;image float-right&quot;&gt;
+    &lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/art-stida.jpg&quot; alt=&quot;Artur Paikin&quot;&gt;
 &lt;/div&gt;
 
-&lt;p&gt;A JavaScript hacker and backyard musician and from Wellington, New Zealand. Lover of all things open and modular. I spend most of my time pressing buttons of various shapes, sizes and colours. Sometimes these buttons make sounds.&lt;/p&gt;
-&lt;p&gt;Matt has been making music with computers for about 10 years, but once he tried to move from bedroom composing to live performance, he got incredibly frustrated at how hard it was to play computer music live. He decided to start working on his own live electronic performance software written in JavaScript that would let me play the way he wanted to play. 3 years later, it’s finally starting to become a reality.&lt;/p&gt;
+&lt;p&gt;Artur describes himself as, “I’m a web developer and traveler. I write stories about my adventures in Russian and English on my site: &lt;a href=&quot;http://arturpaikin.com&quot;&gt;http://arturpaikin.com&lt;/a&gt; and run a small technology cooperative called &lt;a href=&quot;http://unebaguette.com&quot;&gt;Baguette&lt;/a&gt;, where I work on cool projects, currently building an ambitious next generation file uploader with &lt;a href=&quot;https://transloadit.com/&quot;&gt;Transloadit&lt;/a&gt;. I ride a &lt;a href=&quot;https://www.instagram.com/p/xC0qC2SSYb&quot;&gt;foldable bicycle&lt;/a&gt;, &lt;a href=&quot;http://unebaguette.com/web-course/&quot;&gt;teach&lt;/a&gt; web development and sometimes &lt;a href=&quot;https://www.instagram.com/p/4_6LO8ySVL/&quot;&gt;garden&lt;/a&gt; on the balcony.”&lt;/p&gt;
 &lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Here is one of the Matt’s recent performances, for your viewing pleasure. &lt;/p&gt;
-&lt;iframe width=&quot;1280&quot; height=&quot;720&quot; src=&quot;https://www.youtube.com/embed/L2BVDJWHdy0?rel=0&amp;amp;showinfo=0&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;</description>
+&lt;p&gt;Artur has built an open source home automation system called &lt;a href=&quot;https://github.com/arturi/kotihome&quot;&gt;Koti Home&lt;/a&gt; (Koti means home in Finnish language). It’s powered by an Arduino connected to Raspberry Pi, MQTT protocol for messaging, Node.js on the client and server, web sockets. You can interact with Koti robot via a React (like the cool kids do) control panel, Telegram Chat Bot and even your own voice.&lt;/p&gt;
+&lt;p&gt;Arthur will talk about how he’s turned this project into reality — the tech he used and the challenges he faced. From a blinking LED to a voice controlled home automation robot.&lt;/p&gt;
+</description>
     </item>
     <item>
       <title>Code First Docs How we Threw Out The Book &amp; Put Code First With Twilio Documentation by Jarod Reyes</title>
@@ -6994,23 +7046,6 @@ In this talk, you will learn about the power of WebSockets and how they can (and
 &lt;li&gt;Twitter: &lt;a href=&quot;https://twitter.com/jreyesdev&quot;&gt;@jreyesdev&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Github: &lt;a href=&quot;https://github.com/jarodreyes&quot;&gt;github.com/jarodreyes&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-</description>
-    </item>
-    <item>
-      <title>The House Is Not On Fire - Building a home automation robot with Arduino, Raspberry Pi and Node.js by Artur Paikin</title>
-      <link>http://blog.adron.me/articles/node-pdx-2016-speaker-artur-paikin/</link>
-      <pubDate>Wed, 01 Jun 2016 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://blog.adron.me/articles/node-pdx-2016-speaker-artur-paikin/</guid>
-      <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://nodepdx.org&quot;&gt;&lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/nodepdx-2016-logo.png&quot; alt=&quot;Node PDX 2016&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;image float-right&quot;&gt;
-    &lt;img src=&quot;/articles/node-pdx-2016-speaker-artur-paikin/art-stida.jpg&quot; alt=&quot;Artur Paikin&quot;&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Artur describes himself as, “I’m a web developer and traveler. I write stories about my adventures in Russian and English on my site: &lt;a href=&quot;http://arturpaikin.com&quot;&gt;http://arturpaikin.com&lt;/a&gt; and run a small technology cooperative called &lt;a href=&quot;http://unebaguette.com&quot;&gt;Baguette&lt;/a&gt;, where I work on cool projects, currently building an ambitious next generation file uploader with &lt;a href=&quot;https://transloadit.com/&quot;&gt;Transloadit&lt;/a&gt;. I ride a &lt;a href=&quot;https://www.instagram.com/p/xC0qC2SSYb&quot;&gt;foldable bicycle&lt;/a&gt;, &lt;a href=&quot;http://unebaguette.com/web-course/&quot;&gt;teach&lt;/a&gt; web development and sometimes &lt;a href=&quot;https://www.instagram.com/p/4_6LO8ySVL/&quot;&gt;garden&lt;/a&gt; on the balcony.”&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Artur has built an open source home automation system called &lt;a href=&quot;https://github.com/arturi/kotihome&quot;&gt;Koti Home&lt;/a&gt; (Koti means home in Finnish language). It’s powered by an Arduino connected to Raspberry Pi, MQTT protocol for messaging, Node.js on the client and server, web sockets. You can interact with Koti robot via a React (like the cool kids do) control panel, Telegram Chat Bot and even your own voice.&lt;/p&gt;
-&lt;p&gt;Arthur will talk about how he’s turned this project into reality — the tech he used and the challenges he faced. From a blinking LED to a voice controlled home automation robot.&lt;/p&gt;
 </description>
     </item>
     <item>
