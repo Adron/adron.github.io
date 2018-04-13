@@ -8,8 +8,6 @@ This page links to my history of speaking via presentations, workshops, or other
 
 **Upcoming Presentations**
 
-Currently none scheduled...
-
 * [Node Systems for Node.js Services on Nodes of Systemic Nodal Systems]() @ [GOTO Chicago 2018](https://gotochgo.com/2018/sessions/368)
 
 **Past Presentations**
