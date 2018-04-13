@@ -21,3 +21,7 @@ Longform Git Branch Tracking Commands.
 How to free up space when the boot disk gets full form kernal installations and such.
 
 <script src="https://gist.github.com/Adron/1e74a44ce9c41a0a28a94faedff364a7.js"></script>
+
+I rarely need to know the exact version, or already know the exact version, but sometimes I forget and don't recall the exact commands to get the version and name of the kernel, OS version, and the line with Linux. So these resolve that question.
+
+<script src="https://gist.github.com/Adron/2394f6976e63fbc4902ac30fefcb3967.js"></script>
