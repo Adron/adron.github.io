@@ -30,7 +30,7 @@ The first line is an integer, *q*, denoting the number of queries. The subsequen
 
 Each query should have a result displayed that is the integer denoting the minimum cost of making town centers accessible to all the citizens.
 
-The following example includes three queries (denoted by the first line having a 3). The subsequent queries then have a definition line of [6,4,2,1], [2,2,2,2], and [6,6,2,5] respectively. Then below those query definition lines are the road definitions between the cities, and respectively the town centers.
+The following example includes three queries (denoted by the first line having a 3). The subsequent queries then have a definition line of [6,4,2,1], [7,6,2,1], and [9,7,3,4] respectively. Then below those query definition lines are the road definitions between the cities, and respectively the town centers.
 
 **Sample Input**
 
