@@ -10,6 +10,8 @@ This page links to my history of speaking via presentations, workshops, or other
 
 Currently none scheduled...
 
+* [Node Systems for Node.js Services on Nodes of Systemic Nodal Systems]() @ [GOTO Chicago 2018](https://gotochgo.com/2018/sessions/368)
+
 **Past Presentations**
 
 * [Terraforming your Development (me) + Adopting Kx Technology(Conner McNicholas)](/talks/terraform-tonight/) at [Seattle Scalability](https://www.meetup.com/Seattle-Scalability-Meetup/) on November 29th, 2017 in Seattle at [Galvanize](https://www.galvanize.com/seattle).
