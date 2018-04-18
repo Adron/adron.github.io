@@ -9,7 +9,7 @@ resource "google_dns_record_set" "blog" {
     name = "blog.${google_dns_managed_zone.adronme.dns_name}"
     type = "CNAME"
     ttl = 5
-    rrdatas = ["adron.github.io."]
+    rrdatas = ["compositecode.blog."]
 }
 
 resource "google_dns_record_set" "photos" {
