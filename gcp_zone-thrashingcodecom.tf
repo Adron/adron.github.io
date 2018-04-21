@@ -148,3 +148,19 @@ resource "google_dns_record_set" "vault_thrashingcodecom" {
   ttl = 3600
   rrdatas = ["ghs.googlehosted.com."]
 }
+
+resource "google_dns_record_set" "thrashingcodecom" {
+  managed_zone = "${google_dns_managed_zone.thrashingcodecom.name}"
+  name = "*.${google_dns_managed_zone.thrashingcodecom.dns_name}"
+  type = "CNAME"
+  ttl = 3600
+  rrdatas = ["compositecode.blog."]
+}
+
+resource "google_dns_record_set" "blogthrashingcodecom" {
+  managed_zone = "${google_dns_managed_zone.thrashingcodecom.name}"
+  name = "blog.${google_dns_managed_zone.thrashingcodecom.dns_name}"
+  type = "CNAME"
+  ttl = 3600
+  rrdatas = ["compositecode.blog."]
+}

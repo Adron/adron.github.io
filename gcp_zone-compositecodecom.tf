@@ -6,11 +6,16 @@ resource "google_dns_managed_zone" "compositecodecom" {
 
 resource "google_dns_record_set" "compositecodecom" {
   managed_zone = "${google_dns_managed_zone.compositecodecom.name}"
-  name = "${google_dns_managed_zone.compositecodecom.dns_name}"
-  type = "A"
-  ttl = 30
-  rrdatas = [
-    "192.30.252.154",
-    "192.30.252.153"]
+  name = "*.${google_dns_managed_zone.compositecodecom.dns_name}"
+  type = "CNAME"
+  ttl = 5
+  rrdatas = ["compositecode.blog."]
 }
 
+resource "google_dns_record_set" "blogcompositecodecom" {
+  managed_zone = "${google_dns_managed_zone.compositecodecom.name}"
+  name = "blog.${google_dns_managed_zone.compositecodecom.dns_name}"
+  type = "CNAME"
+  ttl = 5
+  rrdatas = ["compositecode.blog."]
+}
