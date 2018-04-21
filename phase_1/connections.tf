@@ -1,7 +1,7 @@
 provider "google" {
   credentials = "${file("../../secrets/account.json")}"
   project     = "new-universes"
-  region = "us-west1"
+  region      = "us-west1"
 }
 
 provider "kubernetes" {

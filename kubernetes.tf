@@ -1,7 +1,7 @@
 resource "google_container_cluster" "primary" {
   name               = "kuby-domicile"
-  network = "${google_compute_network.production-space.self_link}"
-  subnetwork = "${google_compute_subnetwork.production-us-west1.self_link}"
+  network            = "${google_compute_network.production-space.self_link}"
+  subnetwork         = "${google_compute_subnetwork.production-us-west1.self_link}"
   zone               = "${var.defaultzone}"
   initial_node_count = 1
 
