@@ -18,7 +18,7 @@ echo "Client Certificate: $CLIENT_CERTIFICATE"
 echo "Client Key: $CLIENT_KEY"
 echo "Cluster CA Cert: $CLUSTER_CA_CERTIFICATE"
 
-echo "yes" | terraform apply \
-    -var client_certificate="$CLIENT_CERTIFICATE" \
-    -var client_key="$CLIENT_KEY" \
-    -var cluster_ca_certificate="$CLUSTER_CA_CERTIFICATE"
+# echo "yes" | terraform apply \
+#     -var client_certificate="$CLIENT_CERTIFICATE" \
+#     -var client_key="$CLIENT_KEY" \
+#     -var cluster_ca_certificate="$CLUSTER_CA_CERTIFICATE"
