@@ -3,9 +3,10 @@
 WORKING_GCP_PROJECT="that-big-universe"
 WORKING_GCP_ZONE="us-west1-a"
 WORKING_KUBY_DEV_WORK="kuby-dev-work"
-#terraform init
 
-#echo yes | terraform apply
+terraform init
+
+echo yes | terraform apply
 
 case $1 in
     "kuby")
