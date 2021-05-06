@@ -3,7 +3,7 @@
     "moment": "2.3.x",
     "npm": "^5.5.1",
     "typogr": "0.5.x",
-    "underscore": "1.4.x"
+    "underscore": "1.12.x"
   },
   "private": "true"
 }
